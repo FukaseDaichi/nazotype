@@ -1,0 +1,50 @@
+{
+  "typeId": "DBTC",
+  "typeCode": "DBTC",
+  "typeName": "プランBの天才",
+  "tagline": "A案が死んでも大丈夫。この人にはH案まである。",
+  "summary": "どんな状況でも常に次の一手を用意している万能型の戦略家。全体を見渡しながら柔軟にプランを組み替え、チームを最適な方向へ導きます。想定外の展開にも動じない、適応型の司令塔です。",
+  "detailDescription": "脱出ゲームでは全体の進行を把握しながら、常に複数のプランを頭の中で走らせています。Aの方法が行き詰まったらBへ、Bが難しければCへと、途切れることのない戦略の切り替えでチームを前に進め続けるのが最大の特徴です。分析力と柔軟性を高い次元で両立しており、論理的に考え抜いた上で大胆にプランを変更できる稀有な存在。メンバーの配置や役割分担も状況に応じて最適化し、チーム全体のパフォーマンスを引き上げます。変化の激しい終盤戦でこそ真価を発揮し、どれだけ予想外の展開が来ても「次はこうしよう」と落ち着いて提案できる、チームの頼れるプランナーです。",
+  "strengths": [
+    "常に複数のコンティンジェンシープランを用意している準備力",
+    "分析的な深さと実践的な適応力を高い次元で両立できる",
+    "状況が変化してもチームを整理し続けるマネジメント力"
+  ],
+  "cautions": [
+    "計画を練りすぎて実行に移すタイミングが遅れることがある",
+    "素早く実行するよりも全体最適を求めすぎてしまうことがある",
+    "プランの変更が頻繁すぎてチームを混乱させることがある"
+  ],
+  "recommendedRole": ["状況対応型の作戦立案", "全体最適化・リスク管理"],
+  "compatibility": {
+    "summary": "行動型で局所型の仲間がいると、自分が立てたプランを現場で即座に実行してくれるため、戦略と行動のサイクルが加速します。特に熟考型の仲間は、自分の柔軟なプランに安定した分析基盤を提供してくれる心強い存在です。",
+    "goodWithTypeCodes": ["ALTN", "ALHN"],
+    "goodWithDescription": "行動型・局所型・熟考型の仲間が確実な実行力と緻密な分析を担ってくれることで、自分は戦略の設計と柔軟な調整に専念でき、チーム全体が最適化されます。"
+  },
+  "shareText": "謎解きタイプ診断の結果は「プランBの天才」でした！A案が死んでも大丈夫。この人にはH案まである。\n\n#謎解きタイプ診断",
+  "axis": {
+    "axis1": "解読型",
+    "axis2": "俯瞰型",
+    "axis3": "統率型",
+    "axis4": "転換型"
+  },
+  "visualProfile": {
+    "genderPresentation": "female",
+    "ageRange": "early to mid 20s",
+    "characterArchetype": "versatile planner",
+    "characterDescription": "知的で自信に満ちた若い女性。常にタブレットを手に状況を分析し、柔軟にプランを組み替えながらチームを導く万能型の戦略家。",
+    "outfitDescription": "スマートカジュアルなブレザーにグラフィックTシャツ、フィットしたパンツ、実用的なシューズ。常にタブレットやプランニングツールを携帯。",
+    "colorPalette": ["#2E8B57", "#B87333", "#FFF8F0"],
+    "pose": "片手を腰に当て、もう片方の手でタブレット上のプランを確認しているポーズ",
+    "expression": "自信に満ちた柔軟な表情",
+    "background": "複数のスクリーンとプランが並ぶ作戦室"
+  },
+  "imagePrompt": {
+    "ja": "スマートなブレザーにグラフィックTシャツを合わせた自信のある若い女性プランナー、タブレットでプランを確認している、エメラルドとブロンズの色調、自信に満ちた適応力のある表情、複数のスクリーンが並ぶ脱出ゲームの作戦室、アニメ風キャラクターイラスト",
+    "en": "A confident young female planner in a smart blazer over a graphic tee, reviewing plans on a tablet, emerald and bronze tones, confident adaptable expression, strategy room with multiple screens escape setting, anime style character illustration"
+  },
+  "negativePrompt": {
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+  }
+}

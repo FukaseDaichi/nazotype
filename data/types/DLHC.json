@@ -1,0 +1,50 @@
+{
+  "typeId": "DLHC",
+  "typeCode": "DLHC",
+  "typeName": "小謎キラー",
+  "tagline": "気づいたら3つ解いてて、4つ目に手を出してる。",
+  "summary": "一つの謎に留まらず、次々とパズルを解き進めていく高速回転タイプ。解けた瞬間に声を上げてチームに共有し、すぐ次の問題に取りかかる。脱出ゲームの「得点マシン」とも言える存在です。",
+  "detailDescription": "脱出ゲームが始まると、まず手近なパズルに飛びつき、驚くべきスピードで解き始めます。一つ解けたら「できた！」と声を上げてすぐ次へ。詰まったと感じた瞬間に別のパズルへ切り替える判断の速さが持ち味で、チーム全体の進行スピードを底上げしてくれます。解くたびに結果を周囲に発信してくれるので、チームの進捗が常に可視化されます。個々のパズルへの集中力は高いですが、あえて深追いしない潔さもあり、制限時間のあるゲームでは特にその真価を発揮します。次から次へと謎を攻略していく姿は、チームに勢いとリズムを生み出します。",
+  "strengths": [
+    "個々のパズルを驚異的なスピードで処理し、チーム全体の進行を加速させる",
+    "詰まった問題を素早く見切り、解ける問題から効率よく攻略できる",
+    "解答のたびに声を上げて共有し、チームの進捗状況を常に明確にする"
+  ],
+  "cautions": [
+    "スピード重視で解くため、ケアレスミスが発生しやすい傾向がある",
+    "個々の解答に深く踏み込まないため、メタパズルへの手がかりを見逃すことがある",
+    "簡単な問題を次々取ってしまい、難問が後回しになりがち"
+  ],
+  "recommendedRole": ["小謎の高速処理", "解答済み情報の即時発信"],
+  "compatibility": {
+    "summary": "俯瞰型で全体を見渡す仲間がいると、自分が高速で解いた結果をメタパズルに統合してもらえるため、スピードと戦略の両立が可能になります。熟考型の仲間が難問をじっくり担当してくれれば、自分は得意な高速処理に専念できます。",
+    "goodWithTypeCodes": ["ABHN", "ABTN"],
+    "goodWithDescription": "俯瞰型・熟考型の仲間が全体構造の把握と難問の深掘りを担い、自分は小さな謎を次々と片付けるスピード担当として力を発揮できる相互補完の関係です。"
+  },
+  "shareText": "謎解きタイプ診断の結果は「小謎キラー」でした！気づいたら3つ解いてて、4つ目に手を出してる。\n\n#謎解きタイプ診断",
+  "axis": {
+    "axis1": "解読型",
+    "axis2": "局所型",
+    "axis3": "発信型",
+    "axis4": "転換型"
+  },
+  "visualProfile": {
+    "genderPresentation": "male",
+    "ageRange": "late teens",
+    "characterArchetype": "speed-solver",
+    "characterDescription": "次々とパズルを解き進める、エネルギッシュな若き高速ソルバー。解けた瞬間の興奮を隠さず、すぐに次の挑戦へ向かう。",
+    "outfitDescription": "グラフィックパーカー、ジーンズ、リストバンド、首にかけたヘッドホン。動きやすくカジュアルな装い。",
+    "colorPalette": ["#4CAF50", "#FF8C42", "#FAFAFA"],
+    "pose": "テーブルに身を乗り出し、複数のパズルを前に目を輝かせるポーズ",
+    "expression": "興奮気味で目が鋭い、ひらめきの瞬間の表情",
+    "background": "様々な仕掛けやパズルが並ぶ脱出ゲームの部屋"
+  },
+  "imagePrompt": {
+    "ja": "グラフィックパーカーを着たエネルギッシュな若い男性パズルソルバー、テーブルに身を乗り出して複数のパズルに取り組んでいる、鮮やかなグリーンとオレンジのアクセント、興奮した鋭い表情、パズルだらけの脱出ゲーム空間、アニメ風キャラクターイラスト",
+    "en": "An energetic young male puzzle solver in a graphic hoodie, leaning forward over a table full of puzzles, bright green and orange accents, excited sharp expression, puzzle-filled escape room setting, anime style character illustration"
+  },
+  "negativePrompt": {
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+  }
+}

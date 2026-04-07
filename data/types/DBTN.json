@@ -1,0 +1,50 @@
+{
+  "typeId": "DBTN",
+  "typeCode": "DBTN",
+  "typeName": "沈黙の切り札",
+  "tagline": "ずっと黙ってたのに、一言で全部ひっくり返す。",
+  "summary": "静かに全体を観察し続け、ここぞという瞬間に的確な一言でチームの方向を変える戦略家。多くを語らないからこそ、その言葉には絶大な重みがあり、チーム全体の舵を取る存在です。",
+  "detailDescription": "脱出ゲームでは一歩引いた場所から、チームメンバーの動きや集まってくる情報を静かに観察しています。自ら積極的に声を上げることは少ないですが、頭の中では常に全体の戦略を練り上げており、チームが迷いや行き詰まりに直面した瞬間に「こっちだ」と明確な指針を示します。その判断は深い熟考に裏打ちされているため精度が高く、チーム全体が一斉に動き出すきっかけとなります。普段は寡黙でも、全員のことをよく見ているからこそ、誰がどこで力を発揮できるかも把握しています。沈黙の中に最大の戦略を秘めた、チームにとって頼もしき参謀です。",
+  "strengths": [
+    "発言が少ないからこそ一言一言に重みがあり、チームの方向を決定づける",
+    "一歩引いた視点からチーム全体の死角を見抜く観察力",
+    "チーム全体の動きを再整列させる戦略的な判断力"
+  ],
+  "cautions": [
+    "沈黙が関心のなさと誤解されてしまうことがある",
+    "重要な気づきを共有するタイミングが遅れがちになることがある",
+    "何を考えているか分からず、チームが不安を感じることがある"
+  ],
+  "recommendedRole": ["全体戦略の静かな調整", "重要局面での決定的判断"],
+  "compatibility": {
+    "summary": "行動型で局所型の仲間がいると、自分が静かに観察している間に現場の情報を積極的に集めてきてくれるため、戦略の精度が高まります。特に転換型の仲間は、自分の深い思考に新しい視点を加え、戦略の幅を広げてくれる存在です。",
+    "goodWithTypeCodes": ["ALTC", "ALHC"],
+    "goodWithDescription": "行動型・局所型・転換型の仲間が現場で機動力を発揮してくれることで、自分は全体の戦略設計に集中でき、静かな司令塔として最大の力を発揮できます。"
+  },
+  "shareText": "謎解きタイプ診断の結果は「沈黙の切り札」でした！ずっと黙ってたのに、一言で全部ひっくり返す。\n\n#謎解きタイプ診断",
+  "axis": {
+    "axis1": "解読型",
+    "axis2": "俯瞰型",
+    "axis3": "統率型",
+    "axis4": "熟考型"
+  },
+  "visualProfile": {
+    "genderPresentation": "male",
+    "ageRange": "mid to late 20s",
+    "characterArchetype": "silent strategist",
+    "characterDescription": "寡黙ながら全てを見通す眼を持つ青年。影のような静けさの中に絶対的な存在感を放ち、一言で場の空気を変える力を持つ。",
+    "outfitDescription": "ダークなロングコートにハイカラーシャツ、ミニマリストなスタイル。装飾を排した洗練されたシルエット。",
+    "colorPalette": ["#2D2D2D", "#8B2E3B", "#4A4A4A"],
+    "pose": "影の中で腕を組み、鋭い眼差しで全体を見渡しているポーズ",
+    "expression": "冷静で見透かすような表情",
+    "background": "部屋を見下ろす薄暗い観察ポイント"
+  },
+  "imagePrompt": {
+    "ja": "ハイカラーのダークロングコートを着た寡黙な若い男性戦略家、影の中で腕を組んで全体を見渡している、ダークチャコールとディープレッドの色調、冷静で鋭い表情、薄暗い脱出ゲームの観察ポイント、アニメ風キャラクターイラスト",
+    "en": "A silent young male strategist in a dark long coat with high collar, standing in shadow with arms crossed surveying the scene, dark charcoal and deep red tones, calm penetrating expression, dimly lit escape room observation point, anime style character illustration"
+  },
+  "negativePrompt": {
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+  }
+}

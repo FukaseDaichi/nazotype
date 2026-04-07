@@ -1,0 +1,50 @@
+{
+  "typeId": "ABTN",
+  "typeCode": "ABTN",
+  "typeName": "現場の総監督",
+  "tagline": "気づいたら全員、この人の指示で動いてる。",
+  "summary": "現場を自ら歩いて確認しながら、全体を見渡してチームを指揮する戦略的リーダー。冷静な判断力と的確な役割分担で、チームのポテンシャルを最大限に引き出す司令塔です。",
+  "detailDescription": "脱出ゲームが始まると、まず自分の足で現場を確認し、空間の全体像を掴みます。そのうえで、各メンバーの得意分野を見極めて役割を振り分け、チーム全体が効率よく動けるように指示を出します。机上の空論ではなく、自ら現場を見た経験に基づいて判断するため、指示の的確さに定評があります。時間に追われる場面でも冷静さを失わず、構造的に物事を整理して次の一手を打てるのが強みです。チームメンバーからは頼りにされる存在で、まさに脱出ゲームにおける「司令塔」です。",
+  "strengths": [
+    "メンバーの強みを見極め、適材適所の役割分担ができる",
+    "時間に追われる中でも冷静に構造的な指揮を維持できる",
+    "自ら現場を確認した上で判断するため、戦略的意思決定の精度が高い"
+  ],
+  "cautions": [
+    "プレッシャーがかかると、指示が細かくなりすぎることがある",
+    "緊急性が高い場面で、秩序を優先してスピードが犠牲になることがある",
+    "コミュニケーションのバランスを欠くと、メンバーが窮屈に感じることがある"
+  ],
+  "recommendedRole": ["チーム全体の指揮・役割分担", "進行管理・戦略判断"],
+  "compatibility": {
+    "summary": "局所型の集中力を持つ仲間がいると、自分が描く全体戦略を細部まで実行してもらえるため、指揮と実行のバランスが取れます。特に転換型の柔軟さを持つパートナーが、自分の計画に予想外の変化への対応力を加えてくれると、盤石のチーム運営が可能になります。",
+    "goodWithTypeCodes": ["DLTC", "DLHC"],
+    "goodWithDescription": "局所型・転換型の仲間が細部の実行と柔軟な対応を担ってくれるので、自分は安心して全体の指揮と戦略判断に集中できる相互補完の関係です。"
+  },
+  "shareText": "謎解きタイプ診断の結果は「現場の総監督」でした！気づいたら全員、この人の指示で動いてる。\n\n#謎解きタイプ診断",
+  "axis": {
+    "axis1": "行動型",
+    "axis2": "俯瞰型",
+    "axis3": "統率型",
+    "axis4": "熟考型"
+  },
+  "visualProfile": {
+    "genderPresentation": "male",
+    "ageRange": "mid 20s",
+    "characterArchetype": "strategic-commander",
+    "characterDescription": "冷静沈着で頼りがいのある指揮官タイプの青年。自ら現場を歩きながらも、常にチーム全体の動きを把握している。権威と落ち着きを兼ね備えた佇まい。",
+    "outfitDescription": "構造的なデザインのジャケット、ダークタートルネック、きちんとしたパンツ。ダークネイビーにゴールドのアクセント。",
+    "colorPalette": ["#1E2A4A", "#C9A84C", "#E8E0D0"],
+    "pose": "背筋を伸ばして立ち、腕を後ろに組むか、指示を出すように手を伸ばしているポーズ",
+    "expression": "威厳があり、落ち着いた表情",
+    "background": "脱出ゲーム全体を見渡せる指令センターのような場所"
+  },
+  "imagePrompt": {
+    "ja": "ゴールドのアクセントが入ったダークネイビーの構造的なジャケットを着た指揮官タイプの若い男性、背筋を伸ばしてチームに指示を出している、威厳ある落ち着いた表情、脱出ゲームの指令センター、アニメ風キャラクターイラスト",
+    "en": "A commanding young male in a structured dark navy jacket with gold accents, standing tall directing a team, authoritative composed expression, escape room command center setting, anime style character illustration"
+  },
+  "negativePrompt": {
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+  }
+}

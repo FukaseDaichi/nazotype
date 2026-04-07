@@ -1,0 +1,50 @@
+{
+  "typeId": "DLHN",
+  "typeCode": "DLHN",
+  "typeName": "実況解読者",
+  "tagline": "「えーとこれは……あっわかった！」が止まらない。",
+  "summary": "一つの暗号に腰を据え、自分の思考過程を声に出しながら解き進めていくタイプ。チームメイトに解読の流れを共有することで、周囲も一緒に答えに近づける、脱出ゲームの「実況解説者」です。",
+  "detailDescription": "脱出ゲームでは、暗号や文章読解のパズルを見つけると、その場に留まってじっくりと取り組みます。最大の特徴は、考えていることをそのまま口に出すこと。「この記号は前のパターンと同じだから……いや待って、ここだけ法則が違う」というように、思考の過程をリアルタイムで共有してくれます。この実況スタイルのおかげで、チームメンバーは途中から合流しても状況を把握でき、論理の穴があれば早期に気づけます。一つの問題に深く没頭する集中力があり、複雑な暗号ほど本領を発揮します。焦らず丁寧に、しかし確実に正解へたどり着く信頼の解読者です。",
+  "strengths": [
+    "思考過程を言語化し、チーム全体が解読状況を把握できるようにする",
+    "論理を一歩ずつ声に出して確認することで、ミスを早期に発見できる",
+    "複雑な暗号や文章問題に対して、深い集中力で粘り強く取り組める"
+  ],
+  "cautions": [
+    "思考を逐一言語化するため、解答のテンポがゆっくりになりがち",
+    "一つの暗号に没頭していると、探索者が持ってきた新しい手がかりに気づきにくい",
+    "一つの推論ルートに入り込むと、別の可能性への切り替えが遅れることがある"
+  ],
+  "recommendedRole": ["暗号・読解の解読", "思考過程の実況・共有"],
+  "compatibility": {
+    "summary": "行動型・俯瞰型の仲間が広い範囲を探索して手がかりを集めてくれると、自分は安心して解読に専念できます。特に転換型の柔軟さを持つパートナーがいると、自分が一つの推論に固執しそうなときに新しい視点を提供してくれるため、停滞を防げます。",
+    "goodWithTypeCodes": ["ABHC", "ABTC"],
+    "goodWithDescription": "行動型・俯瞰型の仲間が探索と情報収集を担い、自分は局所的な解読に集中できる相互補完の関係。発信型同士なら情報共有もスムーズに進みます。"
+  },
+  "shareText": "謎解きタイプ診断の結果は「実況解読者」でした！「えーとこれは……あっわかった！」が止まらない。\n\n#謎解きタイプ診断",
+  "axis": {
+    "axis1": "解読型",
+    "axis2": "局所型",
+    "axis3": "発信型",
+    "axis4": "熟考型"
+  },
+  "visualProfile": {
+    "genderPresentation": "female",
+    "ageRange": "early 20s",
+    "characterArchetype": "mystic-scholar",
+    "characterDescription": "暗号と文章に向き合いながら、自分の思考を言葉にして周囲と共有する知的な女性解読者。静かな書斎に座りながらも、口元には常に言葉が紡がれている。",
+    "outfitDescription": "ロングカーディガンにブラウス、スカート、履き慣れた靴、丸眼鏡。学者のような落ち着いた装い。",
+    "colorPalette": ["#6A4C93", "#B8A9C9", "#E8E0F0"],
+    "pose": "机に向かい、片手を顎に添えて暗号を見つめるポーズ",
+    "expression": "集中しつつも何かを語りかけるような、思索的な表情",
+    "background": "暗号の書かれた紙が散らばる書斎風の脱出ゲーム空間"
+  },
+  "imagePrompt": {
+    "ja": "ロングカーディガンと丸眼鏡を着けた思索的な若い女性学者、机に座り暗号を解読している、周囲に紙が散らばる、ディープパープルとラベンダーの色調、思考中の表情、書斎風の脱出ゲーム空間、アニメ風キャラクターイラスト",
+    "en": "A thoughtful young female scholar in a long cardigan and glasses, sitting at a desk solving ciphers, surrounded by papers, deep purple and lavender tones, contemplative expression, study room escape setting, anime style character illustration"
+  },
+  "negativePrompt": {
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+  }
+}

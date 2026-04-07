@@ -1,0 +1,50 @@
+{
+  "typeId": "ALTN",
+  "typeCode": "ALTN",
+  "typeName": "エリアの主",
+  "tagline": "「ここは任せて」で黙々やって、本当に全部終わらせる人。",
+  "summary": "担当エリアを完璧に攻略する職人気質の探索者。黙々と一つのゾーンに向き合い、複雑な仕掛けも根気強く解き明かす、チームの信頼を一身に集める堅実な存在です。",
+  "detailDescription": "脱出ゲームでは、任された区画を自分の責任範囲として徹底的にやり切るタイプです。派手に動き回るよりも、一つのエリアに腰を据えて丁寧に探索・解析を進めます。複雑な多段階のギミックや、組み合わせが必要な錠前に対しても、焦らず一手ずつ確認しながら攻略していきます。チームへの報告は「終わったよ」という結果ベースが多く、過程を逐一共有するタイプではありませんが、その分、任せたエリアは確実に攻略されるという絶大な安心感をチームにもたらします。プレッシャーがかかる終盤でも冷静さを失わず、最後まで自分の仕事をやり遂げる頼もしい存在です。",
+  "strengths": [
+    "担当エリアをほぼ完璧な精度で探索・攻略しきる徹底力がある",
+    "プレッシャーの中でも冷静さを保ち、焦らず着実に進められる",
+    "複雑な多段階ギミックや連動する仕掛けを確実に処理できる"
+  ],
+  "cautions": [
+    "行き詰まっても自力で解決しようとし、助けを求めるのが遅れがち",
+    "攻略が完了するまで途中経過を共有しないことがある",
+    "自分のエリアに集中するあまり、チーム全体の進捗を把握しにくくなる"
+  ],
+  "recommendedRole": ["エリア担当・完全攻略", "複雑ギミックの解除"],
+  "compatibility": {
+    "summary": "俯瞰型の仲間が全体の進行を管理してくれると、自分は安心して目の前のエリアに没頭できます。特に転換型の柔軟さを持つ人が「そろそろ別のところ手伝って」と声をかけてくれると、チーム全体の効率が一気に上がります。",
+    "goodWithTypeCodes": ["DBTC", "DBHC"],
+    "goodWithDescription": "俯瞰型・転換型の仲間が全体を見渡して指示やサポートをしてくれるので、自分は目の前の攻略に専念でき、チーム全体がバランスよく機能する関係です。"
+  },
+  "shareText": "謎解きタイプ診断の結果は「エリアの主」でした！「ここは任せて」で黙々やって、本当に全部終わらせる人。\n\n#謎解きタイプ診断",
+  "axis": {
+    "axis1": "行動型",
+    "axis2": "局所型",
+    "axis3": "統率型",
+    "axis4": "熟考型"
+  },
+  "visualProfile": {
+    "genderPresentation": "male",
+    "ageRange": "mid 20s",
+    "characterArchetype": "craftsman",
+    "characterDescription": "職人気質の青年。寡黙だが確実に仕事をこなす信頼感がある。道具を使いこなし、複雑な仕掛けにも動じない落ち着きを持つ。",
+    "outfitDescription": "シンプルなシャツの上にワークエプロン、ツールベルト、袖をまくった姿。実用的で飾り気のないスタイル。",
+    "colorPalette": ["#6B8FA3", "#3D5A6E", "#C0C8D0"],
+    "pose": "しゃがみ込んで錠前の仕掛けに取り組んでいるポーズ",
+    "expression": "冷静で決意に満ちた表情",
+    "background": "歯車や錠前が並ぶ機械仕掛けの部屋"
+  },
+  "imagePrompt": {
+    "ja": "ワークエプロンとツールベルトを身につけた集中力のある若い男性の職人、精巧な錠前の仕掛けに取り組んでいる、冷静で決意に満ちた表情、スチールブルーの色調、機械仕掛けの脱出ゲームの部屋、アニメ風キャラクターイラスト",
+    "en": "A focused young male craftsman in a work apron with a tool belt, working on an intricate lock mechanism, calm determined expression, steel blue tones, mechanical escape room setting, anime style character illustration"
+  },
+  "negativePrompt": {
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+  }
+}

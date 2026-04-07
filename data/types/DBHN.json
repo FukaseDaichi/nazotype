@@ -1,0 +1,50 @@
+{
+  "typeId": "DBHN",
+  "typeCode": "DBHN",
+  "typeName": "伏線回収マシン",
+  "tagline": "バラバラの答えが、この人の頭でひとつになる。",
+  "summary": "チームが集めた断片的な情報を頭の中でつなぎ合わせ、全体像を浮かび上がらせる理論構築の達人。散らばった手がかりの間に隠れた関係性を見出し、壮大な仮説を組み立ててチームに共有します。",
+  "detailDescription": "脱出ゲームでは一歩引いた視点から全体の流れを観察し、仲間が次々と発見してくる手がかりを頭の中で体系的に整理していきます。他のメンバーが個別の謎に取り組んでいる間に、それぞれの解答がどう結びつくのかを考え続け、大謎へのアプローチを構築するのが最大の強みです。思いついた仮説はすぐにチームに共有し、ホワイトボードに図を描くように論理の流れを説明します。じっくり考え抜いてから発言するため、一度口にした仮説の精度は高く、チームの方向性を大きく左右する存在です。全てのピースがはまる瞬間を追い求める、謎解きチームの知の建築家です。",
+  "strengths": [
+    "断片的な証拠から包括的な理論を組み立てる構築力",
+    "別々のパズル間に他の人が見逃す接点を見出す洞察力",
+    "複雑な関係性をチームが理解できるように説明する共有力"
+  ],
+  "cautions": [
+    "十分なデータが揃う前に理論を構築しすぎてしまうことがある",
+    "自分の仮説に愛着を持ちすぎて、矛盾する証拠を受け入れにくくなることがある",
+    "行動が必要な場面でも思考モードに留まりがちになることがある"
+  ],
+  "recommendedRole": ["大謎の統合・メタ推理", "仮説構築と共有"],
+  "compatibility": {
+    "summary": "行動型で局所型の仲間がいると、自分が俯瞰で考えている間に現場から次々と新しい手がかりを届けてくれるため、仮説の精度と速度が格段に上がります。特に転換型の仲間は、自分が見落としていた別の可能性に気づかせてくれる貴重な存在です。",
+    "goodWithTypeCodes": ["ALHC", "ALTC"],
+    "goodWithDescription": "行動型・局所型の仲間が現場で手がかりを集め、自分がそれを統合して全体像を描くことで、探索と理論構築が同時に進む理想的な連携が生まれます。"
+  },
+  "shareText": "謎解きタイプ診断の結果は「伏線回収マシン」でした！バラバラの答えが、この人の頭でひとつになる。\n\n#謎解きタイプ診断",
+  "axis": {
+    "axis1": "解読型",
+    "axis2": "俯瞰型",
+    "axis3": "発信型",
+    "axis4": "熟考型"
+  },
+  "visualProfile": {
+    "genderPresentation": "male",
+    "ageRange": "mid 20s",
+    "characterArchetype": "architect-thinker",
+    "characterDescription": "知的で落ち着いた青年。断片的な情報を体系的につなぎ合わせ、ホワイトボードに全体像を描き出す理論構築者。静かな情熱を秘めた眼差しで、謎の全貌を見通す。",
+    "outfitDescription": "構築的なカーディガンにカラー付きシャツ、チノパン、アーキテクト風のメガネを着用。整った知的なスタイル。",
+    "colorPalette": ["#3A5BA0", "#D4A055", "#8A8A8A"],
+    "pose": "ホワイトボードの前に立ち、図を指さしながら仮説を説明するポーズ",
+    "expression": "インスピレーションに満ちた集中した表情",
+    "background": "大きなダイアグラムボードと結びついた手がかりがある部屋"
+  },
+  "imagePrompt": {
+    "ja": "構築的なカーディガンとアーキテクト風メガネを身につけた知的な若い男性、ホワイトボードの前でダイアグラムをつなげている、青とアンバーの色調、インスピレーションに満ちた集中した表情、ダイアグラムボードのある脱出ゲームの部屋、アニメ風キャラクターイラスト",
+    "en": "A thoughtful young male in a structured cardigan and architect glasses, standing at a whiteboard connecting diagrams, blue and amber tones, inspired focused expression, escape room with diagram board setting, anime style character illustration"
+  },
+  "negativePrompt": {
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "typeId": "DLTN",
+  "typeCode": "DLTN",
+  "typeName": "人間検算機",
+  "tagline": "この人が「合ってる」と言えば、合ってる。",
+  "summary": "一つの問題を徹底的に検証し、確実な正解だけをチームに渡す精密検証タイプ。この人が「合っている」と言えば、チーム全員が安心して次に進める。脱出ゲームにおける「品質保証の番人」です。",
+  "detailDescription": "脱出ゲームでは、与えられたパズルや暗号に対して一切の妥協なく正確さを追求します。解答を出す前に何度も条件を見直し、論理に矛盾がないか、見落としがないかを丹念に確認します。チーム内では品質管理の要として機能し、他のメンバーが出した答えに対しても冷静にチェックを入れてくれます。この人が「それで合っている」と太鼓判を押した解答は、チーム全員が信頼して行動に移せます。派手さはないものの、誤答によるタイムロスを未然に防ぎ、チームの解答精度を着実に底上げする、縁の下の力持ちです。",
+  "strengths": [
+    "解答のミス率が極めて低く、チームに確実な正解を提供できる",
+    "他メンバーの解答も冷静に検証し、誤答による手戻りを未然に防ぐ",
+    "検証済みの確かな情報を積み上げ、後続の推理の土台を作れる"
+  ],
+  "cautions": [
+    "完璧を求めるあまり、解答の提出が遅れてチーム全体のペースに影響することがある",
+    "確信が持てるまで答えを出さないため、時間制限下では思い切りが必要な場面もある",
+    "慎重すぎる姿勢が、行動派のチームメンバーにもどかしく映ることがある"
+  ],
+  "recommendedRole": ["解答の検証・品質保証", "条件整理・精密な読解"],
+  "compatibility": {
+    "summary": "行動型・俯瞰型の仲間が手がかりを次々と集めてきてくれると、自分はそれを一つずつ正確に検証する役割に専念できます。転換型の柔軟さを持つパートナーがいれば、自分の慎重さと相手のスピード感が合わさり、正確かつテンポの良い進行が実現します。",
+    "goodWithTypeCodes": ["ABTC", "ABHC"],
+    "goodWithDescription": "行動型・俯瞰型の仲間が広範囲の探索と柔軟な発想を担当し、自分はその成果を正確に検証・精査する分業体制が生まれる相互補完の関係です。"
+  },
+  "shareText": "謎解きタイプ診断の結果は「人間検算機」でした！この人が「合ってる」と言えば、合ってる。\n\n#謎解きタイプ診断",
+  "axis": {
+    "axis1": "解読型",
+    "axis2": "局所型",
+    "axis3": "統率型",
+    "axis4": "熟考型"
+  },
+  "visualProfile": {
+    "genderPresentation": "female",
+    "ageRange": "mid 20s",
+    "characterArchetype": "precision-engineer",
+    "characterDescription": "一切のミスを許さない正確さで、チームの解答品質を守る女性検証者。冷静で落ち着いた佇まいの中に、揺るぎない信念が宿る。",
+    "outfitDescription": "きちんとしたボタンシャツにベスト、ペンシルスカート、小さなイヤリング。清潔感のある端正な装い。",
+    "colorPalette": ["#5B7FA5", "#E0E8F0", "#FFFFFF"],
+    "pose": "作業台に向かい、細部を丁寧に確認しているポーズ",
+    "expression": "冷静で正確さを感じさせる、穏やかだが隙のない表情",
+    "background": "機械仕掛けの計器が整然と並ぶ、清潔な脱出ゲームの部屋"
+  },
+  "imagePrompt": {
+    "ja": "きちんとしたベストとボタンシャツを着た精密な若い女性エンジニア、作業台に向かい仕掛けを丁寧に検証している、スチールブルーとホワイトの色調、冷静で正確な表情、計器が整然と並ぶ清潔な脱出ゲーム空間、アニメ風キャラクターイラスト",
+    "en": "A precise young female engineer in a neat vest and button-up shirt, carefully verifying a mechanism, steel blue and white tones, calm precise expression, clean organized escape room with instruments, anime style character illustration"
+  },
+  "negativePrompt": {
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+  }
+}
