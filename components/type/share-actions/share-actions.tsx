@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const X_SHARE_HASHTAGS = ["マダミスタイプ診断"] as const;
+const X_SHARE_HASHTAGS = ["謎解きタイプ診断"] as const;
 
 type ShareActionsProps = {
   id?: string;

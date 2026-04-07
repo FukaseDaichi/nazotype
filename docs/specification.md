@@ -661,7 +661,7 @@ SEO / シェア方針:
 
 - SNS 共有の URL は常に公開ページ `/types/[typeCode]`
 - 結果 URL `/types/[typeCode]/[key]` はコピー導線でのみ扱う
-- 診断完了直後に書き込んだ cookie が一致する場合、ヒーロー上部に「共有」ボタンを表示する
+- 診断完了直後に書き込んだ `localStorage` の値が一致する場合、ヒーロー上部に「共有」ボタンを表示する
 - それ以外の shared page では「自分でも診断する」を表示する
 
 ### 13.5 シェアと OGP
@@ -686,11 +686,7 @@ SEO / シェア方針:
 - `app/robots.ts`
 - `lib/json-ld.ts`
 
-絶対 URL の基準は次の優先順で決まる。
-
-- `NEXT_PUBLIC_SITE_URL`
-- Vercel 環境変数 `VERCEL_PROJECT_PRODUCTION_URL` または `VERCEL_URL`
-- `http://localhost:3000`
+絶対 URL の基準は `NEXT_PUBLIC_SITE_URL` を使用する。未設定時は `http://localhost:3000`。
 
 ## 14. データ仕様
 
@@ -757,9 +753,9 @@ SEO / シェア方針:
 
 ### 15.1 パフォーマンス
 
-- 公開ページはできる限り静的配信する
-- `/`、`/diagnosis`、`/types/[typeCode]` は静的生成される
-- `/types/[typeCode]/[key]` は cookie 判定のため動的ルートになる
+- 全ページを静的エクスポート（`output: 'export'`）し、Netlify で配信する
+- `/`、`/diagnosis`、`/types/[typeCode]` はビルド時に静的生成される
+- `/types/[typeCode]/[key]` は Netlify リライトと Client Component で処理する（サーバーサイド API は使用しない）
 
 ### 15.2 保存とプライバシー
 

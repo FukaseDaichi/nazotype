@@ -59,8 +59,7 @@ export type TypeData = {
   detailDescription: string;
   strengths: string[];
   cautions: string[];
-  recommendedPlaystyle: string[];
-  suitableRoles: string[];
+  recommendedRole: string[];
   compatibility: Compatibility;
   shareText: string;
   axis: {

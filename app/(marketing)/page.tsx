@@ -6,7 +6,7 @@ import { SITE_DESCRIPTION, SITE_KEYWORDS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "マダミスタイプ診断",
+    absolute: "謎解きタイプ診断",
   },
   description: SITE_DESCRIPTION,
   keywords: [...SITE_KEYWORDS],

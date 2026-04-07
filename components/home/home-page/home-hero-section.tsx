@@ -11,18 +11,18 @@ import styles from "./home-page.module.css";
 const FEATURE_SUMMARIES = [
   {
     number: "01",
-    title: "憑依のさせ方を分析",
-    copy: "あなた自身というより、プレイの仕方や考え方に着目",
+    title: "謎解きでの動き方を分析",
+    copy: "あなた自身というより、チーム内での行動傾向に着目",
   },
   {
     number: "02",
-    title: "分析手法は統計心理学ベースのAI",
-    copy: "質問内容や傾向もAIによる分析結果",
+    title: "4軸16タイプで役割を可視化",
+    copy: "行動・視野・共有・判断の4軸であなたの役割を分類",
   },
   {
     number: "03",
     title: "結果ページと共有",
-    copy: "強み・注意点・相性・向いている役回りまで一気に",
+    copy: "強み・注意点・相性・担いやすい役割まで一気に",
   },
 ] as const;
 
@@ -41,7 +41,7 @@ export function HomeHeroSection({
         <div>
           <div className={styles.mastheadLogo}>{SITE_NAME}</div>
           <div className={styles.mastheadSub}>
-            Murder Mystery Personality Diagnosis
+            Puzzle-Solving Role Diagnosis
           </div>
         </div>
         <nav aria-label="メインナビ">
@@ -61,10 +61,10 @@ export function HomeHeroSection({
 
       <section className={styles.hero} aria-labelledby="hero-heading">
         <div className={styles.caseEnvelope}>
-          <span className={styles.stampConfidential}>Confidential</span>
+          <span className={styles.stampConfidential}>Mission Briefing</span>
 
           <p className={styles.fileMeta}>
-            Case File #RCF-2025 / Murder Mystery Behavioral Analysis
+            Mission File #NZT-2026 / Puzzle-Solving Role Analysis
           </p>
 
           <h1 id="hero-heading" className={styles.caseTitle}>
@@ -73,13 +73,14 @@ export function HomeHeroSection({
             {SITE_TAGLINE}
           </h1>
 
-          <p className={styles.handnote}>- 卓上での立ち回りを解析せよ</p>
+          <p className={styles.handnote}>- 謎解きでの立ち回りを解析せよ</p>
 
           <p className={styles.caseBody}>
-            32問の答えから、マーダーミステリー卓での発言・推理・感情・進め方のクセを
-            4軸で見立てます。一般的な性格診断ではなく、卓上での立ち回りに特化した
-            16タイプ診断です。自分のマダミスタイプを知ることで、卓の相性や
-            おすすめマダミス選びのヒントも見つかります。
+            32問の答えから、リアル脱出ゲームや謎解きイベントでの
+            行動・視野・共有・判断のクセを4軸で見立てます。
+            一般的な性格診断ではなく、チーム内での役割傾向に特化した
+            16タイプ診断です。自分の得意な役割を知ることで、
+            チーム編成や相性のヒントも見つかります。
           </p>
 
           <div className={styles.statsRow}>

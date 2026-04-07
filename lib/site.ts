@@ -1,20 +1,20 @@
-export const SITE_NAME = "マダミスタイプ診断";
-export const SITE_SHORT_NAME = "マダミスタイプ";
+export const SITE_NAME = "謎解きタイプ診断";
+export const SITE_SHORT_NAME = "謎解きタイプ";
 export const SITE_DESCRIPTION =
-  "マダミスタイプ診断は、マーダーミステリーでの立ち回りを32問から4軸16タイプで見える化するサービスです。自分のマダミスタイプや、おすすめマダミス選びのヒントがわかります。";
+  "謎解きタイプ診断は、リアル脱出ゲームや謎解きイベントでの立ち回りを32問から4軸16タイプで見える化するサービスです。自分の得意な役割や、チームの相性がわかります。";
 export const SITE_KEYWORDS = [
-  "マダミスタイプ診断",
-  "マダミスタイプ",
-  "おすすめマダミス",
-  "マーダーミステリー",
-  "マダミス診断",
+  "謎解きタイプ診断",
+  "謎解きタイプ",
+  "リアル脱出ゲーム",
+  "謎解き診断",
+  "脱出ゲーム相性",
   "16タイプ診断",
 ] as const;
-export const SITE_TAGLINE = "立ち回りを、16タイプで見える化する。";
+export const SITE_TAGLINE = "役割を、16タイプで見える化する。";
 export const SITE_THEME_COLOR = "#f7f2ed";
 export const SITE_BACKGROUND_COLOR = "#f7f2ed";
 export const LINE_STAMP_URL = process.env.NEXT_PUBLIC_LINE_STAMP_URL ?? "";
-export const DRAFT_STORAGE_KEY = "madamistype:diagnosis-draft:v1";
+export const DRAFT_STORAGE_KEY = "nazotype:diagnosis-draft:v1";
 
 const PALETTE_COLOR_MAP: Record<string, string> = {
   beige: "#D9C6B0",
@@ -76,14 +76,6 @@ export function getSiteOrigin() {
 
   if (explicitOrigin) {
     return explicitOrigin;
-  }
-
-  const vercelOrigin = normalizeOrigin(
-    process.env.VERCEL_PROJECT_PRODUCTION_URL ?? process.env.VERCEL_URL,
-  );
-
-  if (vercelOrigin) {
-    return vercelOrigin;
   }
 
   return "http://localhost:3000";

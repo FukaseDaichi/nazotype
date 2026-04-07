@@ -5,7 +5,7 @@ import { getQuestionMaster } from "@/lib/data";
 
 export const metadata: Metadata = {
   description:
-    "32問に答えて、マーダーミステリーでの立ち回りタイプを診断します。",
+    "32問に答えて、謎解きイベントでの立ち回りタイプを診断します。",
   robots: {
     index: false,
     follow: false,

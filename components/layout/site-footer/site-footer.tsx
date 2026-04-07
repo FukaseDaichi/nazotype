@@ -12,9 +12,9 @@ export function SiteFooter({ className }: SiteFooterProps) {
   return (
     <footer className={footerClassName}>
       <p className={styles.copy}>
-        © Whte Franc / Murder Mystery Behavioral Analysis System
+        © Whte Franc / Puzzle-Solving Role Diagnosis System
       </p>
-      <p className={styles.copy}>Powered by 4-Axis Personality Framework</p>
+      <p className={styles.copy}>Powered by 4-Axis Role Framework</p>
     </footer>
   );
 }

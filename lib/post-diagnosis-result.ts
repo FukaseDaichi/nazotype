@@ -1,46 +1,60 @@
-export const POST_DIAGNOSIS_RESULT_COOKIE_NAME = "madamistype-post-diagnosis";
+export const POST_DIAGNOSIS_RESULT_STORAGE_KEY = "nazotype:post-diagnosis-result";
 export const RECOMMENDATION_FEEDBACK_FORM_URL =
   "https://forms.gle/7NFV8uz2WahKkroTA";
 
-const POST_DIAGNOSIS_RESULT_COOKIE_MAX_AGE = 60 * 60 * 24 * 365 * 10;
+type PostDiagnosisResult = {
+  typeCode: string;
+  key: string;
+  timestamp: number;
+};
 
-export function getPostDiagnosisResultCookieValue(typeCode: string, key: string) {
-  return `${typeCode}:${key}`;
+export function getPostDiagnosisResultValue(typeCode: string, key: string): PostDiagnosisResult {
+  return { typeCode, key, timestamp: Date.now() };
 }
 
-export function buildPostDiagnosisResultCookie(typeCode: string, key: string) {
-  return [
-    `${POST_DIAGNOSIS_RESULT_COOKIE_NAME}=${getPostDiagnosisResultCookieValue(typeCode, key)}`,
-    `Max-Age=${POST_DIAGNOSIS_RESULT_COOKIE_MAX_AGE}`,
-    `Path=/types/${typeCode}/${key}`,
-    "SameSite=Lax",
-  ].join("; ");
-}
-
-export function writePostDiagnosisResultCookie(typeCode: string, key: string) {
-  if (typeof document === "undefined") {
+export function writePostDiagnosisResult(typeCode: string, key: string) {
+  if (typeof window === "undefined") {
     return;
   }
 
-  document.cookie = buildPostDiagnosisResultCookie(typeCode, key);
+  try {
+    localStorage.setItem(
+      POST_DIAGNOSIS_RESULT_STORAGE_KEY,
+      JSON.stringify(getPostDiagnosisResultValue(typeCode, key)),
+    );
+  } catch {
+    // localStorage が使えない環境では無視
+  }
 }
 
-export function buildClearPostDiagnosisResultCookie(
-  typeCode: string,
-  key: string,
-) {
-  return [
-    `${POST_DIAGNOSIS_RESULT_COOKIE_NAME}=`,
-    "Max-Age=0",
-    `Path=/types/${typeCode}/${key}`,
-    "SameSite=Lax",
-  ].join("; ");
+export function readPostDiagnosisResult(): PostDiagnosisResult | null {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  try {
+    const raw = localStorage.getItem(POST_DIAGNOSIS_RESULT_STORAGE_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw) as PostDiagnosisResult;
+  } catch {
+    return null;
+  }
 }
 
-export function clearPostDiagnosisResultCookie(typeCode: string, key: string) {
-  if (typeof document === "undefined") {
+export function isPostDiagnosisResultMatch(typeCode: string, key: string): boolean {
+  const stored = readPostDiagnosisResult();
+  if (!stored) return false;
+  return stored.typeCode === typeCode && stored.key === key;
+}
+
+export function clearPostDiagnosisResult() {
+  if (typeof window === "undefined") {
     return;
   }
 
-  document.cookie = buildClearPostDiagnosisResultCookie(typeCode, key);
+  try {
+    localStorage.removeItem(POST_DIAGNOSIS_RESULT_STORAGE_KEY);
+  } catch {
+    // localStorage が使えない環境では無視
+  }
 }

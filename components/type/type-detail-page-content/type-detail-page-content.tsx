@@ -86,14 +86,9 @@ const SECTION_HEADINGS: Record<string, TypeSectionHeading> = {
     title: "詳しい見立て",
     headingId: "overview-heading",
   },
-  playstyle: {
-    eyebrow: "Playstyle",
-    title: "向いている立ち回り",
-    headingId: "playstyle-heading",
-  },
   roles: {
     eyebrow: "Roles",
-    title: "向いている役回り",
+    title: "担いやすい役割",
     headingId: "roles-heading",
   },
   compatibility: {
@@ -166,16 +161,10 @@ export function TypeDetailPageContent({
           content={typeData.detailDescription}
         />
 
-        <div className={styles.twoCol}>
-          <TypeListSection
-            heading={SECTION_HEADINGS.playstyle}
-            items={typeData.recommendedPlaystyle}
-          />
-          <TypeListSection
-            heading={SECTION_HEADINGS.roles}
-            items={typeData.suitableRoles}
-          />
-        </div>
+        <TypeListSection
+          heading={SECTION_HEADINGS.roles}
+          items={typeData.recommendedRole}
+        />
 
         <TypeCompatibilitySection
           heading={SECTION_HEADINGS.compatibility}

@@ -48,7 +48,7 @@ export function TypeDetailHeroSection({
     <>
       <header className={styles.mast}>
         <Link href="/" prefetch={false} className={styles.mastLogo}>
-          Murder Mystery Types
+          謎解きタイプ診断
         </Link>
         <Link
           href={isShared ? publicUrl : "/"}
@@ -130,7 +130,7 @@ export function TypeDetailHeroSection({
                 rel="noreferrer"
                 className={styles.secondaryButton}
               >
-                おすすめマダミス
+                おすすめを教える
               </a>
             </>
           ) : isShared ? (
@@ -145,7 +145,7 @@ export function TypeDetailHeroSection({
         </div>
         {shouldShowPostDiagnosisActions ? (
           <p className={styles.heroActionNote}>
-            タイプごとのおすすめマダミスを集計したいので、よければフォームで教えてください。
+            タイプごとのおすすめ謎解きイベントを集計したいので、よければフォームで教えてください。
           </p>
         ) : null}
       </section>

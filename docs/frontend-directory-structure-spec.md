@@ -130,7 +130,7 @@ output/
 - マスタ読み込み
 - 共有キー
 - metadata / URL 補助
-- `localStorage` / cookie のラッパー
+- `localStorage` のラッパー
 
 ### 3.4 `data/`
 
@@ -186,5 +186,5 @@ output/
 ## 6. 現行構成の注意点
 
 - `/types` 一覧ルートは存在しない
-- shared page は cookie 利用のため動的ルートになる
+- shared page は Netlify リライト + クライアントサイドレンダリングで処理する（サーバーサイド API 不使用）
 - OGP 生成スキルの publish 先と、アプリ本体の配信用 OGP 参照先は別である

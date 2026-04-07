@@ -16,7 +16,7 @@ import {
   getQuestionsForPage,
 } from "@/lib/diagnosis";
 import { readDiagnosisDraft, writeDiagnosisDraft } from "@/lib/draft-storage";
-import { writePostDiagnosisResultCookie } from "@/lib/post-diagnosis-result";
+import { writePostDiagnosisResult } from "@/lib/post-diagnosis-result";
 import { createShareKey } from "@/lib/share-key";
 import type { AnswerValue, AnswersRecord, QuestionMaster } from "@/lib/types";
 
@@ -261,7 +261,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
 
     const result = calculateDiagnosisResult(questionMaster, answers);
     const key = createShareKey(userName, result.axisSummaries);
-    writePostDiagnosisResultCookie(result.typeCode, key);
+    writePostDiagnosisResult(result.typeCode, key);
     router.push(`/types/${result.typeCode}/${key}`);
   }
 
