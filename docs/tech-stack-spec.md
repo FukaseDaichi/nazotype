@@ -17,7 +17,7 @@
 | アプリ基盤 | Next.js `16.2.1` | App Router、metadata files、SSG/動的ルート |
 | UI | React `19.2.4` | ページ描画、クライアント側診断フロー |
 | 言語 | TypeScript | 型定義、ロジック実装 |
-| スタイル | Tailwind CSS `4` + CSS Modules | 共通トークンと画面固有スタイル |
+| スタイル | Tailwind CSS `4`（主）+ CSS Modules（補助） | Tailwind-first。CSS Module は擬似要素・多層背景等に限定 |
 | 検証 | ESLint `9` | ソースコード lint |
 | データ | JSON ファイル | 質問マスタ、タイプマスタ |
 | 画像生成スキル | Python | NanoBanana 連携、アセット生成 |
