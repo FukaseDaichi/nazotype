@@ -2,13 +2,15 @@
 
 ## 1. 文書の目的
 
-本書は、謎解きタイプ診断の UI デザイン方針を定義する設計仕様書である。
-リアル脱出ゲーム・協力型謎解きの世界観に合わせた新デザインの方向性を定める。
+本書は、謎解きタイプ診断の全画面 UI デザインをゼロから定義する。
+「スクリーンショットを撮って共有したくなる診断結果」を最上位目標とし、
+協力型謎解き・脱出ゲームの世界観を**モダンなゲーム UI** の文法で表現する。
 
 参照:
 
 - [specification.md](./specification.md)
-- [frontend-directory-structure-spec.md](./frontend-directory-structure-spec.md)
+- [type-design-spec.md](./type-design-spec.md)
+- [tech-stack-spec.md](./tech-stack-spec.md)
 
 ---
 
@@ -16,28 +18,45 @@
 
 ### 2-1. コンセプト名
 
-**「ミッションボード」— 脱出前の作戦会議室**
+**「プレイヤーセレクト」— 次のミッション、あなたの役割は？**
 
-リアル脱出ゲームの開始前、チームが集まってブリーフィングを受ける**作戦会議室**がモチーフ。壁にはミッションボードが掛かり、チームメンバーの得意分野が整理されている。暗い室内に、手がかりを照らす琥珀色の光と、装置のシアンの発光が差す。
+協力型ゲーム開始前の**キャラクター選択画面**がモチーフ。
+暗い画面に浮かぶプレイヤーカード、光るステータスバー、チーム編成のアイコン。
+自分の強みを「発見」し、チームでの役割を「装備」する感覚をつくる。
 
-### 2-2. ムードキーワード
+> 旧デザイン（ノワール調ケースファイル）から完全に脱却する。
+> 紙テクスチャ、封筒、スタンプ、テープ装飾、走り書きメモ——これらはすべて廃止。
 
-- **没入 × 親しみ**：ダークベースで脱出ゲーム会場の空気を作りつつ、色彩と丸みで威圧感を消す
-- **発見の光**：暗闇の中で手がかりを見つけた瞬間の高揚感を、アンバーのアクセントで表す
-- **チームの装備画面**：ゲームのキャラ選択・ステータス画面のような「自分の強みを確認する楽しさ」
-- **設計図と手書きメモ**：ブループリントの正確さと、走り書きの臨場感の同居
+### 2-2. デザイン原則
 
-### 2-3. 旧テーマとの対応
-
-| マダミス版（旧） | 謎解き版（新） |
+| 原則 | 説明 |
 | --- | --- |
-| ケースファイル・封筒 | ミッションボード・作戦会議室 |
-| 被疑者カード | チームメンバーカード |
-| CONFIDENTIAL スタンプ | MISSION BRIEFING / MISSION ASSIGNED バッジ（画面で使い分け） |
-| ノワール・セピア基調 | ミッドナイトブルー基調 |
-| 古紙テクスチャ | ブループリントグリッド |
-| 万年筆ペン先アイコン | 発光ドット / キーモチーフ |
-| rose / plum 差し色 | amber / cyan 差し色 |
+| **ダーク & クリーン** | 暗い背景に余計な装飾を載せない。テクスチャではなくグロウで奥行きを出す |
+| **カード = キャラクター** | タイプは「プレイヤーカード」として一貫した形で見せる |
+| **光で導く** | amber で発見、cyan でインタラクション、coral でアクション。色が次の行動を示す |
+| **シェア映えが最優先** | 結果画面はスクリーンショットされる前提で設計する |
+| **親指で完結** | すべての操作がモバイルの片手持ちで完結する |
+
+### 2-3. ムードリファレンス
+
+| リファレンス | 取り入れる要素 |
+| --- | --- |
+| 協力型ゲームのキャラ選択画面 | ダーク UI、光るアクセント、ステータス表示 |
+| 16personalities.com | キャラクター + 一言 + 傾向バーの構成 |
+| Spotify Wrapped | 1 枚絵の情報密度、シェア前提のビジュアル |
+
+### 2-4. 旧デザインからの変更点
+
+| 廃止するもの | 代わりに使うもの |
+| --- | --- |
+| ケースファイル封筒（`.caseEnvelope`） | フラットなダークカード |
+| CONFIDENTIAL スタンプ | 控えめなバッジテキスト |
+| 紙テクスチャ・方眼・マージンライン | 無地の表面 + ラジアルグロウ |
+| テープ装飾（`::before`/`::after`） | `rounded-xl` のクリーンなエッジ |
+| セピア / ノワール色（`#8b6914` 等） | ミッドナイトブルー + amber/cyan |
+| `--rcf-*` CSS 変数体系 | `@theme` 登録の Tailwind トークン |
+| Special Elite / Caveat フォント | IBM Plex Mono / Klee One |
+| CSS Module 主体のスタイリング | Tailwind-first、CSS Module は補助のみ |
 
 ---
 
@@ -45,164 +64,85 @@
 
 ### 3-1. 基本原則：Tailwind-first
 
-本プロジェクトのスタイリングは **Tailwind CSS を第一手段** とし、CSS は Tailwind だけでは表現できない場面に限って補助的に使う。
-
 ```
 Tailwind ユーティリティ（JSX 内）  ← 大多数のスタイルはここ
       ↓ 足りないときだけ
-CSS Module（*.module.css）        ← 複雑な装飾・擬似要素
+CSS Module（*.module.css）        ← 複雑なグロウ・擬似要素
       ↓ 全体共通だけ
-globals.css                       ← トークン定義・ベーススタイル・@keyframes
+globals.css                       ← トークン定義・ベーススタイル
 ```
 
 ### 3-2. `@theme` によるトークン登録
 
-Tailwind CSS v4 では `@theme` ディレクティブでデザイントークンを登録すると、自動的にユーティリティクラスとして使えるようになる。本プロジェクトのカラー・フォント・スペーシング・角丸・シャドウ等はすべて `globals.css` 内の `@theme` で登録し、JSX 側では Tailwind クラスで参照する。
+Tailwind CSS v4 の `@theme` ディレクティブですべてのデザイントークンを登録する。
+JSX 側では Tailwind クラスで参照する。旧来の `--rcf-*` 変数はすべて廃止。
 
 ```css
 /* globals.css */
 @import "tailwindcss";
 
 @theme {
-  /* カラー */
   --color-midnight-950: #080d18;
   --color-midnight-900: #0e1525;
   --color-midnight-800: #162038;
   --color-midnight-700: #1e2d52;
   --color-midnight-600: #2a3d6b;
+  --color-midnight-500: #3a5590;
+  --color-amber-300: #f5c84a;
   --color-amber-400: #e8a832;
+  --color-amber-500: #d49420;
+  --color-amber-600: #b07a15;
+  --color-cyan-300: #5dd8e6;
   --color-cyan-400: #2ec4d6;
+  --color-cyan-500: #1aabb8;
+  --color-cyan-600: #148e9a;
+  --color-coral-400: #f07060;
   --color-coral-500: #e65a4a;
+  --color-coral-600: #d14838;
+  --color-paper-50: #faf7f2;
   --color-paper-100: #f2ebe0;
-  /* ... 他トークンも同様 */
+  --color-paper-200: #e5dace;
+  --color-paper-300: #c9bfb0;
 
-  /* フォント */
   --font-body: "Noto Sans JP", "Hiragino Sans", sans-serif;
   --font-display: "Shippori Mincho B1", "Yu Mincho", serif;
   --font-mono: "IBM Plex Mono", monospace;
   --font-note: "Klee One", cursive;
   --font-heading: "Bebas Neue", sans-serif;
 
-  /* スペーシング */
-  --spacing-1: 4px;
-  --spacing-2: 8px;
-  --spacing-3: 12px;
-  /* ... */
-
-  /* 角丸 */
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
 
-  /* シャドウ */
   --shadow-sm: 0 2px 10px rgba(14, 21, 37, 0.25);
   --shadow-md: 0 12px 32px rgba(14, 21, 37, 0.3);
+  --shadow-glow-amber: 0 0 20px rgba(232, 168, 50, 0.15);
+  --shadow-glow-cyan: 0 0 20px rgba(46, 196, 214, 0.15);
 }
 ```
 
-これにより、JSX 内で以下のように参照できる:
+### 3-3. CSS Module の使いどころ
 
-```jsx
-<div className="bg-midnight-800 border border-midnight-600 rounded-xl p-5 shadow-sm">
-  <h2 className="font-display text-amber-400 text-xl tracking-tight">...</h2>
-  <p className="text-[--color-text-subtle] text-sm">...</p>
-</div>
-```
-
-### 3-3. Tailwind で行うこと
-
-以下は **すべて Tailwind ユーティリティクラスで JSX に直接書く**。CSS ファイルに分離しない。
-
-| 領域 | 例 |
-| --- | --- |
-| レイアウト | `flex`, `grid`, `grid-cols-3`, `gap-4`, `items-center` |
-| サイズ・スペーシング | `w-full`, `max-w-[40rem]`, `mx-auto`, `p-5`, `mt-8` |
-| カラー | `bg-midnight-800`, `text-amber-400`, `border-midnight-600` |
-| タイポグラフィ | `font-display`, `text-xl`, `tracking-tight`, `leading-tight` |
-| 角丸・ボーダー | `rounded-xl`, `border`, `border-midnight-600` |
-| シャドウ | `shadow-sm`, `shadow-md` |
-| レスポンシブ | `md:grid-cols-2`, `lg:grid-cols-4` |
-| 状態 | `hover:bg-midnight-700`, `focus-visible:ring-2`, `focus-visible:ring-cyan-400` |
-| トランジション | `transition-all`, `duration-200`, `ease-out` |
-| 表示制御 | `hidden`, `sm:block`, `sr-only` |
-
-### 3-4. CSS Module で行うこと
-
-以下は Tailwind だけでは表現しにくいため、**コンポーネントごとの CSS Module**（`*.module.css`）に書く。
+CSS Module は以下の場合**のみ**使う:
 
 | 用途 | 理由 |
 | --- | --- |
-| 多層背景テクスチャ | ブループリントグリッド、方眼線など `background` の複数重ね合わせ |
-| 擬似要素の装飾 | `::before` / `::after` によるテープ風装飾、マージンライン、スタンプバッジ |
-| `@keyframes` 参照 | コンポーネント固有のアニメーション適用 |
-| `data-*` 属性セレクタ | `[data-tone="5"]` など動的バリアント |
-| 極端に長くなる className の回避 | 1 要素に 15 クラス以上つく場合は CSS Module のほうが可読性で勝る |
+| ラジアルグロウ背景 | 複数 `radial-gradient` の重ね合わせ |
+| `@keyframes` 適用 | アニメーション定義の参照 |
+| 1 要素に 15 クラス以上つく場合 | 可読性のため |
 
-CSS Module 内でも **色やスペーシングは Tailwind のトークン変数を参照する**。ハードコーディングしない。
+CSS Module 内でも色・サイズは `var(--color-midnight-800)` 等のトークン変数で参照する。値の直書き禁止。
 
-```css
-/* good: トークン参照 */
-.blueprintGrid::before {
-  background-size: 32px 32px;
-  background-image:
-    linear-gradient(var(--color-midnight-600) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-midnight-600) 1px, transparent 1px);
-  opacity: 0.06;
-}
-
-/* bad: 値を直書き */
-.blueprintGrid::before {
-  background-image: linear-gradient(#2a3d6b 1px, transparent 1px);
-}
-```
-
-### 3-5. `globals.css` で行うこと
-
-`globals.css` の責務は最小限に絞る。
-
-| 用途 | 内容 |
-| --- | --- |
-| `@theme` | デザイントークンの登録（カラー、フォント、スペーシング、角丸、シャドウ） |
-| ベーススタイル | `body` の背景（多層グラデーション＋グリッド）、`::selection`、`a` のリセット |
-| `@keyframes` | 全体で共有するアニメーション定義（`fadeSlideUp`, `pulseGlow` 等） |
-| アクセシビリティ | `.skip-link`、`:focus-visible` のグローバル定義、`prefers-reduced-motion` |
-
-### 3-6. 旧 globals.css クラスの移行方針
-
-現行コードには `.surface-panel`、`.primary-button`、`.eyebrow` 等のグローバル CSS クラスが多数あるが、新デザインではこれらを **Tailwind ユーティリティの組み合わせに置き換える**。
-
-移行パターン:
-
-| 旧クラス | 新しい表現方法 |
-| --- | --- |
-| `.page-shell` | `max-w-[40rem] mx-auto px-4` |
-| `.primary-button` | `inline-flex items-center gap-3 min-h-[52px] rounded-lg px-6 py-3 bg-coral-500 text-white font-bold shadow-sm hover:bg-coral-600 hover:-translate-y-px transition-all` |
-| `.secondary-button` | `inline-flex items-center gap-3 min-h-[52px] rounded-lg px-6 py-3 border border-cyan-500 text-cyan-400 font-bold hover:bg-cyan-500/10 hover:-translate-y-px transition-all` |
-| `.text-field` | `w-full min-h-[52px] rounded-lg border border-midnight-600 bg-midnight-800 px-4 py-3 transition-all focus-visible:border-cyan-400 focus-visible:ring-4 focus-visible:ring-cyan-400/15` |
-| `.eyebrow` | `font-mono text-xs font-bold uppercase tracking-widest text-amber-400` |
-| `.section-title` | `font-display text-2xl leading-tight tracking-tight` |
-| `.surface-panel` | CSS Module に残す（`::after` 擬似要素を使うため） |
-| `.briefing-panel` | CSS Module に残す（多層テクスチャ背景のため） |
-
-繰り返し現れるユーティリティの組み合わせが冗長になる場合は、**React コンポーネントとして切り出す**（CSS クラスとして抽出するのではなく）。
-
-```tsx
-// CSS クラスではなく React コンポーネントで再利用する
-function SectionTitle({ children }: { children: React.ReactNode }) {
-  return <h2 className="font-display text-2xl leading-tight tracking-tight">{children}</h2>;
-}
-```
-
-### 3-7. 避けるべきパターン
+### 3-4. 避けるべきパターン
 
 | やらないこと | 理由 |
 | --- | --- |
-| 色やスペーシングを CSS に直書き | `@theme` 経由の Tailwind クラスを使えば一元管理できる |
-| 単純な hover/focus を CSS に書く | `hover:`, `focus-visible:` バリアントで足りる |
-| レスポンシブ切り替えを `@media` で CSS に書く | `sm:`, `md:`, `lg:` プレフィックスで足りる |
-| `@apply` で Tailwind をまとめる | コンポーネント化で対処する。`@apply` は globals.css の最小限に留める |
-| globals.css に新しい見た目クラスを追加する | Tailwind ユーティリティまたは CSS Module で対処する |
+| `::before`/`::after` による装飾線・テープ・スタンプ | 旧テーマの残滓。クリーンに保つ |
+| 背景にグリッドテクスチャを敷く | テクスチャレスで統一 |
+| `position: absolute` による装飾配置 | レイアウトフローで解決する |
+| 色やスペーシングを CSS に直書き | Tailwind トークンで一元管理 |
+| `@apply` でユーティリティをまとめる | React コンポーネント化で対処 |
 
 ---
 
@@ -214,429 +154,843 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 
 | トークン | 値 | 用途 |
 | --- | --- | --- |
-| `midnight-950` | `#080d18` | 最深部、ボディ背景グラデーション端 |
+| `midnight-950` | `#080d18` | 最深部 |
 | `midnight-900` | `#0e1525` | ページ背景 |
-| `midnight-800` | `#162038` | カード・パネル背景 |
-| `midnight-700` | `#1e2d52` | 浮き上がった面・ホバー |
-| `midnight-600` | `#2a3d6b` | ボーダー・区切り線 |
-| `midnight-500` | `#3a5590` | 無効状態の枠 |
+| `midnight-800` | `#162038` | カード・パネル |
+| `midnight-700` | `#1e2d52` | ホバー・浮き上がり |
+| `midnight-600` | `#2a3d6b` | ボーダー |
+| `midnight-500` | `#3a5590` | 無効状態 |
 
-**Paper（ブリーフィング面）**
-
-| トークン | 値 | 用途 |
-| --- | --- | --- |
-| `paper-50` | `#faf7f2` | 最明面・ヒーローカード |
-| `paper-100` | `#f2ebe0` | ブリーフィングボード面 |
-| `paper-200` | `#e5dace` | 控えめな明面 |
-| `paper-300` | `#c9bfb0` | 紙面のサブテキスト |
-
-**Amber（発見・ゴールド）**
+**Amber（発見・ブランド）**
 
 | トークン | 値 | 用途 |
 | --- | --- | --- |
-| `amber-300` | `#f5c84a` | ハイライト・バッジ |
-| `amber-400` | `#e8a832` | ブランドカラー主調 |
+| `amber-300` | `#f5c84a` | ハイライト |
+| `amber-400` | `#e8a832` | ブランド主調 |
 | `amber-500` | `#d49420` | 強調時 |
-| `amber-600` | `#b07a15` | 暗い面上のアクセント |
+| `amber-600` | `#b07a15` | 暗面アクセント |
 
-**Cyan（装置・メカニズム）**
+**Cyan（インタラクション）**
 
 | トークン | 値 | 用途 |
 | --- | --- | --- |
-| `cyan-300` | `#5dd8e6` | 発光表現・選択状態 |
-| `cyan-400` | `#2ec4d6` | インタラクティブ要素 |
+| `cyan-300` | `#5dd8e6` | 発光・選択 |
+| `cyan-400` | `#2ec4d6` | UI 要素 |
 | `cyan-500` | `#1aabb8` | ボタン・リンク |
 | `cyan-600` | `#148e9a` | 押下時 |
 
-**Coral（アクション・始動）**
+**Coral（アクション）**
 
 | トークン | 値 | 用途 |
 | --- | --- | --- |
-| `coral-300` | `#f58d80` | ソフトな注意 |
 | `coral-400` | `#f07060` | 通常 |
-| `coral-500` | `#e65a4a` | 主 CTA |
+| `coral-500` | `#e65a4a` | CTA |
 | `coral-600` | `#d14838` | CTA ホバー |
 
-**ユーティリティ**
+**Paper（明面ヒーロー専用）**
 
 | トークン | 値 | 用途 |
 | --- | --- | --- |
-| `success` | `#3cb97a` | 成功・完了 |
-| `warning` | `#e8a832` | 注意（amber-400 共用） |
-| `danger` | `#e65a4a` | エラー（coral-500 共用） |
+| `paper-50` | `#faf7f2` | タイプヒーロー背景 |
+| `paper-100` | `#f2ebe0` | 控えめ明面 |
+| `paper-200` | `#e5dace` | サブ要素 |
+| `paper-300` | `#c9bfb0` | 明面サブテキスト |
 
 ### 4-2. セマンティックトークン
 
-| トークン | 参照先 | 用途 |
+| トークン | 値 | 用途 |
 | --- | --- | --- |
 | `--color-bg` | `midnight-900` | ページ背景 |
-| `--color-surface` | `midnight-800` | カード・パネル |
-| `--color-surface-raised` | `midnight-700` | 浮き上がりパネル |
-| `--color-briefing` | `paper-100` | 明面（ヒーロー・ブリーフィング） |
-| `--color-briefing-strong` | `paper-50` | 最明面 |
-| `--color-line` | `midnight-600` | ボーダー |
-| `--color-text` | `#e8e4dc` | 暗面上テキスト |
-| `--color-text-subtle` | `#8b9ab5` | 暗面上サブテキスト |
-| `--color-text-on-briefing` | `#1a2240` | 明面上テキスト |
-| `--color-text-on-briefing-subtle` | `#5a6478` | 明面上サブテキスト |
-| `--color-brand` | `amber-400` | ブランド主調 |
-| `--color-brand-strong` | `amber-500` | ブランド強調 |
+| `--color-surface` | `midnight-800` | カード |
+| `--color-surface-hover` | `midnight-700` | カードホバー |
+| `--color-border` | `midnight-600` | ボーダー |
+| `--color-text` | `#e8e4dc` | ダーク面テキスト |
+| `--color-text-muted` | `#8b9ab5` | ダーク面サブテキスト |
+| `--color-text-on-light` | `#1a2240` | 明面テキスト |
+| `--color-text-on-light-muted` | `#5a6478` | 明面サブテキスト |
+| `--color-brand` | `amber-400` | ブランド |
 | `--color-accent` | `cyan-400` | アクセント |
-| `--color-accent-soft` | `cyan-400` / 12% | 薄いアクセント背景 |
-| `--color-action-primary` | `coral-500` | 主ボタン |
-| `--color-action-primary-hover` | `coral-600` | 主ボタンホバー |
-| `--color-action-secondary` | `cyan-500` | 副ボタン |
-| `--color-action-secondary-hover` | `cyan-600` | 副ボタンホバー |
-| `--color-focus-ring` | `cyan-400` | フォーカスリング |
+| `--color-cta` | `coral-500` | 主 CTA |
+| `--color-cta-hover` | `coral-600` | CTA ホバー |
 
 ### 4-3. 運用ルール
 
-- ページ全体はミッドナイトブルーのダーク基調
-- ブリーフィングカード（ヒーロー、ミッションボード）だけ明面にする
-- 主 CTA は coral、補助アクションは cyan
-- 発見・強調は amber、状態表示は cyan
-- 診断フローの 5 段階スケールでは肯定側を amber（warm）、否定側を cyan（cool）で分ける
-- ダーク面上のテキストは WCAG AA 以上のコントラストを確保する
+- ページ全体はダーク基調（`midnight-900`）
+- 明面（`paper-50`）を使うのは**タイプ詳細ページのヒーロー領域だけ**
+- CTA は coral、副次アクションは cyan
+- 発見・強調・ラベルは amber
+- ダーク面テキストは WCAG AA（4.5:1）以上
 
 ---
 
 ## 5. タイポグラフィ
 
-### 5.1 ルートフォント
-
-`app/layout.tsx` で読み込む。
-
-- `Noto Sans JP` — 日本語本文
-- `Shippori Mincho B1` — 日本語ディスプレイ・引用
-
-### 5.2 画面固有フォント
-
-トップ / 診断 / タイプ詳細では次を追加で使う。
-
-- `Bebas Neue` — 英字大見出し
-- `IBM Plex Mono` — コード・ラベル・メタ情報（旧 Special Elite の代替）
-- `Noto Serif JP` — 日本語の格調ある見せ方
-- `Klee One` — 手書きメモ・フィールドノート風注記（旧 Caveat の代替）
-
-### 5.3 使い分け
+### 5-1. フォントスタック
 
 | 用途 | フォント | 意図 |
 | --- | --- | --- |
-| 英字大見出し | `Bebas Neue` | インパクト、ミッション感 |
-| タイプコード・軸コード | `IBM Plex Mono` | 装置の表示板、データ的な正確さ |
-| 英字ラベル・メタ | `IBM Plex Mono` | ブループリントの注記 |
 | 日本語本文 | `Noto Sans JP` | 可読性 |
-| 日本語ディスプレイ | `Shippori Mincho B1` | タイプ名・タグラインの格調 |
-| 日本語説明文で格調が必要 | `Noto Serif JP` | 診断結果の説明 |
-| 手書きメモ | `Klee One` | フィールドノート、走り書き |
+| 日本語ディスプレイ | `Shippori Mincho B1` | タイプ名・見出しの格調 |
+| 英字大見出し | `Bebas Neue` | インパクト |
+| コード・ラベル | `IBM Plex Mono` | データ的な正確さ |
+| 日本語説明（格調） | `Noto Serif JP` | 詳しい見立ての文章 |
+| 手書きメモ風 | `Klee One` | タグラインのアクセント |
+
+### 5-2. サイズスケール
+
+| 名前 | サイズ | 用途 |
+| --- | --- | --- |
+| hero | `clamp(2rem, 6vw, 3.5rem)` | ヒーロー見出し |
+| h1 | `clamp(1.5rem, 4vw, 2.25rem)` | ページ見出し |
+| h2 | `1.25rem`（`text-xl`） | セクション見出し |
+| body | `1rem`（`text-base`） | 本文 |
+| small | `0.875rem`（`text-sm`） | 補足・メタ |
+| xs | `0.75rem`（`text-xs`） | ラベル・バッジ |
 
 ---
 
-## 6. 背景と空間表現
+## 6. 空間と表面
 
 ### 6-1. ページ背景
 
-`body` は次の重ね合わせで構成する。
+`body` はシンプルな構成。テクスチャ・グリッドは使わない。
 
-1. `midnight-950` → `midnight-900` の縦グラデーション（部屋の奥行き）
-2. 左上に amber の極薄ラジアルグラデーション（光源の暗示）
-3. 右下に cyan の極薄ラジアルグラデーション（装置の発光）
-4. **ブループリントグリッド**：`midnight-600` / 6% の 32×32px 格子（旧グリッドの代替）
+```css
+body {
+  background:
+    radial-gradient(ellipse at 15% 10%, rgba(232, 168, 50, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 90%, rgba(46, 196, 214, 0.03) 0%, transparent 50%),
+    linear-gradient(to bottom, #080d18, #0e1525);
+}
+```
 
-### 6-2. ブリーフィング面
+微かなラジアルグロウが光源を暗示するだけ。表面はフラットに保ち、カードの重なりで奥行きを出す。
 
-ヒーローやミッションボードなど明るい面では:
+### 6-2. 表面レベル
 
-- `paper-100` ベース
-- 薄い方眼線テクスチャ（`paper-200` / 40%、16×16px 格子）
-- 左マージンラインを amber に変更（旧 red 代替）
+| レベル | 背景 | ボーダー | 影 | 用途 |
+| --- | --- | --- | --- | --- |
+| Ground | `midnight-900` | — | — | ページ背景 |
+| Surface | `midnight-800` | `midnight-600` 1px | `shadow-sm` | カード・セクション |
+| Raised | `midnight-700` | `midnight-600` 1px | `shadow-md` | ホバー・強調 |
+| Light | `paper-50` | — | — | タイプヒーローのみ |
+
+すべてのカード: `rounded-xl`（16px）で統一。
+
+### 6-3. 明面と暗面の切り替え
+
+明面はタイプ詳細ヒーローでのみ使用する。切り替わりは `py-12` 以上の余白で自然に分離する。
+明面から暗面への遷移にグラデーション帯は使わない（硬い切り替えでゲーム UI 感を出す）。
 
 ---
 
 ## 7. 共通 UI パターン
 
-### 7.1 Tailwind ユーティリティで表現するパターン
+### 7-1. ボタン
 
-以下は globals.css にクラスを作らず、JSX 内の Tailwind クラスで直接表現する。
+**Primary**（主要アクション）:
+```
+inline-flex items-center justify-center gap-2
+min-h-[52px] rounded-lg px-8 py-3
+bg-coral-500 text-white font-bold text-base
+shadow-sm
+hover:bg-coral-600 hover:-translate-y-0.5 hover:shadow-md
+active:translate-y-0
+transition-all duration-150
+```
 
-| パターン | Tailwind クラス例 |
-| --- | --- |
-| ページシェル | `max-w-[40rem] mx-auto px-4 relative` |
-| プライマリボタン | `inline-flex items-center gap-3 min-h-[52px] rounded-lg px-6 py-3 bg-coral-500 text-white font-bold shadow-sm hover:bg-coral-600 hover:-translate-y-px transition-all` |
-| セカンダリボタン | `inline-flex items-center gap-3 min-h-[52px] rounded-lg px-6 py-3 border border-cyan-500 text-cyan-400 font-bold hover:bg-cyan-500/10 hover:-translate-y-px transition-all` |
-| テキストフィールド | `w-full min-h-[52px] rounded-lg border border-midnight-600 bg-midnight-800 px-4 py-3 transition-all focus-visible:border-cyan-400 focus-visible:ring-4 focus-visible:ring-cyan-400/15 outline-none` |
-| アイブロウ | `font-mono text-xs font-bold uppercase tracking-widest text-amber-400` |
-| セクション見出し | `font-display text-2xl leading-tight tracking-tight` |
-| ヒーローグリッド | `grid gap-5 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-start` |
-| メトリクスカード | `flex flex-col gap-1 rounded-lg bg-midnight-700 p-3` |
-| メトリクス値 | `font-heading text-[1.7rem] leading-none text-amber-400` |
-| プログレストラック | `h-1 rounded-full bg-midnight-700 overflow-hidden` |
-| プログレスフィル | `h-full origin-left bg-gradient-to-r from-cyan-400 to-amber-400` |
-| タイプカード | `flex flex-col gap-2 rounded-lg border border-midnight-600 bg-midnight-800 p-4 hover:bg-midnight-700 transition-colors` |
-| タイプチップ | `flex flex-col gap-1 rounded-lg border border-midnight-600 bg-midnight-800 p-3 hover:-translate-y-px transition-all` |
+**Secondary**（副次アクション）:
+```
+inline-flex items-center justify-center gap-2
+min-h-[52px] rounded-lg px-8 py-3
+border border-cyan-400 text-cyan-400 font-bold text-base
+hover:bg-cyan-400/10 hover:-translate-y-0.5
+active:translate-y-0
+transition-all duration-150
+```
 
-繰り返しが多い組み合わせは React コンポーネントで再利用する（セクション 3-6 参照）。
+**Ghost**（テキストリンク風）:
+```
+text-cyan-400 text-sm font-medium
+hover:text-cyan-300 hover:underline underline-offset-4
+transition-colors duration-150
+```
 
-### 7.2 CSS Module に残すパターン
+全ボタン共通:
+- タッチターゲット **48×48px** 以上
+- `focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-midnight-900`
+- `disabled:opacity-40 disabled:pointer-events-none`
 
-以下は擬似要素や多層背景が必要なため、CSS Module（`*.module.css`）で定義する。
+### 7-2. カード
 
-| パターン | 理由 |
-| --- | --- |
-| `surfacePanel` | `::after` で内側ボーダーを描画する |
-| `briefingPanel` | 多層テクスチャ背景 + 左マージンライン（`::before`） |
-| `illustrationFrame` | プレースホルダーの多層グラデーション背景 |
-| `blueprintGrid` | `body::before` のブループリントグリッドオーバーレイ |
-| `stampBadge` | 回転 + 半透明の「MISSION ASSIGNED」バッジ（`transform` + `opacity` の組み合わせ） |
-| `tapeDecoration` | テープ風装飾の `::before` |
+**基本カード**:
+```
+rounded-xl border border-midnight-600 bg-midnight-800 p-5
+shadow-sm
+hover:bg-midnight-700 hover:shadow-md hover:-translate-y-0.5
+transition-all duration-200
+```
 
-CSS Module 内でも色・スペーシングは `var(--color-midnight-800)` 等のトークン変数で参照する。
+**タイプカード**（タイプ一覧用・小）:
+```
+rounded-xl border border-midnight-600 bg-midnight-800 p-4
+flex flex-col items-center gap-2 text-center
+hover:bg-midnight-700 hover:border-amber-400/30 hover:-translate-y-1
+transition-all duration-200
+```
 
-### 7.3 アイコン・モチーフ
+### 7-3. セクション構成
 
-テーマに沿ったモチーフをアクセントとして使う。
+すべてのコンテンツセクションは統一構成:
 
-| モチーフ | 使いどころ | 意味 |
-| --- | --- | --- |
-| 鍵 / 錠前 | ヘッダー、CTA 付近 | 解錠＝自分を知る |
-| 歯車 | 軸の説明、メカニズム的表示 | 噛み合い＝チーム連携 |
-| コンパス | 4 軸ダイアグラム | 方向性＝傾向 |
-| 電球 | 発見・ヒント | ひらめき＝気づき |
-| 地図ピン | タイプ一覧 | 位置づけ＝自分の居場所 |
+```tsx
+<section className="space-y-4">
+  <p className="font-mono text-xs font-bold uppercase tracking-widest text-amber-400">
+    {eyebrow}  // 例: "Strengths"
+  </p>
+  <h2 className="font-display text-xl leading-tight">
+    {title}    // 例: "強み"
+  </h2>
+  <div>{content}</div>
+</section>
+```
 
-モチーフは SVG アイコンとして最小限に使い、散りばめすぎない。
+セクション間の余白: `gap-12`（48px）以上。
 
-### 7.4 アクセシビリティ
+### 7-4. リスト
 
-- `skip-link` を配置する
-- `:focus-visible` で `cyan-400` のフォーカスリングを明示する
-- `prefers-reduced-motion: reduce` でアニメーションを抑制する
-- ダーク背景上のテキストは WCAG AA（4.5:1）以上を確保する
-- ブリーフィング面上のテキストも同様
+箇条書きはダッシュマーカーで統一:
+
+```tsx
+<ul className="space-y-3">
+  <li className="flex gap-3">
+    <span className="text-amber-400 shrink-0">─</span>
+    <span>{item}</span>
+  </li>
+</ul>
+```
+
+### 7-5. アクセシビリティ
+
+- `skip-link` をページ先頭に配置
+- `:focus-visible` で `cyan-400` フォーカスリング（2px、offset 2px）
+- `prefers-reduced-motion: reduce` でアニメーション即時完了
+- ダーク面テキスト: WCAG AA（4.5:1）以上
+- 明面テキスト: 同上
+- タッチターゲット: 48×48px 以上（WCAG 2.5.8）
 
 ---
 
-## 8. 画面別ルール
+## 8. 画面別デザイン
 
-### 8.1 トップページ
+### 8-1. トップページ
 
-主な構成:
+#### 構成
 
-1. マストヘッド
-2. ミッションボード風ヒーロー
-3. プレビュータイプのサイドカード
-4. 診断開始フォーム
-5. 4 軸解説
-6. 注目タイプ
-7. 16 タイプ一覧
-8. フッター
+```
+┌─ ヘッダーバー ──────────────────────┐
+├─ ヒーロー ──────────────────────────┤
+│  キャッチコピー + CTA               │
+│  フィーチャードタイプカード          │
+├─ 3 ステップ ────────────────────────┤
+│  答える → 判定 → 活かす              │
+├─ 4 軸プレビュー ────────────────────┤
+│  軸カード ×4                         │
+├─ 診断開始フォーム ──────────────────┤
+│  名前入力 + 開始ボタン               │
+├─ タイプギャラリー ──────────────────┤
+│  16 タイプミニカードグリッド          │
+├─ フッター ──────────────────────────┤
+└──────────────────────────────────────┘
+```
 
-#### マストヘッド
+#### ヘッダーバー
 
-- ダーク背景、`midnight-800` 下ボーダー
-- ロゴ：`amber-400` テキスト、鍵アイコンをあしらう
-- ナビ：`IBM Plex Mono`、小文字、ホバーで `cyan-300`
+```
+┌──────────────────────────────────────┐
+│ 🔑 謎解きタイプ診断         タイプ一覧 │
+└──────────────────────────────────────┘
+```
+
+- `sticky top-0 z-50`
+- `midnight-900/95` 背景（`backdrop-blur-sm`）
+- `border-b border-midnight-600`
+- 高さ: 56px
+- 左: ロゴ「謎解きタイプ診断」（`font-bold text-amber-400`）
+- 右: 「タイプ一覧」ghost link（`text-sm`）
+- コンテンツ最大幅: `max-w-5xl mx-auto`
 
 #### ヒーロー
 
-- **ブリーフィング面**（`paper-100` 背景）を大きく使う
-- 方眼テクスチャ、左マージンライン（`amber-400`）
-- ファイルメタ：`IBM Plex Mono`、`paper-300` テキスト
-- タイトル：`Bebas Neue` + `Shippori Mincho`
-- 「MISSION ASSIGNED」バッジ：回転配置、amber 枠、半透明
-- 統計バッジ：`32 Questions / 4 Pages / 16 Types / 4 Axes`、amber 数値
-- CTA：`#start` アンカーへの `primary-button`
+ダーク面。テクスチャなし。ページ全幅。
 
-#### サイドカード
+**モバイル（1 カラム、中央揃え）**:
 
-- `midnight-800` 背景、上辺に `amber-400` ライン
-- チームメンバーカードの見た目
-- タイプ画像、タイプコード（`IBM Plex Mono`、amber）、タイプ名、タグライン
-- 下部にサマリテキスト
+```
+┌──────────────────────────┐  midnight-900
+│                          │
+│  16-Type Puzzle-Solver   │  ← eyebrow (mono, amber, xs)
+│  Profile                 │
+│                          │
+│  あなたの                 │  ← h1 (display, hero size)
+│  謎解きスタイルは？        │
+│                          │
+│  32の質問で強み・役割を     │  ← sub (text-muted, sm)
+│  16タイプで診断            │
+│                          │
+│  ┌────────────────────┐  │
+│  │                    │  │
+│  │   [Type Artwork]   │  │  ← フィーチャードカード
+│  │                    │  │
+│  │  DLHN 鑑識マニア    │  │     midnight-800 card
+│  │  「タグライン…」     │  │     rounded-xl, shadow-md
+│  └────────────────────┘  │
+│                          │
+│  ┌────────────────────┐  │
+│  │   診断スタート →     │  │  ← primary button, full width
+│  └────────────────────┘  │
+│                          │
+│  32問 ・ 4ページ ・ 約5分  │  ← stats (mono, xs, text-muted)
+│                          │
+└──────────────────────────┘
+```
+
+**デスクトップ（2 カラム）**:
+
+```
+┌────────────────────────────────────────────┐
+│                                            │
+│  16-Type Puzzle-Solver     ┌────────────┐  │
+│  Profile                   │            │  │
+│                            │  Artwork   │  │
+│  あなたの                   │            │  │
+│  謎解きスタイルは？          │  DLHN      │  │
+│                            │  鑑識マニア  │  │
+│  32の質問で強み・役割を      │  「…」      │  │
+│  16タイプで診断              └────────────┘  │
+│                                            │
+│  [診断スタート →]                            │
+│                                            │
+│  32問 ・ 4ページ ・ 約5分                     │
+│                                            │
+└────────────────────────────────────────────┘
+  ← 55% テキスト+CTA →    ← 45% カード →
+```
+
+- フィーチャードカード: ランダムまたは固定タイプ 1 枚。`midnight-800` カード、`rounded-xl`、`shadow-md`
+- アートワーク内: 画像 + コードバッジ + 名前 + タグライン
+- `#start` へのアンカーリンク or 直接診断ページリンク
+
+#### 3 ステップ
+
+```
+┌───────────┐    ┌───────────┐    ┌───────────┐
+│  ① 回答    │    │  ② 判定    │    │  ③ 活用    │
+│            │    │            │    │            │
+│  32の質問   │ →  │  16タイプ   │ →  │  チームで   │
+│  に答える   │    │  から判定   │    │  活かす     │
+└───────────┘    └───────────┘    └───────────┘
+```
+
+- デスクトップ: 3 カラム（`grid grid-cols-3 gap-6`）
+- モバイル: 横スクロール or 縦積み（`grid gap-4`）
+- 各ステップ:
+  - 番号バッジ: `w-8 h-8 rounded-full bg-amber-400 text-midnight-900 font-bold flex items-center justify-center`
+  - テキスト: `font-bold text-base` + `text-sm text-muted`
+- ステップ間の矢印: デスクトップのみ、`text-midnight-500`
+
+#### 4 軸プレビュー
+
+```
+┌────── AXIS 01 ──────┐  ┌────── AXIS 02 ──────┐
+│ Action / Decode      │  │ Local / Bird's-eye   │
+│                      │  │                      │
+│ 行動型 ←──→ 解読型    │  │ 局所型 ←──→ 俯瞰型   │
+│                      │  │                      │
+│ 自ら動いて   手元の    │  │ 1問に     全体構造を  │
+│ 情報を取る   材料から  │  │ 集中する   見渡す     │
+└──────────────────────┘  └──────────────────────┘
+┌────── AXIS 03 ──────┐  ┌────── AXIS 04 ──────┐
+│ Herald / Tactician   │  │ Tenacity / Change    │
+│ ...                  │  │ ...                  │
+└──────────────────────┘  └──────────────────────┘
+```
+
+- セクション見出し: 「4つの軸で、あなたを診断」
+- `grid md:grid-cols-2 gap-4`
+- 各カード: `midnight-800`、`rounded-xl`、`p-5`
+  - 軸ラベル: `"AXIS 01"`（`font-mono text-xs text-amber-400 uppercase tracking-widest`）
+  - 軸名: `"Action / Decode"`（`font-heading text-lg`）
+  - 2 つの極: 左右に配置。ラベル（`font-bold text-sm`）+ 一行説明（`text-xs text-muted`）
+  - 中央に `←→` または区切り線
+  - カード上辺に 2px の軸固有色アクセントライン（§9 参照）
 
 #### 診断開始フォーム
 
-- `midnight-900` 背景セクション
-- 名前入力フィールド：focus で `cyan-400` ボーダーとグロウ
-- 開始ボタン：`coral-500`、ホバーで浮き上がり
-- 続きから再開リンク：`cyan-400` テキスト
+```
+┌──────────────────────────────┐
+│                              │
+│  Mission Start               │  ← eyebrow
+│  診断をはじめる               │  ← h2
+│                              │
+│  ┌────────────────────────┐  │
+│  │ ニックネーム（任意）      │  │  ← text field
+│  └────────────────────────┘  │
+│  共有URL に表示されます        │  ← 注釈 (xs, muted)
+│                              │
+│  ┌────────────────────────┐  │
+│  │    診断スタート →        │  │  ← primary button
+│  └────────────────────────┘  │
+│                              │
+│  前回の続きから再開 →          │  ← ghost link (条件付き表示)
+│                              │
+└──────────────────────────────┘
+```
 
-#### 4 軸解説
+- `id="start"`（ヒーロー CTA のアンカー先）
+- `midnight-800` パネル、`rounded-xl`、`p-8`、中央寄せ
+- テキストフィールド: `max-w-sm mx-auto`
+- フィールドスタイル: `w-full min-h-[52px] rounded-lg border border-midnight-600 bg-midnight-900 px-4 py-3 text-base focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/15 outline-none transition-all`
+- 下書き復元リンク: `localStorage` に前回データがある場合のみ表示
 
-- ダーク背景、上部に amber のラジアルグラデーントアクセント
-- 縦ストライプパターンオーバーレイ（ブループリント風）
-- 各軸をカードで表示
-- 軸コード：`IBM Plex Mono`、`amber-300` で大きく表示
-- 対比する 2 方向を VS 区切りで並べる
-- カード背景：`midnight-800` に微かな cyan のラジアルグロウ
+#### タイプギャラリー
 
-#### 注目タイプ
+```
+┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐
+│ Art  │ │ Art  │ │ Art  │ │ Art  │
+│ DLHN │ │ ALHN │ │ DBHN │ │ ...  │
+│ 鑑識  │ │ 突撃  │ │ 伏線  │ │      │
+│ マニア │ │ 隊長  │ │ 回収  │ │      │
+└──────┘ └──────┘ └──────┘ └──────┘
+  ...        x16 cards total
+```
 
-- 4 カラムグリッド（暗面）
-- 各カードの上辺に軸テーマカラーのアクセントライン
-- ホバーで画像が明るくなる
-- タイプ名、コード、タグライン
+- セクション見出し: 「全16タイプ」
+- `grid grid-cols-[repeat(auto-fill,minmax(140px,1fr))] gap-3`
+- 各タイプカード:
+  - アートワークサムネイル: `aspect-square rounded-lg overflow-hidden bg-midnight-700`（プレースホルダーの場合コードバッジ表示）
+  - コード: `font-mono text-xs text-amber-400`
+  - タイプ名: `font-bold text-sm`
+  - リンク: `/types/{typeCode}` へ
+  - ホバー: `bg-midnight-700`、`border-amber-400/30`、`-translate-y-1`
 
-#### 16 タイプ一覧
+#### フッター
 
-- auto-fit グリッド、最小 160px
-- `midnight-800` チップカード
-- タイプコード（amber）、タイプ名
-- ホバーで `midnight-700` に浮き上がり
+- `midnight-950` 背景、`py-8`
+- `text-xs text-muted text-center`
+- `© Whte Franc / Puzzle-Solving Role Diagnosis System`
 
-### 8.2 診断フロー
+---
 
-主な構成:
+### 8-2. 診断フロー
 
-1. ブリーフィングヘッダー
-2. ミッション進捗バー
-3. 質問パネル
-4. 5 段階スケール
-5. 前へ / 次へボタン
+#### 構成
 
-#### ブリーフィングヘッダー
+```
+┌─ プログレスバー（sticky）────────────┐
+├─ ページヘッダー ─────────────────────┤
+│  ページ番号 + ガイド                   │
+├─ 質問リスト ─────────────────────────┤
+│  Q.01 ─ [○ ○ ○ ○ ○]                │
+│  Q.02 ─ [○ ○ ○ ○ ○]                │
+│  ... × 8問                          │
+├─ ナビゲーション ─────────────────────┤
+│  [← 前のページ]  [次のページへ →]      │
+└──────────────────────────────────────┘
+```
 
-- `paper-100` 背景、方眼テクスチャ
-- 左マージンライン（`amber-400`）
-- ファイルメタ：`IBM Plex Mono`
-- ページタイトル：`Shippori Mincho`
-- 進捗バー：`midnight-700` トラック、`cyan-400` → `amber-400` グラデーション fill
+#### プログレスヘッダー
 
-#### 質問パネル
+```
+┌──────────────────────────────────────┐
+│ Page 1 / 4            謎解きタイプ診断 │
+│ ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │
+└──────────────────────────────────────┘
+```
 
-- `midnight-900` 背景
-- 各質問は `midnight-800` カード、上辺に薄いグラデーントアクセントライン
-- セクションヘッダーに軸名を表示
-- スケールガイド：左右のラベルで方向を示す
+- `sticky top-0 z-40`
+- `midnight-900/95 backdrop-blur-sm`
+- 高さ: 自動（上段: ラベル + 下段: バー）
+- 上段:
+  - 左: `"Page 1 / 4"`（`font-mono text-sm text-muted`）
+  - 右: ロゴリンク（`text-sm text-amber-400`）
+- 下段: プログレスバー
+  - トラック: `h-1 w-full bg-midnight-700 rounded-full`
+  - フィル: `bg-gradient-to-r from-cyan-400 to-amber-400`、幅 = ページ進捗（25%/50%/75%/100%）
+  - アニメーション: `transition-all duration-500 ease-out`
+
+#### ページヘッダー
+
+- `pt-8 pb-6`
+- 見出し: `"ページ 1 / 4"`（`font-heading text-2xl text-amber-400`）
+- ガイド: `"直感で答えてください"`（`text-sm text-muted mt-1`）
+
+#### 質問カード
+
+```
+┌──────────────────────────────────────┐  midnight-800
+│                                      │  rounded-xl
+│  Q.01                                │  p-5
+│                                      │
+│  友だちとの予定は、自分から             │
+│  提案することが多い。                  │
+│                                      │
+│  そう思わない  ○  ○  ○  ○  ○  そう思う │
+│                                      │
+└──────────────────────────────────────┘
+```
+
+- `midnight-800 rounded-xl p-5 space-y-4`
+- 質問番号: `"Q.01"`（`font-mono text-xs text-amber-400 font-bold`）
+- 質問テキスト: `text-base leading-relaxed`
+- カード間: `gap-4`
 
 #### 5 段階スケール
 
-5 段階の回答 UI は、amber ↔ cyan のグラデーションで傾向の方向を表現する。
+```
+そう思わない   ①   ②   ③   ④   ⑤   そう思う
+              cyan          neutral       amber
+```
 
-| 段階 | 色 | ラベル |
+横一列の 5 つの円形ボタン + 両端ラベル:
+
+| 段階 | 未選択（輪郭） | 選択時（塗り + グロウ） |
 | --- | --- | --- |
-| 5（とてもそう思う） | `amber-500` 強 | warm 側 |
-| 4（ややそう思う） | `amber-400` 弱 | warm 側 |
-| 3（どちらでもない） | `paper-300` ミュート | 中立 |
-| 2（あまりそう思わない） | `cyan-400` 弱 | cool 側 |
-| 1（まったくそう思わない） | `cyan-500` 強 | cool 側 |
+| 1 | `border-2 border-cyan-500` | `bg-cyan-500 text-white shadow-[0_0_16px_rgba(46,196,214,0.35)]` |
+| 2 | `border-2 border-cyan-400/60` | `bg-cyan-400 text-midnight-900 shadow-[0_0_12px_rgba(46,196,214,0.25)]` |
+| 3 | `border-2 border-midnight-500` | `bg-midnight-500 text-white` |
+| 4 | `border-2 border-amber-400/60` | `bg-amber-400 text-midnight-900 shadow-[0_0_12px_rgba(232,168,50,0.25)]` |
+| 5 | `border-2 border-amber-500` | `bg-amber-500 text-white shadow-[0_0_16px_rgba(232,168,50,0.35)]` |
 
-選択時：アイコンが拡大し、ドロップシャドウ（対応色のグロウ）が付く。
+設計ルール:
+- 各ボタン: `w-11 h-11`（44px）以上。モバイルでは `w-12 h-12`（48px）を推奨
+- `rounded-full`
+- ボタン内に数字（1〜5）を表示
+- ボタン間: `gap-2`（8px）以上
+- 端点ラベル: ボタン列の左右、`text-xs text-muted`
+- 選択アニメーション: `scale-110` + グロウ出現、`duration-150 ease-out`
+- `flex items-center justify-between` で横一列に配置
 
-> **注記**: amber（warm）↔ cyan（cool）は傾向の **方向** を表すだけであり、「正解 / 不正解」や「良い / 悪い」を意味しない。スケール両端にポジティブ / ネガティブの印象を持たせないよう配慮すること。
+> **重要**: amber（warm）↔ cyan（cool）は傾向の**方向**を示す。良い/悪いの意味はない。
+> スケールの見た目にポジティブ/ネガティブの印象を持たせないよう配慮する。
 
-#### タッチターゲット
+#### ナビゲーション
 
-- 各段階のタップ領域は**最小 44×44px**（WCAG 2.5.8 準拠）を確保する
-- モバイルでは段階ラベルを非表示にし、丸ボタンのみにしてもよいが、タップ領域は維持する
-- ボタン間のギャップは `gap-2`（8px）以上を設ける
+- `mt-8 mb-12`
+- 中央揃え、`flex flex-col items-center gap-3`
 
-#### アクションボタン
+```
+        ← 前のページへ           ← ghost link（ページ1では非表示）
 
-- 「次へ」：`coral-500`、`Bebas Neue`、全幅
-- 「前へ」：透過、`IBM Plex Mono`、枠線のみ
-- モバイルでは縦並び（「次へ」が上）
+  ┌──────────────────────────┐
+  │      次のページへ →        │  ← primary button
+  └──────────────────────────┘    モバイル: 全幅
+                                  デスクトップ: min-w-[280px]
+```
 
-#### 特殊状態
+- 最終ページのみ: `"診断結果を見る →"` にラベル変更
+- 未回答がある場合:
+  - ボタンは `disabled` 状態
+  - ボタン下に `"すべての質問に答えてください"` テキスト（`text-sm text-coral-400`）
 
-- ローディング：ダーク画面にパルスアニメーション
-- 名前未入力：トップへ戻す導線を表示
-- 未回答エラー：`coral-400` テキスト、最初の未回答設問へフォーカス
+---
 
-### 8.3 公開タイプ詳細ページ
+### 8-3. 公開タイプ詳細ページ
 
-主な構成:
+#### 構成
 
-1. ヘッダー
-2. チームメンバーカード風ヒーロー
-3. 強み / 注意点
-4. 詳しい見立て
-5. 担いやすい役割
-6. 相性
-7. フッター
+```
+┌─ ヘッダーバー ──────────────────────┐
+├─ タイプヒーロー（明面）───────────────┤
+│  アートワーク + タイプ情報 + CTA       │
+├─────────────── ここから暗面 ──────────┤
+├─ 強み ──────────────────────────────┤
+├─ 注意点 ────────────────────────────┤
+├─ 詳しい見立て ──────────────────────┤
+├─ 担いやすい役割 ─────────────────────┤
+├─ 相性 ──────────────────────────────┤
+├─ 末尾 CTA ──────────────────────────┤
+├─ フッター ──────────────────────────┤
+└──────────────────────────────────────┘
+```
 
-#### ヒーロー
+#### ヘッダーバー
 
-- **ブリーフィング面**（`paper-100` 背景）
-- 方眼テクスチャ、左マージンライン（`amber-400`）
-- 「MISSION ASSIGNED」バッジ（回転配置、amber）
-- ファイルメタ：`IBM Plex Mono`
-- タイプ名：`Shippori Mincho`、クランプスケーリング
-- タグライン：`Klee One`、`amber-500`
-- 2 カラム：アートワーク（260px）+ コンテンツ（1fr）
-- アートワーク：上辺にテープ風装飾、`illustration-frame` に収める
-- チビ画像があれば 200×200 の補助フレームに表示
-- CTA：「自分でも診断する」（`primary-button`）
+- トップページと同一構成
+- 右: `"← トップへ戻る"` ghost link
 
-#### 本文セクション
+#### タイプヒーロー
 
-各セクションは統一レイアウト:
+唯一の**明面**（`paper-50`）セクション。タイプの「顔」を大きく見せる。
 
-- `midnight-800` 背景パネル
-- eyebrow（`IBM Plex Mono`、`amber-400`）+ section-title + コンテンツ
-- リスト項目のブレット：amber ダッシュ
-- フェードアップアニメーション
+**モバイル（中央揃え、1 カラム）**:
 
-#### 相性セクション
+```
+┌──────────────────────────────┐  paper-50
+│                              │
+│  Public File                 │  ← eyebrow (mono, text-on-light-muted)
+│  #DLHN                       │  ← code (mono, amber-500)
+│                              │
+│     ┌──────────────────┐     │
+│     │                  │     │
+│     │    [Artwork]     │     │  ← max-w-[260px], rounded-xl
+│     │                  │     │     shadow-md
+│     └──────────────────┘     │
+│                              │
+│       鑑識マニア              │  ← type name (display, h1 size)
+│                              │
+│  「現場に残った痕跡を          │  ← tagline (note font, amber-500)
+│    すべて拾い上げる」          │
+│                              │
+│  サマリテキスト。              │  ← summary (text-sm, muted)
+│  このタイプの特徴を            │
+│  簡潔に説明する文章。          │
+│                              │
+│  ┌────────────────────────┐  │
+│  │   自分でも診断する →     │  │  ← primary button
+│  └────────────────────────┘  │
+│                              │
+└──────────────────────────────┘
+```
 
-- 相性タイプのカードを auto-fit グリッドで配置
-- 各カード：1.91:1 アスペクト、OGP 画像背景
-- ホバーで画像がスケールアップ、シャドウ強調
-- タイプ名とコードバッジのオーバーレイ
+**デスクトップ（2 カラム）**:
 
-#### 補足
+```
+┌─────────────────────────────────────────────┐
+│                                             │
+│  Public File                                │
+│  #DLHN                                      │
+│                                             │
+│  ┌──────────────┐    鑑識マニア              │
+│  │              │                           │
+│  │   Artwork    │    「現場に残った痕跡を      │
+│  │              │      すべて拾い上げる」      │
+│  │              │                           │
+│  └──────────────┘    サマリテキスト...         │
+│                                             │
+│                      [自分でも診断する →]      │
+│                                             │
+└─────────────────────────────────────────────┘
+  ← 40% Artwork →      ← 60% Info →
+```
 
-- 公開ページでは `Type Signature` セクションを表示しない
-- 公開ページでは共有パネルも表示しない
+具体的な要素:
+- 背景: `paper-50`、テクスチャなし
+- eyebrow: `"Public File"`（`font-mono text-xs uppercase tracking-widest`、`text-on-light-muted`）
+- タイプコード: `"#DLHN"`（`font-mono text-sm font-bold`、`amber-500`）
+- アートワーク: `max-w-[260px] rounded-xl shadow-md overflow-hidden`
+- タイプ名: `font-display`、`clamp(1.75rem, 5vw, 2.5rem)`、`text-on-light`
+- タグライン: `font-note`、`text-base`、`amber-500`。括弧「」で囲む
+- サマリ: `text-sm`、`text-on-light-muted`、`leading-relaxed`
+- CTA: primary button
+- チビ画像: ある場合、タイプ名の右に `w-16 h-16 rounded-full overflow-hidden` で表示
 
-### 8.4 共有結果ページ
+#### 強み / 注意点
 
-公開タイプ詳細ページと本文構成を共有しつつ、次が追加される。
+ヒーロー以降はダーク面（`midnight-900`）。
 
-- 見出しが「[ユーザー名]さんの診断結果」になる
-- `Type Signature` セクションを表示する
-- 共有パネルを表示する
-- 結果 URL コピーを提供する
+**デスクトップ: 2 カラム横並び / モバイル: 縦積み**
 
-#### 静的配信とクライアントサイドレンダリング
+```
+┌─ Strengths ────────┐  ┌─ Cautions ─────────┐
+│ 強み                │  │ 注意したい点         │
+│                    │  │                    │
+│ ─ 項目1            │  │ ─ 項目1            │
+│ ─ 項目2            │  │ ─ 項目2            │
+│ ─ 項目3            │  │ ─ 項目3            │
+└────────────────────┘  └────────────────────┘
+```
 
-共有結果ページは `output: 'export'` の制約上、動的ルート（`/types/[typeCode]/[key]`）を持てない。
-Netlify の `_redirects` で `/types/:typeCode/:key` → `/types/:typeCode/index.html`（200 リライト）し、
-クライアント側で URL パスから共有キーを取得・デコードして表示内容を切り替える。
+- `grid md:grid-cols-2 gap-6`
+- 各カード: `midnight-800 rounded-xl p-6`
+- §7-3 のセクション構成 + §7-4 のリスト
 
-この仕組みにより、以下の UI 状態が発生する。
+#### 詳しい見立て
+
+```
+┌─ Overview ─────────────────────────┐
+│ 詳しい見立て                        │
+│                                    │
+│ 詳細な説明テキスト。                 │
+│ 複数段落にわたって                   │
+│ タイプの特徴を詳しく述べる。          │
+└────────────────────────────────────┘
+```
+
+- `midnight-800 rounded-xl p-6`
+- 本文: `font-serif leading-loose text-base`（`Noto Serif JP` で格調ある表現）
+
+#### 担いやすい役割
+
+```
+┌─ Roles ────────────────────────────┐
+│ 担いやすい役割                       │
+│                                    │
+│ [情報整理係] [証拠管理] [記録係]      │  ← chip/tag 形式
+└────────────────────────────────────┘
+```
+
+- チップ: `rounded-full px-4 py-2 border border-midnight-600 bg-midnight-700 text-sm font-medium`
+- `flex flex-wrap gap-2`
+
+#### 相性
+
+```
+┌─ Compatibility ────────────────────┐
+│ 相性の傾向                          │
+│                                    │
+│ 説明テキスト...                      │
+│                                    │
+│ ┌──────┐ ┌──────┐ ┌──────┐        │
+│ │ Art  │ │ Art  │ │ Art  │        │
+│ │ CODE │ │ CODE │ │ CODE │        │
+│ │ 名前  │ │ 名前  │ │ 名前  │        │
+│ └──────┘ └──────┘ └──────┘        │
+└────────────────────────────────────┘
+```
+
+- `grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-4`
+- 各カード: タイプカード（§7-2）と同一スタイル
+- アートワーク: `aspect-[4/3] rounded-lg overflow-hidden bg-midnight-700`
+- コードバッジ: `font-mono text-xs text-amber-400`
+- 名前: `font-bold text-sm`
+- リンク: 各タイプの公開詳細ページへ
+
+#### 末尾 CTA
+
+- `text-center py-8`
+- `"自分でも診断する"` primary button
+- 補足: `"32問 ・ 約5分で診断"`（`text-xs text-muted mt-2`）
+
+#### 公開ページで表示しないもの
+
+- Type Signature セクション
+- 共有パネル
+
+---
+
+### 8-4. 共有結果ページ
+
+§8-3（公開タイプ詳細ページ）をベースに差分を適用する。
+
+#### 静的配信と CSR
+
+`output: 'export'` の制約上、`/types/[typeCode]/[key]` の動的ルートは存在しない。
+Netlify `_redirects` で `/types/:typeCode/:key` → `/types/:typeCode/index.html`（200 リライト）し、
+クライアント側で URL パスから共有キーを取得・デコードして表示を切り替える。
+
+#### ヒーローの差分
+
+| 項目 | 公開ページ | 共有結果ページ |
+| --- | --- | --- |
+| eyebrow | `"Public File"` | `"Shared Result"` |
+| 見出し | タイプ名 | `"[ユーザー名]さんの診断結果"` |
+| ヘッダー右リンク | `"← トップへ戻る"` | `"← タイプ公開ページへ"` |
+
+#### 追加: Type Signature セクション
+
+ヒーロー直後に挿入する。スクリーンショット共有を想定した **1 枚絵のビジュアルボード**。
+
+```
+┌─────────────────────────────────────────┐
+│                                         │
+│  鑑識マニア                  謎解きタイプ  │
+│                             診断        │
+│                                         │
+│              D L H N                    │
+│                                         │
+│  ── Axis 01 ═══════════════ 72% ──     │
+│  ── Axis 02 ═══════════════ 45% ──     │
+│  ── Axis 03 ═══════════════ 83% ──     │
+│  ── Axis 04 ═══════════════ 61% ──     │
+│                                         │
+└─────────────────────────────────────────┘
+```
+
+- アスペクト比: `1.91 / 1`（OGP と同一）
+- `midnight-800 rounded-xl overflow-hidden`
+- 背景: ダークグラデーション + 微かなラジアルグロウ
+- 左上: タイプ名プレート（`font-display`）
+- 中央: タイプコード（`font-heading`、`clamp(3rem, 8vw, 4.8rem)`）
+- 下部: 4 軸プログレスバー（§9 の色ペアでグラデーション）
+- 右上: 診断名キャプション（`font-mono text-xs text-muted`）
+
+#### 追加: 共有パネル
+
+相性セクションの後に配置。
+
+```
+┌─ Share ────────────────────────────┐
+│ 結果を共有する                       │
+│                                    │
+│ SNS共有はタイプ公開ページへ、          │
+│ 診断結果URLはコピーで送れます。        │
+│                                    │
+│ [X で共有]  [LINE で共有]            │  ← secondary buttons
+│ [URL をコピー]                      │
+└────────────────────────────────────┘
+```
+
+- ボタン: secondary style（`border border-cyan-400`）
+- 「URL をコピー」: クリック後 `"コピーしました ✓"` にテキスト変化（1.5 秒後に戻す）
+
+#### 診断直後の出し分け
+
+`localStorage` の診断結果と URL のタイプコード + 共有キーが一致する場合:
+
+| 項目 | 一致する場合（自分の結果） | 一致しない場合（他人の結果） |
+| --- | --- | --- |
+| ヒーロー CTA | `"共有"` + `"おすすめを教える"` | `"自分でも診断する"` |
+| Type Signature | 表示 | 表示 |
+| 共有パネル | 表示 | 非表示 |
 
 #### ローディング状態
 
-- 共有キーのデコード中は**スケルトン UI** を表示する
-- ヒーロー領域：アートワーク枠とテキスト 3 行分のパルスアニメーション（`pulseGlow`）プレースホルダー
-- 本文セクション：非表示（ヒーローのみ表示）
-- 背景は通常通り `midnight-900` + ブループリントグリッド
+共有キーのデコード中:
+
+```
+┌──────────────────────────────┐  paper-50
+│                              │
+│     ┌──────────────────┐     │
+│     │ ████████████████ │     │  ← pulse placeholder
+│     │ ████████████████ │     │     (midnight-200/50)
+│     └──────────────────┘     │
+│                              │
+│     ████████████             │  ← text placeholder x3
+│     ████████                 │
+│     ██████████████████       │
+│                              │
+└──────────────────────────────┘
+```
+
+- ヒーロー領域のみ表示。本文セクションは非表示
+- プレースホルダー: `rounded-md bg-paper-200 animate-pulse`
 
 #### エラー状態（無効な共有キー）
 
-- 共有キーのデコードに失敗した場合、または該当タイプが見つからない場合に表示
-- `midnight-800` パネル中央に以下を配置:
-  - アイコン：鍵モチーフ（SVG、`amber-400`、48px）
-  - 見出し：「リンクが無効です」（`font-display`、`text-xl`）
-  - 説明文：「共有リンクの形式が正しくないか、期限が切れている可能性があります。」（`text-sm`、`--color-text-subtle`）
-  - CTA：「トップページへ」（`primary-button`）、「タイプ一覧を見る」（`secondary-button`）
-- ボタンは縦並び、中央揃え、`gap-3`
+```
+┌──────────────────────────────┐  midnight-800
+│                              │  rounded-xl
+│          🔑 (icon)           │  p-8
+│                              │  text-center
+│     リンクが無効です           │
+│                              │
+│     共有リンクの形式が         │
+│     正しくないか、期限が       │
+│     切れている可能性が         │
+│     あります。                │
+│                              │
+│     [トップページへ]          │  ← primary
+│     タイプ一覧を見る →         │  ← ghost link
+│                              │
+└──────────────────────────────┘
+```
 
-#### Type Signature セクション
-
-- 1.91:1 アスペクト比のボード
-- ダークグラデーション背景に OGP 画像（フィルター付き）
-- グリッドオーバーレイ（40×40px）
-- 左上：タイプ名プレート
-- 中央：タイプコード大文字（`Bebas Neue`、クランプ 3rem-4.8rem）
-- 4 軸メトリクス：プログレスバーで表示、各軸に対応色を割り当てる
-- 右下：診断名キャプション
-
-#### ヒーロー下の差分
-
-- 診断直後の `localStorage` が一致する場合だけ「共有」ボタンを出す
-- それ以外の shared page は「自分でも診断する」を出す
+- 画面中央に配置（`min-h-[60vh] flex items-center justify-center`）
+- アイコン: 鍵 SVG、`text-amber-400`、48px
+- 見出し: `font-display text-xl mt-4`
+- 説明: `text-sm text-muted mt-2 max-w-[280px]`
+- CTA: `mt-6 flex flex-col items-center gap-3`
 
 ---
 
@@ -644,78 +998,107 @@ Netlify の `_redirects` で `/types/:typeCode/:key` → `/types/:typeCode/index
 
 4 軸の可視化では、各軸に固有の色ペアを割り当てる。
 
-| 軸 | 正方向色 | 負方向色 | 意図 |
+| 軸 | 正方向（左）色 | 負方向（右）色 | 意図 |
 | --- | --- | --- | --- |
 | 行動型 ↔ 解読型 | `coral-400` | `cyan-400` | 動く ↔ 読む |
-| 局所型 ↔ 俯瞰型 | `amber-400` | `#7b8fff`（soft indigo） | 集中 ↔ 俯瞰 |
-| 発信型 ↔ 統率型 | `#f5c84a`（amber-300） | `#6bc9a0`（soft green） | 発散 ↔ 収束 |
-| 熟考型 ↔ 転換型 | `#c89bef`（soft purple） | `#5dd8e6`（cyan-300） | 深める ↔ 切り替える |
+| 局所型 ↔ 俯瞰型 | `amber-400` | `#7b8fff` | 集中 ↔ 俯瞰 |
+| 発信型 ↔ 統率型 | `amber-300` | `#6bc9a0` | 発散 ↔ 収束 |
+| 熟考型 ↔ 転換型 | `#c89bef` | `cyan-300` | 深める ↔ 切り替える |
 
-プログレスバーはこの色ペアのグラデーションで傾向の強さを表現する。
-
----
-
-## 10. コンポーネント別の役割
-
-### 10.1 ホーム
-
-- `HomeHeroSection`: ミッションボード風ヒーロー、統計、開始導線
-- `AxisCompositionSection`: 4 軸のブループリント風解説
-- `FeaturedTypesSection`: 注目タイプのカードグリッド
-- `AllTypesSection`: トップページ内の 16 タイプ一覧
-
-### 10.2 診断
-
-- `StartDiagnosisForm`: 名前入力
-- `DiagnosisFlow`: 診断 UI 全体（ブリーフィングヘッダー + 質問パネル）
-
-### 10.3 タイプ詳細
-
-- `TypeArtwork`: 通常画像またはプレースホルダー
-- `TypeDetailHeroSection`: チームメンバーカード風ヒーロー
-- `TypeSignatureSection`: 共有結果の 4 軸可視化ボード
-- `TypeListSection`: 強み / 注意点 / 担いやすい役割
-- `TypeCompatibilitySection`: 相性
-- `TypeSharePanel`: 共有パネル
+プログレスバーは `h-2 rounded-full` で、色ペアの `linear-gradient` で傾向の強さを表現する。
+バーの充填率は 0〜100% でアニメーション表示（`transition-all duration-500`）。
 
 ---
 
-## 11. 画像ルール
+## 10. コンポーネント構成
 
-- 通常画像: `public/types/{typeCode}.png`
-- チビ画像: `public/types/{typeCode}_chibi.png`
-- OGP: `public/types/{typeCode}-ogp.png`
-- 画像未配置時は `TypeArtwork` がプレースホルダーを描画する
-- プレースホルダーは `midnight-700` → `midnight-800` グラデーション + タイプコードバッジ（amber）
-- 画像表示時のフィルター：旧 sepia → `brightness(0.95) contrast(1.05)`（ダーク背景に合わせた軽い調整のみ）
+### 10-1. ホーム
+
+| コンポーネント | 役割 |
+| --- | --- |
+| `HomeHeroSection` | ヒーロー（キャッチ + CTA + フィーチャードカード） |
+| `HomeStepsSection` | 3 ステップ紹介 |
+| `AxisPreviewSection` | 4 軸プレビューカード |
+| `StartDiagnosisForm` | 名前入力 + 開始ボタン |
+| `AllTypesSection` | 16 タイプギャラリーグリッド |
+
+### 10-2. 診断
+
+| コンポーネント | 役割 |
+| --- | --- |
+| `DiagnosisProgress` | sticky プログレスヘッダー |
+| `DiagnosisFlow` | 診断 UI 全体（ページ管理） |
+| `QuestionCard` | 質問テキスト + 5 段階スケール |
+| `FivePointScale` | 5 段階回答ボタン群 |
+
+### 10-3. タイプ詳細
+
+| コンポーネント | 役割 |
+| --- | --- |
+| `TypeDetailHeroSection` | 明面ヒーロー（アートワーク + 情報） |
+| `TypeSignatureSection` | 4 軸ビジュアルボード（共有のみ） |
+| `TypeListSection` | 強み / 注意点 / 担いやすい役割 |
+| `TypeOverviewSection` | 詳しい見立て |
+| `TypeCompatibilitySection` | 相性タイプグリッド |
+| `TypeSharePanel` | 共有パネル（共有のみ） |
+| `TypeArtwork` | 画像 or プレースホルダー |
 
 ---
 
-## 12. アニメーション
+## 11. 画像
+
+| 種類 | パス | サイズ |
+| --- | --- | --- |
+| 通常画像 | `public/types/{typeCode}.png` | 512×512 推奨 |
+| チビ画像 | `public/types/{typeCode}_chibi.png` | 200×200 推奨 |
+| OGP 画像 | `public/types/{typeCode}-ogp.png` | 1200×630 |
+
+- 画像未配置時は `TypeArtwork` がプレースホルダーを描画
+- プレースホルダー: `bg-gradient-to-br from-midnight-700 to-midnight-800` + タイプコードバッジ（`font-heading text-amber-400`）
+- 画像フィルター: `brightness(0.95) contrast(1.05)`（ダーク背景との調和）
+
+---
+
+## 12. モーション
 
 | 名前 | 内容 | 用途 |
 | --- | --- | --- |
-| `fadeSlideUp` | opacity 0→1, translateY 16px→0, 500ms | セクション出現 |
-| `pulseGlow` | box-shadow の明滅（cyan-400 / 20%） | ローディング |
-| `progressFill` | scaleX 0→1, ease-out | 進捗バー |
+| `fadeIn` | `opacity: 0→1`、300ms、`ease-out` | セクション出現 |
+| `slideUp` | `translateY: 12px→0` + fadeIn、400ms | カード出現 |
+| `scaleIn` | `scale: 0.95→1` + fadeIn、200ms | 選択フィードバック |
+| `pulse` | `opacity: 0.5→1→0.5`、1.5s、infinite | ローディング |
+| `fillBar` | `scaleX: 0→target`、600ms、`ease-out` | プログレスバー |
 
-- 遅延は 0.1s 刻みのスタガーで使う
-- `prefers-reduced-motion: reduce` ですべて即時表示に切り替える
-
----
-
-## 13. レスポンシブ方針
-
-- モバイル優先
-- トップページは大画面で非対称レイアウト（ヒーロー 2 カラム）
-- 診断フローは常に 1 カラム中心
-- タイプページは 1 カラムをベースに一部だけ 2 カラムにする
-- ブレークポイント：520px / 640px / 768px / 940px / 1180px
+ルール:
+- 出現スタガー: 0.05s 刻み
+- ホバー / 選択のトランジション: `duration-150 ease-out`
+- `prefers-reduced-motion: reduce` ですべて即時完了（`duration: 0ms`）
 
 ---
 
-## 14. 現行仕様として含めないもの
+## 13. レスポンシブ
 
-- 専用 `/types` 一覧ページ
-- `next/og` 前提の動的 OGP レイアウト
-- motion ライブラリ依存の演出
+| ブレークポイント | 値 | 主な変化 |
+| --- | --- | --- |
+| `sm` | 520px | ギャラリー 3 列化 |
+| `md` | 768px | ヒーロー 2 カラム化、強み/注意点横並び |
+| `lg` | 1024px | コンテンツ最大幅制約 |
+
+- **モバイルファースト**: すべて 1 カラムから設計し、`md:` 以上で展開
+- コンテンツ最大幅: `max-w-3xl`（768px）、`mx-auto`、`px-4`
+- 全幅セクション: ヒーロー、フッターのみ
+- 診断フロー: 常に 1 カラム
+- タイプギャラリー: `auto-fill` で自動調整
+
+---
+
+## 14. 対象外
+
+以下は本仕様の対象外とする。
+
+- 専用 `/types` 一覧ページ（トップページ内のギャラリーで代替）
+- `next/og` 前提の動的 OGP 生成
+- framer-motion 等の motion ライブラリ依存
+- サーバーサイド API / Edge Function
+- ダークモード / ライトモード切替（常時ダーク）
+- i18n / 多言語対応
