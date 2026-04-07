@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "マダミスタイプ診断 質問マスタ",
-    "version": "2026-03-23",
+    "title": "謎解きタイプ診断 質問マスタ",
+    "version": "2026-04-07",
     "questionCount": 32,
     "pageCount": 4,
     "questionsPerPage": 8,
@@ -10,7 +10,7 @@
   "questions": [
     {
       "questionId": "Q001",
-      "questionText": "感情の強い場面で空気が止まると、自分から口火を切って卓を動かしたくなる。",
+      "questionText": "待ち合わせに早く着いたら、周りをぶらぶら探検してしまう。",
       "axis": "A1",
       "direction": "forward",
       "displayOrder": 1,
@@ -21,7 +21,7 @@
     },
     {
       "questionId": "Q002",
-      "questionText": "発言でのアリバイや行動時間のズレは、動機より重く見る。",
+      "questionText": "気になることがあると、周りが見えなくなるくらい没頭する方だ。",
       "axis": "A2",
       "direction": "forward",
       "displayOrder": 2,
@@ -32,7 +32,7 @@
     },
     {
       "questionId": "Q003",
-      "questionText": "キャラクターへの好感や自分との関係性より、証言同士の整合性で白黒を判断したい。",
+      "questionText": "面白いものを見つけたら、すぐ誰かに「見てこれ！」と言いたくなる。",
       "axis": "A3",
       "direction": "forward",
       "displayOrder": 3,
@@ -43,7 +43,7 @@
     },
     {
       "questionId": "Q004",
-      "questionText": "配られたハンドアウトを読んだら、声色や感情の見せ方を整理したい。",
+      "questionText": "複雑な問題ほど、自力でなんとかしたくなる。",
       "axis": "A4",
       "direction": "forward",
       "displayOrder": 4,
@@ -54,7 +54,7 @@
     },
     {
       "questionId": "Q005",
-      "questionText": "ハンドアウトに違和感があっても、まずは周囲の発言が出そろうまで聞き役でいたい。",
+      "questionText": "新しい家電を買ったら、触る前にまず説明書をひと通り読む方だ。",
       "axis": "A1",
       "direction": "reverse",
       "displayOrder": 5,
@@ -65,7 +65,7 @@
     },
     {
       "questionId": "Q006",
-      "questionText": "情報が少ない段階でも、動機や関係性から犯人像を先に描きたくなる。",
+      "questionText": "旅行の計画では、細かいスポットより先に全体のルートを決めたい。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 6,
@@ -76,7 +76,7 @@
     },
     {
       "questionId": "Q007",
-      "questionText": "真相の正確さよりも、全員が物語に没入できたかを大事にしたい。",
+      "questionText": "グループの話し合いがまとまらないと、つい整理役を買って出る。",
       "axis": "A3",
       "direction": "reverse",
       "displayOrder": 7,
@@ -87,7 +87,7 @@
     },
     {
       "questionId": "Q008",
-      "questionText": "卓で飛んできた新情報に合わせて、その場で声色や感情の出し方を変えるのが楽しい。",
+      "questionText": "行きたかったお店が混んでいたら、すぐ別のお店を探せる。",
       "axis": "A4",
       "direction": "reverse",
       "displayOrder": 8,
@@ -98,7 +98,7 @@
     },
     {
       "questionId": "Q009",
-      "questionText": "密談で心情が大きく動いたら、その熱を自分から全体卓へ持ち帰って流れを作るほうだ。",
+      "questionText": "コンビニの新商品は、レビューを見るより先に買ってみるタイプだ。",
       "axis": "A1",
       "direction": "forward",
       "displayOrder": 9,
@@ -109,7 +109,7 @@
     },
     {
       "questionId": "Q010",
-      "questionText": "「なんとなく怪しい」より、証拠品やカード文面の食い違いを優先して追う。",
+      "questionText": "買い物では、比較するより「これ！」と決めたものを徹底的に調べる。",
       "axis": "A2",
       "direction": "forward",
       "displayOrder": 10,
@@ -120,7 +120,7 @@
     },
     {
       "questionId": "Q011",
-      "questionText": "泣きや怒りの強い感情表現が出ても、犯人投票への影響はほとんどない。",
+      "questionText": "考えがまとまっていなくても、とりあえず口に出すことが多い。",
       "axis": "A3",
       "direction": "forward",
       "displayOrder": 11,
@@ -131,7 +131,7 @@
     },
     {
       "questionId": "Q012",
-      "questionText": "配役が来たら、終盤から逆算してどの場面でどんな声を出すかまで決めておきたい。",
+      "questionText": "難しい問題ほど燃える。簡単に片づくと物足りない。",
       "axis": "A4",
       "direction": "forward",
       "displayOrder": 12,
@@ -142,7 +142,7 @@
     },
     {
       "questionId": "Q013",
-      "questionText": "感情がぶつかった場面では、自分の意見や演技を入れる前に全員の温度感を見たい。",
+      "questionText": "料理はとりあえず作り始めるより、レシピを確認してから動きたい。",
       "axis": "A1",
       "direction": "reverse",
       "displayOrder": 13,
@@ -153,7 +153,7 @@
     },
     {
       "questionId": "Q014",
-      "questionText": "伏線が散っていて複雑なシナリオほど、考察しがいがあって楽しい。",
+      "questionText": "作業中でも、周りの人がどこまで進んでいるかが気になる。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 14,
@@ -164,7 +164,7 @@
     },
     {
       "questionId": "Q015",
-      "questionText": "泣き崩れる、怒鳴るなどの強い感情表現をする役でも、比較的抵抗なくやれるほうだ。",
+      "questionText": "飲み会やイベントの幹事は、頼まれなくても引き受ける方だ。",
       "axis": "A3",
       "direction": "reverse",
       "displayOrder": 15,
@@ -175,7 +175,7 @@
     },
     {
       "questionId": "Q016",
-      "questionText": "密談の空気が変わったら、最初に考えていた演技プランもその場であっさり変えられる。",
+      "questionText": "やり方が合わないと感じたら、途中でもすぐ別の方法に切り替える。",
       "axis": "A4",
       "direction": "reverse",
       "displayOrder": 16,
@@ -186,7 +186,7 @@
     },
     {
       "questionId": "Q017",
-      "questionText": "誰かの感情が揺れた瞬間を見つけたら、その場で質問を重ねて盤面とドラマを動かしたい。",
+      "questionText": "気になるお店は、口コミを調べるより実際に行ってみたい方だ。",
       "axis": "A1",
       "direction": "forward",
       "displayOrder": 17,
@@ -197,7 +197,7 @@
     },
     {
       "questionId": "Q018",
-      "questionText": "情報カードを公開しない人は、それだけで怪しいと思う。",
+      "questionText": "映画を見ているとき、小道具や背景の細かい部分に気づく方だ。",
       "axis": "A2",
       "direction": "forward",
       "displayOrder": 18,
@@ -208,7 +208,7 @@
     },
     {
       "questionId": "Q019",
-      "questionText": "終盤の殴り合いでは、熱量より筋道の通った説明に説得力を感じる。",
+      "questionText": "写真を撮ったら、すぐ誰かに送りたくなるタイプだ。",
       "axis": "A3",
       "direction": "forward",
       "displayOrder": 19,
@@ -219,7 +219,7 @@
     },
     {
       "questionId": "Q020",
-      "questionText": "犯人を引いたときは、どの順で情報を開示するか、誰と協力するか考えて動くほうだ。",
+      "questionText": "途中まで読んだ本は、つまらなくなっても最後まで読み切りたい。",
       "axis": "A4",
       "direction": "forward",
       "displayOrder": 20,
@@ -230,7 +230,7 @@
     },
     {
       "questionId": "Q021",
-      "questionText": "証拠カードが公開された直後は、すぐ口を挟むより反応を観察したい。",
+      "questionText": "情報がそろうまでは、動き回るよりその場でじっくり考えたい。",
       "axis": "A1",
       "direction": "reverse",
       "displayOrder": 21,
@@ -241,7 +241,7 @@
     },
     {
       "questionId": "Q022",
-      "questionText": "犯人投票の前は、証拠が足りなくても「物語として自然か」を重視することが多い。",
+      "questionText": "何かを始める前に、ゴールから逆算して段取りを考える方だ。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 22,
@@ -252,7 +252,7 @@
     },
     {
       "questionId": "Q023",
-      "questionText": "ストーリープレイング（犯人投票がなく推理要素がないゲーム）も好きだ。",
+      "questionText": "複数人で何かを決めるとき、選択肢を絞る役になりがちだ。",
       "axis": "A3",
       "direction": "reverse",
       "displayOrder": 23,
@@ -263,7 +263,7 @@
     },
     {
       "questionId": "Q024",
-      "questionText": "予定していた主張より、その瞬間の感情に一番刺さる一言や間を優先しがちだ。",
+      "questionText": "同じ作業を長く続けるより、いろいろ切り替えながら進める方が集中できる。",
       "axis": "A4",
       "direction": "reverse",
       "displayOrder": 24,
@@ -274,7 +274,7 @@
     },
     {
       "questionId": "Q025",
-      "questionText": "エンディングが近づくほど、黙って見守るより発言量を増やして勝負したくなる。",
+      "questionText": "家で何かを探すとき、考えるより先に片っ端から引き出しを開ける。",
       "axis": "A1",
       "direction": "forward",
       "displayOrder": 25,
@@ -285,7 +285,7 @@
     },
     {
       "questionId": "Q026",
-      "questionText": "犯人探しでは、印象論より公開情報の抜け漏れを確認するほうだ。",
+      "questionText": "推理ものは、全体のストーリーより個々のトリックの仕掛けが好きだ。",
       "axis": "A2",
       "direction": "forward",
       "displayOrder": 26,
@@ -296,7 +296,7 @@
     },
     {
       "questionId": "Q027",
-      "questionText": "自分が疑われても、感情で返すよりロジックで反論したい。",
+      "questionText": "思いついたことは、まとめる前にまず誰かに話してみたい。",
       "axis": "A3",
       "direction": "forward",
       "displayOrder": 27,
@@ -307,7 +307,7 @@
     },
     {
       "questionId": "Q028",
-      "questionText": "配役が来た時点で、自分の勝ち筋だけでなく見せ場や感情の山場もある程度設計したい。",
+      "questionText": "迷ったときは、直感より納得いくまで考えてから決めたい。",
       "axis": "A4",
       "direction": "forward",
       "displayOrder": 28,
@@ -318,7 +318,7 @@
     },
     {
       "questionId": "Q029",
-      "questionText": "導入や自己紹介では、前に出るより各キャラクターがどんな温度でロールプレイするか読むほうだ。",
+      "questionText": "何かを学ぶとき、体験するより先に本やネットで調べるタイプだ。",
       "axis": "A1",
       "direction": "reverse",
       "displayOrder": 29,
@@ -329,7 +329,7 @@
     },
     {
       "questionId": "Q030",
-      "questionText": "限られた証拠でも、発言の裏にある意図や脚本上の役割を読みたくなる。",
+      "questionText": "散らかった部屋は、目についた所からではなく全体を見渡してから片づける。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 30,
@@ -340,7 +340,7 @@
     },
     {
       "questionId": "Q031",
-      "questionText": "子供役のように普段の自分とかけ離れた役でも、抵抗なく演じられる。",
+      "questionText": "グループLINEで話がバラけると、要点をまとめたくなる。",
       "axis": "A3",
       "direction": "reverse",
       "displayOrder": 31,
@@ -351,7 +351,7 @@
     },
     {
       "questionId": "Q032",
-      "questionText": "ハンドアウトにない展開が起きるほど、むしろテンションが上がる。",
+      "questionText": "勉強や仕事で煮詰まったら、粘るより先に気分転換する方だ。",
       "axis": "A4",
       "direction": "reverse",
       "displayOrder": 32,
