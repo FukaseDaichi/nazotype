@@ -1,0 +1,271 @@
+{
+  "setId": "tfei-interrogation-bursts",
+  "typeCode": "TFEI",
+  "packageName": "扇動役者の追及スタンプ",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "扇動役者",
+    "textDesignPrompt": "dramatic cute Japanese sticker title, rounded glossy lettering, cream fill, wine-red outline, premium line sticker vibe",
+    "textPlacement": "bottom-center",
+    "poseDirection": "片腕を大きく広げて舞台の中央で観客を煽るように笑い、もう片手を胸元に添える",
+    "cameraDirection": "やや低めから見上げるヒロイックなミディアムショット、髪が大きく流れる中央構図",
+    "expressionDirection": "観客を巻き込む自信満々の華やかな笑み、目元は挑発的に輝く"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "挑発",
+    "textDesignPrompt": "very short bold Japanese sticker text, rounded strokes, white fill, deep red outline, readable at tiny size",
+    "textPlacement": "right",
+    "poseDirection": "顔をぐっと近づけて片眉を上げ、挑発的に笑う上半身寄りの構図",
+    "cameraDirection": "やや煽り気味の極寄りクローズアップ、顔が画面いっぱいに迫る構図",
+    "expressionDirection": "片眉を上げた挑発的なニヤリ笑い、余裕たっぷりの視線"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "で、誰がウソついてるの？",
+      "intent": "accusation",
+      "textDesignPrompt": "cute dramatic Japanese sticker text, bold rounded strokes, white fill, crimson outline, strong contrast",
+      "textPlacement": "top-right",
+      "poseDirection": "片手を横に大きく払って複数人を指し示し、もう片手を腰に当てて観客へ問いかける",
+      "cameraDirection": "やや低めの斜め前から捉えるミディアムショット、払った腕がフレームを横切る",
+      "expressionDirection": "獲物を見つけたような鋭い笑み、眉を上げて相手を射抜く目"
+    },
+    {
+      "id": "02",
+      "text": "誰か、口火切って？",
+      "intent": "provocation",
+      "textDesignPrompt": "cute inviting Japanese sticker text, rounded handwritten style, pale cream fill, red outline",
+      "textPlacement": "top-left",
+      "poseDirection": "前のめりに身を乗り出し、手のひらを上に向けて挑発的に招く",
+      "cameraDirection": "少し高めから覗き込む近距離ショット、差し出した手が手前に来る遠近感",
+      "expressionDirection": "火をつけたがるいたずらっぽい笑顔、瞳は期待でキラッと光る"
+    },
+    {
+      "id": "03",
+      "text": "へえ……そう来るんだ",
+      "intent": "amused reaction",
+      "textDesignPrompt": "soft teasing Japanese sticker text, rounded strokes, white fill, plum outline",
+      "textPlacement": "top-right",
+      "poseDirection": "肩をひねって斜めを向き、口元に手を添えながら余裕たっぷりに見下ろす",
+      "cameraDirection": "軽いダッチアングルの三四分身ショット、肩越し気味に流れる構図",
+      "expressionDirection": "半目で余裕たっぷりに笑う、面白がっている上から目線の表情"
+    },
+    {
+      "id": "04",
+      "text": "それ、信じろって？",
+      "intent": "skepticism",
+      "textDesignPrompt": "sharp cute Japanese sticker text, thick rounded strokes, white fill, dark red outline",
+      "textPlacement": "top-right",
+      "poseDirection": "片腕をまっすぐ前に伸ばして人差し指を突きつけ、体を大きく反らして疑う",
+      "cameraDirection": "指先がレンズ目前に迫るフォアショートニング強めの低めアングル",
+      "expressionDirection": "信じられないと鼻で笑うような顔、片眉を大きく上げて睨む"
+    },
+    {
+      "id": "05",
+      "text": "ちょっとゾクッとした",
+      "intent": "thrill",
+      "textDesignPrompt": "cute suspenseful Japanese sticker text, rounded glossy lettering, pale lavender fill, burgundy outline",
+      "textPlacement": "top-left",
+      "poseDirection": "両手を胸元で握り、肩をすくめながら目を輝かせて震える",
+      "cameraDirection": "顔寄りのクローズアップ、少し斜め上から寄って震えを拾う構図",
+      "expressionDirection": "背筋がぞくっとした快感を楽しむような目の輝き、口元は弾む笑み"
+    },
+    {
+      "id": "06",
+      "text": "それはさすがに苦しいよ",
+      "intent": "dismissal",
+      "textDesignPrompt": "cute dismissive Japanese sticker text, bold rounded strokes, ivory fill, red-brown outline",
+      "textPlacement": "top-right",
+      "poseDirection": "片手を大きく外へ払って首をかしげ、もう片手を軽く上げて呆れる",
+      "cameraDirection": "横から切り取るミディアムショット、払う手の動きが大きく見える角度",
+      "expressionDirection": "呆れた苦笑い、目元は冷静で少し刺すような温度感"
+    },
+    {
+      "id": "07",
+      "text": "いいね、その顔",
+      "intent": "taunting praise",
+      "textDesignPrompt": "playful Japanese sticker text, rounded handwritten style, white fill, hot-pink outline",
+      "textPlacement": "top-left",
+      "poseDirection": "顎に指を添えて相手をのぞき込み、片足を軽く跳ね上げながらニヤリと笑う",
+      "cameraDirection": "かなり近い対面クローズアップ、顔を覗き込むように少し下から受ける構図",
+      "expressionDirection": "相手の反応を楽しむ肉食的な笑み、瞳はきらりと悪戯っぽい"
+    },
+    {
+      "id": "08",
+      "text": "観念したら？",
+      "intent": "cornering",
+      "textDesignPrompt": "cute cornering Japanese sticker text, thick rounded strokes, white fill, wine-red outline",
+      "textPlacement": "top-right",
+      "poseDirection": "手錠をかけるような仕草で両手を前に出し、挑発的に一歩踏み込む",
+      "cameraDirection": "低めから煽る前進ショット、踏み込んだ脚と両手が手前に迫る",
+      "expressionDirection": "逃がさないと告げる勝ち気な笑み、目線は真っすぐ強く固定"
+    },
+    {
+      "id": "09",
+      "text": "それ、私じゃないよね？",
+      "intent": "deflection",
+      "textDesignPrompt": "cute defensive Japanese sticker text, rounded glossy letters, cream fill, coral outline",
+      "textPlacement": "top-left",
+      "poseDirection": "自分を両手で指しながら一歩引き、驚いたように目を見開く",
+      "cameraDirection": "やや高めから引き気味に捉えるショット、後ろへ引く動きが分かる構図",
+      "expressionDirection": "とぼけつつも芝居がかった驚き顔、口元は少し笑っている"
+    },
+    {
+      "id": "10",
+      "text": "今のうちに正直に言って",
+      "intent": "pressure confession",
+      "textDesignPrompt": "dramatic cute Japanese sticker text, bold rounded lettering, white fill, dark red outline",
+      "textPlacement": "top-right",
+      "poseDirection": "片手でマイクを向けるように前へ差し出し、もう片手で胸元から強く促す",
+      "cameraDirection": "正面寄りのバストショット、差し出した手がやや手前に出る遠近感",
+      "expressionDirection": "甘さを残しつつ逃げ道を塞ぐ真剣な目、口元は静かな圧を帯びる"
+    },
+    {
+      "id": "11",
+      "text": "隠してることあるよね",
+      "intent": "exposure",
+      "textDesignPrompt": "cute suspicious Japanese sticker text, rounded strokes, white fill, purple-red outline",
+      "textPlacement": "top-left",
+      "poseDirection": "腰を落として下からのぞき込み、片目を細めて相手の顔を追い詰める",
+      "cameraDirection": "かなり近い下からのぞき込む視点、顔がフレーム手前で圧を出す",
+      "expressionDirection": "全部わかっていると示す細めた目、口角だけが上がる不穏な笑顔"
+    },
+    {
+      "id": "12",
+      "text": "その通知、見せて",
+      "intent": "demand evidence",
+      "textDesignPrompt": "cute commanding Japanese sticker typography, thick rounded hand-lettering, glossy white fill, vivid crimson outline, sticker-like pressure, absolutely not a standard font",
+      "textPlacement": "top-right",
+      "poseDirection": "身を大きく乗り出して片手をスマホへ伸ばし、もう片手を開いて差し出させる",
+      "cameraDirection": "通知を見せろと言われている相手側視点の近距離ショット、差し出した手がレンズ近くまで迫る強い遠近感",
+      "expressionDirection": "笑みを保ちながらも逃がさない鋭い目、今すぐ出してと迫るせっかちな圧",
+      "textLayoutPrompt": "upper-right stacked two-line burst, slightly descending diagonal, compact but aggressive rhythm, clear separation from the reaching hand",
+      "textEffectPrompt": "commanding cute sticker lettering, thick white fill, vivid red outline, subtle glossy shine, emphatic interrogation vibe, no plain font typesetting"
+    },
+    {
+      "id": "13",
+      "text": "嘘ついてない？",
+      "intent": "doubt",
+      "textDesignPrompt": "cute skeptical Japanese sticker text, rounded handwritten style, ivory fill, burgundy outline",
+      "textPlacement": "top-left",
+      "poseDirection": "片手を頬に当てて顔を覗き込み、もう片手で小さく指さしながら問い詰める",
+      "cameraDirection": "横からすっと入り込むクローズアップ、顔との距離が近い緊張感ある構図",
+      "expressionDirection": "疑い深く目を細めるが笑みは消さない、刺すように確かめる表情"
+    },
+    {
+      "id": "14",
+      "text": "ほんとのこと言って",
+      "intent": "soft pressure",
+      "textDesignPrompt": "gentle but dramatic Japanese sticker text, rounded strokes, white fill, rose-red outline",
+      "textPlacement": "top-right",
+      "poseDirection": "両手を前で組んで身をかがめつつ、まっすぐ見据えて真実を迫る",
+      "cameraDirection": "目線の高さの近距離ミディアムショット、静かに前へ倒れ込む構図",
+      "expressionDirection": "柔らかさの奥に本気をにじませる真剣な眼差し、口元はやさしく締まる"
+    },
+    {
+      "id": "15",
+      "text": "言い訳、聞こうか？",
+      "intent": "challenge",
+      "textDesignPrompt": "cute challenging Japanese sticker text, bold rounded letters, cream fill, dark wine outline",
+      "textPlacement": "top-left",
+      "poseDirection": "椅子に浅く腰掛けるような姿勢で脚を組み、片手でどうぞと煽る",
+      "cameraDirection": "少し低めの横アングル、余裕ある座り姿が大きく見える三四分身構図",
+      "expressionDirection": "余裕たっぷりの面白がる笑み、言い訳を楽しみにしている冷たい目"
+    },
+    {
+      "id": "16",
+      "text": "へえ、そうなんだ？",
+      "intent": "mock surprise",
+      "textDesignPrompt": "cute ironic Japanese sticker text, rounded glossy letters, white fill, raspberry outline",
+      "textPlacement": "top-right",
+      "poseDirection": "大げさに片手を口元へ当てて驚いたふりをし、反対の腕を横へ流す",
+      "cameraDirection": "軽いダッチアングルの上半身ショット、芝居がかった腕の流れが見える",
+      "expressionDirection": "わざとらしい驚き顔と薄い笑みが同居する、あからさまな皮肉顔"
+    },
+    {
+      "id": "17",
+      "text": "ふーん……で？",
+      "intent": "cold prompt",
+      "textDesignPrompt": "cool teasing Japanese sticker text, rounded handwritten style, pale cream fill, plum outline",
+      "textPlacement": "top-left",
+      "poseDirection": "頬杖をつきながら脚を大きく組み替え、視線だけで続きを促す",
+      "cameraDirection": "少し高めから見下ろすクールな三四分身ショット、視線がこちらを刺す構図",
+      "expressionDirection": "半目で退屈そうに見つめるが、口元だけは面白がっている"
+    },
+    {
+      "id": "18",
+      "text": "それ本気で言ってる？",
+      "intent": "disbelief",
+      "textDesignPrompt": "cute incredulous Japanese sticker text, thick rounded strokes, white fill, dark red outline",
+      "textPlacement": "top-right",
+      "poseDirection": "両手を大きく開いて上体を引き、目を見開いて信じられない表情を作る",
+      "cameraDirection": "広めのミディアムショット、上体を引いた反応が一目で分かる正面構図",
+      "expressionDirection": "本気で驚きつつ呆れている大きな目、口は半開きで disbelief を出す"
+    },
+    {
+      "id": "19",
+      "text": "苦しいね、その説明",
+      "intent": "tear down argument",
+      "textDesignPrompt": "cute cutting Japanese sticker text, rounded bold lettering, ivory fill, crimson outline",
+      "textPlacement": "top-left",
+      "poseDirection": "片手で紙をひらひらさせながらもう片手で額を押さえ、芝居がかったため息をつく",
+      "cameraDirection": "少し横に振ったミディアムショット、紙をひらつかせる手が動きを作る",
+      "expressionDirection": "やれやれと肩をすくめる苦笑い、説明の甘さに呆れた目"
+    },
+    {
+      "id": "20",
+      "text": "で？",
+      "intent": "push further",
+      "textDesignPrompt": "very short bold Japanese sticker text, rounded thick strokes, white fill, wine-red outline",
+      "textPlacement": "top-right",
+      "poseDirection": "片足で大きく踏み込みながら掌を前に突き出し、続きを強く要求する",
+      "cameraDirection": "かなり近い煽りのクローズアップ、突き出した掌がレンズを塞ぐ勢い",
+      "expressionDirection": "待っていないと伝わる鋭い目と上がった眉、短く急かす表情"
+    },
+    {
+      "id": "21",
+      "text": "シロでいい？",
+      "intent": "final check",
+      "textDesignPrompt": "cute checking Japanese sticker text, rounded strokes, cream fill, red outline",
+      "textPlacement": "top-left",
+      "poseDirection": "片手で丸を作りつつ首をかしげ、もう片手で確認するように差し出す",
+      "cameraDirection": "やや正面寄りの軽いミディアムショット、丸を作る手がきれいに見える角度",
+      "expressionDirection": "確認するような柔らかい笑顔だが、目だけは答えを探っている"
+    },
+    {
+      "id": "22",
+      "text": "アウト",
+      "intent": "judgment",
+      "textDesignPrompt": "custom illustrated Japanese hand-lettering, thick irregular rounded comic strokes, bold impact lettering, black fill, thick white inline border, vivid red outer border, absolutely not a standard font",
+      "textPlacement": "top-right",
+      "poseDirection": "大きく腕を交差してバツを作り、体ごと前へ乗り出して断罪する",
+      "cameraDirection": "低めから煽る強いジャッジメント構図、交差した腕が大きく手前に出る",
+      "expressionDirection": "有罪を言い渡すような鋭い目と断固とした口元、容赦ない verdict 顔",
+      "textLayoutPrompt": "top-right diagonal cluster, slightly tilted upward, compact but energetic rhythm, overlapping the empty corner space without touching the character",
+      "textEffectPrompt": "comic impact sticker typography, hand-drawn outline wobble, subtle glossy highlight, dramatic verdict feel, no plain font typesetting"
+    },
+    {
+      "id": "23",
+      "text": "誰といたの？",
+      "intent": "interrogation",
+      "textDesignPrompt": "cute interrogation Japanese sticker text, rounded handwritten style, white fill, plum-red outline",
+      "textPlacement": "top-left",
+      "poseDirection": "片手を耳に当てて聞き取る仕草をしながら、もう片手で逃がさないよう指をさす",
+      "cameraDirection": "やや横から寄るクローズアップ、耳に当てた手と指差しが両方効く構図",
+      "expressionDirection": "話を聞き逃さないぞと迫る意地悪な笑み、視線は横から鋭く差し込む"
+    },
+    {
+      "id": "24",
+      "text": "遅くない？",
+      "intent": "late arrival jab",
+      "textDesignPrompt": "cute sharp Japanese sticker text, bold rounded strokes, ivory fill, crimson outline",
+      "textPlacement": "top-right",
+      "poseDirection": "腕時計を大げさに指さしながら片足を跳ね上げ、呆れ半分で問いかける",
+      "cameraDirection": "少し横からの全身寄りショット、跳ねた脚と時計を指す手が同時に見える",
+      "expressionDirection": "呆れた半笑いと軽いツッコミ顔、眉は上がり気味で急かす温度感"
+    }
+  ]
+}

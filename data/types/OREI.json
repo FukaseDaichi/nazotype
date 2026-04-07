@@ -1,0 +1,66 @@
+{
+  "typeId": "OREI",
+  "typeCode": "OREI",
+  "typeName": "余白の魔術師",
+  "tagline": "沈黙の余白にある本音を、誰より先に拾い上げる。",
+  "summary": "言葉にならない含みや間を察知し、その場で解像度を上げる洞察役。",
+  "detailDescription": "言葉そのものより、ためらい、沈黙、目線の揺れに強く反応できるタイプです。表に出ない本音を察知し、その場の空気から新しい意味を引き出します。直感が鋭いぶん共有が遅れると独りよがりに見えやすいため、感じた余白は言葉にして卓へ返す意識が重要です。",
+  "strengths": [
+    "沈黙や間に隠れた本音を察知しやすい",
+    "場の空気から新しい意味を引き出せる",
+    "少ない情報でも感情の向きや違和感を掴める"
+  ],
+  "cautions": [
+    "直感を言語化しないと共有されにくい",
+    "深読みが過剰になると根拠不足に見えやすい",
+    "空気を読みすぎて自分の発言を飲み込みやすい"
+  ],
+  "recommendedPlaystyle": [
+    "余白から感じた違和感は一言でも共有する",
+    "相手の反応を見ながら問いの角度を細かく変える",
+    "直感を証拠や他人の発言と結びつけて出す"
+  ],
+  "suitableRoles": [
+    "言外の読解役",
+    "空気の変化を捉える洞察役",
+    "密談で真意に迫る役"
+  ],
+  "compatibility": {
+    "summary": "あなたの余白読解は、盤面を整理するタイプや事実を押さえるタイプと組むと、見えない本音を推理へ接続しやすくなります。",
+    "goodWithTypeCodes": [
+      "TFLP",
+      "OFLP"
+    ],
+    "goodWithDescription": "名探偵(TFLP)が議論の骨組みを作り、沈黙の鑑識官(OFLP)が細部の精度を支えることで、あなたが拾った本音が推理の確かな材料になります。"
+  },
+  "shareText": "マダミスタイプは「余白の魔術師（OREI）」でした。言葉にならない空気の中に、本音を見つけてしまうらしい。",
+  "axis": {
+    "axis1": "観察型",
+    "axis2": "推理重視",
+    "axis3": "感情派",
+    "axis4": "即興型"
+  },
+  "visualProfile": {
+    "genderPresentation": "male",
+    "ageRange": "20代後半",
+    "characterArchetype": "沈黙を読み解くミステリアスな洞察者",
+    "characterDescription": "多くを語らず、相手の呼吸ひとつで本音を察する青年。柔らかさと不思議な存在感を持つ。",
+    "outfitDescription": "プラム色のロングコート、黒のタートルネック、細いスカーフ、リング。ミステリアスで洗練された装い。",
+    "colorPalette": [
+      "plum",
+      "black",
+      "smoke gray"
+    ],
+    "pose": "指先を口元に添え、静かに相手を見つめる",
+    "expression": "柔らかいが底の見えない微笑",
+    "background": "transparent"
+  },
+  "imagePrompt": {
+    "ja": "マーダーミステリー診断の結果カード用イラスト。日本人男性キャラクター1人、20代後半、沈黙を読み解く余白の魔術師タイプ、柔らかくミステリアスな雰囲気、ミッドナイトブルーを帯びた黒の長めのサラサラ髪。プラム色のロングコート、黒のタートルネック、細いスカーフ、リング。上半身構図、静かなシネマティック照明、プラムと黒を基調にした背景、精密描写、文字なし、ロゴなし。",
+    "en": "Character illustration for a murder mystery personality result card. One Japanese male character in his late 20s, mysterious reader-of-silence archetype, soft yet enigmatic presence, midnight blue-tinged black silky long hair. Plum long coat, black turtleneck, slim scarf, rings. Waist-up composition, quiet cinematic lighting, plum and black themed background, highly detailed, no text, no logo."
+  },
+  "negativePrompt": {
+    "ja": "複数人、子供っぽい体型、コミカルすぎる表情、過度な露出、現代カジュアルすぎる服装、低解像度、ぼやけ、文字、ロゴ、透かし、余計な小物、手の崩れ",
+    "en": "multiple characters, childish proportions, overly comedic expression, excessive skin exposure, overly casual modern outfit, low resolution, blurry, text, logo, watermark, extra props, deformed hands"
+  }
+}

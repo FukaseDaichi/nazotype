@@ -1,0 +1,66 @@
+{
+  "typeId": "OREP",
+  "typeCode": "OREP",
+  "typeName": "感情の翻訳者",
+  "tagline": "言葉にならない気持ちを、物語の輪郭に変える。",
+  "summary": "人物同士の感情の流れを読み、全体像を丁寧に組み立てる読解役。",
+  "detailDescription": "誰が何を言ったかだけでなく、その言葉にどんな感情が乗っていたかまで読み取るタイプです。人間関係の微妙な揺れを言葉へ翻訳し、卓全体が理解しやすい形へ整えていきます。優しさが強いぶん断定を避けやすいので、要所では『私はこう読む』と一歩踏み込むと推理の軸として立ちやすくなります。",
+  "strengths": [
+    "言葉にならない感情のニュアンスを捉えられる",
+    "人物関係の流れをわかりやすく説明できる",
+    "対立する感情を整理して全体像を見せられる"
+  ],
+  "cautions": [
+    "相手の気持ちを汲みすぎて結論がぼやけやすい",
+    "断定を避けすぎると推理として扱われにくい",
+    "感情の整合性を重視しすぎて証拠を後回しにしやすい"
+  ],
+  "recommendedPlaystyle": [
+    "感情の読みは人物関係の図として共有する",
+    "気になる温度差を短い言葉でこまめに残す",
+    "終盤では感情の読みを投票判断へつなげる"
+  ],
+  "suitableRoles": [
+    "人間関係の読解役",
+    "感情の通訳役",
+    "空気と物語の橋渡し役"
+  ],
+  "compatibility": {
+    "summary": "あなたの感情理解は、矛盾を表に出すタイプや違和感を追うタイプと組むと、真相の輪郭を強くできます。",
+    "goodWithTypeCodes": [
+      "TFLI",
+      "OFLI"
+    ],
+    "goodWithDescription": "尋問官(TFLI)が表に出た矛盾を切り開き、潜伏刑事(OFLI)が見落とされがちな手掛かりを拾うことで、あなたの読解が真相の輪郭をはっきりさせます。"
+  },
+  "shareText": "マダミスタイプは「感情の翻訳者（OREP）」でした。言葉にならない気持ちを、物語の輪郭に変えてしまう人でした。",
+  "axis": {
+    "axis1": "観察型",
+    "axis2": "推理重視",
+    "axis3": "感情派",
+    "axis4": "計画型"
+  },
+  "visualProfile": {
+    "genderPresentation": "female",
+    "ageRange": "20代後半",
+    "characterArchetype": "気持ちの輪郭を描くリーディングガイド",
+    "characterDescription": "相手の感情を否定せず受け止め、丁寧に言葉へ変えていく落ち着いた女性。やわらかさと芯の強さが同居する。",
+    "outfitDescription": "ラベンダーグレーのニットにネイビーのロングコート、細いネックレス、上質な手帳。親しみやすさと知性を両立した装い。",
+    "colorPalette": [
+      "lavender gray",
+      "navy",
+      "silver"
+    ],
+    "pose": "手帳を胸元に抱え、静かに相手へ視線を向ける",
+    "expression": "思いやりと洞察を感じる穏やかな表情",
+    "background": "transparent"
+  },
+  "imagePrompt": {
+    "ja": "マーダーミステリー診断の結果カード用イラスト。日本人女性キャラクター1人、20代後半、感情を言葉に翻訳する読解者タイプ、穏やかで知的、アッシュブラウンのやわらかいミディアムボブ。ラベンダーグレーのニット、ネイビーのロングコート、細いネックレス、上質な手帳。上半身構図、やわらかな室内光、ネイビーと淡い紫を基調にした背景、シネマティック、精密描写、文字なし、ロゴなし。",
+    "en": "Character illustration for a murder mystery personality result card. One Japanese female character in her late 20s, emotional translator archetype, calm and intelligent, soft ash brown medium bob. Lavender-gray knit top, navy long coat, delicate necklace, high-quality notebook. Waist-up composition, soft indoor lighting, navy and pale purple themed background, cinematic, highly detailed, no text, no logo."
+  },
+  "negativePrompt": {
+    "ja": "複数人、子供っぽい体型、コミカルすぎる表情、過度な露出、現代カジュアルすぎる服装、低解像度、ぼやけ、文字、ロゴ、透かし、余計な小物、手の崩れ",
+    "en": "multiple characters, childish proportions, overly comedic expression, excessive skin exposure, overly casual modern outfit, low resolution, blurry, text, logo, watermark, extra props, deformed hands"
+  }
+}

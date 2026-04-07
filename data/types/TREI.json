@@ -1,0 +1,66 @@
+{
+  "typeId": "TREI",
+  "typeCode": "TREI",
+  "typeName": "大女優",
+  "tagline": "感情が揺れた瞬間、物語の幕が上がる。",
+  "summary": "感情の変化を起点に展開を前へ進め、卓にドラマを生む推進役。",
+  "detailDescription": "感情の爆発や沈黙の意味を、その場で物語の推進力に変えられるタイプです。演技や言葉の熱量が高く、卓に強い印象を残します。ドラマが強いぶん論点が流れやすいため、ここぞという場面と引く場面のメリハリを作れると、存在感がさらに映えます。",
+  "strengths": [
+    "感情の揺れを場の前進力に変えられる",
+    "強い演技や発言で卓の記憶に残る場面を作れる",
+    "人の気持ちの変化を察知して流れを読める"
+  ],
+  "cautions": [
+    "熱量が高すぎると議論の軸が感情に寄りすぎる",
+    "強い表現が苦手な人を圧倒することがある",
+    "勢いで言ったことの整合性が後から課題になりやすい"
+  ],
+  "recommendedPlaystyle": [
+    "感情を動かす場面は要所に絞って使う",
+    "印象的な発言の後で事実整理に戻る導線を作る",
+    "相手の反応を見ながら熱量の強弱を調整する"
+  ],
+  "suitableRoles": [
+    "ドラマの中心人物役",
+    "感情を揺らすキーパーソン役",
+    "場の印象を決める主演役"
+  ],
+  "compatibility": {
+    "summary": "あなたのドラマ性は、記録と整理に強いタイプと組むと、感情の揺れが推理の決定打になりやすいです。",
+    "goodWithTypeCodes": [
+      "OFLP",
+      "TFLP"
+    ],
+    "goodWithDescription": "沈黙の鑑識官(OFLP)が細部を押さえ、名探偵(TFLP)が論点を束ねることで、あなたの感情表現が演出ではなく真相への導線になります。"
+  },
+  "shareText": "マダミスタイプは「大女優（TREI）」でした。感情が揺れた瞬間、物語の幕が上がる——そんな人らしい。",
+  "axis": {
+    "axis1": "発言型",
+    "axis2": "推理重視",
+    "axis3": "感情派",
+    "axis4": "即興型"
+  },
+  "visualProfile": {
+    "genderPresentation": "female",
+    "ageRange": "20代後半",
+    "characterArchetype": "卓にドラマを起こす主演女優",
+    "characterDescription": "感情の起伏を恐れず、ひとたび動けば場の視線を一身に集める華やかな女性。",
+    "outfitDescription": "深いエメラルドのドレスに黒のショール、繊細なピアス、細い手袋。舞台の主役を思わせる気品ある装い。",
+    "colorPalette": [
+      "emerald",
+      "black",
+      "silver"
+    ],
+    "pose": "胸元に手を当て、感情を湛えて前を見る",
+    "expression": "涙をこらえたような強いまなざし",
+    "background": "transparent"
+  },
+  "imagePrompt": {
+    "ja": "マーダーミステリー診断の結果カード用イラスト。日本人女性キャラクター1人、20代後半、卓にドラマを起こす主演女優タイプ、華やかで感情豊か、ディープチェスタットブラウンの大きなウェーブのロング。深いエメラルドのドレス、黒のショール、繊細なピアス、細い手袋。上半身構図、舞台のようなシネマティック照明、エメラルドと黒を基調にした背景、精密描写、文字なし、ロゴなし。",
+    "en": "Character illustration for a murder mystery personality result card. One Japanese female character in her late 20s, leading actress archetype who drives drama, glamorous and emotional, deep chestnut brown hair in dramatic large waves, long. Deep emerald dress, black shawl, delicate earrings, slim gloves. Waist-up composition, stage-like cinematic lighting, emerald and black themed background, highly detailed, no text, no logo."
+  },
+  "negativePrompt": {
+    "ja": "複数人、子供っぽい体型、コミカルすぎる表情、過度な露出、現代カジュアルすぎる服装、低解像度、ぼやけ、文字、ロゴ、透かし、余計な小物、手の崩れ",
+    "en": "multiple characters, childish proportions, overly comedic expression, excessive skin exposure, overly casual modern outfit, low resolution, blurry, text, logo, watermark, extra props, deformed hands"
+  }
+}

@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-top: 1px solid rgba(196, 169, 107, 0.15);
+  padding-top: 2rem;
+}
+
+.copy {
+  margin: 0;
+  color: rgba(196, 169, 107, 0.35);
+  font-family: var(--rcf-font-typewriter), monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+}

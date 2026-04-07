@@ -1,0 +1,55 @@
+{
+  "typeId": "OFEI",
+  "typeCode": "OFEI",
+  "typeName": "潜入記者",
+  "tagline": "するっと懐に入って、必要な本音だけ持って帰る。",
+  "summary": "やわらかい対話で距離を詰め、自然に情報を回収する収集役。",
+  "detailDescription": "真正面からぶつかるより、相手が話しやすい距離感をすばやく見つけられるタイプです。雑談や軽い共感から本音に触れ、目立たず大事な情報を回収します。相手に合わせすぎると自分の視点がぼやけやすいので、集めた材料を定期的に整理しておくと強さが安定します。",
+  "strengths": [
+    "自然な会話で相手の警戒を下げられる",
+    "本音と細かな手掛かりを同時に拾いやすい",
+    "相手ごとに接し方を柔軟に変えられる"
+  ],
+  "cautions": [
+    "共感しすぎると相手の言い分に引っ張られやすい",
+    "集めた情報を自分の中だけに留めやすい",
+    "強い対立の場面では存在感が薄く見えることがある"
+  ],
+  "recommendedPlaystyle": [
+    "密談や少人数会話で強みを積極的に使う",
+    "拾った情報は相手の温度ごと簡潔に共有する",
+    "終盤では自分なりの見立ちをはっきり添える"
+  ],
+  "suitableRoles": ["聞き込み役", "密談で動く収集役", "相手の本音を引き出す役"],
+  "compatibility": {
+    "summary": "あなたの柔らかな収集力は、全体を統率するタイプや構造を読むタイプと組むと、情報が勝ち筋へつながります。",
+    "goodWithTypeCodes": ["TRLP", "ORLP"],
+    "goodWithDescription": "黒幕参謀(TRLP)が本音を読み筋に変え、安楽椅子探偵(ORLP)が見えない前提を補うことで、あなたが集めた情報が卓全体の推理速度を底上げします。"
+  },
+  "shareText": "マダミスタイプは「潜入記者（OFEI）」でした。気づいたら懐に入っていて、必要な本音だけ持って帰る人らしい。",
+  "axis": {
+    "axis1": "観察型",
+    "axis2": "事実重視",
+    "axis3": "感情派",
+    "axis4": "即興型"
+  },
+  "visualProfile": {
+    "genderPresentation": "female",
+    "ageRange": "20代後半",
+    "characterArchetype": "やわらかく切り込むフィールドレポーター",
+    "characterDescription": "親しみやすい笑顔で距離を縮めながら、必要な本音は逃さない女性。柔らかさの裏に鋭い仕事勘がある。",
+    "outfitDescription": "ベージュのトレンチコート、白シャツ、ダークブラウンのスカート、細いショルダーカメラストラップ、記者メモ。動きやすく知的な装い。",
+    "colorPalette": ["beige", "white", "dark brown"],
+    "pose": "ペンを持ちながら身を少し乗り出して話を聞く",
+    "expression": "親しみやすいが観察力のある笑顔",
+    "background": "transparent"
+  },
+  "imagePrompt": {
+    "ja": "マーダーミステリー診断の結果カード用イラスト。日本人女性キャラクター1人、20代後半、親しみやすい潜入記者タイプ、やわらかな笑顔、ライトブラウンのナチュラルウェーブのセミロング。ベージュのトレンチコート、白シャツ、ダークブラウンのスカート、細いカメラストラップ、記者メモ。上半身構図、やわらかい昼光、ベージュとブラウンを基調にした背景、シネマティック、精密描写、文字なし、ロゴなし。",
+    "en": "Character illustration for a murder mystery personality result card. One Japanese female character in her late 20s, approachable undercover reporter archetype, warm smile, light brown naturally wavy semi-long hair. Beige trench coat, white shirt, dark brown skirt, slim camera strap, reporter memo pad. Waist-up composition, soft daylight, beige and brown themed background, cinematic, highly detailed, no text, no logo."
+  },
+  "negativePrompt": {
+    "ja": "複数人、子供っぽい体型、コミカルすぎる表情、過度な露出、現代カジュアルすぎる服装、低解像度、ぼやけ、文字、ロゴ、透かし、余計な小物、手の崩れ",
+    "en": "multiple characters, childish proportions, overly comedic expression, excessive skin exposure, overly casual modern outfit, low resolution, blurry, text, logo, watermark, extra props, deformed hands"
+  }
+}

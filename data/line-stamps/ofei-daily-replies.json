@@ -1,0 +1,49 @@
+{
+  "setId": "ofei-daily-replies",
+  "typeCode": "OFEI",
+  "packageName": "潜入記者の返事スタンプ",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "潜入記者",
+    "textDesignPrompt": "cute Japanese sticker title, rounded bubble lettering, warm cream fill, dark brown outline, premium line sticker vibe",
+    "textPlacement": "bottom-center"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "記者",
+    "textDesignPrompt": "very short Japanese sticker text, bold rounded strokes, high contrast, readable at tiny size",
+    "textPlacement": "right"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "了解",
+      "intent": "acknowledgement",
+      "textDesignPrompt": "cute handwritten Japanese sticker text, bold rounded strokes, white fill, pink outline",
+      "textPlacement": "top-right"
+    },
+    {
+      "id": "02",
+      "text": "ありがとう",
+      "intent": "thanks",
+      "textDesignPrompt": "cute handwritten Japanese sticker text, bold rounded strokes, white fill, yellow outline",
+      "textPlacement": "top-right"
+    },
+    {
+      "id": "03",
+      "text": "ごめんね",
+      "intent": "apology",
+      "textDesignPrompt": "soft rounded Japanese sticker lettering, white fill, coral outline, gentle cute tone",
+      "textPlacement": "top-left"
+    },
+    {
+      "id": "04",
+      "text": "おつかれ",
+      "intent": "appreciation",
+      "textDesignPrompt": "cute rounded Japanese sticker text, creamy fill, brown outline, cozy warm line stamp feel",
+      "textPlacement": "top-right"
+    }
+  ]
+}

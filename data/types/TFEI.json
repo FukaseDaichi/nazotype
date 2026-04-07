@@ -1,0 +1,66 @@
+{
+  "typeId": "TFEI",
+  "typeCode": "TFEI",
+  "typeName": "扇動役者",
+  "tagline": "ひと言で、沈んだ空気に火を灯す。",
+  "summary": "空気を読みながら熱量を生み、発言と情報の流れを加速させる触媒役。",
+  "detailDescription": "沈黙や停滞を嫌わず、そこに新しい熱を入れられるタイプです。感情の波を察知し、その場で刺さる言葉や演技を選んで卓を動かします。勢いのままに広げすぎると議論が散るため、熱を上げた後に誰へ渡すかまで意識すると強さが安定します。",
+  "strengths": [
+    "重くなった空気に一気に熱量を戻せる",
+    "感情の変化を起点に新しい情報を引き出せる",
+    "即興の一言や演技で卓の記憶に残る場面を作れる"
+  ],
+  "cautions": [
+    "盛り上げに寄りすぎると論点が広がりすぎる",
+    "その場の勢いで不用意な発言をしやすい",
+    "静かな人の準備時間を奪ってしまうことがある"
+  ],
+  "recommendedPlaystyle": [
+    "停滞時の起爆剤として発言し、長く握り続けない",
+    "盛り上がった直後に整理役へパスを出す",
+    "演技で動かす場面と事実確認の場面を切り替える"
+  ],
+  "suitableRoles": [
+    "ムードメーカー役",
+    "火種を作る重要人物役",
+    "感情を揺らす当事者役"
+  ],
+  "compatibility": {
+    "summary": "あなたの瞬発力は、構造を読むタイプと組むと、場を動かす熱量が勝ち筋へ変わります。",
+    "goodWithTypeCodes": [
+      "ORLP",
+      "TRLP"
+    ],
+    "goodWithDescription": "安楽椅子探偵(ORLP)が裏側の設計図を描き、黒幕参謀(TRLP)が勝ち筋として押し出すことで、あなたの勢いが単発で終わらず盤面を前に進めます。"
+  },
+  "shareText": "マダミスタイプは「扇動役者（TFEI）」でした。ひと言で、沈んだ空気に火を灯せるらしい。",
+  "axis": {
+    "axis1": "発言型",
+    "axis2": "事実重視",
+    "axis3": "感情派",
+    "axis4": "即興型"
+  },
+  "visualProfile": {
+    "genderPresentation": "female",
+    "ageRange": "20代前半",
+    "characterArchetype": "空気に火を入れるステージメーカー",
+    "characterDescription": "表情の切り替えが鮮やかで、ひと言で場の温度を変える華やかな女性。挑発と親しみやすさを同時に持つ。",
+    "outfitDescription": "ワインレッドのショートジャケット、黒のシルクブラウス、細身のパンツ、大ぶりではないゴールドピアス。華やかだが動きやすい舞台感のある装い。",
+    "colorPalette": [
+      "wine red",
+      "black",
+      "gold"
+    ],
+    "pose": "片手を軽く広げて観客を煽るように笑う",
+    "expression": "いたずらっぽく熱を帯びた笑顔",
+    "background": "transparent"
+  },
+  "imagePrompt": {
+    "ja": "マーダーミステリー診断の結果カード用イラスト。日本人女性キャラクター1人、20代前半、空気に火をつける扇動役者タイプ、表情豊かで華やか、ディープバーガンディの艶のある大きなウェーブのロング。ワインレッドのショートジャケット、黒のシルクブラウス、細身のパンツ、控えめなゴールドアクセサリー。上半身構図、ドラマチックな室内光、赤と黒を基調にした背景、シネマティック、精密描写、文字なし、ロゴなし。",
+    "en": "Character illustration for a murder mystery personality result card. One Japanese female character in her early 20s, charismatic instigator archetype, expressive and glamorous, deep burgundy glossy hair in large waves, long. Wine red short jacket, black silk blouse, slim pants, subtle gold accessories. Waist-up composition, dramatic indoor lighting, red and black themed background, cinematic, highly detailed, no text, no logo."
+  },
+  "negativePrompt": {
+    "ja": "複数人、子供っぽい体型、コミカルすぎる表情、過度な露出、現代カジュアルすぎる服装、低解像度、ぼやけ、文字、ロゴ、透かし、余計な小物、手の崩れ",
+    "en": "multiple characters, childish proportions, overly comedic expression, excessive skin exposure, overly casual modern outfit, low resolution, blurry, text, logo, watermark, extra props, deformed hands"
+  }
+}

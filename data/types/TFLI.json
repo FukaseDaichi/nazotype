@@ -1,0 +1,66 @@
+{
+  "typeId": "TFLI",
+  "typeCode": "TFLI",
+  "typeName": "尋問官",
+  "tagline": "矛盾を見た瞬間、もう切り込んでいる。",
+  "summary": "その場の違和感や矛盾を素早く突き、局面を動かす追及役。",
+  "detailDescription": "小さなほころびを見つけた瞬間に、迷わず踏み込めるタイプです。考え込みすぎる前に問いを投げ、相手の反応から新しい材料を引き出します。テンポの良さが武器ですが、鋭さが先に立つと相手を萎縮させやすいので、逃げ道のある聞き方を混ぜると卓全体の情報量が増えます。",
+  "strengths": [
+    "矛盾や言い淀みを素早く捉えられる",
+    "短い問いで相手の反応を引き出せる",
+    "停滞した議論に勢いを戻せる"
+  ],
+  "cautions": [
+    "追及の強さが相手の防御反応を高めやすい",
+    "直感的に切り込むぶん整理が後手になりやすい",
+    "強い口調が卓の空気を硬くすることがある"
+  ],
+  "recommendedPlaystyle": [
+    "違和感を覚えたら短い確認質問から入る",
+    "切り込んだ後は整理役に情報を渡して広げてもらう",
+    "感情が荒れた場面では問いの順番を一度整える"
+  ],
+  "suitableRoles": [
+    "追及役",
+    "ライバル探偵役",
+    "対立軸を作るキーパーソン"
+  ],
+  "compatibility": {
+    "summary": "勢いのある追及は、感情や動機の流れを読むタイプと組むと、切り込みが深い真相へつながります。",
+    "goodWithTypeCodes": [
+      "OREP",
+      "TREP"
+    ],
+    "goodWithDescription": "感情の翻訳者(OREP)が反応の意味を言語化し、動機脚本家(TREP)が人物関係の文脈へつなぐことで、あなたの切り込みが表面的な矛盾探しで終わりにくくなります。"
+  },
+  "shareText": "マダミスタイプは「尋問官（TFLI）」でした。矛盾を見た瞬間、もう切り込んでいる人らしい。",
+  "axis": {
+    "axis1": "発言型",
+    "axis2": "事実重視",
+    "axis3": "論理派",
+    "axis4": "即興型"
+  },
+  "visualProfile": {
+    "genderPresentation": "female",
+    "ageRange": "20代後半",
+    "characterArchetype": "切れ味の鋭い女性尋問官",
+    "characterDescription": "瞬時に矛盾へ反応する、鋭い眼差しの女性。声は静かだが間合いが鋭く、一歩踏み込む質問で場を揺らす。",
+    "outfitDescription": "チャコールグレーのロングジャケット、黒のハイネック、スリムパンツ、革手袋、細いイヤーカフ。機動力と緊張感のある都会的な装い。",
+    "colorPalette": [
+      "charcoal",
+      "black",
+      "silver"
+    ],
+    "pose": "片手を軽く上げ、相手に問いを投げる瞬間",
+    "expression": "静かな圧を感じる鋭い目",
+    "background": "transparent"
+  },
+  "imagePrompt": {
+    "ja": "マーダーミステリー診断の結果カード用イラスト。日本人女性キャラクター1人、20代後半、鋭いインタロゲータータイプ、シャープな目元、プラチナアッシュグレーのすっきりしたショートボブ。チャコールグレーのロングジャケット、黒のハイネック、スリムパンツ、革手袋、細いシルバーアクセサリー。上半身構図、切れ味のあるポーズ、冷たい室内光、ダークグレー背景に銀のアクセント、シネマティック、精密描写、文字なし、ロゴなし。",
+    "en": "Character illustration for a murder mystery personality result card. One Japanese female character in her late 20s, sharp interrogator archetype, focused eyes, platinum ash gray clean short bob. Charcoal long jacket, black high-neck top, slim pants, leather gloves, subtle silver accessories. Waist-up composition, cutting pose, cool indoor lighting, dark gray background with silver accents, cinematic, highly detailed, no text, no logo."
+  },
+  "negativePrompt": {
+    "ja": "複数人、子供っぽい体型、コミカルすぎる表情、過度な露出、現代カジュアルすぎる服装、低解像度、ぼやけ、文字、ロゴ、透かし、余計な小物、手の崩れ",
+    "en": "multiple characters, childish proportions, overly comedic expression, excessive skin exposure, overly casual modern outfit, low resolution, blurry, text, logo, watermark, extra props, deformed hands"
+  }
+}

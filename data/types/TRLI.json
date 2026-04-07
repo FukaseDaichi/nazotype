@@ -1,0 +1,66 @@
+{
+  "typeId": "TRLI",
+  "typeCode": "TRLI",
+  "typeName": "奇術師",
+  "tagline": "常識の外から、逆転の筋を持ち込む。",
+  "summary": "発想の鋭さで新しい可能性を示し、議論をひっくり返す転換役。",
+  "detailDescription": "誰も見ていない角度から筋道を見つけ、盤面を一気に反転させるタイプです。固定観念にとらわれず、思い切った仮説を投げ込めるため、膠着した卓では特に光ります。飛躍が大きいと受け手が置いていかれやすいので、ひらめきを支える最小限の根拠を一緒に示すと強さが伝わります。",
+  "strengths": [
+    "停滞した場に新しい可能性を持ち込める",
+    "常識外れの視点から突破口を見つけやすい",
+    "思考の切り替えが早く、逆転の一手を打てる"
+  ],
+  "cautions": [
+    "着想が先走ると根拠不足に見えやすい",
+    "面白い仮説を追って本筋を見失うことがある",
+    "周囲が整理できる前に次の案へ移りやすい"
+  ],
+  "recommendedPlaystyle": [
+    "大胆な仮説ほど短く明快に提示する",
+    "ひらめきの根拠を一つでも添えて共有する",
+    "整理役が受け取れるよう結論から話す"
+  ],
+  "suitableRoles": [
+    "逆転要員",
+    "トリックスター役",
+    "想定外を持ち込む切り札役"
+  ],
+  "compatibility": {
+    "summary": "あなたの発想力は、空気を整えるタイプや細かな気配を観測するタイプと組むと、仮説が扱いやすくなります。",
+    "goodWithTypeCodes": [
+      "TFEP",
+      "OFEP"
+    ],
+    "goodWithDescription": "証言調律師(TFEP)が会話の流れを整え、観測メイド(OFEP)が場の温度差を丁寧に拾うことで、あなたの大胆な仮説が現実味のある突破口になります。"
+  },
+  "shareText": "マダミスタイプは「奇術師（TRLI）」でした。常識の外から逆転の一手を持ち込む、そんな人らしい。",
+  "axis": {
+    "axis1": "発言型",
+    "axis2": "推理重視",
+    "axis3": "論理派",
+    "axis4": "即興型"
+  },
+  "visualProfile": {
+    "genderPresentation": "female",
+    "ageRange": "20代後半",
+    "characterArchetype": "予想外の一手を切るトリックスター",
+    "characterDescription": "挑発的な笑みを浮かべつつ、誰も思いつかない仮説を平然と差し込む女性。軽やかな身のこなしと知性が同居する。",
+    "outfitDescription": "黒のショートテーラードジャケット、紫がかったグレーのシャツ、細身のベルト、片手袋。舞台奇術師を思わせるシャープな装い。",
+    "colorPalette": [
+      "black",
+      "smoky purple",
+      "silver"
+    ],
+    "pose": "片手を口元に添え、秘密を明かす直前の仕草",
+    "expression": "余裕を感じる挑発的な笑み",
+    "background": "transparent"
+  },
+  "imagePrompt": {
+    "ja": "マーダーミステリー診断の結果カード用イラスト。日本人女性キャラクター1人、20代後半、知的でトリックスターな奇術師タイプ、挑発的な笑み、シルバーホワイトの軽やかなロング。黒のショートテーラードジャケット、スモーキーパープルのシャツ、細身のベルト、片手袋。上半身構図、舞台のような陰影、黒と紫と銀を基調にした背景、シネマティック、精密描写、文字なし、ロゴなし。",
+    "en": "Character illustration for a murder mystery personality result card. One Japanese female character in her late 20s, intelligent trickster magician archetype, teasing smile, silver white light long hair. Black short tailored jacket, smoky purple shirt, slim belt, one glove. Waist-up composition, stage-like shadows, black, purple and silver themed background, cinematic, highly detailed, no text, no logo."
+  },
+  "negativePrompt": {
+    "ja": "複数人、子供っぽい体型、コミカルすぎる表情、過度な露出、現代カジュアルすぎる服装、低解像度、ぼやけ、文字、ロゴ、透かし、余計な小物、手の崩れ",
+    "en": "multiple characters, childish proportions, overly comedic expression, excessive skin exposure, overly casual modern outfit, low resolution, blurry, text, logo, watermark, extra props, deformed hands"
+  }
+}

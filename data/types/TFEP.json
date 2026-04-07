@@ -1,0 +1,66 @@
+{
+  "typeId": "TFEP",
+  "typeCode": "TFEP",
+  "typeName": "証言調律師",
+  "tagline": "本音が出る空気を、気づけば作っている。",
+  "summary": "事実を押さえながら対話の流れを整え、証言を引き出す調整役。",
+  "detailDescription": "人が話しやすくなる順番や温度を自然に作れるタイプです。証拠や証言の重みを理解しつつ、強すぎる圧を和らげて本音が出る場へ整えていきます。空気を優先しすぎると論点がぼやけやすいため、要所では事実に立ち返る線を自分で引いておくと安定します。",
+  "strengths": [
+    "対立気味の卓でも話しやすい雰囲気を作れる",
+    "感情と事実の両方を見ながら発言を引き出せる",
+    "証言の順番や交通整理がうまい"
+  ],
+  "cautions": [
+    "全員に配慮しすぎると決定打を逃しやすい",
+    "厳しい追及が必要な場面でブレーキを踏みがち",
+    "自分の仮説を後回しにして疲れやすい"
+  ],
+  "recommendedPlaystyle": [
+    "空気が荒れたら、まず論点を一つに絞って仕切り直す",
+    "証言の要約をこまめに挟み、感情論だけに寄せない",
+    "終盤では自分の見立てもはっきり言葉にする"
+  ],
+  "suitableRoles": [
+    "進行役",
+    "証言を引き出す聞き手役",
+    "場を整えるサポート役"
+  ],
+  "compatibility": {
+    "summary": "あなたの場作りは、裏から核心を突くタイプや発想で盤面を崩すタイプと組むと、証言の質が一段上がります。",
+    "goodWithTypeCodes": [
+      "ORLI",
+      "TRLI"
+    ],
+    "goodWithDescription": "潜伏スパイ(ORLI)が静かに急所を拾い、奇術師(TRLI)が新しい見立てを持ち込むことで、あなたの調律力が会話を意味のある証言へ導きます。"
+  },
+  "shareText": "マダミスタイプは「証言調律師（TFEP）」でした。本音が出る空気を、気づけば作っているタイプでした。",
+  "axis": {
+    "axis1": "発言型",
+    "axis2": "事実重視",
+    "axis3": "感情派",
+    "axis4": "計画型"
+  },
+  "visualProfile": {
+    "genderPresentation": "female",
+    "ageRange": "20代半ば",
+    "characterArchetype": "柔らかく場を整える交渉人",
+    "characterDescription": "穏やかな微笑みで緊張をほどきながら、本当に必要な話だけを自然に引き出す女性。",
+    "outfitDescription": "アイボリーのブラウスにダークグリーンのベスト、ロングスカート、細いリボンタイ、小さなメモ帳。上品で親しみやすい装い。",
+    "colorPalette": [
+      "ivory",
+      "deep green",
+      "brown"
+    ],
+    "pose": "胸元でメモ帳を持ち、穏やかに相手へ向き直る",
+    "expression": "安心感のあるやわらかな笑み",
+    "background": "transparent"
+  },
+  "imagePrompt": {
+    "ja": "マーダーミステリー診断の結果カード用イラスト。日本人女性キャラクター1人、20代半ば、穏やかな交渉人タイプ、優しい目元、ハニーブラウンの整ったセミロング。アイボリーのブラウス、ダークグリーンのベスト、ロングスカート、細いリボンタイ、小さなメモ帳。上半身構図、柔らかな室内光、深緑とアイボリーを基調にした上品な背景、シネマティック、精密描写、文字なし、ロゴなし。",
+    "en": "Character illustration for a murder mystery personality result card. One Japanese female character in her mid 20s, gentle negotiator archetype, kind eyes, neat honey brown semi-long hair. Ivory blouse, deep green vest, long skirt, slim ribbon tie, small memo notebook. Waist-up composition, soft indoor lighting, elegant background in deep green and ivory tones, cinematic, highly detailed, no text, no logo."
+  },
+  "negativePrompt": {
+    "ja": "複数人、子供っぽい体型、コミカルすぎる表情、過度な露出、現代カジュアルすぎる服装、低解像度、ぼやけ、文字、ロゴ、透かし、余計な小物、手の崩れ",
+    "en": "multiple characters, childish proportions, overly comedic expression, excessive skin exposure, overly casual modern outfit, low resolution, blurry, text, logo, watermark, extra props, deformed hands"
+  }
+}

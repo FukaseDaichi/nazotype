@@ -1,0 +1,66 @@
+{
+  "typeId": "ORLP",
+  "typeCode": "ORLP",
+  "typeName": "安楽椅子探偵",
+  "tagline": "見えない前提まで、真相の設計図に変える。",
+  "summary": "表に出ない構造や裏筋を整理し、真相への道筋を描く設計役。",
+  "detailDescription": "今見えているものだけでなく、その背後にある前提や構造を読むことに長けたタイプです。派手に場を動かさなくても、盤面の見取り図を描き直すことで真相へ近づきます。頭の中で組み立てた図が複雑になりやすいので、他の人に伝わる言葉へ翻訳する意識があると強みがさらに際立ちます。",
+  "strengths": [
+    "見えていない前提や裏筋を整理できる",
+    "複雑な情報を構造として把握できる",
+    "終盤で全体像を設計図のように示せる"
+  ],
+  "cautions": [
+    "考えが深くなるほど共有のタイミングが遅れやすい",
+    "複雑な説明が周囲に伝わりにくいことがある",
+    "構造に意識が向きすぎると感情の生々しさを逃しやすい"
+  ],
+  "recommendedPlaystyle": [
+    "仮説は図ではなく短い言葉で段階的に共有する",
+    "裏筋を話すときは何を根拠にしたかを明示する",
+    "感情派の読みを構造仮説の検証材料として使う"
+  ],
+  "suitableRoles": [
+    "設計役",
+    "全体像の整理役",
+    "裏筋を読む参照役"
+  ],
+  "compatibility": {
+    "summary": "あなたの構造理解は、現場の熱量や本音を拾うタイプと組むと、深読みが実戦で活きやすくなります。",
+    "goodWithTypeCodes": [
+      "TFEI",
+      "OFEI"
+    ],
+    "goodWithDescription": "扇動役者(TFEI)が議論を動かし、潜入記者(OFEI)が静かに本音を回収することで、あなたの深い読解が実戦的な推理として立ち上がります。"
+  },
+  "shareText": "マダミスタイプは「安楽椅子探偵（ORLP）」でした。誰も疑わなかった前提から、真相の設計図を描く人でした。",
+  "axis": {
+    "axis1": "観察型",
+    "axis2": "推理重視",
+    "axis3": "論理派",
+    "axis4": "計画型"
+  },
+  "visualProfile": {
+    "genderPresentation": "male",
+    "ageRange": "30代前半",
+    "characterArchetype": "椅子に座して全体を読む推理家",
+    "characterDescription": "一歩引いた位置から盤面全体を俯瞰し、見えない構造を見抜く落ち着いた男性。",
+    "outfitDescription": "ダークネイビーのカーディガン、ベスト、白シャツ、丸眼鏡、膝に置いた本。書斎に似合う知的で柔らかな装い。",
+    "colorPalette": [
+      "dark navy",
+      "brown",
+      "ivory"
+    ],
+    "pose": "片手で顎に触れながら静かに考え込む",
+    "expression": "深く思考に沈んだ落ち着いた顔",
+    "background": "transparent"
+  },
+  "imagePrompt": {
+    "ja": "マーダーミステリー診断の結果カード用イラスト。日本人男性キャラクター1人、30代前半、書斎で全体を読む安楽椅子探偵タイプ、知的で落ち着いた雰囲気、白髪が混じり始めたダークブラウンの7:3分けの髪、丸眼鏡。ダークネイビーのカーディガン、ベスト、白シャツ、本を添えた装い。上半身構図、書斎のような暖かな室内光、ネイビーとブラウンを基調にした背景、シネマティック、精密描写、文字なし、ロゴなし。",
+    "en": "Character illustration for a murder mystery personality result card. One Japanese male character in his early 30s, armchair detective archetype reading the whole board, intelligent and calm, dark brown hair with a hint of silver gray beginning at the temples, neat side part, round glasses. Dark navy cardigan, vest, white shirt, book in hand. Waist-up composition, warm study-like indoor lighting, navy and brown themed background, cinematic, highly detailed, no text, no logo."
+  },
+  "negativePrompt": {
+    "ja": "複数人、子供っぽい体型、コミカルすぎる表情、過度な露出、現代カジュアルすぎる服装、低解像度、ぼやけ、文字、ロゴ、透かし、余計な小物、手の崩れ",
+    "en": "multiple characters, childish proportions, overly comedic expression, excessive skin exposure, overly casual modern outfit, low resolution, blurry, text, logo, watermark, extra props, deformed hands"
+  }
+}

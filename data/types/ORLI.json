@@ -1,0 +1,66 @@
+{
+  "typeId": "ORLI",
+  "typeCode": "ORLI",
+  "typeName": "潜伏スパイ",
+  "tagline": "目立たず潜って、核心だけを持ち帰る。",
+  "summary": "深読みと観察で急所を見抜き、静かに局面を変える奇襲役。",
+  "detailDescription": "前に出て目立つよりも、盤面の裏側を読みながら静かに急所へ近づくタイプです。相手の言葉と沈黙の両方を材料にし、その場に合わせて立ち位置を変えられます。見えているものを抱え込みすぎると仲間と認識差が出るため、要点だけでも早めに共有すると奇襲が勝ち筋になります。",
+  "strengths": [
+    "目立たずに相手の本音や綻びへ近づける",
+    "深読みと即応を両立して急所を突ける",
+    "局面に応じて立ち位置を柔軟に変えられる"
+  ],
+  "cautions": [
+    "情報を抱え込みすぎると孤立しやすい",
+    "深読みが伝わらないと独走に見えることがある",
+    "タイミングを測りすぎて決定打を逃しやすい"
+  ],
+  "recommendedPlaystyle": [
+    "急所の情報は少し早めに共有して味方を増やす",
+    "深読みは結論から短く伝える",
+    "密談で拾った違和感を全体卓へ戻す導線を意識する"
+  ],
+  "suitableRoles": [
+    "潜伏役",
+    "裏を読む奇襲役",
+    "密談で動く情報工作役"
+  ],
+  "compatibility": {
+    "summary": "あなたの静かな奇襲は、場を開くタイプや細かな気配を拾うタイプと組むと、一手先を取りやすくなります。",
+    "goodWithTypeCodes": [
+      "TFEP",
+      "OFEP"
+    ],
+    "goodWithDescription": "証言調律師(TFEP)が話しやすい導線を作り、観測メイド(OFEP)が温度差を記録することで、あなたの深読みが一手先を取る推理として機能します。"
+  },
+  "shareText": "マダミスタイプは「潜伏スパイ（ORLI）」でした。目立たず潜って、核心だけを持ち帰るタイプらしい。",
+  "axis": {
+    "axis1": "観察型",
+    "axis2": "推理重視",
+    "axis3": "論理派",
+    "axis4": "即興型"
+  },
+  "visualProfile": {
+    "genderPresentation": "male",
+    "ageRange": "20代後半",
+    "characterArchetype": "影に潜む情報工作員",
+    "characterDescription": "表情を多く見せず、必要な瞬間だけ急所へ踏み込む寡黙な青年。暗い場所ほど輪郭が際立つ。",
+    "outfitDescription": "黒のハイカラーコート、ダークグレーのシャツ、レザーグローブ、細いチェーン。隠密性と洗練が同居する装い。",
+    "colorPalette": [
+      "black",
+      "dark gray",
+      "steel blue"
+    ],
+    "pose": "肩を少し引きながら横目で相手を読む",
+    "expression": "感情を伏せた鋭い視線",
+    "background": "transparent"
+  },
+  "imagePrompt": {
+    "ja": "マーダーミステリー診断の結果カード用イラスト。日本人男性キャラクター1人、20代後半、影に潜む潜伏スパイタイプ、寡黙で鋭い目、ジェットブラックの短く刈り込んだ髪。黒のハイカラーコート、ダークグレーのシャツ、レザーグローブ、細いチェーンアクセサリー。上半身構図、暗がりのシネマティック照明、黒と鋼色を基調にした背景、精密描写、文字なし、ロゴなし。",
+    "en": "Character illustration for a murder mystery personality result card. One Japanese male character in his late 20s, shadowy undercover spy archetype, quiet with sharp eyes, jet black closely cropped hair. Black high-collar coat, dark gray shirt, leather gloves, thin chain accessory. Waist-up composition, low-key cinematic lighting, black and steel-blue background, highly detailed, no text, no logo."
+  },
+  "negativePrompt": {
+    "ja": "複数人、子供っぽい体型、コミカルすぎる表情、過度な露出、現代カジュアルすぎる服装、低解像度、ぼやけ、文字、ロゴ、透かし、余計な小物、手の崩れ",
+    "en": "multiple characters, childish proportions, overly comedic expression, excessive skin exposure, overly casual modern outfit, low resolution, blurry, text, logo, watermark, extra props, deformed hands"
+  }
+}

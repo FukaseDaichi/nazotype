@@ -1,0 +1,66 @@
+{
+  "typeId": "OFEP",
+  "typeCode": "OFEP",
+  "typeName": "観測メイド",
+  "tagline": "誰も口にしない気配まで、そっと見届けている。",
+  "summary": "表情や温度差を丁寧に記憶し、場の空気を静かに支える観測役。",
+  "detailDescription": "言葉そのものより、間や表情、空気の揺れを丁寧に記録していくタイプです。前に出て主張するよりも、場に残った気配をあとから言語化することで真価を発揮します。遠慮しすぎると大事な観測が埋もれるため、『今の反応が気になる』と短く差し込む習慣を持つと強みが伝わります。",
+  "strengths": [
+    "言葉にならない温度差や反応をよく覚えている",
+    "場の空気を壊さずに重要な違和感を拾える",
+    "感情の変化を静かに継続観測できる"
+  ],
+  "cautions": [
+    "遠慮が強いと情報を抱え込んでしまいやすい",
+    "断定を避けすぎて発言の重みが伝わりにくい",
+    "場を支える側に回りすぎて疲れやすい"
+  ],
+  "recommendedPlaystyle": [
+    "印象に残った反応は簡潔な言葉で都度共有する",
+    "強い発言の裏にある空気の変化を言語化する",
+    "終盤では観測してきた感情の推移をまとめて出す"
+  ],
+  "suitableRoles": [
+    "空気の観測役",
+    "聞き手役",
+    "関係性の記録役"
+  ],
+  "compatibility": {
+    "summary": "あなたの繊細な観測は、発想を飛ばすタイプや静かに深掘るタイプと組むと、推理の要所を支えやすくなります。",
+    "goodWithTypeCodes": [
+      "TRLI",
+      "ORLI"
+    ],
+    "goodWithDescription": "奇術師(TRLI)が新しい仮説を投げ、潜伏スパイ(ORLI)がその裏を静かに詰めることで、あなたの観測が重要な判断材料になります。"
+  },
+  "shareText": "マダミスタイプは「観測メイド（OFEP）」でした。誰も口にしない気配まで、そっと見届けているタイプでした。",
+  "axis": {
+    "axis1": "観察型",
+    "axis2": "事実重視",
+    "axis3": "感情派",
+    "axis4": "計画型"
+  },
+  "visualProfile": {
+    "genderPresentation": "female",
+    "ageRange": "20代前半",
+    "characterArchetype": "静かな気配を拾うハウスキーパー",
+    "characterDescription": "一歩引いた位置から全員の表情を見ている、気品と慎みを併せ持つ女性。静かな所作の中に観察力が宿る。",
+    "outfitDescription": "クラシカルな黒のロングドレスに白いエプロンカラー、レースのカフス、落ち着いたヘッドドレス。過度に装飾しない上品なメイド風の装い。",
+    "colorPalette": [
+      "black",
+      "white",
+      "dusty blue"
+    ],
+    "pose": "手を前で重ね、静かに視線だけで場を追う",
+    "expression": "穏やかでよく見ている眼差し",
+    "background": "transparent"
+  },
+  "imagePrompt": {
+    "ja": "マーダーミステリー診断の結果カード用イラスト。日本人女性キャラクター1人、20代前半、静かな観測者タイプ、上品で控えめ、柔らかな目元。クラシカルな黒のロングドレス、白いエプロンカラー、レースのカフス、落ち着いたヘッドドレス、チェスタットブラウンの髪を上品に結い上げ。上半身構図、やわらかな室内光、黒と白にくすんだ青を添えた背景、シネマティック、精密描写、文字なし、ロゴなし。",
+    "en": "Character illustration for a murder mystery personality result card. One Japanese female character in her early 20s, quiet observer archetype, elegant and reserved, soft eyes. Classical black long dress, white apron collar, lace cuffs, subdued headpiece, chestnut brown hair elegantly pinned up. Waist-up composition, soft indoor lighting, black and white background with dusty blue accents, cinematic, highly detailed, no text, no logo."
+  },
+  "negativePrompt": {
+    "ja": "複数人、子供っぽい体型、コミカルすぎる表情、過度な露出、現代カジュアルすぎる服装、低解像度、ぼやけ、文字、ロゴ、透かし、余計な小物、手の崩れ",
+    "en": "multiple characters, childish proportions, overly comedic expression, excessive skin exposure, overly casual modern outfit, low resolution, blurry, text, logo, watermark, extra props, deformed hands"
+  }
+}

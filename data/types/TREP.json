@@ -1,0 +1,66 @@
+{
+  "typeId": "TREP",
+  "typeCode": "TREP",
+  "typeName": "動機脚本家",
+  "tagline": "なぜそうしたのか——そこに、真相の入口がある。",
+  "summary": "動機や関係性を整理しながら、物語として全体像を組み上げる構成役。",
+  "detailDescription": "発言の裏にある感情の変化や関係性の歪みから、事件の筋道を組み立てるタイプです。人の行動を『なぜそうしたのか』から捉えるため、表面だけでは見えない真意へ強くなれます。物語として整いすぎると事実とのズレが生まれるので、節目では必ず証拠に立ち返るのがコツです。",
+  "strengths": [
+    "人物関係や動機の流れを分かりやすく整理できる",
+    "感情の変化から物語全体の筋を組み立てられる",
+    "説明にドラマ性があり周囲の納得を引き出しやすい"
+  ],
+  "cautions": [
+    "筋の良い物語に引かれて証拠を軽く扱いやすい",
+    "感情移入しすぎると一部の人物に肩入れしやすい",
+    "論理派からは飛躍に見えることがある"
+  ],
+  "recommendedPlaystyle": [
+    "人物ごとの目的と感情の推移を時系列で整理する",
+    "動機仮説を話すときは、根拠となる発言も添える",
+    "感情の読みを証拠確認とセットで回す"
+  ],
+  "suitableRoles": [
+    "人間関係の読解役",
+    "ドラマを組み立てる語り手役",
+    "動機を整理する参照役"
+  ],
+  "compatibility": {
+    "summary": "あなたの物語理解は、違和感を追うタイプや前に出て切り込むタイプと組むと、動機読解が盤面を動かします。",
+    "goodWithTypeCodes": [
+      "OFLI",
+      "TFLI"
+    ],
+    "goodWithDescription": "潜伏刑事(OFLI)が静かに矛盾を追い、尋問官(TFLI)が表の会話を動かすことで、あなたの動機読解が推理の流れを前へ進めます。"
+  },
+  "shareText": "マダミスタイプは「動機脚本家（TREP）」でした。人が動いた理由を読めば、事件の筋が見えてくる——そういう人でした。",
+  "axis": {
+    "axis1": "発言型",
+    "axis2": "推理重視",
+    "axis3": "感情派",
+    "axis4": "計画型"
+  },
+  "visualProfile": {
+    "genderPresentation": "female",
+    "ageRange": "20代後半",
+    "characterArchetype": "物語を組み立てる感情演出家",
+    "characterDescription": "人の心の揺れを丁寧に追い、事件全体を一本の物語として語り直す知的な女性。",
+    "outfitDescription": "ディープブルーのワンピースにライトグレーのロングコート、細いベルト、万年筆。品がありつつ物語性のあるシルエット。",
+    "colorPalette": [
+      "deep blue",
+      "light gray",
+      "silver"
+    ],
+    "pose": "胸元でペンを持ち、静かに語り始める姿勢",
+    "expression": "優しさと洞察が同居する眼差し",
+    "background": "transparent"
+  },
+  "imagePrompt": {
+    "ja": "マーダーミステリー診断の結果カード用イラスト。日本人女性キャラクター1人、20代後半、感情と物語を組み立てる脚本家タイプ、落ち着いた知性、やわらかな目元。ダスティモーヴブラウンの落ち着いたセミロング。ディープブルーのワンピース、ライトグレーのロングコート、細いベルト、万年筆。上半身構図、柔らかなシネマティック照明、青と灰を基調にした背景、精密描写、文字なし、ロゴなし。",
+    "en": "Character illustration for a murder mystery personality result card. One Japanese female character in her late 20s, story-building dramatist archetype, calm intelligence, gentle eyes. Dusty mauve-brown calm semi-long hair. Deep blue dress, light gray long coat, slim belt, fountain pen. Waist-up composition, soft cinematic lighting, blue and gray themed background, highly detailed, no text, no logo."
+  },
+  "negativePrompt": {
+    "ja": "複数人、子供っぽい体型、コミカルすぎる表情、過度な露出、現代カジュアルすぎる服装、低解像度、ぼやけ、文字、ロゴ、透かし、余計な小物、手の崩れ",
+    "en": "multiple characters, childish proportions, overly comedic expression, excessive skin exposure, overly casual modern outfit, low resolution, blurry, text, logo, watermark, extra props, deformed hands"
+  }
+}

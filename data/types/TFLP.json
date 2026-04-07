@@ -1,0 +1,66 @@
+{
+  "typeId": "TFLP",
+  "typeCode": "TFLP",
+  "typeName": "名探偵",
+  "tagline": "散らかった盤面ほど、この人の出番だ。",
+  "summary": "証拠ベースで会話を主導し、全体を整理して勝ち筋を作る推進役。",
+  "detailDescription": "盤面が散らかるほど、情報を並べ替えて道筋を作る力が光るタイプです。公開情報や時系列を整理しながら議論の焦点を絞り、卓全体を真相へ寄せていきます。正しさを急ぎすぎると感情の機微を置いていくことがあるため、周囲の納得感を拾いながら進めるとさらに強みが活きます。",
+  "strengths": [
+    "公開情報と発言を構造化して共有できる",
+    "矛盾点を冷静に見つけて議論を前進させられる",
+    "終盤で情報を再整理し、投票前の判断材料を整えられる"
+  ],
+  "cautions": [
+    "結論を急ぎすぎると感情由来の違和感を見落としやすい",
+    "主導が強くなりすぎると他の人の発言機会を削りやすい",
+    "正論の強さが相手への圧として伝わることがある"
+  ],
+  "recommendedPlaystyle": [
+    "中盤までは時系列と公開情報の整理役を引き受ける",
+    "反論するときは断定より根拠の積み上げを優先する",
+    "感情派の意見も補助線として拾い、議論に残す"
+  ],
+  "suitableRoles": [
+    "探偵役",
+    "進行補佐役",
+    "公開情報の整理役"
+  ],
+  "compatibility": {
+    "summary": "理詰めで盤面を進めるあなたは、感情の余白を拾うタイプや場に揺さぶりを起こすタイプと組むと、推理の説得力がさらに増します。",
+    "goodWithTypeCodes": [
+      "OREI",
+      "TREI"
+    ],
+    "goodWithDescription": "余白の魔術師(OREI)が言葉にならない本音を拾い、大女優(TREI)が場に動きを生むことで、あなたの論点整理が決定打までつながりやすくなります。"
+  },
+  "shareText": "マダミスタイプは「名探偵（TFLP）」でした。盤面が散らかるほど光る——証拠を束ねて答えへ連れていく人らしい。",
+  "axis": {
+    "axis1": "発言型",
+    "axis2": "事実重視",
+    "axis3": "論理派",
+    "axis4": "計画型"
+  },
+  "visualProfile": {
+    "genderPresentation": "male",
+    "ageRange": "20代後半",
+    "characterArchetype": "冷静なリードインベスティゲーター",
+    "characterDescription": "鋭い観察眼を持つ知的な青年。落ち着いた声で卓を仕切り、決定打になる事実を静かに積み上げていく。",
+    "outfitDescription": "ネイビーのスリーピーススーツにえんじ色のネクタイ、白いシャツ、革の手帳と銀のペン。上品で無駄のない探偵風の装い。",
+    "colorPalette": [
+      "navy",
+      "burgundy",
+      "gold"
+    ],
+    "pose": "片手に手帳を持ち、もう片手で論点を示す",
+    "expression": "冷静で自信のある視線",
+    "background": "transparent"
+  },
+  "imagePrompt": {
+    "ja": "マーダーミステリー診断の結果カード用イラスト。日本人男性キャラクター1人、20代後半、冷静な名探偵タイプ、知的で端正な顔立ち、ダークブラウンの清潔感のある7:3ヘアスタイル、鋭い視線。ネイビーのスリーピーススーツ、えんじ色のネクタイ、白いシャツ、革の手帳と銀のペン。上半身構図、上品でミステリアスな室内光、落ち着いた灰色背景に金のアクセント、シネマティック、精密描写、文字なし、ロゴなし。",
+    "en": "Character illustration for a murder mystery personality result card. One Japanese male character in his late 20s, calm master detective archetype, intelligent face, dark brown neatly side-parted hair, sharp eyes. Navy three-piece suit, burgundy tie, white shirt, leather notebook and silver pen. Waist-up composition, elegant mysterious indoor lighting, muted gray background with gold accents, cinematic, highly detailed, no text, no logo."
+  },
+  "negativePrompt": {
+    "ja": "複数人、子供っぽい体型、コミカルすぎる表情、過度な露出、現代カジュアルすぎる服装、低解像度、ぼやけ、文字、ロゴ、透かし、余計な小物、手の崩れ",
+    "en": "multiple characters, childish proportions, overly comedic expression, excessive skin exposure, overly casual modern outfit, low resolution, blurry, text, logo, watermark, extra props, deformed hands"
+  }
+}

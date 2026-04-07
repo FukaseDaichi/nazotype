@@ -1,0 +1,66 @@
+{
+  "typeId": "OFLP",
+  "typeCode": "OFLP",
+  "typeName": "沈黙の鑑識官",
+  "tagline": "静かに見ていて、判断は誰より正確。",
+  "summary": "多くを語らず材料を精査し、情報の精度を上げる分析役。",
+  "detailDescription": "前に出て卓を引っ張るより、まず材料の質を見極めることに長けたタイプです。勢いに流されず、公開情報や発言の信頼度を静かに点検し続けます。発言量が少ないと強みが伝わりにくいため、確度の高い違和感はタイミングを逃さず共有すると存在感がぐっと増します。",
+  "strengths": [
+    "情報の信頼度や細部の整合性を丁寧に見られる",
+    "感情的な場面でも判断をぶらしにくい",
+    "終盤で精度の高い指摘を出せる"
+  ],
+  "cautions": [
+    "様子見が長いと情報が共有されないまま終わりやすい",
+    "前に出る人へ判断を任せすぎることがある",
+    "確度を求めすぎて発言が遅れやすい"
+  ],
+  "recommendedPlaystyle": [
+    "違和感はメモに溜めず、節目ごとに短く共有する",
+    "発言が強い人の論理も一度ばらして検証する",
+    "終盤だけでなく中盤から精度の高い確認役を担う"
+  ],
+  "suitableRoles": [
+    "鑑識役",
+    "裏取り役",
+    "証拠の監査役"
+  ],
+  "compatibility": {
+    "summary": "あなたの静かな精度は、場に動きや感情の揺れを生むタイプと組むと、検証力の価値がさらに高まります。",
+    "goodWithTypeCodes": [
+      "TREI",
+      "OREI"
+    ],
+    "goodWithDescription": "大女優(TREI)が盤面に動きを生み、余白の魔術師(OREI)が沈黙の違和感を拾うことで、あなたの検証力が卓の確かな土台になります。"
+  },
+  "shareText": "マダミスタイプは「沈黙の鑑識官（OFLP）」でした。静かに見ていて、判断は誰より正確——そういう人でした。",
+  "axis": {
+    "axis1": "観察型",
+    "axis2": "事実重視",
+    "axis3": "論理派",
+    "axis4": "計画型"
+  },
+  "visualProfile": {
+    "genderPresentation": "male",
+    "ageRange": "30代前半",
+    "characterArchetype": "静かに真実を検証する分析官",
+    "characterDescription": "口数は少ないが、見落としを許さない精度で盤面を見る男性。静かな一言が最終盤の重みになる。",
+    "outfitDescription": "ダークグレーのタートルネックに黒のロングコート、薄い手袋、細い眼鏡。無駄のない鑑識官らしい装い。",
+    "colorPalette": [
+      "dark gray",
+      "black",
+      "ice blue"
+    ],
+    "pose": "指先で証拠を確認するように静かに構える",
+    "expression": "感情を抑えた冷静な横顔",
+    "background": "transparent"
+  },
+  "imagePrompt": {
+    "ja": "マーダーミステリー診断の結果カード用イラスト。日本人男性キャラクター1人、30代前半、静かな鑑識官タイプ、知的で無口な雰囲気、アッシュブラウンの清潔感のある短髪、細い眼鏡。ダークグレーのタートルネック、黒のロングコート、薄い手袋。上半身構図、冷たい室内光、灰色と淡い青を基調にした背景、シネマティック、精密描写、文字なし、ロゴなし。",
+    "en": "Character illustration for a murder mystery personality result card. One Japanese male character in his early 30s, quiet forensic analyst archetype, intelligent and reserved, ash brown clean-cut short hair, slim glasses. Dark gray turtleneck, black long coat, thin gloves. Waist-up composition, cool indoor lighting, gray and pale blue background, cinematic, highly detailed, no text, no logo."
+  },
+  "negativePrompt": {
+    "ja": "複数人、子供っぽい体型、コミカルすぎる表情、過度な露出、現代カジュアルすぎる服装、低解像度、ぼやけ、文字、ロゴ、透かし、余計な小物、手の崩れ",
+    "en": "multiple characters, childish proportions, overly comedic expression, excessive skin exposure, overly casual modern outfit, low resolution, blurry, text, logo, watermark, extra props, deformed hands"
+  }
+}
