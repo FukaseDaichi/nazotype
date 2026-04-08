@@ -1,84 +1,27 @@
 .page {
-  --rcf-ink: #1a1208;
-  --rcf-paper: #f0e8d5;
-  --rcf-paper-dark: #e2d6be;
-  --rcf-red: #c0392b;
-  --rcf-amber: #d4820a;
-  --rcf-sepia: #8b6914;
-  --rcf-sepia-light: #c4a96b;
-  --rcf-noir: #0d0b08;
-  --rcf-tape: rgba(210, 190, 140, 0.5);
-  --color-text: rgba(240, 232, 213, 0.92);
-  --color-text-subtle: rgba(196, 169, 107, 0.72);
-  --color-line: rgba(196, 169, 107, 0.18);
-  --color-accent: var(--rcf-sepia-light);
-  --color-accent-soft: rgba(196, 169, 107, 0.12);
-  --color-action-primary: var(--rcf-red);
-  --color-action-primary-hover: #a93226;
-  --color-action-secondary: var(--rcf-sepia-light);
-  --color-action-secondary-hover: #dcc38f;
-  position: relative;
-  min-height: 100vh;
-  padding-bottom: 4rem;
-  color: var(--rcf-paper);
-}
-
-.page a {
-  color: inherit;
-}
-
-.page :global(.font-display) {
-  font-family: var(--rcf-font-serif), serif;
-  letter-spacing: 0.04em;
-}
-
-.backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-color: var(--rcf-noir);
-  background-image:
-    radial-gradient(ellipse 78% 60% at 18% 0%, #1c1508 0%, transparent 60%),
-    radial-gradient(ellipse 64% 84% at 82% 100%, #100c05 0%, transparent 52%);
-}
-
-.backdrop::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(196, 169, 107, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(196, 169, 107, 0.04) 1px, transparent 1px);
-  background-size: 28px 28px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.44), transparent 85%);
+  min-height: 100dvh;
 }
 
 .shell {
-  position: relative;
-  z-index: 1;
-  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 768px;
   margin: 0 auto;
-  padding: 2rem 1.5rem 6rem;
+  padding: 0 1rem 3rem;
 }
 
 .twoCol {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin-bottom: 1.25rem;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .twoCol {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .footer {
-  margin-top: 3rem;
-}
-
-@media (max-width: 640px) {
-  .twoCol {
-    grid-template-columns: 1fr;
-  }
-
-  .shell {
-    padding-inline: 1rem;
-  }
+  margin-top: 2rem;
 }

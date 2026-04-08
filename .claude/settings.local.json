@@ -5,7 +5,8 @@
       "Bash(ls -la /Users/fukasedaichi/git/madamistype/app/\\\\\\(marketing\\\\\\)/)",
       "Bash(ls -la /Users/fukasedaichi/git/madamistype/app/\\\\\\(diagnosis\\\\\\)/)",
       "Bash(npx tsc:*)",
-      "Bash(kill 19432)"
+      "Bash(kill 19432)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)"
     ]
   }
 }

@@ -24,23 +24,38 @@ export function TypeSectionFrame({
   const sectionClassName = [styles.section, className].filter(Boolean).join(" ");
 
   return (
-    <section className={sectionClassName} aria-labelledby={heading.headingId}>
+    <section
+      className={`${sectionClassName} rounded-xl border border-midnight-600 bg-midnight-800 p-5 shadow-sm`}
+      aria-labelledby={heading.headingId}
+    >
       {headerAlign === "center" ? (
-        <div className={styles.sectionHeaderCentered}>
-          <span className={styles.sectionEyebrow}>{heading.eyebrow}</span>
-          <h2 id={heading.headingId} className={styles.sectionTitle}>
+        <div className="flex flex-col items-center gap-2 text-center">
+          <span className="font-mono text-xs font-bold uppercase tracking-widest text-amber-400">
+            {heading.eyebrow}
+          </span>
+          <h2
+            id={heading.headingId}
+            className="text-xl font-bold leading-tight"
+            style={{ fontFamily: "var(--nzt-font-heading), sans-serif" }}
+          >
             {heading.title}
           </h2>
         </div>
       ) : (
-        <>
-          <span className={styles.sectionEyebrow}>{heading.eyebrow}</span>
-          <h2 id={heading.headingId} className={styles.sectionTitle}>
+        <div className="space-y-1">
+          <span className="block font-mono text-xs font-bold uppercase tracking-widest text-amber-400">
+            {heading.eyebrow}
+          </span>
+          <h2
+            id={heading.headingId}
+            className="text-xl font-bold leading-tight"
+            style={{ fontFamily: "var(--nzt-font-heading), sans-serif" }}
+          >
             {heading.title}
           </h2>
-        </>
+        </div>
       )}
-      {children}
+      <div className="mt-4">{children}</div>
     </section>
   );
 }

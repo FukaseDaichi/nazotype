@@ -3,8 +3,6 @@ import {
   type TypeSectionHeading,
 } from "@/components/type/type-detail-page-content/type-section-frame";
 
-import styles from "./type-overview-section.module.css";
-
 type TypeOverviewSectionProps = {
   heading: TypeSectionHeading;
   content: string;
@@ -16,7 +14,12 @@ export function TypeOverviewSection({
 }: TypeOverviewSectionProps) {
   return (
     <TypeSectionFrame heading={heading}>
-      <p className={styles.detailText}>{content}</p>
+      <div
+        className="text-base leading-loose whitespace-pre-line"
+        style={{ fontFamily: "var(--nzt-font-serif), serif" }}
+      >
+        {content}
+      </div>
     </TypeSectionFrame>
   );
 }

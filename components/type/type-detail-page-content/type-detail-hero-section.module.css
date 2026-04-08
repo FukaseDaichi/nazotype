@@ -1,421 +1,54 @@
+.heroSection {
+  background: var(--color-paper-50);
+  color: var(--color-text-on-light);
+  padding: 2rem 1rem 3rem;
+  animation: heroFadeUp 0.55s ease both;
+}
+
 .mast {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid rgba(196, 169, 107, 0.28);
+  align-items: center;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 .mastLogo {
-  color: var(--rcf-sepia-light);
-  font-family: var(--rcf-font-display), sans-serif;
-  font-size: 1.5rem;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--color-amber-400);
   text-decoration: none;
+  font-size: 0.875rem;
 }
 
 .mastBack {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: rgba(196, 169, 107, 0.55);
-  font-family: var(--rcf-font-typewriter), monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
+  font-size: 0.875rem;
+  color: var(--color-cyan-500);
   text-decoration: none;
-  text-transform: uppercase;
-  transition: color 0.2s ease;
+  transition: color 0.15s;
 }
 
 .mastBack:hover {
-  color: var(--rcf-sepia-light);
+  color: var(--color-cyan-400);
 }
 
-.suspectCard {
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 1.25rem;
-  border: 1px solid rgba(196, 169, 107, 0.5);
-  background: var(--rcf-paper);
-  padding: clamp(1.8rem, 4vw, 2.5rem) clamp(1.4rem, 4vw, 2.5rem)
-    clamp(1.8rem, 4vw, 2rem);
-  box-shadow:
-    0 12px 42px rgba(0, 0, 0, 0.45),
-    inset 0 0 60px rgba(139, 105, 20, 0.05);
-  animation: sharedFadeUp 0.55s ease both;
-}
-
-.suspectCard::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    transparent,
-    transparent 31px,
-    rgba(139, 105, 20, 0.1) 31px,
-    rgba(139, 105, 20, 0.1) 32px
-  );
-  pointer-events: none;
-}
-
-.suspectCard::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 64px;
-  bottom: 0;
-  width: 1px;
-  background: rgba(192, 57, 43, 0.25);
-}
-
-.stamp {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.8rem;
-  z-index: 1;
-  color: var(--rcf-red);
-  border: 2px solid var(--rcf-red);
-  padding: 0.2rem 0.7rem;
-  font-family: var(--rcf-font-display), sans-serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.2em;
-  opacity: 0.72;
-  transform: rotate(-6deg);
-  pointer-events: none;
-}
-
-.fileMeta {
-  position: relative;
-  z-index: 1;
-  margin: 0 0 0.8rem;
-  color: var(--rcf-sepia);
-  font-family: var(--rcf-font-typewriter), monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.suspectName {
-  position: relative;
-  z-index: 1;
-  margin: 0 0 0.6rem;
-  color: var(--rcf-ink);
-  font-family: var(--rcf-font-display), sans-serif;
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  line-height: 0.95;
-  letter-spacing: 0.04em;
-}
-
-.suspectName em {
-  font-style: normal;
-  color: var(--rcf-red);
-}
-
-.sharedNote {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  margin: 0 0 1.5rem;
-  color: var(--rcf-sepia);
-  font-family: var(--rcf-font-note), cursive;
-  font-size: 1rem;
-  transform: rotate(-1deg);
-}
-
-.heroCols {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
-  gap: 2rem;
-}
-
-.artworkFrame {
-  position: relative;
-}
-
-.artworkFrame::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  width: 70px;
-  height: 18px;
-  background: var(--rcf-tape);
-  transform: translateX(-50%) rotate(-2deg);
-  z-index: 2;
-}
-
-.artworkInner {
-  border: 1px solid rgba(139, 105, 20, 0.4);
-  overflow: hidden;
-}
-
-.heroArtwork:global(.illustration-frame) {
-  width: 100%;
-  min-height: 0;
-  aspect-ratio: 3 / 4;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  background: linear-gradient(160deg, #241a0b 0%, #140f07 100%);
-}
-
-.heroArtwork:global(.placeholder-illustration) {
-  justify-content: flex-end;
-  gap: 0.65rem;
-  padding: 1rem;
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(196, 169, 107, 0.12),
-      transparent 34%
-    ),
-    linear-gradient(160deg, #241a0b 0%, #140f07 100%);
-}
-
-.heroArtwork :global(.placeholder-badge) {
-  border-radius: 0;
-  background: rgba(13, 11, 8, 0.65);
-  color: var(--rcf-sepia-light);
-  font-family: var(--rcf-font-typewriter), monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
-}
-
-.heroArtwork :global(.font-display) {
-  color: rgba(240, 232, 213, 0.94);
-  font-size: 1.4rem;
-}
-
-.heroArtwork :global(.text-sm) {
-  color: rgba(196, 169, 107, 0.68) !important;
-  font-family: var(--rcf-font-typewriter), monospace;
-  font-size: 0.72rem;
-  line-height: 1.7;
-}
-
-.heroArtwork :global(img) {
-  filter: sepia(28%) contrast(1.06);
-}
-
-.typeInfo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.typeNameRow {
-  display: flex;
-  align-items: end;
-  gap: 1rem;
-}
-
-.chibiHero {
-  flex-shrink: 0;
-}
-
-.chibiHeroFrame {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  border: 1px solid rgba(139, 105, 20, 0.3);
-  background: var(--rcf-paper);
-  padding: 6px;
-  box-shadow:
-    0 4px 16px rgba(0, 0, 0, 0.25),
-    inset 0 0 12px rgba(139, 105, 20, 0.04);
-  transform: rotate(3deg);
-}
-
-.chibiHeroFrame::before {
-  content: "";
-  position: absolute;
-  top: -7px;
-  left: 50%;
-  width: 42px;
-  height: 14px;
-  background: var(--rcf-tape);
-  transform: translateX(-50%) rotate(-1.5deg);
-  z-index: 2;
-}
-
-.chibiHeroImage {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.typeCode {
-  margin: 0;
-  color: var(--rcf-sepia);
-  font-family: var(--rcf-font-typewriter), monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-}
-
-.typeName {
-  margin: 0;
-  color: var(--rcf-ink);
-  font-family: var(--rcf-font-display), sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: 0.05em;
-  line-height: 1;
-}
-
-.typeTagline {
-  margin: 0;
-  color: var(--rcf-red);
-  font-family: var(--rcf-font-note), cursive;
-  font-size: 1.3rem;
-  line-height: 1.4;
-}
-
-.typeSummary {
-  margin: 0;
-  padding-left: 1rem;
-  border-left: 3px solid rgba(139, 105, 20, 0.35);
-  color: #3d2e10;
-  font-family: var(--rcf-font-typewriter), monospace;
-  font-size: 0.8rem;
-  line-height: 2;
-}
-
-.heroActions {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin-top: 1.5rem;
-}
-
-.heroActionNote {
-  position: relative;
-  z-index: 1;
-  margin: 0.85rem 0 0;
-  color: rgba(61, 46, 16, 0.82);
-  font-family: var(--rcf-font-typewriter), monospace;
-  font-size: 0.72rem;
-  line-height: 1.8;
-}
-
-.primaryButton,
-.secondaryButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 52px;
-  padding: 0.85rem 1.5rem;
-  text-decoration: none;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
-}
-
-a.secondaryButton {
-  color: #5a4215 !important;
-}
-
-.primaryButton {
-  border: 1px solid var(--rcf-red);
-  background: var(--rcf-red);
-  color: #fff;
-  font-family: var(--rcf-font-display), sans-serif;
-  font-size: 1rem;
-  letter-spacing: 0.12em;
-}
-
-.primaryButton:hover {
-  background: #a93226;
-}
-
-.secondaryButton {
-  border: 1px solid rgba(139, 105, 20, 0.5);
-  background: transparent;
-  color: var(--rcf-ink);
-  font-family: var(--rcf-font-typewriter), monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.secondaryButton:hover {
-  background: rgba(139, 105, 20, 0.1);
-}
-
-@keyframes sharedFadeUp {
+@keyframes heroFadeUp {
   from {
     opacity: 0;
     transform: translateY(14px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@media (max-width: 940px) {
-  .chibiHeroFrame {
-    width: 150px;
-    height: 150px;
-  }
-}
-
-@media (max-width: 640px) {
-  .heroCols,
-  .heroActions {
-    grid-template-columns: 1fr;
-  }
-
-  .mast {
-    align-items: flex-start;
-  }
-
-  .typeNameRow {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-
-  .chibiHero {
-    position: absolute;
-    right: 0;
-    bottom: 190px;
-  }
-
-  .chibiHeroFrame {
-    width: 180px;
-    height: 180px;
-  }
-}
-
-@media (max-width: 520px) {
-  .suspectCard::after {
-    left: 40px;
-  }
-
-  .stamp {
-    top: 1rem;
-    right: 1rem;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .suspectCard {
+  .heroSection {
     animation: none;
   }
 
-  .mastBack,
-  .primaryButton,
-  .secondaryButton {
+  .mastBack {
     transition: none;
   }
 }

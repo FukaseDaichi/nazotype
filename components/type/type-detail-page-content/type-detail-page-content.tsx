@@ -2,9 +2,9 @@ import type { AxisSummary, TypeData } from "@/lib/types";
 
 import {
   Bebas_Neue,
-  Caveat,
+  IBM_Plex_Mono,
+  Klee_One,
   Noto_Serif_JP,
-  Special_Elite,
 } from "next/font/google";
 
 import { SiteFooter } from "@/components/layout/site-footer/site-footer";
@@ -19,34 +19,34 @@ import { TypeSignatureSection } from "@/components/type/type-detail-page-content
 
 import styles from "./type-detail-page-content.module.css";
 
-const displayFont = Bebas_Neue({
-  variable: "--rcf-font-display",
+const headingFont = Bebas_Neue({
+  variable: "--nzt-font-heading",
   subsets: ["latin"],
   weight: "400",
   display: "swap",
   preload: false,
 });
 
-const typewriterFont = Special_Elite({
-  variable: "--rcf-font-typewriter",
+const monoFont = IBM_Plex_Mono({
+  variable: "--nzt-font-mono",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "700"],
   display: "swap",
   preload: false,
 });
 
 const serifFont = Noto_Serif_JP({
-  variable: "--rcf-font-serif",
+  variable: "--nzt-font-serif",
   subsets: ["latin"],
   weight: ["400", "700"],
   display: "swap",
   preload: false,
 });
 
-const noteFont = Caveat({
-  variable: "--rcf-font-note",
+const noteFont = Klee_One({
+  variable: "--nzt-font-note",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400"],
   display: "swap",
   preload: false,
 });
@@ -116,10 +116,8 @@ export function TypeDetailPageContent({
   return (
     <main
       id="main-content"
-      className={`${displayFont.variable} ${typewriterFont.variable} ${serifFont.variable} ${noteFont.variable} ${styles.page}`}
+      className={`${headingFont.variable} ${monoFont.variable} ${serifFont.variable} ${noteFont.variable} ${styles.page}`}
     >
-      <div aria-hidden="true" className={styles.backdrop} />
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -127,16 +125,17 @@ export function TypeDetailPageContent({
         }}
       />
 
+      <TypeDetailHeroSection
+        mode={mode}
+        typeData={typeData}
+        shareKey={shareKey}
+        publicUrl={publicUrl}
+        sharedUserName={sharedUserName}
+        hasChibi={hasChibi}
+        isPostDiagnosisResult={isPostDiagnosisResult}
+      />
+
       <div className={styles.shell}>
-        <TypeDetailHeroSection
-          mode={mode}
-          typeData={typeData}
-          shareKey={shareKey}
-          publicUrl={publicUrl}
-          sharedUserName={sharedUserName}
-          hasChibi={hasChibi}
-          isPostDiagnosisResult={isPostDiagnosisResult}
-        />
         {(isPostDiagnosisResult || isShared) && (
           <TypeSignatureSection
             heading={SECTION_HEADINGS.signature}

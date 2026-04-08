@@ -1,9 +1,9 @@
 import type { QuestionMaster, TypeData } from "@/lib/types";
 import {
   Bebas_Neue,
-  Caveat,
+  IBM_Plex_Mono,
+  Klee_One,
   Noto_Serif_JP,
-  Special_Elite,
 } from "next/font/google";
 
 import { AxisCompositionSection } from "@/components/home/axis-composition-section/axis-composition-section";
@@ -15,34 +15,34 @@ import { getWebsiteJsonLd, stringifyJsonLd } from "@/lib/json-ld";
 
 import styles from "./home-page.module.css";
 
-const displayFont = Bebas_Neue({
-  variable: "--rcf-font-display",
+const headingFont = Bebas_Neue({
+  variable: "--nzt-font-heading",
   subsets: ["latin"],
   weight: "400",
   display: "swap",
   preload: false,
 });
 
-const typewriterFont = Special_Elite({
-  variable: "--rcf-font-typewriter",
+const monoFont = IBM_Plex_Mono({
+  variable: "--nzt-font-mono",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "700"],
   display: "swap",
   preload: false,
 });
 
 const serifFont = Noto_Serif_JP({
-  variable: "--rcf-font-serif",
+  variable: "--nzt-font-serif",
   subsets: ["latin"],
   weight: ["400", "700"],
   display: "swap",
   preload: false,
 });
 
-const noteFont = Caveat({
-  variable: "--rcf-font-note",
+const noteFont = Klee_One({
+  variable: "--nzt-font-note",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400"],
   display: "swap",
   preload: false,
 });
@@ -67,19 +67,21 @@ export function HomePage({ allTypes, questionMaster }: HomePageProps) {
 
   if (!heroType) {
     return (
-      <main id="main-content" className="page-shell py-10">
+      <main id="main-content" className="max-w-5xl mx-auto px-4 py-10">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: stringifyJsonLd(getWebsiteJsonLd()),
           }}
         />
-        <section className="surface-panel flex flex-col gap-3">
-          <p className="eyebrow">Home</p>
-          <h1 className="section-title">
+        <section className="rounded-xl border border-midnight-600 bg-midnight-800 p-6 flex flex-col gap-3">
+          <p className="font-mono text-xs font-bold uppercase tracking-widest text-amber-400">
+            Home
+          </p>
+          <h1 className="font-heading text-2xl">
             タイプデータを読み込めませんでした。
           </h1>
-          <p className="text-sm leading-7 text-[color:var(--color-text-subtle)]">
+          <p className="text-sm text-[--color-text-muted]">
             データ配置を確認してから、もう一度アクセスしてください。
           </p>
         </section>
@@ -90,9 +92,9 @@ export function HomePage({ allTypes, questionMaster }: HomePageProps) {
   return (
     <main
       id="main-content"
-      className={`${displayFont.variable} ${typewriterFont.variable} ${serifFont.variable} ${noteFont.variable} ${styles.home}`}
+      className={`${headingFont.variable} ${monoFont.variable} ${serifFont.variable} ${noteFont.variable} ${styles.home}`}
     >
-      <div aria-hidden="true" className={styles.backdrop} />
+      <div aria-hidden="true" className={styles.heroGlow} />
 
       <script
         type="application/ld+json"
@@ -101,7 +103,7 @@ export function HomePage({ allTypes, questionMaster }: HomePageProps) {
         }}
       />
 
-      <div className={styles.shell}>
+      <div className="relative z-[1] max-w-[1200px] mx-auto px-4 md:px-8 pb-16">
         <HomeHeroSection heroType={heroType} questionMaster={questionMaster} />
         <AxisCompositionSection />
         <FeaturedTypesSection spotlightTypes={spotlightTypes} />

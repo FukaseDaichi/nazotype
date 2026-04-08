@@ -17,38 +17,18 @@ const AXIS_LETTER_MAP: Record<string, { letter: string; english: string }> = {
   即興型: { letter: "I", english: "Improvise" },
 };
 
-const AXIS_TONE_MAP = [
-  {
-    accent: "rgba(231, 137, 37, 0.3)",
-    soft: "rgba(216, 95, 103, 0.1)",
-    glow: "rgba(216, 95, 103, 0.1)",
-  },
-  {
-    accent: "rgba(231, 137, 37, 0.3)",
-    soft: "rgba(226, 161, 47, 0.1)",
-    glow: "rgba(226, 161, 47, 0.1)",
-  },
-  {
-    accent: "rgba(231, 137, 37, 0.3)",
-    soft: "rgba(67, 161, 166, 0.1)",
-    glow: "rgba(67, 161, 166, 0.1)",
-  },
-  {
-    accent: "rgba(231, 137, 37, 0.3)",
-    soft: "rgba(79, 134, 218, 0.1)",
-    glow: "rgba(79, 134, 218, 0.1)",
-  },
+const AXIS_COLORS = [
+  { fill: "var(--color-coral-500)", glow: "rgba(230, 90, 74, 0.3)" },
+  { fill: "var(--color-amber-400)", glow: "rgba(232, 168, 50, 0.3)" },
+  { fill: "var(--color-cyan-400)", glow: "rgba(46, 196, 214, 0.3)" },
+  { fill: "var(--color-midnight-500)", glow: "rgba(58, 85, 144, 0.3)" },
 ] as const;
 
 const DEFAULT_SIGNATURE_PERCENT = 65;
 
-/* ── Radar geometry ── */
-
 function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max);
 }
-
-/* ── Component ── */
 
 type TypeSignatureSectionProps = {
   heading: TypeSectionHeading;
@@ -104,7 +84,7 @@ export function TypeSignatureSection({
         otherMeta,
         percent: DEFAULT_SIGNATURE_PERCENT,
         trackPercent: DEFAULT_SIGNATURE_PERCENT,
-        tone: AXIS_TONE_MAP[index],
+        color: AXIS_COLORS[index],
       };
     }
 
@@ -121,7 +101,7 @@ export function TypeSignatureSection({
       otherMeta,
       percent,
       trackPercent: clamp(percent, 6, 94),
-      tone: AXIS_TONE_MAP[index],
+      color: AXIS_COLORS[index],
     };
   });
 
@@ -130,6 +110,7 @@ export function TypeSignatureSection({
   const signatureFormula = axisDetails
     .map((axis) => axis.dominantMeta.english)
     .join(" + ");
+
   const boardStyle = {
     ["--signature-ogp-url" as string]: `url("/types/${typeData.typeCode}-ogp.png")`,
   } as CSSProperties;
@@ -140,64 +121,96 @@ export function TypeSignatureSection({
       aria-label={heading.title}
       role="region"
     >
-      <div className={styles.signatureBoard} style={boardStyle}>
-        <div className={styles.signatureBoardPlate}>
-          <p className={styles.signatureBoardMark}>MADAMIS TYPE</p>
-          <p className={styles.signatureBoardCode}>{typeData.typeCode}</p>
-          <p className={styles.signatureBoardName}>{typeData.typeName}</p>
+      <div className={styles.board} style={boardStyle}>
+        <div className={styles.boardBg} aria-hidden="true" />
+
+        <div className={styles.boardTop}>
+          <div>
+            <p
+              className="font-mono text-[0.64rem] uppercase tracking-widest text-amber-400/70"
+              style={{ fontFamily: "var(--nzt-font-mono), monospace" }}
+            >
+              NAZOTYPE
+            </p>
+            <p className={styles.boardCode}>{typeData.typeCode}</p>
+            <p
+              className="mt-1 text-base leading-snug text-amber-300/80"
+              style={{ fontFamily: "var(--nzt-font-serif), serif" }}
+            >
+              {typeData.typeName}
+            </p>
+          </div>
         </div>
 
-        <div className={styles.signatureBoardMetrics}>
+        <div className={styles.boardMetrics}>
           {axisDetails.map((axis) => (
             <div
               key={`${axis.dominant}-metric`}
-              className={styles.signatureBoardMetric}
-              style={
-                {
-                  ["--signature-axis-accent" as string]: axis.tone.accent,
-                  ["--signature-axis-accent-soft" as string]: axis.tone.soft,
-                  ["--signature-axis-accent-glow" as string]: axis.tone.glow,
-                } as CSSProperties
-              }
+              className="flex flex-col gap-1"
             >
-              <div className={styles.signatureBoardMetricHead}>
-                <div>
-                  <span className={styles.signatureBoardMetricLetter}>
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <span
+                    className="text-[clamp(1rem,2vw,1.4rem)] leading-none text-amber-400"
+                    style={{
+                      fontFamily: "var(--nzt-font-heading), sans-serif",
+                    }}
+                  >
                     {axis.dominantMeta.letter}
                   </span>
-                  <span className={styles.signatureBoardDomain}>
+                  <span
+                    className="text-sm leading-none"
+                    style={{ fontFamily: "var(--nzt-font-serif), serif" }}
+                  >
                     {axis.dominant}
                   </span>
                 </div>
-
                 {hasData ? (
-                  <span className={styles.signatureBoardMetricValue}>
+                  <span
+                    className="font-mono text-xs tracking-wider text-amber-300/80"
+                    style={{ fontFamily: "var(--nzt-font-mono), monospace" }}
+                  >
                     {axis.percent}%
                   </span>
                 ) : null}
               </div>
-              <div
-                className={styles.signatureBoardMetricTrack}
-                aria-hidden="true"
-              >
+              <div className={styles.metricTrack} aria-hidden="true">
                 <span
-                  className={styles.signatureBoardMetricFill}
-                  style={{ width: `${axis.trackPercent}%` }}
+                  className={styles.metricFill}
+                  style={{
+                    width: `${axis.trackPercent}%`,
+                    background: axis.color.fill,
+                    boxShadow: `0 0 12px ${axis.color.glow}`,
+                  }}
                 />
               </div>
-              <span className={styles.signatureBoardMetricPair}>
+              <span
+                className="font-mono text-[0.6rem] tracking-wide opacity-50"
+                style={{ fontFamily: "var(--nzt-font-mono), monospace" }}
+              >
                 {axis.dominant} vs {axis.other}
               </span>
             </div>
           ))}
         </div>
 
-        <div className={styles.signatureBoardCaption}>
-          <p className={styles.signatureBoardFormula}>{signatureFormula}</p>
-          <p className={styles.signatureBoardCase}>
+        <div className={styles.boardCaption}>
+          <p
+            className="text-[clamp(1rem,2.6vw,1.5rem)] leading-tight text-amber-300/90"
+            style={{ fontFamily: "var(--nzt-font-note), cursive" }}
+          >
+            {signatureFormula}
+          </p>
+          <p
+            className="font-mono text-[0.62rem] uppercase tracking-widest opacity-50"
+            style={{ fontFamily: "var(--nzt-font-mono), monospace" }}
+          >
             CASE FILE #{typeData.typeCode}
           </p>
-          <p className={styles.signatureBoardCaptionName}>
+          <p
+            className="text-sm leading-snug text-amber-300/80"
+            style={{ fontFamily: "var(--nzt-font-serif), serif" }}
+          >
             {typeData.typeName}
           </p>
         </div>

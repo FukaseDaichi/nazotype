@@ -9,8 +9,6 @@ import {
 } from "@/components/type/type-detail-page-content/type-section-frame";
 import { getTypeOgpImagePath } from "@/lib/site";
 
-import styles from "./type-compatibility-section.module.css";
-
 type CompatibleType = {
   typeCode: string;
   typeName: string;
@@ -36,9 +34,12 @@ export function TypeCompatibilitySection({
 
   return (
     <TypeSectionFrame heading={heading}>
-      <p className={styles.compatText}>{compatibility.summary}</p>
+      <p className="text-sm leading-relaxed text-[color:var(--color-text-muted)]">
+        {compatibility.summary}
+      </p>
+
       {resolvedCompatibleTypes.length ? (
-        <div className={styles.compatLinks}>
+        <div className="mt-4 grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-4">
           {resolvedCompatibleTypes.map((compatibleType) => {
             const ogpImagePath = getTypeOgpImagePath(compatibleType.typeCode);
 
@@ -47,33 +48,38 @@ export function TypeCompatibilitySection({
                 key={compatibleType.typeCode}
                 href={`/types/${compatibleType.typeCode}`}
                 prefetch={false}
-                className={styles.compatLink}
+                className="group overflow-hidden rounded-xl border border-midnight-600 bg-midnight-800 transition-all duration-200 hover:-translate-y-0.5 hover:bg-midnight-700 hover:shadow-md"
               >
-                <Image
-                  src={ogpImagePath}
-                  alt=""
-                  fill
-                  sizes="(max-width: 767px) 100vw, (max-width: 960px) 50vw, 280px"
-                  className={styles.compatLinkImage}
-                />
-                <span className={styles.compatLinkBody}>
-                  <span className={styles.compatLinkName}>
+                <div className="relative aspect-[4/3] overflow-hidden bg-midnight-700">
+                  <Image
+                    src={ogpImagePath}
+                    alt=""
+                    fill
+                    sizes="(max-width: 767px) 50vw, 200px"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-3">
+                  <p
+                    className="text-xs text-amber-400"
+                    style={{ fontFamily: "var(--nzt-font-mono), monospace" }}
+                  >
+                    {compatibleType.typeCode}
+                  </p>
+                  <p className="mt-1 text-sm font-bold">
                     {compatibleType.typeName}
-                  </span>
-                  <span className={styles.compatLinkMeta}>
-                    <span className={styles.compatLinkCode}>
-                      {compatibleType.typeCode}
-                    </span>
-                    <span className={styles.compatLinkHint}>Type Detail</span>
-                  </span>
-                </span>
+                  </p>
+                </div>
               </Link>
             );
           })}
         </div>
       ) : null}
+
       {compatibility.goodWithDescription ? (
-        <p className={styles.compatText}>{compatibility.goodWithDescription}</p>
+        <p className="mt-4 border-t border-midnight-600 pt-4 text-sm leading-relaxed text-[color:var(--color-text-muted)]">
+          {compatibility.goodWithDescription}
+        </p>
       ) : null}
     </TypeSectionFrame>
   );

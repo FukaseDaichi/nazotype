@@ -3,8 +3,6 @@ import {
   type TypeSectionHeading,
 } from "@/components/type/type-detail-page-content/type-section-frame";
 
-import styles from "./type-list-section.module.css";
-
 type TypeListSectionProps = {
   heading: TypeSectionHeading;
   items: string[];
@@ -13,9 +11,14 @@ type TypeListSectionProps = {
 export function TypeListSection({ heading, items }: TypeListSectionProps) {
   return (
     <TypeSectionFrame heading={heading}>
-      <ul className={styles.list}>
+      <ul className="space-y-3">
         {items.map((item) => (
-          <li key={item}>{item}</li>
+          <li key={item} className="flex gap-3">
+            <span className="shrink-0 text-amber-400" aria-hidden="true">
+              ─
+            </span>
+            <span className="text-sm leading-relaxed">{item}</span>
+          </li>
         ))}
       </ul>
     </TypeSectionFrame>

@@ -2,9 +2,9 @@
 
 import {
   Bebas_Neue,
-  Caveat,
+  IBM_Plex_Mono,
+  Klee_One,
   Noto_Serif_JP,
-  Special_Elite,
 } from "next/font/google";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -22,16 +22,16 @@ import type { AnswerValue, AnswersRecord, QuestionMaster } from "@/lib/types";
 
 import styles from "./diagnosis-flow.module.css";
 
-const displayFont = Bebas_Neue({
-  variable: "--rcf-font-display",
+const headingFont = Bebas_Neue({
+  variable: "--nzt-font-heading",
   subsets: ["latin"],
   weight: "400",
   display: "swap",
   preload: false,
 });
 
-const typewriterFont = Special_Elite({
-  variable: "--rcf-font-typewriter",
+const monoFont = IBM_Plex_Mono({
+  variable: "--nzt-font-mono",
   subsets: ["latin"],
   weight: "400",
   display: "swap",
@@ -39,22 +39,22 @@ const typewriterFont = Special_Elite({
 });
 
 const serifFont = Noto_Serif_JP({
-  variable: "--rcf-font-serif",
+  variable: "--nzt-font-serif",
   subsets: ["latin"],
   weight: ["400", "700"],
   display: "swap",
   preload: false,
 });
 
-const noteFont = Caveat({
-  variable: "--rcf-font-note",
+const noteFont = Klee_One({
+  variable: "--nzt-font-note",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "600"],
   display: "swap",
   preload: false,
 });
 
-const fontVars = `${displayFont.variable} ${typewriterFont.variable} ${serifFont.variable} ${noteFont.variable}`;
+const fontVars = `${headingFont.variable} ${monoFont.variable} ${serifFont.variable} ${noteFont.variable}`;
 
 type DiagnosisFlowProps = {
   questionMaster: QuestionMaster;
@@ -65,46 +65,34 @@ type LocationState = {
   hasPageQuery: boolean;
 };
 
-const ANSWER_PRESENTATIONS: Record<
-  AnswerValue,
-  {
-    tone: "red-strong" | "red-soft" | "neutral" | "teal-soft" | "teal-strong";
-    shortLabel: string;
-    caption: string;
-    size: number;
+function getScaleButtonClass(value: number, selected: number | undefined) {
+  const isSelected = selected === value;
+
+  switch (value) {
+    case 1:
+      return isSelected
+        ? `border-cyan-500 bg-cyan-500 text-white scale-110 ${styles.scaleGlow1}`
+        : "border-cyan-500 text-cyan-500 hover:bg-cyan-500/10";
+    case 2:
+      return isSelected
+        ? `border-cyan-400/60 bg-cyan-400 text-midnight-900 scale-110 ${styles.scaleGlow2}`
+        : "border-cyan-400/60 text-cyan-400/80 hover:bg-cyan-400/10";
+    case 3:
+      return isSelected
+        ? "border-midnight-500 bg-midnight-500 text-white scale-110"
+        : "border-midnight-500 text-midnight-500 hover:bg-midnight-500/10";
+    case 4:
+      return isSelected
+        ? `border-amber-400/60 bg-amber-400 text-midnight-900 scale-110 ${styles.scaleGlow4}`
+        : "border-amber-400/60 text-amber-400/80 hover:bg-amber-400/10";
+    case 5:
+      return isSelected
+        ? `border-amber-500 bg-amber-500 text-white scale-110 ${styles.scaleGlow5}`
+        : "border-amber-500 text-amber-500 hover:bg-amber-500/10";
+    default:
+      return "border-midnight-600 text-[--color-text-muted]";
   }
-> = {
-  5: {
-    tone: "red-strong",
-    shortLabel: "とても",
-    caption: "そう思う",
-    size: 46,
-  },
-  4: {
-    tone: "red-soft",
-    shortLabel: "やや",
-    caption: "そう思う",
-    size: 40,
-  },
-  3: {
-    tone: "neutral",
-    shortLabel: "中立",
-    caption: "どちらでもない",
-    size: 34,
-  },
-  2: {
-    tone: "teal-soft",
-    shortLabel: "やや",
-    caption: "そう思わない",
-    size: 40,
-  },
-  1: {
-    tone: "teal-strong",
-    shortLabel: "全く",
-    caption: "そう思わない",
-    size: 46,
-  },
-};
+}
 
 export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
   const router = useRouter();
@@ -126,17 +114,14 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
   const questionRefs = useRef<Record<string, HTMLElement | null>>({});
 
   const pageQuestions = getQuestionsForPage(questionMaster, currentPage);
-  const firstQuestionNumber = pageQuestions[0]?.displayOrder ?? 1;
-  const lastQuestionNumber =
-    pageQuestions[pageQuestions.length - 1]?.displayOrder ??
-    firstQuestionNumber;
   const answeredCount = activeQuestions.filter(
     (question) => answers[question.questionId],
   ).length;
   const currentPageAnsweredCount = pageQuestions.filter(
     (question) => answers[question.questionId],
   ).length;
-  const progressRatio = totalQuestions > 0 ? answeredCount / totalQuestions : 0;
+  const progressPercent =
+    totalQuestions > 0 ? Math.round((answeredCount / totalQuestions) * 100) : 0;
 
   useEffect(() => {
     const applyStateFromLocation = (showNotice: boolean) => {
@@ -265,343 +250,227 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
     router.push(`/types/${result.typeCode}/${key}`);
   }
 
+  /* ── Loading state ── */
   if (!isHydrated) {
     return (
-      <main id="main-content" className={`${fontVars} ${styles.page}`}>
-        <div aria-hidden="true" className={styles.backdrop} />
-        <div className={styles.shell}>
-          <section
-            className={`${styles.statusPanel} ${styles.statusPanelCentered}`}
-          >
-            <div className={styles.loadingMark} aria-hidden="true" />
-            <p className={styles.eyebrow}>Preparing</p>
-            <h1 className={styles.statusTitle}>診断の準備をしています</h1>
-            <p className={styles.statusCopy}>
+      <main id="main-content" className={`${fontVars} min-h-dvh`}>
+        <div className="flex items-center justify-center min-h-[60vh]">
+          <div className="flex flex-col items-center gap-4 text-center">
+            <div className={styles.spinner} aria-hidden="true" />
+            <p className="font-mono text-xs tracking-widest uppercase text-[--color-text-muted]">
+              Preparing
+            </p>
+            <h1 className="font-serif text-xl font-bold text-[--color-text]">
+              診断の準備をしています
+            </h1>
+            <p className="text-sm text-[--color-text-muted]">
               前回の保存内容と表示ページを確認しています。
             </p>
-          </section>
+          </div>
         </div>
       </main>
     );
   }
 
+  /* ── No username state ── */
   if (!userName) {
     return (
-      <main id="main-content" className={`${fontVars} ${styles.page}`}>
-        <div aria-hidden="true" className={styles.backdrop} />
-        <div className={styles.shell}>
-          <section className={styles.statusPanel}>
-            <p className={styles.eyebrow}>Diagnosis</p>
-            <h1 className={styles.statusTitle}>
+      <main id="main-content" className={`${fontVars} min-h-dvh`}>
+        <div className="max-w-3xl mx-auto px-4 py-16">
+          <div className="rounded-xl border border-midnight-600 bg-midnight-800 p-8 flex flex-col gap-4">
+            <p className="font-mono text-xs tracking-widest uppercase text-[--color-text-muted]">
+              Diagnosis
+            </p>
+            <h1 className="font-serif text-xl font-bold text-[--color-text]">
               まずはお名前を入れて診断を始めます
             </h1>
-            <p className={styles.statusCopy}>
+            <p className="text-sm text-[--color-text-muted]">
               このページを直接開いた場合は、トップページの開始フォームから進んでください。
             </p>
-            <Link href="/" prefetch={false} className={styles.ctaPrimary}>
+            <Link
+              href="/"
+              prefetch={false}
+              className="inline-flex items-center justify-center min-h-[52px] rounded-lg px-8 py-3 bg-coral-500 text-white font-bold text-base shadow-sm hover:bg-coral-600 hover:-translate-y-0.5 transition-all"
+            >
               トップページへ戻る
             </Link>
-          </section>
+          </div>
         </div>
       </main>
     );
   }
 
+  /* ── Submitting state ── */
   if (isSubmitting) {
     return (
-      <main id="main-content" className={`${fontVars} ${styles.page}`}>
-        <div aria-hidden="true" className={styles.backdrop} />
-        <div className={styles.shell}>
-          <section
-            className={`${styles.statusPanel} ${styles.statusPanelCentered}`}
-          >
-            <div className={styles.loadingMark} aria-hidden="true" />
-            <p className={styles.eyebrow}>Calculating</p>
-            <h1 className={styles.statusTitle}>診断結果を計算しています</h1>
-            <p className={styles.statusCopy}>
+      <main id="main-content" className={`${fontVars} min-h-dvh`}>
+        <div className="flex items-center justify-center min-h-[60vh]">
+          <div className="flex flex-col items-center gap-4 text-center">
+            <div className={styles.spinner} aria-hidden="true" />
+            <p className="font-mono text-xs tracking-widest uppercase text-[--color-text-muted]">
+              Calculating
+            </p>
+            <h1 className="font-serif text-xl font-bold text-[--color-text]">
+              診断結果を計算しています
+            </h1>
+            <p className="text-sm text-[--color-text-muted]">
               あなたの回答を4軸の記録にまとめています。
             </p>
-          </section>
+          </div>
         </div>
       </main>
     );
   }
 
+  /* ── Main diagnosis flow ── */
   return (
-    <main id="main-content" className={`${fontVars} ${styles.page}`}>
-      <div aria-hidden="true" className={styles.backdrop} />
-
-      <div className={styles.shell}>
-        {/* ── 古紙ヘッダーパネル ── */}
-        <div className={styles.headerPanel}>
-          <div className={styles.headerTop}>
-            <div className={styles.headerCopy}>
-              <p className={styles.fileMeta}>
-                Diagnosis File / Page {String(currentPage).padStart(2, "0")}
-              </p>
-              <h1
-                ref={pageHeadingRef}
-                tabIndex={-1}
-                className={styles.pageTitle}
-              >
-                {userName}さんの診断
-              </h1>
-              <p className={styles.handNote} aria-hidden="true">
-                - ペン先で印をつけるように、迷いすぎずに選んでください
-              </p>
-            </div>
-
-            <Link href="/" prefetch={false} className={styles.backLink}>
-              トップへ戻る
-            </Link>
+    <main id="main-content" className={`${fontVars} min-h-dvh`}>
+      {/* Progress Header - sticky */}
+      <header className="sticky top-0 z-40 bg-midnight-900/95 backdrop-blur-sm border-b border-midnight-600">
+        <div className="max-w-3xl mx-auto px-4 py-3">
+          <div className="flex justify-between items-center text-sm">
+            <span className="font-mono text-[--color-text-muted]">
+              Page {currentPage} / {totalPages}
+            </span>
+            <span className="text-amber-400 font-bold text-sm">
+              謎解きタイプ診断
+            </span>
           </div>
-
-          <div className={`hidden md:grid ${styles.metaGrid}`}>
-            <div className={styles.metaCard}>
-              <span className={styles.metaLabel}>Page</span>
-              <strong className={styles.metaValue}>
-                {currentPage} / {totalPages}
-              </strong>
-            </div>
-            <div className={styles.metaCard}>
-              <span className={styles.metaLabel}>Questions</span>
-              <strong className={styles.metaValue}>
-                {firstQuestionNumber} - {lastQuestionNumber}
-              </strong>
-            </div>
-            <div className={styles.metaCard}>
-              <span className={styles.metaLabel}>Answered</span>
-              <strong className={styles.metaValue}>
-                {answeredCount} / {totalQuestions}
-              </strong>
-            </div>
+          {/* Progress bar */}
+          <div className="mt-2 h-1 w-full bg-midnight-700 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-cyan-400 to-amber-400 rounded-full transition-all duration-500 ease-out"
+              style={{ width: `${progressPercent}%` }}
+            />
           </div>
+        </div>
+      </header>
 
-          <div aria-live="polite" className={styles.progressBlock}>
-            <div className={styles.progressHeader}>
-              <span>
-                回答済み {answeredCount} / {totalQuestions}
-              </span>
-              <span>
-                このページ {currentPageAnsweredCount} / {pageQuestions.length}
-              </span>
-            </div>
-            <div className={styles.progressTrack} aria-hidden="true">
-              <div
-                className={styles.progressFill}
-                style={{ transform: `scaleX(${progressRatio})` }}
-              />
-            </div>
+      <div className="max-w-3xl mx-auto px-4 py-8">
+        {/* Page header */}
+        <div className="mb-8">
+          <h1
+            ref={pageHeadingRef}
+            tabIndex={-1}
+            className="font-heading text-2xl text-amber-400 outline-none"
+          >
+            ページ {currentPage} / {totalPages}
+          </h1>
+          <p className="text-sm text-[--color-text-muted] mt-1">
+            直感で答えてください
+          </p>
+          <div className="flex items-center gap-4 mt-2 text-xs text-[--color-text-muted]">
+            <span aria-live="polite">
+              回答済み {answeredCount} / {totalQuestions}
+            </span>
+            <span>
+              このページ {currentPageAnsweredCount} / {pageQuestions.length}
+            </span>
           </div>
-
-          {restoreNotice ? (
-            <p className={styles.statusNote} role="status">
-              {restoreNotice}
-            </p>
-          ) : null}
         </div>
 
-        {/* ── 黒質問パネル ── */}
-        <div className={styles.questionsPanel}>
-          <div className={styles.sectionHeader}>
-            <div>
-              <p className={styles.eyebrow}>Question Sheet</p>
-              <h2 className={styles.sectionTitle}>
-                質問 {firstQuestionNumber}〜{lastQuestionNumber}
-              </h2>
-            </div>
-            <p className={styles.sectionCopy}>
-              気持ちの強さに近いものを選んでください。
-            </p>
-          </div>
+        {restoreNotice ? (
+          <p
+            className="mb-4 rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-400"
+            role="status"
+          >
+            {restoreNotice}
+          </p>
+        ) : null}
 
-          <div className={styles.scaleGuide} aria-hidden="true">
-            <span
-              className={`hidden md:inline ${styles.scaleLabel} ${styles.scaleLabelRed}`}
-            >
-              とてもそう思う
-            </span>
-            <div className={styles.scalePreview}>
-              {ANSWER_OPTIONS.map((option) => {
-                const presentation = ANSWER_PRESENTATIONS[option.value];
+        {/* Questions */}
+        <div className="space-y-4">
+          {pageQuestions.map((question) => {
+            const selectedValue = answers[question.questionId];
 
-                return (
-                  <div
-                    key={`guide-${option.value}`}
-                    className={styles.scalePreviewItem}
-                    data-tone={presentation.tone}
-                  >
-                    <PenScaleIcon
-                      size={presentation.size}
-                      className={styles.scalePreviewIcon}
-                    />
-                  </div>
-                );
-              })}
-            </div>
-            <span
-              className={`hidden md:inline ${styles.scaleLabel} ${styles.scaleLabelTeal}`}
-            >
-              全くそうは思わない
-            </span>
-            <div className="flex justify-between w-full md:hidden">
-              <span className={`${styles.scaleLabel} ${styles.scaleLabelRed}`}>
-                とてもそう思う
-              </span>
-              <span className={`${styles.scaleLabel} ${styles.scaleLabelTeal}`}>
-                全くそうは思わない
-              </span>
-            </div>
-          </div>
-
-          <div className={styles.questionList}>
-            {pageQuestions.map((question) => {
-              const selectedValue = answers[question.questionId];
-
-              return (
-                <fieldset
-                  key={question.questionId}
-                  className={styles.questionCard}
+            return (
+              <fieldset
+                key={question.questionId}
+                className="rounded-xl border border-midnight-600 bg-midnight-800 p-5"
+              >
+                <legend
+                  ref={(element) => {
+                    questionRefs.current[question.questionId] = element;
+                  }}
+                  tabIndex={-1}
+                  className="w-full mb-1 outline-none"
                 >
-                  <legend
-                    ref={(element) => {
-                      questionRefs.current[question.questionId] = element;
-                    }}
-                    tabIndex={-1}
-                    className={styles.questionLegend}
-                  >
-                    <span className={styles.questionNumber}>
-                      Q{String(question.displayOrder).padStart(2, "0")}
-                    </span>
-                    <span className={styles.questionText}>
-                      {question.questionText}
-                    </span>
-                  </legend>
+                  <span className="font-mono text-xs text-amber-400 font-bold">
+                    Q{String(question.displayOrder).padStart(2, "0")}
+                  </span>
+                  <span className="block text-base leading-relaxed mt-2">
+                    {question.questionText}
+                  </span>
+                </legend>
 
-                  <div className={styles.answerScaleRow}>
-                    <span
-                      className={`${styles.scaleEdgeLabel} ${styles.scaleLabelRed}`}
-                    >
-                      そう思う
+                {/* 5-point scale */}
+                <div className="mt-4">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-xs text-[--color-text-muted] shrink-0 w-16 text-right">
+                      そう思わない
                     </span>
-                    {ANSWER_OPTIONS.map((option) => {
-                      const presentation = ANSWER_PRESENTATIONS[option.value];
-                      const checked = selectedValue === option.value;
-
-                      return (
-                        <label
-                          key={option.value}
-                          className={`${styles.answerChoice} ${checked ? styles.answerChoiceSelected : ""}`}
-                          data-tone={presentation.tone}
-                        >
-                          <input
-                            type="radio"
-                            name={question.questionId}
-                            value={option.value}
-                            checked={checked}
-                            onChange={() =>
+                    <div className="flex gap-2">
+                      {ANSWER_OPTIONS.slice()
+                        .reverse()
+                        .map((option) => (
+                          <button
+                            key={option.value}
+                            type="button"
+                            className={`w-11 h-11 rounded-full border-2 font-bold text-sm transition-all duration-150 cursor-pointer ${getScaleButtonClass(option.value, selectedValue)}`}
+                            onClick={() =>
                               handleAnswerChange(
                                 question.questionId,
                                 option.value,
                               )
                             }
-                            className={styles.answerInput}
                             aria-label={option.label}
-                          />
-                          <span
-                            className={styles.answerVisual}
-                            aria-hidden="true"
                           >
-                            <PenScaleIcon
-                              size={presentation.size}
-                              className={styles.answerIcon}
-                            />
-                          </span>
-                          <span className={styles.visuallyHidden}>
-                            {option.label}
-                          </span>
-                        </label>
-                      );
-                    })}
-                    <span
-                      className={`${styles.scaleEdgeLabel} ${styles.scaleLabelTeal}`}
-                    >
-                      思わない
+                            {option.value}
+                          </button>
+                        ))}
+                    </div>
+                    <span className="text-xs text-[--color-text-muted] shrink-0 w-16">
+                      そう思う
                     </span>
                   </div>
-                  <div className={styles.answerSelectedArea}>
-                    {selectedValue ? (
-                      <span
-                        className={`${styles.answerSelectedLabel} ${styles.answerSelectedLabelVisible}`}
-                      >
-                        {
-                          ANSWER_OPTIONS.find((o) => o.value === selectedValue)
-                            ?.label
-                        }
-                      </span>
-                    ) : null}
-                  </div>
-                </fieldset>
-              );
-            })}
-          </div>
+                </div>
+              </fieldset>
+            );
+          })}
+        </div>
 
-          {validationError ? (
-            <p
-              className={`${styles.statusNote} ${styles.statusNoteError}`}
-              role="alert"
-            >
-              {validationError}
-            </p>
-          ) : null}
+        {validationError ? (
+          <p
+            className="mt-4 rounded-lg border border-coral-500/30 bg-coral-500/10 px-4 py-3 text-sm text-coral-500"
+            role="alert"
+          >
+            {validationError}
+          </p>
+        ) : null}
 
-          <div className={styles.actions}>
+        {/* Navigation */}
+        <div className="mt-8 mb-12 flex flex-col items-center gap-3">
+          {currentPage > 1 && (
             <button
               type="button"
               onClick={handlePrevious}
-              className={styles.ctaSecondary}
-              disabled={currentPage === 1}
+              className="text-cyan-400 text-sm hover:text-cyan-300 hover:underline underline-offset-4 transition-colors cursor-pointer"
             >
-              前の8問へ戻る
+              前のページへ
             </button>
-            <button
-              type="button"
-              onClick={handleNext}
-              className={styles.ctaPrimary}
-            >
-              {currentPage === totalPages ? "診断結果を見る" : "次の8問へ進む"}
-            </button>
-          </div>
+          )}
+          <button
+            type="button"
+            onClick={handleNext}
+            className="w-full sm:w-auto min-w-[280px] min-h-[52px] rounded-lg px-8 py-3 bg-coral-500 text-white font-bold text-base shadow-sm hover:bg-coral-600 hover:-translate-y-0.5 transition-all disabled:opacity-40 disabled:pointer-events-none cursor-pointer"
+          >
+            {currentPage === totalPages
+              ? "診断結果を見る →"
+              : "次のページへ →"}
+          </button>
         </div>
       </div>
     </main>
-  );
-}
-
-function PenScaleIcon({
-  className,
-  size,
-}: {
-  className?: string;
-  size: number;
-}) {
-  return (
-    <svg
-      aria-hidden="true"
-      className={className}
-      width={size}
-      height={size}
-      viewBox="0 0 64 64"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="3.2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M32 8c1.3 0 2.5.5 3.4 1.4l12.2 12.2c1.2 1.2 1.6 2.9 1.1 4.4L43.2 43c-.3 1-.9 1.8-1.7 2.4L32 55l-9.5-9.6c-.8-.6-1.4-1.4-1.7-2.4L15.3 26c-.5-1.5-.1-3.2 1.1-4.4L28.6 9.4C29.5 8.5 30.7 8 32 8Z" />
-      <path d="M32 20.5a6.2 6.2 0 1 1 0 12.4a6.2 6.2 0 0 1 0-12.4Z" />
-      <path d="M32 32.9v14.6" />
-    </svg>
   );
 }
 
