@@ -1,5 +1,7 @@
 import type { AxisSummary, TypeData } from "@/lib/types";
 
+import { Suspense } from "react";
+
 import { SiteFooter } from "@/components/layout/site-footer/site-footer";
 import { getTypePageJsonLd, stringifyJsonLd } from "@/lib/json-ld";
 import { TypeCompatibilitySection } from "@/components/type/type-detail-page-content/type-compatibility-section";
@@ -7,6 +9,7 @@ import { TypeDetailHeroSection } from "@/components/type/type-detail-page-conten
 import { TypeListSection } from "@/components/type/type-detail-page-content/type-list-section";
 import { TypeOverviewSection } from "@/components/type/type-detail-page-content/type-overview-section";
 import { type TypeSectionHeading } from "@/components/type/type-detail-page-content/type-section-frame";
+import { PostDiagnosisSection } from "@/components/type/type-detail-page-content/post-diagnosis-section";
 import { TypeSharePanel } from "@/components/type/type-detail-page-content/type-share-panel";
 import { TypeSignatureSection } from "@/components/type/type-detail-page-content/type-signature-section";
 
@@ -94,12 +97,20 @@ export function TypeDetailPageContent({
       />
 
       <div className={styles.shell}>
-        {(isPostDiagnosisResult || isShared) && (
+        {isShared ? (
           <TypeSignatureSection
             heading={SECTION_HEADINGS.signature}
             typeData={typeData}
             axisSummaries={axisSummaries}
           />
+        ) : (
+          <Suspense>
+            <PostDiagnosisSection
+              typeData={typeData}
+              publicUrl={publicUrl}
+              shareUrl={shareUrl}
+            />
+          </Suspense>
         )}
 
         <div className={styles.twoCol}>

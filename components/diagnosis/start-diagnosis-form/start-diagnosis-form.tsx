@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, type FormEvent } from "react";
 
@@ -80,15 +81,16 @@ export function StartDiagnosisForm({
       </p>
 
       {resumeName ? (
-        <a
+        <Link
           href="/diagnosis"
+          prefetch={false}
           className="flex items-center gap-2 text-sm text-gold-400 hover:text-gold-300 transition-colors"
         >
           前回の続きから再開する
           <span className="font-mono text-xs text-paper-300">
             ({resumeName})
           </span>
-        </a>
+        </Link>
       ) : null}
     </div>
   );

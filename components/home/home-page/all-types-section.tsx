@@ -60,17 +60,18 @@ export function AllTypesSection({ allTypes }: AllTypesSectionProps) {
                 key={type.typeCode}
                 href={`/types/${type.typeCode}`}
                 prefetch={false}
-                className="group aspect-square bg-mystery-800/80 flex flex-col items-center justify-center text-center p-4 no-underline relative overflow-hidden border border-gold-400/5 transition-all duration-200 hover:bg-clue-500/30"
+                className="group aspect-square flex flex-col items-center justify-center text-center p-4 no-underline relative overflow-hidden border border-gold-400/15 bg-mystery-800/60 backdrop-blur-sm transition-all duration-200 hover:border-gold-400/40 hover:bg-gold-400/10"
               >
-                <span className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-gold-400/[0.06] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="absolute inset-0 bg-gradient-to-br from-gold-400/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                <span className="font-mono text-[0.6rem] text-paper-300 tracking-[0.15em] mb-1 relative z-[1]">
+                <span className="font-mono text-[0.6rem] text-gold-400/70 tracking-[0.15em] mb-1 relative z-[1]">
                   {type.typeCode}
                 </span>
                 <span className="text-[1.6rem] mb-1 relative z-[1]">
                   {TYPE_ICONS[type.typeCode] ?? "\u2B50"}
                 </span>
-                <span className="text-[0.75rem] font-medium text-paper-200 leading-snug relative z-[1]">
+                <span className="text-[0.8rem] font-bold text-paper-100 leading-snug relative z-[1] group-hover:text-gold-300 transition-colors duration-200">
                   {type.typeName}
                 </span>
               </Link>

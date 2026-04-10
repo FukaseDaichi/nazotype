@@ -207,7 +207,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
     const result = calculateDiagnosisResult(questionMaster, answers);
     const key = createShareKey(userName, result.axisSummaries);
     writePostDiagnosisResult(result.typeCode, key);
-    router.push(`/types/${result.typeCode}/${key}`);
+    router.push(`/types/${result.typeCode}?s=${encodeURIComponent(key)}`);
   }
 
   /* ── Loading state ── */

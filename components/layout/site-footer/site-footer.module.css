@@ -4,6 +4,34 @@
   text-align: center;
 }
 
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.navLink {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-gold-400);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color 0.15s;
+}
+
+.navLink:hover {
+  color: var(--color-gold-300);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.navSep {
+  color: var(--color-paper-300);
+  opacity: 0.4;
+}
+
 .copy {
   font-family: var(--font-mono);
   font-size: 0.65rem;
