@@ -1,108 +1,80 @@
 import { AXIS_DEFINITIONS } from "@/lib/axis";
+import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 
 import styles from "./axis-composition-section.module.css";
 
+const AXIS_TAGS: Record<string, string[]> = {
+  A1: ["探索", "アイテム回収", "小謎処理", "仮説検証"],
+  A2: ["パターン認識", "精読", "大謎統合", "構造理解"],
+  A3: ["速報共有", "アイデア出し", "進行管理", "役割振り分け"],
+  A4: ["難問継続", "仮説深掘り", "ヒント判断", "時間管理"],
+};
+
+const AXIS_DESCRIPTIONS: Record<string, string> = {
+  A1: "情報を取りに行くか、その場で処理するか。会場を歩き回り手がかりを発見するか、手元の謎を深く読み解くか。",
+  A2: "個別問題に深く入るか、全体構造を見渡すか。細部の規則や違和感を拾うか、情報の接続と全体像を描くか。",
+  A3: "気づきを外へ出して流れを作るか、情報を整理してチームを回すか。場に材料を供給するか、全体の効率を整えるか。",
+  A4: "今の問題に粘るか、別の手段に切り替えるか。粘り強く考え抜くか、状況を見てヒントや方針転換を判断するか。",
+};
+
 export function AxisCompositionSection() {
   return (
-    <section
-      id="axes"
-      className="mb-16"
-      aria-labelledby="axis-composition-heading"
-    >
-      <div className="mb-6">
-        <span className="font-mono text-xs font-bold uppercase tracking-widest text-amber-400">
-          4 Axes
-        </span>
-        <h2
-          id="axis-composition-heading"
-          className="font-heading text-[clamp(1.6rem,3vw,2.4rem)] tracking-wider mt-1 mb-2"
-        >
-          4つの軸で、あなたを診断
-        </h2>
-        <p className="text-sm text-[--color-text-muted] max-w-2xl">
-          まずは各軸が何を見ているのかを読むと、タイプ名の意味がつかみやすくなります。
-        </p>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-4">
-        {AXIS_DEFINITIONS.map((definition) => (
-          <article
-            key={definition.axis}
-            className={`${styles.axisCard} rounded-xl border border-midnight-600 bg-midnight-800 p-5`}
-            data-axis={definition.axis}
+    <section id="axes" aria-labelledby="axis-composition-heading">
+      <div className="max-w-[1200px] mx-auto px-8 py-24">
+        <RevealOnScroll>
+          <p className="font-mono text-[0.65rem] tracking-[0.35em] text-gold-400 uppercase mb-4 flex items-center gap-4">
+            4 AXES
+            <span className="flex-1 h-px bg-gradient-to-r from-gold-400/30 to-transparent max-w-[80px]" />
+          </p>
+          <h2
+            id="axis-composition-heading"
+            className="text-[clamp(1.8rem,4vw,3rem)] font-bold leading-tight text-paper-50 mb-6"
           >
-            {/* Axis badge */}
-            <p className="font-mono text-xs font-bold uppercase tracking-widest text-amber-400 m-0">
-              AXIS {definition.no}
-            </p>
+            4つの軸が
+            <br />
+            あなたの役割を定義する
+          </h2>
+        </RevealOnScroll>
 
-            {/* Axis name */}
-            <h3 className="font-heading text-lg tracking-wider mt-1 mb-2">
-              {definition.label}
-            </h3>
+        <RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] mt-16 border border-gold-400/15">
+            {AXIS_DEFINITIONS.map((definition) => (
+              <article
+                key={definition.axis}
+                className={styles.axisCard}
+              >
+                <p className="font-mono text-[0.6rem] text-paper-300 tracking-[0.2em] mb-4">
+                  AXIS {definition.no}
+                </p>
 
-            {/* Axis description */}
-            <p className="text-sm text-[--color-text-muted] mb-4">
-              {definition.description}
-            </p>
-
-            {/* Two poles */}
-            <div className="flex flex-col gap-3">
-              {/* Side 1 */}
-              <div className="flex items-start gap-3">
-                <div className="shrink-0 w-10 h-10 rounded-lg bg-midnight-700 flex items-center justify-center">
-                  <span className="font-heading text-xl text-amber-400">
-                    {definition.sides[0].code}
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-[1.1rem] font-bold px-3 py-1 border border-gold-400 text-gold-300">
+                    {definition.sides[0].label}
+                  </span>
+                  <span className="text-paper-300 tracking-tight">&harr;</span>
+                  <span className="text-[1.1rem] font-bold px-3 py-1 border border-gold-400/30 text-paper-200">
+                    {definition.sides[1].label}
                   </span>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-bold text-sm m-0">
-                    <span className="text-[--color-text]">
-                      {definition.sides[0].word}
-                    </span>
-                    <span className="text-[--color-text-muted] ml-2 font-normal">
-                      {definition.sides[0].label}
-                    </span>
-                  </p>
-                  <p className="text-xs text-[--color-text-muted] mt-0.5 m-0">
-                    {definition.sides[0].shortDescription}
-                  </p>
-                </div>
-              </div>
 
-              {/* VS divider */}
-              <div className="flex items-center gap-2" aria-hidden="true">
-                <span className="flex-1 h-px bg-midnight-600" />
-                <span className="font-heading text-xs text-midnight-500 tracking-wider">
-                  VS
-                </span>
-                <span className="flex-1 h-px bg-midnight-600" />
-              </div>
+                <p className="text-[0.9rem] leading-relaxed text-paper-200">
+                  {AXIS_DESCRIPTIONS[definition.axis] ?? definition.description}
+                </p>
 
-              {/* Side 2 */}
-              <div className="flex items-start gap-3">
-                <div className="shrink-0 w-10 h-10 rounded-lg bg-midnight-700 flex items-center justify-center">
-                  <span className="font-heading text-xl text-cyan-400">
-                    {definition.sides[1].code}
-                  </span>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-bold text-sm m-0">
-                    <span className="text-[--color-text]">
-                      {definition.sides[1].word}
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {(AXIS_TAGS[definition.axis] ?? []).map((tag) => (
+                    <span
+                      key={tag}
+                      className="font-mono text-[0.6rem] px-2 py-0.5 border border-gold-400/20 text-paper-300"
+                    >
+                      {tag}
                     </span>
-                    <span className="text-[--color-text-muted] ml-2 font-normal">
-                      {definition.sides[1].label}
-                    </span>
-                  </p>
-                  <p className="text-xs text-[--color-text-muted] mt-0.5 m-0">
-                    {definition.sides[1].shortDescription}
-                  </p>
+                  ))}
                 </div>
-              </div>
-            </div>
-          </article>
-        ))}
+              </article>
+            ))}
+          </div>
+        </RevealOnScroll>
       </div>
     </section>
   );

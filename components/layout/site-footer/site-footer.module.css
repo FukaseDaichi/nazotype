@@ -1,12 +1,13 @@
 .footer {
-  padding: 2rem 1rem;
+  border-top: 1px solid rgba(193, 155, 46, 0.1);
+  padding: 2rem;
   text-align: center;
-  background: var(--color-midnight-950);
 }
 
 .copy {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
+  font-size: 0.65rem;
+  color: var(--color-paper-300);
+  letter-spacing: 0.15em;
   line-height: 1.8;
 }

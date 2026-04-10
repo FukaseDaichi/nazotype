@@ -1,12 +1,5 @@
 import type { AxisSummary, TypeData } from "@/lib/types";
 
-import {
-  Bebas_Neue,
-  IBM_Plex_Mono,
-  Klee_One,
-  Noto_Serif_JP,
-} from "next/font/google";
-
 import { SiteFooter } from "@/components/layout/site-footer/site-footer";
 import { getTypePageJsonLd, stringifyJsonLd } from "@/lib/json-ld";
 import { TypeCompatibilitySection } from "@/components/type/type-detail-page-content/type-compatibility-section";
@@ -18,38 +11,6 @@ import { TypeSharePanel } from "@/components/type/type-detail-page-content/type-
 import { TypeSignatureSection } from "@/components/type/type-detail-page-content/type-signature-section";
 
 import styles from "./type-detail-page-content.module.css";
-
-const headingFont = Bebas_Neue({
-  variable: "--nzt-font-heading",
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-  preload: false,
-});
-
-const monoFont = IBM_Plex_Mono({
-  variable: "--nzt-font-mono",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  display: "swap",
-  preload: false,
-});
-
-const serifFont = Noto_Serif_JP({
-  variable: "--nzt-font-serif",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  display: "swap",
-  preload: false,
-});
-
-const noteFont = Klee_One({
-  variable: "--nzt-font-note",
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
-  preload: false,
-});
 
 type TypeDetailPageContentProps = {
   mode: "public" | "shared";
@@ -114,10 +75,7 @@ export function TypeDetailPageContent({
   const isShared = mode === "shared";
 
   return (
-    <main
-      id="main-content"
-      className={`${headingFont.variable} ${monoFont.variable} ${serifFont.variable} ${noteFont.variable} ${styles.page}`}
-    >
+    <main id="main-content" className={styles.page}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

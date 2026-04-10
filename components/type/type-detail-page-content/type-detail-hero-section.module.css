@@ -1,6 +1,11 @@
 .heroSection {
-  background: var(--color-paper-50);
-  color: var(--color-text-on-light);
+  background: linear-gradient(
+    135deg,
+    var(--color-mystery-900) 0%,
+    var(--color-mystery-800) 50%,
+    var(--color-mystery-700) 100%
+  );
+  color: var(--color-paper-50);
   padding: 2rem 1rem 3rem;
   animation: heroFadeUp 0.55s ease both;
 }
@@ -16,20 +21,20 @@
 
 .mastLogo {
   font-weight: 700;
-  color: var(--color-amber-400);
+  color: var(--color-gold-400);
   text-decoration: none;
   font-size: 0.875rem;
 }
 
 .mastBack {
   font-size: 0.875rem;
-  color: var(--color-cyan-500);
+  color: var(--color-gold-300);
   text-decoration: none;
   transition: color 0.15s;
 }
 
 .mastBack:hover {
-  color: var(--color-cyan-400);
+  color: var(--color-gold-400);
 }
 
 @keyframes heroFadeUp {

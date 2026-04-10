@@ -25,31 +25,29 @@ export function TypeSectionFrame({
 
   return (
     <section
-      className={`${sectionClassName} rounded-xl border border-midnight-600 bg-midnight-800 p-5 shadow-sm`}
+      className={`${sectionClassName} border border-gold-400/15 bg-mystery-800/60 backdrop-blur-sm p-5 shadow-sm`}
       aria-labelledby={heading.headingId}
     >
       {headerAlign === "center" ? (
         <div className="flex flex-col items-center gap-2 text-center">
-          <span className="font-mono text-xs font-bold uppercase tracking-widest text-amber-400">
+          <span className="font-mono text-xs font-bold uppercase tracking-widest text-gold-400">
             {heading.eyebrow}
           </span>
           <h2
             id={heading.headingId}
             className="text-xl font-bold leading-tight"
-            style={{ fontFamily: "var(--nzt-font-heading), sans-serif" }}
           >
             {heading.title}
           </h2>
         </div>
       ) : (
         <div className="space-y-1">
-          <span className="block font-mono text-xs font-bold uppercase tracking-widest text-amber-400">
+          <span className="block font-mono text-xs font-bold uppercase tracking-widest text-gold-400">
             {heading.eyebrow}
           </span>
           <h2
             id={heading.headingId}
             className="text-xl font-bold leading-tight"
-            style={{ fontFamily: "var(--nzt-font-heading), sans-serif" }}
           >
             {heading.title}
           </h2>

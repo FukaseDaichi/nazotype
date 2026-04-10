@@ -81,7 +81,7 @@ export function ShareActions({
         <p className="eyebrow">{eyebrow}</p>
         <h2 className="section-title">{title}</h2>
         {description ? (
-          <p className="text-sm text-[color:var(--color-text-subtle)]">
+          <p className="text-sm text-paper-300">
             {description}
           </p>
         ) : null}
@@ -125,7 +125,7 @@ export function ShareActions({
 
       <p
         aria-live="polite"
-        className="text-sm text-[color:var(--color-text-subtle)]"
+        className="text-sm text-paper-300"
       >
         {status}
       </p>

@@ -6,14 +6,13 @@
 .board {
   position: relative;
   aspect-ratio: 1.91 / 1;
-  border-radius: var(--radius-xl);
   overflow: hidden;
   background: linear-gradient(
     135deg,
-    var(--color-midnight-800) 0%,
-    var(--color-midnight-900) 100%
+    var(--color-mystery-800) 0%,
+    var(--color-mystery-900) 100%
   );
-  border: 1px solid var(--color-midnight-600);
+  border: 1px solid rgba(193, 155, 46, 0.2);
   padding: clamp(1rem, 3vw, 2rem);
   display: flex;
   flex-direction: column;
@@ -39,17 +38,11 @@
 }
 
 .boardCode {
-  font-family: var(--nzt-font-heading), sans-serif;
+  font-family: var(--font-mono);
   font-size: clamp(3rem, 8vw, 4.8rem);
   line-height: 1;
   letter-spacing: 0.1em;
-  color: var(--color-text);
-}
-
-.boardCenter {
-  text-align: center;
-  position: relative;
-  z-index: 1;
+  color: var(--color-paper-50);
 }
 
 .boardMetrics {
@@ -69,7 +62,7 @@
 .metricTrack {
   height: 4px;
   border-radius: 2px;
-  background: var(--color-midnight-600);
+  background: var(--color-mystery-600);
   overflow: hidden;
   margin-top: 0.25rem;
 }
@@ -92,10 +85,6 @@
 }
 
 @media (max-width: 640px) {
-  .board {
-    border-radius: var(--radius-lg);
-  }
-
   .boardCaption p:nth-child(2),
   .boardCaption p:nth-child(3) {
     display: none;

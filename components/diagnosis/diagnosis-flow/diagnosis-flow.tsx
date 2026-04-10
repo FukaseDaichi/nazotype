@@ -1,11 +1,5 @@
 "use client";
 
-import {
-  Bebas_Neue,
-  IBM_Plex_Mono,
-  Klee_One,
-  Noto_Serif_JP,
-} from "next/font/google";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -22,39 +16,34 @@ import type { AnswerValue, AnswersRecord, QuestionMaster } from "@/lib/types";
 
 import styles from "./diagnosis-flow.module.css";
 
-const headingFont = Bebas_Neue({
-  variable: "--nzt-font-heading",
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-  preload: false,
-});
+function getScaleButtonClass(value: number, selected: number | undefined) {
+  const isSelected = selected === value;
 
-const monoFont = IBM_Plex_Mono({
-  variable: "--nzt-font-mono",
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-  preload: false,
-});
-
-const serifFont = Noto_Serif_JP({
-  variable: "--nzt-font-serif",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  display: "swap",
-  preload: false,
-});
-
-const noteFont = Klee_One({
-  variable: "--nzt-font-note",
-  subsets: ["latin"],
-  weight: ["400", "600"],
-  display: "swap",
-  preload: false,
-});
-
-const fontVars = `${headingFont.variable} ${monoFont.variable} ${serifFont.variable} ${noteFont.variable}`;
+  switch (value) {
+    case 1:
+      return isSelected
+        ? `border-gold-400 bg-gold-400 text-mystery-800 scale-110 ${styles.scaleGlow1}`
+        : "border-gold-400/60 text-gold-400 hover:bg-gold-400/10";
+    case 2:
+      return isSelected
+        ? `border-gold-300/60 bg-gold-300 text-mystery-800 scale-110 ${styles.scaleGlow2}`
+        : "border-gold-300/60 text-gold-300/80 hover:bg-gold-300/10";
+    case 3:
+      return isSelected
+        ? "border-mystery-500 bg-mystery-500 text-paper-50 scale-110"
+        : "border-mystery-500 text-mystery-500 hover:bg-mystery-500/10";
+    case 4:
+      return isSelected
+        ? `border-paper-200/60 bg-paper-200 text-mystery-800 scale-110 ${styles.scaleGlow4}`
+        : "border-paper-200/60 text-paper-200/80 hover:bg-paper-200/10";
+    case 5:
+      return isSelected
+        ? `border-paper-300 bg-paper-300 text-paper-50 scale-110 ${styles.scaleGlow5}`
+        : "border-paper-300 text-paper-300 hover:bg-paper-300/10";
+    default:
+      return "border-mystery-600 text-[--color-text-muted]";
+  }
+}
 
 type DiagnosisFlowProps = {
   questionMaster: QuestionMaster;
@@ -64,35 +53,6 @@ type LocationState = {
   currentPage: number;
   hasPageQuery: boolean;
 };
-
-function getScaleButtonClass(value: number, selected: number | undefined) {
-  const isSelected = selected === value;
-
-  switch (value) {
-    case 1:
-      return isSelected
-        ? `border-cyan-500 bg-cyan-500 text-white scale-110 ${styles.scaleGlow1}`
-        : "border-cyan-500 text-cyan-500 hover:bg-cyan-500/10";
-    case 2:
-      return isSelected
-        ? `border-cyan-400/60 bg-cyan-400 text-midnight-900 scale-110 ${styles.scaleGlow2}`
-        : "border-cyan-400/60 text-cyan-400/80 hover:bg-cyan-400/10";
-    case 3:
-      return isSelected
-        ? "border-midnight-500 bg-midnight-500 text-white scale-110"
-        : "border-midnight-500 text-midnight-500 hover:bg-midnight-500/10";
-    case 4:
-      return isSelected
-        ? `border-amber-400/60 bg-amber-400 text-midnight-900 scale-110 ${styles.scaleGlow4}`
-        : "border-amber-400/60 text-amber-400/80 hover:bg-amber-400/10";
-    case 5:
-      return isSelected
-        ? `border-amber-500 bg-amber-500 text-white scale-110 ${styles.scaleGlow5}`
-        : "border-amber-500 text-amber-500 hover:bg-amber-500/10";
-    default:
-      return "border-midnight-600 text-[--color-text-muted]";
-  }
-}
 
 export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
   const router = useRouter();
@@ -253,17 +213,17 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
   /* ── Loading state ── */
   if (!isHydrated) {
     return (
-      <main id="main-content" className={`${fontVars} min-h-dvh`}>
+      <main id="main-content" className="min-h-dvh">
         <div className="flex items-center justify-center min-h-[60vh]">
           <div className="flex flex-col items-center gap-4 text-center">
             <div className={styles.spinner} aria-hidden="true" />
-            <p className="font-mono text-xs tracking-widest uppercase text-[--color-text-muted]">
+            <p className="font-mono text-xs tracking-widest uppercase text-paper-300">
               Preparing
             </p>
-            <h1 className="font-serif text-xl font-bold text-[--color-text]">
+            <h1 className="text-xl font-bold text-paper-50">
               診断の準備をしています
             </h1>
-            <p className="text-sm text-[--color-text-muted]">
+            <p className="text-sm text-paper-200">
               前回の保存内容と表示ページを確認しています。
             </p>
           </div>
@@ -275,22 +235,22 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
   /* ── No username state ── */
   if (!userName) {
     return (
-      <main id="main-content" className={`${fontVars} min-h-dvh`}>
+      <main id="main-content" className="min-h-dvh">
         <div className="max-w-3xl mx-auto px-4 py-16">
-          <div className="rounded-xl border border-midnight-600 bg-midnight-800 p-8 flex flex-col gap-4">
-            <p className="font-mono text-xs tracking-widest uppercase text-[--color-text-muted]">
+          <div className="border border-gold-400/20 bg-mystery-800/80 p-8 flex flex-col gap-4">
+            <p className="font-mono text-xs tracking-widest uppercase text-paper-300">
               Diagnosis
             </p>
-            <h1 className="font-serif text-xl font-bold text-[--color-text]">
+            <h1 className="text-xl font-bold text-paper-50">
               まずはお名前を入れて診断を始めます
             </h1>
-            <p className="text-sm text-[--color-text-muted]">
+            <p className="text-sm text-paper-200">
               このページを直接開いた場合は、トップページの開始フォームから進んでください。
             </p>
             <Link
               href="/"
               prefetch={false}
-              className="inline-flex items-center justify-center min-h-[52px] rounded-lg px-8 py-3 bg-coral-500 text-white font-bold text-base shadow-sm hover:bg-coral-600 hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center justify-center min-h-[52px] px-8 py-3 bg-gold-400 text-mystery-800 font-bold text-base transition-all hover:opacity-90 active:scale-[0.98]"
             >
               トップページへ戻る
             </Link>
@@ -303,17 +263,17 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
   /* ── Submitting state ── */
   if (isSubmitting) {
     return (
-      <main id="main-content" className={`${fontVars} min-h-dvh`}>
+      <main id="main-content" className="min-h-dvh">
         <div className="flex items-center justify-center min-h-[60vh]">
           <div className="flex flex-col items-center gap-4 text-center">
             <div className={styles.spinner} aria-hidden="true" />
-            <p className="font-mono text-xs tracking-widest uppercase text-[--color-text-muted]">
+            <p className="font-mono text-xs tracking-widest uppercase text-paper-300">
               Calculating
             </p>
-            <h1 className="font-serif text-xl font-bold text-[--color-text]">
+            <h1 className="text-xl font-bold text-paper-50">
               診断結果を計算しています
             </h1>
-            <p className="text-sm text-[--color-text-muted]">
+            <p className="text-sm text-paper-200">
               あなたの回答を4軸の記録にまとめています。
             </p>
           </div>
@@ -324,22 +284,22 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
 
   /* ── Main diagnosis flow ── */
   return (
-    <main id="main-content" className={`${fontVars} min-h-dvh`}>
+    <main id="main-content" className="min-h-dvh">
       {/* Progress Header - sticky */}
-      <header className="sticky top-0 z-40 bg-midnight-900/95 backdrop-blur-sm border-b border-midnight-600">
+      <header className="sticky top-0 z-40 bg-mystery-900/95 backdrop-blur-sm border-b border-gold-400/10">
         <div className="max-w-3xl mx-auto px-4 py-3">
           <div className="flex justify-between items-center text-sm">
-            <span className="font-mono text-[--color-text-muted]">
+            <span className="font-mono text-paper-300">
               Page {currentPage} / {totalPages}
             </span>
-            <span className="text-amber-400 font-bold text-sm">
+            <span className="text-gold-400 font-bold text-sm">
               謎解きタイプ診断
             </span>
           </div>
           {/* Progress bar */}
-          <div className="mt-2 h-1 w-full bg-midnight-700 rounded-full overflow-hidden">
+          <div className="mt-2 h-[3px] w-full bg-mystery-700 overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-cyan-400 to-amber-400 rounded-full transition-all duration-500 ease-out"
+              className="h-full bg-gradient-to-r from-gold-400 to-gold-300 transition-all duration-500 ease-out"
               style={{ width: `${progressPercent}%` }}
             />
           </div>
@@ -352,14 +312,14 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
           <h1
             ref={pageHeadingRef}
             tabIndex={-1}
-            className="font-heading text-2xl text-amber-400 outline-none"
+            className="font-mono text-2xl text-gold-400 outline-none tracking-wider"
           >
             ページ {currentPage} / {totalPages}
           </h1>
-          <p className="text-sm text-[--color-text-muted] mt-1">
+          <p className="text-sm text-paper-300 mt-1">
             直感で答えてください
           </p>
-          <div className="flex items-center gap-4 mt-2 text-xs text-[--color-text-muted]">
+          <div className="flex items-center gap-4 mt-2 text-xs text-paper-300 font-mono">
             <span aria-live="polite">
               回答済み {answeredCount} / {totalQuestions}
             </span>
@@ -371,7 +331,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
 
         {restoreNotice ? (
           <p
-            className="mb-4 rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-400"
+            className="mb-4 border border-gold-400/30 bg-gold-400/10 px-4 py-3 text-sm text-gold-400"
             role="status"
           >
             {restoreNotice}
@@ -386,7 +346,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
             return (
               <fieldset
                 key={question.questionId}
-                className="rounded-xl border border-midnight-600 bg-midnight-800 p-5"
+                className="border border-gold-400/10 bg-mystery-800/60 backdrop-blur-sm p-5"
               >
                 <legend
                   ref={(element) => {
@@ -395,7 +355,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
                   tabIndex={-1}
                   className="w-full mb-1 outline-none"
                 >
-                  <span className="font-mono text-xs text-amber-400 font-bold">
+                  <span className="font-mono text-xs text-gold-400 font-bold">
                     Q{String(question.displayOrder).padStart(2, "0")}
                   </span>
                   <span className="block text-base leading-relaxed mt-2">
@@ -406,7 +366,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
                 {/* 5-point scale */}
                 <div className="mt-4">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-xs text-[--color-text-muted] shrink-0 w-16 text-right">
+                    <span className="text-xs text-paper-300 shrink-0 w-16 text-right">
                       そう思わない
                     </span>
                     <div className="flex gap-2">
@@ -429,7 +389,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
                           </button>
                         ))}
                     </div>
-                    <span className="text-xs text-[--color-text-muted] shrink-0 w-16">
+                    <span className="text-xs text-paper-300 shrink-0 w-16">
                       そう思う
                     </span>
                   </div>
@@ -441,7 +401,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
 
         {validationError ? (
           <p
-            className="mt-4 rounded-lg border border-coral-500/30 bg-coral-500/10 px-4 py-3 text-sm text-coral-500"
+            className="mt-4 border border-rust-500/30 bg-rust-500/10 px-4 py-3 text-sm text-rust-400"
             role="alert"
           >
             {validationError}
@@ -454,7 +414,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
             <button
               type="button"
               onClick={handlePrevious}
-              className="text-cyan-400 text-sm hover:text-cyan-300 hover:underline underline-offset-4 transition-colors cursor-pointer"
+              className="text-gold-400 text-sm hover:text-gold-300 hover:underline underline-offset-4 transition-colors cursor-pointer"
             >
               前のページへ
             </button>
@@ -462,11 +422,11 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
           <button
             type="button"
             onClick={handleNext}
-            className="w-full sm:w-auto min-w-[280px] min-h-[52px] rounded-lg px-8 py-3 bg-coral-500 text-white font-bold text-base shadow-sm hover:bg-coral-600 hover:-translate-y-0.5 transition-all disabled:opacity-40 disabled:pointer-events-none cursor-pointer"
+            className="w-full sm:w-auto min-w-[280px] min-h-[52px] px-8 py-3 bg-gradient-to-br from-gold-400 to-gold-500 text-mystery-800 font-bold text-base transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none cursor-pointer"
           >
             {currentPage === totalPages
-              ? "診断結果を見る →"
-              : "次のページへ →"}
+              ? "診断結果を見る \u2192"
+              : "次のページへ \u2192"}
           </button>
         </div>
       </div>

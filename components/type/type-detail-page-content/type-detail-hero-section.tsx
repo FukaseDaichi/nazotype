@@ -47,11 +47,7 @@ export function TypeDetailHeroSection({
   return (
     <>
       <header className={styles.mast}>
-        <Link
-          href="/"
-          prefetch={false}
-          className={styles.mastLogo}
-        >
+        <Link href="/" prefetch={false} className={styles.mastLogo}>
           謎解きタイプ診断
         </Link>
         <Link
@@ -65,17 +61,17 @@ export function TypeDetailHeroSection({
 
       <section className={styles.heroSection} aria-labelledby="result-heading">
         <div className="mx-auto max-w-[768px]">
-          <p className="font-mono text-xs font-bold uppercase tracking-widest text-amber-400">
+          <p className="font-mono text-xs font-bold uppercase tracking-widest text-gold-400">
             {isShared ? "Shared Result" : "Public File"}
           </p>
 
-          <p className="mt-1 font-mono text-xs tracking-wider text-[color:var(--color-text-on-light-muted)]">
+          <p className="mt-1 font-mono text-xs tracking-wider text-paper-300">
             Case File #{typeData.typeCode}
           </p>
 
           <div className="mt-6 grid items-center gap-8 md:grid-cols-[40%_1fr]">
             <div className="mx-auto w-full max-w-[260px] md:mx-0">
-              <div className="overflow-hidden rounded-xl shadow-md">
+              <div className="overflow-hidden shadow-md border border-gold-400/20">
                 <TypeArtwork
                   typeCode={typeData.typeCode}
                   typeName={typeData.typeName}
@@ -99,12 +95,11 @@ export function TypeDetailHeroSection({
             <div className="flex flex-col gap-4 text-center md:text-left">
               <h1
                 id="result-heading"
-                className="font-heading text-[clamp(2rem,6vw,3.5rem)] leading-[0.95] tracking-wide text-[color:var(--color-text-on-light)]"
-                style={{ fontFamily: "var(--nzt-font-heading), sans-serif" }}
+                className="text-[clamp(2rem,6vw,3.5rem)] leading-[0.95] tracking-wide text-paper-50 font-bold"
               >
                 {isShared && sharedUserName ? (
                   <>
-                    <em className="not-italic text-coral-500">
+                    <em className="not-italic text-gold-300">
                       {sharedUserName}
                     </em>
                     <br />
@@ -115,14 +110,11 @@ export function TypeDetailHeroSection({
                 )}
               </h1>
 
-              <p
-                className="text-lg leading-relaxed text-amber-500"
-                style={{ fontFamily: "var(--nzt-font-note), cursive" }}
-              >
-                「{typeData.tagline}」
+              <p className="text-lg leading-relaxed text-gold-300">
+                &laquo;{typeData.tagline}&raquo;
               </p>
 
-              <p className="text-sm leading-relaxed text-[color:var(--color-text-on-light-muted)]">
+              <p className="text-sm leading-relaxed text-paper-200">
                 {typeData.summary}
               </p>
 
@@ -131,7 +123,7 @@ export function TypeDetailHeroSection({
                   <>
                     <a
                       href="#type-share-panel"
-                      className="inline-flex min-h-[52px] items-center justify-center rounded-lg bg-coral-500 px-8 py-3 font-bold text-white shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:bg-coral-600 hover:shadow-md active:translate-y-0"
+                      className="inline-flex min-h-[52px] items-center justify-center bg-gradient-to-br from-gold-400 to-gold-500 px-8 py-3 font-bold text-mystery-800 transition-all duration-150 hover:opacity-90 active:scale-[0.98]"
                     >
                       共有
                     </a>
@@ -139,7 +131,7 @@ export function TypeDetailHeroSection({
                       href={RECOMMENDATION_FEEDBACK_FORM_URL}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex min-h-[52px] items-center justify-center rounded-lg border border-cyan-400 px-8 py-3 font-bold text-cyan-500 transition-all duration-150 hover:-translate-y-0.5 hover:bg-cyan-400/10 active:translate-y-0"
+                      className="inline-flex min-h-[52px] items-center justify-center border border-gold-400 px-8 py-3 font-bold text-gold-300 transition-all duration-150 hover:bg-gold-400/10 active:scale-[0.98]"
                     >
                       おすすめを教える
                     </a>
@@ -148,7 +140,7 @@ export function TypeDetailHeroSection({
                   <Link
                     href="/"
                     prefetch={false}
-                    className="inline-flex min-h-[52px] items-center justify-center rounded-lg bg-coral-500 px-8 py-3 font-bold text-white shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:bg-coral-600 hover:shadow-md active:translate-y-0"
+                    className="inline-flex min-h-[52px] items-center justify-center bg-gradient-to-br from-gold-400 to-gold-500 px-8 py-3 font-bold text-mystery-800 transition-all duration-150 hover:opacity-90 active:scale-[0.98]"
                   >
                     自分でも診断する
                   </Link>
@@ -156,7 +148,7 @@ export function TypeDetailHeroSection({
                   <Link
                     href="/"
                     prefetch={false}
-                    className="inline-flex min-h-[52px] items-center justify-center rounded-lg bg-coral-500 px-8 py-3 font-bold text-white shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:bg-coral-600 hover:shadow-md active:translate-y-0"
+                    className="inline-flex min-h-[52px] items-center justify-center bg-gradient-to-br from-gold-400 to-gold-500 px-8 py-3 font-bold text-mystery-800 transition-all duration-150 hover:opacity-90 active:scale-[0.98]"
                   >
                     自分でも診断する
                   </Link>
@@ -164,7 +156,7 @@ export function TypeDetailHeroSection({
               </div>
 
               {shouldShowPostDiagnosisActions ? (
-                <p className="text-xs leading-relaxed text-[color:var(--color-text-on-light-muted)]">
+                <p className="text-xs leading-relaxed text-paper-300">
                   タイプごとのおすすめ謎解きイベントを集計したいので、よければフォームで教えてください。
                 </p>
               ) : null}

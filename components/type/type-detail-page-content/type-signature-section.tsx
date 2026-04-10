@@ -18,10 +18,10 @@ const AXIS_LETTER_MAP: Record<string, { letter: string; english: string }> = {
 };
 
 const AXIS_COLORS = [
-  { fill: "var(--color-coral-500)", glow: "rgba(230, 90, 74, 0.3)" },
-  { fill: "var(--color-amber-400)", glow: "rgba(232, 168, 50, 0.3)" },
-  { fill: "var(--color-cyan-400)", glow: "rgba(46, 196, 214, 0.3)" },
-  { fill: "var(--color-midnight-500)", glow: "rgba(58, 85, 144, 0.3)" },
+  { fill: "var(--color-gold-400)", glow: "rgba(193, 155, 46, 0.3)" },
+  { fill: "var(--color-gold-300)", glow: "rgba(232, 201, 106, 0.3)" },
+  { fill: "var(--color-clue-400)", glow: "rgba(61, 104, 152, 0.3)" },
+  { fill: "var(--color-paper-200)", glow: "rgba(201, 185, 154, 0.3)" },
 ] as const;
 
 const DEFAULT_SIGNATURE_PERCENT = 65;
@@ -126,17 +126,11 @@ export function TypeSignatureSection({
 
         <div className={styles.boardTop}>
           <div>
-            <p
-              className="font-mono text-[0.64rem] uppercase tracking-widest text-amber-400/70"
-              style={{ fontFamily: "var(--nzt-font-mono), monospace" }}
-            >
+            <p className="font-mono text-[0.64rem] uppercase tracking-widest text-gold-400/70">
               NAZOTYPE
             </p>
             <p className={styles.boardCode}>{typeData.typeCode}</p>
-            <p
-              className="mt-1 text-base leading-snug text-amber-300/80"
-              style={{ fontFamily: "var(--nzt-font-serif), serif" }}
-            >
+            <p className="mt-1 text-base leading-snug text-gold-300/80">
               {typeData.typeName}
             </p>
           </div>
@@ -150,26 +144,15 @@ export function TypeSignatureSection({
             >
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
-                  <span
-                    className="text-[clamp(1rem,2vw,1.4rem)] leading-none text-amber-400"
-                    style={{
-                      fontFamily: "var(--nzt-font-heading), sans-serif",
-                    }}
-                  >
+                  <span className="text-[clamp(1rem,2vw,1.4rem)] leading-none text-gold-400 font-bold">
                     {axis.dominantMeta.letter}
                   </span>
-                  <span
-                    className="text-sm leading-none"
-                    style={{ fontFamily: "var(--nzt-font-serif), serif" }}
-                  >
+                  <span className="text-sm leading-none">
                     {axis.dominant}
                   </span>
                 </div>
                 {hasData ? (
-                  <span
-                    className="font-mono text-xs tracking-wider text-amber-300/80"
-                    style={{ fontFamily: "var(--nzt-font-mono), monospace" }}
-                  >
+                  <span className="font-mono text-xs tracking-wider text-gold-300/80">
                     {axis.percent}%
                   </span>
                 ) : null}
@@ -184,10 +167,7 @@ export function TypeSignatureSection({
                   }}
                 />
               </div>
-              <span
-                className="font-mono text-[0.6rem] tracking-wide opacity-50"
-                style={{ fontFamily: "var(--nzt-font-mono), monospace" }}
-              >
+              <span className="font-mono text-[0.6rem] tracking-wide opacity-50">
                 {axis.dominant} vs {axis.other}
               </span>
             </div>
@@ -195,22 +175,13 @@ export function TypeSignatureSection({
         </div>
 
         <div className={styles.boardCaption}>
-          <p
-            className="text-[clamp(1rem,2.6vw,1.5rem)] leading-tight text-amber-300/90"
-            style={{ fontFamily: "var(--nzt-font-note), cursive" }}
-          >
+          <p className="text-[clamp(1rem,2.6vw,1.5rem)] leading-tight text-gold-300/90">
             {signatureFormula}
           </p>
-          <p
-            className="font-mono text-[0.62rem] uppercase tracking-widest opacity-50"
-            style={{ fontFamily: "var(--nzt-font-mono), monospace" }}
-          >
+          <p className="font-mono text-[0.62rem] uppercase tracking-widest opacity-50">
             CASE FILE #{typeData.typeCode}
           </p>
-          <p
-            className="text-sm leading-snug text-amber-300/80"
-            style={{ fontFamily: "var(--nzt-font-serif), serif" }}
-          >
+          <p className="text-sm leading-snug text-gold-300/80">
             {typeData.typeName}
           </p>
         </div>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Noto_Sans_JP, Shippori_Mincho_B1 } from "next/font/google";
+import { Noto_Serif_JP, Shippori_Mincho, Space_Mono } from "next/font/google";
 
 import {
   SITE_DESCRIPTION,
@@ -11,16 +11,24 @@ import {
 
 import "./globals.css";
 
-const bodyFont = Noto_Sans_JP({
-  variable: "--font-body-family",
+const serifFont = Shippori_Mincho({
+  variable: "--font-serif-family",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   display: "swap",
   preload: false,
 });
 
-const displayFont = Shippori_Mincho_B1({
-  variable: "--font-display-family",
+const serifFallback = Noto_Serif_JP({
+  variable: "--font-serif-fallback",
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  display: "swap",
+  preload: false,
+});
+
+const monoFont = Space_Mono({
+  variable: "--font-mono-family",
   subsets: ["latin"],
   weight: ["400", "700"],
   display: "swap",
@@ -79,7 +87,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${bodyFont.variable} ${displayFont.variable} h-full antialiased`}
+      className={`${serifFont.variable} ${serifFallback.variable} ${monoFont.variable} h-full antialiased`}
     >
       <body className="min-h-full">{children}</body>
     </html>

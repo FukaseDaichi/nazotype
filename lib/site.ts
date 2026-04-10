@@ -11,8 +11,8 @@ export const SITE_KEYWORDS = [
   "16タイプ診断",
 ] as const;
 export const SITE_TAGLINE = "役割を、16タイプで見える化する。";
-export const SITE_THEME_COLOR = "#f7f2ed";
-export const SITE_BACKGROUND_COLOR = "#f7f2ed";
+export const SITE_THEME_COLOR = "#1a1530";
+export const SITE_BACKGROUND_COLOR = "#1a1530";
 export const LINE_STAMP_URL = process.env.NEXT_PUBLIC_LINE_STAMP_URL ?? "";
 export const DRAFT_STORAGE_KEY = "nazotype:diagnosis-draft:v1";
 

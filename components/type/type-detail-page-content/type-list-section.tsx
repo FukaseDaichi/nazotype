@@ -14,7 +14,7 @@ export function TypeListSection({ heading, items }: TypeListSectionProps) {
       <ul className="space-y-3">
         {items.map((item) => (
           <li key={item} className="flex gap-3">
-            <span className="shrink-0 text-amber-400" aria-hidden="true">
+            <span className="shrink-0 text-gold-400" aria-hidden="true">
               ─
             </span>
             <span className="text-sm leading-relaxed">{item}</span>

@@ -12,9 +12,9 @@ export function SiteFooter({ className }: SiteFooterProps) {
   return (
     <footer className={footerClassName}>
       <p className={styles.copy}>
-        © Whte Franc / Puzzle-Solving Role Diagnosis System
+        NAZOTOKI TYPE DIAGNOSIS &nbsp;&middot;&nbsp; 4軸16タイプ謎解きロール診断
+        &nbsp;&middot;&nbsp; 能力ではなく、役割の違いを診る
       </p>
-      <p className={styles.copy}>Powered by 4-Axis Role Framework</p>
     </footer>
   );
 }

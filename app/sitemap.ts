@@ -3,6 +3,8 @@ import type { MetadataRoute } from "next";
 import { getAllTypeCodes } from "@/lib/data";
 import { getAbsoluteUrl } from "@/lib/site";
 
+export const dynamic = "force-static";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const typeCodes = await getAllTypeCodes();
   const now = new Date();

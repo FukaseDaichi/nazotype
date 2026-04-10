@@ -6,7 +6,13 @@ import { useEffect, useState, type FormEvent } from "react";
 import { normalizeUserName } from "@/lib/diagnosis";
 import { readDiagnosisDraft, writeDiagnosisDraft } from "@/lib/draft-storage";
 
-export function StartDiagnosisForm() {
+type StartDiagnosisFormProps = {
+  inputId?: string;
+};
+
+export function StartDiagnosisForm({
+  inputId = "diagnosis-name",
+}: StartDiagnosisFormProps) {
   const router = useRouter();
   const [name, setName] = useState("");
   const [resumeName, setResumeName] = useState<string | null>(null);
@@ -47,49 +53,40 @@ export function StartDiagnosisForm() {
   }
 
   return (
-    <div className="flex flex-col gap-4">
-      <form
-        onSubmit={handleSubmit}
-        className="rounded-xl border border-midnight-600 bg-midnight-800 p-6 flex flex-col gap-5"
-      >
-        <div className="flex flex-col gap-2">
-          <label
-            className="text-sm font-bold text-amber-400"
-            htmlFor="top-name"
-          >
-            お名前
-          </label>
+    <div className="flex flex-col items-center gap-4">
+      <form onSubmit={handleSubmit} className="w-full max-w-[420px]">
+        <div className="flex border border-gold-400/30 bg-paper-50/5 backdrop-blur-[10px] overflow-hidden transition-colors focus-within:border-gold-400 focus-within:shadow-[0_0_20px_rgba(193,155,46,0.1)]">
           <input
-            id="top-name"
+            id={inputId}
             maxLength={10}
             value={name}
             onChange={(event) => setName(event.target.value)}
-            className="w-full rounded-lg border border-midnight-600 bg-midnight-900 px-4 py-3 text-base text-[--color-text] placeholder:text-[--color-text-muted] focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
-            placeholder="例: 綾乃"
+            className="flex-1 bg-transparent border-none outline-none text-paper-50 font-serif text-base px-5 py-4 placeholder:text-paper-300 min-w-0"
+            placeholder="あなたの名前（任意）"
             autoComplete="nickname"
           />
-          <p className="text-sm text-[--color-text-muted]">
-            10文字以内。結果ページと共有URLに反映されます。
-          </p>
+          <button
+            type="submit"
+            disabled={isDisabled}
+            className="bg-gradient-to-br from-gold-400 to-gold-500 border-none text-mystery-800 font-serif text-[0.95rem] font-bold px-6 py-4 cursor-pointer tracking-wider whitespace-nowrap transition-opacity hover:opacity-90 active:scale-[0.98] disabled:opacity-40 disabled:cursor-default"
+          >
+            診断を始める &rarr;
+          </button>
         </div>
-
-        <button
-          type="submit"
-          disabled={isDisabled}
-          className="w-full min-h-[52px] rounded-lg px-8 py-3 bg-coral-500 text-white font-bold text-base shadow-sm hover:bg-coral-600 hover:-translate-y-0.5 transition-all disabled:opacity-40 disabled:pointer-events-none cursor-pointer"
-        >
-          32問の診断をはじめる
-        </button>
       </form>
+
+      <p className="font-mono text-[0.75rem] text-paper-300">
+        32問 &middot; 所要時間3〜5分 &middot; 登録不要
+      </p>
 
       {resumeName ? (
         <a
           href="/diagnosis"
-          className="flex items-center justify-center gap-2 rounded-lg border border-midnight-600 bg-transparent px-4 py-3 text-sm text-cyan-400 hover:bg-midnight-700/50 hover:border-cyan-400/30 transition-all"
+          className="flex items-center gap-2 text-sm text-gold-400 hover:text-gold-300 transition-colors"
         >
           前回の続きから再開する
-          <span className="text-xs text-[--color-text-muted]">
-            保存中: {resumeName}
+          <span className="font-mono text-xs text-paper-300">
+            ({resumeName})
           </span>
         </a>
       ) : null}

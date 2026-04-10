@@ -14,10 +14,7 @@ export function TypeOverviewSection({
 }: TypeOverviewSectionProps) {
   return (
     <TypeSectionFrame heading={heading}>
-      <div
-        className="text-base leading-loose whitespace-pre-line"
-        style={{ fontFamily: "var(--nzt-font-serif), serif" }}
-      >
+      <div className="text-base leading-loose whitespace-pre-line">
         {content}
       </div>
     </TypeSectionFrame>
