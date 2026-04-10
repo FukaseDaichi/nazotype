@@ -13,7 +13,14 @@ Operating rules:
   3. the target route/page plus nearby components to understand real layout and interaction patterns
 - If no design brief file exists, inspect the repo directly and infer the existing design system from code before spending credits.
 - Prefer the connected `aidesigner` MCP server for `whoami`, `get_credit_status`, `generate_design`, and `refine_design`.
-- For v1 MCP usage, stick to prompt-driven generate/refine calls. Do not pass `mode` or `url` unless the user explicitly asked for a reference-URL workflow and the MCP surface adds it back later.
+- Keep MCP calls prompt-driven unless the user explicitly asked for a reference-URL workflow.
+- Only use `clone` when the user explicitly wants a near-1:1 recreation, copy, match, or faithful clone of a specific URL.
+- Only use `enhance` when the user explicitly wants to improve, redesign, modernize, or upgrade a specific URL while preserving its content or intent.
+- Only use `inspire` when the user explicitly wants a new design inspired by a specific URL or its visual style.
+- If the user only mentions a URL as background context, do not pass `mode` or `url`.
+- If the user wants `clone`, `enhance`, or `inspire` but no reference URL is available yet, stop and ask for the URL before spending credits.
+- If continuing a previous reference-mode run, prefer `refine_design` and keep the existing `mode` and `url` as long as the user still wants that same reference workflow.
+- If the user explicitly wants to stop matching the reference and branch into a fresh direction, drop `mode` and `url` and continue prompt-only. If needed, refine from the latest HTML artifact instead of reusing a prior run id so the new iteration does not inherit the old reference.
 - Before every MCP generation or refinement, write an internal design brief for yourself that covers:
   - platform and target surface
   - product goal and primary user action
@@ -50,8 +57,13 @@ Operating rules:
   - Use the preview created by `capture` or run `npx -y @aidesigner/agent-skills preview --id <run-id>`
   - Run `npx -y @aidesigner/agent-skills adopt --id <run-id>` before porting into the repo
 - Treat HTML as a design artifact first and implementation input second.
-- Use the AIDesigner output as a strong design reference or inspiration board when building the real page/component locally.
-- Fill in the actual product-specific copy, data, behaviors, and final component structure from the repo and user request unless they explicitly asked for a close recreation.
+- The design artifact defines two distinct layers - port them differently:
+  - **Design system layer (match precisely):** Extract and faithfully reproduce every visual decision from the artifact - color palette, gradients, shadows, border radii, border styles, spacing values, font sizes, font weights, letter-spacing, line-height, background effects (glows, blurs, grid patterns), opacity values, hover/transition states, and layout structure (grid columns, flex gaps, min-heights, padding). Convert these into the repo's native token system (CSS variables, Tailwind theme, etc.) rather than approximating with "close enough" utility classes. When the artifact's Tailwind config or inline styles define specific values, those are the spec - do not round, simplify, or "improve" them.
+  - **Content layer (adapt freely):** Copy, section count, placeholder data, button labels, testimonial quotes, logo names, and other content should be filled in from the user's actual product context and request. The artifact's content is illustrative, not prescriptive - replace it with what makes sense for the user's project.
+- When porting the design system layer, work methodically:
+  1. First extract all theme tokens (colors, radii, font sizes, spacing) from the artifact's config/styles and define them in the repo's token system.
+  2. Then port each component's visual structure, preserving exact class values for spacing, sizing, and visual effects.
+  3. Do not substitute approximate values (e.g., `pt-48` for `pt-32`, `min-h-screen` for `min-h-[90vh]`, `text-6xl` for `text-[64px]`).
 - Apply the original detailed requirements during implementation, not by forcing them all into the AIDesigner prompt.
 - Do not paste raw standalone HTML into framework code when the repo has real frontend primitives.
 
