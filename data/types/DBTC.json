@@ -15,10 +15,16 @@
     "素早く実行するよりも全体最適を求めすぎてしまうことがある",
     "プランの変更が頻繁すぎてチームを混乱させることがある"
   ],
-  "recommendedRole": ["状況対応型の作戦立案", "全体最適化・リスク管理"],
+  "recommendedRole": [
+    "状況対応型の作戦立案",
+    "全体最適化・リスク管理"
+  ],
   "compatibility": {
     "summary": "行動型で局所型の仲間がいると、自分が立てたプランを現場で即座に実行してくれるため、戦略と行動のサイクルが加速します。特に熟考型の仲間は、自分の柔軟なプランに安定した分析基盤を提供してくれる心強い存在です。",
-    "goodWithTypeCodes": ["ALTN", "ALHN"],
+    "goodWithTypeCodes": [
+      "ALTN",
+      "ALHN"
+    ],
     "goodWithDescription": "行動型・局所型・熟考型の仲間が確実な実行力と緻密な分析を担ってくれることで、自分は戦略の設計と柔軟な調整に専念でき、チーム全体が最適化されます。"
   },
   "shareText": "謎解きタイプ診断の結果は「プランBの天才」でした！A案が死んでも大丈夫。この人にはH案まである。\n\n#謎解きタイプ診断",
@@ -34,14 +40,18 @@
     "characterArchetype": "versatile planner",
     "characterDescription": "知的で自信に満ちた若い女性。常にタブレットを手に状況を分析し、柔軟にプランを組み替えながらチームを導く万能型の戦略家。",
     "outfitDescription": "スマートカジュアルなブレザーにグラフィックTシャツ、フィットしたパンツ、実用的なシューズ。常にタブレットやプランニングツールを携帯。",
-    "colorPalette": ["#2E8B57", "#B87333", "#FFF8F0"],
+    "colorPalette": [
+      "#2E8B57",
+      "#B87333",
+      "#FFF8F0"
+    ],
     "pose": "片手を腰に当て、もう片方の手でタブレット上のプランを確認しているポーズ",
     "expression": "自信に満ちた柔軟な表情",
-    "background": "複数のスクリーンとプランが並ぶ作戦室"
+    "background": "淡いエメラルドグリーンと銅色の光が静かに輝く背景エフェクト"
   },
   "imagePrompt": {
-    "ja": "スマートなブレザーにグラフィックTシャツを合わせた自信のある若い女性プランナー、タブレットでプランを確認している、エメラルドとブロンズの色調、自信に満ちた適応力のある表情、複数のスクリーンが並ぶ脱出ゲームの作戦室、アニメ風キャラクターイラスト",
-    "en": "A confident young female planner in a smart blazer over a graphic tee, reviewing plans on a tablet, emerald and bronze tones, confident adaptable expression, strategy room with multiple screens escape setting, anime style character illustration"
+    "ja": "スマートなブレザーにグラフィックTシャツを合わせた自信のある若い女性プランナー、タブレットでプランを確認している、エメラルドとブロンズの色調、自信に満ちた適応力のある表情、腰から上のポートレート、背景透過、淡いエメラルドグリーンと銅色の光が静かに輝くエフェクト、アニメ風キャラクターイラスト",
+    "en": "A confident young female planner in a smart blazer over a graphic tee, reviewing plans on a tablet, emerald and bronze tones, confident adaptable expression, waist-up portrait, transparent background, pale emerald green and bronze light glowing with quiet adaptability, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

@@ -15,10 +15,16 @@
     "スピードが求められる場面で、説明が丁寧すぎることがある",
     "自分の担当範囲に集中するあまり、チーム全体との連携が薄くなりがち"
   ],
-  "recommendedRole": ["探索・一次発見", "手がかりの精査・共有"],
+  "recommendedRole": [
+    "探索・一次発見",
+    "手がかりの精査・共有"
+  ],
   "compatibility": {
     "summary": "俯瞰型の視野を持つ仲間と組むと、自分が見つけた手がかりを全体のパズルに組み込んでもらえるため、非常に効率的に進められます。特に転換型の柔軟さを持つパートナーが、自分の深掘りを補ってくれると最強の組み合わせになります。",
-    "goodWithTypeCodes": ["DBHC", "DBTC"],
+    "goodWithTypeCodes": [
+      "DBHC",
+      "DBTC"
+    ],
     "goodWithDescription": "俯瞰型・転換型の仲間が全体像を把握しながら柔軟に対応してくれるので、自分は安心して探索と分析に集中できる相互補完の関係です。"
   },
   "shareText": "謎解きタイプ診断の結果は「鑑識マニア」でした！「ねえ見てこれ」の回数チーム最多。しかも毎回大事なやつ。\n\n#謎解きタイプ診断",
@@ -34,14 +40,18 @@
     "characterArchetype": "adventurer-scholar",
     "characterDescription": "冒険家と学者を兼ね備えた青年。現場を自ら探索しながら、発見したものを知的に分析する。好奇心旺盛で、手がかりを見つけると目を輝かせる。",
     "outfitDescription": "ヘンリーネックシャツの上にユーティリティベスト、カーゴパンツ、指ぬきグローブを着用。メッセンジャーバッグを肩にかけている。",
-    "colorPalette": ["#D4A055", "#8B6914", "#3E2C1C"],
+    "colorPalette": [
+      "#D4A055",
+      "#8B6914",
+      "#3E2C1C"
+    ],
     "pose": "手がかりを手に取り、集中して観察しているポーズ",
     "expression": "好奇心に満ちた、集中した表情",
-    "background": "薄暗い部屋に手がかりが散らばっている脱出ゲームの一室"
+    "background": "淡いアンバーの炎と温かな光が揺らぐ背景エフェクト"
   },
   "imagePrompt": {
-    "ja": "ユーティリティベストとカーゴパンツを着た若い男性の冒険家兼学者、謎めいた手がかりを集中した好奇心で観察している、暖かいアンバーの照明、脱出ゲームの部屋、アニメ風キャラクターイラスト",
-    "en": "A young male adventurer-scholar in a utility vest and cargo pants, examining a mysterious clue with focused curiosity, warm amber lighting, escape room setting, anime style character illustration"
+    "ja": "ユーティリティベストとカーゴパンツを着た若い男性の冒険家兼学者、謎めいた手がかりを集中した好奇心で観察している、暖かいアンバーの照明、腰から上のポートレート、背景透過、淡いアンバーの炎と温かな黄金色の光が柔らかく揺らぐエフェクト、アニメ風キャラクターイラスト",
+    "en": "A young male adventurer-scholar in a utility vest and cargo pants, examining a mysterious clue with focused curiosity, warm amber lighting, waist-up portrait, transparent background, pale amber flame and warm golden light glowing softly, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

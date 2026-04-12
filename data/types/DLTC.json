@@ -15,10 +15,16 @@
     "仕分けの判断が、問題を最後まで解きたいメンバーの気持ちと衝突することがある",
     "効率重視の姿勢が、試行錯誤から生まれる創造的な突破口を見逃す原因になりうる"
   ],
-  "recommendedRole": ["謎の優先度判断・仕分け", "作業効率の最適化"],
+  "recommendedRole": [
+    "謎の優先度判断・仕分け",
+    "作業効率の最適化"
+  ],
   "compatibility": {
     "summary": "行動型・俯瞰型の仲間が広い視野で手がかりを集めてくれると、自分はそれらの優先順位づけと配分に集中できます。熟考型の仲間がじっくり難問に取り組んでくれれば、自分が仕分けた「後回し」の問題も確実に処理されるため、チーム全体の漏れがなくなります。",
-    "goodWithTypeCodes": ["ABTN", "ABHN"],
+    "goodWithTypeCodes": [
+      "ABTN",
+      "ABHN"
+    ],
     "goodWithDescription": "俯瞰型・熟考型の仲間が全体把握と深い分析を担当し、自分は集めた情報の優先度を判断して最適な作業配分を指示する司令塔の役割を果たせる相互補完の関係です。"
   },
   "shareText": "謎解きタイプ診断の結果は「仕分け番長」でした！「これ後回し。これ先。」の判断が毎回正しくて怖い。\n\n#謎解きタイプ診断",
@@ -34,14 +40,18 @@
     "characterArchetype": "sharp-organizer",
     "characterDescription": "瞬時に優先度を見極め、チームの作業効率を最大化する鋭い判断力を持つ男性。整理された空間の中で、的確に指示を出す司令塔。",
     "outfitDescription": "スマートカジュアルなブレザー、タートルネック、フィットパンツ。知的で洗練された装い。",
-    "colorPalette": ["#5D4E37", "#2A9D8F", "#F0EBE3"],
+    "colorPalette": [
+      "#5D4E37",
+      "#2A9D8F",
+      "#F0EBE3"
+    ],
     "pose": "ボードに向かい、片手でパズルの要素を仕分けているポーズ",
     "expression": "鋭く状況を見定める、冷静で分析的な表情",
-    "background": "整理されたアイテムが並ぶ、秩序ある脱出ゲームの作業スペース"
+    "background": "淡いティールと温かな茶色の光が秩序よく輝く背景エフェクト"
   },
   "imagePrompt": {
-    "ja": "スマートなブレザーとタートルネックを着た鋭い若い男性オーガナイザー、ボードに向かいパズルの要素を仕分けている、ブラウンとティールの色調、冷静で分析的な表情、整理された脱出ゲームの作業空間、アニメ風キャラクターイラスト",
-    "en": "A sharp young male organizer in a smart blazer and turtleneck, sorting puzzle elements on a board, brown and teal tones, alert analytical expression, organized escape room workspace setting, anime style character illustration"
+    "ja": "スマートなブレザーとタートルネックを着た鋭い若い男性オーガナイザー、ボードに向かいパズルの要素を仕分けている、ブラウンとティールの色調、冷静で分析的な表情、腰から上のポートレート、背景透過、淡いティールと温かな茶色の光が秩序をもって輝くエフェクト、アニメ風キャラクターイラスト",
+    "en": "A sharp young male organizer in a smart blazer and turtleneck, sorting puzzle elements on a board, brown and teal tones, alert analytical expression, waist-up portrait, transparent background, pale teal and warm brown light glowing in composed order, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

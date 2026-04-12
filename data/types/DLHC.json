@@ -15,10 +15,16 @@
     "個々の解答に深く踏み込まないため、メタパズルへの手がかりを見逃すことがある",
     "簡単な問題を次々取ってしまい、難問が後回しになりがち"
   ],
-  "recommendedRole": ["小謎の高速処理", "解答済み情報の即時発信"],
+  "recommendedRole": [
+    "小謎の高速処理",
+    "解答済み情報の即時発信"
+  ],
   "compatibility": {
     "summary": "俯瞰型で全体を見渡す仲間がいると、自分が高速で解いた結果をメタパズルに統合してもらえるため、スピードと戦略の両立が可能になります。熟考型の仲間が難問をじっくり担当してくれれば、自分は得意な高速処理に専念できます。",
-    "goodWithTypeCodes": ["ABHN", "ABTN"],
+    "goodWithTypeCodes": [
+      "ABHN",
+      "ABTN"
+    ],
     "goodWithDescription": "俯瞰型・熟考型の仲間が全体構造の把握と難問の深掘りを担い、自分は小さな謎を次々と片付けるスピード担当として力を発揮できる相互補完の関係です。"
   },
   "shareText": "謎解きタイプ診断の結果は「小謎キラー」でした！気づいたら3つ解いてて、4つ目に手を出してる。\n\n#謎解きタイプ診断",
@@ -34,14 +40,18 @@
     "characterArchetype": "speed-solver",
     "characterDescription": "次々とパズルを解き進める、エネルギッシュな若き高速ソルバー。解けた瞬間の興奮を隠さず、すぐに次の挑戦へ向かう。",
     "outfitDescription": "グラフィックパーカー、ジーンズ、リストバンド、首にかけたヘッドホン。動きやすくカジュアルな装い。",
-    "colorPalette": ["#4CAF50", "#FF8C42", "#FAFAFA"],
+    "colorPalette": [
+      "#4CAF50",
+      "#FF8C42",
+      "#FAFAFA"
+    ],
     "pose": "テーブルに身を乗り出し、複数のパズルを前に目を輝かせるポーズ",
     "expression": "興奮気味で目が鋭い、ひらめきの瞬間の表情",
-    "background": "様々な仕掛けやパズルが並ぶ脱出ゲームの部屋"
+    "background": "淡いグリーンとオレンジの光が弾ける背景エフェクト"
   },
   "imagePrompt": {
-    "ja": "グラフィックパーカーを着たエネルギッシュな若い男性パズルソルバー、テーブルに身を乗り出して複数のパズルに取り組んでいる、鮮やかなグリーンとオレンジのアクセント、興奮した鋭い表情、パズルだらけの脱出ゲーム空間、アニメ風キャラクターイラスト",
-    "en": "An energetic young male puzzle solver in a graphic hoodie, leaning forward over a table full of puzzles, bright green and orange accents, excited sharp expression, puzzle-filled escape room setting, anime style character illustration"
+    "ja": "グラフィックパーカーを着たエネルギッシュな若い男性パズルソルバー、テーブルに身を乗り出して複数のパズルに取り組んでいる、鮮やかなグリーンとオレンジのアクセント、興奮した鋭い表情、腰から上のポートレート、背景透過、淡いグリーンとオレンジの光がパッと弾けるエフェクト、アニメ風キャラクターイラスト",
+    "en": "An energetic young male puzzle solver in a graphic hoodie, leaning forward over a table full of puzzles, bright green and orange accents, excited sharp expression, waist-up portrait, transparent background, pale green and orange light sparks popping with sharp energy, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

@@ -15,10 +15,16 @@
     "走り回ることに夢中で、自分自身が謎を解く時間を取れないことがある",
     "頻繁にフォーカスを切り替えるため、周囲が方向性を見失うことがある"
   ],
-  "recommendedRole": ["チーム間の情報橋渡し", "ムードメイク・活性化"],
+  "recommendedRole": [
+    "チーム間の情報橋渡し",
+    "ムードメイク・活性化"
+  ],
   "compatibility": {
     "summary": "局所型の集中力を持つ仲間がいると、自分が運んできた情報を深く掘り下げてもらえるため、情報の流通と分析が両立します。特に熟考型のパートナーが、自分の素早い情報伝達を整理・検証してくれると、チーム全体の精度が上がります。",
-    "goodWithTypeCodes": ["DLHN", "DLTN"],
+    "goodWithTypeCodes": [
+      "DLHN",
+      "DLTN"
+    ],
     "goodWithDescription": "局所型・熟考型の仲間が情報を深く掘り下げ、慎重に検証してくれるので、自分は安心して情報収集と橋渡しに集中できる相互補完の関係です。"
   },
   "shareText": "謎解きタイプ診断の結果は「人間Wi-Fi」でした！あっちとこっちの情報、なぜか全部持ってる。\n\n#謎解きタイプ診断",
@@ -34,14 +40,18 @@
     "characterArchetype": "energetic-messenger",
     "characterDescription": "エネルギッシュで足が速い青年。チームの間を走り回って情報を繋ぐことが使命。興奮と緊迫感が入り混じった表情で、常に次の目的地へ向かっている。",
     "outfitDescription": "ウィンドブレーカー、ジョガーパンツ、スニーカー、メッセンジャーバッグを斜めがけ。動きやすさ重視のスポーティなスタイル。",
-    "colorPalette": ["#3AA5D1", "#FFC940", "#FFFFFF"],
+    "colorPalette": [
+      "#3AA5D1",
+      "#FFC940",
+      "#FFFFFF"
+    ],
     "pose": "走っている途中、または息を切らせて到着したポーズ",
     "expression": "興奮して急いでいる、切迫した表情",
-    "background": "複数の部屋を繋ぐ廊下"
+    "background": "淡いエレクトリックブルーと黄色の光の粒子が疾走するように漂う背景エフェクト"
   },
   "imagePrompt": {
-    "ja": "ウィンドブレーカーを着たエネルギッシュな若い男性の伝令、廊下を走り抜けている、エレクトリックブルーとイエローのアクセント、メッセンジャーバッグを持つ、興奮した切迫した表情、脱出ゲームの廊下、アニメ風キャラクターイラスト",
-    "en": "An energetic young male messenger in a windbreaker, running through a corridor, electric blue and yellow accents, carrying a messenger bag, excited urgent expression, escape room corridor setting, anime style character illustration"
+    "ja": "ウィンドブレーカーを着たエネルギッシュな若い男性の伝令、廊下を走り抜けている、エレクトリックブルーとイエローのアクセント、メッセンジャーバッグを持つ、興奮した切迫した表情、腰から上のポートレート、背景透過、淡いエレクトリックブルーと黄色の光の粒子がスピード感をもって流れるエフェクト、アニメ風キャラクターイラスト",
+    "en": "An energetic young male messenger in a windbreaker, running through a corridor, electric blue and yellow accents, carrying a messenger bag, excited urgent expression, waist-up portrait, transparent background, pale electric blue and golden yellow light particles streaming dynamically, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

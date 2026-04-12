@@ -15,10 +15,16 @@
     "攻略が完了するまで途中経過を共有しないことがある",
     "自分のエリアに集中するあまり、チーム全体の進捗を把握しにくくなる"
   ],
-  "recommendedRole": ["エリア担当・完全攻略", "複雑ギミックの解除"],
+  "recommendedRole": [
+    "エリア担当・完全攻略",
+    "複雑ギミックの解除"
+  ],
   "compatibility": {
     "summary": "俯瞰型の仲間が全体の進行を管理してくれると、自分は安心して目の前のエリアに没頭できます。特に転換型の柔軟さを持つ人が「そろそろ別のところ手伝って」と声をかけてくれると、チーム全体の効率が一気に上がります。",
-    "goodWithTypeCodes": ["DBTC", "DBHC"],
+    "goodWithTypeCodes": [
+      "DBTC",
+      "DBHC"
+    ],
     "goodWithDescription": "俯瞰型・転換型の仲間が全体を見渡して指示やサポートをしてくれるので、自分は目の前の攻略に専念でき、チーム全体がバランスよく機能する関係です。"
   },
   "shareText": "謎解きタイプ診断の結果は「エリアの主」でした！「ここは任せて」で黙々やって、本当に全部終わらせる人。\n\n#謎解きタイプ診断",
@@ -34,14 +40,18 @@
     "characterArchetype": "craftsman",
     "characterDescription": "職人気質の青年。寡黙だが確実に仕事をこなす信頼感がある。道具を使いこなし、複雑な仕掛けにも動じない落ち着きを持つ。",
     "outfitDescription": "シンプルなシャツの上にワークエプロン、ツールベルト、袖をまくった姿。実用的で飾り気のないスタイル。",
-    "colorPalette": ["#6B8FA3", "#3D5A6E", "#C0C8D0"],
+    "colorPalette": [
+      "#6B8FA3",
+      "#3D5A6E",
+      "#C0C8D0"
+    ],
     "pose": "しゃがみ込んで錠前の仕掛けに取り組んでいるポーズ",
     "expression": "冷静で決意に満ちた表情",
-    "background": "歯車や錠前が並ぶ機械仕掛けの部屋"
+    "background": "淡いスチールブルーの冷たく静かな光が満ちる背景エフェクト"
   },
   "imagePrompt": {
-    "ja": "ワークエプロンとツールベルトを身につけた集中力のある若い男性の職人、精巧な錠前の仕掛けに取り組んでいる、冷静で決意に満ちた表情、スチールブルーの色調、機械仕掛けの脱出ゲームの部屋、アニメ風キャラクターイラスト",
-    "en": "A focused young male craftsman in a work apron with a tool belt, working on an intricate lock mechanism, calm determined expression, steel blue tones, mechanical escape room setting, anime style character illustration"
+    "ja": "ワークエプロンとツールベルトを身につけた集中力のある若い男性の職人、精巧な錠前の仕掛けに取り組んでいる、冷静で決意に満ちた表情、スチールブルーの色調、腰から上のポートレート、背景透過、淡いスチールブルーの冷静で静かな光がゆっくりと満ちるエフェクト、アニメ風キャラクターイラスト",
+    "en": "A focused young male craftsman in a work apron with a tool belt, working on an intricate lock mechanism, calm determined expression, steel blue tones, waist-up portrait, transparent background, pale steel blue cold and composed light glowing steadily, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

@@ -15,10 +15,16 @@
     "テンションの高さが、じっくり考えたい仲間のペースを乱すことがある",
     "多くのものに注意が分散し、優先順位がつけにくくなることがある"
   ],
-  "recommendedRole": ["高速探索・アイテム回収", "発見の即時共有"],
+  "recommendedRole": [
+    "高速探索・アイテム回収",
+    "発見の即時共有"
+  ],
   "compatibility": {
     "summary": "俯瞰型で熟考型の仲間がいると、自分が次々と集めてきた情報を整理・統合してもらえるため、探索の成果が最大限に活かされます。落ち着いて全体を見るタイプの人が、自分のスピードを方向づけてくれると理想的です。",
-    "goodWithTypeCodes": ["DBHN", "DBTN"],
+    "goodWithTypeCodes": [
+      "DBHN",
+      "DBTN"
+    ],
     "goodWithDescription": "俯瞰型・熟考型の仲間が情報を整理し全体像を構築してくれるので、自分は発見に集中でき、チーム全体の効率が飛躍的に上がる関係です。"
   },
   "shareText": "謎解きタイプ診断の結果は「瞬間キャッチャー」でした！5分で3つ見つけて、もう次の部屋に行ってる。\n\n#謎解きタイプ診断",
@@ -34,14 +40,18 @@
     "characterArchetype": "energetic scout",
     "characterDescription": "エネルギッシュで好奇心旺盛な少女。部屋中を駆け回り、目をキラキラさせながら次々と発見を報告する。止まっている時間がほとんどない。",
     "outfitDescription": "クロップド丈のジャケット、ショートパンツ、スニーカーを着用。髪にはカラフルなヘアクリップ。スポーティでカジュアルなスタイル。",
-    "colorPalette": ["#FFB830", "#FF6B35", "#FFF4E0"],
+    "colorPalette": [
+      "#FFB830",
+      "#FF6B35",
+      "#FFF4E0"
+    ],
     "pose": "走りながら何かを指さしている、または興奮して発見を指し示すポーズ",
     "expression": "明るく興奮した表情",
-    "background": "カラフルなオブジェクトがたくさんある脱出ゲームの部屋"
+    "background": "淡い黄色とオレンジの光が弾けるように散らばる背景エフェクト"
   },
   "imagePrompt": {
-    "ja": "明るい黄色のアクセントが効いたスポーティカジュアルな服装のエネルギッシュな若い女性スカウト、興奮して発見を指さしている、ダイナミックなポーズ、カラフルな脱出ゲームの部屋、アニメ風キャラクターイラスト",
-    "en": "An energetic young female scout in sporty casual wear with bright yellow accents, pointing excitedly at a discovery, dynamic pose, colorful escape room setting, anime style character illustration"
+    "ja": "明るい黄色のアクセントが効いたスポーティカジュアルな服装のエネルギッシュな若い女性スカウト、興奮して発見を指さしている、ダイナミックなポーズ、腰から上のポートレート、背景透過、淡い黄色とオレンジの光が弾けるように輝くエフェクト、アニメ風キャラクターイラスト",
+    "en": "An energetic young female scout in sporty casual wear with bright yellow accents, pointing excitedly at a discovery, dynamic pose, waist-up portrait, transparent background, pale yellow and orange sparkling light bursting with vivid energy, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

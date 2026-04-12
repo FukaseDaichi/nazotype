@@ -15,10 +15,16 @@
     "重要な気づきを共有するタイミングが遅れがちになることがある",
     "何を考えているか分からず、チームが不安を感じることがある"
   ],
-  "recommendedRole": ["全体戦略の静かな調整", "重要局面での決定的判断"],
+  "recommendedRole": [
+    "全体戦略の静かな調整",
+    "重要局面での決定的判断"
+  ],
   "compatibility": {
     "summary": "行動型で局所型の仲間がいると、自分が静かに観察している間に現場の情報を積極的に集めてきてくれるため、戦略の精度が高まります。特に転換型の仲間は、自分の深い思考に新しい視点を加え、戦略の幅を広げてくれる存在です。",
-    "goodWithTypeCodes": ["ALTC", "ALHC"],
+    "goodWithTypeCodes": [
+      "ALTC",
+      "ALHC"
+    ],
     "goodWithDescription": "行動型・局所型・転換型の仲間が現場で機動力を発揮してくれることで、自分は全体の戦略設計に集中でき、静かな司令塔として最大の力を発揮できます。"
   },
   "shareText": "謎解きタイプ診断の結果は「沈黙の切り札」でした！ずっと黙ってたのに、一言で全部ひっくり返す。\n\n#謎解きタイプ診断",
@@ -34,14 +40,18 @@
     "characterArchetype": "silent strategist",
     "characterDescription": "寡黙ながら全てを見通す眼を持つ青年。影のような静けさの中に絶対的な存在感を放ち、一言で場の空気を変える力を持つ。",
     "outfitDescription": "ダークなロングコートにハイカラーシャツ、ミニマリストなスタイル。装飾を排した洗練されたシルエット。",
-    "colorPalette": ["#2D2D2D", "#8B2E3B", "#4A4A4A"],
+    "colorPalette": [
+      "#2D2D2D",
+      "#8B2E3B",
+      "#4A4A4A"
+    ],
     "pose": "影の中で腕を組み、鋭い眼差しで全体を見渡しているポーズ",
     "expression": "冷静で見透かすような表情",
-    "background": "部屋を見下ろす薄暗い観察ポイント"
+    "background": "淡い深紅の炎の余韻と暗く沈んだ光が漂う背景エフェクト"
   },
   "imagePrompt": {
-    "ja": "ハイカラーのダークロングコートを着た寡黙な若い男性戦略家、影の中で腕を組んで全体を見渡している、ダークチャコールとディープレッドの色調、冷静で鋭い表情、薄暗い脱出ゲームの観察ポイント、アニメ風キャラクターイラスト",
-    "en": "A silent young male strategist in a dark long coat with high collar, standing in shadow with arms crossed surveying the scene, dark charcoal and deep red tones, calm penetrating expression, dimly lit escape room observation point, anime style character illustration"
+    "ja": "ハイカラーのダークロングコートを着た寡黙な若い男性戦略家、影の中で腕を組んで全体を見渡している、ダークチャコールとディープレッドの色調、冷静で鋭い表情、腰から上のポートレート、背景透過、淡い深紅の炎の余韻と暗く沈んだ光が漂うエフェクト、アニメ風キャラクターイラスト",
+    "en": "A silent young male strategist in a dark long coat with high collar, standing in shadow with arms crossed surveying the scene, dark charcoal and deep red tones, calm penetrating expression, waist-up portrait, transparent background, pale deep crimson ember glow and dark atmospheric light, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

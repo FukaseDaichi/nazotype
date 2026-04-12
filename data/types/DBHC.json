@@ -15,10 +15,16 @@
     "アイデアの切り替えが速すぎて、チームがついていけないことがある",
     "素晴らしいアイデアでも実行に移すための具体性が不足しがちなことがある"
   ],
-  "recommendedRole": ["創造的閃き・発想の飛躍", "パターン認識・直感的仮説"],
+  "recommendedRole": [
+    "創造的閃き・発想の飛躍",
+    "パターン認識・直感的仮説"
+  ],
   "compatibility": {
     "summary": "行動型で局所型の仲間がいると、自分の閃きを実際の手がかりで裏付けてくれるため、直感が確信に変わります。特に熟考型の仲間は、自分の飛躍的な発想に論理的な土台を与えてくれるかけがえのないパートナーです。",
-    "goodWithTypeCodes": ["ALHN", "ALTN"],
+    "goodWithTypeCodes": [
+      "ALHN",
+      "ALTN"
+    ],
     "goodWithDescription": "行動型・局所型・熟考型の仲間が現場の確かな情報と地に足のついた分析を提供してくれることで、自分の直感的な閃きが実際の解法へと着地しやすくなります。"
   },
   "shareText": "謎解きタイプ診断の結果は「ひらめき爆弾」でした！「その発想はなかった」が何度も起きる。本人もなぜか知らない。\n\n#謎解きタイプ診断",
@@ -34,14 +40,18 @@
     "characterArchetype": "dreamy stargazer",
     "characterDescription": "夢見がちでありながら鋭い直感を持つ少女。星空のように散らばった情報の中から突然パターンを見出し、驚きの閃きでチームを導く。",
     "outfitDescription": "流れるようなブラウスにレイヤードスカート、星モチーフのアクセサリー（ヘアピン、ブレスレット）を着用。幻想的で知的なスタイル。",
-    "colorPalette": ["#3F2B7A", "#D4AF37", "#F5F0FF"],
+    "colorPalette": [
+      "#3F2B7A",
+      "#D4AF37",
+      "#F5F0FF"
+    ],
     "pose": "突然の閃きに目を輝かせて上を見上げ、片手を掲げたポーズ",
     "expression": "ハッとした驚きと感動に満ちた表情",
-    "background": "星の投影が映し出されたプラネタリウムのような部屋"
+    "background": "淡いインディゴと金色の光粒子が星屑のように漂う背景エフェクト"
   },
   "imagePrompt": {
-    "ja": "流れるようなブラウスに星モチーフのアクセサリーを身につけた夢見がちな若い女性、突然の閃きで上を見上げている、インディゴとゴールドの色調、驚きと感動に満ちた表情、星の投影が映るプラネタリウムのような脱出ゲームの部屋、アニメ風キャラクターイラスト",
-    "en": "A dreamy young female stargazer in a flowing blouse with star accessories, looking up with sudden inspiration, indigo and gold tones, wonder-struck expression, planetarium-like escape room with star projections, anime style character illustration"
+    "ja": "流れるようなブラウスに星モチーフのアクセサリーを身につけた夢見がちな若い女性、突然の閃きで上を見上げている、インディゴとゴールドの色調、驚きと感動に満ちた表情、腰から上のポートレート、背景透過、淡いインディゴと金色の光粒子が星屑のように漂うエフェクト、アニメ風キャラクターイラスト",
+    "en": "A dreamy young female stargazer in a flowing blouse with star accessories, looking up with sudden inspiration, indigo and gold tones, wonder-struck expression, waist-up portrait, transparent background, pale indigo and gold starlike light particles drifting like stardust, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

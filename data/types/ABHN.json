@@ -15,10 +15,16 @@
     "全体像を組み立てるのに時間をかけすぎて、細部への着手が遅れることがある",
     "大きな構造を考えている間に、目の前の小さな手がかりを見落としがち"
   ],
-  "recommendedRole": ["全体マッピング・構造把握", "発見の統合的共有"],
+  "recommendedRole": [
+    "全体マッピング・構造把握",
+    "発見の統合的共有"
+  ],
   "compatibility": {
     "summary": "局所型の集中力を持つ仲間と組むと、自分が見落としがちな細部をカバーしてもらえるため、全体と部分の両方を押さえた最強の探索チームになります。特に転換型の柔軟さを持つパートナーがいると、自分の熟考スタイルを補完してくれてテンポよく進められます。",
-    "goodWithTypeCodes": ["DLHC", "DLTC"],
+    "goodWithTypeCodes": [
+      "DLHC",
+      "DLTC"
+    ],
     "goodWithDescription": "局所型・転換型の仲間が細部の発見と柔軟な切り替えを担ってくれるので、自分は安心して全体の構造把握と深い分析に集中できる相互補完の関係です。"
   },
   "shareText": "謎解きタイプ診断の結果は「歩くホワイトボード」でした！部屋中歩き回った結果を、全部覚えてる。なんで？\n\n#謎解きタイプ診断",
@@ -34,14 +40,18 @@
     "characterArchetype": "explorer-thinker",
     "characterDescription": "広い視野と深い思考力を兼ね備えた女性探索者。自ら現場を歩き回りながら、頭の中で全体のマップを組み立てる。静かな決意と知的な好奇心が同居する。",
     "outfitDescription": "オープンフロントのフィールドジャケット、ハイキングブーツ、小さなノートブックを手に持つ。動きやすいパンツスタイル。",
-    "colorPalette": ["#2D8B7A", "#1A5C50", "#E8F0EC"],
+    "colorPalette": [
+      "#2D8B7A",
+      "#1A5C50",
+      "#E8F0EC"
+    ],
     "pose": "高台に立ち、広い空間全体を見渡しているポーズ",
     "expression": "思慮深く、決意に満ちた表情",
-    "background": "複数の部屋が見渡せる広大な脱出ゲーム施設"
+    "background": "淡いティールグリーンの柔らかな光の波が広がる背景エフェクト"
   },
   "imagePrompt": {
-    "ja": "フィールドジャケットとハイキングブーツを着た思慮深い若い女性探索者、高台に立って広大な空間を見渡している、ティールグリーンの色調、ノートブックを手に持つ、複数部屋の脱出ゲーム施設、アニメ風キャラクターイラスト",
-    "en": "A thoughtful young female explorer in a field jacket, standing on elevated ground surveying a vast space, teal green tones, holding a notebook, multi-room escape complex setting, anime style character illustration"
+    "ja": "フィールドジャケットとハイキングブーツを着た思慮深い若い女性探索者、高台に立って広大な空間を見渡している、ティールグリーンの色調、ノートブックを手に持つ、腰から上のポートレート、背景透過、淡いティールグリーンの柔らかな光の波がゆったりと広がるエフェクト、アニメ風キャラクターイラスト",
+    "en": "A thoughtful young female explorer in a field jacket, standing on elevated ground surveying a vast space, teal green tones, holding a notebook, waist-up portrait, transparent background, soft pale teal green glowing light waves spreading gently, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

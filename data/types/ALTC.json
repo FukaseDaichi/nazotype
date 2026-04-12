@@ -15,10 +15,16 @@
     "じっくり考えたい仲間のテンポと合わないことがある",
     "相談よりも行動で引っ張る傾向があり、独断に見えることがある"
   ],
-  "recommendedRole": ["停滞の打破・突破口の創出", "ヒント判断・方針転換"],
+  "recommendedRole": [
+    "停滞の打破・突破口の創出",
+    "ヒント判断・方針転換"
+  ],
   "compatibility": {
     "summary": "俯瞰型で熟考型の仲間がいると、自分の突破力に戦略的な方向づけが加わり、チームの推進力が何倍にもなります。冷静に全体を見渡してくれる人が、自分の判断を補強してくれると最高のパフォーマンスが出せます。",
-    "goodWithTypeCodes": ["DBTN", "DBHN"],
+    "goodWithTypeCodes": [
+      "DBTN",
+      "DBHN"
+    ],
     "goodWithDescription": "俯瞰型・熟考型の仲間が戦略と全体像を提供してくれるので、自分の突破力が正しい方向に発揮され、チーム全体が加速する関係です。"
   },
   "shareText": "謎解きタイプ診断の結果は「突破キラー」でした！詰まった？この人に渡せば3秒で動き出す。\n\n#謎解きタイプ診断",
@@ -34,14 +40,18 @@
     "characterArchetype": "bold breaker",
     "characterDescription": "大胆不敵な突破者の女性。強い意志を秘めた眼差しと、行動で道を切り開く力強さを持つ。困難な状況ほど闘志が燃える。",
     "outfitDescription": "ボンバージャケット、タンクトップ、タクティカルブーツ、バンダナを着用。ダークカラーをベースにコーラルレッドのアクセント。",
-    "colorPalette": ["#E85D50", "#2D2D3D", "#F0A090"],
+    "colorPalette": [
+      "#E85D50",
+      "#2D2D3D",
+      "#F0A090"
+    ],
     "pose": "腕を組んで立っている、または扉を押し開けようとしているポーズ",
     "expression": "自信に満ちた、闘志あふれる表情",
-    "background": "障害物が立ちはだかる脱出途中の部屋"
+    "background": "淡いコーラルレッドの炎が力強く燃える背景エフェクト"
   },
   "imagePrompt": {
-    "ja": "コーラルレッドのアクセントが効いたボンバージャケットを着た大胆な若い女性、自信に満ちた闘志あふれる表情、アクション準備万端の立ち姿、暗い障害物の部屋の脱出ゲーム設定、アニメ風キャラクターイラスト",
-    "en": "A bold young female in a bomber jacket with coral red accents, confident fierce expression, standing ready for action, dark obstacle room escape setting, anime style character illustration"
+    "ja": "コーラルレッドのアクセントが効いたボンバージャケットを着た大胆な若い女性、自信に満ちた闘志あふれる表情、アクション準備万端の立ち姿、腰から上のポートレート、背景透過、淡いコーラルレッドの炎が力強く燃え上がるエフェクト、アニメ風キャラクターイラスト",
+    "en": "A bold young female in a bomber jacket with coral red accents, confident fierce expression, standing ready for action, waist-up portrait, transparent background, pale coral red flames burning with fierce intensity, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

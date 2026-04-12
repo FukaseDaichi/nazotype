@@ -15,10 +15,16 @@
     "緊急性が高い場面で、秩序を優先してスピードが犠牲になることがある",
     "コミュニケーションのバランスを欠くと、メンバーが窮屈に感じることがある"
   ],
-  "recommendedRole": ["チーム全体の指揮・役割分担", "進行管理・戦略判断"],
+  "recommendedRole": [
+    "チーム全体の指揮・役割分担",
+    "進行管理・戦略判断"
+  ],
   "compatibility": {
     "summary": "局所型の集中力を持つ仲間がいると、自分が描く全体戦略を細部まで実行してもらえるため、指揮と実行のバランスが取れます。特に転換型の柔軟さを持つパートナーが、自分の計画に予想外の変化への対応力を加えてくれると、盤石のチーム運営が可能になります。",
-    "goodWithTypeCodes": ["DLTC", "DLHC"],
+    "goodWithTypeCodes": [
+      "DLTC",
+      "DLHC"
+    ],
     "goodWithDescription": "局所型・転換型の仲間が細部の実行と柔軟な対応を担ってくれるので、自分は安心して全体の指揮と戦略判断に集中できる相互補完の関係です。"
   },
   "shareText": "謎解きタイプ診断の結果は「現場の総監督」でした！気づいたら全員、この人の指示で動いてる。\n\n#謎解きタイプ診断",
@@ -34,14 +40,18 @@
     "characterArchetype": "strategic-commander",
     "characterDescription": "冷静沈着で頼りがいのある指揮官タイプの青年。自ら現場を歩きながらも、常にチーム全体の動きを把握している。権威と落ち着きを兼ね備えた佇まい。",
     "outfitDescription": "構造的なデザインのジャケット、ダークタートルネック、きちんとしたパンツ。ダークネイビーにゴールドのアクセント。",
-    "colorPalette": ["#1E2A4A", "#C9A84C", "#E8E0D0"],
+    "colorPalette": [
+      "#1E2A4A",
+      "#C9A84C",
+      "#E8E0D0"
+    ],
     "pose": "背筋を伸ばして立ち、腕を後ろに組むか、指示を出すように手を伸ばしているポーズ",
     "expression": "威厳があり、落ち着いた表情",
-    "background": "脱出ゲーム全体を見渡せる指令センターのような場所"
+    "background": "淡い金色の光粒子と深いネイビーの静かな輝きが漂う背景エフェクト"
   },
   "imagePrompt": {
-    "ja": "ゴールドのアクセントが入ったダークネイビーの構造的なジャケットを着た指揮官タイプの若い男性、背筋を伸ばしてチームに指示を出している、威厳ある落ち着いた表情、脱出ゲームの指令センター、アニメ風キャラクターイラスト",
-    "en": "A commanding young male in a structured dark navy jacket with gold accents, standing tall directing a team, authoritative composed expression, escape room command center setting, anime style character illustration"
+    "ja": "ゴールドのアクセントが入ったダークネイビーの構造的なジャケットを着た指揮官タイプの若い男性、背筋を伸ばしてチームに指示を出している、威厳ある落ち着いた表情、腰から上のポートレート、背景透過、淡い金色の光の粒子と深いネイビーの静かな輝きが威厳をもって漂うエフェクト、アニメ風キャラクターイラスト",
+    "en": "A commanding young male in a structured dark navy jacket with gold accents, standing tall directing a team, authoritative composed expression, waist-up portrait, transparent background, pale gold light particles and deep navy subtle glow radiating authority, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
