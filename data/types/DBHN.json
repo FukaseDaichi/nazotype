@@ -47,11 +47,13 @@
     ],
     "pose": "ホワイトボードの前に立ち、図を指さしながら仮説を説明するポーズ",
     "expression": "インスピレーションに満ちた集中した表情",
-    "background": "淡いブルーとアンバーの光の糸が繋がるように広がる背景エフェクト"
+    "background": "淡いブルーとアンバーの光の糸が繋がるように広がる背景エフェクト",
+    "hairStyle": "整えられたミディアムヘア",
+    "hairColor": "アンバーの前髪ハイライト入りブルーブラック"
   },
   "imagePrompt": {
-    "ja": "構築的なカーディガンとアーキテクト風メガネを身につけた知的な若い男性、ホワイトボードの前でダイアグラムをつなげている、青とアンバーの色調、インスピレーションに満ちた集中した表情、腰から上のポートレート、背景透過、淡いブルーとアンバーの光の糸が繋がるように広がるエフェクト、アニメ風キャラクターイラスト",
-    "en": "A thoughtful young male in a structured cardigan and architect glasses, standing at a whiteboard connecting diagrams, blue and amber tones, inspired focused expression, waist-up portrait, transparent background, pale blue and amber light threads connecting and spreading, anime style character illustration"
+    "ja": "構築的なカーディガンとアーキテクト風メガネを身につけた知的な若い男性、アンバーのハイライトが前髪に映えるブルーブラックのミディアムヘア、ホワイトボードの前でダイアグラムをつなげている、青とアンバーの色調、インスピレーションに満ちた集中した表情、腰から上のポートレート、背景透過、淡いブルーとアンバーの光の糸が繋がるように広がるエフェクト、アニメ風キャラクターイラスト",
+    "en": "A thoughtful young male in a structured cardigan and architect glasses, neatly styled blue-black medium hair with an amber-highlighted forelock, standing at a whiteboard connecting diagrams, blue and amber tones, inspired focused expression, waist-up portrait, transparent background, pale blue and amber light threads connecting and spreading, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

@@ -47,11 +47,13 @@
     ],
     "pose": "突然の閃きに目を輝かせて上を見上げ、片手を掲げたポーズ",
     "expression": "ハッとした驚きと感動に満ちた表情",
-    "background": "淡いインディゴと金色の光粒子が星屑のように漂う背景エフェクト"
+    "background": "淡いインディゴと金色の光粒子が星屑のように漂う背景エフェクト",
+    "hairStyle": "長いふわりとしたウェーブ",
+    "hairColor": "インディゴから金へのグラデーション"
   },
   "imagePrompt": {
-    "ja": "流れるようなブラウスに星モチーフのアクセサリーを身につけた夢見がちな若い女性、突然の閃きで上を見上げている、インディゴとゴールドの色調、驚きと感動に満ちた表情、腰から上のポートレート、背景透過、淡いインディゴと金色の光粒子が星屑のように漂うエフェクト、アニメ風キャラクターイラスト",
-    "en": "A dreamy young female stargazer in a flowing blouse with star accessories, looking up with sudden inspiration, indigo and gold tones, wonder-struck expression, waist-up portrait, transparent background, pale indigo and gold starlike light particles drifting like stardust, anime style character illustration"
+    "ja": "流れるようなブラウスに星モチーフのアクセサリーを身につけた夢見がちな若い女性、インディゴから金へグラデーションする長いふわりとしたウェーブヘア、突然の閃きで上を見上げている、インディゴとゴールドの色調、驚きと感動に満ちた表情、腰から上のポートレート、背景透過、淡いインディゴと金色の光粒子が星屑のように漂うエフェクト、アニメ風キャラクターイラスト",
+    "en": "A dreamy young female stargazer in a flowing blouse with star accessories, long flowing wavy hair in an indigo-to-gold gradient, looking up with sudden inspiration, indigo and gold tones, wonder-struck expression, waist-up portrait, transparent background, pale indigo and gold starlike light particles drifting like stardust, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

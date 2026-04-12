@@ -47,11 +47,13 @@
     ],
     "pose": "ボードに向かい、片手でパズルの要素を仕分けているポーズ",
     "expression": "鋭く状況を見定める、冷静で分析的な表情",
-    "background": "淡いティールと温かな茶色の光が秩序よく輝く背景エフェクト"
+    "background": "淡いティールと温かな茶色の光が秩序よく輝く背景エフェクト",
+    "hairStyle": "短めサイドパート",
+    "hairColor": "毛先ティールのポイントカラー入りブラック"
   },
   "imagePrompt": {
-    "ja": "スマートなブレザーとタートルネックを着た鋭い若い男性オーガナイザー、ボードに向かいパズルの要素を仕分けている、ブラウンとティールの色調、冷静で分析的な表情、腰から上のポートレート、背景透過、淡いティールと温かな茶色の光が秩序をもって輝くエフェクト、アニメ風キャラクターイラスト",
-    "en": "A sharp young male organizer in a smart blazer and turtleneck, sorting puzzle elements on a board, brown and teal tones, alert analytical expression, waist-up portrait, transparent background, pale teal and warm brown light glowing in composed order, anime style character illustration"
+    "ja": "スマートなブレザーとタートルネックを着た鋭い若い男性オーガナイザー、毛先にティールのポイントカラーが入った短めサイドパートのブラックヘア、ボードに向かいパズルの要素を仕分けている、ブラウンとティールの色調、冷静で分析的な表情、腰から上のポートレート、背景透過、淡いティールと温かな茶色の光が秩序をもって輝くエフェクト、アニメ風キャラクターイラスト",
+    "en": "A sharp young male organizer in a smart blazer and turtleneck, short black side-part hair with teal point-color at the tips, sorting puzzle elements on a board, brown and teal tones, alert analytical expression, waist-up portrait, transparent background, pale teal and warm brown light glowing in composed order, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

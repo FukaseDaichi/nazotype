@@ -47,11 +47,13 @@
     ],
     "pose": "アクションの最中に指示を出しているダイナミックなポーズ",
     "expression": "鋭く、決断力に満ちた表情",
-    "background": "淡い紫とオレンジの炎のような光が揺らめく背景エフェクト"
+    "background": "淡い紫とオレンジの炎のような光が揺らめく背景エフェクト",
+    "hairStyle": "サイドアンダーカットショート",
+    "hairColor": "紫のハイライト入りブラック"
   },
   "imagePrompt": {
-    "ja": "パープルとオレンジのアクセントが入ったタクティカルベストを着たダイナミックな若い女性のフィールドキャプテン、アクションの最中に指示を出している、鋭く決断力のある表情、腰から上のポートレート、背景透過、淡い紫とオレンジの炎のような光がエネルギッシュに揺らめくエフェクト、アニメ風キャラクターイラスト",
-    "en": "A dynamic young female field captain in a tactical vest with purple and orange accents, giving directions mid-action, sharp decisive expression, waist-up portrait, transparent background, pale purple and orange flame-like light flickering with energy, anime style character illustration"
+    "ja": "パープルとオレンジのアクセントが入ったタクティカルベストを着たダイナミックな若い女性のフィールドキャプテン、鮮やかな紫のハイライトが入ったサイドアンダーカットのショートヘア、アクションの最中に指示を出している、鋭く決断力のある表情、腰から上のポートレート、背景透過、淡い紫とオレンジの炎のような光がエネルギッシュに揺らめくエフェクト、アニメ風キャラクターイラスト",
+    "en": "A dynamic young female field captain in a tactical vest with purple and orange accents, short black undercut with bold purple highlights, giving directions mid-action, sharp decisive expression, waist-up portrait, transparent background, pale purple and orange flame-like light flickering with energy, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

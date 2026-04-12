@@ -47,11 +47,13 @@
     ],
     "pose": "片手を腰に当て、もう片方の手でタブレット上のプランを確認しているポーズ",
     "expression": "自信に満ちた柔軟な表情",
-    "background": "淡いエメラルドグリーンと銅色の光が静かに輝く背景エフェクト"
+    "background": "淡いエメラルドグリーンと銅色の光が静かに輝く背景エフェクト",
+    "hairStyle": "サイドに流したミディアムヘア",
+    "hairColor": "エメラルドグラデーション"
   },
   "imagePrompt": {
-    "ja": "スマートなブレザーにグラフィックTシャツを合わせた自信のある若い女性プランナー、タブレットでプランを確認している、エメラルドとブロンズの色調、自信に満ちた適応力のある表情、腰から上のポートレート、背景透過、淡いエメラルドグリーンと銅色の光が静かに輝くエフェクト、アニメ風キャラクターイラスト",
-    "en": "A confident young female planner in a smart blazer over a graphic tee, reviewing plans on a tablet, emerald and bronze tones, confident adaptable expression, waist-up portrait, transparent background, pale emerald green and bronze light glowing with quiet adaptability, anime style character illustration"
+    "ja": "スマートなブレザーにグラフィックTシャツを合わせた自信のある若い女性プランナー、エメラルドグリーンのグラデーションが入ったサイドに流したミディアムヘア、タブレットでプランを確認している、エメラルドとブロンズの色調、自信に満ちた適応力のある表情、腰から上のポートレート、背景透過、淡いエメラルドグリーンと銅色の光が静かに輝くエフェクト、アニメ風キャラクターイラスト",
+    "en": "A confident young female planner in a smart blazer over a graphic tee, side-swept medium hair with an emerald green gradient, reviewing plans on a tablet, emerald and bronze tones, confident adaptable expression, waist-up portrait, transparent background, pale emerald green and bronze light glowing with quiet adaptability, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

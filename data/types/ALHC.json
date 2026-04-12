@@ -47,11 +47,13 @@
     ],
     "pose": "走りながら何かを指さしている、または興奮して発見を指し示すポーズ",
     "expression": "明るく興奮した表情",
-    "background": "淡い黄色とオレンジの光が弾けるように散らばる背景エフェクト"
+    "background": "淡い黄色とオレンジの光が弾けるように散らばる背景エフェクト",
+    "hairStyle": "高めツインテール",
+    "hairColor": "明るいハニーアンバー"
   },
   "imagePrompt": {
-    "ja": "明るい黄色のアクセントが効いたスポーティカジュアルな服装のエネルギッシュな若い女性スカウト、興奮して発見を指さしている、ダイナミックなポーズ、腰から上のポートレート、背景透過、淡い黄色とオレンジの光が弾けるように輝くエフェクト、アニメ風キャラクターイラスト",
-    "en": "An energetic young female scout in sporty casual wear with bright yellow accents, pointing excitedly at a discovery, dynamic pose, waist-up portrait, transparent background, pale yellow and orange sparkling light bursting with vivid energy, anime style character illustration"
+    "ja": "明るい黄色のアクセントが効いたスポーティカジュアルな服装のエネルギッシュな若い女性スカウト、明るいハニーアンバーの高めツインテール、興奮して発見を指さしている、ダイナミックなポーズ、腰から上のポートレート、背景透過、淡い黄色とオレンジの光が弾けるように輝くエフェクト、アニメ風キャラクターイラスト",
+    "en": "An energetic young female scout in sporty casual wear with bright yellow accents, high twin tails in bright honey-amber hair, pointing excitedly at a discovery, dynamic pose, waist-up portrait, transparent background, pale yellow and orange sparkling light bursting with vivid energy, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

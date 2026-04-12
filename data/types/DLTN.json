@@ -47,11 +47,13 @@
     ],
     "pose": "作業台に向かい、細部を丁寧に確認しているポーズ",
     "expression": "冷静で正確さを感じさせる、穏やかだが隙のない表情",
-    "background": "淡い青白い光のみが精密に満ちる背景エフェクト"
+    "background": "淡い青白い光のみが精密に満ちる背景エフェクト",
+    "hairStyle": "精密なショートボブ",
+    "hairColor": "毛先ペールブルーのホワイトアッシュ"
   },
   "imagePrompt": {
-    "ja": "きちんとしたベストとボタンシャツを着た精密な若い女性エンジニア、作業台に向かい仕掛けを丁寧に検証している、スチールブルーとホワイトの色調、冷静で正確な表情、腰から上のポートレート、背景透過、淡い青白い光のみが精密に満ちるエフェクト、アニメ風キャラクターイラスト",
-    "en": "A precise young female engineer in a neat vest and button-up shirt, carefully verifying a mechanism, steel blue and white tones, calm precise expression, waist-up portrait, transparent background, pale bluish-white light glowing with precise and clean clarity, anime style character illustration"
+    "ja": "きちんとしたベストとボタンシャツを着た精密な若い女性エンジニア、毛先がペールブルーに染まったホワイトアッシュの精密なショートボブ、作業台に向かい仕掛けを丁寧に検証している、スチールブルーとホワイトの色調、冷静で正確な表情、腰から上のポートレート、背景透過、淡い青白い光のみが精密に満ちるエフェクト、アニメ風キャラクターイラスト",
+    "en": "A precise young female engineer in a neat vest and button-up shirt, precisely cut white-ash short bob with pale blue-tipped ends, carefully verifying a mechanism, steel blue and white tones, calm precise expression, waist-up portrait, transparent background, pale bluish-white light glowing with precise and clean clarity, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

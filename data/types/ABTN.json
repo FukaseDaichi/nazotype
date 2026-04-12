@@ -47,11 +47,13 @@
     ],
     "pose": "背筋を伸ばして立ち、腕を後ろに組むか、指示を出すように手を伸ばしているポーズ",
     "expression": "威厳があり、落ち着いた表情",
-    "background": "淡い金色の光粒子と深いネイビーの静かな輝きが漂う背景エフェクト"
+    "background": "淡い金色の光粒子と深いネイビーの静かな輝きが漂う背景エフェクト",
+    "hairStyle": "オールバック",
+    "hairColor": "ゴールドシーンのブラック"
   },
   "imagePrompt": {
-    "ja": "ゴールドのアクセントが入ったダークネイビーの構造的なジャケットを着た指揮官タイプの若い男性、背筋を伸ばしてチームに指示を出している、威厳ある落ち着いた表情、腰から上のポートレート、背景透過、淡い金色の光の粒子と深いネイビーの静かな輝きが威厳をもって漂うエフェクト、アニメ風キャラクターイラスト",
-    "en": "A commanding young male in a structured dark navy jacket with gold accents, standing tall directing a team, authoritative composed expression, waist-up portrait, transparent background, pale gold light particles and deep navy subtle glow radiating authority, anime style character illustration"
+    "ja": "ゴールドのアクセントが入ったダークネイビーの構造的なジャケットを着た指揮官タイプの若い男性、ゴールドのツヤが際立つオールバックの黒髪、背筋を伸ばしてチームに指示を出している、威厳ある落ち着いた表情、腰から上のポートレート、背景透過、淡い金色の光の粒子と深いネイビーの静かな輝きが威厳をもって漂うエフェクト、アニメ風キャラクターイラスト",
+    "en": "A commanding young male in a structured dark navy jacket with gold accents, slicked-back black hair with a subtle gold sheen, standing tall directing a team, authoritative composed expression, waist-up portrait, transparent background, pale gold light particles and deep navy subtle glow radiating authority, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

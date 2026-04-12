@@ -47,11 +47,13 @@
     ],
     "pose": "しゃがみ込んで錠前の仕掛けに取り組んでいるポーズ",
     "expression": "冷静で決意に満ちた表情",
-    "background": "淡いスチールブルーの冷たく静かな光が満ちる背景エフェクト"
+    "background": "淡いスチールブルーの冷たく静かな光が満ちる背景エフェクト",
+    "hairStyle": "きっちりセットのサイドパート",
+    "hairColor": "スチールブルーのシーンが入るダークヘア"
   },
   "imagePrompt": {
-    "ja": "ワークエプロンとツールベルトを身につけた集中力のある若い男性の職人、精巧な錠前の仕掛けに取り組んでいる、冷静で決意に満ちた表情、スチールブルーの色調、腰から上のポートレート、背景透過、淡いスチールブルーの冷静で静かな光がゆっくりと満ちるエフェクト、アニメ風キャラクターイラスト",
-    "en": "A focused young male craftsman in a work apron with a tool belt, working on an intricate lock mechanism, calm determined expression, steel blue tones, waist-up portrait, transparent background, pale steel blue cold and composed light glowing steadily, anime style character illustration"
+    "ja": "ワークエプロンとツールベルトを身につけた集中力のある若い男性の職人、スチールブルーの光沢が入ったきっちりセットのサイドパートダークヘア、精巧な錠前の仕掛けに取り組んでいる、冷静で決意に満ちた表情、スチールブルーの色調、腰から上のポートレート、背景透過、淡いスチールブルーの冷静で静かな光がゆっくりと満ちるエフェクト、アニメ風キャラクターイラスト",
+    "en": "A focused young male craftsman in a work apron with a tool belt, neatly combed dark hair with a cool steel blue sheen, working on an intricate lock mechanism, calm determined expression, steel blue tones, waist-up portrait, transparent background, pale steel blue cold and composed light glowing steadily, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

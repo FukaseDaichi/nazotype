@@ -47,11 +47,13 @@
     ],
     "pose": "腕を組んで立っている、または扉を押し開けようとしているポーズ",
     "expression": "自信に満ちた、闘志あふれる表情",
-    "background": "淡いコーラルレッドの炎が力強く燃える背景エフェクト"
+    "background": "淡いコーラルレッドの炎が力強く燃える背景エフェクト",
+    "hairStyle": "ウルフカットショート",
+    "hairColor": "コーラルレッドに染めたブリーチ"
   },
   "imagePrompt": {
-    "ja": "コーラルレッドのアクセントが効いたボンバージャケットを着た大胆な若い女性、自信に満ちた闘志あふれる表情、アクション準備万端の立ち姿、腰から上のポートレート、背景透過、淡いコーラルレッドの炎が力強く燃え上がるエフェクト、アニメ風キャラクターイラスト",
-    "en": "A bold young female in a bomber jacket with coral red accents, confident fierce expression, standing ready for action, waist-up portrait, transparent background, pale coral red flames burning with fierce intensity, anime style character illustration"
+    "ja": "コーラルレッドのアクセントが効いたボンバージャケットを着た大胆な若い女性、コーラルレッドに染め上げたショートウルフカット、自信に満ちた闘志あふれる表情、アクション準備万端の立ち姿、腰から上のポートレート、背景透過、淡いコーラルレッドの炎が力強く燃え上がるエフェクト、アニメ風キャラクターイラスト",
+    "en": "A bold young female in a bomber jacket with coral red accents, short wolf cut with bleached coral-red dyed hair, confident fierce expression, standing ready for action, waist-up portrait, transparent background, pale coral red flames burning with fierce intensity, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

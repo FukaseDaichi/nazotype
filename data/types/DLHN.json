@@ -47,11 +47,13 @@
     ],
     "pose": "机に向かい、片手を顎に添えて暗号を見つめるポーズ",
     "expression": "集中しつつも何かを語りかけるような、思索的な表情",
-    "background": "淡いラベンダーと深紫の柔らかな光が静かに広がる背景エフェクト"
+    "background": "淡いラベンダーと深紫の柔らかな光が静かに広がる背景エフェクト",
+    "hairStyle": "長いストレートヘア",
+    "hairColor": "毛先ラベンダーのダークヘア"
   },
   "imagePrompt": {
-    "ja": "ロングカーディガンと丸眼鏡を着けた思索的な若い女性学者、机に座り暗号を解読している、周囲に紙が散らばる、ディープパープルとラベンダーの色調、思考中の表情、腰から上のポートレート、背景透過、淡いラベンダーと深紫の柔らかな光が静かに広がるエフェクト、アニメ風キャラクターイラスト",
-    "en": "A thoughtful young female scholar in a long cardigan and glasses, sitting at a desk solving ciphers, surrounded by papers, deep purple and lavender tones, contemplative expression, waist-up portrait, transparent background, pale lavender and deep purple soft light diffusing quietly, anime style character illustration"
+    "ja": "ロングカーディガンと丸眼鏡を着けた思索的な若い女性学者、毛先をラベンダーに染めた長いストレートヘア、机に座り暗号を解読している、周囲に紙が散らばる、ディープパープルとラベンダーの色調、思考中の表情、腰から上のポートレート、背景透過、淡いラベンダーと深紫の柔らかな光が静かに広がるエフェクト、アニメ風キャラクターイラスト",
+    "en": "A thoughtful young female scholar in a long cardigan and glasses, long straight dark hair with lavender-dyed tips, sitting at a desk solving ciphers, surrounded by papers, deep purple and lavender tones, contemplative expression, waist-up portrait, transparent background, pale lavender and deep purple soft light diffusing quietly, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

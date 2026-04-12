@@ -47,11 +47,13 @@
     ],
     "pose": "テーブルに身を乗り出し、複数のパズルを前に目を輝かせるポーズ",
     "expression": "興奮気味で目が鋭い、ひらめきの瞬間の表情",
-    "background": "淡いグリーンとオレンジの光が弾ける背景エフェクト"
+    "background": "淡いグリーンとオレンジの光が弾ける背景エフェクト",
+    "hairStyle": "無造作なクセ毛",
+    "hairColor": "鮮やかなグリーンとオレンジのメッシュ入り"
   },
   "imagePrompt": {
-    "ja": "グラフィックパーカーを着たエネルギッシュな若い男性パズルソルバー、テーブルに身を乗り出して複数のパズルに取り組んでいる、鮮やかなグリーンとオレンジのアクセント、興奮した鋭い表情、腰から上のポートレート、背景透過、淡いグリーンとオレンジの光がパッと弾けるエフェクト、アニメ風キャラクターイラスト",
-    "en": "An energetic young male puzzle solver in a graphic hoodie, leaning forward over a table full of puzzles, bright green and orange accents, excited sharp expression, waist-up portrait, transparent background, pale green and orange light sparks popping with sharp energy, anime style character illustration"
+    "ja": "グラフィックパーカーを着たエネルギッシュな若い男性パズルソルバー、鮮やかなグリーンとオレンジのメッシュが入った無造作なクセ毛、テーブルに身を乗り出して複数のパズルに取り組んでいる、鮮やかなグリーンとオレンジのアクセント、興奮した鋭い表情、腰から上のポートレート、背景透過、淡いグリーンとオレンジの光がパッと弾けるエフェクト、アニメ風キャラクターイラスト",
+    "en": "An energetic young male puzzle solver in a graphic hoodie, wild natural-curly hair with vivid green and orange streaks, leaning forward over a table full of puzzles, bright green and orange accents, excited sharp expression, waist-up portrait, transparent background, pale green and orange light sparks popping with sharp energy, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

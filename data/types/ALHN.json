@@ -47,11 +47,13 @@
     ],
     "pose": "手がかりを手に取り、集中して観察しているポーズ",
     "expression": "好奇心に満ちた、集中した表情",
-    "background": "淡いアンバーの炎と温かな光が揺らぐ背景エフェクト"
+    "background": "淡いアンバーの炎と温かな光が揺らぐ背景エフェクト",
+    "hairStyle": "少し乱れたミディアムヘア",
+    "hairColor": "生え際に金が混じる温かいブラウン"
   },
   "imagePrompt": {
-    "ja": "ユーティリティベストとカーゴパンツを着た若い男性の冒険家兼学者、謎めいた手がかりを集中した好奇心で観察している、暖かいアンバーの照明、腰から上のポートレート、背景透過、淡いアンバーの炎と温かな黄金色の光が柔らかく揺らぐエフェクト、アニメ風キャラクターイラスト",
-    "en": "A young male adventurer-scholar in a utility vest and cargo pants, examining a mysterious clue with focused curiosity, warm amber lighting, waist-up portrait, transparent background, pale amber flame and warm golden light glowing softly, anime style character illustration"
+    "ja": "ユーティリティベストとカーゴパンツを着た若い男性の冒険家兼学者、生え際に金が混じる、少し乱れた温かいブラウンのミディアムヘア、謎めいた手がかりを集中した好奇心で観察している、暖かいアンバーの照明、腰から上のポートレート、背景透過、淡いアンバーの炎と温かな黄金色の光が柔らかく揺らぐエフェクト、アニメ風キャラクターイラスト",
+    "en": "A young male adventurer-scholar in a utility vest and cargo pants, slightly disheveled medium hair in warm brown with golden roots, examining a mysterious clue with focused curiosity, warm amber lighting, waist-up portrait, transparent background, pale amber flame and warm golden light glowing softly, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",

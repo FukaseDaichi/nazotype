@@ -47,11 +47,13 @@
     ],
     "pose": "影の中で腕を組み、鋭い眼差しで全体を見渡しているポーズ",
     "expression": "冷静で見透かすような表情",
-    "background": "淡い深紅の炎の余韻と暗く沈んだ光が漂う背景エフェクト"
+    "background": "淡い深紅の炎の余韻と暗く沈んだ光が漂う背景エフェクト",
+    "hairStyle": "片目にかかる長めの前髪",
+    "hairColor": "深紅の筋入りダークチャコール"
   },
   "imagePrompt": {
-    "ja": "ハイカラーのダークロングコートを着た寡黙な若い男性戦略家、影の中で腕を組んで全体を見渡している、ダークチャコールとディープレッドの色調、冷静で鋭い表情、腰から上のポートレート、背景透過、淡い深紅の炎の余韻と暗く沈んだ光が漂うエフェクト、アニメ風キャラクターイラスト",
-    "en": "A silent young male strategist in a dark long coat with high collar, standing in shadow with arms crossed surveying the scene, dark charcoal and deep red tones, calm penetrating expression, waist-up portrait, transparent background, pale deep crimson ember glow and dark atmospheric light, anime style character illustration"
+    "ja": "ハイカラーのダークロングコートを着た寡黙な若い男性戦略家、片目にかかる前髪、ダークチャコールに深紅の筋が走る、影の中で腕を組んで全体を見渡している、ダークチャコールとディープレッドの色調、冷静で鋭い表情、腰から上のポートレート、背景透過、淡い深紅の炎の余韻と暗く沈んだ光が漂うエフェクト、アニメ風キャラクターイラスト",
+    "en": "A silent young male strategist in a dark long coat with high collar, dark charcoal hair with deep crimson streaks falling over one eye, standing in shadow with arms crossed surveying the scene, dark charcoal and deep red tones, calm penetrating expression, waist-up portrait, transparent background, pale deep crimson ember glow and dark atmospheric light, anime style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
