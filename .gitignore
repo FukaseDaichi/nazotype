@@ -45,3 +45,16 @@ next-env.d.ts
 /output/*
 .aidesigner/*
 !.aidesigner/.gitkeep
+
+
+# .cursorignore
+node_modules/
+dist/
+.next/
+coverage/
+*.log
+tmp/
+.cache/
+vendor/
+public/build/
+generated/

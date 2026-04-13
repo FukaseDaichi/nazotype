@@ -1,0 +1,17 @@
+{
+  "git.openRepositoryInParentFolders": "never",
+  "git.repositoryScanMaxDepth": 1,
+  "git.repositoryScanIgnoredFolders": [
+    "node_modules",
+    "dist",
+    "build",
+    ".next",
+    "coverage",
+    "tmp",
+    "vendor",
+    ".cache",
+    "mnt",
+    "mounts",
+    "Volumes"
+  ]
+}
