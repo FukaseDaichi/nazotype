@@ -8,7 +8,6 @@ import { AmbientOrbs } from "@/components/ui/ambient-orbs";
 import { Particles } from "@/components/ui/particles";
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 import { getWebsiteJsonLd, stringifyJsonLd } from "@/lib/json-ld";
-import { StartDiagnosisForm } from "@/components/diagnosis/start-diagnosis-form/start-diagnosis-form";
 
 import styles from "./home-page.module.css";
 
@@ -60,23 +59,75 @@ export function HomePage({ allTypes }: HomePageProps) {
               {/* Concept visual: rotating rings + axis diagram */}
               <RevealOnScroll>
                 <div className={styles.conceptVisual}>
-                  <div className={`${styles.conceptRing} ${styles.ringOuter}`} />
+                  <div
+                    className={`${styles.conceptRing} ${styles.ringOuter}`}
+                  />
                   <div className={`${styles.conceptRing} ${styles.ringMid}`} />
-                  <div className={`${styles.conceptRing} ${styles.ringInner}`} />
+                  <div
+                    className={`${styles.conceptRing} ${styles.ringInner}`}
+                  />
                   <div className="absolute inset-0 grid place-items-center">
                     <div className={styles.axisDiagram}>
                       <div className={styles.axisLineH} />
                       <div className={styles.axisLineV} />
                       {/* Cardinal dots */}
-                      <div className={styles.axisDot} style={{ left: "50%", top: "5%" }} />
-                      <div className={styles.axisDot} style={{ left: "50%", top: "95%" }} />
-                      <div className={styles.axisDot} style={{ left: "5%", top: "50%" }} />
-                      <div className={styles.axisDot} style={{ left: "95%", top: "50%" }} />
+                      <div
+                        className={styles.axisDot}
+                        style={{ left: "50%", top: "5%" }}
+                      />
+                      <div
+                        className={styles.axisDot}
+                        style={{ left: "50%", top: "95%" }}
+                      />
+                      <div
+                        className={styles.axisDot}
+                        style={{ left: "5%", top: "50%" }}
+                      />
+                      <div
+                        className={styles.axisDot}
+                        style={{ left: "95%", top: "50%" }}
+                      />
                       {/* Labels */}
-                      <div className={styles.axisLabelItem} style={{ left: "50%", top: 0, transform: "translate(-50%,-100%)" }}>俯瞰型</div>
-                      <div className={styles.axisLabelItem} style={{ left: "50%", bottom: 0, transform: "translate(-50%,100%)" }}>局所型</div>
-                      <div className={styles.axisLabelItem} style={{ left: 0, top: "50%", transform: "translate(-100%,-50%)" }}>行動型</div>
-                      <div className={styles.axisLabelItem} style={{ right: 0, top: "50%", transform: "translate(100%,-50%)" }}>解読型</div>
+                      <div
+                        className={styles.axisLabelItem}
+                        style={{
+                          left: "50%",
+                          top: 0,
+                          transform: "translate(-50%,-100%)",
+                        }}
+                      >
+                        俯瞰型
+                      </div>
+                      <div
+                        className={styles.axisLabelItem}
+                        style={{
+                          left: "50%",
+                          bottom: 0,
+                          transform: "translate(-50%,100%)",
+                        }}
+                      >
+                        局所型
+                      </div>
+                      <div
+                        className={styles.axisLabelItem}
+                        style={{
+                          left: 0,
+                          top: "50%",
+                          transform: "translate(-100%,-50%)",
+                        }}
+                      >
+                        行動型
+                      </div>
+                      <div
+                        className={styles.axisLabelItem}
+                        style={{
+                          right: 0,
+                          top: "50%",
+                          transform: "translate(100%,-50%)",
+                        }}
+                      >
+                        解読型
+                      </div>
                       {/* Scatter dots */}
                       {[
                         { left: "25%", top: "30%", size: 5, opacity: 0.5 },
@@ -113,7 +164,9 @@ export function HomePage({ allTypes }: HomePageProps) {
                       num: "01",
                       text: (
                         <>
-                          <strong className="text-paper-50 font-medium">4軸・16タイプ</strong>
+                          <strong className="text-paper-50 font-medium">
+                            4軸・16タイプ
+                          </strong>
                           の独自モデル。MBTIではなく、謎解きに特化した役割傾向モデルです。
                         </>
                       ),
@@ -122,7 +175,9 @@ export function HomePage({ allTypes }: HomePageProps) {
                       num: "02",
                       text: (
                         <>
-                          <strong className="text-paper-50 font-medium">優劣なし。</strong>
+                          <strong className="text-paper-50 font-medium">
+                            優劣なし。
+                          </strong>
                           すべてのタイプに強みがあり、チームで補完し合うことを重視します。
                         </>
                       ),
@@ -131,7 +186,9 @@ export function HomePage({ allTypes }: HomePageProps) {
                       num: "03",
                       text: (
                         <>
-                          <strong className="text-paper-50 font-medium">ペア相性診断。</strong>
+                          <strong className="text-paper-50 font-medium">
+                            ペア相性診断。
+                          </strong>
                           組み合わせの妙がわかる。イベント前のアイスブレイクにも最適です。
                         </>
                       ),
@@ -141,7 +198,9 @@ export function HomePage({ allTypes }: HomePageProps) {
                       text: (
                         <>
                           謎解きの
-                          <strong className="text-paper-50 font-medium">行動・判断・情報処理・関わり方</strong>
+                          <strong className="text-paper-50 font-medium">
+                            行動・判断・情報処理・関わり方
+                          </strong>
                           を問う32問。普段の性格ではなく、ゲーム中の動き方を測ります。
                         </>
                       ),
@@ -274,34 +333,6 @@ export function HomePage({ allTypes }: HomePageProps) {
                   ALHN — 探索の猟犬
                 </div>
               </div>
-            </RevealOnScroll>
-          </div>
-        </section>
-
-        {/* ═══ FINAL CTA ═══ */}
-        <section className="text-center py-32 px-8 relative">
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(ellipse at center, rgba(193,155,46,0.06), transparent 60%)",
-            }}
-          />
-          <div className="relative z-[1] max-w-[700px] mx-auto">
-            <RevealOnScroll>
-              <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-paper-50 leading-tight mb-6">
-                さあ、あなたの
-                <br />
-                タイプを解け。
-              </h2>
-              <p className="text-base text-paper-200 mb-12 leading-[1.8]">
-                チームの「なぜかうまくいく」は、役割の補完から生まれる。
-                <br />
-                診断は無料、登録不要、3〜5分で完了します。
-              </p>
-            </RevealOnScroll>
-            <RevealOnScroll>
-              <StartDiagnosisForm inputId="ctaName" />
             </RevealOnScroll>
           </div>
         </section>
