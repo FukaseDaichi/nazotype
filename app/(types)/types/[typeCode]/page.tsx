@@ -19,7 +19,9 @@ export async function generateStaticParams() {
   return typeCodes.map((typeCode) => ({ typeCode }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { typeCode } = await params;
   const typeData = await getTypeByCode(typeCode);
 
