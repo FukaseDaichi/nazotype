@@ -37,23 +37,23 @@
   "visualProfile": {
     "genderPresentation": "male",
     "ageRange": "mid 20s",
-    "characterArchetype": "master-locksmith",
-    "characterDescription": "担当エリアのあらゆるギミックを完璧に攻略する職人。冷静で寡黙だが、その手は誰よりも確実に鍵を開ける。彼が「完了」と言えば、そこは完全制圧されている。",
-    "outfitDescription": "ダークグレーのワークシャツ（袖を肘までロールアップ）の上にブラウンレザーのツールベスト。腰にはピッキングツールセットとペンライト。左手首に精密な機械式時計。",
+    "characterArchetype": "zone-master",
+    "characterDescription": "任された区画を自分の王国みたいに管理し、黙って全部終わらせる制圧者。彼の『完了』はそのエリアが完全に片付いた合図になる。",
+    "outfitDescription": "ダークグレーのワークシャツに、区画マップを留めたブラウンのユーティリティベスト。肩には色分けされたエリアタグ、腰にはペンライトとクリップツール、左腕には進捗を書き込むクリアボードバンド。",
     "colorPalette": [
       "#4A6670",
-      "#8B6914",
-      "#2D2D2D"
+      "#B8893C",
+      "#20252B"
     ],
-    "pose": "左手で精密な鍵の機構を固定し、右手のピッキングツールで繊細に操作中。目線は手元に集中。肩越しに手元を覗くカメラアングル。",
-    "expression": "極限の集中。瞳の奥に職人の矜持が燃えている。",
-    "background": "スチールブルーとブロンズの水彩スプラッターが歯車の軌跡のように散る",
-    "hairStyle": "きっちりしたアンダーカット、トップを後ろに流す",
-    "hairColor": "ダークブラウンにスチールブルーのインナーカラー"
+    "pose": "右手で透明のエリアボードに太いチェックマークを入れ、左腕には解決済みの手がかり封筒とタグを抱える。胸を張った低めのカメラ角度で、静かにその場を支配している立ち姿。",
+    "expression": "無言でも任せられると分かる硬質な自信。静かな圧と職人の誇りを帯びた目。",
+    "background": "スチールブルーとブロンズの水彩スプラッターが区画線と完了マークのように走る",
+    "hairStyle": "サイドにラインを入れたタイトなアンダーカット、トップは大きく後方へ流す",
+    "hairColor": "グラファイトブラックにスチールブルーのインナーレイヤー"
   },
   "imagePrompt": {
-    "ja": "スプラッター水彩画スタイル、ダークブラウンにスチールブルーのインナーカラーのアンダーカットヘアの青年、ダークグレーのワークシャツ袖まくりにブラウンレザーのツールベスト、腰にピッキングツールセット、左手で鍵の機構を固定し右手でピッキングツールを操作中、肩越しに手元を覗くカメラアングル、極限の集中の表情、スチールブルーとブロンズの水彩絵の具が歯車の軌跡のように飛散する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
-    "en": "Splatter watercolor painting style, a young man with dark brown undercut hair with steel blue inner color swept back on top, wearing a dark gray work shirt with sleeves rolled to elbows over a brown leather tool vest, lockpick set and penlight on belt, precision mechanical watch on left wrist, left hand steadying a lock mechanism while right hand delicately operates a pick tool, over-the-shoulder camera angle focusing on hands, expression of extreme focus with craftsman's pride burning in eyes, steel blue and bronze watercolor paint splatters tracing like gear trails in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
+    "ja": "スプラッター水彩画スタイル、グラファイトブラックにスチールブルーのインナーレイヤーが入った、サイドにラインを入れたタイトなアンダーカットの青年、ダークグレーのワークシャツと区画マップを留めたブラウンのユーティリティベスト、肩に色分けされたエリアタグ、左腕に進捗を書き込むクリアボードバンド、右手で透明のエリアボードに太いチェックマークを入れ、左腕には解決済みの手がかり封筒とタグを抱える、胸を張った低めのカメラ角度、無言でも任せられると分かる硬質な自信、スチールブルーとブロンズの水彩絵の具が区画線と完了マークのように走る背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a young man with a tight undercut marked by shaved side lines and a swept-back top in graphite black with steel-blue inner layers, wearing a dark gray work shirt and a brown utility vest pinned with area maps, color-coded zone tags on the shoulder, and a clear progress board band on his left arm, right hand drawing a bold completion checkmark across a transparent area board, left arm holding solved clue envelopes and tagged tools, low-angle waist-up composition with his chest squared as he quietly dominates the zone, hard-edged confident expression that says the area is handled, steel blue and bronze watercolor splatters running like section lines and completion marks in the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",

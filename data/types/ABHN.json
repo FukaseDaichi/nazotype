@@ -37,23 +37,23 @@
   "visualProfile": {
     "genderPresentation": "female",
     "ageRange": "early 20s",
-    "characterArchetype": "living-strategic-map",
-    "characterDescription": "空間全体を歩き回りながら、頭の中に精密な全体地図を描き上げる知的な探索者。彼女が通った後には、バラバラだった手がかりが一本の線で繋がっている。",
-    "outfitDescription": "カーキのミリタリーフィールドジャケット（裏地に地形図プリント）を羽織り、中にダークグリーンのタートルネック。首から真鍮のコンパスペンダント。肩にフィールドノートを挟んだショルダーストラップ。",
+    "characterArchetype": "walking-whiteboard",
+    "characterDescription": "部屋中を歩いて集めた断片を、頭の中の巨大なボードに図解していく移動式ブレーン。彼女の前では散らばった情報が矢印とメモで一気に見える化される。",
+    "outfitDescription": "カーキのフィールドジャケットをシャープに着崩し、胸元にマーカーを差したダークグリーンのタートルネック。片腕に透明アクリルのミニホワイトボード、腰に付箋とクリップ付きのメモホルダー。",
     "colorPalette": [
       "#2D8B7A",
-      "#C0C0C0",
-      "#1A3C34"
+      "#F4F7F9",
+      "#8AA6B8"
     ],
-    "pose": "右手を前に伸ばし、空中に見えない地図をなぞるように指を動かしている。目線は遠くの高い位置を見据え、左手はフィールドノートを胸元に抱える。",
-    "expression": "知的な落ち着きの中に、発見への静かな興奮が宿る眼差し",
-    "background": "ティールグリーンとシルバーの水彩スプラッターが地図の等高線のように広がる",
-    "hairStyle": "腰まである長いストレートヘア、風になびく",
-    "hairColor": "シルバーホワイトに細いティールブルーのメッシュライン"
+    "pose": "右手の太いマーカーで空中に大きな矢印を書き込むように前へ突き出し、左腕の透明ボードには走り書きのメモと手がかりカードを重ねて抱えている。体をひねった3/4構図で、次の接続先へ振り向く瞬間。",
+    "expression": "全部つながった時の鋭くクールな微笑。静かな熱量を帯びた知的な眼差し。",
+    "background": "ティールグリーン、ホワイト、シルバーの水彩スプラッターに、図解の矢印や書き込み線が走る",
+    "hairStyle": "片側に太い編み込みを入れたロングストレート、毛先が風で大きく流れる",
+    "hairColor": "シルバーホワイトをベースに、内側へティールブルーのワイドメッシュ"
   },
   "imagePrompt": {
-    "ja": "スプラッター水彩画スタイル、シルバーホワイトの長いストレートヘアにティールブルーのメッシュが入った若い女性、カーキのミリタリーフィールドジャケットにダークグリーンのタートルネック、真鍮コンパスペンダント、右手を前に伸ばし空中に地図をなぞるポーズ、左手でフィールドノートを胸に抱える、遠くを見据える知的な眼差し、ティールグリーンとシルバーの水彩絵の具が等高線のように飛散する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
-    "en": "Splatter watercolor painting style, a young woman with long silver-white straight hair with thin teal-blue mesh streaks flowing in wind, wearing a khaki military field jacket over dark green turtleneck, brass compass pendant, right hand extended forward tracing an invisible map in the air, left hand holding a field notebook to chest, intellectual gaze looking into far distance, teal green and silver watercolor paint splatters spreading like topographic contour lines in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
+    "ja": "スプラッター水彩画スタイル、シルバーホワイトをベースに内側へティールブルーのワイドメッシュが入った、片側に太い編み込みを入れたロングストレートヘアの若い女性、カーキのフィールドジャケットとダークグリーンのタートルネック、胸元にマーカー、片腕に透明アクリルのミニホワイトボード、右手の太いマーカーで空中に大きな矢印を書き込むように前へ突き出し、左腕の透明ボードには走り書きのメモと手がかりカードを重ねて抱える、体をひねった3/4構図、全部つながった時の鋭くクールな微笑、ティールグリーンとホワイトとシルバーの水彩絵の具に図解の線が走る背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a young woman with long silver-white straight hair featuring a thick side braid and wide teal-blue inner mesh, wearing a sharp khaki field jacket over a dark green turtleneck with markers at the chest, a transparent acrylic mini whiteboard strapped to one arm, right hand thrust forward drawing a bold arrow in the air with a thick marker, left arm holding layered clue cards and scribbled notes on the clear board, twisted three-quarter composition as she turns toward the next connection, cool intelligent smile of someone who just linked everything, teal green white and silver watercolor splatters with diagram lines streaking across the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",

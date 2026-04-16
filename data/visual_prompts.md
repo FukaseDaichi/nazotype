@@ -16,7 +16,7 @@ Splatter watercolor painting style, a young woman with an asymmetric electric bl
 ## ABHN — 歩くホワイトボード
 **Archetype:** walking-whiteboard
 
-Splatter watercolor painting style, a young woman with long silver-white straight hair with thin teal-blue mesh streaks flowing in wind, wearing a khaki field jacket over a dark green turtleneck, transparent acrylic memo board strapped at her side covered in handwritten clue arrows and diagrams, marker clipped to chest pocket, right hand sketching connections in the air with a whiteboard marker, left arm holding layered clue cards and a half-erased mini board, bright analytical eyes like she remembers the whole room at once, teal green and white watercolor paint splatters spreading like overlapping diagrams and annotation marks in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
+Splatter watercolor painting style, a young woman with long silver-white straight hair featuring a thick side braid and wide teal-blue inner mesh, wearing a sharp khaki field jacket over a dark green turtleneck with markers at the chest, a transparent acrylic mini whiteboard strapped to one arm, right hand thrust forward drawing a bold arrow in the air with a thick marker, left arm holding layered clue cards and scribbled notes on the clear board, twisted three-quarter composition as she turns toward the next connection, cool intelligent smile of someone who just linked everything, teal green white and silver watercolor splatters with diagram lines streaking across the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 
@@ -37,14 +37,14 @@ Splatter watercolor painting style, a young man with platinum blonde slicked-bac
 ## ALHC — 瞬間キャッチャー
 **Archetype:** instant-clue-catcher
 
-Splatter watercolor painting style, a teenage girl with neon yellow to electric orange gradient high twin-tails bouncing dynamically, wearing a fluorescent yellow sport crop jacket with quick-dash stripe motifs, black athletic top, multiple neon wristbands, body twisted mid-motion as her right hand snatches a falling clue card out of the air, left hand already reaching toward the next direction, dynamic tilted camera angle, wide eyes with star-like sparkle of discovery, mouth slightly open in an excited 'found it', neon yellow and orange watercolor paint splatters streaking like sudden motion trails in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
+Splatter watercolor painting style, a teenage girl with comet-like twin-tails arcing upward, colored in lemon yellow to vivid orange gradient with white flash streaks, wearing a fluorescent yellow short jacket over a black athletic top with a diagonal utility harness and fingerless gloves, right hand thrust dramatically toward the viewer catching a falling clue card midair, left hand already pointing toward the next destination, body twisted in a sudden stop with a dynamic dutch angle, fierce victorious grin with eyes already chasing the next find, neon yellow and orange watercolor splatters streaking diagonally like speed afterimages in the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 
 ## ALHN — 鑑識マニア
 **Archetype:** forensic-enthusiast
 
-Splatter watercolor painting style, a young man with messy warm auburn medium hair with gold-tipped highlights falling over one eye, wearing a brown utility vest with many pockets over a white henley shirt with rolled sleeves, chain-attached loupe hanging from neck, thin inspection gloves, evidence bag and powder brush tucked into vest, right hand holding a tiny clue fragment at eye level, left hand examining it through a loupe with obsessive concentration, amber and dark brown watercolor paint splatters scattered like investigation marks and dust traces in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
+Splatter watercolor painting style, a young man with layered shag hair in warm auburn with champagne-gold highlights on the fringe and tips, wearing a dark brown high-function utility jacket over a white high-neck shirt, with a loupe, UV penlight, transparent evidence pouches, and sleek black gloves, right hand lifting a tiny clue fragment with tweezers close to the viewer, left hand pressing a folding loupe to one eye, upper body leaning sharply forward in a dramatic diagonal composition as if saying 'look at this,' dangerously focused expression with a small excited smile, amber dark brown and black watercolor splatters with fingerprint-like streaks in the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 
@@ -58,7 +58,7 @@ Splatter watercolor painting style, a young woman with a wolf cut hairstyle spli
 ## ALTN — エリアの主
 **Archetype:** zone-master
 
-Splatter watercolor painting style, a young man with dark brown undercut hair with steel blue inner color swept back on top, wearing a dark gray work shirt with sleeves rolled to elbows over a brown utility vest, folded area map and penlight clipped to belt, precision mechanical watch on left wrist, right hand tapping a clipboard marked with completed room sections, left arm holding a stack of cleared clue envelopes and tagged tools, sturdy upright posture, expression of calm ownership like he quietly finished an entire zone by himself, steel blue and bronze watercolor paint splatters tracing like section lines on a floor map in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
+Splatter watercolor painting style, a young man with a tight undercut marked by shaved side lines and a swept-back top in graphite black with steel-blue inner layers, wearing a dark gray work shirt and a brown utility vest pinned with area maps, color-coded zone tags on the shoulder, and a clear progress board band on his left arm, right hand drawing a bold completion checkmark across a transparent area board, left arm holding solved clue envelopes and tagged tools, low-angle waist-up composition with his chest squared as he quietly dominates the zone, hard-edged confident expression that says the area is handled, steel blue and bronze watercolor splatters running like section lines and completion marks in the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 
@@ -72,7 +72,7 @@ Splatter watercolor painting style, a young woman with long flowing wavy hair in
 ## DBHN — 伏線回収マシン
 **Archetype:** clue-synthesis-engine
 
-Splatter watercolor painting style, a woman with long straight deep blue-black hair with amber section highlights and straight-cut bangs above eyebrows, wearing a dark navy structured blazer with geometric embroidery lines, round architect-style glasses, white high-neck blouse, small note tabs and thread markers tucked into blazer pocket, both hands spread before her aligning floating clue slips and invisible connecting lines into one complete pattern, slightly elevated frontal camera angle, quiet smile of someone who just merged every scattered answer into a single truth, dark blue and amber watercolor paint splatters spreading while linking like recovered foreshadowing threads in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
+Splatter watercolor painting style, a woman with long high-layer hime-cut hair in deep blue-black with amber-gold undercolor visible from within, wearing a sharp dark navy long blazer, a metal-frame belt loaded with sticky tabs and information cards, a white high-neck top, and angular glasses, both hands opened wide as multiple floating clue cards are pulled from both sides into a single completed pattern at the center, slightly elevated frontal composition with machine-like precision in the gesture, cool beautiful certainty of someone who just recovered every foreshadowed connection, dark blue and amber watercolor splatters converging like circuitry and connector lines in the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 
@@ -93,7 +93,7 @@ Splatter watercolor painting style, a young man with jet black medium hair with 
 ## DLHC — 小謎キラー
 **Archetype:** mini-puzzle-slayer
 
-Splatter watercolor painting style, a teenage girl with short spiky pixie cut in dual-tone lime green and electric orange pointing in all directions, wearing a green and orange color-block hoodie with puzzle piece patchwork pattern half-unzipped, green over-ear headphones around neck, wristbands, three solved mini-puzzle slips tucked into pocket, right hand slamming an answer down on table, left fist pumping overhead in victory pose, body leaning forward in action, dynamic tilted camera angle, triumphant grin showing teeth with eyes already locked on the next tiny challenge, vivid green and orange watercolor paint splatters bursting like puzzle fragments in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
+Splatter watercolor painting style, a teenage girl with a short wolf-pixie haircut whose blade-like ends flare outward, colored in acid lime with electric orange accents through the fringe and inner layers, wearing a lime and orange cropped hoodie covered with mini-puzzle number tags and solved stickers, headphones at the neck and a memo holder at the chest, right hand slamming a solved answer card toward the viewer while the left hand lifts the next mini-puzzle card with two fingers, body lunging forward in a strong dutch-angle composition, sharp grin of someone addicted to winning with eyes already on the next target, vivid green and orange watercolor splatters bursting like tiny fragments and check marks in the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 
@@ -107,7 +107,7 @@ Splatter watercolor painting style, a young woman with long straight dark violet
 ## DLTC — 仕分け番長
 **Archetype:** priority-sorter
 
-Splatter watercolor painting style, a woman with a sharp angled bob in jet black with teal inner color and accent streaks, wearing a structured black short jacket with teal accents over a turtleneck, smart watch on left wrist, teal gem ear cuff, right hand holding a fan of color-coded clue cards, left hand decisively splitting them into 'now' and 'later' groups in the air, crisp sorting pose with shoulders squared, slightly low-angle composition, sharp analytical gaze with total confidence in what should be handled first, teal and warm brown watercolor paint splatters arranging themselves into clean categorized lanes in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
+Splatter watercolor painting style, a woman with an asymmetrical razor bob tucked behind one ear, colored jet black with teal inner layers and smoky brown tips, wearing a structured black short jacket over a turtleneck vest fitted with color-coded pockets, card-handling rings on her fingers, and a large smart watch on the left wrist, right hand fanning out color-coded clue cards while the left hand slices sharply through the air to separate them into three floating stacks, dramatic three-quarter low-angle composition emphasizing the precision of her hands, cool intimidating eyes with frightening confidence in the judgment she just made, teal black and warm beige watercolor splatters flowing in clean divided lanes across the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 

@@ -37,23 +37,23 @@
   "visualProfile": {
     "genderPresentation": "female",
     "ageRange": "late teens",
-    "characterArchetype": "puzzle-speed-crusher",
-    "characterDescription": "次々と小謎を粉砕していく驚異の高速ソルバー。解けた瞬間の爽快感をチーム全体に届け、勢いで場を盛り上げる。止まっている暇はない。",
-    "outfitDescription": "グリーンとオレンジのカラーブロックパーカー（パズルピースのパッチワーク柄）、首にかけたオーバーイヤーヘッドホン（グリーン）、両手にリストバンド。パーカーのファスナーは半開き。",
+    "characterArchetype": "mini-puzzle-slayer",
+    "characterDescription": "小さな謎を連続コンボで刈り取っていく高速アタッカー。解いた瞬間にはもう次の一枚へ手が伸びていて、止まるという概念がない。",
+    "outfitDescription": "ライムグリーンとオレンジのショートパーカーに、小謎番号タグと solved ステッカーを散りばめたアレンジ。首にヘッドホン、片腕にリストバンド、胸元に解答メモを差し込んだホルダー。",
     "colorPalette": [
       "#4CAF50",
       "#FF8C42",
       "#1A1A2E"
     ],
-    "pose": "右手でテーブルに解答を叩きつけるように置く瞬間、左拳を頭上にガッツポーズ。体は前のめりのアクションポーズ。ダイナミックに傾いたカメラアングル。",
-    "expression": "歯を見せた勝利の笑顔、目は次のターゲットを既に捉えている。",
-    "background": "ビビッドグリーンとオレンジの水彩スプラッターがパズルピースのように弾ける",
-    "hairStyle": "ショートスパイキーピクシーカット、毛先が四方八方に跳ねる",
-    "hairColor": "ライムグリーンとエレクトリックオレンジのデュアルトーン"
+    "pose": "右手で解答済みカードを勢いよく手前へ叩き出し、左手は次の小謎カードを二本指でつまんで持ち上げる。上体ごと前へ飛び込むような構図で、強いダッチアングル。",
+    "expression": "勝ち癖がついた鋭い笑顔。目は達成感より先に次の獲物へ向いている。",
+    "background": "ビビッドグリーンとオレンジの水彩スプラッターが小さな断片とチェックマークのように弾ける",
+    "hairStyle": "毛先が刃のように散るショートウルフピクシー",
+    "hairColor": "アシッドライムをベースに、前髪と内側へエレクトリックオレンジの差し色"
   },
   "imagePrompt": {
-    "ja": "スプラッター水彩画スタイル、ライムグリーンとエレクトリックオレンジのデュアルトーンのショートスパイキーピクシーカットの少女、グリーンとオレンジのパズルピースパッチワーク柄パーカー、首にグリーンのオーバーイヤーヘッドホン、右手でテーブルに解答を叩きつけ左拳を頭上にガッツポーズ、前のめりのアクションポーズ、傾いたダイナミックなカメラアングル、歯を見せた勝利の笑顔、ビビッドグリーンとオレンジの水彩絵の具がパズルピースのように弾ける背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
-    "en": "Splatter watercolor painting style, a teenage girl with short spiky pixie cut in dual-tone lime green and electric orange pointing in all directions, wearing a green and orange color-block hoodie with puzzle piece patchwork pattern half-unzipped, green over-ear headphones around neck, wristbands, right hand slamming an answer down on table, left fist pumping overhead in victory pose, body leaning forward in action, dynamic tilted camera angle, triumphant grin showing teeth with eyes already locked on next target, vivid green and orange watercolor paint splatters bursting like puzzle pieces in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
+    "ja": "スプラッター水彩画スタイル、アシッドライムをベースに前髪と内側へエレクトリックオレンジの差し色が入った、毛先が刃のように散るショートウルフピクシーの少女、ライムグリーンとオレンジのショートパーカーに小謎番号タグと solved ステッカー、首にヘッドホン、胸元に解答メモホルダー、右手で解答済みカードを勢いよく手前へ叩き出し、左手は次の小謎カードを二本指でつまんで持ち上げる、上体ごと前へ飛び込むような構図、強いダッチアングル、勝ち癖がついた鋭い笑顔、ビビッドグリーンとオレンジの水彩絵の具が小さな断片とチェックマークのように弾ける背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a teenage girl with a short wolf-pixie haircut whose blade-like ends flare outward, colored in acid lime with electric orange accents through the fringe and inner layers, wearing a lime and orange cropped hoodie covered with mini-puzzle number tags and solved stickers, headphones at the neck and a memo holder at the chest, right hand slamming a solved answer card toward the viewer while the left hand lifts the next mini-puzzle card with two fingers, body lunging forward in a strong dutch-angle composition, sharp grin of someone addicted to winning with eyes already on the next target, vivid green and orange watercolor splatters bursting like tiny fragments and check marks in the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",

@@ -37,23 +37,23 @@
   "visualProfile": {
     "genderPresentation": "male",
     "ageRange": "early 20s",
-    "characterArchetype": "evidence-hunter",
-    "characterDescription": "現場を這うように調べ尽くし、誰も気づかない微細な証拠を嗅ぎ当てる執念の捜査官。見つけた手がかりの意味を丁寧に解き明かし、チームに共有する。",
-    "outfitDescription": "ブラウンレザーのユーティリティベスト（多数のポケットと鎖付きルーペ）、ヘンリーネックの白シャツ袖まくり、レザーの指ぬきグローブ。首から証拠バッグとルーペをぶら下げ。",
+    "characterArchetype": "forensic-enthusiast",
+    "characterDescription": "微細な違和感を宝物みたいに拾い上げ、嬉々として検査してしまう現場鑑識オタク。見つけた瞬間の『これだ』という熱量ごとチームへ投げる。",
+    "outfitDescription": "ダークブラウンの高機能ユーティリティジャケットに白のハイネックシャツ、胸元にはルーペとUVペンライト、透明の証拠パウチを複数装着。細身の黒グローブとメタルツールクリップ。",
     "colorPalette": [
       "#8B5E3C",
-      "#D4A055",
-      "#2C1810"
+      "#D9B36A",
+      "#1F1814"
     ],
-    "pose": "右手で証拠品を目の高さに持ち上げ、左手のルーペ越しに覗き込んでいる。やや前傾姿勢で、獲物を追う猟犬のような集中力。斜め前からのドラマチックな構図。",
-    "expression": "獲物を見つけた猟犬のような鋭く集中した目。好奇心と確信が入り混じる。",
-    "background": "アンバーとダークブラウンの水彩スプラッターが捜査の痕跡のように散る",
-    "hairStyle": "無造作に跳ねたミディアムヘア、前髪が片目にかかる",
-    "hairColor": "ウォームオーバーンにゴールドの毛先ハイライト"
+    "pose": "右手のピンセットで極小の手がかり片を目の前へ掲げ、左手の折りたたみルーペを片目に当てて覗き込む。上体を鋭く乗り出した斜め構図で、今まさに『ねえ見てこれ』と言い出す瞬間。",
+    "expression": "好きな証拠を見つけた時の危ういほど鋭い興奮。口元に小さな笑み、目は異様に真剣。",
+    "background": "アンバー、ダークブラウン、ブラックの水彩スプラッターに、指紋や検査ラインのような細い飛沫が走る",
+    "hairStyle": "前髪を長く残したレイヤーシャグ、後ろは軽く跳ねる",
+    "hairColor": "ウォームオーバーンをベースに、前髪と毛先へシャンパンゴールドのハイライト"
   },
   "imagePrompt": {
-    "ja": "スプラッター水彩画スタイル、ウォームオーバーンにゴールドハイライトの無造作ミディアムヘアの青年、ブラウンレザーのユーティリティベストに白ヘンリーネックシャツ袖まくり、鎖付きルーペを首から下げ、右手で証拠品を目の高さに持ち左手のルーペで覗き込む、前傾姿勢で獲物を追う猟犬のような集中、アンバーとダークブラウンの水彩絵の具が痕跡のように飛散する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
-    "en": "Splatter watercolor painting style, a young man with messy warm auburn medium hair with gold-tipped highlights falling over one eye, wearing a brown leather utility vest with many pockets over a white henley shirt with rolled sleeves, chain-attached loupe hanging from neck, leather fingerless gloves, right hand holding evidence at eye level, left hand examining through loupe, leaning forward with a hunting dog's intense focus, amber and dark brown watercolor paint splatters scattered like investigation traces in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
+    "ja": "スプラッター水彩画スタイル、ウォームオーバーンをベースに前髪と毛先へシャンパンゴールドのハイライトが入った、前髪を長く残したレイヤーシャグの青年、ダークブラウンの高機能ユーティリティジャケットと白のハイネックシャツ、胸元にルーペとUVペンライト、透明の証拠パウチ、細身の黒グローブ、右手のピンセットで極小の手がかり片を目の前へ掲げ、左手の折りたたみルーペを片目に当てて覗き込む、上体を鋭く乗り出した斜め構図、好きな証拠を見つけた時の危ういほど鋭い興奮、アンバーとダークブラウンとブラックの水彩絵の具に指紋のような飛沫が走る背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a young man with layered shag hair in warm auburn with champagne-gold highlights on the fringe and tips, wearing a dark brown high-function utility jacket over a white high-neck shirt, with a loupe, UV penlight, transparent evidence pouches, and sleek black gloves, right hand lifting a tiny clue fragment with tweezers close to the viewer, left hand pressing a folding loupe to one eye, upper body leaning sharply forward in a dramatic diagonal composition as if saying 'look at this,' dangerously focused expression with a small excited smile, amber dark brown and black watercolor splatters with fingerprint-like streaks in the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",

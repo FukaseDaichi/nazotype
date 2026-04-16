@@ -37,23 +37,23 @@
   "visualProfile": {
     "genderPresentation": "female",
     "ageRange": "mid 20s",
-    "characterArchetype": "orchestrating-conductor",
-    "characterDescription": "パズルの難易度と緊急度を瞬時に見極め、チーム全員のリソースを最適配分するオーケストラの指揮者。彼女の采配で、チームは一切の無駄なく前に進む。",
-    "outfitDescription": "ティールアクセントの黒の構造的ショートジャケット、中にタートルネック。指揮棒のような細いスタイラスペンを右手に。左手首にスマートウォッチ。イヤーカフに小さなティールの宝石。",
+    "characterArchetype": "priority-sorter",
+    "characterDescription": "謎を見た瞬間に『今やる』『後でやる』『誰に振る』を切り分ける、仕分けの支配者。彼女の判断が入ると場の渋滞が一気に消える。",
+    "outfitDescription": "ブラックの構造的ショートジャケットにティールのライン、内側に色分けポケットを備えたタートルネックベスト。指先にはカードをさばきやすいリング、左手首に大型スマートウォッチ。",
     "colorPalette": [
-      "#2A9D8F",
-      "#1A1A1A",
-      "#F0EBE3"
+      "#1F8F86",
+      "#181818",
+      "#CBB89A"
     ],
-    "pose": "右手のスタイラスペンを指揮棒のように振り上げ、左手は下方に広げてチームを制御。オーケストラの指揮者のようなダイナミックな上半身の動き。やや下からの構図。",
-    "expression": "鋭く冷静な分析の眼差しと、完璧な采配への確信。全てがコントロール下にある者の表情。",
-    "background": "ティールとウォームブラウンの水彩スプラッターが指揮棒の軌跡のようにリズミカルに散る",
-    "hairStyle": "シャープなアングルボブ、前下がり",
-    "hairColor": "漆黒にティールのインナーカラーとアクセントストリーク"
+    "pose": "右手で色分けされた手がかりカードを扇状に広げ、左手は空中を鋭く切って三つの束へ仕分ける。斜め下から見上げる3/4構図で、手元の切れ味が強調される。",
+    "expression": "逆らえないほど正確そうなクールな眼差し。判断を下した瞬間の、少し怖いくらいの自信。",
+    "background": "ティール、ブラック、ウォームベージュの水彩スプラッターが整然としたレーン状に分かれて流れる",
+    "hairStyle": "片側を耳にかけたアシンメトリーのレザーボブ、長い前髪が鋭く落ちる",
+    "hairColor": "漆黒をベースに、内側へティール、毛先へスモーキーブラウンのアクセント"
   },
   "imagePrompt": {
-    "ja": "スプラッター水彩画スタイル、漆黒にティールのインナーカラーのシャープなアングルボブヘアの女性、ティールアクセントの黒ショートジャケットにタートルネック、右手でスタイラスペンを指揮棒のように振り上げ左手は下方に広げてチームを制御、オーケストラ指揮者のダイナミックポーズ、やや下からの構図、鋭く冷静な分析の眼差し、ティールとウォームブラウンの水彩絵の具が指揮棒の軌跡のようにリズミカルに飛散する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
-    "en": "Splatter watercolor painting style, a woman with a sharp angled bob in jet black with teal inner color and accent streaks, wearing a structured black short jacket with teal accents over a turtleneck, smart watch on left wrist, teal gem ear cuff, right hand raising a stylus pen like a conductor's baton, left hand spread downward controlling the team, dynamic orchestral conductor pose, slightly low-angle composition, sharp analytical gaze with certainty of perfect coordination, teal and warm brown watercolor paint splatters scattered rhythmically like baton trails in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
+    "ja": "スプラッター水彩画スタイル、漆黒をベースに内側へティール、毛先へスモーキーブラウンのアクセントが入った、片側を耳にかけたアシンメトリーのレザーボブヘアの女性、ブラックの構造的ショートジャケットと色分けポケットを備えたタートルネックベスト、指先のカードリング、大型スマートウォッチ、右手で色分けされた手がかりカードを扇状に広げ、左手は空中を鋭く切って三つの束へ仕分ける、斜め下から見上げる3/4構図、逆らえないほど正確そうなクールな眼差し、ティールとブラックとウォームベージュの水彩絵の具が整然としたレーン状に流れる背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a woman with an asymmetrical razor bob tucked behind one ear, colored jet black with teal inner layers and smoky brown tips, wearing a structured black short jacket over a turtleneck vest fitted with color-coded pockets, card-handling rings on her fingers, and a large smart watch on the left wrist, right hand fanning out color-coded clue cards while the left hand slices sharply through the air to separate them into three floating stacks, dramatic three-quarter low-angle composition emphasizing the precision of her hands, cool intimidating eyes with frightening confidence in the judgment she just made, teal black and warm beige watercolor splatters flowing in clean divided lanes across the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",

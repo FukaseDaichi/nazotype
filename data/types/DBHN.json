@@ -37,23 +37,23 @@
   "visualProfile": {
     "genderPresentation": "female",
     "ageRange": "mid 20s",
-    "characterArchetype": "thread-weaving-oracle",
-    "characterDescription": "散らばった断片を見えない糸で繋ぎ、誰も気づかなかった全体像を紡ぎ出す理論の織り手。静かな情熱で仮説を組み上げ、その一言がチームの視界を一変させる。",
-    "outfitDescription": "ダークネイビーの構造的なブレザーに幾何学模様の刺繍ライン。中にハイネックの白ブラウス。丸いアーキテクト風メガネ。指には赤い糸を結んだ指輪。",
+    "characterArchetype": "clue-synthesis-engine",
+    "characterDescription": "散らばった答えを頭の中で高速統合し、一枚の完成図へ変換する回収特化の解析者。彼女の前では伏線が『つながる』ではなく『回収される』。",
+    "outfitDescription": "ダークネイビーのシャープなロングブレザーに、付箋タブや小さな情報カードを差し込んだメタルフレームベルト。白のハイネック、角度の鋭いメガネ、手元には透明カードスリーブ。",
     "colorPalette": [
-      "#1E3A5F",
-      "#D4A055",
-      "#F0EBE3"
+      "#1C3557",
+      "#E0A84F",
+      "#F2F0EA"
     ],
-    "pose": "両手を体の前に広げ、見えない糸を操って情報を繋ぎ合わせるように指を動かしている。操り人形師のような優雅さと知性。正面やや上からの構図。",
-    "expression": "全ての伏線が繋がった瞬間の静かな微笑。知性と確信に満ちた穏やかな眼差し。",
-    "background": "ダークブルーとアンバーの水彩スプラッターが糸のように繋がりながら広がる",
-    "hairStyle": "腰までの長いストレートヘア、前髪は眉上でまっすぐ",
-    "hairColor": "ディープブルーブラックにアンバーのセクションハイライト"
+    "pose": "両手を大きく開き、左右から浮かぶ複数の手がかりカードを中央へ引き寄せて一つの図形に合わせる。正面やや上からの構図で、回収の瞬間だけ機械みたいに正確な動き。",
+    "expression": "全部が一本にまとまった瞬間の冷ややかで美しい確信。静かな笑みの奥に圧倒的な理解がある。",
+    "background": "ダークブルーとアンバーの水彩スプラッターが回路図と接続線のように中央へ収束する",
+    "hairStyle": "長いストレートのハイレイヤー姫カット、内側だけ鋭く外へ流れる",
+    "hairColor": "ディープブルーブラックに、内側から覗くアンバーゴールドのアンダーカラー"
   },
   "imagePrompt": {
-    "ja": "スプラッター水彩画スタイル、ディープブルーブラックにアンバーのセクションハイライトの長いストレートヘアの女性、ダークネイビーの構造的ブレザーに幾何学模様の刺繍、丸いアーキテクト風メガネ、白ハイネックブラウス、両手を前に広げ見えない糸を操るように指を動かす操り人形師のポーズ、正面やや上からの構図、全ての伏線が繋がった静かな微笑、ダークブルーとアンバーの水彩絵の具が糸のように繋がりながら飛散する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
-    "en": "Splatter watercolor painting style, a woman with long straight deep blue-black hair with amber section highlights and straight-cut bangs above eyebrows, wearing a dark navy structured blazer with geometric embroidery lines, round architect-style glasses, white high-neck blouse, red thread ring on finger, both hands spread before her moving fingers like a puppeteer manipulating invisible threads connecting information, slightly elevated frontal camera angle, quiet smile of someone who just connected all the hidden threads, dark blue and amber watercolor paint splatters spreading while connecting like threads in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
+    "ja": "スプラッター水彩画スタイル、ディープブルーブラックに内側からアンバーゴールドが覗く、長いストレートのハイレイヤー姫カットの女性、ダークネイビーのシャープなロングブレザー、付箋タブや小さな情報カードを差し込んだメタルフレームベルト、白のハイネック、角度の鋭いメガネ、両手を大きく開いて左右から浮かぶ複数の手がかりカードを中央へ引き寄せて一つの図形に合わせる、正面やや上からの構図、全部が一本にまとまった瞬間の冷ややかで美しい確信、ダークブルーとアンバーの水彩絵の具が回路図と接続線のように中央へ収束する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a woman with long high-layer hime-cut hair in deep blue-black with amber-gold undercolor visible from within, wearing a sharp dark navy long blazer, a metal-frame belt loaded with sticky tabs and information cards, a white high-neck top, and angular glasses, both hands opened wide as multiple floating clue cards are pulled from both sides into a single completed pattern at the center, slightly elevated frontal composition with machine-like precision in the gesture, cool beautiful certainty of someone who just recovered every foreshadowed connection, dark blue and amber watercolor splatters converging like circuitry and connector lines in the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",

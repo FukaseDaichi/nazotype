@@ -37,23 +37,23 @@
   "visualProfile": {
     "genderPresentation": "female",
     "ageRange": "late teens",
-    "characterArchetype": "lightning-scout",
-    "characterDescription": "光の速さで現場を駆け抜け、誰より先に手がかりを見つけ出す閃光の偵察者。発見の興奮を隠さず、見つけた瞬間に叫ばずにいられない。",
-    "outfitDescription": "蛍光イエローのスポーツクロップジャケット（背中に稲妻モチーフ）、黒のアスレチックトップ、両腕にネオンカラーのリストバンド多数。首元にホイッスル。",
+    "characterArchetype": "instant-clue-catcher",
+    "characterDescription": "手がかりが視界に入った瞬間、誰より先に空中でつかみ取る高速ハンター。発見して終わりではなく、次の標的へ切り替わるまでが異様に速い。",
+    "outfitDescription": "蛍光イエローのショートジャケットに高速移動を思わせるストライプ、黒のアスレチックトップ、肩から斜めに走るユーティリティハーネス。指先が映えるフィンガーレスグローブとネオンリストバンド。",
     "colorPalette": [
       "#FFD700",
       "#FF6B35",
       "#1A1A2E"
     ],
-    "pose": "体を大きくひねりながら右手を上に伸ばし、何かを掴もうとしている瞬間。左手は拳を握り体の横に。ダイナミックに傾いたカメラアングル。",
-    "expression": "目を大きく見開き、瞳が星のように輝く発見の瞬間。口はわずかに開き「見つけた！」の直前。",
-    "background": "ネオンイエローとオレンジの水彩スプラッターが稲妻のように走る",
-    "hairStyle": "高い位置のツインテール、毛先が跳ねてダイナミック",
-    "hairColor": "ネオンイエローから電気オレンジへのグラデーション"
+    "pose": "右手を画面手前に大きく伸ばして落ちてくる手がかりカードを空中キャッチし、左手はすでに次の方向を鋭く指している。体は走りながら急停止したようにひねり、ダイナミックなダッチアングル。",
+    "expression": "獲物を取った瞬間の勝ち気な笑み。瞳は強く光り、次の発見へもう意識が飛んでいる。",
+    "background": "ネオンイエローとオレンジの水彩スプラッターが高速の残像のように斜めへ走る",
+    "hairStyle": "高い位置から弧を描いて跳ねるコメットツインテール",
+    "hairColor": "レモンイエローからビビッドオレンジへ流れるグラデーションに白い閃光ライン"
   },
   "imagePrompt": {
-    "ja": "スプラッター水彩画スタイル、ネオンイエローからオレンジのグラデーション高めツインテールの少女、蛍光イエローのスポーツクロップジャケットに稲妻モチーフ、黒アスレチックトップ、ネオンリストバンド多数、体をひねって右手を上に伸ばし何かを掴もうとする瞬間、傾いたダイナミックなカメラアングル、目を見開き瞳が輝く発見の表情、ネオンイエローとオレンジの水彩絵の具が稲妻のように走る背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
-    "en": "Splatter watercolor painting style, a teenage girl with neon yellow to electric orange gradient high twin-tails bouncing dynamically, wearing a fluorescent yellow sport crop jacket with lightning bolt motif on back, black athletic top, multiple neon wristbands, body twisted reaching right hand up to grab something overhead, dynamic tilted camera angle, wide eyes with star-like sparkle of discovery, mouth slightly open about to shout, neon yellow and orange watercolor paint splatters streaking like lightning bolts in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
+    "ja": "スプラッター水彩画スタイル、レモンイエローからビビッドオレンジへ流れるグラデーションに白い閃光ラインが入った、弧を描いて跳ねるコメットツインテールの少女、蛍光イエローのショートジャケットと黒のアスレチックトップ、肩から斜めに走るユーティリティハーネス、フィンガーレスグローブ、右手を画面手前に大きく伸ばして落ちてくる手がかりカードを空中キャッチし、左手は次の方向を鋭く指す、走りながら急停止したようなひねりのあるポーズ、ダイナミックなダッチアングル、獲物を取った瞬間の勝ち気な笑み、ネオンイエローとオレンジの水彩絵の具が高速の残像のように斜めへ走る背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a teenage girl with comet-like twin-tails arcing upward, colored in lemon yellow to vivid orange gradient with white flash streaks, wearing a fluorescent yellow short jacket over a black athletic top with a diagonal utility harness and fingerless gloves, right hand thrust dramatically toward the viewer catching a falling clue card midair, left hand already pointing toward the next destination, body twisted in a sudden stop with a dynamic dutch angle, fierce victorious grin with eyes already chasing the next find, neon yellow and orange watercolor splatters streaking diagonally like speed afterimages in the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
