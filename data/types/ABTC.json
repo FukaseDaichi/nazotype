@@ -37,26 +37,26 @@
   "visualProfile": {
     "genderPresentation": "female",
     "ageRange": "early 20s",
-    "characterArchetype": "adaptive-field-captain",
-    "characterDescription": "前線で自らチームを率いる行動派のリーダー。鋭い判断力と柔軟な適応力を持ち、常に次の一手を考えている。動きの中に指揮官としての風格がある。",
-    "outfitDescription": "カジュアルトップスの上にタクティカルベスト、ロールアップしたパンツ、ブーツ、フィンガーレスグローブ。ダークベースにパープルとオレンジのアクセント。",
+    "characterArchetype": "frontline-war-strategist",
+    "characterDescription": "戦場の最前線で自ら動きながらリアルタイムで戦略を組み替える炎の指揮官。危機的状況ほど目が冴え、一声で流れを変える。",
+    "outfitDescription": "黒のクロップトップの上にオリーブグリーンのタクティカルベスト（多数のポケットと通信機器）。片腕にミリタリー風アームラップ。コマンド用ヘッドセットを片耳に装着。フィンガーレスグローブ。",
     "colorPalette": [
-      "#7B4FA0",
-      "#E87040",
-      "#2A2A3A"
+      "#FF6B2B",
+      "#2D2D2D",
+      "#7B4FA0"
     ],
-    "pose": "アクションの最中に指示を出しているダイナミックなポーズ",
-    "expression": "鋭く、決断力に満ちた表情",
-    "background": "淡い紫とオレンジの炎のような光が揺らめく背景エフェクト",
-    "hairStyle": "サイドアンダーカットショート",
-    "hairColor": "紫のハイライト入りブラック"
+    "pose": "右手を前方に力強く指し示し、左手はヘッドセットのマイクを押さえている。体は前傾姿勢で、今まさに指令を飛ばしている瞬間。ローアングルから見上げるダイナミックな構図。",
+    "expression": "炎のような闘志と冷徹な判断力が同居する鋭い眼差し、口は指令を叫ぶ直前",
+    "background": "オレンジと紫の水彩スプラッターが爆風のように四方に飛散",
+    "hairStyle": "右サイドを刈り上げ、左側は長く編み込みブレイド。頭頂部は立ち上がるモヒカン風",
+    "hairColor": "ファイアオレンジからダークパープルへのグラデーション"
   },
   "imagePrompt": {
-    "ja": "パープルとオレンジのアクセントが入ったタクティカルベストを着たダイナミックな若い女性のフィールドキャプテン、鮮やかな紫のハイライトが入ったサイドアンダーカットのショートヘア、アクションの最中に指示を出している、鋭く決断力のある表情、腰から上のポートレート、背景透過、淡い紫とオレンジの炎のような光がエネルギッシュに揺らめくエフェクト、アニメ風キャラクターイラスト",
-    "en": "A dynamic young female field captain in a tactical vest with purple and orange accents, short black undercut with bold purple highlights, giving directions mid-action, sharp decisive expression, waist-up portrait, transparent background, pale purple and orange flame-like light flickering with energy, anime style character illustration"
+    "ja": "スプラッター水彩画スタイル、ファイアオレンジからダークパープルのグラデーション髪のサイド刈り上げブレイドヘアの若い女性、タクティカルベストに黒クロップトップ、ヘッドセット装着、右手を力強く前方に指し示し左手でヘッドセットを押さえる、ローアングルから見上げるダイナミック構図、炎のような闘志の鋭い眼差し、オレンジと紫の水彩絵の具が爆風のように飛散する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a young woman with fire orange to dark purple gradient hair in a side-shaved braid mohawk style, wearing a tactical vest over black crop top, command headset on one ear, fingerless gloves, right hand pointing forward powerfully giving orders, left hand pressing headset mic, dramatic low-angle looking up composition, fierce burning determination in sharp eyes, orange and purple watercolor paint splatters exploding like a blast wave in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
-    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
-    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque, cropped head, full body"
   }
 }

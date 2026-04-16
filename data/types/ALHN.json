@@ -1,7 +1,7 @@
 {
   "typeId": "ALHN",
   "typeCode": "ALHN",
-  "typeName": "鑑識マニア",
+  "typeName": "証拠の猟犬",
   "tagline": "「ねえ見てこれ」の回数チーム最多。しかも毎回大事なやつ。",
   "summary": "現場を駆け回って手がかりを見つけ出し、その意味を丁寧に読み解く探索のスペシャリスト。発見したものを仲間にわかりやすく伝える力に長け、チームの情報基盤を支える存在です。",
   "detailDescription": "脱出ゲームが始まると、まず自分の足で部屋を探索し、気になるものを次々と見つけ出します。ただ見つけるだけでなく、一つひとつの手がかりをじっくり観察し、何を意味しているのかを考えるのが得意です。発見した内容は「これ、たぶんこういう意味だと思う」と自分の言葉で仲間に共有してくれるため、チーム全体の理解が深まります。結論を急がず、裏付けを取ってから発言する慎重さがあるため、情報の信頼度が高いのも特徴です。探索と分析の両方をこなせる、チームの「証拠鑑定人」とも言える存在です。",
@@ -37,26 +37,26 @@
   "visualProfile": {
     "genderPresentation": "male",
     "ageRange": "early 20s",
-    "characterArchetype": "adventurer-scholar",
-    "characterDescription": "冒険家と学者を兼ね備えた青年。現場を自ら探索しながら、発見したものを知的に分析する。好奇心旺盛で、手がかりを見つけると目を輝かせる。",
-    "outfitDescription": "ヘンリーネックシャツの上にユーティリティベスト、カーゴパンツ、指ぬきグローブを着用。メッセンジャーバッグを肩にかけている。",
+    "characterArchetype": "evidence-hunter",
+    "characterDescription": "現場を這うように調べ尽くし、誰も気づかない微細な証拠を嗅ぎ当てる執念の捜査官。見つけた手がかりの意味を丁寧に解き明かし、チームに共有する。",
+    "outfitDescription": "ブラウンレザーのユーティリティベスト（多数のポケットと鎖付きルーペ）、ヘンリーネックの白シャツ袖まくり、レザーの指ぬきグローブ。首から証拠バッグとルーペをぶら下げ。",
     "colorPalette": [
+      "#8B5E3C",
       "#D4A055",
-      "#8B6914",
-      "#3E2C1C"
+      "#2C1810"
     ],
-    "pose": "手がかりを手に取り、集中して観察しているポーズ",
-    "expression": "好奇心に満ちた、集中した表情",
-    "background": "淡いアンバーの炎と温かな光が揺らぐ背景エフェクト",
-    "hairStyle": "少し乱れたミディアムヘア",
-    "hairColor": "生え際に金が混じる温かいブラウン"
+    "pose": "右手で証拠品を目の高さに持ち上げ、左手のルーペ越しに覗き込んでいる。やや前傾姿勢で、獲物を追う猟犬のような集中力。斜め前からのドラマチックな構図。",
+    "expression": "獲物を見つけた猟犬のような鋭く集中した目。好奇心と確信が入り混じる。",
+    "background": "アンバーとダークブラウンの水彩スプラッターが捜査の痕跡のように散る",
+    "hairStyle": "無造作に跳ねたミディアムヘア、前髪が片目にかかる",
+    "hairColor": "ウォームオーバーンにゴールドの毛先ハイライト"
   },
   "imagePrompt": {
-    "ja": "ユーティリティベストとカーゴパンツを着た若い男性の冒険家兼学者、生え際に金が混じる、少し乱れた温かいブラウンのミディアムヘア、謎めいた手がかりを集中した好奇心で観察している、暖かいアンバーの照明、腰から上のポートレート、背景透過、淡いアンバーの炎と温かな黄金色の光が柔らかく揺らぐエフェクト、アニメ風キャラクターイラスト",
-    "en": "A young male adventurer-scholar in a utility vest and cargo pants, slightly disheveled medium hair in warm brown with golden roots, examining a mysterious clue with focused curiosity, warm amber lighting, waist-up portrait, transparent background, pale amber flame and warm golden light glowing softly, anime style character illustration"
+    "ja": "スプラッター水彩画スタイル、ウォームオーバーンにゴールドハイライトの無造作ミディアムヘアの青年、ブラウンレザーのユーティリティベストに白ヘンリーネックシャツ袖まくり、鎖付きルーペを首から下げ、右手で証拠品を目の高さに持ち左手のルーペで覗き込む、前傾姿勢で獲物を追う猟犬のような集中、アンバーとダークブラウンの水彩絵の具が痕跡のように飛散する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a young man with messy warm auburn medium hair with gold-tipped highlights falling over one eye, wearing a brown leather utility vest with many pockets over a white henley shirt with rolled sleeves, chain-attached loupe hanging from neck, leather fingerless gloves, right hand holding evidence at eye level, left hand examining through loupe, leaning forward with a hunting dog's intense focus, amber and dark brown watercolor paint splatters scattered like investigation traces in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
-    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
-    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque, cropped head, full body"
   }
 }

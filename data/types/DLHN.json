@@ -37,26 +37,26 @@
   "visualProfile": {
     "genderPresentation": "female",
     "ageRange": "early 20s",
-    "characterArchetype": "mystic-scholar",
-    "characterDescription": "暗号と文章に向き合いながら、自分の思考を言葉にして周囲と共有する知的な女性解読者。静かな書斎に座りながらも、口元には常に言葉が紡がれている。",
-    "outfitDescription": "ロングカーディガンにブラウス、スカート、履き慣れた靴、丸眼鏡。学者のような落ち着いた装い。",
+    "characterArchetype": "narrating-decoder",
+    "characterDescription": "暗号に向き合いながら自分の思考を言葉に紡ぎ、チーム全員が解読の過程を追えるようにする知的な語り手。彼女の声が暗号の霧を晴らしていく。",
+    "outfitDescription": "ラベンダーグレーのロングカーディガンに暗号文字の織り模様。中に白ブラウス、アンティークのカメオブローチ。丸い細フレームのメガネ。手元に古びた暗号書を開いている。",
     "colorPalette": [
       "#6A4C93",
       "#B8A9C9",
-      "#E8E0F0"
+      "#F5F0FF"
     ],
-    "pose": "机に向かい、片手を顎に添えて暗号を見つめるポーズ",
-    "expression": "集中しつつも何かを語りかけるような、思索的な表情",
-    "background": "淡いラベンダーと深紫の柔らかな光が静かに広がる背景エフェクト",
-    "hairStyle": "長いストレートヘア",
-    "hairColor": "毛先ラベンダーのダークヘア"
+    "pose": "左手を顎に添えて暗号書を見つめ、右手の人差し指が文字をなぞっている。唇がわずかに動き、思考を声に出している瞬間。親密な距離感のクローズアップ構図。",
+    "expression": "集中の中に語りかけるような穏やかさ。目は暗号の奥を見通し、口元は言葉を紡ぐ直前。",
+    "background": "ラベンダーとディープパープルの水彩スプラッターが古い暗号文字のように流れる",
+    "hairStyle": "胸元まで届く長いストレートヘア、耳に掛けたサイド",
+    "hairColor": "ダークバイオレットに毛先ラベンダーのグラデーション"
   },
   "imagePrompt": {
-    "ja": "ロングカーディガンと丸眼鏡を着けた思索的な若い女性学者、毛先をラベンダーに染めた長いストレートヘア、机に座り暗号を解読している、周囲に紙が散らばる、ディープパープルとラベンダーの色調、思考中の表情、腰から上のポートレート、背景透過、淡いラベンダーと深紫の柔らかな光が静かに広がるエフェクト、アニメ風キャラクターイラスト",
-    "en": "A thoughtful young female scholar in a long cardigan and glasses, long straight dark hair with lavender-dyed tips, sitting at a desk solving ciphers, surrounded by papers, deep purple and lavender tones, contemplative expression, waist-up portrait, transparent background, pale lavender and deep purple soft light diffusing quietly, anime style character illustration"
+    "ja": "スプラッター水彩画スタイル、ダークバイオレットに毛先ラベンダーの長いストレートヘアの女性、ラベンダーグレーのロングカーディガンに暗号文字の織り模様、白ブラウス、アンティークカメオブローチ、丸い細フレームメガネ、左手を顎に添え暗号書を見つめ右手で文字をなぞる、唇がわずかに動き声に出す瞬間、親密な距離のクローズアップ構図、集中と穏やかさが同居する表情、ラベンダーとディープパープルの水彩絵の具が暗号文字のように流れる背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a young woman with long straight dark violet hair with lavender gradient tips tucked behind one ear, wearing a lavender-gray long cardigan with cipher pattern weave, white blouse, antique cameo brooch, thin round-frame glasses, left hand resting on chin studying a cipher book, right index finger tracing along text, lips slightly moving speaking thoughts aloud, intimate close-up composition, expression mixing deep concentration with gentle narration, lavender and deep purple watercolor paint splatters flowing like ancient cipher text in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
-    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
-    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque, cropped head, full body"
   }
 }

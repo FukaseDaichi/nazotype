@@ -1,7 +1,7 @@
 {
   "typeId": "ABHN",
   "typeCode": "ABHN",
-  "typeName": "歩くホワイトボード",
+  "typeName": "全景ナビゲーター",
   "tagline": "部屋中歩き回った結果を、全部覚えてる。なんで？",
   "summary": "広いフィールドを自ら歩き回りながら、全体の構造を頭の中で組み立てていく戦略的探索者。見つけたことを仲間と共有しつつ、じっくり考えてからチームを正しい方向へ導く、灯台のような存在です。",
   "detailDescription": "脱出ゲームが始まると、まず空間全体を歩き回って部屋の構造や手がかりの配置を把握しようとします。ただ歩くだけでなく、頭の中で常に全体のマップを描き、どこに何があるかを整理しています。別々の場所で見つかった手がかり同士のつながりに気づくのが得意で、「あっちの部屋のあれと、こっちのこれ、たぶん繋がってる」という発見をチームに共有してくれます。結論を出す前にしっかり考える慎重さがあるため、発言の精度が高く、チームメンバーからの信頼も厚いです。広い視野と深い思考を兼ね備えた、チームの「灯台」のような存在です。",
@@ -37,24 +37,26 @@
   "visualProfile": {
     "genderPresentation": "female",
     "ageRange": "early 20s",
-    "characterArchetype": "explorer-thinker",
-    "characterDescription": "広い視野と深い思考力を兼ね備えた女性探索者。自ら現場を歩き回りながら、頭の中で全体のマップを組み立てる。静かな決意と知的な好奇心が同居する。",
-    "outfitDescription": "オープンフロントのフィールドジャケット、ハイキングブーツ、小さなノートブックを手に持つ。動きやすいパンツスタイル。",
+    "characterArchetype": "living-strategic-map",
+    "characterDescription": "空間全体を歩き回りながら、頭の中に精密な全体地図を描き上げる知的な探索者。彼女が通った後には、バラバラだった手がかりが一本の線で繋がっている。",
+    "outfitDescription": "カーキのミリタリーフィールドジャケット（裏地に地形図プリント）を羽織り、中にダークグリーンのタートルネック。首から真鍮のコンパスペンダント。肩にフィールドノートを挟んだショルダーストラップ。",
     "colorPalette": [
       "#2D8B7A",
-      "#1A5C50",
-      "#E8F0EC"
+      "#C0C0C0",
+      "#1A3C34"
     ],
-    "pose": "高台に立ち、広い空間全体を見渡しているポーズ",
-    "expression": "思慮深く、決意に満ちた表情",
-    "background": "淡いティールグリーンの柔らかな光の波が広がる背景エフェクト"
+    "pose": "右手を前に伸ばし、空中に見えない地図をなぞるように指を動かしている。目線は遠くの高い位置を見据え、左手はフィールドノートを胸元に抱える。",
+    "expression": "知的な落ち着きの中に、発見への静かな興奮が宿る眼差し",
+    "background": "ティールグリーンとシルバーの水彩スプラッターが地図の等高線のように広がる",
+    "hairStyle": "腰まである長いストレートヘア、風になびく",
+    "hairColor": "シルバーホワイトに細いティールブルーのメッシュライン"
   },
   "imagePrompt": {
-    "ja": "フィールドジャケットとハイキングブーツを着た思慮深い若い女性探索者、高台に立って広大な空間を見渡している、ティールグリーンの色調、ノートブックを手に持つ、腰から上のポートレート、背景透過、淡いティールグリーンの柔らかな光の波がゆったりと広がるエフェクト、アニメ風キャラクターイラスト",
-    "en": "A thoughtful young female explorer in a field jacket, standing on elevated ground surveying a vast space, teal green tones, holding a notebook, waist-up portrait, transparent background, soft pale teal green glowing light waves spreading gently, anime style character illustration"
+    "ja": "スプラッター水彩画スタイル、シルバーホワイトの長いストレートヘアにティールブルーのメッシュが入った若い女性、カーキのミリタリーフィールドジャケットにダークグリーンのタートルネック、真鍮コンパスペンダント、右手を前に伸ばし空中に地図をなぞるポーズ、左手でフィールドノートを胸に抱える、遠くを見据える知的な眼差し、ティールグリーンとシルバーの水彩絵の具が等高線のように飛散する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a young woman with long silver-white straight hair with thin teal-blue mesh streaks flowing in wind, wearing a khaki military field jacket over dark green turtleneck, brass compass pendant, right hand extended forward tracing an invisible map in the air, left hand holding a field notebook to chest, intellectual gaze looking into far distance, teal green and silver watercolor paint splatters spreading like topographic contour lines in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
-    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
-    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque, cropped head, full body"
   }
 }

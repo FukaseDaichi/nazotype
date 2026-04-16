@@ -1,7 +1,7 @@
 {
   "typeId": "DLHC",
   "typeCode": "DLHC",
-  "typeName": "小謎キラー",
+  "typeName": "パズルクラッシャー",
   "tagline": "気づいたら3つ解いてて、4つ目に手を出してる。",
   "summary": "一つの謎に留まらず、次々とパズルを解き進めていく高速回転タイプ。解けた瞬間に声を上げてチームに共有し、すぐ次の問題に取りかかる。脱出ゲームの「得点マシン」とも言える存在です。",
   "detailDescription": "脱出ゲームが始まると、まず手近なパズルに飛びつき、驚くべきスピードで解き始めます。一つ解けたら「できた！」と声を上げてすぐ次へ。詰まったと感じた瞬間に別のパズルへ切り替える判断の速さが持ち味で、チーム全体の進行スピードを底上げしてくれます。解くたびに結果を周囲に発信してくれるので、チームの進捗が常に可視化されます。個々のパズルへの集中力は高いですが、あえて深追いしない潔さもあり、制限時間のあるゲームでは特にその真価を発揮します。次から次へと謎を攻略していく姿は、チームに勢いとリズムを生み出します。",
@@ -35,28 +35,28 @@
     "axis4": "転換型"
   },
   "visualProfile": {
-    "genderPresentation": "male",
+    "genderPresentation": "female",
     "ageRange": "late teens",
-    "characterArchetype": "speed-solver",
-    "characterDescription": "次々とパズルを解き進める、エネルギッシュな若き高速ソルバー。解けた瞬間の興奮を隠さず、すぐに次の挑戦へ向かう。",
-    "outfitDescription": "グラフィックパーカー、ジーンズ、リストバンド、首にかけたヘッドホン。動きやすくカジュアルな装い。",
+    "characterArchetype": "puzzle-speed-crusher",
+    "characterDescription": "次々と小謎を粉砕していく驚異の高速ソルバー。解けた瞬間の爽快感をチーム全体に届け、勢いで場を盛り上げる。止まっている暇はない。",
+    "outfitDescription": "グリーンとオレンジのカラーブロックパーカー（パズルピースのパッチワーク柄）、首にかけたオーバーイヤーヘッドホン（グリーン）、両手にリストバンド。パーカーのファスナーは半開き。",
     "colorPalette": [
       "#4CAF50",
       "#FF8C42",
-      "#FAFAFA"
+      "#1A1A2E"
     ],
-    "pose": "テーブルに身を乗り出し、複数のパズルを前に目を輝かせるポーズ",
-    "expression": "興奮気味で目が鋭い、ひらめきの瞬間の表情",
-    "background": "淡いグリーンとオレンジの光が弾ける背景エフェクト",
-    "hairStyle": "無造作なクセ毛",
-    "hairColor": "鮮やかなグリーンとオレンジのメッシュ入り"
+    "pose": "右手でテーブルに解答を叩きつけるように置く瞬間、左拳を頭上にガッツポーズ。体は前のめりのアクションポーズ。ダイナミックに傾いたカメラアングル。",
+    "expression": "歯を見せた勝利の笑顔、目は次のターゲットを既に捉えている。",
+    "background": "ビビッドグリーンとオレンジの水彩スプラッターがパズルピースのように弾ける",
+    "hairStyle": "ショートスパイキーピクシーカット、毛先が四方八方に跳ねる",
+    "hairColor": "ライムグリーンとエレクトリックオレンジのデュアルトーン"
   },
   "imagePrompt": {
-    "ja": "グラフィックパーカーを着たエネルギッシュな若い男性パズルソルバー、鮮やかなグリーンとオレンジのメッシュが入った無造作なクセ毛、テーブルに身を乗り出して複数のパズルに取り組んでいる、鮮やかなグリーンとオレンジのアクセント、興奮した鋭い表情、腰から上のポートレート、背景透過、淡いグリーンとオレンジの光がパッと弾けるエフェクト、アニメ風キャラクターイラスト",
-    "en": "An energetic young male puzzle solver in a graphic hoodie, wild natural-curly hair with vivid green and orange streaks, leaning forward over a table full of puzzles, bright green and orange accents, excited sharp expression, waist-up portrait, transparent background, pale green and orange light sparks popping with sharp energy, anime style character illustration"
+    "ja": "スプラッター水彩画スタイル、ライムグリーンとエレクトリックオレンジのデュアルトーンのショートスパイキーピクシーカットの少女、グリーンとオレンジのパズルピースパッチワーク柄パーカー、首にグリーンのオーバーイヤーヘッドホン、右手でテーブルに解答を叩きつけ左拳を頭上にガッツポーズ、前のめりのアクションポーズ、傾いたダイナミックなカメラアングル、歯を見せた勝利の笑顔、ビビッドグリーンとオレンジの水彩絵の具がパズルピースのように弾ける背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a teenage girl with short spiky pixie cut in dual-tone lime green and electric orange pointing in all directions, wearing a green and orange color-block hoodie with puzzle piece patchwork pattern half-unzipped, green over-ear headphones around neck, wristbands, right hand slamming an answer down on table, left fist pumping overhead in victory pose, body leaning forward in action, dynamic tilted camera angle, triumphant grin showing teeth with eyes already locked on next target, vivid green and orange watercolor paint splatters bursting like puzzle pieces in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
-    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
-    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque, cropped head, full body"
   }
 }

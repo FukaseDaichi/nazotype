@@ -1,7 +1,7 @@
 {
   "typeId": "DBHN",
   "typeCode": "DBHN",
-  "typeName": "伏線回収マシン",
+  "typeName": "伏線の紡ぎ手",
   "tagline": "バラバラの答えが、この人の頭でひとつになる。",
   "summary": "チームが集めた断片的な情報を頭の中でつなぎ合わせ、全体像を浮かび上がらせる理論構築の達人。散らばった手がかりの間に隠れた関係性を見出し、壮大な仮説を組み立ててチームに共有します。",
   "detailDescription": "脱出ゲームでは一歩引いた視点から全体の流れを観察し、仲間が次々と発見してくる手がかりを頭の中で体系的に整理していきます。他のメンバーが個別の謎に取り組んでいる間に、それぞれの解答がどう結びつくのかを考え続け、大謎へのアプローチを構築するのが最大の強みです。思いついた仮説はすぐにチームに共有し、ホワイトボードに図を描くように論理の流れを説明します。じっくり考え抜いてから発言するため、一度口にした仮説の精度は高く、チームの方向性を大きく左右する存在です。全てのピースがはまる瞬間を追い求める、謎解きチームの知の建築家です。",
@@ -35,28 +35,28 @@
     "axis4": "熟考型"
   },
   "visualProfile": {
-    "genderPresentation": "male",
+    "genderPresentation": "female",
     "ageRange": "mid 20s",
-    "characterArchetype": "architect-thinker",
-    "characterDescription": "知的で落ち着いた青年。断片的な情報を体系的につなぎ合わせ、ホワイトボードに全体像を描き出す理論構築者。静かな情熱を秘めた眼差しで、謎の全貌を見通す。",
-    "outfitDescription": "構築的なカーディガンにカラー付きシャツ、チノパン、アーキテクト風のメガネを着用。整った知的なスタイル。",
+    "characterArchetype": "thread-weaving-oracle",
+    "characterDescription": "散らばった断片を見えない糸で繋ぎ、誰も気づかなかった全体像を紡ぎ出す理論の織り手。静かな情熱で仮説を組み上げ、その一言がチームの視界を一変させる。",
+    "outfitDescription": "ダークネイビーの構造的なブレザーに幾何学模様の刺繍ライン。中にハイネックの白ブラウス。丸いアーキテクト風メガネ。指には赤い糸を結んだ指輪。",
     "colorPalette": [
-      "#3A5BA0",
+      "#1E3A5F",
       "#D4A055",
-      "#8A8A8A"
+      "#F0EBE3"
     ],
-    "pose": "ホワイトボードの前に立ち、図を指さしながら仮説を説明するポーズ",
-    "expression": "インスピレーションに満ちた集中した表情",
-    "background": "淡いブルーとアンバーの光の糸が繋がるように広がる背景エフェクト",
-    "hairStyle": "整えられたミディアムヘア",
-    "hairColor": "アンバーの前髪ハイライト入りブルーブラック"
+    "pose": "両手を体の前に広げ、見えない糸を操って情報を繋ぎ合わせるように指を動かしている。操り人形師のような優雅さと知性。正面やや上からの構図。",
+    "expression": "全ての伏線が繋がった瞬間の静かな微笑。知性と確信に満ちた穏やかな眼差し。",
+    "background": "ダークブルーとアンバーの水彩スプラッターが糸のように繋がりながら広がる",
+    "hairStyle": "腰までの長いストレートヘア、前髪は眉上でまっすぐ",
+    "hairColor": "ディープブルーブラックにアンバーのセクションハイライト"
   },
   "imagePrompt": {
-    "ja": "構築的なカーディガンとアーキテクト風メガネを身につけた知的な若い男性、アンバーのハイライトが前髪に映えるブルーブラックのミディアムヘア、ホワイトボードの前でダイアグラムをつなげている、青とアンバーの色調、インスピレーションに満ちた集中した表情、腰から上のポートレート、背景透過、淡いブルーとアンバーの光の糸が繋がるように広がるエフェクト、アニメ風キャラクターイラスト",
-    "en": "A thoughtful young male in a structured cardigan and architect glasses, neatly styled blue-black medium hair with an amber-highlighted forelock, standing at a whiteboard connecting diagrams, blue and amber tones, inspired focused expression, waist-up portrait, transparent background, pale blue and amber light threads connecting and spreading, anime style character illustration"
+    "ja": "スプラッター水彩画スタイル、ディープブルーブラックにアンバーのセクションハイライトの長いストレートヘアの女性、ダークネイビーの構造的ブレザーに幾何学模様の刺繍、丸いアーキテクト風メガネ、白ハイネックブラウス、両手を前に広げ見えない糸を操るように指を動かす操り人形師のポーズ、正面やや上からの構図、全ての伏線が繋がった静かな微笑、ダークブルーとアンバーの水彩絵の具が糸のように繋がりながら飛散する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a woman with long straight deep blue-black hair with amber section highlights and straight-cut bangs above eyebrows, wearing a dark navy structured blazer with geometric embroidery lines, round architect-style glasses, white high-neck blouse, red thread ring on finger, both hands spread before her moving fingers like a puppeteer manipulating invisible threads connecting information, slightly elevated frontal camera angle, quiet smile of someone who just connected all the hidden threads, dark blue and amber watercolor paint splatters spreading while connecting like threads in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
-    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
-    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque, cropped head, full body"
   }
 }

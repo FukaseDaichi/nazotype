@@ -37,26 +37,26 @@
   "visualProfile": {
     "genderPresentation": "male",
     "ageRange": "mid to late 20s",
-    "characterArchetype": "silent strategist",
-    "characterDescription": "寡黙ながら全てを見通す眼を持つ青年。影のような静けさの中に絶対的な存在感を放ち、一言で場の空気を変える力を持つ。",
-    "outfitDescription": "ダークなロングコートにハイカラーシャツ、ミニマリストなスタイル。装飾を排した洗練されたシルエット。",
+    "characterArchetype": "silent-trump-card",
+    "characterDescription": "普段は影のように佇み、一歩引いた位置からチーム全体の死角を見抜く。だが彼が口を開く時、その一言が戦局を決定的に動かす。沈黙こそが最大の武器。",
+    "outfitDescription": "ダークチャコールのハイカラーロングコート（裏地に深紅のライニング）、黒のハイネック、左手薬指にのみ深紅の石の指輪。装飾を極限まで排した、影のようなミニマルスタイル。",
     "colorPalette": [
-      "#2D2D2D",
-      "#8B2E3B",
-      "#4A4A4A"
+      "#1C1C1C",
+      "#8B1A2B",
+      "#3A3A3A"
     ],
-    "pose": "影の中で腕を組み、鋭い眼差しで全体を見渡しているポーズ",
-    "expression": "冷静で見透かすような表情",
-    "background": "淡い深紅の炎の余韻と暗く沈んだ光が漂う背景エフェクト",
-    "hairStyle": "片目にかかる長めの前髪",
-    "hairColor": "深紅の筋入りダークチャコール"
+    "pose": "右手の人差し指を唇に当て「静かに」のジェスチャー。左手には一枚だけのカード（切り札）を指先で挟んでいる。顔の半分が影に沈むサイドライティングの構図。",
+    "expression": "全てを見透かす冷徹な眼差し。わずかに口角が上がった、底知れぬ含み笑い。",
+    "background": "ダークチャコールと深紅の水彩スプラッターが影から滲み出るように広がる",
+    "hairStyle": "長めの前髪が左目を完全に隠す、後ろは襟足まで",
+    "hairColor": "漆黒に深紅の一筋のストリーク"
   },
   "imagePrompt": {
-    "ja": "ハイカラーのダークロングコートを着た寡黙な若い男性戦略家、片目にかかる前髪、ダークチャコールに深紅の筋が走る、影の中で腕を組んで全体を見渡している、ダークチャコールとディープレッドの色調、冷静で鋭い表情、腰から上のポートレート、背景透過、淡い深紅の炎の余韻と暗く沈んだ光が漂うエフェクト、アニメ風キャラクターイラスト",
-    "en": "A silent young male strategist in a dark long coat with high collar, dark charcoal hair with deep crimson streaks falling over one eye, standing in shadow with arms crossed surveying the scene, dark charcoal and deep red tones, calm penetrating expression, waist-up portrait, transparent background, pale deep crimson ember glow and dark atmospheric light, anime style character illustration"
+    "ja": "スプラッター水彩画スタイル、漆黒に深紅の一筋ストリークの前髪が左目を隠すミディアムヘアの青年、ダークチャコールのハイカラーロングコートに深紅の裏地、黒ハイネック、右手の人差し指を唇に当て「静かに」のジェスチャー、左手で一枚のカードを指先で挟む、顔の半分が影に沈むサイドライティング構図、全てを見透かす冷徹な眼差しとわずかな含み笑い、ダークチャコールと深紅の水彩絵の具が影から滲み出るように広がる背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a young man with jet black medium hair with a single deep crimson streak, long bangs completely hiding left eye, back reaching collar, wearing a dark charcoal high-collar long coat with crimson lining, black high-neck, deep crimson stone ring on left ring finger only, right index finger pressed to lips in a 'silence' gesture, left hand holding a single card (trump card) pinched between fingertips, half face submerged in shadow with dramatic side lighting, cold piercing gaze that sees through everything with a faint knowing smirk, dark charcoal and deep crimson watercolor paint splatters seeping out from shadows in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
-    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
-    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque, cropped head, full body"
   }
 }

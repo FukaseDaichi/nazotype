@@ -1,7 +1,7 @@
 {
   "typeId": "ALTN",
   "typeCode": "ALTN",
-  "typeName": "エリアの主",
+  "typeName": "鍵師",
   "tagline": "「ここは任せて」で黙々やって、本当に全部終わらせる人。",
   "summary": "担当エリアを完璧に攻略する職人気質の探索者。黙々と一つのゾーンに向き合い、複雑な仕掛けも根気強く解き明かす、チームの信頼を一身に集める堅実な存在です。",
   "detailDescription": "脱出ゲームでは、任された区画を自分の責任範囲として徹底的にやり切るタイプです。派手に動き回るよりも、一つのエリアに腰を据えて丁寧に探索・解析を進めます。複雑な多段階のギミックや、組み合わせが必要な錠前に対しても、焦らず一手ずつ確認しながら攻略していきます。チームへの報告は「終わったよ」という結果ベースが多く、過程を逐一共有するタイプではありませんが、その分、任せたエリアは確実に攻略されるという絶大な安心感をチームにもたらします。プレッシャーがかかる終盤でも冷静さを失わず、最後まで自分の仕事をやり遂げる頼もしい存在です。",
@@ -37,26 +37,26 @@
   "visualProfile": {
     "genderPresentation": "male",
     "ageRange": "mid 20s",
-    "characterArchetype": "craftsman",
-    "characterDescription": "職人気質の青年。寡黙だが確実に仕事をこなす信頼感がある。道具を使いこなし、複雑な仕掛けにも動じない落ち着きを持つ。",
-    "outfitDescription": "シンプルなシャツの上にワークエプロン、ツールベルト、袖をまくった姿。実用的で飾り気のないスタイル。",
+    "characterArchetype": "master-locksmith",
+    "characterDescription": "担当エリアのあらゆるギミックを完璧に攻略する職人。冷静で寡黙だが、その手は誰よりも確実に鍵を開ける。彼が「完了」と言えば、そこは完全制圧されている。",
+    "outfitDescription": "ダークグレーのワークシャツ（袖を肘までロールアップ）の上にブラウンレザーのツールベスト。腰にはピッキングツールセットとペンライト。左手首に精密な機械式時計。",
     "colorPalette": [
-      "#6B8FA3",
-      "#3D5A6E",
-      "#C0C8D0"
+      "#4A6670",
+      "#8B6914",
+      "#2D2D2D"
     ],
-    "pose": "しゃがみ込んで錠前の仕掛けに取り組んでいるポーズ",
-    "expression": "冷静で決意に満ちた表情",
-    "background": "淡いスチールブルーの冷たく静かな光が満ちる背景エフェクト",
-    "hairStyle": "きっちりセットのサイドパート",
-    "hairColor": "スチールブルーのシーンが入るダークヘア"
+    "pose": "左手で精密な鍵の機構を固定し、右手のピッキングツールで繊細に操作中。目線は手元に集中。肩越しに手元を覗くカメラアングル。",
+    "expression": "極限の集中。瞳の奥に職人の矜持が燃えている。",
+    "background": "スチールブルーとブロンズの水彩スプラッターが歯車の軌跡のように散る",
+    "hairStyle": "きっちりしたアンダーカット、トップを後ろに流す",
+    "hairColor": "ダークブラウンにスチールブルーのインナーカラー"
   },
   "imagePrompt": {
-    "ja": "ワークエプロンとツールベルトを身につけた集中力のある若い男性の職人、スチールブルーの光沢が入ったきっちりセットのサイドパートダークヘア、精巧な錠前の仕掛けに取り組んでいる、冷静で決意に満ちた表情、スチールブルーの色調、腰から上のポートレート、背景透過、淡いスチールブルーの冷静で静かな光がゆっくりと満ちるエフェクト、アニメ風キャラクターイラスト",
-    "en": "A focused young male craftsman in a work apron with a tool belt, neatly combed dark hair with a cool steel blue sheen, working on an intricate lock mechanism, calm determined expression, steel blue tones, waist-up portrait, transparent background, pale steel blue cold and composed light glowing steadily, anime style character illustration"
+    "ja": "スプラッター水彩画スタイル、ダークブラウンにスチールブルーのインナーカラーのアンダーカットヘアの青年、ダークグレーのワークシャツ袖まくりにブラウンレザーのツールベスト、腰にピッキングツールセット、左手で鍵の機構を固定し右手でピッキングツールを操作中、肩越しに手元を覗くカメラアングル、極限の集中の表情、スチールブルーとブロンズの水彩絵の具が歯車の軌跡のように飛散する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a young man with dark brown undercut hair with steel blue inner color swept back on top, wearing a dark gray work shirt with sleeves rolled to elbows over a brown leather tool vest, lockpick set and penlight on belt, precision mechanical watch on left wrist, left hand steadying a lock mechanism while right hand delicately operates a pick tool, over-the-shoulder camera angle focusing on hands, expression of extreme focus with craftsman's pride burning in eyes, steel blue and bronze watercolor paint splatters tracing like gear trails in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
-    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
-    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque, cropped head, full body"
   }
 }

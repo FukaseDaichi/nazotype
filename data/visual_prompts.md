@@ -1,118 +1,119 @@
 # Character Visual Prompts
 
 All 16 characters — image generation prompts (English).
-Background: transparent for all characters.
+Style: Splatter watercolor painting. Background: transparent for all characters.
+Composition: Waist-up portrait, full head visible, cool anime-inspired illustration.
 
 ---
 
-## OFEI
-**Archetype:** Soft-spoken field reporter who cuts to the truth
+## ABHC — 人間Wi-Fi
+**Archetype:** signal-broadcaster
 
-A young Japanese woman in her late 20s wearing a beige trench coat over a crisp white shirt and a dark brown skirt, a slim shoulder camera strap crossing her chest, a reporter's notepad in one hand. She leans slightly forward as if listening intently, pen at the ready. Her expression is warm and approachable yet quietly observant — a friendly smile that misses nothing. Clean, intelligent styling; practical and polished. Transparent background. Full-body portrait, soft studio lighting, anime-inspired illustration style.
-
----
-
-## OFEP
-**Archetype:** Housekeeper who reads the room from a step behind
-
-A young Japanese woman in her early 20s dressed in a classic black long dress with a white apron collar, delicate lace cuffs, and a modest headpiece. She stands with hands folded neatly in front of her, eyes calmly tracking the room without moving her head. Her gaze is gentle but deeply attentive — the look of someone who sees everything and says little. Refined, understated maid-inspired attire with no excess ornamentation. Dusty blue accent tones. Transparent background. Full-body portrait, soft studio lighting, anime-inspired illustration style.
+Splatter watercolor painting style, a young woman with an asymmetric electric blue short bob (right side shaved with Wi-Fi symbol line art, left side chin-length), wearing an oversized white t-shirt with a large Wi-Fi symbol printed on chest, techwear shorts, right hand raised high spreading fingers like broadcasting a signal, left hand cupped near ear listening, confident smirk with sharp gleaming eyes, electric blue and golden yellow watercolor paint splatters exploding radially in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 
-## OFLI
-**Archetype:** Undercover detective who moves unseen
+## ABHN — 全景ナビゲーター
+**Archetype:** living-strategic-map
 
-A young Japanese man in his late 20s in a brown leather jacket over a dark shirt with slim trousers and a shoulder bag. He glances back over his shoulder, hand lightly confirming a detail — the quiet motion of someone checking a lead without drawing attention. His expression is restrained but intensely focused, sharp eyes half-hidden under a calm brow. Practical, street-worn detective aesthetic in brown, black, and copper tones. Transparent background. Full-body portrait, soft studio lighting, anime-inspired illustration style.
-
----
-
-## OFLP
-**Archetype:** Analyst who verifies every truth in silence
-
-A Japanese man in his early 30s dressed in a dark gray turtleneck under a black long coat, thin gloves on his hands, and slim silver-framed glasses. He holds a piece of evidence lightly between his fingertips, studying it in composed stillness. His expression is controlled and cold — a precise profile that reveals nothing unnecessary. Clean forensic aesthetic; dark gray, black, and ice blue palette. Transparent background. Full-body portrait, soft studio lighting, anime-inspired illustration style.
+Splatter watercolor painting style, a young woman with long silver-white straight hair with thin teal-blue mesh streaks flowing in wind, wearing a khaki military field jacket over dark green turtleneck, brass compass pendant, right hand extended forward tracing an invisible map in the air, left hand holding a field notebook to chest, intellectual gaze looking into far distance, teal green and silver watercolor paint splatters spreading like topographic contour lines in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 
-## OREI
-**Archetype:** Mysterious intuitive who reads what is left unsaid
+## ABTC — ライブ軍師
+**Archetype:** frontline-war-strategist
 
-A young Japanese man in his late 20s wearing a plum-colored long coat over a black turtleneck, a slim scarf draped loosely, a delicate ring on one finger. He rests a fingertip gently at the corner of his mouth and gazes forward with a soft, unreadable smile — the look of someone who already knows the answer. Elegant and enigmatic; plum, black, and smoke gray palette. Transparent background. Full-body portrait, soft studio lighting, anime-inspired illustration style.
-
----
-
-## OREP
-**Archetype:** Empathetic reading guide who shapes feelings into words
-
-A Japanese woman in her late 20s wearing a lavender-gray knit sweater under a navy long coat, a thin silver necklace, and a fine leather notebook held to her chest. She turns her gaze quietly toward someone, expression open and steadying — warm intelligence behind thoughtful eyes. Approachable yet grounded; lavender gray, navy, and silver palette. Transparent background. Full-body portrait, soft studio lighting, anime-inspired illustration style.
+Splatter watercolor painting style, a young woman with fire orange to dark purple gradient hair in a side-shaved braid mohawk style, wearing a tactical vest over black crop top, command headset on one ear, fingerless gloves, right hand pointing forward powerfully giving orders, left hand pressing headset mic, dramatic low-angle looking up composition, fierce burning determination in sharp eyes, orange and purple watercolor paint splatters exploding like a blast wave in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 
-## ORLI
-**Archetype:** Shadow operative who strikes only at the right moment
+## ABTN — 現場の総監督
+**Archetype:** supreme-field-commander
 
-A young Japanese man in his late 20s wearing a black high-collar coat, a dark gray shirt, leather gloves, and a thin chain. He stands with shoulders drawn slightly back, watching sideways from the corner of his eye — reading the situation without being read. Expression blank and sharp; a face designed to reveal nothing. Black, dark gray, and steel blue palette. Transparent background. Full-body portrait, soft studio lighting, anime-inspired illustration style.
-
----
-
-## ORLP
-**Archetype:** Armchair reasoner who surveys the whole board
-
-A Japanese man in his early 30s in a dark navy cardigan over a vest and white shirt, round glasses, and a book resting in his lap. He sits with one hand lightly touching his chin, eyes quietly settled in deep thought. His expression is unhurried and composed — someone who has already seen three moves ahead. Scholarly, warm study aesthetic; dark navy, brown, and ivory palette. Transparent background. Three-quarter seated portrait, soft studio lighting, anime-inspired illustration style.
+Splatter watercolor painting style, a young man with platinum blonde slicked-back hair with fade sides, wearing a dark navy structured military long coat with gold epaulettes and high collar, black turtleneck, gold commander brooch, white gloves, right hand raised high giving a commanding order, left hand clasped behind back, low camera angle looking up, regal composed gaze of absolute authority, dark navy and gold watercolor paint splatters radiating like a sovereign's aura in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 
-## TFEI
-**Archetype:** Stage-maker who ignites the energy in the room
+## ALHC — 閃光スカウト
+**Archetype:** lightning-scout
 
-A young Japanese woman in her early 20s wearing a wine-red short jacket over a black silk blouse with slim trousers and small gold earrings. One hand is extended outward, fingers lightly spread as she laughs — playing to an audience, teasing the air. Her expression is bright, a little mischievous, and radiating heat. Vivid stage presence; wine red, black, and gold palette. Transparent background. Full-body portrait, dynamic lighting, anime-inspired illustration style.
-
----
-
-## TFEP
-**Archetype:** Gentle negotiator who eases tension without effort
-
-A Japanese woman in her mid-20s in an ivory blouse under a deep green vest with a long skirt, a slim ribbon tie at the collar, and a small notepad in hand. She turns toward someone with a calm, reassuring smile — the kind that makes a room breathe easier. Poised and warm; ivory, deep green, and brown palette. Transparent background. Full-body portrait, soft studio lighting, anime-inspired illustration style.
+Splatter watercolor painting style, a teenage girl with neon yellow to electric orange gradient high twin-tails bouncing dynamically, wearing a fluorescent yellow sport crop jacket with lightning bolt motif on back, black athletic top, multiple neon wristbands, body twisted reaching right hand up to grab something overhead, dynamic tilted camera angle, wide eyes with star-like sparkle of discovery, mouth slightly open about to shout, neon yellow and orange watercolor paint splatters streaking like lightning bolts in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 
-## TFLI
-**Archetype:** Sharp female interrogator whose silence carries pressure
+## ALHN — 証拠の猟犬
+**Archetype:** evidence-hunter
 
-A Japanese woman in her late 20s in a charcoal long blazer over a black turtleneck with slim trousers, leather gloves, and a thin ear cuff. One hand is raised slightly as she poses a question, her gaze cutting straight through with quiet intensity. Expression still and precise — not loud, but unmistakably dangerous. Urban and controlled; charcoal, black, and silver palette. Transparent background. Full-body portrait, cool directional lighting, anime-inspired illustration style.
-
----
-
-## TFLP
-**Archetype:** Calm lead investigator who builds the decisive case
-
-A young Japanese man in his late 20s in a tailored navy three-piece suit with a burgundy tie and a white shirt, a leather notebook in one hand and a silver pen in the other. He gestures lightly with one hand to illustrate a point, gaze steady and self-assured. Expression composed and confident — a detective who has already won. Sharp, refined investigator aesthetic; navy, burgundy, and gold palette. Transparent background. Full-body portrait, soft studio lighting, anime-inspired illustration style.
+Splatter watercolor painting style, a young man with messy warm auburn medium hair with gold-tipped highlights falling over one eye, wearing a brown leather utility vest with many pockets over a white henley shirt with rolled sleeves, chain-attached loupe hanging from neck, leather fingerless gloves, right hand holding evidence at eye level, left hand examining through loupe, leaning forward with a hunting dog's intense focus, amber and dark brown watercolor paint splatters scattered like investigation traces in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 
-## TREI
-**Archetype:** Lead actress who brings drama to the table
+## ALTC — 突破キラー
+**Archetype:** breakthrough-destroyer
 
-A Japanese woman in her late 20s in a deep emerald gown with a black shawl, delicate earrings, and thin gloves. She stands with one hand pressed to her chest, eyes forward with fierce, restrained emotion — as though holding back tears while refusing to look away. Striking stage presence; emerald, black, and silver palette. Transparent background. Full-body portrait, dramatic lighting, anime-inspired illustration style.
-
----
-
-## TREP
-**Archetype:** Emotional director who retells events as a single story
-
-A Japanese woman in her late 20s in a deep blue dress under a light gray long coat, a slim belt at the waist, and a fountain pen in hand. She holds the pen at her chest and is beginning to speak — a quiet narrator collecting her thoughts before giving voice to them. Expression gentle and perceptive, empathy and intelligence woven together. Deep blue, light gray, and silver palette. Transparent background. Full-body portrait, soft studio lighting, anime-inspired illustration style.
+Splatter watercolor painting style, a young woman with a wolf cut hairstyle split half jet black on left and scarlet red on right, wearing a black leather biker jacket with skull stud art on back, crimson tank top, chain belt, metal-studded fingerless gloves, chain choker, right fist thrust forward as if just punching through a wall, left hand on hip standing boldly, dramatic low-angle looking up composition, defiant challenger's smirk saying 'what's next', crimson red and black watercolor paint splatters exploding like a shockwave in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 
-## TRLI
-**Archetype:** Trickster who plays the card no one expected
+## ALTN — 鍵師
+**Archetype:** master-locksmith
 
-A Japanese woman in her late 20s in a sharp black short tailored jacket over a smoky purple-gray shirt, slim belt, and a single glove on one hand. She rests one hand just below her lips, on the verge of revealing something — the slow smile of someone about to overturn the table. Expression relaxed and goading; effortless wit. Black, smoky purple, and silver palette. Transparent background. Full-body portrait, dramatic directional lighting, anime-inspired illustration style.
+Splatter watercolor painting style, a young man with dark brown undercut hair with steel blue inner color swept back on top, wearing a dark gray work shirt with sleeves rolled to elbows over a brown leather tool vest, lockpick set and penlight on belt, precision mechanical watch on left wrist, left hand steadying a lock mechanism while right hand delicately operates a pick tool, over-the-shoulder camera angle focusing on hands, expression of extreme focus with craftsman's pride burning in eyes, steel blue and bronze watercolor paint splatters tracing like gear trails in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 
-## TRLP
-**Archetype:** Strategist who sees the winning line before anyone else
+## DBHC — ひらめき爆弾
+**Archetype:** eureka-bomber
 
-A Japanese man in his early 30s in a dark brown long coat over a black vest with a deep green tie and a leather document case at his side. He stands with one arm folded, the other hand pointing to an unseen layout — the quiet gesture of someone laying out a plan that's already complete. Expression sharp and still, a profile that thinks three moves out. Dark brown, black, and deep green palette. Transparent background. Full-body portrait, soft studio lighting, anime-inspired illustration style.
+Splatter watercolor painting style, a young woman with long flowing wavy hair in midnight indigo to shining gold gradient billowing in wind, wearing a dark indigo asymmetric top with constellation embroidery exposing one shoulder, gold star hair clip, constellation chain ear cuff, gold bangles, right index finger pointing skyward in a eureka pose, left hand on chest body arching back slightly as if struck by revelation, eyes glowing gold with ecstatic certainty of sudden insight, indigo and gold watercolor paint splatters exploding radially like a supernova in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
+
+---
+
+## DBHN — 伏線の紡ぎ手
+**Archetype:** thread-weaving-oracle
+
+Splatter watercolor painting style, a woman with long straight deep blue-black hair with amber section highlights and straight-cut bangs above eyebrows, wearing a dark navy structured blazer with geometric embroidery lines, round architect-style glasses, white high-neck blouse, red thread ring on finger, both hands spread before her moving fingers like a puppeteer manipulating invisible threads connecting information, slightly elevated frontal camera angle, quiet smile of someone who just connected all the hidden threads, dark blue and amber watercolor paint splatters spreading while connecting like threads in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
+
+---
+
+## DBTC — プランBの天才
+**Archetype:** contingency-queen
+
+Splatter watercolor painting style, a young woman with dark emerald green to black reverse gradient medium wavy hair swept to one side with bangs boldly pushed back, wearing an emerald green smart blazer with plan cards peeking from inner pocket, black graphic tee with chess piece print, left hand fanning out multiple plan cards like a poker hand, right hand drawing one card out, angled composition, defiant confident smirk saying 'I see everything', emerald green and gold watercolor paint splatters tracing like card trajectories in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
+
+---
+
+## DBTN — 沈黙の切り札
+**Archetype:** silent-trump-card
+
+Splatter watercolor painting style, a young man with jet black medium hair with a single deep crimson streak, long bangs completely hiding left eye, back reaching collar, wearing a dark charcoal high-collar long coat with crimson lining, black high-neck, deep crimson stone ring on left ring finger only, right index finger pressed to lips in a 'silence' gesture, left hand holding a single card (trump card) pinched between fingertips, half face submerged in shadow with dramatic side lighting, cold piercing gaze that sees through everything with a faint knowing smirk, dark charcoal and deep crimson watercolor paint splatters seeping out from shadows in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
+
+---
+
+## DLHC — パズルクラッシャー
+**Archetype:** puzzle-speed-crusher
+
+Splatter watercolor painting style, a teenage girl with short spiky pixie cut in dual-tone lime green and electric orange pointing in all directions, wearing a green and orange color-block hoodie with puzzle piece patchwork pattern half-unzipped, green over-ear headphones around neck, wristbands, right hand slamming an answer down on table, left fist pumping overhead in victory pose, body leaning forward in action, dynamic tilted camera angle, triumphant grin showing teeth with eyes already locked on next target, vivid green and orange watercolor paint splatters bursting like puzzle pieces in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
+
+---
+
+## DLHN — 実況解読者
+**Archetype:** narrating-decoder
+
+Splatter watercolor painting style, a young woman with long straight dark violet hair with lavender gradient tips tucked behind one ear, wearing a lavender-gray long cardigan with cipher pattern weave, white blouse, antique cameo brooch, thin round-frame glasses, left hand resting on chin studying a cipher book, right index finger tracing along text, lips slightly moving speaking thoughts aloud, intimate close-up composition, expression mixing deep concentration with gentle narration, lavender and deep purple watercolor paint splatters flowing like ancient cipher text in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
+
+---
+
+## DLTC — 采配の指揮者
+**Archetype:** orchestrating-conductor
+
+Splatter watercolor painting style, a woman with a sharp angled bob in jet black with teal inner color and accent streaks, wearing a structured black short jacket with teal accents over a turtleneck, smart watch on left wrist, teal gem ear cuff, right hand raising a stylus pen like a conductor's baton, left hand spread downward controlling the team, dynamic orchestral conductor pose, slightly low-angle composition, sharp analytical gaze with certainty of perfect coordination, teal and warm brown watercolor paint splatters scattered rhythmically like baton trails in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
+
+---
+
+## DLTN — 人間検算機
+**Archetype:** precision-verifier
+
+Splatter watercolor painting style, a woman with a precise geometric bob in white ash with pale ice-blue gradient tips perfectly symmetrical without a single strand out of place, wearing an immaculate white button shirt with mathematical formula embroidery on cuffs, ice blue vest, silver precision watch, three different colored pens in chest pocket, small pearl earrings, right hand holding a verified document at eye level, left hand with pen marking a final checkmark, perfectly straight posture, frontal composed composition, calm and unerringly precise expression with a subtle perfectionist's satisfied smile, ice blue and white watercolor paint splatters scattered in precise orderly patterns in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---

@@ -37,26 +37,26 @@
   "visualProfile": {
     "genderPresentation": "male",
     "ageRange": "mid 20s",
-    "characterArchetype": "strategic-commander",
-    "characterDescription": "冷静沈着で頼りがいのある指揮官タイプの青年。自ら現場を歩きながらも、常にチーム全体の動きを把握している。権威と落ち着きを兼ね備えた佇まい。",
-    "outfitDescription": "構造的なデザインのジャケット、ダークタートルネック、きちんとしたパンツ。ダークネイビーにゴールドのアクセント。",
+    "characterArchetype": "supreme-field-commander",
+    "characterDescription": "全てを見通す冷静な総司令官。自ら現場を歩きつつも、チーム全員の動きを把握し、一言で戦局を動かす。その背中にはチーム全員の信頼が集まる。",
+    "outfitDescription": "ダークネイビーの構造的なミリタリーロングコート、金のエポレット、ハイカラー。中に黒のタートルネック。胸元に指揮官章のようなゴールドのブローチ。白い手袋。",
     "colorPalette": [
-      "#1E2A4A",
-      "#C9A84C",
-      "#E8E0D0"
+      "#1A1F3A",
+      "#D4AF37",
+      "#FFFFFF"
     ],
-    "pose": "背筋を伸ばして立ち、腕を後ろに組むか、指示を出すように手を伸ばしているポーズ",
-    "expression": "威厳があり、落ち着いた表情",
-    "background": "淡い金色の光粒子と深いネイビーの静かな輝きが漂う背景エフェクト",
-    "hairStyle": "オールバック",
-    "hairColor": "ゴールドシーンのブラック"
+    "pose": "右手を高く掲げ、指揮棒を振るように号令を出している。左手は背中の後ろに組む。顎を上げ、やや見下ろす角度。下から見上げるカメラアングル。",
+    "expression": "威厳に満ちた冷静な眼差し。全てを掌握している王者の余裕。",
+    "background": "ダークネイビーとゴールドの水彩スプラッターが権威の光芒のように放射",
+    "hairStyle": "きっちりとしたオールバック、サイドはフェード",
+    "hairColor": "プラチナブロンドに金のハイライト"
   },
   "imagePrompt": {
-    "ja": "ゴールドのアクセントが入ったダークネイビーの構造的なジャケットを着た指揮官タイプの若い男性、ゴールドのツヤが際立つオールバックの黒髪、背筋を伸ばしてチームに指示を出している、威厳ある落ち着いた表情、腰から上のポートレート、背景透過、淡い金色の光の粒子と深いネイビーの静かな輝きが威厳をもって漂うエフェクト、アニメ風キャラクターイラスト",
-    "en": "A commanding young male in a structured dark navy jacket with gold accents, slicked-back black hair with a subtle gold sheen, standing tall directing a team, authoritative composed expression, waist-up portrait, transparent background, pale gold light particles and deep navy subtle glow radiating authority, anime style character illustration"
+    "ja": "スプラッター水彩画スタイル、プラチナブロンドのオールバックフェードヘアの青年、ダークネイビーのミリタリーロングコートに金エポレットとハイカラー、黒タートルネック、金のブローチ、白手袋、右手を高く掲げ号令を出すポーズ、左手は背後に組む、下から見上げるカメラアングル、威厳に満ちた冷静な眼差し、ダークネイビーとゴールドの水彩絵の具が権威の光芒のように飛散する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a young man with platinum blonde slicked-back hair with fade sides, wearing a dark navy structured military long coat with gold epaulettes and high collar, black turtleneck, gold commander brooch, white gloves, right hand raised high giving a commanding order, left hand clasped behind back, low camera angle looking up, regal composed gaze of absolute authority, dark navy and gold watercolor paint splatters radiating like a sovereign's aura in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
-    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
-    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque, cropped head, full body"
   }
 }

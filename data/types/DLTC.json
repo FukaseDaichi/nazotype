@@ -1,7 +1,7 @@
 {
   "typeId": "DLTC",
   "typeCode": "DLTC",
-  "typeName": "仕分け番長",
+  "typeName": "采配の指揮者",
   "tagline": "「これ後回し。これ先。」の判断が毎回正しくて怖い。",
   "summary": "目の前のパズルの優先度を瞬時に判断し、チームが最も効率よく進めるよう謎の順番を采配するタイプ。「次はこれをやろう」「これは後回し」という的確な仕分けで、脱出ゲームのテンポを最適化する司令塔です。",
   "detailDescription": "脱出ゲームでは、次々と現れるパズルや手がかりを前にして、どれから取り組むべきかを一瞬で見抜きます。「これは今解ける」「これは別の鍵が見つかるまで保留」「これが最優先」という判断を素早く下し、チームの作業効率を最大化します。個々のパズルに集中しつつも、全体の進行を管理する統率力があり、誰が何をすべきかの配分にも長けています。行き詰まった問題を見切って次に切り替える判断の速さは天性のもので、チームが一つの謎に足止めされることを防いでくれます。華やかなひらめきよりも、確実な進行管理でチームを脱出へ導く実務家です。",
@@ -35,28 +35,28 @@
     "axis4": "転換型"
   },
   "visualProfile": {
-    "genderPresentation": "male",
+    "genderPresentation": "female",
     "ageRange": "mid 20s",
-    "characterArchetype": "sharp-organizer",
-    "characterDescription": "瞬時に優先度を見極め、チームの作業効率を最大化する鋭い判断力を持つ男性。整理された空間の中で、的確に指示を出す司令塔。",
-    "outfitDescription": "スマートカジュアルなブレザー、タートルネック、フィットパンツ。知的で洗練された装い。",
+    "characterArchetype": "orchestrating-conductor",
+    "characterDescription": "パズルの難易度と緊急度を瞬時に見極め、チーム全員のリソースを最適配分するオーケストラの指揮者。彼女の采配で、チームは一切の無駄なく前に進む。",
+    "outfitDescription": "ティールアクセントの黒の構造的ショートジャケット、中にタートルネック。指揮棒のような細いスタイラスペンを右手に。左手首にスマートウォッチ。イヤーカフに小さなティールの宝石。",
     "colorPalette": [
-      "#5D4E37",
       "#2A9D8F",
+      "#1A1A1A",
       "#F0EBE3"
     ],
-    "pose": "ボードに向かい、片手でパズルの要素を仕分けているポーズ",
-    "expression": "鋭く状況を見定める、冷静で分析的な表情",
-    "background": "淡いティールと温かな茶色の光が秩序よく輝く背景エフェクト",
-    "hairStyle": "短めサイドパート",
-    "hairColor": "毛先ティールのポイントカラー入りブラック"
+    "pose": "右手のスタイラスペンを指揮棒のように振り上げ、左手は下方に広げてチームを制御。オーケストラの指揮者のようなダイナミックな上半身の動き。やや下からの構図。",
+    "expression": "鋭く冷静な分析の眼差しと、完璧な采配への確信。全てがコントロール下にある者の表情。",
+    "background": "ティールとウォームブラウンの水彩スプラッターが指揮棒の軌跡のようにリズミカルに散る",
+    "hairStyle": "シャープなアングルボブ、前下がり",
+    "hairColor": "漆黒にティールのインナーカラーとアクセントストリーク"
   },
   "imagePrompt": {
-    "ja": "スマートなブレザーとタートルネックを着た鋭い若い男性オーガナイザー、毛先にティールのポイントカラーが入った短めサイドパートのブラックヘア、ボードに向かいパズルの要素を仕分けている、ブラウンとティールの色調、冷静で分析的な表情、腰から上のポートレート、背景透過、淡いティールと温かな茶色の光が秩序をもって輝くエフェクト、アニメ風キャラクターイラスト",
-    "en": "A sharp young male organizer in a smart blazer and turtleneck, short black side-part hair with teal point-color at the tips, sorting puzzle elements on a board, brown and teal tones, alert analytical expression, waist-up portrait, transparent background, pale teal and warm brown light glowing in composed order, anime style character illustration"
+    "ja": "スプラッター水彩画スタイル、漆黒にティールのインナーカラーのシャープなアングルボブヘアの女性、ティールアクセントの黒ショートジャケットにタートルネック、右手でスタイラスペンを指揮棒のように振り上げ左手は下方に広げてチームを制御、オーケストラ指揮者のダイナミックポーズ、やや下からの構図、鋭く冷静な分析の眼差し、ティールとウォームブラウンの水彩絵の具が指揮棒の軌跡のようにリズミカルに飛散する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a woman with a sharp angled bob in jet black with teal inner color and accent streaks, wearing a structured black short jacket with teal accents over a turtleneck, smart watch on left wrist, teal gem ear cuff, right hand raising a stylus pen like a conductor's baton, left hand spread downward controlling the team, dynamic orchestral conductor pose, slightly low-angle composition, sharp analytical gaze with certainty of perfect coordination, teal and warm brown watercolor paint splatters scattered rhythmically like baton trails in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
-    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
-    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque, cropped head, full body"
   }
 }

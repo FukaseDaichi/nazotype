@@ -1,7 +1,7 @@
 {
   "typeId": "ALHC",
   "typeCode": "ALHC",
-  "typeName": "瞬間キャッチャー",
+  "typeName": "閃光スカウト",
   "tagline": "5分で3つ見つけて、もう次の部屋に行ってる。",
   "summary": "圧倒的なスピードで部屋を駆け回り、次々と手がかりを発見する高速探索の達人。見つけたものはすぐに声に出して仲間に共有し、チームに勢いと情報をもたらします。",
   "detailDescription": "脱出ゲームが始まった瞬間から全力で動き出し、部屋のあちこちを素早くチェックしていきます。細かいところに目が利き、他の人がまだ全体を見渡している間に「あった！」「ここにも何かある！」と次々に声を上げるのが特徴です。一つの手がかりに長くとどまることなく、すぐに次のポイントへ移動するため、短時間で多くのアイテムや情報を回収できます。そのエネルギッシュな動きと積極的な共有がチーム全体のテンポを引き上げ、序盤の情報収集フェーズで大きなアドバンテージを生み出します。切り替えの速さが最大の武器であり、行き詰まりを感じる前に別のアプローチへ移れる柔軟さを持っています。",
@@ -37,26 +37,26 @@
   "visualProfile": {
     "genderPresentation": "female",
     "ageRange": "late teens",
-    "characterArchetype": "energetic scout",
-    "characterDescription": "エネルギッシュで好奇心旺盛な少女。部屋中を駆け回り、目をキラキラさせながら次々と発見を報告する。止まっている時間がほとんどない。",
-    "outfitDescription": "クロップド丈のジャケット、ショートパンツ、スニーカーを着用。髪にはカラフルなヘアクリップ。スポーティでカジュアルなスタイル。",
+    "characterArchetype": "lightning-scout",
+    "characterDescription": "光の速さで現場を駆け抜け、誰より先に手がかりを見つけ出す閃光の偵察者。発見の興奮を隠さず、見つけた瞬間に叫ばずにいられない。",
+    "outfitDescription": "蛍光イエローのスポーツクロップジャケット（背中に稲妻モチーフ）、黒のアスレチックトップ、両腕にネオンカラーのリストバンド多数。首元にホイッスル。",
     "colorPalette": [
-      "#FFB830",
+      "#FFD700",
       "#FF6B35",
-      "#FFF4E0"
+      "#1A1A2E"
     ],
-    "pose": "走りながら何かを指さしている、または興奮して発見を指し示すポーズ",
-    "expression": "明るく興奮した表情",
-    "background": "淡い黄色とオレンジの光が弾けるように散らばる背景エフェクト",
-    "hairStyle": "高めツインテール",
-    "hairColor": "明るいハニーアンバー"
+    "pose": "体を大きくひねりながら右手を上に伸ばし、何かを掴もうとしている瞬間。左手は拳を握り体の横に。ダイナミックに傾いたカメラアングル。",
+    "expression": "目を大きく見開き、瞳が星のように輝く発見の瞬間。口はわずかに開き「見つけた！」の直前。",
+    "background": "ネオンイエローとオレンジの水彩スプラッターが稲妻のように走る",
+    "hairStyle": "高い位置のツインテール、毛先が跳ねてダイナミック",
+    "hairColor": "ネオンイエローから電気オレンジへのグラデーション"
   },
   "imagePrompt": {
-    "ja": "明るい黄色のアクセントが効いたスポーティカジュアルな服装のエネルギッシュな若い女性スカウト、明るいハニーアンバーの高めツインテール、興奮して発見を指さしている、ダイナミックなポーズ、腰から上のポートレート、背景透過、淡い黄色とオレンジの光が弾けるように輝くエフェクト、アニメ風キャラクターイラスト",
-    "en": "An energetic young female scout in sporty casual wear with bright yellow accents, high twin tails in bright honey-amber hair, pointing excitedly at a discovery, dynamic pose, waist-up portrait, transparent background, pale yellow and orange sparkling light bursting with vivid energy, anime style character illustration"
+    "ja": "スプラッター水彩画スタイル、ネオンイエローからオレンジのグラデーション高めツインテールの少女、蛍光イエローのスポーツクロップジャケットに稲妻モチーフ、黒アスレチックトップ、ネオンリストバンド多数、体をひねって右手を上に伸ばし何かを掴もうとする瞬間、傾いたダイナミックなカメラアングル、目を見開き瞳が輝く発見の表情、ネオンイエローとオレンジの水彩絵の具が稲妻のように走る背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a teenage girl with neon yellow to electric orange gradient high twin-tails bouncing dynamically, wearing a fluorescent yellow sport crop jacket with lightning bolt motif on back, black athletic top, multiple neon wristbands, body twisted reaching right hand up to grab something overhead, dynamic tilted camera angle, wide eyes with star-like sparkle of discovery, mouth slightly open about to shout, neon yellow and orange watercolor paint splatters streaking like lightning bolts in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
-    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
-    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque, cropped head, full body"
   }
 }

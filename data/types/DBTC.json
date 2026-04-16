@@ -37,26 +37,26 @@
   "visualProfile": {
     "genderPresentation": "female",
     "ageRange": "early to mid 20s",
-    "characterArchetype": "versatile planner",
-    "characterDescription": "知的で自信に満ちた若い女性。常にタブレットを手に状況を分析し、柔軟にプランを組み替えながらチームを導く万能型の戦略家。",
-    "outfitDescription": "スマートカジュアルなブレザーにグラフィックTシャツ、フィットしたパンツ、実用的なシューズ。常にタブレットやプランニングツールを携帯。",
+    "characterArchetype": "contingency-queen",
+    "characterDescription": "常に3手先まで読み、本命が崩れた瞬間に次のプランを差し出す万能の策士。手の中には常に複数のカードがあり、どれを切るかは彼女だけが知っている。",
+    "outfitDescription": "エメラルドグリーンのスマートブレザー（内ポケットからプランカードが覗く）、黒のグラフィックTシャツにチェスの駒がプリント、フィットパンツ。片手にホログラフィックなタブレット。",
     "colorPalette": [
       "#2E8B57",
-      "#B87333",
-      "#FFF8F0"
+      "#1A1A2E",
+      "#C9A84C"
     ],
-    "pose": "片手を腰に当て、もう片方の手でタブレット上のプランを確認しているポーズ",
-    "expression": "自信に満ちた柔軟な表情",
-    "background": "淡いエメラルドグリーンと銅色の光が静かに輝く背景エフェクト",
-    "hairStyle": "サイドに流したミディアムヘア",
-    "hairColor": "エメラルドグラデーション"
+    "pose": "左手で扇状に広げた複数のプランカードをポーカーのように見せ、右手で一枚を抜き出す瞬間。不敵な笑みを浮かべたカードプレイヤーの構図。やや斜めからの構図。",
+    "expression": "「全部見えてるよ」と言わんばかりの不敵な笑み。目は鋭く自信に満ちている。",
+    "background": "エメラルドグリーンとゴールドの水彩スプラッターがカードを切る軌跡のように散る",
+    "hairStyle": "サイドに流したミディアムウェーブ、前髪を大胆にかき上げ",
+    "hairColor": "ダークエメラルドグリーンからブラックへのリバースグラデーション"
   },
   "imagePrompt": {
-    "ja": "スマートなブレザーにグラフィックTシャツを合わせた自信のある若い女性プランナー、エメラルドグリーンのグラデーションが入ったサイドに流したミディアムヘア、タブレットでプランを確認している、エメラルドとブロンズの色調、自信に満ちた適応力のある表情、腰から上のポートレート、背景透過、淡いエメラルドグリーンと銅色の光が静かに輝くエフェクト、アニメ風キャラクターイラスト",
-    "en": "A confident young female planner in a smart blazer over a graphic tee, side-swept medium hair with an emerald green gradient, reviewing plans on a tablet, emerald and bronze tones, confident adaptable expression, waist-up portrait, transparent background, pale emerald green and bronze light glowing with quiet adaptability, anime style character illustration"
+    "ja": "スプラッター水彩画スタイル、ダークエメラルドグリーンからブラックのリバースグラデーションのサイド流しミディアムウェーブヘアの女性、エメラルドグリーンのスマートブレザーに黒チェス柄Tシャツ、左手で扇状に複数のプランカードを広げ右手で一枚を抜き出す瞬間、やや斜めからの構図、不敵な笑みの自信に満ちた表情、エメラルドグリーンとゴールドの水彩絵の具がカードの軌跡のように飛散する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a young woman with dark emerald green to black reverse gradient medium wavy hair swept to one side with bangs boldly pushed back, wearing an emerald green smart blazer with plan cards peeking from inner pocket, black graphic tee with chess piece print, left hand fanning out multiple plan cards like a poker hand, right hand drawing one card out, angled composition, defiant confident smirk saying 'I see everything', emerald green and gold watercolor paint splatters tracing like card trajectories in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
-    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
-    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque, cropped head, full body"
   }
 }

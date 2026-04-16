@@ -35,26 +35,28 @@
     "axis4": "転換型"
   },
   "visualProfile": {
-    "genderPresentation": "male",
+    "genderPresentation": "female",
     "ageRange": "late teens",
-    "characterArchetype": "energetic-messenger",
-    "characterDescription": "エネルギッシュで足が速い青年。チームの間を走り回って情報を繋ぐことが使命。興奮と緊迫感が入り混じった表情で、常に次の目的地へ向かっている。",
-    "outfitDescription": "ウィンドブレーカー、ジョガーパンツ、スニーカー、メッセンジャーバッグを斜めがけ。動きやすさ重視のスポーティなスタイル。",
+    "characterArchetype": "signal-broadcaster",
+    "characterDescription": "チーム間を繋ぐ生きた通信塔。情報が途切れそうな瞬間に現れ、離れたメンバー同士の発見を瞬時にリンクさせる。彼女自身が電波そのもの。",
+    "outfitDescription": "白いオーバーサイズTシャツの胸元に大きなWi-Fiシンボルがプリント。テックウェア風のショートパンツ、ハイカットスニーカー、片耳にBluetoothイヤピース。腰にスマホホルダーを複数装着。",
     "colorPalette": [
-      "#3AA5D1",
-      "#FFC940",
+      "#00B4D8",
+      "#FFD60A",
       "#FFFFFF"
     ],
-    "pose": "走っている途中、または息を切らせて到着したポーズ",
-    "expression": "興奮して急いでいる、切迫した表情",
-    "background": "淡いエレクトリックブルーと黄色の光の粒子が疾走するように漂う背景エフェクト"
+    "pose": "右手を高く掲げてWi-Fi電波を発信するように指を広げ、左手は耳元に添えて情報を受信中。体は斜め前向きで躍動感あり。",
+    "expression": "口角を上げた自信に満ちた笑み。目は鋭く、情報をキャッチした瞬間の輝き。",
+    "background": "エレクトリックブルーとイエローの水彩スプラッターが放射状に飛散",
+    "hairStyle": "アシンメトリーなショートボブ。右側が短く刈り上げにWi-Fiマークのラインアート、左側が顎ラインまで",
+    "hairColor": "エレクトリックブルーからシアンへのグラデーション"
   },
   "imagePrompt": {
-    "ja": "ウィンドブレーカーを着たエネルギッシュな若い男性の伝令、廊下を走り抜けている、エレクトリックブルーとイエローのアクセント、メッセンジャーバッグを持つ、興奮した切迫した表情、腰から上のポートレート、背景透過、淡いエレクトリックブルーと黄色の光の粒子がスピード感をもって流れるエフェクト、アニメ風キャラクターイラスト",
-    "en": "An energetic young male messenger in a windbreaker, running through a corridor, electric blue and yellow accents, carrying a messenger bag, excited urgent expression, waist-up portrait, transparent background, pale electric blue and golden yellow light particles streaming dynamically, anime style character illustration"
+    "ja": "スプラッター水彩画スタイル、エレクトリックブルーのアシンメトリーショートボブの若い女性、胸元にWi-Fiシンボルがプリントされた白いオーバーサイズTシャツ、テックウェアショートパンツ、右手を高く掲げ電波を発信するように指を広げている、左手は耳元、自信に満ちた笑みと鋭い目、エレクトリックブルーとイエローの水彩絵の具が飛び散る背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a young woman with an asymmetric electric blue short bob (right side shaved with Wi-Fi symbol line art, left side chin-length), wearing an oversized white t-shirt with a large Wi-Fi symbol printed on chest, techwear shorts, right hand raised high spreading fingers like broadcasting a signal, left hand cupped near ear listening, confident smirk with sharp gleaming eyes, electric blue and golden yellow watercolor paint splatters exploding radially in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
-    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
-    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque, cropped head, full body"
   }
 }

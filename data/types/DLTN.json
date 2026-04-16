@@ -37,26 +37,26 @@
   "visualProfile": {
     "genderPresentation": "female",
     "ageRange": "mid 20s",
-    "characterArchetype": "precision-engineer",
-    "characterDescription": "一切のミスを許さない正確さで、チームの解答品質を守る女性検証者。冷静で落ち着いた佇まいの中に、揺るぎない信念が宿る。",
-    "outfitDescription": "きちんとしたボタンシャツにベスト、ペンシルスカート、小さなイヤリング。清潔感のある端正な装い。",
+    "characterArchetype": "precision-verifier",
+    "characterDescription": "ミスを許さない絶対精度の検証者。彼女が「正解」と言えば、それは100%正しい。冷静な佇まいの奥に、完璧を追求する揺るぎない信念が宿る。",
+    "outfitDescription": "純白のイミュキュレートなボタンシャツ（カフスに小さな数式の刺繍）、アイスブルーのベスト、精密な銀の腕時計。胸ポケットに3本の異なる色のペン。小さなパールのイヤリング。",
     "colorPalette": [
       "#5B7FA5",
-      "#E0E8F0",
-      "#FFFFFF"
+      "#FFFFFF",
+      "#E0E8F0"
     ],
-    "pose": "作業台に向かい、細部を丁寧に確認しているポーズ",
-    "expression": "冷静で正確さを感じさせる、穏やかだが隙のない表情",
-    "background": "淡い青白い光のみが精密に満ちる背景エフェクト",
-    "hairStyle": "精密なショートボブ",
-    "hairColor": "毛先ペールブルーのホワイトアッシュ"
+    "pose": "右手で検証済みの書類を目の高さに持ち上げ、左手のペンで最後のチェックマークを入れる瞬間。背筋が完璧にまっすぐ。正面からの端正な構図。",
+    "expression": "冷静で正確無比。わずかに満足を含んだ、隙のない完璧主義者の微笑。",
+    "background": "アイスブルーとホワイトの水彩スプラッターが精密な方眼のように整然と散る",
+    "hairStyle": "精密なジオメトリックボブ、一本の乱れもなく左右対称",
+    "hairColor": "ホワイトアッシュにペールアイスブルーの毛先グラデーション"
   },
   "imagePrompt": {
-    "ja": "きちんとしたベストとボタンシャツを着た精密な若い女性エンジニア、毛先がペールブルーに染まったホワイトアッシュの精密なショートボブ、作業台に向かい仕掛けを丁寧に検証している、スチールブルーとホワイトの色調、冷静で正確な表情、腰から上のポートレート、背景透過、淡い青白い光のみが精密に満ちるエフェクト、アニメ風キャラクターイラスト",
-    "en": "A precise young female engineer in a neat vest and button-up shirt, precisely cut white-ash short bob with pale blue-tipped ends, carefully verifying a mechanism, steel blue and white tones, calm precise expression, waist-up portrait, transparent background, pale bluish-white light glowing with precise and clean clarity, anime style character illustration"
+    "ja": "スプラッター水彩画スタイル、ホワイトアッシュにペールアイスブルー毛先グラデーションの精密ジオメトリックボブの女性、純白ボタンシャツにカフス数式刺繍、アイスブルーベスト、銀の精密腕時計、右手で検証済み書類を目の高さに持ち上げ左手のペンでチェックマークを入れる瞬間、背筋がまっすぐな正面構図、冷静で正確無比なわずかな微笑、アイスブルーとホワイトの水彩絵の具が精密に整然と飛散する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a woman with a precise geometric bob in white ash with pale ice-blue gradient tips perfectly symmetrical without a single strand out of place, wearing an immaculate white button shirt with mathematical formula embroidery on cuffs, ice blue vest, silver precision watch, three different colored pens in chest pocket, small pearl earrings, right hand holding a verified document at eye level, left hand with pen marking a final checkmark, perfectly straight posture, frontal composed composition, calm and unerringly precise expression with a subtle perfectionist's satisfied smile, ice blue and white watercolor paint splatters scattered in precise orderly patterns in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
-    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
-    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque, cropped head, full body"
   }
 }

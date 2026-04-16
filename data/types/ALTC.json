@@ -37,26 +37,26 @@
   "visualProfile": {
     "genderPresentation": "female",
     "ageRange": "early 20s",
-    "characterArchetype": "bold breaker",
-    "characterDescription": "大胆不敵な突破者の女性。強い意志を秘めた眼差しと、行動で道を切り開く力強さを持つ。困難な状況ほど闘志が燃える。",
-    "outfitDescription": "ボンバージャケット、タンクトップ、タクティカルブーツ、バンダナを着用。ダークカラーをベースにコーラルレッドのアクセント。",
+    "characterArchetype": "breakthrough-destroyer",
+    "characterDescription": "膠着した状況を拳一つで叩き壊す破壊の女王。迷いなき行動力と圧倒的な突破力で、チームの前に立ちはだかる壁を粉砕する。",
+    "outfitDescription": "黒のライダースジャケット（背中にスカルと稲妻のスタッズアート）、深紅のタンクトップ、チェーンベルト。メタルスタッズ付きフィンガーレスグローブ。首に犬の鎖のようなチョーカー。",
     "colorPalette": [
-      "#E85D50",
-      "#2D2D3D",
-      "#F0A090"
+      "#DC143C",
+      "#1A1A1A",
+      "#C0C0C0"
     ],
-    "pose": "腕を組んで立っている、または扉を押し開けようとしているポーズ",
-    "expression": "自信に満ちた、闘志あふれる表情",
-    "background": "淡いコーラルレッドの炎が力強く燃える背景エフェクト",
-    "hairStyle": "ウルフカットショート",
-    "hairColor": "コーラルレッドに染めたブリーチ"
+    "pose": "右拳を前に突き出し、目の前の壁を殴り抜いた直後のような迫力のポーズ。左手は腰に当て、堂々と立つ。ローアングルから見上げる構図。",
+    "expression": "不敵な笑みを浮かべた挑戦者の顔。「次は？」と言わんばかりの余裕。",
+    "background": "クリムゾンレッドとブラックの水彩スプラッターが衝撃波のように炸裂",
+    "hairStyle": "ウルフカット、左半分が長く右半分がショート",
+    "hairColor": "左半分が漆黒、右半分がスカーレットレッド"
   },
   "imagePrompt": {
-    "ja": "コーラルレッドのアクセントが効いたボンバージャケットを着た大胆な若い女性、コーラルレッドに染め上げたショートウルフカット、自信に満ちた闘志あふれる表情、アクション準備万端の立ち姿、腰から上のポートレート、背景透過、淡いコーラルレッドの炎が力強く燃え上がるエフェクト、アニメ風キャラクターイラスト",
-    "en": "A bold young female in a bomber jacket with coral red accents, short wolf cut with bleached coral-red dyed hair, confident fierce expression, standing ready for action, waist-up portrait, transparent background, pale coral red flames burning with fierce intensity, anime style character illustration"
+    "ja": "スプラッター水彩画スタイル、左半分漆黒・右半分スカーレットレッドのウルフカットヘアの若い女性、黒ライダースジャケットにスカルスタッズ、深紅タンクトップ、チェーンベルト、メタルスタッズグローブ、右拳を前に突き出し壁を殴り抜いた直後のポーズ、左手は腰、ローアングルから見上げる構図、不敵な笑みの挑戦者の表情、クリムゾンレッドとブラックの水彩絵の具が衝撃波のように炸裂する背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a young woman with a wolf cut hairstyle split half jet black on left and scarlet red on right, wearing a black leather biker jacket with skull stud art on back, crimson tank top, chain belt, metal-studded fingerless gloves, chain choker, right fist thrust forward as if just punching through a wall, left hand on hip standing boldly, dramatic low-angle looking up composition, defiant challenger's smirk saying 'what's next', crimson red and black watercolor paint splatters exploding like a shockwave in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
-    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク",
-    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque"
+    "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
+    "en": "low quality, blurry, text, logo, watermark, multiple people, grotesque, cropped head, full body"
   }
 }
