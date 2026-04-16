@@ -98,9 +98,9 @@ Splatter watercolor painting style, a teenage girl with a short wolf-pixie hairc
 ---
 
 ## DLHN — 実況解読者
-**Archetype:** narrating-decoder
+**Archetype:** live-commentary-decoder
 
-Splatter watercolor painting style, a young woman with long straight dark violet hair with lavender gradient tips tucked behind one ear, wearing a lavender-gray long cardigan with cipher pattern weave, white blouse, antique cameo brooch, thin round-frame glasses, left hand resting on chin studying a cipher book, right index finger tracing along text, lips slightly moving speaking thoughts aloud, intimate close-up composition, expression mixing deep concentration with gentle narration, lavender and deep purple watercolor paint splatters flowing like ancient cipher text in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
+Splatter watercolor painting style, a young woman with long layered half-up hair featuring a thin side braid, colored deep violet with lavender-silver mesh framing the face, wearing a sharp lavender-gray long jacket detailed with cipher symbols and audio wave patterns over a white high-neck top, a slim headset microphone, a chest memo-card holder, and light fingerless gloves, left hand pressing the headset earpad while she leans into the mic, right hand sharply pointing a pen at the decisive line in an open cipher notebook, forward-leaning three-quarter composition like she is broadcasting the exact moment she figures it out, excited expression of someone talking through the answer in real time, lavender deep violet and ice-blue watercolor splatters flowing like sound waves and cipher marks in the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration
 
 ---
 

@@ -37,23 +37,23 @@
   "visualProfile": {
     "genderPresentation": "female",
     "ageRange": "early 20s",
-    "characterArchetype": "narrating-decoder",
-    "characterDescription": "暗号に向き合いながら自分の思考を言葉に紡ぎ、チーム全員が解読の過程を追えるようにする知的な語り手。彼女の声が暗号の霧を晴らしていく。",
-    "outfitDescription": "ラベンダーグレーのロングカーディガンに暗号文字の織り模様。中に白ブラウス、アンティークのカメオブローチ。丸い細フレームのメガネ。手元に古びた暗号書を開いている。",
+    "characterArchetype": "live-commentary-decoder",
+    "characterDescription": "解読しながら実況し、実況しながら解読するライブキャスター型の頭脳派。ひらめきも迷いも全部マイク越しに共有して、チーム全員を解答の最前列へ連れていく。",
+    "outfitDescription": "ラベンダーグレーのシャープなロングジャケットに暗号文字と音声波形を織り込んだディテール。白のハイネックトップ、細身のヘッドセットマイク、メモカードを挟んだ胸元ホルダー、軽い指なしグローブ。",
     "colorPalette": [
-      "#6A4C93",
-      "#B8A9C9",
-      "#F5F0FF"
+      "#5E4A8E",
+      "#C9B7F2",
+      "#EEF2FF"
     ],
-    "pose": "左手を顎に添えて暗号書を見つめ、右手の人差し指が文字をなぞっている。唇がわずかに動き、思考を声に出している瞬間。親密な距離感のクローズアップ構図。",
-    "expression": "集中の中に語りかけるような穏やかさ。目は暗号の奥を見通し、口元は言葉を紡ぐ直前。",
-    "background": "ラベンダーとディープパープルの水彩スプラッターが古い暗号文字のように流れる",
-    "hairStyle": "胸元まで届く長いストレートヘア、耳に掛けたサイド",
-    "hairColor": "ダークバイオレットに毛先ラベンダーのグラデーション"
+    "pose": "左手でヘッドセットのイヤーパッドを押さえながら口元のマイクへ身を乗り出し、右手は暗号ノートの決定的な一行をペン先で鋭く指している。実況席から今まさに『あっ分かった』を届けるような前のめりの3/4構図。",
+    "expression": "話しながら答えに近づく高揚感がそのまま出た表情。目は鋭く、口元は実況が止まらないまま少し開いている。",
+    "background": "ラベンダー、ディープバイオレット、アイスブルーの水彩スプラッターが音声波形と暗号記号のように流れる",
+    "hairStyle": "片側に細い編み込みを入れたハーフアップのロングレイヤー、前髪は軽く流して耳元を見せる",
+    "hairColor": "ディープバイオレットをベースに、フェイスラインへラベンダーシルバーのメッシュ"
   },
   "imagePrompt": {
-    "ja": "スプラッター水彩画スタイル、ダークバイオレットに毛先ラベンダーの長いストレートヘアの女性、ラベンダーグレーのロングカーディガンに暗号文字の織り模様、白ブラウス、アンティークカメオブローチ、丸い細フレームメガネ、左手を顎に添え暗号書を見つめ右手で文字をなぞる、唇がわずかに動き声に出す瞬間、親密な距離のクローズアップ構図、集中と穏やかさが同居する表情、ラベンダーとディープパープルの水彩絵の具が暗号文字のように流れる背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
-    "en": "Splatter watercolor painting style, a young woman with long straight dark violet hair with lavender gradient tips tucked behind one ear, wearing a lavender-gray long cardigan with cipher pattern weave, white blouse, antique cameo brooch, thin round-frame glasses, left hand resting on chin studying a cipher book, right index finger tracing along text, lips slightly moving speaking thoughts aloud, intimate close-up composition, expression mixing deep concentration with gentle narration, lavender and deep purple watercolor paint splatters flowing like ancient cipher text in background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
+    "ja": "スプラッター水彩画スタイル、ディープバイオレットをベースにフェイスラインへラベンダーシルバーのメッシュが入った、片側に細い編み込みを入れたハーフアップのロングレイヤーヘアの女性、ラベンダーグレーのシャープなロングジャケットに暗号文字と音声波形のディテール、白のハイネックトップ、細身のヘッドセットマイク、胸元のメモカードホルダー、軽い指なしグローブ、左手でヘッドセットのイヤーパッドを押さえながら口元のマイクへ身を乗り出し、右手は暗号ノートの決定的な一行をペン先で鋭く指す、実況席から今まさに『あっ分かった』を届けるような前のめりの3/4構図、話しながら答えに近づく高揚感がそのまま出た表情、ラベンダーとディープバイオレットとアイスブルーの水彩絵の具が音声波形と暗号記号のように流れる背景、腰から上のポートレート、頭が切れない構図、背景透過、かっこいいアニメ風キャラクターイラスト",
+    "en": "Splatter watercolor painting style, a young woman with long layered half-up hair featuring a thin side braid, colored deep violet with lavender-silver mesh framing the face, wearing a sharp lavender-gray long jacket detailed with cipher symbols and audio wave patterns over a white high-neck top, a slim headset microphone, a chest memo-card holder, and light fingerless gloves, left hand pressing the headset earpad while she leans into the mic, right hand sharply pointing a pen at the decisive line in an open cipher notebook, forward-leaning three-quarter composition like she is broadcasting the exact moment she figures it out, excited expression of someone talking through the answer in real time, lavender deep violet and ice-blue watercolor splatters flowing like sound waves and cipher marks in the background, waist-up portrait, full head visible, transparent background, cool anime-style character illustration"
   },
   "negativePrompt": {
     "ja": "低品質, ぼやけ, テキスト, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身",
