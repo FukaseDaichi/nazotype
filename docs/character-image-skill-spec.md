@@ -97,7 +97,6 @@ public/types/{typeCode}_chibi.png
 output/character-images/{typeCode}/chibi/
   prompt.txt
   selected.png
-  preview-checker.png
   meta.json
 ```
 

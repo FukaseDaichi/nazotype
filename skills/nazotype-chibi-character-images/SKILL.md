@@ -90,7 +90,6 @@ Suggested audit artifacts:
 
 - `prompt.txt`
 - `selected.png`
-- `preview-checker.png`
 - `meta.json`
 
 ### 5. Validate before finishing

@@ -73,7 +73,6 @@ When keeping generation artifacts, use:
 output/character-images/{typeCode}/chibi/
   prompt.txt
   selected.png
-  preview-checker.png
   meta.json
 ```
 
@@ -81,8 +80,7 @@ Suggested meanings:
 
 - `prompt.txt`: final prompt text used with `image_gen`
 - `selected.png`: chosen generated candidate copied into the repo
-- `preview-checker.png`: checkerboard preview for alpha validation
-- `meta.json`: short local note about references used and final publish path
+- `meta.json`: short local note about references used, alpha validation, and any publish decision
 
 ## Notes
 
