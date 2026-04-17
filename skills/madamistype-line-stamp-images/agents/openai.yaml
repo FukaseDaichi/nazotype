@@ -1,0 +1,7 @@
+interface:
+  display_name: "Madamistype Line Stamp Images"
+  short_description: "Generate final LINE sticker PNGs from prompt manifests."
+  default_prompt: "Use $madamistype-line-stamp-images to turn this repository's LINE sticker prompt manifests into final transparent PNG delivery assets with NanoBanana."
+
+policy:
+  allow_implicit_invocation: true

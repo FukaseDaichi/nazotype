@@ -1,0 +1,7 @@
+interface:
+  display_name: "Madamistype Type OGP Images"
+  short_description: "Batch-generate bold type OGP visuals with NanoBanana."
+  default_prompt: "Use $madamistype-type-ogp-images to create or update bold X-ready type OGP images from this repository's type JSON files and chibi reference assets via NanoBanana."
+
+policy:
+  allow_implicit_invocation: true

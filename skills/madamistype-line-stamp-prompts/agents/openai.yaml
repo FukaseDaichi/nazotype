@@ -1,0 +1,7 @@
+interface:
+  display_name: "Madamistype Line Stamp Prompts"
+  short_description: "Build reviewable LINE sticker prompt manifests."
+  default_prompt: "Use $madamistype-line-stamp-prompts to create or update LINE sticker prompt manifests from this repository's type data and line-stamp set JSON."
+
+policy:
+  allow_implicit_invocation: true

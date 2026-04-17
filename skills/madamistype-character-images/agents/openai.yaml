@@ -1,0 +1,7 @@
+interface:
+  display_name: "Madamistype Character Images"
+  short_description: "Batch-generate type character art with NanoBanana."
+  default_prompt: "Use $madamistype-character-images to batch-generate character images from this repository's type JSON files."
+
+policy:
+  allow_implicit_invocation: true
