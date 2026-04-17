@@ -1,0 +1,21 @@
+{
+  "typeCode": "dbtc",
+  "typeName": "プランBの天才",
+  "selectedSource": "/mnt/c/Users/119003/.codex/generated_images/019d9a93-82a9-7073-a84a-cd2d2fa726df/ig_033be6d6ec40df490169e1f137877c81918978ebbfd43e0d2d.png",
+  "publishedPath": "/mnt/c/Users/119003/git/nazotype/public/types/dbtc_chibi.png",
+  "references": [
+    "conversation image: user-provided chibi style sample",
+    "/mnt/c/Users/119003/git/nazotype/public/types/dbtc.png",
+    "/mnt/c/Users/119003/git/nazotype/data/types/DBTC.json"
+  ],
+  "checks": {
+    "singleCharacter": true,
+    "chibiProportions": true,
+    "dynamicPose": true,
+    "transparentAlphaValidated": true
+  },
+  "notes": [
+    "Used the repo-local nazotype-chibi-character-images workflow manually because the skill was present in the repository but not registered in the session skill list.",
+    "Selected the first generation because it preserved DBTC identity while achieving a stronger diagonal action pose."
+  ]
+}

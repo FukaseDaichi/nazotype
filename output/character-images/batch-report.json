@@ -1,0 +1,28 @@
+{
+  "skill": "nazotype-chibi-character-images",
+  "generatedAt": "2026-04-17T05:29:00.935956+00:00",
+  "repoRoot": "/mnt/c/Users/119003/git/nazotype",
+  "typesDir": "/mnt/c/Users/119003/git/nazotype/data/types",
+  "outputDir": "/mnt/c/Users/119003/git/nazotype/output/character-images",
+  "withTransparent": true,
+  "dryRun": false,
+  "successCount": 2,
+  "failureCount": 0,
+  "results": [
+    {
+      "typeCode": "ABHN",
+      "variants": {
+        "standard": {
+          "status": "success",
+          "resultImageUrl": "https://tempfile.aiquickdraw.com/images/1776403527309-mp65n20urwj.png",
+          "referenceMode": "none"
+        },
+        "chibi": {
+          "status": "success",
+          "resultImageUrl": "https://tempfile.aiquickdraw.com/images/1776403731873-hyk20vi38iw.png",
+          "referenceMode": "standard-result-url"
+        }
+      }
+    }
+  ]
+}

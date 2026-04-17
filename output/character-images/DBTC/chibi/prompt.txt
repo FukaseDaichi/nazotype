@@ -1,0 +1,11 @@
+Use case: stylized-concept
+Asset type: transparent chibi character asset for nazotype
+Primary request: create one chibi version of the target type while preserving the same identity as the references.
+Input images: Image 1 = series style anchor from the attached sample chibi illustration in this conversation. Image 2 = standard identity reference for DBTC viewed in this conversation.
+Subject: one female chibi character, type name "プランBの天才", dark emerald green to black medium wavy hair swept to one side, sharp green eyes, emerald green smart blazer with plan cards peeking from the inner pocket, black graphic T-shirt with a white chess piece print, fitted dark pants, subtle gold accents, confident strategist attitude.
+Style/medium: polished premium anime chibi illustration with painterly accents, high-quality, cool and sharp, premium sticker-ready asset, not soft mascot-only.
+Composition/framing: full body fully visible, super-deformed chibi proportions around 2.5 to 3 heads tall, diagonal airborne action pose, dramatic foreshortening, bold readable silhouette. Do not reuse the original waist-up pose. Change it dynamically: body twisting in midair, left hand fanning multiple plan cards like a poker spread, right hand thrusting one decisive card toward the viewer, hair and blazer flowing with motion, one knee lifted and one leg extended to create a powerful action line.
+Lighting/mood: stylish, dangerous composure, cool confidence, tactical genius.
+Color palette: dark emerald green, black, muted gold.
+Constraints: true transparent alpha background mandatory; single character only; preserve face identity, hair shape and color, outfit cues, chess motif, cards, and cunning persona from the identity reference; no text, no logo, no watermark, no frame, no scene background, no floor, no checkerboard, no extra props except cards.
+Avoid: realistic adult proportions, static standing pose, copied pose from the identity reference, extra characters, clutter, cropped limbs, broken hands, broken feet, blurry details, fake cutout glow, green-screen background.
