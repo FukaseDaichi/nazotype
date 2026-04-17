@@ -18,7 +18,7 @@ from nanobanana_client import NanoBananaClient
 from prompt_builder import build_prompt, load_type_data, merge_negative_constraints
 
 
-SKILL_NAME = "madamistype-character-images"
+SKILL_NAME = "nazotype-chibi-character-images"
 
 
 def load_env_file(path: Path) -> bool:
@@ -55,7 +55,7 @@ def parse_args() -> argparse.Namespace:
     repo_root = repo_root_from_script()
     load_env_file(repo_root / ".env.character-images")
 
-    parser = argparse.ArgumentParser(description="Batch-generate Madamistype character images with NanoBanana.")
+    parser = argparse.ArgumentParser(description="Legacy NanoBanana batch generator for nazotype character images.")
     parser.add_argument("--all", action="store_true", help="Generate images for every type JSON.")
     parser.add_argument("--types", help="Comma-separated list of type codes to process.")
     parser.add_argument("--retry-failed", action="store_true", help="Retry failed types from the previous batch report.")

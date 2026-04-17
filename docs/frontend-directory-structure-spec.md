@@ -80,7 +80,7 @@ public/
   types/*
 
 skills/
-  madamistype-character-images/
+  nazotype-chibi-character-images/
   madamistype-type-ogp-images/
 
 output/
@@ -88,7 +88,7 @@ output/
   type-ogp/
 ```
 
-※ `skills/` 配下のディレクトリ名は現行コードのまま。謎解きタイプ診断用にリネームする際は `nazotype-character-images` / `nazotype-type-ogp-images` を想定する。
+※ キャラクター画像スキルは `nazotype-chibi-character-images` へ移行済み。OGP 側は現状 `madamistype-type-ogp-images` のまま。
 
 ## 3. 各ディレクトリの責務
 
@@ -153,7 +153,7 @@ output/
 
 責務:
 
-- NanoBanana を使う画像生成スキル
+- `image_gen` や NanoBanana を使う画像生成スキル
 - スキル固有の CLI、補助スクリプト、reference 文書
 
 ### 3.7 `output/`

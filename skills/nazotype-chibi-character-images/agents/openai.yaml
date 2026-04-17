@@ -1,0 +1,7 @@
+interface:
+  display_name: "Nazotype Chibi Character Images"
+  short_description: "Generate consistent transparent type chibi assets with image_gen."
+  default_prompt: "Use $nazotype-chibi-character-images to generate or refresh a type's transparent chibi character asset from this repository's type JSON and reference images."
+
+policy:
+  allow_implicit_invocation: true

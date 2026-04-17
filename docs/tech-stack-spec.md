@@ -21,7 +21,7 @@
 | スタイル | Tailwind CSS `4`（主）+ CSS Modules（補助） | Tailwind-first。CSS Module は擬似要素・多層背景等に限定 |
 | 検証 | ESLint `9` | ソースコード lint |
 | データ | JSON ファイル | 質問マスタ、タイプマスタ |
-| 画像生成スキル | Python | NanoBanana 連携、アセット生成 |
+| 画像生成スキル | Codex built-in `image_gen` + Python 補助スクリプト | ちびキャラ生成、NanoBanana 派生処理、アセット生成 |
 
 現行実装には DB、CMS、フォームライブラリ、状態管理ライブラリは入っていない。
 
@@ -161,7 +161,9 @@ Netlify の環境変数設定で `NEXT_PUBLIC_SITE_URL` を本番ドメインに
 
 ### 7.2 画像生成スキル
 
-リポジトリ直下の `.env.character-images` を読み込む。
+ちびキャラ基準画像スキルの主経路は Codex 内蔵 `image_gen` を使うため、API キーは必須ではない。
+
+リポジトリ直下の `.env.character-images` は、NanoBanana を使う派生スキルや旧ユーティリティ向けに使う。
 
 - `NANOBANANA_API_KEY`
 - `NANOBANANA_API_BASE`
@@ -179,7 +181,8 @@ Netlify の環境変数設定で `NEXT_PUBLIC_SITE_URL` を本番ドメインに
 
 ### 8.2 画像生成スキルの出力
 
-- キャラクター画像スキルは `output/character-images/` に作業出力する
+- ちびキャラ基準画像スキルの公開用正本は `public/types/{typeCode}_chibi.png`
+- ちびキャラ基準画像スキルは必要に応じて `output/character-images/` に監査用出力を残す
 - タイプ別 OGP スキルは `output/type-ogp/` に作業出力し、`--publish` 時は `public/ogp/types/` にコピーする
 
 補足:

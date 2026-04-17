@@ -2,16 +2,20 @@
 
 ## 1. 文書の目的
 
-本書は `skills/madamistype-character-images/` の現行運用を、実装ベースで整理した文書である。
-対象は「通常キャラクター画像」と「チビキャラ画像」の一括生成であり、アプリ本体の画面仕様そのものを定義する文書ではない。
+本書は `skills/nazotype-chibi-character-images/` の現行運用を整理する文書である。
 
-※ スキルディレクトリ名は現行コードのまま。謎解きタイプ診断用に `nazotype-character-images` へリネームする想定がある。
+対象は **タイプ別ちびキャラ基準画像** の生成・更新であり、通常頭身の立ち絵一括生成や LINE スタンプの文字入れまでは扱わない。
 
 ## 2. 対象スキル
 
-- スキル名: `madamistype-character-images`（現行名）
-- 入口: `skills/madamistype-character-images/SKILL.md`
-- 主スクリプト: `skills/madamistype-character-images/scripts/generate_character_batch.py`
+- スキル名: `nazotype-chibi-character-images`
+- 入口: `skills/nazotype-chibi-character-images/SKILL.md`
+- 主ワークフロー: Codex 内蔵 `image_gen`
+
+補足:
+
+- `skills/nazotype-chibi-character-images/scripts/` 配下には NanoBanana 系の旧ユーティリティが残る
+- それらは LINE スタンプなど下流スキル互換のためであり、本スキルの主経路ではない
 
 ## 3. 入力
 
@@ -27,104 +31,87 @@
 - `imagePrompt`
 - `negativePrompt`
 
-### 3.2 環境変数
+ただし、主に参照するのは `visualProfile` であり、`imagePrompt` / `negativePrompt` は補助情報として扱う。
 
-リポジトリ直下の `.env.character-images` を自動読み込みする。
+### 3.2 参照画像
 
-- `NANOBANANA_API_KEY`
-- `NANOBANANA_API_BASE`
+優先順位は次の通り。
+
+1. 承認済み `public/types/{typeCode}_chibi.png`
+2. 承認済み `public/types/{typeCode}.png`
+3. バッチ全体で共通に使うシリーズ絵柄アンカー
+4. 明示的に許可した場合のみ prompt-only fallback
+
+役割:
+
+- `*_chibi.png`: ちび比率、シルエット、簡略化方向の正本
+- `*.png`: 顔、髪、衣装、持ち物、人格の正本
+- シリーズ絵柄アンカー: 筆致、仕上げ、全体の絵柄統一
+
+### 3.3 環境変数
+
+本スキルの主経路では API キー不要。
+
+`.env.character-images` は、旧 NanoBanana ユーティリティや下流スキルが必要とする場合だけ使う。
 
 ## 4. 生成対象
 
-生成バリアント:
+生成対象は各タイプ 1 枚の基準ちびキャラ PNG。
 
-- `standard`
-- `chibi`
+必須条件:
 
-`--variants standard|chibi|both` で対象を切り替える。既定値は `both`。
+- 1 キャラのみ
+- 明確にちび体型
+- 大胆で読みやすいポーズ
+- 背景透過
+- 既存タイプ画像と同一人物に見えること
 
-## 5. 実行コマンド
+## 5. ワークフロー
 
-代表例:
+1. `data/types/{typeCode}.json` を読む
+2. 必要な参照画像を `view_image` で会話へ載せる
+3. `image_gen` の `generate` を使って候補を作る
+4. 外れた場合は 1 点だけ修正要求を足して再生成する
+5. 透過をチェッカー背景で確認する
+6. 採用画像を `public/types/{typeCode}_chibi.png` へ反映する
+7. 必要なら監査用成果物を `output/character-images/{typeCode}/chibi/` に残す
 
-```bash
-python skills/madamistype-character-images/scripts/generate_character_batch.py --all
-python skills/madamistype-character-images/scripts/generate_character_batch.py --types ALHN,DBTC
-python skills/madamistype-character-images/scripts/generate_character_batch.py --retry-failed
-python skills/madamistype-character-images/scripts/generate_character_batch.py --all --overwrite
-python skills/madamistype-character-images/scripts/generate_character_batch.py --all --with-transparent
-```
+原則:
 
-主なオプション:
-
-- `--all`
-- `--types`
-- `--retry-failed`
-- `--overwrite`
-- `--variants`
-- `--with-transparent`
-- `--output-dir`
-- `--aspect-ratio`
-- `--resolution`
-- `--poll-interval`
-- `--timeout-seconds`
-- `--api-base`
-- `--dry-run`
+- `edit` は near-final 画像への限定修正だけに使う
+- 背景除去のための edit 多用は避ける
+- グリーンバック生成 + クロマキー除去は既定にしない
 
 ## 6. 出力
 
-既定の出力先:
+公開用の正本:
 
 ```text
-output/character-images/
+public/types/{typeCode}_chibi.png
 ```
 
-出力構成:
+任意の監査用出力:
 
 ```text
-output/character-images/
-  batch-report.json
-  ALHN/
-    standard/
-      prompt.txt
-      negative_prompt.txt
-      request.json
-      task.json
-      raw.png
-      transparent.png   # --with-transparent のときのみ
-      meta.json
-    chibi/
-      prompt.txt
-      negative_prompt.txt
-      request.json
-      task.json
-      raw.png
-      transparent.png   # --with-transparent のときのみ
-      meta.json
+output/character-images/{typeCode}/chibi/
+  prompt.txt
+  selected.png
+  preview-checker.png
+  meta.json
 ```
+
+`$CODEX_HOME/generated_images/...` は作業中の一時出力であり、公開用正本の置き場ではない。
 
 ## 7. 実装上の挙動
 
-- `standard` を先に生成する
-- `chibi` 生成時は、可能なら `standard` の `resultImageUrl` を参照画像として使う
-- 参照 URL が取れない場合、`chibi` は prompt-only fallback になる
-- `--dry-run` では prompt と request だけを書き、API 呼び出しはしない
-- `--retry-failed` は既存 `batch-report.json` の失敗分だけ再実行する
+- 標準立ち絵を先に生成する前提は持たない
+- `negative prompt` 専用フィールドには依存しない
+- 透過はモデル側へ直接要求する
+- 透明化に失敗した場合は再生成を優先する
+- 既存の承認済みちび画像がある場合、それを最優先の同一性アンカーにする
 
-## 8. 背景透過モード
+## 8. アプリ本体との関係
 
-`--with-transparent` を付けた場合だけ、グリーンバック前提で `transparent.png` を生成する。
-
-処理:
-
-1. NanoBanana から `raw.png` を取得
-2. `scripts/background_remover.py` でグリーン背景を除去
-3. `transparent.png` を書き出す
-
-アプリ本体は `transparent.png` を直接参照しない。
-
-## 9. アプリ本体との関係
-
-- このスキルの既定出力先は `output/character-images/`
-- アプリ本体が直接参照する配信用画像は `public/types/{typeCode}.png` と `public/types/{typeCode}_chibi.png`
-- 生成後にアプリで使う場合は、必要なファイルを `public/types/` 側へ反映する
+- アプリ本体が直接参照する配信用ちび画像は `public/types/{typeCode}_chibi.png`
+- OGP や LINE スタンプ系スキルは、この承認済みちび画像を最重要参照画像として扱う
+- `output/character-images/` は監査や比較用の作業置き場であり、アプリ本体の直接参照先ではない
