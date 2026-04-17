@@ -45,7 +45,7 @@ If the result is not clean enough:
 - regenerate with a tighter prompt
 - validate on a checkerboard
 
-Do not switch to green-screen or local chroma-key removal unless the user explicitly asks for the legacy path.
+Do not switch to green-screen, local chroma-key removal, or `scripts/background_remover.py` for this skill.
 
 ## Audit Habit
 

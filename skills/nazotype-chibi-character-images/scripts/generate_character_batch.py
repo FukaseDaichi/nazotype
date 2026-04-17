@@ -13,7 +13,6 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
-from background_remover import remove_green_background
 from nanobanana_client import NanoBananaClient
 from prompt_builder import build_prompt, load_type_data, merge_negative_constraints
 
@@ -66,7 +65,6 @@ def parse_args() -> argparse.Namespace:
         default="both",
         help="Select which variants to generate. Default: both",
     )
-    parser.add_argument("--with-transparent", action="store_true", help="Generate green-screen art and export transparent PNGs.")
     parser.add_argument("--output-dir", help="Override output directory.")
     parser.add_argument("--aspect-ratio", default="1:1", help="NanoBanana aspectRatio. Default: 1:1")
     parser.add_argument("--resolution", default="2K", help="NanoBanana resolution. Default: 2K")
@@ -143,7 +141,7 @@ def read_result_image_url(variant_dir: Path) -> str | None:
     return None
 
 
-def existing_meta_matches_mode(variant_dir: Path, with_transparent: bool) -> bool:
+def existing_meta_uses_native_alpha(variant_dir: Path) -> bool:
     meta_path = variant_dir / "meta.json"
     if not meta_path.exists():
         return False
@@ -153,19 +151,34 @@ def existing_meta_matches_mode(variant_dir: Path, with_transparent: bool) -> boo
     except json.JSONDecodeError:
         return False
 
-    return bool(meta.get("withTransparent")) == with_transparent
+    return meta.get("transparencyMode") == "model-native-alpha" and meta.get("transparencyValidated") is True
 
 
-def artifact_exists(variant_dir: Path, with_transparent: bool) -> bool:
-    if not existing_meta_matches_mode(variant_dir, with_transparent):
+def artifact_exists(variant_dir: Path) -> bool:
+    if not existing_meta_uses_native_alpha(variant_dir):
         return False
 
-    raw_exists = (variant_dir / "raw.png").exists()
-    if not raw_exists:
-        return False
-    if with_transparent:
-        return (variant_dir / "transparent.png").exists()
-    return True
+    return (variant_dir / "raw.png").exists()
+
+
+def validate_model_native_alpha(image_path: Path) -> None:
+    try:
+        from PIL import Image
+    except ImportError as exc:
+        raise RuntimeError(
+            "Pillow is required to validate model-native transparency for nazotype-chibi-character-images."
+        ) from exc
+
+    with Image.open(image_path) as img:
+        alpha = img.convert("RGBA").getchannel("A")
+        min_alpha, max_alpha = alpha.getextrema()
+
+    if min_alpha == 255:
+        raise RuntimeError(
+            "Model output did not include usable alpha transparency. Tighten the prompt and regenerate instead of using local background removal."
+        )
+    if max_alpha == 0:
+        raise RuntimeError("Model output alpha channel is fully transparent and unusable.")
 
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
@@ -182,7 +195,7 @@ def build_meta(
     *,
     type_code: str,
     variant: str,
-    with_transparent: bool,
+    transparency_validated: bool | None,
     status: str,
     prompt: str,
     negative_prompt: str,
@@ -196,7 +209,8 @@ def build_meta(
         "generatedAt": now_iso(),
         "typeCode": type_code,
         "variant": variant,
-        "withTransparent": with_transparent,
+        "transparencyMode": "model-native-alpha",
+        "transparencyValidated": transparency_validated,
         "status": status,
         "referenceMode": reference_mode,
         "resultImageUrl": result_image_url,
@@ -221,7 +235,6 @@ def process_variant(
     type_data: dict[str, Any],
     variant: str,
     output_dir: Path,
-    with_transparent: bool,
     overwrite: bool,
     dry_run: bool,
     aspect_ratio: str,
@@ -234,14 +247,14 @@ def process_variant(
     variant_dir = output_dir / type_code / variant
     variant_dir.mkdir(parents=True, exist_ok=True)
 
-    if artifact_exists(variant_dir, with_transparent) and not overwrite:
+    if artifact_exists(variant_dir) and not overwrite:
         result_url = read_result_image_url(variant_dir)
         prompt_path = variant_dir / "prompt.txt"
         negative_path = variant_dir / "negative_prompt.txt"
         meta = build_meta(
             type_code=type_code,
             variant=variant,
-            with_transparent=with_transparent,
+            transparency_validated=True,
             status="skipped",
             prompt=prompt_path.read_text(encoding="utf-8") if prompt_path.exists() else "",
             negative_prompt=negative_path.read_text(encoding="utf-8") if negative_path.exists() else "",
@@ -256,8 +269,8 @@ def process_variant(
             "referenceMode": "stored-artifacts",
         }
 
-    prompt = build_prompt(type_data, variant, with_transparent)
-    negative_prompt = merge_negative_constraints(type_data, with_transparent)
+    prompt = build_prompt(type_data, variant)
+    negative_prompt = merge_negative_constraints(type_data)
     write_text(variant_dir / "prompt.txt", prompt)
     write_text(variant_dir / "negative_prompt.txt", negative_prompt)
 
@@ -283,7 +296,7 @@ def process_variant(
         meta = build_meta(
             type_code=type_code,
             variant=variant,
-            with_transparent=with_transparent,
+            transparency_validated=None,
             status="dry-run",
             prompt=prompt,
             negative_prompt=negative_prompt,
@@ -337,14 +350,12 @@ def process_variant(
 
         raw_path = variant_dir / "raw.png"
         client.download_file(result_image_url, raw_path)
-
-        if with_transparent:
-            remove_green_background(raw_path, variant_dir / "transparent.png")
+        validate_model_native_alpha(raw_path)
 
         meta = build_meta(
             type_code=type_code,
             variant=variant,
-            with_transparent=with_transparent,
+            transparency_validated=True,
             status="success",
             prompt=prompt,
             negative_prompt=negative_prompt,
@@ -362,7 +373,7 @@ def process_variant(
         meta = build_meta(
             type_code=type_code,
             variant=variant,
-            with_transparent=with_transparent,
+            transparency_validated=False,
             status="failed",
             prompt=prompt,
             negative_prompt=negative_prompt,
@@ -415,7 +426,6 @@ def main() -> int:
                 type_data=type_data,
                 variant="standard",
                 output_dir=output_dir,
-                with_transparent=args.with_transparent,
                 overwrite=args.overwrite,
                 dry_run=args.dry_run,
                 aspect_ratio=args.aspect_ratio,
@@ -432,7 +442,6 @@ def main() -> int:
                 type_data=type_data,
                 variant="chibi",
                 output_dir=output_dir,
-                with_transparent=args.with_transparent,
                 overwrite=args.overwrite,
                 dry_run=args.dry_run,
                 aspect_ratio=args.aspect_ratio,
@@ -471,7 +480,7 @@ def main() -> int:
             "repoRoot": str(repo_root),
             "typesDir": str(types_dir),
             "outputDir": str(output_dir),
-            "withTransparent": args.with_transparent,
+            "transparencyMode": "model-native-alpha",
             "dryRun": args.dry_run,
             "successCount": success_count,
             "failureCount": failure_count,

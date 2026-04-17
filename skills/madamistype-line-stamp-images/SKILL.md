@@ -115,7 +115,7 @@ Validates file size, canvas size, alpha, padding, and optional OCR text checks.
 
 - Keep final working output under `output/line-stamp-images/` by default
 - Keep the packaged delivery files under `output/line-stamp-images/{setId}/package/`
-- Reuse the existing repo NanoBanana client and green-screen remover from the legacy utilities under `nazotype-chibi-character-images`
+- Reuse the existing repo NanoBanana client, but keep the green-screen remover local to this skill under `scripts/background_remover.py`
 - Do not replace prompt-defined text with local overlays
 - When changing the overall workflow, update [line-stamp-skill-spec.md](../../docs/line-stamp-skill-spec.md)
 

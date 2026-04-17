@@ -15,13 +15,17 @@ COMMON_NEGATIVE_CONSTRAINTS = [
     "logo",
     "watermark",
     "background clutter",
+    "checkerboard background",
+    "green screen background",
+    "solid background",
+    "background gradient",
+    "background shadow",
 ]
 
-TRANSPARENT_MODE_INSTRUCTIONS = [
-    "Fill the entire background with a perfectly uniform bright chroma key green (#00FF00).",
-    "Do not use green on the character, clothing, props, or hair.",
-    "Keep the boundary between the character and background crisp and easy to key.",
-    "Do not add gradients, patterns, shadows, or extra objects in the background.",
+TRANSPARENT_BACKGROUND_INSTRUCTIONS = [
+    "Use a true transparent alpha background.",
+    "Do not render checkerboard transparency previews, green screens, solid backdrops, gradients, shadows, or scenery.",
+    "Keep the silhouette clean and production-ready as a standalone PNG cutout.",
 ]
 
 
@@ -29,7 +33,7 @@ def load_type_data(type_path: Path) -> dict[str, Any]:
     return json.loads(type_path.read_text(encoding="utf-8"))
 
 
-def merge_negative_constraints(type_data: dict[str, Any], with_transparent: bool) -> str:
+def merge_negative_constraints(type_data: dict[str, Any]) -> str:
     negative_prompt = type_data.get("negativePrompt", {})
     pieces: list[str] = []
 
@@ -39,18 +43,6 @@ def merge_negative_constraints(type_data: dict[str, Any], with_transparent: bool
             pieces.append(value.strip())
 
     pieces.extend(COMMON_NEGATIVE_CONSTRAINTS)
-
-    if with_transparent:
-        pieces.extend(
-            [
-                "green clothing",
-                "green accessories",
-                "green hair highlights",
-                "busy background",
-                "background shadows",
-                "background gradient",
-            ]
-        )
 
     seen: set[str] = set()
     deduped: list[str] = []
@@ -71,7 +63,7 @@ def _format_color_palette(colors: Any) -> str:
     return ", ".join(cleaned)
 
 
-def build_prompt(type_data: dict[str, Any], variant: str, with_transparent: bool) -> str:
+def build_prompt(type_data: dict[str, Any], variant: str) -> str:
     if variant not in {"standard", "chibi"}:
         raise ValueError(f"Unsupported variant: {variant}")
 
@@ -89,7 +81,7 @@ def build_prompt(type_data: dict[str, Any], variant: str, with_transparent: bool
     color_palette = _format_color_palette(visual.get("colorPalette"))
 
     base_lines = [
-        "Create a polished anime-style character illustration for the Madamistype project.",
+        "Create a polished anime-style character illustration for the Nazotype project.",
         f"Character identity: {type_name} ({type_code}).",
     ]
 
@@ -126,15 +118,9 @@ def build_prompt(type_data: dict[str, Any], variant: str, with_transparent: bool
             "Keep the full figure visible with comfortable margin around the figure.",
         ]
 
-    background_lines = (
-        TRANSPARENT_MODE_INSTRUCTIONS
-        if with_transparent
-        else [
-            "Use a simple plain studio-style background with minimal distraction.",
-        ]
-    )
+    background_lines = TRANSPARENT_BACKGROUND_INSTRUCTIONS
 
-    avoidance = merge_negative_constraints(type_data, with_transparent)
+    avoidance = merge_negative_constraints(type_data)
 
     closing_lines = [
         "Do not include text, logos, or watermarks.",

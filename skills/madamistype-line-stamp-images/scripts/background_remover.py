@@ -11,7 +11,7 @@ def remove_green_background(input_path: str | Path, output_path: str | Path) -> 
     except ImportError as exc:
         raise RuntimeError(
             "background_remover.py requires opencv-python and numpy. "
-            "Install them before using --with-transparent."
+            "Install them before generating final LINE stamp PNGs."
         ) from exc
 
     input_path = Path(input_path)

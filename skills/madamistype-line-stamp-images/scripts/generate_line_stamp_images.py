@@ -13,8 +13,10 @@ from typing import Any
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPT_DIR.parent.parent.parent
 REUSE_SCRIPT_DIR = REPO_ROOT / "skills" / "nazotype-chibi-character-images" / "scripts"
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
 if str(REUSE_SCRIPT_DIR) not in sys.path:
-    sys.path.insert(0, str(REUSE_SCRIPT_DIR))
+    sys.path.append(str(REUSE_SCRIPT_DIR))
 
 from background_remover import remove_green_background
 from nanobanana_client import NanoBananaClient

@@ -467,7 +467,7 @@ output/line-stamp-images/{setId}/
 既存からの再利用候補:
 
 - キャラクター画像生成スキルの `scripts/nanobanana_client.py`
-- キャラクター画像生成スキルの `scripts/background_remover.py`
+- LINE スタンプ画像生成スキルの `scripts/background_remover.py`
 
 ## 11. 役割別の構図ポリシー
 

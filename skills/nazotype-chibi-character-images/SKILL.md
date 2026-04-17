@@ -73,7 +73,9 @@ Prefer **regeneration** over edit-based cleanup.
 
 Use `edit` only when there is already a near-final image whose identity and pose must be preserved.
 
-Do not default to green-screen generation or local chroma-key removal for this skill.
+If transparency fails, tighten the prompt and regenerate.
+
+Do not use green-screen generation, local chroma-key removal, or `scripts/background_remover.py` for this skill.
 
 ### 4. Publish the selected asset
 
@@ -100,7 +102,7 @@ Check all of these:
 - silhouette reads cleanly at small size
 - transparent background really works on a checkerboard
 - hands, feet, and face are not visibly broken
-- no green halo, text fragments, or clipped limbs
+- no checkerboard preview, green halo, text fragments, or clipped limbs
 
 ## Repo-Specific Rules
 
