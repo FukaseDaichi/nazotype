@@ -6,8 +6,9 @@ from typing import Any
 POSE_PRIORITY = {
     "inverted-burst": 0,
     "ground-sprawl": 1,
-    "action-forward": 2,
-    "prop-led": 3,
+    "secretive-turn": 2,
+    "action-forward": 3,
+    "prop-led": 4,
 }
 
 

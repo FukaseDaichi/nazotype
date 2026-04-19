@@ -31,6 +31,18 @@ POSE_VARIANTS = [
         "selectionHint": "Best when the type should feel reckless, physical, and impossible to ignore.",
     },
     {
+        "variantId": "secretive-turn",
+        "titlePlacement": "left",
+        "poseInstruction": (
+            "Use a dramatic half-turn, over-the-shoulder glance, or sharp look-back pose where the torso and gaze twist in different directions. "
+            "The character should feel caught mid-pivot, with hair, clothing, or props trailing behind the turn."
+        ),
+        "cameraInstruction": (
+            "Favor a tense rear-three-quarter, over-the-shoulder, or rotating camera angle that makes the turn feel sudden and cinematic."
+        ),
+        "selectionHint": "Best when the type should feel alert, cunning, and mid-pivot rather than front-facing.",
+    },
+    {
         "variantId": "action-forward",
         "titlePlacement": "left",
         "poseInstruction": (
@@ -57,6 +69,13 @@ POSE_VARIANTS = [
         "selectionHint": "Best when the type identity is inseparable from its tool or role.",
     },
 ]
+
+DEFAULT_VARIANT_BY_SUFFIX = {
+    "HC": "inverted-burst",
+    "HN": "secretive-turn",
+    "TC": "ground-sprawl",
+    "TN": "action-forward",
+}
 
 
 COMMON_NEGATIVE_CONSTRAINTS = [
@@ -178,10 +197,17 @@ def build_candidate_prompts(type_data: dict[str, Any], candidate_count: int = 1)
     color_palette = _format_color_palette(visual.get("colorPalette"))
     supporting_prompt = _supporting_prompt(type_data)
     negative_prompt = merge_negative_constraints(type_data)
+    default_variant_id = DEFAULT_VARIANT_BY_SUFFIX.get(type_code[-2:].upper() if len(type_code) >= 2 else "")
+    variant_offset = 0
+    if default_variant_id:
+        for index, variant in enumerate(POSE_VARIANTS):
+            if variant["variantId"] == default_variant_id:
+                variant_offset = index
+                break
 
     candidates: list[dict[str, Any]] = []
     for index in range(candidate_count):
-        variant = POSE_VARIANTS[index % len(POSE_VARIANTS)]
+        variant = POSE_VARIANTS[(variant_offset + index) % len(POSE_VARIANTS)]
         title_side = variant["titlePlacement"]
 
         prompt_lines = [

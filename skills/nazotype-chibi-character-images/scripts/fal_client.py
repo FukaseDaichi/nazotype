@@ -77,7 +77,7 @@ class FalAIClient:
         return f"{self.base_url}/{model_path.strip('/')}/requests/{request_id}/status"
 
     def _response_url(self, model_path: str, request_id: str) -> str:
-        return f"{self.base_url}/{model_path.strip('/')}/requests/{request_id}/response"
+        return f"{self.base_url}/{model_path.strip('/')}/requests/{request_id}"
 
     @staticmethod
     def extract_request_id(submit_response: dict[str, Any]) -> str | None:
@@ -147,33 +147,38 @@ class FalAIClient:
         response.setdefault("model_path", model_path)
         return payload, response
 
-    def get_status(self, request_id: str, *, model_path: str) -> dict[str, Any]:
-        query = urllib.parse.urlencode({"logs": 1})
-        url = f"{self._status_url(model_path, request_id)}?{query}"
+    def get_status(self, request_id: str, *, model_path: str, status_url: str | None = None) -> dict[str, Any]:
+        url = status_url or self._status_url(model_path, request_id)
+        separator = "&" if "?" in url else "?"
+        url = f"{url}{separator}{urllib.parse.urlencode({'logs': 1})}"
         return self._request_json("GET", url)
 
-    def get_result(self, request_id: str, *, model_path: str) -> dict[str, Any]:
-        return self._request_json("GET", self._response_url(model_path, request_id))
+    def get_result(self, request_id: str, *, model_path: str, response_url: str | None = None) -> dict[str, Any]:
+        return self._request_json("GET", response_url or self._response_url(model_path, request_id))
 
     def wait_for_task(
         self,
         request_id: str,
         *,
         model_path: str,
+        status_url: str | None = None,
+        response_url: str | None = None,
         poll_interval: int = 8,
         timeout_seconds: int = 600,
     ) -> dict[str, Any]:
         deadline = time.monotonic() + timeout_seconds
 
         while True:
-            status_response = self.get_status(request_id, model_path=model_path)
+            status_response = self.get_status(request_id, model_path=model_path, status_url=status_url)
             status = str(status_response.get("status") or "").strip().upper()
 
             if status == "COMPLETED":
-                result_response = self.get_result(request_id, model_path=model_path)
+                result_response = self.get_result(request_id, model_path=model_path, response_url=response_url)
                 return {
                     "request_id": request_id,
                     "model_path": model_path,
+                    "status_url": status_url or self._status_url(model_path, request_id),
+                    "response_url": response_url or self._response_url(model_path, request_id),
                     "statusResponse": status_response,
                     "resultResponse": result_response,
                 }

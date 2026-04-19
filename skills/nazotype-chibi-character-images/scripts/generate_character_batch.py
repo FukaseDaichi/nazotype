@@ -334,6 +334,8 @@ def process_variant(
         final_task_response = client.wait_for_task(
             request_id,
             model_path=model_path,
+            status_url=str(submit_response.get("status_url") or "").strip() or None,
+            response_url=str(submit_response.get("response_url") or "").strip() or None,
             poll_interval=poll_interval,
             timeout_seconds=timeout_seconds,
         )

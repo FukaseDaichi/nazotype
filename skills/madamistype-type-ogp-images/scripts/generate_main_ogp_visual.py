@@ -188,7 +188,14 @@ def main() -> int:
         raise RuntimeError(f"Missing request_id in fal.ai response: {submit_response}")
 
     model_path = str(submit_response.get("model_path") or client.edit_model).strip()
-    final_task_response = client.wait_for_task(request_id, model_path=model_path, poll_interval=8, timeout_seconds=900)
+    final_task_response = client.wait_for_task(
+        request_id,
+        model_path=model_path,
+        status_url=str(submit_response.get("status_url") or "").strip() or None,
+        response_url=str(submit_response.get("response_url") or "").strip() or None,
+        poll_interval=8,
+        timeout_seconds=900,
+    )
     result_image_url = str(client.extract_result_image_url(final_task_response) or "").strip()
     if not result_image_url:
         raise RuntimeError(f"Missing result image URL in fal.ai task response: {final_task_response}")
