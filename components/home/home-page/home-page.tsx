@@ -3,6 +3,7 @@ import type { QuestionMaster, TypeData } from "@/lib/types";
 import { AxisCompositionSection } from "@/components/home/axis-composition-section/axis-composition-section";
 import { AllTypesSection } from "@/components/home/home-page/all-types-section";
 import { HomeHeroSection } from "@/components/home/home-page/home-hero-section";
+import { ResultPreviewSection } from "@/components/home/home-page/result-preview-section";
 import { SiteFooter } from "@/components/layout/site-footer/site-footer";
 import { AmbientOrbs } from "@/components/ui/ambient-orbs";
 import { Particles } from "@/components/ui/particles";
@@ -298,42 +299,7 @@ export function HomePage({ allTypes }: HomePageProps) {
               </div>
             </RevealOnScroll>
 
-            {/* Result teaser */}
-            <RevealOnScroll>
-              <div className="max-w-[680px] mx-auto mt-16 border border-gold-400/20 bg-mystery-800/80 backdrop-blur-[10px] p-10 relative overflow-hidden">
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400 to-transparent" />
-
-                <p className="font-mono text-[0.65rem] text-gold-400 tracking-[0.25em] mb-6">
-                  OUTPUT PREVIEW — 診断後の出力イメージ
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {[
-                    { left: "行動型", right: "解読型", fill: 72 },
-                    { left: "局所型", right: "俯瞰型", fill: 38 },
-                    { left: "発信型", right: "統率型", fill: 65 },
-                    { left: "熟考型", right: "転換型", fill: 25 },
-                  ].map((axis) => (
-                    <div key={axis.left} className="flex flex-col gap-1.5">
-                      <div className="flex justify-between font-mono text-[0.65rem] text-paper-200">
-                        <span>{axis.left}</span>
-                        <span>{axis.right}</span>
-                      </div>
-                      <div className="h-[3px] bg-gold-400/15 relative overflow-hidden rounded-sm">
-                        <div
-                          className={styles.resultAxisFill}
-                          style={{ width: `${axis.fill}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-8 inline-block px-6 py-2 border border-gold-400 text-xl font-bold text-gold-300 tracking-wider">
-                  ALHN — 探索の猟犬
-                </div>
-              </div>
-            </RevealOnScroll>
+            <ResultPreviewSection />
           </div>
         </section>
 

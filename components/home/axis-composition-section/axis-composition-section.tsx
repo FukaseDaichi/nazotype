@@ -39,10 +39,7 @@ export function AxisCompositionSection() {
         <RevealOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] mt-16 border border-gold-400/15">
             {AXIS_DEFINITIONS.map((definition) => (
-              <article
-                key={definition.axis}
-                className={styles.axisCard}
-              >
+              <article key={definition.axis} className={styles.axisCard}>
                 <p className="font-mono text-[0.6rem] text-paper-200 tracking-[0.2em] mb-4">
                   AXIS {definition.no}
                 </p>
@@ -52,7 +49,7 @@ export function AxisCompositionSection() {
                     {definition.sides[0].label}
                   </span>
                   <span className="text-paper-300 tracking-tight">&harr;</span>
-                  <span className="text-[1.1rem] font-bold px-3 py-1 border border-gold-400/30 text-paper-200">
+                  <span className="text-[1.1rem] font-bold px-3 py-1 border border-gold-400 text-gold-300">
                     {definition.sides[1].label}
                   </span>
                 </div>
