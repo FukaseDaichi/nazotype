@@ -70,11 +70,74 @@ POSE_VARIANTS = [
     },
 ]
 
+POSE_VARIANT_BY_ID = {variant["variantId"]: variant for variant in POSE_VARIANTS}
+
 DEFAULT_VARIANT_BY_SUFFIX = {
     "HC": "inverted-burst",
     "HN": "secretive-turn",
     "TC": "ground-sprawl",
     "TN": "action-forward",
+}
+
+TYPE_PROMPT_OVERRIDES = {
+    "ABHN": {
+        "variantSequence": ["prop-led", "ground-sprawl"],
+        "extraInstructions": [
+            "Use a real whiteboard-wall environment as the dominant background. Fill it with marker arrows, boxes, sticky notes, erased smudges, and room-map sketches so the scene clearly reads as a mobile strategy board rather than an abstract watercolor splash.",
+            "Change the pose drastically from the base type-data pose. Do not simply reuse the original 3/4 pointing pose. Instead, make her sweep sideways across the frame in front of the whiteboard wall, with the marker arm carving a huge diagram stroke and the board-bearing arm counterbalancing the motion.",
+        ],
+        "extraNegative": [
+            "abstract watercolor-only background",
+            "same pose as the original type-data pose",
+        ],
+    },
+    "ABTN": {
+        "variantSequence": ["inverted-burst"],
+        "extraInstructions": [
+            "Keep the successful upside-down command energy: a controlled one-hand freeze or handstand-like pivot, with one white-gloved hand supporting the body and the other white-gloved hand giving a command outward.",
+            "The pose should stay close to the current inverted commander concept, but with clean anatomy and a stronger torso twist.",
+            "Exactly two arms and exactly two hands total. One hand supports the inversion and one hand commands. No third hand, no duplicate glove, and no extra limb.",
+        ],
+        "extraNegative": [
+            "extra hand",
+            "third arm",
+            "duplicate glove",
+        ],
+    },
+    "ALHC": {
+        "variantSequence": ["inverted-burst", "action-forward"],
+        "extraInstructions": [
+            "Do not merely take the base catching pose and flip it upside down. Rebuild it into a truly acrobatic capture moment with a strong body arc, scissoring legs, and a more dramatic twist through the torso.",
+            "Make the clue-card catch feel like it happens at the peak of a mid-air flip or aerial scramble, with the second arm redirecting momentum rather than just repeating the original pointing gesture.",
+        ],
+        "extraNegative": [
+            "same pose as the original type-data pose",
+            "simple upside-down version of the base pose",
+        ],
+    },
+    "ALHN": {
+        "variantSequence": ["ground-sprawl", "secretive-turn"],
+        "extraInstructions": [
+            "Do not simply recreate the base forward-leaning inspection pose. Push him into a far bolder forensic action pose such as a low sideways slide, twisted crouch, or sharp pivot while still presenting the clue fragment and loupe clearly.",
+            "Separate the tweezers arm and loupe arm onto different diagonals so the body twist feels sudden, investigative, and cinematic rather than front-facing.",
+        ],
+        "extraNegative": [
+            "same pose as the original type-data pose",
+            "plain forward lean",
+        ],
+    },
+    "DLTC": {
+        "variantSequence": ["ground-sprawl"],
+        "extraInstructions": [
+            "Keep the successful low, wide sorting pose energy: one hand fans clue cards high and outward, while the other hand anchors the lower card fan near the ground.",
+            "Exactly two arms and exactly two hands total. Preserve the sharp sorting silhouette, but remove any extra arm, extra hand, or duplicate limb.",
+        ],
+        "extraNegative": [
+            "extra hand",
+            "third arm",
+            "duplicate limb",
+        ],
+    },
 }
 
 
@@ -97,6 +160,11 @@ COMMON_NEGATIVE_CONSTRAINTS = [
     "plain white background",
     "empty gradient background",
     "floating sticker on blank canvas",
+    "extra limbs",
+    "extra arms",
+    "extra hands",
+    "duplicate limbs",
+    "broken anatomy",
     "logo",
     "watermark",
 ]
@@ -132,7 +200,7 @@ def _split_and_filter_text_tokens(value: str) -> list[str]:
     return filtered
 
 
-def merge_negative_constraints(type_data: dict[str, Any]) -> str:
+def merge_negative_constraints(type_data: dict[str, Any], extra_constraints: list[str] | None = None) -> str:
     negative_prompt = type_data.get("negativePrompt", {})
     pieces: list[str] = []
 
@@ -143,6 +211,8 @@ def merge_negative_constraints(type_data: dict[str, Any]) -> str:
                 pieces.extend(_split_and_filter_text_tokens(value))
 
     pieces.extend(COMMON_NEGATIVE_CONSTRAINTS)
+    if extra_constraints:
+        pieces.extend(extra_constraints)
 
     seen: set[str] = set()
     deduped: list[str] = []
@@ -196,18 +266,30 @@ def build_candidate_prompts(type_data: dict[str, Any], candidate_count: int = 1)
     background_description = str(visual.get("background", "")).strip()
     color_palette = _format_color_palette(visual.get("colorPalette"))
     supporting_prompt = _supporting_prompt(type_data)
-    negative_prompt = merge_negative_constraints(type_data)
+    type_override = TYPE_PROMPT_OVERRIDES.get(type_code.upper(), {})
+    negative_prompt = merge_negative_constraints(type_data, extra_constraints=type_override.get("extraNegative"))
     default_variant_id = DEFAULT_VARIANT_BY_SUFFIX.get(type_code[-2:].upper() if len(type_code) >= 2 else "")
-    variant_offset = 0
-    if default_variant_id:
-        for index, variant in enumerate(POSE_VARIANTS):
-            if variant["variantId"] == default_variant_id:
-                variant_offset = index
-                break
+    variant_sequence = type_override.get("variantSequence")
+    variant_cycle: list[dict[str, Any]]
+    if isinstance(variant_sequence, list):
+        resolved_variants = [
+            POSE_VARIANT_BY_ID[variant_id]
+            for variant_id in variant_sequence
+            if isinstance(variant_id, str) and variant_id in POSE_VARIANT_BY_ID
+        ]
+        variant_cycle = resolved_variants or POSE_VARIANTS
+    else:
+        variant_offset = 0
+        if default_variant_id:
+            for index, variant in enumerate(POSE_VARIANTS):
+                if variant["variantId"] == default_variant_id:
+                    variant_offset = index
+                    break
+        variant_cycle = [POSE_VARIANTS[(variant_offset + index) % len(POSE_VARIANTS)] for index in range(len(POSE_VARIANTS))]
 
     candidates: list[dict[str, Any]] = []
     for index in range(candidate_count):
-        variant = POSE_VARIANTS[(variant_offset + index) % len(POSE_VARIANTS)]
+        variant = variant_cycle[index % len(variant_cycle)]
         title_side = variant["titlePlacement"]
 
         prompt_lines = [
@@ -248,6 +330,8 @@ def build_candidate_prompts(type_data: dict[str, Any], candidate_count: int = 1)
             prompt_lines.append(f"Base pose cue from the type data: {base_pose}.")
         if supporting_prompt:
             prompt_lines.append(f"Supporting visual hints: {supporting_prompt}.")
+        for extra_instruction in type_override.get("extraInstructions", []):
+            prompt_lines.append(str(extra_instruction).strip())
 
         prompt_lines.extend(
             [
@@ -259,6 +343,7 @@ def build_candidate_prompts(type_data: dict[str, Any], candidate_count: int = 1)
                 "Allow radically unconventional but readable body orientations, including near-horizontal lounging, upside-down inversion, or floor-contact poses, when they create a stronger frame.",
                 "Prefer a composition that feels surprising and physically dynamic rather than neat or centered.",
                 "An unusual camera angle is welcome if readability stays strong.",
+                "Keep anatomy clean and readable. Exactly two arms, two hands, and two legs total. No duplicated limbs, no extra hands, and no broken glove anatomy.",
                 "Design the background as a real part of the OGP card, with environmental depth, perspective cues, layered effects, and motion energy that support the type.",
                 "Avoid a blank white field, isolated cutout look, or an almost-empty gradient backdrop.",
                 "Keep the text side readable with clean value separation and do not let background detail become muddy or cluttered.",
