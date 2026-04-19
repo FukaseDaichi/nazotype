@@ -2,7 +2,7 @@
 
 ## Goal
 
-Generate prompts for NanoBanana that produce LINE sticker-ready character art with exact visible text already rendered in the image.
+Generate prompts for fal.ai that produce LINE sticker-ready character art with exact visible text already rendered in the image.
 
 ## Base Rules
 
@@ -26,14 +26,14 @@ The text is part of the image, not a later overlay.
 Every LINE stamp in this repo must use the reference chibi as the identity anchor.
 Do not allow the model to reinterpret the character as a tall or realistic figure.
 
-Always instruct NanoBanana to:
+Always instruct fal.ai to:
 
 - preserve the same face, hairstyle, outfit, props, and palette as the reference chibi
 - keep the body clearly chibi with a large head, compact torso, and short limbs
 - keep the full silhouette obviously chibi even in dynamic foreshortened poses
 - reject realistic adult proportions such as long legs, small head, or fashion-illustration anatomy
 
-Always instruct NanoBanana to:
+Always instruct fal.ai to:
 
 - render the exact provided text
 - avoid misspelling, omission, or extra characters
@@ -53,7 +53,7 @@ Always instruct NanoBanana to:
 
 The repo does not trust model-native transparency.
 
-Always instruct NanoBanana to:
+Always instruct fal.ai to:
 
 - use a perfectly uniform bright green background `#00FF00`
 - avoid green on the character
@@ -89,7 +89,7 @@ Always instruct NanoBanana to:
 Keep these near the end of the prompt or in `negativePrompt`.
 
 Do not put text-suppression terms such as `文字`, `text`, `letters`, or `typography` into `negativePrompt`.
-For LINE stamps, NanoBanana is expected to render the requested text and lettering design inside the image, so all text requirements stay on the positive-prompt side.
+For LINE stamps, fal.ai is expected to render the requested text and lettering design inside the image, so all text requirements stay on the positive-prompt side.
 
 Recommended `negativePrompt` items:
 

@@ -12,7 +12,7 @@ if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
 from candidate_selector import choose_candidate, parse_selection_overrides
-from nanobanana_client import NanoBananaClient
+from fal_client import FalAIClient
 from ogp_compositor import compose_ogp
 from ogp_prompt_builder import build_candidate_prompts, find_reference_chibi, load_type_data
 from write_manifest import copy_file, now_iso, read_json, write_json, write_text
@@ -59,7 +59,7 @@ def parse_args() -> argparse.Namespace:
     repo_root = repo_root_from_script()
     load_env_file(repo_root / ".env.character-images")
 
-    parser = argparse.ArgumentParser(description="Batch-generate Madamistype type OGP images with NanoBanana.")
+    parser = argparse.ArgumentParser(description="Batch-generate Madamistype type OGP images with fal.ai.")
     parser.add_argument("--all", action="store_true", help="Generate OGP assets for every type JSON.")
     parser.add_argument("--types", help="Comma-separated list of type codes to process.")
     parser.add_argument("--retry-failed", action="store_true", help="Retry failed type codes from the previous batch report.")
@@ -68,8 +68,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--publish-dir", help="Override final publish directory.")
     parser.add_argument("--publish", action="store_true", help="Copy final OGPs to the publish directory.")
     parser.add_argument("--candidates", type=int, default=1, help="Number of prompt candidates per type. Default: 1")
-    parser.add_argument("--aspect-ratio", default="16:9", help="NanoBanana aspectRatio. Default: 16:9")
-    parser.add_argument("--resolution", default="2K", help="NanoBanana resolution. Default: 2K")
+    parser.add_argument("--aspect-ratio", default="16:9", help="fal.ai aspect_ratio. Default: 16:9")
+    parser.add_argument("--resolution", default="2K", help="fal.ai resolution. Default: 2K")
     parser.add_argument("--poll-interval", type=int, default=8, help="Polling interval in seconds. Default: 8")
     parser.add_argument("--select", help="Manual candidate overrides such as OFEI:2,TRLP:4")
     parser.add_argument("--brand-label", default="マダミスタイプ診断", help="Small brand label added at the bottom-right of the final OGP.")
@@ -85,15 +85,21 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Allow prompt-only generation when the local reference chibi is missing.",
     )
-    parser.add_argument("--timeout-seconds", type=int, default=600, help="Per-task timeout in seconds. Default: 600")
-    parser.add_argument("--api-base", help="Override the NanoBanana API base URL.")
+    parser.add_argument("--timeout-seconds", type=int, default=600, help="Per-request timeout in seconds. Default: 600")
+    parser.add_argument("--api-base", help="Override the fal.ai queue base URL.")
+    parser.add_argument("--text-model", help="Override the fal.ai text-to-image model path.")
+    parser.add_argument("--edit-model", help="Override the fal.ai image-edit model path.")
     parser.add_argument("--dry-run", action="store_true", help="Write prompts and planned requests without calling the API.")
     args = parser.parse_args()
 
     if not args.api_base:
-        args.api_base = os.getenv("NANOBANANA_API_BASE", "https://api.nanobananaapi.ai")
+        args.api_base = os.getenv("FAL_QUEUE_URL", "https://queue.fal.run")
+    if not args.text_model:
+        args.text_model = os.getenv("FAL_MODEL", "fal-ai/nano-banana-2")
+    if not args.edit_model:
+        args.edit_model = os.getenv("FAL_EDIT_MODEL", "fal-ai/nano-banana-2/edit")
     if not args.reference_url_base:
-        args.reference_url_base = os.getenv("NANOBANANA_REFERENCE_BASE_URL", DEFAULT_REFERENCE_URL_BASE)
+        args.reference_url_base = os.getenv("FAL_REFERENCE_BASE_URL", DEFAULT_REFERENCE_URL_BASE)
 
     if not args.all and not args.types and not args.retry_failed:
         parser.error("Pass one of --all, --types, or --retry-failed.")
@@ -159,15 +165,12 @@ def read_result_image_url(task_path: Path) -> str | None:
     final_task_response = task_payload.get("finalTaskResponse") or task_payload
     data = final_task_response.get("data") or {}
     response = data.get("response") or {}
-    value = response.get("resultImageUrl")
-    if isinstance(value, str) and value.strip():
-        return value.strip()
-    return None
+    return FalAIClient.extract_result_image_url(task_payload)
 
 
 def process_type(
     *,
-    client: NanoBananaClient | None,
+    client: FalAIClient | None,
     repo_root: Path,
     output_dir: Path,
     publish_dir: Path,
@@ -210,11 +213,12 @@ def process_type(
         reference_mode = "type-chibi-url" if image_urls else "prompt-only-fallback"
         request_payload = {
             "prompt": str(candidate["prompt"]),
-            "imageUrls": image_urls,
-            "aspectRatio": args.aspect_ratio,
+            "image_urls": image_urls,
+            "aspect_ratio": args.aspect_ratio,
             "resolution": args.resolution,
-            "googleSearch": False,
-            "outputFormat": "png",
+            "enable_web_search": False,
+            "output_format": "png",
+            "model_path": args.edit_model if image_urls else args.text_model,
         }
         request_summary = {
             "skill": SKILL_NAME,
@@ -260,7 +264,7 @@ def process_type(
             continue
 
         if client is None:
-            raise RuntimeError("NanoBanana client is required unless --dry-run is enabled.")
+            raise RuntimeError("fal.ai client is required unless --dry-run is enabled.")
 
         try:
             if not image_urls and not args.allow_prompt_only_fallback:
@@ -277,23 +281,27 @@ def process_type(
                 output_format="png",
                 google_search=False,
             )
-            task_id = str(((submit_response.get("data") or {}).get("taskId") or "")).strip()
-            if not task_id:
-                raise RuntimeError(f"Missing taskId in submit response: {submit_response}")
+            request_id = client.extract_request_id(submit_response)
+            if not request_id:
+                raise RuntimeError(f"Missing request_id in submit response: {submit_response}")
+            model_path = str(submit_response.get("model_path") or request_payload["model_path"]).strip()
 
             final_task_response = client.wait_for_task(
-                task_id,
+                request_id,
+                model_path=model_path,
                 poll_interval=args.poll_interval,
                 timeout_seconds=args.timeout_seconds,
             )
-            result_image_url = str((((final_task_response.get("data") or {}).get("response") or {}).get("resultImageUrl") or "")).strip()
+            result_image_url = str(client.extract_result_image_url(final_task_response) or "").strip()
             if not result_image_url:
-                raise RuntimeError(f"Missing resultImageUrl in final task response: {final_task_response}")
+                raise RuntimeError(f"Missing result image URL in fal.ai response: {final_task_response}")
 
             write_json(
                 paths["task"],
                 {
                     "submittedAt": now_iso(),
+                    "requestId": request_id,
+                    "modelPath": model_path,
                     "submitPayload": submitted_payload,
                     "submitResponse": submit_response,
                     "finalTaskResponse": final_task_response,
@@ -433,14 +441,16 @@ def main() -> int:
 
     client = None
     if not args.dry_run:
-        api_key = os.getenv("NANOBANANA_API_KEY", "").strip()
+        api_key = os.getenv("FAL_KEY", "").strip()
         if not api_key:
             raise RuntimeError(
-                "Set NANOBANANA_API_KEY in the shell or in repo-root .env.character-images before running without --dry-run."
+                "Set FAL_KEY in the shell or in repo-root .env.character-images before running without --dry-run."
             )
-        client = NanoBananaClient(
+        client = FalAIClient(
             api_key=api_key,
             base_url=args.api_base,
+            text_model=args.text_model,
+            edit_model=args.edit_model,
             timeout_seconds=args.timeout_seconds,
         )
 

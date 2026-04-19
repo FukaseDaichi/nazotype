@@ -153,7 +153,7 @@ output/
 
 責務:
 
-- `image_gen` や NanoBanana を使う画像生成スキル
+- `image_gen` や fal.ai を使う画像生成スキル
 - スキル固有の CLI、補助スクリプト、reference 文書
 
 ### 3.7 `output/`

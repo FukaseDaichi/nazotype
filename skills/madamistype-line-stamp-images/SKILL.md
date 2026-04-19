@@ -1,6 +1,6 @@
 ---
 name: madamistype-line-stamp-images
-description: madamistype リポジトリ専用。output/line-stamp-prompts/*/manifest.json を入力として、NanoBanana で文字入り LINE スタンプ画像を生成し、グリーンバック除去で透過 PNG を作り、最終キャンバスへ収めて検証する。main.png、tab.png、複数 stamp の納品 PNG を生成または更新するときに使う。
+description: madamistype リポジトリ専用。output/line-stamp-prompts/*/manifest.json を入力として、fal.ai で文字入り LINE スタンプ画像を生成し、グリーンバック除去で透過 PNG を作り、最終キャンバスへ収めて検証する。main.png、tab.png、複数 stamp の納品 PNG を生成または更新するときに使う。
 ---
 
 # Madamistype Line Stamp Images
@@ -11,7 +11,7 @@ Use this skill when working inside the `madamistype` repository and the task is 
 
 This skill expects a prompt manifest from `madamistype-line-stamp-prompts`. It:
 
-- calls NanoBanana with the approved prompt
+- calls fal.ai with the approved prompt
 - keeps the exact requested text inside the image
 - keeps the character in the approved chibi proportions
 - removes the green background locally
@@ -98,7 +98,7 @@ Use as the main entry point. It:
 
 - reads manifests
 - resolves reference URLs
-- calls NanoBanana
+- calls fal.ai
 - removes the green background
 - composes final canvases
 - writes validation reports
@@ -115,7 +115,7 @@ Validates file size, canvas size, alpha, padding, and optional OCR text checks.
 
 - Keep final working output under `output/line-stamp-images/` by default
 - Keep the packaged delivery files under `output/line-stamp-images/{setId}/package/`
-- Reuse the existing repo NanoBanana client, but keep the green-screen remover local to this skill under `scripts/background_remover.py`
+- Reuse the existing repo fal.ai client, but keep the green-screen remover local to this skill under `scripts/background_remover.py`
 - Do not replace prompt-defined text with local overlays
 - When changing the overall workflow, update [line-stamp-skill-spec.md](../../docs/line-stamp-skill-spec.md)
 

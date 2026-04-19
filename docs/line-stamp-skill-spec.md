@@ -40,14 +40,14 @@ LINE スタンプ用の最終成果物は次の要件を満たす。
 - 各画像は 1MB 以下
 - 画像サイズは偶数
 - コンテンツ外周には約 10px の余白を確保する
-- スタンプ画像では文字も NanoBanana の生成結果に含める
+- スタンプ画像では文字も fal.ai の生成結果に含める
 
 設計上の既定値:
 
 - スタンプ画像は原則 `370 x 320` px の固定キャンバスで書き出す
 - `main.png` と `tab.png` は別 prompt を持つ専用アセットとして扱う
 - モデルに最終サイズを直接作らせず、高解像度で生成した後にローカルで透過化と整形を行う
-- 文字入れはローカル合成せず、NanoBanana の prompt に明示したうえで画像内に直接描かせる
+- 文字入れはローカル合成せず、fal.ai の prompt に明示したうえで画像内に直接描かせる
 - 透過処理はモデル任せにせず、グリーンバック生成後にプログラムで行う
 
 ## 4. 対象スキル
@@ -88,7 +88,7 @@ LINE スタンプ用の最終成果物は次の要件を満たす。
 - `manifest.json` を読む
 - 参照画像を解決する
 - 画像生成 API を呼ぶ
-- prompt に含まれる文字指定を NanoBanana へそのまま渡す
+- prompt に含まれる文字指定を fal.ai へそのまま渡す
 - グリーンバック除去で透過 PNG を作る
 - 最終キャンバスに収める
 - サイズ、容量、余白、透過、RGB を検証する
@@ -176,7 +176,7 @@ data/line-stamps/{setId}.json
 ```
 
 V1 では `stamps[].text` を必須とし、`textDesignPrompt` も合わせて保持する。
-文字は後段で合成せず、NanoBanana の prompt で直接描かせる前提とする。
+文字は後段で合成せず、fal.ai の prompt で直接描かせる前提とする。
 
 ## 7. 受け渡し manifest
 
@@ -356,9 +356,11 @@ prompt スキルの完了条件:
 
 必要環境変数:
 
-- `NANOBANANA_API_KEY`
-- `NANOBANANA_API_BASE`
-- `NANOBANANA_REFERENCE_BASE_URL` 任意
+- `FAL_KEY`
+- `FAL_QUEUE_URL`
+- `FAL_MODEL`
+- `FAL_EDIT_MODEL`
+- `FAL_REFERENCE_BASE_URL` 任意
 
 ### 9.2 出力
 
@@ -466,7 +468,7 @@ output/line-stamp-images/{setId}/
 
 既存からの再利用候補:
 
-- キャラクター画像生成スキルの `scripts/nanobanana_client.py`
+- キャラクター画像生成スキルの `scripts/fal_client.py`
 - LINE スタンプ画像生成スキルの `scripts/background_remover.py`
 
 ## 11. 役割別の構図ポリシー

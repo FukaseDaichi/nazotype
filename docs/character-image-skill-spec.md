@@ -14,7 +14,7 @@
 
 補足:
 
-- `skills/nazotype-chibi-character-images/scripts/` 配下には NanoBanana 系の旧ユーティリティが残る
+- `skills/nazotype-chibi-character-images/scripts/` 配下には fal.ai 系の旧ユーティリティが残る
 - それらは主に下流スキル互換のためであり、本スキルの透過処理フォールバックとしては使わない
 
 ## 3. 入力
@@ -52,7 +52,7 @@
 
 本スキルの主経路では API キー不要。
 
-`.env.character-images` は、旧 NanoBanana ユーティリティや下流スキルが必要とする場合だけ使う。
+`.env.character-images` は、旧 fal.ai ユーティリティや下流スキルが必要とする場合だけ使う。
 
 ## 4. 生成対象
 

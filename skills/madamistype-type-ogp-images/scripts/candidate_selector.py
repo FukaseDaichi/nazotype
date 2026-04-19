@@ -4,10 +4,10 @@ from typing import Any
 
 
 POSE_PRIORITY = {
-    "action-forward": 0,
-    "prop-led": 1,
-    "reaction-side": 2,
-    "secretive-turn": 3,
+    "inverted-burst": 0,
+    "ground-sprawl": 1,
+    "action-forward": 2,
+    "prop-led": 3,
 }
 
 

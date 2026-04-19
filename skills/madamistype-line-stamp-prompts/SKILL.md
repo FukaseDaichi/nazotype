@@ -9,7 +9,7 @@ description: madamistype リポジトリ専用。data/line-stamps/*.json と dat
 
 Use this skill when working inside the `madamistype` repository and the task is to design LINE sticker prompts before image generation.
 
-This skill does not call NanoBanana directly. Its job is to convert repo data into a reviewable `manifest.json` that fixes:
+This skill does not call fal.ai directly. Its job is to convert repo data into a reviewable `manifest.json` that fixes:
 
 - role-specific composition for `main`, `tab`, and `stamp`
 - exact visible text for each asset
@@ -18,7 +18,7 @@ This skill does not call NanoBanana directly. Its job is to convert repo data in
 - transparent-ready green background directions
 - padding-safe framing rules
 
-For this skill, treat NanoBanana as responsible for rendering the requested text and text styling inside the image.
+For this skill, treat fal.ai as responsible for rendering the requested text and text styling inside the image.
 Do not carry over character-image assumptions like `文字なし` or text-suppression negatives into the LINE sticker `negativePrompt`.
 
 Read [line-stamp-skill-spec.md](../../docs/line-stamp-skill-spec.md) when changing the overall design or acceptance criteria.
@@ -59,7 +59,7 @@ The script writes:
 
 Every asset must define visible text and text styling.
 
-Do not treat text as a later overlay. The prompt must instruct NanoBanana to render the exact text inside the image.
+Do not treat text as a later overlay. The prompt must instruct fal.ai to render the exact text inside the image.
 Keep text quality constraints on the positive-prompt side, and keep `negativePrompt` free of text-ban wording.
 
 For detailed prompt rules, read [references/prompt-rules.md](./references/prompt-rules.md).

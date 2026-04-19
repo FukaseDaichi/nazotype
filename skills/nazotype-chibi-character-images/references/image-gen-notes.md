@@ -4,7 +4,7 @@
 
 This skill's primary path uses the built-in `image_gen` tool available inside Codex.
 
-It is not a repo-local HTTP client and it is not the same system as the NanoBanana scripts that remain under `scripts/`.
+It is not a repo-local HTTP client and it is not the same system as the fal.ai scripts that remain under `scripts/`.
 
 ## Reference Image Handling
 

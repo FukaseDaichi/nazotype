@@ -10,6 +10,7 @@ Every prompt must produce:
 - the same character identity as the reference chibi
 - a much more dynamic pose than the stored chibi
 - the exact `typeName` and `typeCode` rendered inside the design
+- a clear typographic hierarchy where `typeName` is dominant and `typeCode` is smaller and secondary
 - a clear silhouette that reads at social-card size
 
 ## What Must Stay Fixed
@@ -35,13 +36,14 @@ Push each candidate toward a visibly stronger frame:
 - force asymmetry in shoulders, hips, hands, or gaze
 - make the prop or gesture feel mid-action
 - prefer forward movement, twist, recoil, reach, or over-the-shoulder energy
+- allow much bolder body orientations such as near-horizontal sprawl, reclining action, inversion, or handstand-like framing when readable
 - avoid static standing, mascot presentation, or idle sticker poses
 
 Good pose families:
 
 - `action-forward`: stepping in, leaning in, reaching, lunging
-- `reaction-side`: side glance, side step, quick pivot
-- `secretive-turn`: turn-back, look-over-shoulder, hidden-angle tension
+- `ground-sprawl`: sliding, reclining into action, near-fall recovery
+- `inverted-burst`: handstand, upside-down twist, acrobatic inversion
 - `prop-led`: the prop creates the motion and silhouette
 
 ## OGP Composition Constraints
@@ -51,7 +53,9 @@ Every prompt should also include:
 - single character only
 - large silhouette
 - place the requested title typography on the requested title side
-- background must stay simple enough for the integrated title typography
+- keep `typeName` visually larger and more eye-catching than `typeCode`
+- background must feel intentionally designed, not like a cutout on white
+- background must stay readable enough for the integrated title typography
 - keep a small bottom-right safe area for the local service label
 - no logo
 - no watermark
@@ -59,8 +63,10 @@ Every prompt should also include:
 Preferred wording:
 
 - "render the exact title and type code on the left side as integrated editorial typography"
+- "make the Japanese title the dominant typographic element and the type code a smaller supporting label"
 - "compose the character large in frame with a strong diagonal silhouette"
-- "avoid busy background details that compete with the integrated card text"
+- "build a substantial cinematic background with depth and motion, but keep the text side readable"
+- "avoid plain white background, empty gradient backdrop, or busy details that compete with the integrated card text"
 
 ## Negative Constraints
 
@@ -76,6 +82,8 @@ Merge the type JSON `negativePrompt` with these common OGP negatives:
 - cluttered background
 - extra text beyond the exact requested title and type code
 - wrong spelling in the requested title or type code
+- plain white background
+- empty gradient background
 - logo
 - watermark
 
@@ -90,6 +98,7 @@ Create a polished anime-style chibi OGP card for X.
 Character identity: {typeName} ({typeCode}).
 Preserve the same face, hairstyle, outfit, props, and core palette as the reference chibi.
 Render the exact title text "{typeName}" and the exact type code "{typeCode}" inside the image.
+Make the Japanese title dominant and the type code smaller and secondary.
 Keep the spelling exact and do not add any other text.
 Character notes: {characterDescription}
 Outfit and props: {outfitDescription}
@@ -101,7 +110,8 @@ Make the pose bold, asymmetrical, and mid-action.
 Keep the character large in frame with a clean readable silhouette.
 Place the title and type code on the {title_side} side as integrated editorial typography.
 Keep a small clean safe area in the bottom-right corner for the local service label.
-Use a restrained atmospheric background that supports the character but does not become busy.
+Use a substantial cinematic background with depth, perspective, and motion energy so the card does not feel like a sticker on white.
+Keep the text side readable and do not let background detail become muddy or cluttered.
 Do not add any text beyond the exact requested title and type code, and do not add logo, watermark, extra characters, or a static sticker pose.
 ```
 

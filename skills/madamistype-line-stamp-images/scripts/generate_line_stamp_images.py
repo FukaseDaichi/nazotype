@@ -19,7 +19,7 @@ if str(REUSE_SCRIPT_DIR) not in sys.path:
     sys.path.append(str(REUSE_SCRIPT_DIR))
 
 from background_remover import remove_green_background
-from nanobanana_client import NanoBananaClient
+from fal_client import FalAIClient
 
 from line_stamp_compositor import compose_line_stamp
 from line_stamp_validator import validate_line_stamp_image
@@ -107,10 +107,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--asset-ids", help="Comma-separated stamp asset ids to process. Example: 01,03")
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing asset outputs.")
     parser.add_argument("--poll-interval", type=int, default=8, help="Polling interval in seconds. Default: 8")
-    parser.add_argument("--timeout-seconds", type=int, default=600, help="Per-task timeout in seconds. Default: 600")
+    parser.add_argument("--timeout-seconds", type=int, default=600, help="Per-request timeout in seconds. Default: 600")
     parser.add_argument("--resolution", help="Override manifest generation resolution.")
     parser.add_argument("--reference-url-base", help="Override the public base URL used for reference chibi images.")
-    parser.add_argument("--api-base", help="Override the NanoBanana API base URL.")
+    parser.add_argument("--api-base", help="Override the fal.ai queue base URL.")
+    parser.add_argument("--text-model", help="Override the fal.ai text-to-image model path.")
+    parser.add_argument("--edit-model", help="Override the fal.ai image-edit model path.")
     parser.add_argument("--dry-run", action="store_true", help="Write prompts and requests without calling the API.")
     args = parser.parse_args()
 
@@ -118,9 +120,13 @@ def parse_args() -> argparse.Namespace:
         parser.error("Pass one of --all, --set-ids, or --manifest.")
 
     if not args.api_base:
-        args.api_base = os.getenv("NANOBANANA_API_BASE", "https://api.nanobananaapi.ai")
+        args.api_base = os.getenv("FAL_QUEUE_URL", "https://queue.fal.run")
+    if not args.text_model:
+        args.text_model = os.getenv("FAL_MODEL", "fal-ai/nano-banana-2")
+    if not args.edit_model:
+        args.edit_model = os.getenv("FAL_EDIT_MODEL", "fal-ai/nano-banana-2/edit")
     if not args.reference_url_base:
-        args.reference_url_base = os.getenv("NANOBANANA_REFERENCE_BASE_URL", DEFAULT_REFERENCE_URL_BASE)
+        args.reference_url_base = os.getenv("FAL_REFERENCE_BASE_URL", DEFAULT_REFERENCE_URL_BASE)
 
     return args
 
@@ -184,17 +190,17 @@ def build_request_payload(asset: dict[str, Any], *, reference_image_url: str | N
     image_urls = [reference_image_url] if reference_image_url else []
     return {
         "prompt": str(asset["prompt"]),
-        "imageUrls": image_urls,
-        "aspectRatio": str(asset.get("generationAspectRatio") or "1:1"),
+        "image_urls": image_urls,
+        "aspect_ratio": str(asset.get("generationAspectRatio") or "1:1"),
         "resolution": str(resolution_override or asset.get("generationResolution") or "2K"),
-        "googleSearch": False,
-        "outputFormat": "png",
+        "enable_web_search": False,
+        "output_format": "png",
     }
 
 
 def process_asset(
     *,
-    client: NanoBananaClient | None,
+    client: FalAIClient | None,
     set_root: Path,
     manifest: dict[str, Any],
     asset: dict[str, Any],
@@ -282,33 +288,36 @@ def process_asset(
         )
 
     if client is None:
-        raise RuntimeError("NanoBanana client is not available.")
+        raise RuntimeError("fal.ai client is not available.")
 
     submitted_payload, submit_response = client.generate_image(
         prompt=str(asset["prompt"]),
-        image_urls=request_payload["imageUrls"],
-        aspect_ratio=str(request_payload["aspectRatio"]),
+        image_urls=request_payload["image_urls"],
+        aspect_ratio=str(request_payload["aspect_ratio"]),
         resolution=str(request_payload["resolution"]),
         output_format="png",
         google_search=False,
     )
-    task_id = str(((submit_response.get("data") or {}).get("taskId") or "")).strip()
-    if not task_id:
-        raise RuntimeError(f"Missing taskId in submit response: {submit_response}")
+    request_id = client.extract_request_id(submit_response)
+    if not request_id:
+        raise RuntimeError(f"Missing request_id in submit response: {submit_response}")
+    model_path = str(submit_response.get("model_path") or (args.edit_model if reference_image_url else args.text_model)).strip()
 
     final_task_response = client.wait_for_task(
-        task_id,
+        request_id,
+        model_path=model_path,
         poll_interval=args.poll_interval,
         timeout_seconds=args.timeout_seconds,
     )
-    response_data = ((final_task_response.get("data") or {}).get("response") or {})
-    result_image_url = str(response_data.get("resultImageUrl") or "").strip()
+    result_image_url = str(client.extract_result_image_url(final_task_response) or "").strip()
     if not result_image_url:
-        raise RuntimeError(f"Missing resultImageUrl in task response: {final_task_response}")
+        raise RuntimeError(f"Missing result image URL in fal.ai response: {final_task_response}")
 
     write_json(
         task_path,
         {
+            "requestId": request_id,
+            "modelPath": model_path,
             "submittedPayload": submitted_payload,
             "submitResponse": submit_response,
             "finalTaskResponse": final_task_response,
@@ -373,7 +382,7 @@ def process_manifest(
     *,
     manifest_path: Path,
     output_root: Path,
-    client: NanoBananaClient | None,
+    client: FalAIClient | None,
     args: argparse.Namespace,
 ) -> dict[str, Any]:
     manifest = read_json(manifest_path)
@@ -450,10 +459,15 @@ def main() -> None:
     client = None
     if not args.dry_run:
         ensure_generation_dependencies()
-        api_key = os.getenv("NANOBANANA_API_KEY", "").strip()
+        api_key = os.getenv("FAL_KEY", "").strip()
         if not api_key:
-            raise RuntimeError("NANOBANANA_API_KEY is required unless --dry-run is used.")
-        client = NanoBananaClient(api_key=api_key, base_url=args.api_base)
+            raise RuntimeError("FAL_KEY is required unless --dry-run is used.")
+        client = FalAIClient(
+            api_key=api_key,
+            base_url=args.api_base,
+            text_model=args.text_model,
+            edit_model=args.edit_model,
+        )
 
     results: list[dict[str, Any]] = []
     for manifest_path in selected_manifests:

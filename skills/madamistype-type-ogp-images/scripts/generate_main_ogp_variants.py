@@ -16,7 +16,7 @@ if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
 from generate_main_ogp_visual import build_reference_urls, load_env_file
-from nanobanana_client import NanoBananaClient
+from fal_client import FalAIClient
 
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -243,7 +243,7 @@ def variant_paths(variant: Variant) -> dict[str, Path]:
     }
 
 
-def generate_variant(client: NanoBananaClient, variant: Variant, reference_urls: list[str]) -> dict[str, Any]:
+def generate_variant(client: FalAIClient, variant: Variant, reference_urls: list[str]) -> dict[str, Any]:
     paths = variant_paths(variant)
     paths["dir"].mkdir(parents=True, exist_ok=True)
 
@@ -258,19 +258,22 @@ def generate_variant(client: NanoBananaClient, variant: Variant, reference_urls:
         output_format="png",
         google_search=False,
     )
-    task_id = str(((submit_response.get("data") or {}).get("taskId") or "")).strip()
-    if not task_id:
-        raise RuntimeError(f"Missing taskId in NanoBanana response for {variant.slug}: {submit_response}")
+    request_id = client.extract_request_id(submit_response)
+    if not request_id:
+        raise RuntimeError(f"Missing request_id in fal.ai response for {variant.slug}: {submit_response}")
 
-    final_task_response = client.wait_for_task(task_id, poll_interval=8, timeout_seconds=900)
-    result_image_url = str((((final_task_response.get("data") or {}).get("response") or {}).get("resultImageUrl") or "")).strip()
+    model_path = str(submit_response.get("model_path") or client.edit_model).strip()
+    final_task_response = client.wait_for_task(request_id, model_path=model_path, poll_interval=8, timeout_seconds=900)
+    result_image_url = str(client.extract_result_image_url(final_task_response) or "").strip()
     if not result_image_url:
-        raise RuntimeError(f"Missing resultImageUrl in task response for {variant.slug}: {final_task_response}")
+        raise RuntimeError(f"Missing result image URL in fal.ai task response for {variant.slug}: {final_task_response}")
 
     paths["request"].write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     paths["task"].write_text(
         json.dumps(
             {
+                "requestId": request_id,
+                "modelPath": model_path,
                 "submitResponse": submit_response,
                 "finalTaskResponse": final_task_response,
             },
@@ -343,7 +346,7 @@ def build_contact_sheet(entries: list[dict[str, Any]]) -> None:
     font_meta = _load_font(16)
 
     draw.text((margin, margin - 2), "Main OGP Variants", font=font_title, fill="#f3ead6")
-    draw.text((margin, margin + 40), "discussion-focused NanoBanana candidates", font=font_meta, fill="#bca47a")
+    draw.text((margin, margin + 40), "discussion-focused fal.ai candidates", font=font_meta, fill="#bca47a")
 
     for index, entry in enumerate(entries):
         row = index // 2
@@ -379,9 +382,9 @@ def main() -> int:
     selected_variants = [VARIANT_MAP[slug] for slug in (args.variant or list(VARIANT_MAP.keys()))]
 
     load_env_file(ROOT / ".env.character-images")
-    api_key = os.getenv("NANOBANANA_API_KEY", "").strip()
+    api_key = os.getenv("FAL_KEY", "").strip()
     if not api_key:
-        raise RuntimeError("NANOBANANA_API_KEY is required in .env.character-images or the environment.")
+        raise RuntimeError("FAL_KEY is required in .env.character-images or the environment.")
 
     if args.contact_sheet and not args.variant and not args.publish:
         entries = [entry for variant in VARIANTS if (entry := load_existing_meta(variant))]
@@ -389,9 +392,11 @@ def main() -> int:
         build_contact_sheet(entries)
         return 0
 
-    client = NanoBananaClient(
+    client = FalAIClient(
         api_key=api_key,
-        base_url=os.getenv("NANOBANANA_API_BASE", "https://api.nanobananaapi.ai").strip(),
+        base_url=os.getenv("FAL_QUEUE_URL", "https://queue.fal.run").strip(),
+        text_model=os.getenv("FAL_MODEL", "fal-ai/nano-banana-2").strip(),
+        edit_model=os.getenv("FAL_EDIT_MODEL", "fal-ai/nano-banana-2/edit").strip(),
         timeout_seconds=90,
     )
 

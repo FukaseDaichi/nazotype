@@ -13,12 +13,12 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
-from nanobanana_client import NanoBananaClient
+from fal_client import FalAIClient
 
 
 ROOT = Path(__file__).resolve().parents[3]
 OUTPUT_DIR = ROOT / "output" / "main-ogp"
-WORK_DIR = OUTPUT_DIR / "nanobanana"
+WORK_DIR = OUTPUT_DIR / "fal"
 RAW_PATH = WORK_DIR / "raw.png"
 FINAL_PATH = OUTPUT_DIR / "main-ogp.png"
 PUBLIC_PATH = ROOT / "public" / "main-ogp.png"
@@ -28,7 +28,7 @@ TASK_PATH = WORK_DIR / "task.json"
 PROMPT_PATH = WORK_DIR / "prompt.txt"
 PREVIOUS_PUBLIC_PATH = WORK_DIR / "previous-public-main-ogp.png"
 REFERENCE_URL_BASE = os.getenv(
-    "NANOBANANA_REFERENCE_BASE_URL",
+    "FAL_REFERENCE_BASE_URL",
     "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types",
 ).rstrip("/")
 REFERENCE_TYPE_CODES = ("TFLP", "TRLP", "OREI", "OFEP")
@@ -157,13 +157,15 @@ def compose_final(raw_path: Path, final_path: Path) -> None:
 
 def main() -> int:
     load_env_file(ROOT / ".env.character-images")
-    api_key = os.getenv("NANOBANANA_API_KEY", "").strip()
+    api_key = os.getenv("FAL_KEY", "").strip()
     if not api_key:
-        raise RuntimeError("NANOBANANA_API_KEY is required in .env.character-images or the environment.")
+        raise RuntimeError("FAL_KEY is required in .env.character-images or the environment.")
 
-    client = NanoBananaClient(
+    client = FalAIClient(
         api_key=api_key,
-        base_url=os.getenv("NANOBANANA_API_BASE", "https://api.nanobananaapi.ai").strip(),
+        base_url=os.getenv("FAL_QUEUE_URL", "https://queue.fal.run").strip(),
+        text_model=os.getenv("FAL_MODEL", "fal-ai/nano-banana-2").strip(),
+        edit_model=os.getenv("FAL_EDIT_MODEL", "fal-ai/nano-banana-2/edit").strip(),
         timeout_seconds=90,
     )
 
@@ -181,24 +183,25 @@ def main() -> int:
         output_format="png",
         google_search=False,
     )
-    task_id = str(((submit_response.get("data") or {}).get("taskId") or "")).strip()
-    if not task_id:
-        raise RuntimeError(f"Missing taskId in NanoBanana response: {submit_response}")
+    request_id = client.extract_request_id(submit_response)
+    if not request_id:
+        raise RuntimeError(f"Missing request_id in fal.ai response: {submit_response}")
 
-    final_task_response = client.wait_for_task(task_id, poll_interval=8, timeout_seconds=900)
-    result_image_url = str((((final_task_response.get("data") or {}).get("response") or {}).get("resultImageUrl") or "")).strip()
+    model_path = str(submit_response.get("model_path") or client.edit_model).strip()
+    final_task_response = client.wait_for_task(request_id, model_path=model_path, poll_interval=8, timeout_seconds=900)
+    result_image_url = str(client.extract_result_image_url(final_task_response) or "").strip()
     if not result_image_url:
-        raise RuntimeError(f"Missing resultImageUrl in task response: {final_task_response}")
+        raise RuntimeError(f"Missing result image URL in fal.ai task response: {final_task_response}")
 
     REQUEST_PATH.write_text(
         json.dumps(
             {
                 "prompt": prompt,
-                "imageUrls": reference_urls,
-                "aspectRatio": "16:9",
+                "image_urls": reference_urls,
+                "aspect_ratio": "16:9",
                 "resolution": "2K",
-                "outputFormat": "png",
-                "googleSearch": False,
+                "output_format": "png",
+                "enable_web_search": False,
             },
             ensure_ascii=False,
             indent=2,
@@ -208,6 +211,8 @@ def main() -> int:
     TASK_PATH.write_text(
         json.dumps(
             {
+                "requestId": request_id,
+                "modelPath": model_path,
                 "submitResponse": submit_response,
                 "finalTaskResponse": final_task_response,
             },

@@ -83,8 +83,8 @@ public/ogp/types/
 - `reference/chibi.png`: copied local reference image
 - `prompt-*.txt`: final prompt sent to the model
 - `negative_prompt-*.txt`: local review artifact for merged constraints
-- `request-*.json`: NanoBanana request summary without credentials, including the derived public reference URL
-- `task-*.json`: NanoBanana submit response plus final polling response
+- `request-*.json`: fal.ai request summary without credentials, including the derived public reference URL
+- `task-*.json`: fal.ai submit response plus final polling/result responses
 - `candidate-*.png`: generated candidate art
 - `selected/hero.png`: chosen candidate copied into a stable path
 - `selection.json`: machine-readable selected candidate metadata

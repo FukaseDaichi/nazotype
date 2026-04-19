@@ -13,7 +13,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
-from nanobanana_client import NanoBananaClient
+from fal_client import FalAIClient
 from prompt_builder import build_prompt, load_type_data, merge_negative_constraints
 
 
@@ -54,7 +54,7 @@ def parse_args() -> argparse.Namespace:
     repo_root = repo_root_from_script()
     load_env_file(repo_root / ".env.character-images")
 
-    parser = argparse.ArgumentParser(description="Legacy NanoBanana batch generator for nazotype character images.")
+    parser = argparse.ArgumentParser(description="Legacy fal.ai batch generator for nazotype character images.")
     parser.add_argument("--all", action="store_true", help="Generate images for every type JSON.")
     parser.add_argument("--types", help="Comma-separated list of type codes to process.")
     parser.add_argument("--retry-failed", action="store_true", help="Retry failed types from the previous batch report.")
@@ -66,16 +66,22 @@ def parse_args() -> argparse.Namespace:
         help="Select which variants to generate. Default: both",
     )
     parser.add_argument("--output-dir", help="Override output directory.")
-    parser.add_argument("--aspect-ratio", default="1:1", help="NanoBanana aspectRatio. Default: 1:1")
-    parser.add_argument("--resolution", default="2K", help="NanoBanana resolution. Default: 2K")
+    parser.add_argument("--aspect-ratio", default="1:1", help="fal.ai aspect_ratio. Default: 1:1")
+    parser.add_argument("--resolution", default="2K", help="fal.ai resolution. Default: 2K")
     parser.add_argument("--poll-interval", type=int, default=8, help="Polling interval in seconds. Default: 8")
-    parser.add_argument("--timeout-seconds", type=int, default=600, help="Per-task timeout in seconds. Default: 600")
-    parser.add_argument("--api-base", help="Override the NanoBanana API base URL.")
+    parser.add_argument("--timeout-seconds", type=int, default=600, help="Per-request timeout in seconds. Default: 600")
+    parser.add_argument("--api-base", help="Override the fal.ai queue base URL.")
+    parser.add_argument("--text-model", help="Override the fal.ai text-to-image model path.")
+    parser.add_argument("--edit-model", help="Override the fal.ai image-edit model path.")
     parser.add_argument("--dry-run", action="store_true", help="Write prompts and payloads without calling the API.")
     args = parser.parse_args()
 
     if not args.api_base:
-        args.api_base = os.getenv("NANOBANANA_API_BASE", "https://api.nanobananaapi.ai")
+        args.api_base = os.getenv("FAL_QUEUE_URL", "https://queue.fal.run")
+    if not args.text_model:
+        args.text_model = os.getenv("FAL_MODEL", "fal-ai/nano-banana-2")
+    if not args.edit_model:
+        args.edit_model = os.getenv("FAL_EDIT_MODEL", "fal-ai/nano-banana-2/edit")
 
     if not args.all and not args.types and not args.retry_failed:
         parser.error("Pass one of --all, --types, or --retry-failed.")
@@ -135,10 +141,7 @@ def read_result_image_url(variant_dir: Path) -> str | None:
     final_response = task_data.get("finalTaskResponse") or {}
     data = final_response.get("data") or {}
     response = data.get("response") or {}
-    value = response.get("resultImageUrl")
-    if isinstance(value, str) and value.strip():
-        return value.strip()
-    return None
+    return FalAIClient.extract_result_image_url(task_data)
 
 
 def existing_meta_uses_native_alpha(variant_dir: Path) -> bool:
@@ -219,10 +222,10 @@ def build_meta(
     }
     if payload is not None:
         meta["requestSummary"] = {
-            "aspectRatio": payload.get("aspectRatio"),
+            "aspectRatio": payload.get("aspect_ratio"),
             "resolution": payload.get("resolution"),
-            "outputFormat": payload.get("outputFormat"),
-            "imageUrlsCount": len(payload.get("imageUrls", [])),
+            "outputFormat": payload.get("output_format"),
+            "imageUrlsCount": len(payload.get("image_urls", [])),
         }
     if error:
         meta["error"] = error
@@ -231,7 +234,7 @@ def build_meta(
 
 def process_variant(
     *,
-    client: NanoBananaClient | None,
+    client: FalAIClient | None,
     type_data: dict[str, Any],
     variant: str,
     output_dir: Path,
@@ -284,11 +287,11 @@ def process_variant(
 
     payload = {
         "prompt": prompt,
-        "imageUrls": image_urls,
-        "aspectRatio": aspect_ratio,
+        "image_urls": image_urls,
+        "aspect_ratio": aspect_ratio,
         "resolution": resolution,
-        "googleSearch": False,
-        "outputFormat": "png",
+        "enable_web_search": False,
+        "output_format": "png",
     }
     write_json(variant_dir / "request.json", payload)
 
@@ -323,26 +326,28 @@ def process_variant(
             output_format="png",
             google_search=False,
         )
-        task_id = ((submit_response.get("data") or {}).get("taskId") or "").strip()
-        if not task_id:
-            raise RuntimeError(f"Missing taskId in submit response: {submit_response}")
+        request_id = client.extract_request_id(submit_response)
+        if not request_id:
+            raise RuntimeError(f"Missing request_id in submit response: {submit_response}")
+        model_path = str(submit_response.get("model_path") or (client.edit_model if image_urls else client.text_model)).strip()
 
         final_task_response = client.wait_for_task(
-            task_id,
+            request_id,
+            model_path=model_path,
             poll_interval=poll_interval,
             timeout_seconds=timeout_seconds,
         )
 
-        task_data = final_task_response.get("data") or {}
-        response = task_data.get("response") or {}
-        result_image_url = response.get("resultImageUrl")
+        result_image_url = client.extract_result_image_url(final_task_response)
         if not isinstance(result_image_url, str) or not result_image_url.strip():
-            raise RuntimeError(f"Missing resultImageUrl in final task response: {final_task_response}")
+            raise RuntimeError(f"Missing result image URL in fal.ai response: {final_task_response}")
 
         write_json(
             variant_dir / "task.json",
             {
                 "submittedAt": now_iso(),
+                "requestId": request_id,
+                "modelPath": model_path,
                 "submitResponse": submit_response,
                 "finalTaskResponse": final_task_response,
             },
@@ -404,12 +409,17 @@ def main() -> int:
 
     client = None
     if not args.dry_run:
-        api_key = os.getenv("NANOBANANA_API_KEY", "").strip()
+        api_key = os.getenv("FAL_KEY", "").strip()
         if not api_key:
             raise RuntimeError(
-                "Set NANOBANANA_API_KEY in the shell or in repo-root .env.character-images before running without --dry-run."
+                "Set FAL_KEY in the shell or in repo-root .env.character-images before running without --dry-run."
             )
-        client = NanoBananaClient(api_key=api_key, base_url=args.api_base)
+        client = FalAIClient(
+            api_key=api_key,
+            base_url=args.api_base,
+            text_model=args.text_model,
+            edit_model=args.edit_model,
+        )
 
     results: list[dict[str, Any]] = []
 

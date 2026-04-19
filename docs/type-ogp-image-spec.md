@@ -32,11 +32,13 @@
 
 リポジトリ直下の `.env.character-images` を自動読み込みする。
 
-- `NANOBANANA_API_KEY`
-- `NANOBANANA_API_BASE`
-- `NANOBANANA_REFERENCE_BASE_URL`
+- `FAL_KEY`
+- `FAL_QUEUE_URL`
+- `FAL_MODEL`
+- `FAL_EDIT_MODEL`
+- `FAL_REFERENCE_BASE_URL`
 
-`NANOBANANA_REFERENCE_BASE_URL` 未設定時の既定値は、GitHub 上の `public/types/` を指す raw URL である。
+`FAL_REFERENCE_BASE_URL` 未設定時の既定値は、GitHub 上の `public/types/` を指す raw URL である。
 
 ## 4. 実行コマンド
 
@@ -110,13 +112,20 @@ output/type-ogp/
 
 ## 6. 実装上の挙動
 
-- 参照チビ画像があれば、その公開 URL を `imageUrls` に渡して候補生成する
+- 参照チビ画像があれば、その公開 URL を `image_urls` に渡して候補生成する
 - 候補数は `--candidates` で指定する。既定値は `1`
 - `choose_candidate()` により採用候補を 1 枚選ぶ
 - `--select ALHN:2` のように手動上書きできる
 - `compose_ogp()` が最終 OGP を `1200x630` で書き出す
 - `--publish` 指定時だけ publish 先へコピーする
 - `--dry-run` では prompt と request を書くだけで、API は呼ばない
+
+現行の演出方針:
+
+- ちび基準画像と同一人物性を保ったまま、より大胆な寝そべり・逆立ち・倒れ込み・急旋回なども許容する
+- カメラはローアングル、俯瞰、ダッチアングル、回転感のある構図など極端寄りを優先する
+- 背景は白場の多い切り抜き調ではなく、奥行きと動勢を感じる OGP 一体型の画面として作る
+- ただし文字面の可読性と bottom-right のブランド安全域は維持する
 
 ## 7. 画面との関係
 

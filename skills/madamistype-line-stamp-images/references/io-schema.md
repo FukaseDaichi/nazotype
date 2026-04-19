@@ -68,7 +68,7 @@ output/line-stamp-images/
 
 ## Artifact Meanings
 
-- `prompt.txt`: prompt sent to NanoBanana
+- `prompt.txt`: prompt sent to fal.ai
 - `request.json`: request summary without credentials
 - `task.json`: submit and final task responses
 - `raw.png`: downloaded model output

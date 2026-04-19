@@ -7,47 +7,53 @@ from typing import Any
 
 POSE_VARIANTS = [
     {
+        "variantId": "inverted-burst",
+        "titlePlacement": "left",
+        "poseInstruction": (
+            "Permit radically bold inverted action such as a handstand kick, upside-down twist, one-hand cartwheel freeze, "
+            "or hanging inverted lunge if the silhouette stays readable and the character identity is preserved."
+        ),
+        "cameraInstruction": (
+            "Favor overhead, rotating, or extreme low-angle framing that makes the inversion feel intentional and cinematic."
+        ),
+        "selectionHint": "Best when the type should feel wild, acrobatic, and instantly scroll-stopping.",
+    },
+    {
+        "variantId": "ground-sprawl",
+        "titlePlacement": "right",
+        "poseInstruction": (
+            "Let the character commit to a daring low-to-ground pose such as reclining into action, sliding on one hip, "
+            "catching balance with one arm, or twisting out of a near-fall while still reading clearly as powerful rather than passive."
+        ),
+        "cameraInstruction": (
+            "Favor a ground-level, chase-camera, or steep dutch-angle view that exaggerates depth and motion."
+        ),
+        "selectionHint": "Best when the type should feel reckless, physical, and impossible to ignore.",
+    },
+    {
         "variantId": "action-forward",
         "titlePlacement": "left",
         "poseInstruction": (
             "Drive the character into an extreme action pose with aggressive motion. "
             "Prefer striking asymmetry, visible torso twist, foreshortening, and a silhouette that feels caught mid-scene rather than posed. "
-            "Allow daring body orientations such as leaning hard, near-fall recovery, floor-level sprawl, airborne kick, or other unconventional but readable action."
+            "Allow daring body orientations such as a near-horizontal dive, knee-slide, braced floor-level sprawl, explosive leap, or other unconventional but readable action."
         ),
         "cameraInstruction": (
-            "Favor cinematic camera work such as top-down, low-angle, dutch tilt, or dramatic close perspective. "
+            "Favor cinematic camera work such as top-down, low-angle, worm's-eye, dutch tilt, or dramatic close perspective. "
             "Do not default to safe eye-level framing."
         ),
         "selectionHint": "Best when the type should feel explosive, surprising, and instantly clickable.",
-    },
-    {
-        "variantId": "reaction-side",
-        "titlePlacement": "right",
-        "poseInstruction": (
-            "Create a fast sideways reaction with weight shift, asymmetrical shoulders, "
-            "and a sharp side gaze or hand movement."
-        ),
-        "cameraInstruction": "Favor a side-heavy composition with visible directional flow.",
-        "selectionHint": "Best when the type reads through quick instincts or observation.",
-    },
-    {
-        "variantId": "secretive-turn",
-        "titlePlacement": "left",
-        "poseInstruction": (
-            "Use an over-the-shoulder turn, half-turn, or covert glance while keeping the "
-            "body clearly in motion and the silhouette readable."
-        ),
-        "cameraInstruction": "Favor a tense mid-turn framing rather than a posed portrait.",
-        "selectionHint": "Best when the type benefits from mystery, stealth, or tension.",
     },
     {
         "variantId": "prop-led",
         "titlePlacement": "right",
         "poseInstruction": (
             "Let the signature prop lead the motion and silhouette. The prop should create "
-            "the pose logic, not sit passively at the side."
+            "the pose logic, not sit passively at the side. Push for a frame where the prop, limbs, and torso create an aggressive directional sweep."
         ),
-        "cameraInstruction": "Favor a dynamic composition where the prop helps define the frame.",
+        "cameraInstruction": (
+            "Favor a dynamic composition where the prop helps define the frame, with strong perspective distortion or an off-axis camera."
+        ),
         "selectionHint": "Best when the type identity is inseparable from its tool or role.",
     },
 ]
@@ -69,6 +75,9 @@ COMMON_NEGATIVE_CONSTRAINTS = [
     "brand label",
     "caption",
     "wrong spelling in the requested title or type code",
+    "plain white background",
+    "empty gradient background",
+    "floating sticker on blank canvas",
     "logo",
     "watermark",
 ]
@@ -165,6 +174,7 @@ def build_candidate_prompts(type_data: dict[str, Any], candidate_count: int = 1)
     outfit_description = str(visual.get("outfitDescription", "")).strip()
     base_pose = str(visual.get("pose", "")).strip()
     expression = str(visual.get("expression", "")).strip()
+    background_description = str(visual.get("background", "")).strip()
     color_palette = _format_color_palette(visual.get("colorPalette"))
     supporting_prompt = _supporting_prompt(type_data)
     negative_prompt = merge_negative_constraints(type_data)
@@ -186,6 +196,8 @@ def build_candidate_prompts(type_data: dict[str, Any], candidate_count: int = 1)
             "Keep the spelling, casing, and character order exact. Do not translate, paraphrase, or replace the requested text.",
             "Do not translate the Japanese title into English or any other language.",
             "The only Latin letters allowed in the image are the exact type code characters.",
+            "Make the Japanese title the dominant typographic element in the card.",
+            "Render the type code as a clearly secondary supporting label, noticeably smaller and lower-emphasis than the title.",
             f"Place the title and type code as integrated editorial typography on the {title_side} side of the composition.",
             "The typography should feel designed into the image, not pasted on afterward.",
         ]
@@ -204,6 +216,8 @@ def build_candidate_prompts(type_data: dict[str, Any], candidate_count: int = 1)
             prompt_lines.append(f"Core palette: {color_palette}.")
         if expression:
             prompt_lines.append(f"Expression: {expression}.")
+        if background_description:
+            prompt_lines.append(f"Background direction: {background_description}.")
         if base_pose:
             prompt_lines.append(f"Base pose cue from the type data: {base_pose}.")
         if supporting_prompt:
@@ -216,9 +230,12 @@ def build_candidate_prompts(type_data: dict[str, Any], candidate_count: int = 1)
                 "Compose exactly one character, large in frame, with a strong diagonal silhouette.",
                 "Make the pose extremely bold, asymmetrical, and mid-action.",
                 "Ensure either the torso twist, limb action, or gaze direction clearly suggests motion.",
+                "Allow radically unconventional but readable body orientations, including near-horizontal lounging, upside-down inversion, or floor-contact poses, when they create a stronger frame.",
                 "Prefer a composition that feels surprising and physically dynamic rather than neat or centered.",
                 "An unusual camera angle is welcome if readability stays strong.",
-                "Use a restrained atmospheric background with minimal clutter and clean value separation.",
+                "Design the background as a real part of the OGP card, with environmental depth, perspective cues, layered effects, and motion energy that support the type.",
+                "Avoid a blank white field, isolated cutout look, or an almost-empty gradient backdrop.",
+                "Keep the text side readable with clean value separation and do not let background detail become muddy or cluttered.",
                 "Keep the integrated title and type code highly readable at social-card size.",
                 "Keep the bottom-right corner visually simple and blank. Do not place any text there.",
                 "Do not add any text other than the exact requested title and type code. Do not add logo, watermark, extra characters, or a plain upright pose.",
