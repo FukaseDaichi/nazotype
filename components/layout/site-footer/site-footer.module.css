@@ -35,7 +35,7 @@
 .copy {
   font-family: var(--font-mono);
   font-size: 0.65rem;
-  color: var(--color-paper-300);
+  color: var(--color-paper-200);
   letter-spacing: 0.15em;
   line-height: 1.8;
 }

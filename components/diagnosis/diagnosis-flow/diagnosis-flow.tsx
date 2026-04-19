@@ -217,7 +217,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
         <div className="flex items-center justify-center min-h-[60vh]">
           <div className="flex flex-col items-center gap-4 text-center">
             <div className={styles.spinner} aria-hidden="true" />
-            <p className="font-mono text-xs tracking-widest uppercase text-paper-300">
+            <p className="font-mono text-xs tracking-widest uppercase text-paper-200">
               Preparing
             </p>
             <h1 className="text-xl font-bold text-paper-50">
@@ -238,7 +238,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
       <main id="main-content" className="min-h-dvh">
         <div className="max-w-3xl mx-auto px-4 py-16">
           <div className="border border-gold-400/20 bg-mystery-800/80 p-8 flex flex-col gap-4">
-            <p className="font-mono text-xs tracking-widest uppercase text-paper-300">
+            <p className="font-mono text-xs tracking-widest uppercase text-paper-200">
               Diagnosis
             </p>
             <h1 className="text-xl font-bold text-paper-50">
@@ -267,7 +267,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
         <div className="flex items-center justify-center min-h-[60vh]">
           <div className="flex flex-col items-center gap-4 text-center">
             <div className={styles.spinner} aria-hidden="true" />
-            <p className="font-mono text-xs tracking-widest uppercase text-paper-300">
+            <p className="font-mono text-xs tracking-widest uppercase text-paper-200">
               Calculating
             </p>
             <h1 className="text-xl font-bold text-paper-50">
@@ -289,7 +289,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
       <header className="sticky top-0 z-40 bg-mystery-900/95 backdrop-blur-sm border-b border-gold-400/10">
         <div className="max-w-3xl mx-auto px-4 py-3">
           <div className="flex justify-between items-center text-sm">
-            <span className="font-mono text-paper-300">
+            <span className="font-mono text-paper-200">
               Page {currentPage} / {totalPages}
             </span>
             <span className="text-gold-400 font-bold text-sm">
@@ -316,10 +316,10 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
           >
             ページ {currentPage} / {totalPages}
           </h1>
-          <p className="text-sm text-paper-300 mt-1">
+          <p className="text-sm text-paper-200 mt-1">
             直感で答えてください
           </p>
-          <div className="flex items-center gap-4 mt-2 text-xs text-paper-300 font-mono">
+          <div className="flex items-center gap-4 mt-2 text-xs text-paper-200 font-mono">
             <span aria-live="polite">
               回答済み {answeredCount} / {totalQuestions}
             </span>
@@ -366,7 +366,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
                 {/* 5-point scale */}
                 <div className="mt-4">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-xs text-paper-300 shrink-0 w-16 text-right">
+                    <span className="text-xs text-paper-200 shrink-0 w-16 text-right">
                       そう思わない
                     </span>
                     <div className="flex gap-2">
@@ -389,7 +389,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
                           </button>
                         ))}
                     </div>
-                    <span className="text-xs text-paper-300 shrink-0 w-16">
+                    <span className="text-xs text-paper-200 shrink-0 w-16">
                       そう思う
                     </span>
                   </div>

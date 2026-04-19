@@ -76,7 +76,7 @@ export function StartDiagnosisForm({
         </div>
       </form>
 
-      <p className="font-mono text-[0.75rem] text-paper-300">
+      <p className="font-mono text-[0.75rem] text-paper-200">
         32問 &middot; 所要時間3〜5分 &middot; 登録不要
       </p>
 
@@ -87,7 +87,7 @@ export function StartDiagnosisForm({
           className="flex items-center gap-2 text-sm text-gold-400 hover:text-gold-300 transition-colors"
         >
           前回の続きから再開する
-          <span className="font-mono text-xs text-paper-300">
+          <span className="font-mono text-xs text-paper-200">
             ({resumeName})
           </span>
         </Link>

@@ -43,7 +43,7 @@ export function AxisCompositionSection() {
                 key={definition.axis}
                 className={styles.axisCard}
               >
-                <p className="font-mono text-[0.6rem] text-paper-300 tracking-[0.2em] mb-4">
+                <p className="font-mono text-[0.6rem] text-paper-200 tracking-[0.2em] mb-4">
                   AXIS {definition.no}
                 </p>
 

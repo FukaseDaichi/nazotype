@@ -52,7 +52,7 @@
   font-family: var(--font-mono);
   font-size: 0.6rem;
   letter-spacing: 0.2em;
-  color: var(--color-paper-300);
+  color: var(--color-paper-200);
   opacity: 0;
   animation: fadeIn 1s 2s forwards;
 }

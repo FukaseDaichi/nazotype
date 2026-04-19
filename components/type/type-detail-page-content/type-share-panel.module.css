@@ -1,6 +1,6 @@
 .sharePanel {
   border: 1px solid rgba(193, 155, 46, 0.15);
-  background: rgba(26, 21, 48, 0.6);
+  background: rgba(28, 26, 31, 0.7);
   backdrop-filter: blur(5px);
   padding: 1.5rem;
   box-shadow: var(--shadow-sm);

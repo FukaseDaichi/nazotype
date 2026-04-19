@@ -290,7 +290,7 @@ export function HomePage({ allTypes }: HomePageProps) {
                     <p className="text-[1.05rem] font-bold text-paper-50 mb-3">
                       {step.title}
                     </p>
-                    <p className="text-[0.85rem] leading-relaxed text-paper-300">
+                    <p className="text-[0.85rem] leading-relaxed text-paper-200">
                       {step.desc}
                     </p>
                   </div>
@@ -315,7 +315,7 @@ export function HomePage({ allTypes }: HomePageProps) {
                     { left: "熟考型", right: "転換型", fill: 25 },
                   ].map((axis) => (
                     <div key={axis.left} className="flex flex-col gap-1.5">
-                      <div className="flex justify-between font-mono text-[0.65rem] text-paper-300">
+                      <div className="flex justify-between font-mono text-[0.65rem] text-paper-200">
                         <span>{axis.left}</span>
                         <span>{axis.right}</span>
                       </div>

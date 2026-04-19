@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  /* Mystery (base dark) */
-  --color-mystery-950: #0a0812;
-  --color-mystery-900: #0f0d1d;
-  --color-mystery-800: #1a1530;
-  --color-mystery-700: #241f45;
-  --color-mystery-600: #302a5a;
-  --color-mystery-500: #3d366f;
+  /* Mystery (base dark — warm neutral gray) */
+  --color-mystery-950: #0e0d10;
+  --color-mystery-900: #16141a;
+  --color-mystery-800: #1c1a1f;
+  --color-mystery-700: #2a272e;
+  --color-mystery-600: #3a3640;
+  --color-mystery-500: #4b4652;
 
   /* Gold (primary accent) */
   --color-gold-300: #e8c96a;
@@ -19,7 +19,7 @@
   --color-paper-50: #f5f0e8;
   --color-paper-100: #e8e0cc;
   --color-paper-200: #c9b99a;
-  --color-paper-300: #8b6d4a;
+  --color-paper-300: #a68b66;
 
   /* Rust (warnings / errors) */
   --color-rust-400: #b34825;
@@ -42,8 +42,8 @@
   --radius-xl: 8px;
 
   /* Shadows */
-  --shadow-sm: 0 2px 10px rgba(10, 8, 18, 0.3);
-  --shadow-md: 0 12px 32px rgba(10, 8, 18, 0.4);
+  --shadow-sm: 0 2px 10px rgba(14, 13, 16, 0.3);
+  --shadow-md: 0 12px 32px rgba(14, 13, 16, 0.4);
   --shadow-glow-gold: 0 0 20px rgba(193, 155, 46, 0.15);
 }
 
@@ -51,7 +51,7 @@
 :root {
   --color-text: #f5f0e8;
   --color-text-muted: #c9b99a;
-  --color-text-subtle: #8b6d4a;
+  --color-text-subtle: #a68b66;
 }
 
 /* Base */
@@ -73,7 +73,7 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   background-size: 200px 200px;
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.3;
 }
 
 ::selection {

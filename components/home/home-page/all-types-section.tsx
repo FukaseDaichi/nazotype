@@ -80,7 +80,7 @@ export function AllTypesSection({ allTypes }: AllTypesSectionProps) {
         </RevealOnScroll>
 
         <RevealOnScroll>
-          <p className="text-center mt-8 font-mono text-[0.7rem] text-paper-300 tracking-[0.15em] opacity-60">
+          <p className="text-center mt-8 font-mono text-[0.7rem] text-paper-200 tracking-[0.15em] opacity-80">
             診断後に、あなたのタイプが詳しく解き明かされます
           </p>
         </RevealOnScroll>
