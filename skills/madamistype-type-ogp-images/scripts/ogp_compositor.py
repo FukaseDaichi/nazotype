@@ -6,12 +6,18 @@ from typing import Any
 
 TARGET_SIZE = (1200, 630)
 FONT_CANDIDATES = [
+    Path("/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc"),
+    Path("/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc"),
+    Path("/Library/Fonts/Arial Unicode.ttf"),
+    Path("/System/Library/Fonts/Supplemental/Arial Unicode.ttf"),
     Path("C:/Windows/Fonts/NotoSansJP-VF.ttf"),
     Path("C:/Windows/Fonts/YuGothB.ttc"),
     Path("C:/Windows/Fonts/YuGothM.ttc"),
     Path("C:/Windows/Fonts/meiryob.ttc"),
     Path("C:/Windows/Fonts/meiryo.ttc"),
     Path("C:/Windows/Fonts/msgothic.ttc"),
+    Path("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"),
+    Path("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"),
 ]
 
 
@@ -54,7 +60,7 @@ def compose_ogp(
     output_path: Path,
     type_data: dict[str, Any],
     title_placement: str,
-    brand_label: str = "マダミスタイプ診断",
+    brand_label: str = "謎タイプ診断",
 ) -> dict[str, Any]:
     image, image_draw, _ = _import_pillow()
 
@@ -62,15 +68,38 @@ def compose_ogp(
     composed = _cover_resize(hero, TARGET_SIZE)
     draw = image_draw.Draw(composed, "RGBA")
 
-    brand_font, brand_font_path = _load_font(24)
+    brand_font, brand_font_path = _load_font(28)
     text_bbox = draw.textbbox((0, 0), brand_label, font=brand_font)
     text_width = text_bbox[2] - text_bbox[0]
     text_height = text_bbox[3] - text_bbox[1]
-    text_x = TARGET_SIZE[0] - text_width - 36
-    text_y = TARGET_SIZE[1] - text_height - 28
+    badge_padding_x = 16
+    badge_padding_y = 10
+    badge_x = TARGET_SIZE[0] - text_width - (badge_padding_x * 2) - 24
+    badge_y = TARGET_SIZE[1] - text_height - (badge_padding_y * 2) - 20
+    badge_box = (
+        badge_x,
+        badge_y,
+        badge_x + text_width + (badge_padding_x * 2),
+        badge_y + text_height + (badge_padding_y * 2),
+    )
+    text_x = badge_x + badge_padding_x
+    text_y = badge_y + badge_padding_y - text_bbox[1]
 
-    draw.text((text_x + 2, text_y + 2), brand_label, font=brand_font, fill=(0, 0, 0, 120))
-    draw.text((text_x, text_y), brand_label, font=brand_font, fill=(248, 245, 240, 220))
+    draw.rounded_rectangle(
+        badge_box,
+        radius=14,
+        fill=(14, 18, 28, 184),
+        outline=(248, 245, 240, 96),
+        width=1,
+    )
+    draw.text(
+        (text_x, text_y),
+        brand_label,
+        font=brand_font,
+        fill=(248, 245, 240, 236),
+        stroke_width=2,
+        stroke_fill=(10, 12, 18, 150),
+    )
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     composed.save(output_path, format="PNG")

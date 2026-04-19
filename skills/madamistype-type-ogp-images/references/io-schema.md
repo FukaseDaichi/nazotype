@@ -89,6 +89,6 @@ public/ogp/types/
 - `selected/hero.png`: chosen candidate copied into a stable path
 - `selection.json`: machine-readable selected candidate metadata
 - `selection-note.txt`: short human-readable selection rationale
-- `final/ogp.png`: final OGP image with only the small bottom-right `マダミスタイプ診断` label added locally
+- `final/ogp.png`: final OGP image with only the small bottom-right `謎タイプ診断` label added locally
 - `final/meta.json`: per-type execution summary
 - `batch-report.json`: batch-level status report

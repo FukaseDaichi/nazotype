@@ -14,7 +14,7 @@ Keep local compositor text minimal:
 
 - model-rendered primary: `typeName`
 - model-rendered secondary: `typeCode`
-- compositor-added tertiary: small `マダミスタイプ診断` label at the bottom-right
+- compositor-added tertiary: small `謎タイプ診断` label at the bottom-right
 
 Do not add explanation copy inside the final OGP unless the user explicitly asks for a different treatment.
 
@@ -46,7 +46,7 @@ The compositor should:
 - crop the hero art to cover the full frame
 - preserve the most expressive part of the pose
 - avoid covering the model-rendered title text
-- add only the small bottom-right `マダミスタイプ診断` label
+- add only the small bottom-right `謎タイプ診断` label
 
 ## Brand Direction
 
