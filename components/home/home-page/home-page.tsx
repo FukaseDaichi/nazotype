@@ -43,7 +43,7 @@ export function HomePage({ allTypes }: HomePageProps) {
                 CONCEPT
                 <span className="flex-1 h-px bg-gradient-to-r from-gold-400/30 to-transparent max-w-[80px]" />
               </p>
-              <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-bold leading-tight text-paper-50 mb-6">
+              <h2 className="text-[clamp(1.5rem,4.5vw,3rem)] font-bold leading-tight text-paper-50 mb-6">
                 「解く力」ではなく
                 <br />
                 「役割の違い」を診る
@@ -236,7 +236,7 @@ export function HomePage({ allTypes }: HomePageProps) {
                 HOW IT WORKS
                 <span className="flex-1 h-px bg-gradient-to-r from-gold-400/30 to-transparent max-w-[80px]" />
               </p>
-              <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-bold leading-tight text-paper-50">
+              <h2 className="text-[clamp(1.5rem,4.5vw,3rem)] font-bold leading-tight text-paper-50">
                 診断の流れ
               </h2>
             </RevealOnScroll>

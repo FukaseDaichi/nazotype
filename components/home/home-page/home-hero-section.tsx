@@ -4,7 +4,7 @@ import styles from "./home-page.module.css";
 
 export function HomeHeroSection() {
   return (
-    <section className="min-h-svh grid place-items-center text-center px-8 py-20 relative">
+    <section className="min-h-svh grid grid-cols-1 place-items-center text-center px-6 sm:px-8 py-20 relative overflow-hidden">
       {/* Decorative lines & cipher text */}
       <div className={styles.heroDeco} aria-hidden="true">
         <div className={`${styles.decoLine} ${styles.decoH}`} style={{ top: "20%" }} />
@@ -26,7 +26,7 @@ export function HomeHeroSection() {
         </div>
       </div>
 
-      <div>
+      <div className="w-full max-w-[640px] min-w-0">
         <p
           className="font-mono text-[0.7rem] tracking-[0.3em] text-gold-400 uppercase mb-6"
           style={{ opacity: 0, animation: "fadeUp 0.8s 0.3s forwards" }}
@@ -35,7 +35,7 @@ export function HomeHeroSection() {
         </p>
 
         <h1
-          className="text-[clamp(3.5rem,12vw,9rem)] font-bold leading-none tracking-tight text-paper-50"
+          className="text-[clamp(2.75rem,12vw,9rem)] font-bold leading-none tracking-tight text-paper-50 break-words"
           style={{ opacity: 0, animation: "fadeUp 1s 0.5s forwards" }}
         >
           謎解き

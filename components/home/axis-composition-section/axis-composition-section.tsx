@@ -28,7 +28,7 @@ export function AxisCompositionSection() {
           </p>
           <h2
             id="axis-composition-heading"
-            className="text-[clamp(1.8rem,4vw,3rem)] font-bold leading-tight text-paper-50 mb-6"
+            className="text-[clamp(1.5rem,4.5vw,3rem)] font-bold leading-tight text-paper-50 mb-6"
           >
             4つの軸が
             <br />
