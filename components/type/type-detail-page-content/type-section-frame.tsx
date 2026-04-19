@@ -13,6 +13,15 @@ type TypeSectionFrameProps = {
   children: ReactNode;
   className?: string;
   headerAlign?: "start" | "center";
+  accent?: "gold" | "clue" | "rust" | "paper";
+  index?: string;
+};
+
+const ACCENT_CLASS: Record<NonNullable<TypeSectionFrameProps["accent"]>, string> = {
+  gold: styles.accentGold,
+  clue: styles.accentClue,
+  rust: styles.accentRust,
+  paper: styles.accentPaper,
 };
 
 export function TypeSectionFrame({
@@ -20,40 +29,43 @@ export function TypeSectionFrame({
   children,
   className,
   headerAlign = "start",
+  accent = "gold",
+  index,
 }: TypeSectionFrameProps) {
-  const sectionClassName = [styles.section, className].filter(Boolean).join(" ");
+  const sectionClassName = [
+    styles.section,
+    ACCENT_CLASS[accent],
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
-    <section
-      className={`${sectionClassName} border border-gold-400/15 bg-mystery-800/60 backdrop-blur-sm p-5 shadow-sm`}
-      aria-labelledby={heading.headingId}
-    >
-      {headerAlign === "center" ? (
-        <div className="flex flex-col items-center gap-2 text-center">
-          <span className="font-mono text-xs font-bold uppercase tracking-widest text-gold-400">
-            {heading.eyebrow}
+    <section className={sectionClassName} aria-labelledby={heading.headingId}>
+      <div className={styles.cornerTl} aria-hidden="true" />
+      <div className={styles.cornerTr} aria-hidden="true" />
+      <div className={styles.cornerBl} aria-hidden="true" />
+      <div className={styles.cornerBr} aria-hidden="true" />
+
+      <header
+        className={`${styles.header} ${
+          headerAlign === "center" ? styles.headerCenter : ""
+        }`}
+      >
+        {index ? (
+          <span className={styles.index} aria-hidden="true">
+            {index}
           </span>
-          <h2
-            id={heading.headingId}
-            className="text-xl font-bold leading-tight"
-          >
+        ) : null}
+        <div className={styles.headingText}>
+          <span className={styles.eyebrow}>{heading.eyebrow}</span>
+          <h2 id={heading.headingId} className={styles.title}>
             {heading.title}
           </h2>
         </div>
-      ) : (
-        <div className="space-y-1">
-          <span className="block font-mono text-xs font-bold uppercase tracking-widest text-gold-400">
-            {heading.eyebrow}
-          </span>
-          <h2
-            id={heading.headingId}
-            className="text-xl font-bold leading-tight"
-          >
-            {heading.title}
-          </h2>
-        </div>
-      )}
-      <div className="mt-4">{children}</div>
+      </header>
+
+      <div className={styles.body}>{children}</div>
     </section>
   );
 }

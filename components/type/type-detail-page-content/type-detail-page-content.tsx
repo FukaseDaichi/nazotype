@@ -97,6 +97,12 @@ export function TypeDetailPageContent({
       />
 
       <div className={styles.shell}>
+        <div className={styles.divider} aria-hidden="true">
+          <span className={styles.dividerLine} />
+          <span className={styles.dividerLabel}>DOSSIER</span>
+          <span className={styles.dividerLine} />
+        </div>
+
         {isShared ? (
           <TypeSignatureSection
             heading={SECTION_HEADINGS.signature}
@@ -117,27 +123,38 @@ export function TypeDetailPageContent({
           <TypeListSection
             heading={SECTION_HEADINGS.strengths}
             items={typeData.strengths}
+            accent="gold"
+            index="01"
+            marker="check"
           />
           <TypeListSection
             heading={SECTION_HEADINGS.cautions}
             items={typeData.cautions}
+            accent="rust"
+            index="02"
+            marker="warn"
           />
         </div>
 
         <TypeOverviewSection
           heading={SECTION_HEADINGS.overview}
           content={typeData.detailDescription}
+          index="03"
         />
 
         <TypeListSection
           heading={SECTION_HEADINGS.roles}
           items={typeData.recommendedRole}
+          accent="paper"
+          index="04"
+          marker="dot"
         />
 
         <TypeCompatibilitySection
           heading={SECTION_HEADINGS.compatibility}
           compatibility={typeData.compatibility}
           compatibleTypes={compatibleTypes}
+          index="05"
         />
 
         {isShared ? (

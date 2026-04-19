@@ -11,6 +11,7 @@ import {
 import { decodeShareKey, expandShareKeyAxisSummaries } from "@/lib/share-key";
 import { getAbsoluteUrl } from "@/lib/site";
 
+import { PostDiagnosisResultCard } from "./post-diagnosis-result-card";
 import { TypeSignatureSection } from "./type-signature-section";
 import { TypeSharePanel } from "./type-share-panel";
 import { type TypeSectionHeading } from "./type-section-frame";
@@ -85,11 +86,19 @@ export function PostDiagnosisSection({
 
   return (
     <>
-      <TypeSignatureSection
-        heading={SIGNATURE_HEADING}
-        typeData={typeData}
-        axisSummaries={state.axisSummaries}
-      />
+      {state.isPostDiagnosis ? (
+        <PostDiagnosisResultCard
+          typeData={typeData}
+          axisSummaries={state.axisSummaries}
+          userName={state.userName}
+        />
+      ) : (
+        <TypeSignatureSection
+          heading={SIGNATURE_HEADING}
+          typeData={typeData}
+          axisSummaries={state.axisSummaries}
+        />
+      )}
 
       <TypeSharePanel
         id="type-share-panel"

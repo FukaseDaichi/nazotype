@@ -1,14 +1,53 @@
 .page {
   min-height: 100dvh;
+  position: relative;
 }
 
 .shell {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  max-width: 768px;
+  gap: 2rem;
+  max-width: 880px;
   margin: 0 auto;
-  padding: 0 1rem 3rem;
+  padding: 3rem 1rem 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .shell {
+    gap: 2.25rem;
+    padding: 3.5rem 1.5rem 4rem;
+  }
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto 0.5rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(193, 155, 46, 0.4) 50%,
+    transparent 100%
+  );
+}
+
+.dividerLabel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  color: var(--color-gold-400);
+  text-transform: uppercase;
 }
 
 .twoCol {

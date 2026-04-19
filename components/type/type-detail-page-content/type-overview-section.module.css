@@ -1,1 +1,28 @@
-/* Styling handled by Tailwind in the component */
+.overview {
+  position: relative;
+  padding: 0.5rem 0 0.25rem 0;
+}
+
+.openQuote {
+  position: absolute;
+  left: -0.25rem;
+  top: -1.25rem;
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--color-gold-400);
+  opacity: 0.25;
+  pointer-events: none;
+  user-select: none;
+}
+
+.body {
+  font-size: 1rem;
+  line-height: 1.95;
+  color: var(--color-paper-100);
+  white-space: pre-line;
+  letter-spacing: 0.01em;
+  margin: 0;
+  padding-left: 1.5rem;
+  border-left: 1px solid rgba(201, 185, 154, 0.18);
+}

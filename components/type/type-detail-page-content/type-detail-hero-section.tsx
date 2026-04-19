@@ -30,19 +30,12 @@ export function TypeDetailHeroSection({
   const isShared = mode === "shared";
   const shouldShowPostDiagnosisActions =
     isShared && isPostDiagnosisResult && Boolean(shareKey);
-  const heroHeading = isShared ? (
-    <>
-      共有された
-      <br />
-      タイプ結果
-    </>
-  ) : (
-    <>
-      {typeData.typeName}
-      <br />
-      タイプ詳細
-    </>
-  );
+  const axisChips = [
+    typeData.axis.axis1,
+    typeData.axis.axis2,
+    typeData.axis.axis3,
+    typeData.axis.axis4,
+  ];
 
   return (
     <>
@@ -60,103 +53,139 @@ export function TypeDetailHeroSection({
       </header>
 
       <section className={styles.heroSection} aria-labelledby="result-heading">
-        <div className="mx-auto max-w-[768px]">
-          <p className="font-mono text-xs font-bold uppercase tracking-widest text-gold-400">
-            {isShared ? "Shared Result" : "Public File"}
-          </p>
+        <div className={styles.auraWrap} aria-hidden="true">
+          <span className={styles.aura1} />
+          <span className={styles.aura2} />
+          <span className={styles.grid} />
+        </div>
 
-          <p className="mt-1 font-mono text-xs tracking-wider text-paper-300">
-            Case File #{typeData.typeCode}
-          </p>
+        <div className={styles.container}>
+          <div className={styles.meta}>
+            <span className={styles.metaLabel}>
+              {isShared ? "Shared Result" : "Public File"}
+            </span>
+            <span className={styles.metaDivider} aria-hidden="true" />
+            <span className={styles.metaCode}>
+              CASE FILE #{typeData.typeCode}
+            </span>
+          </div>
 
-          <div className="mt-6 grid items-center gap-8 md:grid-cols-[40%_1fr]">
-            <div className="mx-auto w-full max-w-[260px] md:mx-0">
-              <div className="overflow-hidden shadow-md border border-gold-400/20">
+          <div className={styles.stage}>
+            <div className={styles.artworkWrap}>
+              <div className={styles.artworkFrame}>
+                <div className={styles.cornerTl} aria-hidden="true" />
+                <div className={styles.cornerTr} aria-hidden="true" />
+                <div className={styles.cornerBl} aria-hidden="true" />
+                <div className={styles.cornerBr} aria-hidden="true" />
+
                 <TypeArtwork
                   typeCode={typeData.typeCode}
                   typeName={typeData.typeName}
                   palette={typeData.visualProfile.colorPalette}
                   priority
+                  className={styles.artworkImage}
                 />
+
+                <div className={styles.artworkOverlay} aria-hidden="true" />
+
+                <div className={styles.codeStamp} aria-hidden="true">
+                  <span className={styles.codeStampLabel}>TYPE</span>
+                  <span className={styles.codeStampValue}>
+                    {typeData.typeCode}
+                  </span>
+                </div>
               </div>
+
               {hasChibi ? (
-                <div className="mt-4 flex justify-center" aria-hidden="true">
+                <div className={styles.chibi} aria-hidden="true">
+                  <div className={styles.chibiHalo} />
                   <Image
                     src={`/types/${typeData.typeCode}_chibi.png`}
                     alt=""
-                    width={100}
-                    height={100}
-                    className="h-24 w-24 object-contain"
+                    width={180}
+                    height={180}
+                    className={styles.chibiImage}
                   />
                 </div>
               ) : null}
             </div>
 
-            <div className="flex flex-col gap-4 text-center md:text-left">
-              <h1
-                id="result-heading"
-                className="text-[clamp(2rem,6vw,3.5rem)] leading-[0.95] tracking-wide text-paper-50 font-bold"
-              >
+            <div className={styles.info}>
+              <p className={styles.kicker}>
+                {isShared ? "SHARED DIAGNOSIS" : "TYPE DOSSIER"}
+              </p>
+
+              <h1 id="result-heading" className={styles.title}>
                 {isShared && sharedUserName ? (
                   <>
-                    <em className="not-italic text-gold-300">
+                    <span className={styles.sharedUser}>
                       {sharedUserName}
-                    </em>
-                    <br />
-                    さんの診断結果
+                    </span>
+                    <span className={styles.sharedSuffix}>さんの診断結果</span>
                   </>
                 ) : (
-                  heroHeading
+                  <>
+                    <span className={styles.typeName}>
+                      {typeData.typeName}
+                    </span>
+                  </>
                 )}
               </h1>
 
-              <p className="text-lg leading-relaxed text-gold-300">
-                &laquo;{typeData.tagline}&raquo;
-              </p>
+              <div className={styles.axisChips} aria-label="軸の傾向">
+                {axisChips.map((axis) => (
+                  <span key={axis} className={styles.axisChip}>
+                    {axis}
+                  </span>
+                ))}
+              </div>
 
-              <p className="text-sm leading-relaxed text-paper-200">
-                {typeData.summary}
-              </p>
+              <blockquote className={styles.tagline}>
+                <span className={styles.quoteMark} aria-hidden="true">
+                  &laquo;
+                </span>
+                <span>{typeData.tagline}</span>
+                <span className={styles.quoteMark} aria-hidden="true">
+                  &raquo;
+                </span>
+              </blockquote>
 
-              <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <p className={styles.summary}>{typeData.summary}</p>
+
+              <div className={styles.actions}>
                 {shouldShowPostDiagnosisActions ? (
                   <>
-                    <a
-                      href="#type-share-panel"
-                      className="inline-flex min-h-[52px] items-center justify-center bg-gradient-to-br from-gold-400 to-gold-500 px-8 py-3 font-bold text-mystery-800 transition-all duration-150 hover:opacity-90 active:scale-[0.98]"
-                    >
-                      共有
+                    <a href="#type-share-panel" className={styles.primaryCta}>
+                      <span>共有する</span>
+                      <span className={styles.ctaArrow} aria-hidden="true">
+                        →
+                      </span>
                     </a>
                     <a
                       href={RECOMMENDATION_FEEDBACK_FORM_URL}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex min-h-[52px] items-center justify-center border border-gold-400 px-8 py-3 font-bold text-gold-300 transition-all duration-150 hover:bg-gold-400/10 active:scale-[0.98]"
+                      className={styles.secondaryCta}
                     >
                       おすすめを教える
                     </a>
                   </>
-                ) : isShared ? (
-                  <Link
-                    href="/"
-                    prefetch={false}
-                    className="inline-flex min-h-[52px] items-center justify-center bg-gradient-to-br from-gold-400 to-gold-500 px-8 py-3 font-bold text-mystery-800 transition-all duration-150 hover:opacity-90 active:scale-[0.98]"
-                  >
-                    自分でも診断する
-                  </Link>
                 ) : (
                   <Link
                     href="/"
                     prefetch={false}
-                    className="inline-flex min-h-[52px] items-center justify-center bg-gradient-to-br from-gold-400 to-gold-500 px-8 py-3 font-bold text-mystery-800 transition-all duration-150 hover:opacity-90 active:scale-[0.98]"
+                    className={styles.primaryCta}
                   >
-                    自分でも診断する
+                    <span>自分でも診断する</span>
+                    <span className={styles.ctaArrow} aria-hidden="true">
+                      →
+                    </span>
                   </Link>
                 )}
               </div>
 
               {shouldShowPostDiagnosisActions ? (
-                <p className="text-xs leading-relaxed text-paper-300">
+                <p className={styles.hint}>
                   タイプごとのおすすめ謎解きイベントを集計したいので、よければフォームで教えてください。
                 </p>
               ) : null}
