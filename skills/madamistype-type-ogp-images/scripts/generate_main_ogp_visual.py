@@ -31,8 +31,17 @@ REFERENCE_URL_BASE = os.getenv(
     "FAL_REFERENCE_BASE_URL",
     "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types",
 ).rstrip("/")
-REFERENCE_TYPE_CODES = ("TFLP", "TRLP", "OREI", "OFEP")
+REFERENCE_TYPE_CODES = ("abhc", "abtn", "alhn", "dltc")
 TARGET_SIZE = (1200, 630)
+FONT_CANDIDATES = [
+    Path("/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc"),
+    Path("/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc"),
+    Path("/Library/Fonts/Arial Unicode.ttf"),
+    Path("/System/Library/Fonts/Supplemental/Arial Unicode.ttf"),
+    Path("C:/Windows/Fonts/NotoSansJP-VF.ttf"),
+    Path("C:/Windows/Fonts/YuGothB.ttc"),
+    Path("C:/Windows/Fonts/YuGothM.ttc"),
+]
 
 
 def load_env_file(path: Path) -> None:
@@ -61,44 +70,36 @@ def build_reference_urls() -> list[str]:
 def build_prompt() -> str:
     return textwrap.dedent(
         """
-        Create a premium anime-style key visual for the website "Madamis Type", a murder mystery play-style diagnosis service.
-        Use the four reference characters only as visual inspiration for a representative ensemble cast.
-        Preserve the feeling of four distinct mystery-archetype characters with different silhouettes, outfits, and palettes inspired by the references.
+        Create a premium anime-style key visual for the website "謎解きタイプ診断", a play-style diagnosis service for escape rooms, puzzle events, and cooperative mystery games.
+        Use the four reference characters only as visual inspiration for a representative ensemble cast from the current service.
+        Preserve the feeling of four distinct puzzle-archetype characters with different silhouettes, outfits, props, and palettes inspired by the references.
         Show exactly four characters total in one coherent scene.
 
         Scene direction:
-        a late-night noir investigation room,
-        a dramatic case-file atmosphere,
-        an ivory evidence board and scattered dossiers,
-        red string, paper files, photos, desk-light mood,
-        elegant editorial framing,
-        strong depth and cinematic lighting,
+        a late-night clue analysis room,
+        a dramatic evidence-board and puzzle-war-room atmosphere,
+        clue cards, coded notes, maps, desk lights, paper files, and red-string energy,
+        elegant editorial framing with a premium mystery-poster mood,
+        strong depth, layered lighting, and cinematic contrast,
         polished anime illustration.
 
         Composition requirements:
-        place the ensemble weighted toward the right and lower-right,
+        place the ensemble weighted toward the center-right and lower-right,
         create one large foreground character, two midground characters, and one smaller background character,
+        all four characters should feel connected in one active strategy moment rather than a lineup,
         asymmetrical composition,
         clear readable silhouettes,
         visually rich but not cluttered,
-        reserve the left third for a large title treatment built directly into the artwork,
-        keep generous margins so the title is not cropped.
-
-        Title requirements:
-        render the exact Japanese title "マダミスタイプ診断",
-        the title must be large, stylish, crisp, and highly legible,
-        use elegant Japanese display typography with a premium noir poster feeling,
-        use off-white, ivory, pale gold, or warm paper-like lettering,
-        make the title the only readable text in the image,
-        do not misspell, distort, replace, or invent characters,
-        do not add subtitles, English text, logos, labels, or any extra lettering.
+        reserve the left third for local title compositing after generation,
+        keep generous negative space on the left so a large title can be added later without fighting the artwork,
+        do not place faces or important props deep inside the far-left title zone.
 
         Character direction:
-        mystery, deduction, observation, performance, psychological tension,
+        deduction, observation, communication, quick thinking, team play, psychological tension,
         stylish investigative fashion,
-        varied poses with clear motion,
-        each character should feel intelligent, theatrical, and suspicious in a different way,
-        no comedic expression,
+        varied poses with clear motion and overlapping conversation energy,
+        each character should feel intelligent, cool, and capable in a different way,
+        no comedic expression or mascot presentation,
         no mascot look,
         no chibi proportions.
 
@@ -107,18 +108,18 @@ def build_prompt() -> str:
         dramatic,
         clean,
         editorial,
-        noir case file,
-        elegant anime key art,
+        puzzle-noir strategy room,
+        elegant anime key art with luxury poster sensibility,
         thumbnail-readable.
 
         Strict constraints:
-        no extra text beyond the exact title "マダミスタイプ診断",
+        no text,
         no logo,
         no watermark,
         no UI,
         no speech bubbles,
         no extra fifth character,
-        no crowded background details behind the title area,
+        no crowded details that overwhelm the left title zone,
         no split-panel comic layout,
         no collage borders.
         """
@@ -131,6 +132,21 @@ def _import_pillow() -> tuple[Any, Any, Any, Any]:
     except ImportError as exc:
         raise RuntimeError("Pillow is required. Run with `uv run --with pillow python ...`.") from exc
     return Image, ImageColor, ImageDraw, ImageFilter, ImageFont
+
+
+def _pick_font_path() -> Path | None:
+    for path in FONT_CANDIDATES:
+        if path.exists():
+            return path
+    return None
+
+
+def _load_font(size: int) -> tuple[Any, str]:
+    _, _, _, _, image_font = _import_pillow()
+    font_path = _pick_font_path()
+    if font_path is not None:
+        return image_font.truetype(str(font_path), size=size), str(font_path)
+    return image_font.load_default(), "default"
 
 
 def _cover_resize(image: Any, target_size: tuple[int, int]) -> Any:
@@ -147,12 +163,88 @@ def _cover_resize(image: Any, target_size: tuple[int, int]) -> Any:
     return resized.crop((left, top, left + target_width, top + target_height))
 
 
-def compose_final(raw_path: Path, final_path: Path) -> None:
-    Image, _, _, _, _ = _import_pillow()
+def compose_final(raw_path: Path, final_path: Path) -> dict[str, Any]:
+    Image, ImageColor, ImageDraw, ImageFilter, _ = _import_pillow()
     canvas = _cover_resize(Image.open(raw_path).convert("RGBA"), TARGET_SIZE)
+
+    overlay = Image.new("RGBA", TARGET_SIZE, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay, "RGBA")
+
+    panel_box = (32, 34, 522, 596)
+    draw.rounded_rectangle(
+        panel_box,
+        radius=32,
+        fill=(9, 13, 24, 196),
+        outline=(240, 225, 196, 78),
+        width=2,
+    )
+    draw.ellipse((-160, -140, 640, 700), fill=(8, 12, 20, 84))
+    draw.ellipse((620, -40, 1300, 420), fill=(187, 126, 34, 20))
+    draw.line((68, 114, 474, 114), fill=(221, 184, 118, 68), width=2)
+    draw.line((68, 500, 474, 500), fill=(221, 184, 118, 40), width=1)
+
+    title_font, title_font_path = _load_font(84)
+    subtitle_font, subtitle_font_path = _load_font(26)
+    stat_font, stat_font_path = _load_font(24)
+    micro_font, micro_font_path = _load_font(18)
+
+    subtitle = "32問でわかる、あなたの謎解きスタイル"
+    title = "謎解き\nタイプ診断"
+    stat = "32問 ・ 4軸 ・ 16タイプ"
+
+    subtitle_fill = ImageColor.getrgb("#d2b06e") + (232,)
+    title_fill = ImageColor.getrgb("#f6eddc") + (242,)
+    stroke_fill = ImageColor.getrgb("#101522") + (220,)
+    shadow_fill = ImageColor.getrgb("#000000") + (96,)
+
+    draw.multiline_text(
+        (70, 146),
+        title,
+        font=title_font,
+        fill=shadow_fill,
+        spacing=6,
+    )
+    draw.text((70, 72), subtitle, font=subtitle_font, fill=subtitle_fill)
+    draw.multiline_text(
+        (64, 140),
+        title,
+        font=title_font,
+        fill=title_fill,
+        spacing=6,
+        stroke_width=2,
+        stroke_fill=stroke_fill,
+    )
+    draw.text((70, 396), "協力型謎解きの立ち回りを、\nシネマティックなタイプ像で可視化する。", font=stat_font, fill=(228, 220, 204, 216), spacing=10)
+
+    badge_box = (68, 492, 344, 542)
+    draw.rounded_rectangle(badge_box, radius=18, fill=(189, 130, 42, 228))
+    draw.text((90, 503), stat, font=micro_font, fill=(20, 18, 14, 240))
+
+    corner = Image.new("RGBA", TARGET_SIZE, (0, 0, 0, 0))
+    corner_draw = ImageDraw.Draw(corner, "RGBA")
+    corner_draw.rounded_rectangle((12, 12, 1188, 618), radius=30, outline=(245, 235, 214, 58), width=2)
+    corner_draw.arc((20, 20, 120, 120), start=180, end=270, fill=(245, 235, 214, 68), width=2)
+    corner_draw.arc((1080, 20, 1180, 120), start=270, end=360, fill=(245, 235, 214, 68), width=2)
+    corner_draw.arc((20, 510, 120, 610), start=90, end=180, fill=(245, 235, 214, 68), width=2)
+    corner_draw.arc((1080, 510, 1180, 610), start=0, end=90, fill=(245, 235, 214, 68), width=2)
+
+    overlay = overlay.filter(ImageFilter.GaussianBlur(0.3))
+    canvas = Image.alpha_composite(canvas, overlay)
+    canvas = Image.alpha_composite(canvas, corner)
 
     final_path.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(final_path, format="PNG")
+    return {
+        "fonts": {
+            "title": title_font_path,
+            "subtitle": subtitle_font_path,
+            "stat": stat_font_path,
+            "micro": micro_font_path,
+        },
+        "title": title,
+        "subtitle": subtitle,
+        "stat": stat,
+    }
 
 
 def main() -> int:
@@ -230,7 +322,7 @@ def main() -> int:
     )
 
     client.download_file(result_image_url, RAW_PATH)
-    compose_final(RAW_PATH, FINAL_PATH)
+    compose_meta = compose_final(RAW_PATH, FINAL_PATH)
 
     if PUBLIC_PATH.exists():
         shutil.copy2(PUBLIC_PATH, PREVIOUS_PUBLIC_PATH)
@@ -250,6 +342,7 @@ def main() -> int:
                 "referenceUrlBase": REFERENCE_URL_BASE,
                 "resultImageUrl": result_image_url,
                 "size": {"width": TARGET_SIZE[0], "height": TARGET_SIZE[1]},
+                "compositor": compose_meta,
             },
             ensure_ascii=False,
             indent=2,
