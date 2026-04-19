@@ -92,13 +92,16 @@ TYPE_PROMPT_OVERRIDES = {
         ],
     },
     "ABTN": {
-        "variantSequence": ["inverted-burst"],
+        "variantSequence": ["ground-sprawl", "action-forward", "secretive-turn"],
         "extraInstructions": [
-            "Keep the successful upside-down command energy: a controlled one-hand freeze or handstand-like pivot, with one white-gloved hand supporting the body and the other white-gloved hand giving a command outward.",
-            "The pose should stay close to the current inverted commander concept, but with clean anatomy and a stronger torso twist.",
-            "Exactly two arms and exactly two hands total. One hand supports the inversion and one hand commands. No third hand, no duplicate glove, and no extra limb.",
+            "Change the pose drastically from the original upright pointing commander pose. Do not reuse the straight-ahead stance, and do not simply flip that pose upside down.",
+            "Prefer a sweeping floor-level commander motion such as a one-knee slide, braced pivot, coat-whipping turn, or low commanding lunge where the whole body cuts across the frame.",
+            "Make the coat tails, gold cords, and command gesture describe a broad diagonal arc so the silhouette feels like a decisive battlefield redirect rather than a static salute.",
+            "Exactly two arms and exactly two hands total. No third hand, no duplicate glove, and no extra limb.",
         ],
         "extraNegative": [
+            "same pose as the original type-data pose",
+            "simple upside-down version of the base pose",
             "extra hand",
             "third arm",
             "duplicate glove",
@@ -116,14 +119,17 @@ TYPE_PROMPT_OVERRIDES = {
         ],
     },
     "ALHN": {
-        "variantSequence": ["ground-sprawl", "secretive-turn"],
+        "variantSequence": ["secretive-turn", "ground-sprawl", "prop-led"],
         "extraInstructions": [
-            "Do not simply recreate the base forward-leaning inspection pose. Push him into a far bolder forensic action pose such as a low sideways slide, twisted crouch, or sharp pivot while still presenting the clue fragment and loupe clearly.",
+            "Change the pose drastically from the original forward-leaning inspection pose. Do not recreate the straight-ahead lunge or just move the camera around it.",
+            "Prefer a sudden sideways pivot, twisted low crouch, over-the-shoulder forensic glance, or sharp skid-stop where the torso turns away while the hands keep the evidence tools readable.",
             "Separate the tweezers arm and loupe arm onto different diagonals so the body twist feels sudden, investigative, and cinematic rather than front-facing.",
+            "Make the forensic tools drive the motion, as if he just spotted a critical trace and snapped into a new angle mid-run.",
         ],
         "extraNegative": [
             "same pose as the original type-data pose",
             "plain forward lean",
+            "front-facing inspection lunge",
         ],
     },
     "DLTC": {
