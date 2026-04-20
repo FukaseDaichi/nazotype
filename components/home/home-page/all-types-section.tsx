@@ -1,30 +1,10 @@
 import type { TypeData } from "@/lib/types";
 
-import Link from "next/link";
-
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
+import { TypeOgpLinkCard } from "@/components/type/type-ogp-link-card/type-ogp-link-card";
 
 type AllTypesSectionProps = {
   allTypes: TypeData[];
-};
-
-const TYPE_ICONS: Record<string, string> = {
-  ALHN: "\uD83D\uDD0D",
-  ALHC: "\u26A1",
-  ALTN: "\uD83D\uDDDD",
-  ALTC: "\uD83C\uDF0A",
-  ABHN: "\uD83D\uDDFA",
-  ABHC: "\uD83D\uDD25",
-  ABTN: "\uD83E\uDDED",
-  ABTC: "\uD83C\uDF2A",
-  DLHN: "\uD83D\uDD2E",
-  DLHC: "\u2728",
-  DLTN: "\uD83C\uDFDB",
-  DLTC: "\uD83C\uDFAF",
-  DBHN: "\uD83D\uDCE1",
-  DBHC: "\uD83D\uDCA1",
-  DBTN: "\u2696",
-  DBTC: "\uD83C\uDF10",
 };
 
 export function AllTypesSection({ allTypes }: AllTypesSectionProps) {
@@ -54,27 +34,16 @@ export function AllTypesSection({ allTypes }: AllTypesSectionProps) {
         </RevealOnScroll>
 
         <RevealOnScroll>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-[2px] mt-16">
+          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 mt-16">
             {allTypes.map((type) => (
-              <Link
+              <TypeOgpLinkCard
                 key={type.typeCode}
-                href={`/types/${type.typeCode}`}
-                prefetch={false}
-                className="group aspect-square flex flex-col items-center justify-center text-center p-4 no-underline relative overflow-hidden border border-gold-400/15 bg-mystery-800/60 backdrop-blur-sm transition-all duration-200 hover:border-gold-400/40 hover:bg-gold-400/10"
-              >
-                <span className="absolute inset-0 bg-gradient-to-br from-gold-400/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                <span className="font-mono text-[0.6rem] text-gold-400/70 tracking-[0.15em] mb-1 relative z-[1]">
-                  {type.typeCode}
-                </span>
-                <span className="text-[1.6rem] mb-1 relative z-[1]">
-                  {TYPE_ICONS[type.typeCode] ?? "\u2B50"}
-                </span>
-                <span className="text-[0.8rem] font-bold text-paper-100 leading-snug relative z-[1] group-hover:text-gold-300 transition-colors duration-200">
-                  {type.typeName}
-                </span>
-              </Link>
+                typeCode={type.typeCode}
+                typeName={type.typeName}
+                badgeText="TYPE"
+                variant="compact"
+                sizes="(max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 25vw"
+              />
             ))}
           </div>
         </RevealOnScroll>

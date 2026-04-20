@@ -1,8 +1,6 @@
 import type { TypeData } from "@/lib/types";
 
-import Image from "next/image";
-import Link from "next/link";
-
+import { TypeOgpLinkCard } from "@/components/type/type-ogp-link-card/type-ogp-link-card";
 import {
   TypeSectionFrame,
   type TypeSectionHeading,
@@ -42,35 +40,15 @@ export function TypeCompatibilitySection({
       {resolvedCompatibleTypes.length ? (
         <div className={styles.grid}>
           {resolvedCompatibleTypes.map((compatibleType) => (
-            <Link
+            <TypeOgpLinkCard
               key={compatibleType.typeCode}
-              href={`/types/${compatibleType.typeCode}`}
-              prefetch={false}
+              typeCode={compatibleType.typeCode}
+              typeName={compatibleType.typeName}
+              badgeText="相性◎"
+              ctaText="このタイプを見る"
+              variant="compact"
               className={styles.card}
-            >
-              <div className={styles.cardBg} aria-hidden="true" />
-              <div className={styles.chibiWrap}>
-                <div className={styles.chibiHalo} aria-hidden="true" />
-                <Image
-                  src={`/types/${compatibleType.typeCode}_chibi.png`}
-                  alt=""
-                  width={160}
-                  height={160}
-                  className={styles.chibi}
-                />
-              </div>
-              <div className={styles.cardInfo}>
-                <span className={styles.cardCode}>
-                  {compatibleType.typeCode}
-                </span>
-                <span className={styles.cardName}>
-                  {compatibleType.typeName}
-                </span>
-                <span className={styles.cardArrow} aria-hidden="true">
-                  詳細へ →
-                </span>
-              </div>
-            </Link>
+            />
           ))}
         </div>
       ) : null}
