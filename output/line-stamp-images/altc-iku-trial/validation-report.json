@@ -1,21 +1,21 @@
 {
   "skill": "madamistype-line-stamp-images",
   "setId": "altc-iku-trial",
-  "generatedAt": "2026-04-21T04:00:51.310407+00:00",
+  "generatedAt": "2026-04-21T04:29:29.670497+00:00",
   "assets": [
     {
       "passed": true,
       "imagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/altc-iku-trial/stamps/01/final.png",
-      "fileSize": 150687,
+      "fileSize": 134242,
       "expectedSize": {
         "width": 370,
         "height": 320
       },
       "padding": {
-        "left": 10,
-        "top": 23,
-        "right": 10,
-        "bottom": 23
+        "left": 20,
+        "top": 33,
+        "right": 24,
+        "bottom": 32
       },
       "greenRatio": 0.0,
       "ocr": {

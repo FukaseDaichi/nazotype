@@ -22,36 +22,41 @@
   "compose": {
     "sourcePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-11-dltn/stamps/01/transparent.png",
     "destinationPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-11-dltn/stamps/01/final.png",
-    "cropBox": {
+    "compositionMode": "preserve-source-canvas",
+    "sourceCanvas": {
+      "width": 2400,
+      "height": 1792
+    },
+    "visibleBBox": {
       "left": 118,
       "top": 59,
       "right": 2097,
       "bottom": 1792
     },
     "scaledSize": {
-      "width": 343,
-      "height": 300
+      "width": 350,
+      "height": 261
     },
     "offset": {
-      "x": 13,
-      "y": 10
+      "x": 10,
+      "y": 29
     },
     "dpi": 72,
-    "fileSize": 151882
+    "fileSize": 114644
   },
   "validation": {
     "passed": true,
     "imagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-11-dltn/stamps/01/final.png",
-    "fileSize": 151882,
+    "fileSize": 114644,
     "expectedSize": {
       "width": 370,
       "height": 320
     },
     "padding": {
-      "left": 13,
-      "top": 10,
-      "right": 14,
-      "bottom": 10
+      "left": 27,
+      "top": 37,
+      "right": 54,
+      "bottom": 30
     },
     "greenRatio": 0.0,
     "ocr": {

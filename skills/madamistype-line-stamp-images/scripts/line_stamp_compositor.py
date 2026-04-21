@@ -63,17 +63,19 @@ def compose_line_stamp(
 
     with Image.open(source_path) as source_image:
         source = _despill_green_halo(source_image)
-        bbox = _find_visible_bbox(source)
-        cropped = source.crop(bbox)
+        visible_bbox = _find_visible_bbox(source)
 
     max_width = max(1, width - (padding_px * 2))
     max_height = max(1, height - (padding_px * 2))
-    scale = min(max_width / max(1, cropped.width), max_height / max(1, cropped.height))
-    target_width = max(1, int(round(cropped.width * scale)))
-    target_height = max(1, int(round(cropped.height * scale)))
+    # Preserve the transparent canvas framing exactly as generated.
+    # Cropping to the visible alpha bbox changes the approved composition and can
+    # accidentally trim low-alpha extremities near the bottom edge.
+    scale = min(max_width / max(1, source.width), max_height / max(1, source.height))
+    target_width = max(1, int(round(source.width * scale)))
+    target_height = max(1, int(round(source.height * scale)))
 
     resampling = getattr(Image, "Resampling", Image).LANCZOS
-    resized = _despill_green_halo(cropped.resize((target_width, target_height), resampling))
+    resized = _despill_green_halo(source.resize((target_width, target_height), resampling))
 
     canvas = Image.new("RGBA", (width, height), (0, 0, 0, 0))
     offset_x = max(0, (width - target_width) // 2)
@@ -89,7 +91,14 @@ def compose_line_stamp(
     return {
         "sourcePath": str(source_path),
         "destinationPath": str(destination_path),
-        "cropBox": {"left": bbox[0], "top": bbox[1], "right": bbox[2], "bottom": bbox[3]},
+        "compositionMode": "preserve-source-canvas",
+        "sourceCanvas": {"width": source.width, "height": source.height},
+        "visibleBBox": {
+            "left": visible_bbox[0],
+            "top": visible_bbox[1],
+            "right": visible_bbox[2],
+            "bottom": visible_bbox[3],
+        },
         "scaledSize": {"width": target_width, "height": target_height},
         "offset": {"x": offset_x, "y": offset_y},
         "dpi": dpi,

@@ -1,21 +1,21 @@
 {
   "skill": "madamistype-line-stamp-images",
   "setId": "generated-stamp-04-alhn",
-  "generatedAt": "2026-04-21T04:11:13.399407+00:00",
+  "generatedAt": "2026-04-21T04:29:29.670497+00:00",
   "assets": [
     {
       "passed": true,
       "imagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-04-alhn/stamps/01/final.png",
-      "fileSize": 150763,
+      "fileSize": 136447,
       "expectedSize": {
         "width": 370,
         "height": 320
       },
       "padding": {
-        "left": 10,
-        "top": 24,
-        "right": 10,
-        "bottom": 24
+        "left": 21,
+        "top": 35,
+        "right": 20,
+        "bottom": 30
       },
       "greenRatio": 0.0,
       "ocr": {

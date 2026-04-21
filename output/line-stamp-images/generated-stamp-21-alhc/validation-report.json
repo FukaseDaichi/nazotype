@@ -1,21 +1,21 @@
 {
   "skill": "madamistype-line-stamp-images",
   "setId": "generated-stamp-21-alhc",
-  "generatedAt": "2026-04-21T04:25:16.333038+00:00",
+  "generatedAt": "2026-04-21T04:29:29.670497+00:00",
   "assets": [
     {
       "passed": true,
       "imagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-21-alhc/stamps/01/final.png",
-      "fileSize": 171257,
+      "fileSize": 159583,
       "expectedSize": {
         "width": 370,
         "height": 320
       },
       "padding": {
-        "left": 10,
-        "top": 30,
-        "right": 10,
-        "bottom": 31
+        "left": 17,
+        "top": 35,
+        "right": 17,
+        "bottom": 37
       },
       "greenRatio": 0.0,
       "ocr": {

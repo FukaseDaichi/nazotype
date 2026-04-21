@@ -1,21 +1,21 @@
 {
   "skill": "madamistype-line-stamp-images",
   "setId": "generated-stamp-20-dbtn",
-  "generatedAt": "2026-04-21T04:24:24.178879+00:00",
+  "generatedAt": "2026-04-21T04:29:29.670497+00:00",
   "assets": [
     {
       "passed": true,
       "imagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-20-dbtn/stamps/01/final.png",
-      "fileSize": 95147,
+      "fileSize": 67828,
       "expectedSize": {
         "width": 370,
         "height": 320
       },
       "padding": {
-        "left": 64,
-        "top": 10,
-        "right": 64,
-        "bottom": 10
+        "left": 81,
+        "top": 39,
+        "right": 93,
+        "bottom": 38
       },
       "greenRatio": 0.0,
       "ocr": {
