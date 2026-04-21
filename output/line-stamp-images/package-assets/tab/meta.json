@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-04-21T07:55:04.387177+00:00",
+  "asset": "tab",
+  "typeCode": "ALTC",
+  "referenceImageUrl": "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types/ALTC_chibi.png",
+  "requestSummary": {
+    "prompt": "Create a premium anime-style LINE package asset illustration for the Nazotype project. Use the provided reference image as a strict chibi identity anchor. Character identity: 突破キラー (ALTC). Draw exactly one super-deformed chibi character with a large head, compact torso, short limbs, and a clean sticker-ready silhouette. Preserve the same face identity, split black-and-red hairstyle, black biker jacket, crimson inner top, chain belt, gloves, choker, and aggressive cool attitude as the reference chibi. Keep the rendering polished, bold, crisp, expressive, and suitable for commercial LINE package art. Gender presentation: female. Age impression: early 20s. Archetype: breakthrough-destroyer. Do not include any visible text, letters, logos, symbols, speech bubbles, or watermark. Fill the entire background with a perfectly uniform bright chroma key green (#00FF00). Do not use green on the character, hair, outfit, props, highlights, or effects. Keep the boundary between foreground and background crisp and easy to key. No scenery, floor plane, cast shadow, background pattern, or extra objects. This is the tab icon image for a LINE sticker set. Use a close-up upper-body composition optimized for very small size. Create a unique face-forward pose: shoulders angled, chin tucked slightly, one eyebrow raised, and one gloved hand hooking the jacket lapel near the collar as if she is about to lunge. The expression should be sly and charismatic, with a small fang-like grin, intense red eyes, and strong attitude that reads instantly at thumbnail size. Favor face readability, hair silhouette, and jacket collar shape over full-body action. Keep the upper body large in frame but fully inside the canvas for a final 96 by 74 pixel image. Avoid: text, letters, logo, watermark, multiple characters, cropped head, cropped face, deformed hands, extra fingers, realistic adult proportions, long legs, small head, background clutter, background gradient, green clothing, green accessories, checkerboard background.",
+    "aspect_ratio": "4:3",
+    "resolution": "2K",
+    "output_format": "png",
+    "enable_web_search": false,
+    "image_urls": [
+      "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types/ALTC_chibi.png"
+    ]
+  },
+  "submitResponse": {
+    "status": "IN_QUEUE",
+    "request_id": "019daf08-3c1b-7e70-9f0e-937859662b75",
+    "response_url": "https://queue.fal.run/fal-ai/nano-banana-2/requests/019daf08-3c1b-7e70-9f0e-937859662b75",
+    "status_url": "https://queue.fal.run/fal-ai/nano-banana-2/requests/019daf08-3c1b-7e70-9f0e-937859662b75/status",
+    "cancel_url": "https://queue.fal.run/fal-ai/nano-banana-2/requests/019daf08-3c1b-7e70-9f0e-937859662b75/cancel",
+    "logs": null,
+    "metrics": {},
+    "queue_position": 0,
+    "model_path": "fal-ai/nano-banana-2/edit"
+  },
+  "resultImageUrl": "https://v3b.fal.media/files/b/0a971e1c/CsJHoe4xL6-BJuYGKCDYK_a5EZKEuS.png",
+  "compose": {
+    "sourcePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/package-assets/tab/transparent.png",
+    "destinationPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/package-assets/tab/final.png",
+    "compositionMode": "preserve-source-canvas",
+    "sourceCanvas": {
+      "width": 2400,
+      "height": 1792
+    },
+    "visibleBBox": {
+      "left": 297,
+      "top": 0,
+      "right": 2100,
+      "bottom": 1792
+    },
+    "scaledSize": {
+      "width": 83,
+      "height": 62
+    },
+    "offset": {
+      "x": 6,
+      "y": 6
+    },
+    "dpi": 72,
+    "fileSize": 10688
+  },
+  "validation": {
+    "passed": true,
+    "imagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/package-assets/tab/final.png",
+    "fileSize": 10688,
+    "expectedSize": {
+      "width": 96,
+      "height": 74
+    },
+    "padding": {
+      "left": 16,
+      "top": 6,
+      "right": 17,
+      "bottom": 6
+    },
+    "greenRatio": 0.0,
+    "ocr": null,
+    "failures": [],
+    "warnings": []
+  }
+}

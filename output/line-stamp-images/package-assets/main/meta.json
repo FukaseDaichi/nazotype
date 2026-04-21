@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-04-21T09:53:39.204724+00:00",
+  "asset": "main",
+  "typeCode": "ALTC",
+  "referenceImageUrl": "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types/ALTC_chibi.png",
+  "requestSummary": {
+    "prompt": "Create a premium anime-style LINE package main image for the Nazotype project. Use the provided reference image as a strict chibi identity anchor. Character identity: 突破キラー (ALTC). Draw exactly one super-deformed chibi girl with the same split black-and-red hair, black biker jacket, crimson inner top, chain belt, gloves, and fierce-but-cute attitude as the reference chibi. Gender presentation: female. Age impression: early 20s. Archetype: breakthrough-destroyer. Make the composition very cute, compact, and memorable at small square icon size. Pose direction: she leans forward with a playful triumphant grin, holding a large rounded signboard with both hands in front of her body, while one foot pops slightly backward and her hair swishes outward in a lively arc. Expression direction: bright confident smile, lively red eyes, mischievous charm rather than aggression. Prop direction: the signboard should feel hand-held and physical, with soft rounded corners, a slightly chunky cute frame, tiny puzzle-piece and sparkle decorations around the border, and no other props. The signboard itself must contain the exact visible Japanese title text 「謎解きタイプ診断」. Arrange the title on the signboard as two lines for readability: first line 「謎解きタイプ」, second line 「診断」. Render the exact Japanese characters with large custom illustrated title lettering, very legible, cute and premium, not a plain default font, with thick white fill, vivid crimson outline, warm cream outer border, subtle glossy highlight, and tiny puzzle-themed accents. Do not omit, replace, romanize, paraphrase, or mistranscribe any characters. Do not include any visible text other than 「謎解きタイプ診断」 on the signboard. Keep the whole character and signboard clearly inside frame with comfortable margin for a final 240 by 240 pixel canvas. Fill the entire background with a perfectly uniform bright chroma key green (#00FF00). Do not use green on the character, signboard, lettering, highlights, or decorations. Keep the boundary between foreground and background crisp and easy to key. No scenery, floor plane, cast shadow, pattern background, logo, watermark, speech bubble, or extra objects. Avoid: multiple characters, cropped head, cropped feet, deformed hands, extra fingers, realistic adult proportions, long legs, small head, text, letters, logos, watermark, checkerboard background, background clutter, background gradient, green clothing, green accessories.",
+    "aspect_ratio": "1:1",
+    "resolution": "2K",
+    "output_format": "png",
+    "enable_web_search": false,
+    "image_urls": [
+      "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types/ALTC_chibi.png"
+    ]
+  },
+  "submitResponse": {
+    "status": "IN_QUEUE",
+    "request_id": "019daf75-09f0-7353-8926-b0f8a7529a82",
+    "response_url": "https://queue.fal.run/fal-ai/nano-banana-2/requests/019daf75-09f0-7353-8926-b0f8a7529a82",
+    "status_url": "https://queue.fal.run/fal-ai/nano-banana-2/requests/019daf75-09f0-7353-8926-b0f8a7529a82/status",
+    "cancel_url": "https://queue.fal.run/fal-ai/nano-banana-2/requests/019daf75-09f0-7353-8926-b0f8a7529a82/cancel",
+    "logs": null,
+    "metrics": {},
+    "queue_position": 13,
+    "model_path": "fal-ai/nano-banana-2/edit"
+  },
+  "resultImageUrl": "https://v3b.fal.media/files/b/0a9720e5/6EF-OzCvsU5aStpQOado5_PO30bqS3.png",
+  "compose": {
+    "sourcePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/package-assets/main/transparent.png",
+    "destinationPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/package-assets/main/final.png",
+    "compositionMode": "preserve-source-canvas",
+    "sourceCanvas": {
+      "width": 2048,
+      "height": 2048
+    },
+    "visibleBBox": {
+      "left": 57,
+      "top": 82,
+      "right": 1975,
+      "bottom": 2003
+    },
+    "scaledSize": {
+      "width": 220,
+      "height": 220
+    },
+    "offset": {
+      "x": 10,
+      "y": 10
+    },
+    "dpi": 72,
+    "fileSize": 77821
+  },
+  "validation": {
+    "passed": true,
+    "imagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/package-assets/main/final.png",
+    "fileSize": 77821,
+    "expectedSize": {
+      "width": 240,
+      "height": 240
+    },
+    "padding": {
+      "left": 16,
+      "top": 19,
+      "right": 18,
+      "bottom": 15
+    },
+    "greenRatio": 0.0,
+    "ocr": null,
+    "failures": [],
+    "warnings": []
+  }
+}
