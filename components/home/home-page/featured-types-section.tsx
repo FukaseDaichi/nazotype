@@ -3,6 +3,7 @@ import type { TypeData } from "@/lib/types";
 import Link from "next/link";
 
 import { TypeArtwork } from "@/components/type/type-artwork/type-artwork";
+import { getTypePublicPath } from "@/lib/site";
 
 type FeaturedTypesSectionProps = {
   spotlightTypes: TypeData[];
@@ -32,7 +33,7 @@ export function FeaturedTypesSection({
         {spotlightTypes.map((type) => (
           <Link
             key={type.typeCode}
-            href={`/types/${type.typeCode}`}
+            href={getTypePublicPath(type.typeCode)}
             prefetch={false}
             className="group block rounded-xl border border-midnight-600 bg-midnight-800 overflow-hidden no-underline hover:bg-midnight-700 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(232,168,50,0.1)] transition-all duration-200"
           >

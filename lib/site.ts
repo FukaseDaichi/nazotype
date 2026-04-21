@@ -85,6 +85,10 @@ export function getAbsoluteUrl(pathname = "/") {
   return new URL(pathname, getMetadataBase()).toString();
 }
 
+export function getTypePublicPath(typeCode: string) {
+  return `/types/${typeCode}/`;
+}
+
 export function getTypeOgpImagePath(typeCode: string) {
   return `/types/${typeCode}-ogp.png`;
 }

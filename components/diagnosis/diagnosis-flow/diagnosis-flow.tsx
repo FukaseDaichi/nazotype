@@ -12,6 +12,7 @@ import {
 import { readDiagnosisDraft, writeDiagnosisDraft } from "@/lib/draft-storage";
 import { writePostDiagnosisResult } from "@/lib/post-diagnosis-result";
 import { createShareKey } from "@/lib/share-key";
+import { getTypePublicPath } from "@/lib/site";
 import type { AnswerValue, AnswersRecord, QuestionMaster } from "@/lib/types";
 
 import styles from "./diagnosis-flow.module.css";
@@ -207,7 +208,9 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
     const result = calculateDiagnosisResult(questionMaster, answers);
     const key = createShareKey(userName, result.axisSummaries);
     writePostDiagnosisResult(result.typeCode, key);
-    router.push(`/types/${result.typeCode}?s=${encodeURIComponent(key)}`);
+    router.push(
+      `${getTypePublicPath(result.typeCode)}?s=${encodeURIComponent(key)}`,
+    );
   }
 
   /* ── Loading state ── */

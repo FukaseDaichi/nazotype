@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { getAllTypeCodes } from "@/lib/data";
-import { getAbsoluteUrl } from "@/lib/site";
+import { getAbsoluteUrl, getTypePublicPath } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -17,7 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     ...typeCodes.map((typeCode) => ({
-      url: getAbsoluteUrl(`/types/${typeCode}`),
+      url: getAbsoluteUrl(getTypePublicPath(typeCode)),
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,

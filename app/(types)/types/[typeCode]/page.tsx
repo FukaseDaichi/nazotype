@@ -7,7 +7,11 @@ import {
   getTypesByCodes,
   hasChibiImage,
 } from "@/lib/data";
-import { getAbsoluteUrl, getTypeOgpImagePath } from "@/lib/site";
+import {
+  getAbsoluteUrl,
+  getTypeOgpImagePath,
+  getTypePublicPath,
+} from "@/lib/site";
 import { TypeDetailPageContent } from "@/components/type/type-detail-page-content/type-detail-page-content";
 
 type PageProps = {
@@ -30,17 +34,18 @@ export async function generateMetadata({
   }
 
   const ogImagePath = getTypeOgpImagePath(typeData.typeCode);
+  const publicPath = getTypePublicPath(typeData.typeCode);
 
   return {
     title: `${typeData.typeName} (${typeData.typeCode})`,
     description: typeData.summary,
     alternates: {
-      canonical: `/types/${typeData.typeCode}`,
+      canonical: publicPath,
     },
     openGraph: {
       title: `${typeData.typeName} (${typeData.typeCode})`,
       description: typeData.tagline,
-      url: `/types/${typeData.typeCode}`,
+      url: publicPath,
       images: [ogImagePath],
     },
     twitter: {
@@ -60,7 +65,7 @@ export default async function TypeDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  const publicUrl = `/types/${typeData.typeCode}`;
+  const publicUrl = getTypePublicPath(typeData.typeCode);
   const hasChibi = await hasChibiImage(typeData.typeCode);
   const compatibleTypes = await getTypesByCodes(
     typeData.compatibility.goodWithTypeCodes ?? [],

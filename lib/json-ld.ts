@@ -5,6 +5,7 @@ import {
   SITE_NAME,
   SITE_SHORT_NAME,
   getAbsoluteUrl,
+  getTypePublicPath,
 } from "@/lib/site";
 
 export function stringifyJsonLd(value: unknown) {
@@ -31,7 +32,7 @@ export function getTypePageJsonLd(typeData: TypeData) {
     "@type": "WebPage",
     name: `${typeData.typeName} (${typeData.typeCode})`,
     description: typeData.summary,
-    url: getAbsoluteUrl(`/types/${typeData.typeCode}`),
+    url: getAbsoluteUrl(getTypePublicPath(typeData.typeCode)),
     inLanguage: "ja-JP",
     isPartOf: {
       "@type": "WebSite",

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { getTypeOgpImagePath } from "@/lib/site";
+import { getTypeOgpImagePath, getTypePublicPath } from "@/lib/site";
 
 import styles from "./type-ogp-link-card.module.css";
 
@@ -22,7 +22,7 @@ export function TypeOgpLinkCard({
   typeCode,
   typeName,
   tagline,
-  href = `/types/${typeCode}`,
+  href = getTypePublicPath(typeCode),
   badgeText,
   ctaText = "詳細を見る",
   className = "",
