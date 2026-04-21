@@ -118,16 +118,12 @@ export function TypeDetailHeroSection({
               <h1 id="result-heading" className={styles.title}>
                 {isShared && sharedUserName ? (
                   <>
-                    <span className={styles.sharedUser}>
-                      {sharedUserName}
-                    </span>
+                    <span className={styles.sharedUser}>{sharedUserName}</span>
                     <span className={styles.sharedSuffix}>さんの診断結果</span>
                   </>
                 ) : (
                   <>
-                    <span className={styles.typeName}>
-                      {typeData.typeName}
-                    </span>
+                    <span className={styles.typeName}>{typeData.typeName}</span>
                   </>
                 )}
               </h1>
@@ -171,11 +167,7 @@ export function TypeDetailHeroSection({
                     </a>
                   </>
                 ) : (
-                  <Link
-                    href="/"
-                    prefetch={false}
-                    className={styles.primaryCta}
-                  >
+                  <Link href="/" prefetch={false} className={styles.primaryCta}>
                     <span>自分でも診断する</span>
                     <span className={styles.ctaArrow} aria-hidden="true">
                       →
@@ -183,12 +175,6 @@ export function TypeDetailHeroSection({
                   </Link>
                 )}
               </div>
-
-              {shouldShowPostDiagnosisActions ? (
-                <p className={styles.hint}>
-                  タイプごとのおすすめ謎解きイベントを集計したいので、よければフォームで教えてください。
-                </p>
-              ) : null}
             </div>
           </div>
         </div>
