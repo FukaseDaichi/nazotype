@@ -54,6 +54,9 @@ export type TypeData = {
   typeId: string;
   typeCode: TypeCode;
   typeName: string;
+  furigana: string;
+  furiganaLength: number;
+  furiganaEmphasisIndex: number;
   tagline: string;
   summary: string;
   detailDescription: string;

@@ -57,3 +57,6 @@ tmp/
 vendor/
 public/build/
 generated/
+
+
+/output/

@@ -56,6 +56,9 @@
 | `typeId` | タイプ識別子。`typeCode` と同値にする |
 | `typeCode` | 4 文字のタイプコード |
 | `typeName` | 表示名 |
+| `furigana` | `typeName` の読み仮名 |
+| `furiganaLength` | `furigana` の文字数 |
+| `furiganaEmphasisIndex` | `furigana` 内で強調したい文字位置。1 始まり |
 | `tagline` | ヒーローで使う短いコピー |
 | `summary` | 一段落の概要説明 |
 | `detailDescription` | 詳細説明本文 |
@@ -91,6 +94,14 @@
 - shared page の 4 軸サマリ表示
 - タイプ固有の軸ラベル表示
 - 画像生成スキルでの補助情報
+
+## 5-1. ふりがな補助項目
+
+`furigana` 系の項目は、タイプ名の読み表示と文字単位の強調演出に使う。
+
+- `furiganaLength` は Unicode の文字数を想定し、小書きかなや長音符も 1 文字として数える
+- `furiganaEmphasisIndex` は 1 始まりで保持する
+- 例: `しゅんかんきゃっちゃー` の `ゅ` を強調する場合、`furiganaEmphasisIndex` は `2`
 
 ## 6. `compatibility` オブジェクト
 
