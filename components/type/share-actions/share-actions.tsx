@@ -4,6 +4,14 @@ import { useState } from "react";
 
 const X_SHARE_HASHTAGS = ["謎解きタイプ診断"] as const;
 
+function buildXShareText(shareText: string) {
+  return shareText
+    .split(/\n+/u)
+    .filter((line) => !line.trim().startsWith("#"))
+    .join("\n\n")
+    .trim();
+}
+
 type ShareActionsProps = {
   id?: string;
   typeCode: string;
@@ -30,9 +38,10 @@ export function ShareActions({
   className = "",
 }: ShareActionsProps) {
   const [status, setStatus] = useState("");
+  const xShareText = buildXShareText(shareText);
 
   const encodedXUrl = `https://x.com/intent/tweet?${new URLSearchParams({
-    text: shareText,
+    text: xShareText,
     url: shareUrl,
     hashtags: X_SHARE_HASHTAGS.join(","),
   }).toString()}`;
