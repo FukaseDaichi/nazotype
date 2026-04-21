@@ -14,7 +14,7 @@ Treat these as the only canonical inputs:
 - `data/types/*.json`
 - `public/types/{typeCode}_chibi.png`
 
-The goal is not to paste static chibi art into a template. Regenerate each type as the same character in a much more aggressive, share-stopping pose, and have the fal.ai image model render the type text inside the design itself. The local compositor should only add a small `謎タイプ診断` label at the bottom-right.
+The goal is not to paste static chibi art into a template. Regenerate each type as the same character in a much more aggressive, share-stopping pose, and have the fal.ai image model render the type text inside the design itself. The local compositor should only add a small `謎解きタイプ診断` label at the bottom-right.
 
 If the overall design or acceptance criteria change, read [type-ogp-image-spec.md](../../docs/type-ogp-image-spec.md).
 
@@ -96,7 +96,7 @@ The model should generate the near-final OGP image, including the exact `typeNam
 
 Always use the compositor to add:
 
-- the small `謎タイプ診断` brand label at the bottom-right
+- the small `謎解きタイプ診断` brand label at the bottom-right
 
 Read [references/ogp-layout-rules.md](./references/ogp-layout-rules.md) when adjusting final layout, safe areas, or type treatment.
 
@@ -143,7 +143,7 @@ Use for default candidate choice and manual override parsing.
 
 ### `scripts/ogp_compositor.py`
 
-Use for deterministic `1200x630` output and the small bottom-right `謎タイプ診断` label.
+Use for deterministic `1200x630` output and the small bottom-right `謎解きタイプ診断` label.
 
 ### `scripts/write_manifest.py`
 
@@ -157,7 +157,7 @@ Use for JSON and text artifact writing plus batch-report assembly.
 - Preserve character identity first, then push pose intensity as far as possible
 - Prefer prompt changes over editing `data/types/*.json` unless the user asks to change source data
 - Have the model render the final `typeName` and `typeCode` inside the design
-- Keep local post-processing text limited to the bottom-right `謎タイプ診断` label
+- Keep local post-processing text limited to the bottom-right `謎解きタイプ診断` label
 
 ## References
 

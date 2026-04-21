@@ -60,7 +60,7 @@ def compose_ogp(
     output_path: Path,
     type_data: dict[str, Any],
     title_placement: str,
-    brand_label: str = "謎タイプ診断",
+    brand_label: str = "謎解きタイプ診断",
 ) -> dict[str, Any]:
     image, image_draw, _ = _import_pillow()
 
@@ -101,8 +101,12 @@ def compose_ogp(
         stroke_fill=(10, 12, 18, 150),
     )
 
+    # Quantize the final card back to a palette PNG so published OGP assets
+    # stay lightweight like the previously committed files.
+    output_image = composed.convert("RGB").quantize(colors=256)
+
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    composed.save(output_path, format="PNG")
+    output_image.save(output_path, format="PNG", optimize=True)
 
     return {
         "targetSize": {"width": TARGET_SIZE[0], "height": TARGET_SIZE[1]},

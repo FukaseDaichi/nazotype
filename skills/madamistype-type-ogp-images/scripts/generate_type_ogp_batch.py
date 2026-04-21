@@ -72,7 +72,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--resolution", default="2K", help="fal.ai resolution. Default: 2K")
     parser.add_argument("--poll-interval", type=int, default=8, help="Polling interval in seconds. Default: 8")
     parser.add_argument("--select", help="Manual candidate overrides such as OFEI:2,TRLP:4")
-    parser.add_argument("--brand-label", default="謎タイプ診断", help="Small brand label added at the bottom-right of the final OGP.")
+    parser.add_argument("--brand-label", default="謎解きタイプ診断", help="Small brand label added at the bottom-right of the final OGP.")
     parser.add_argument(
         "--reference-url-base",
         help=(
