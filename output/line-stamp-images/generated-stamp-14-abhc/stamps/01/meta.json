@@ -1,0 +1,67 @@
+{
+  "skill": "madamistype-line-stamp-images",
+  "generatedAt": "2026-04-21T04:19:36.462116+00:00",
+  "setId": "generated-stamp-14-abhc",
+  "typeCode": "ABHC",
+  "role": "stamp",
+  "assetId": "01",
+  "status": "success",
+  "text": "どないやねーーん！",
+  "referenceImageUrl": "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types/ABHC_chibi.png",
+  "resultImageUrl": "https://v3b.fal.media/files/b/0a971910/VQ6jGHE5KONkCNc2T2fQL_SlHPKCsH.png",
+  "requestSummary": {
+    "prompt": "Create a polished anime-style LINE sticker illustration for the Madamistype project. Use the provided reference image as a strict chibi identity anchor. Character identity: 人間Wi-Fi (ABHC). Sticker set style: character-only. This must be a super-deformed chibi sticker character, never a standard-proportion anime adult. Use clearly chibi proportions with a large head, compact torso, short limbs, and simplified hands and feet. Keep the full figure obviously chibi even when the pose and camera angle become dramatic. Aim for a cute compact silhouette around two to three heads tall, not a realistic seven to eight heads tall figure. Preserve the same face, hairstyle, outfit, props, and core palette as the reference chibi character. Gender presentation: female. Age impression: late teens. Archetype: signal-broadcaster. Character description: チーム間を繋ぐ生きた通信塔。情報が途切れそうな瞬間に現れ、離れたメンバー同士の発見を瞬時にリンクさせる。彼女自身が電波そのもの。. Outfit and props: 白いオーバーサイズTシャツの胸元に大きなWi-Fiシンボルがプリント。テックウェア風のショートパンツ、ハイカットスニーカー、片耳にBluetoothイヤピース。腰にスマホホルダーを複数装着。. Color palette: #00B4D8, #FFD60A, #FFFFFF. Base pose inspiration: 右手を高く掲げてWi-Fi電波を発信するように指を広げ、左手は耳元に添えて情報を受信中。体は斜め前向きで躍動感あり。. Base expression inspiration: 口角を上げた自信に満ちた笑み。目は鋭く、情報をキャッチした瞬間の輝き。. This asset is a LINE sticker reaction image. The reaction must read instantly without needing extra context. Keep the pose and lettering clean, bold, and sticker-friendly. Draw exactly one character. Sticker intent: reaction. Pose direction: 両手を左右へ大きく広げ、肩ごと前へ出して全身でツッコミに行く。片足は踏み込み、上体は相手へぐっと近づけることで『待って待って』の圧を出す。. Camera direction: やや近めの広角3/4構図で、両手がフレームの端へ広がるようにする。ツッコミの勢いで画面を埋める。. Expression direction: 眉を強く上げ、口を大きく横開きにして語尾を引っ張る。怒りではなく『さすがにそれはおかしい』という明るいツッコミ顔にする。. Design for a final canvas of 370 by 320 pixels. Keep about 10 pixels of safe outer margin for both the character and the text. Include the exact visible text \"どないやねーーん！\" as part of the sticker artwork. Spell the text exactly as provided, with no missing characters and no extra characters. Use this lettering direction: cute comedic Japanese sticker lettering, highly legible, bold elastic strokes, white fill, #00B4D8 accent outline, thick warm cream outer border, hand-drawn sticker typography with strong punchline energy. Place the text at top-left while keeping it fully readable and fully inside the frame. Make the lettering highly stylized, expressive, bold, and high-contrast like a premium LINE sticker. Treat the lettering as custom illustrated hand-drawn sticker typography, not a plain default font or ordinary digital typesetting. Make the text feel designed as part of the image composition, not dropped in afterward. Keep the lettering large enough to feel intentional, while leaving clear breathing room around the character silhouette. The lettering should read instantly at small size, but still have visible character and charm in the stroke design. Treat the lettering as a hero design element, not a neutral font choice. Draw custom illustrated sticker lettering with hand-shaped glyphs and intentional silhouette design. Give the lettering lively stroke contrast, slightly irregular contour rhythm, and expressive weight shifts instead of perfectly uniform strokes. Let the glyph size, tilt, spacing, and baseline rhythm feel authored by an illustrator rather than machine-typeset. Use premium sticker finishing such as a thick outer outline, optional inner inline border, subtle highlight, or small offset shadow only when readability improves. Match the mood requested in the lettering direction, whether it should feel cute, playful, cool, sharp, teasing, or dramatic. Do not normalize every asset into the same bubbly font treatment. Avoid sterile default-font proportions, flat mechanical spacing, and generic digital typesetting. Text layout direction: big first chunk, stretched middle, smaller trailing vowel pull, exaggerated width variation for comic timing. Text effect direction: tiny impact marks, slight wobble, compact burst accents, no clutter over the character. Render the visible text in Japanese exactly as 「どないやねーーん！」. Do not translate the text into English. Do not romanize, localize, paraphrase, or replace the Japanese characters. Keep the Japanese characters large, bold, and clearly legible. Treat each kana, kanji, and punctuation mark as a custom drawn shape with personality, not a raw font glyph. Simplify counters and stroke joins for sticker readability while preserving a distinctive hand-drawn look. Do not place the text in a separate footer bar or detached caption area. Keep both the character silhouette and the lettering clearly visible at small size. Fill the entire background with a perfectly uniform bright chroma key green (#00FF00). Do not use green on the character, clothing, props, hair, or visible text. Keep the boundary between the foreground and background crisp and easy to key. Do not add gradients, patterns, shadows, or extra objects in the background. Do not include any text other than the exact requested text. Do not include logos or watermarks. Keep the final image clean, commercially usable, and sticker-friendly. Avoid: low quality, blurry, logo, watermark, multiple people, grotesque, cropped head, full body, 低品質, ぼやけ, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身, multiple characters, cropped feet, deformed hands, extra fingers, speech bubble, background clutter, background shadows, background gradient, green clothing, green accessories, green hair highlights, realistic adult proportions, 8-head-tall body, fashion illustration proportions, small head, long legs, long torso, semi-realistic anatomy.",
+    "image_urls": [
+      "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types/ABHC_chibi.png"
+    ],
+    "aspect_ratio": "4:3",
+    "resolution": "2K",
+    "enable_web_search": false,
+    "output_format": "png"
+  },
+  "compose": {
+    "sourcePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-14-abhc/stamps/01/transparent.png",
+    "destinationPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-14-abhc/stamps/01/final.png",
+    "cropBox": {
+      "left": 40,
+      "top": 47,
+      "right": 2360,
+      "bottom": 1766
+    },
+    "scaledSize": {
+      "width": 350,
+      "height": 259
+    },
+    "offset": {
+      "x": 10,
+      "y": 30
+    },
+    "dpi": 72,
+    "fileSize": 150031
+  },
+  "validation": {
+    "passed": true,
+    "imagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-14-abhc/stamps/01/final.png",
+    "fileSize": 150031,
+    "expectedSize": {
+      "width": 370,
+      "height": 320
+    },
+    "padding": {
+      "left": 10,
+      "top": 30,
+      "right": 10,
+      "bottom": 31
+    },
+    "greenRatio": 0.0,
+    "ocr": {
+      "status": "skipped",
+      "reason": "pytesseract is not installed.",
+      "detectedText": null
+    },
+    "failures": [],
+    "warnings": [
+      "Text OCR skipped: pytesseract is not installed."
+    ]
+  }
+}

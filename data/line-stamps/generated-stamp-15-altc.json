@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-15-altc",
+  "typeCode": "ALTC",
+  "packageName": "突破キラー もうだめだ。。。",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "もうだめだ。。。",
+    "textDesignPrompt": "cute exhausted Japanese sticker lettering, very legible, rounded droopy strokes, pale cream fill, #DC143C accent outline, thick warm cream outer border, custom sticker typography with drained energy",
+    "poseDirection": "片膝から崩れ落ち、もう片方の手は床につきながら前傾する。もう一方の腕はだらりと下げ、いつも前へ出る拳が完全に止まった状態を見せる。",
+    "cameraDirection": "やや引いたローアングルで床面を見せ、崩れ落ちた低さを強調する。全身が小さく沈むシルエットにする。",
+    "expressionDirection": "不敵さを完全に消し、口を薄く開いて魂が抜けたような目にする。悔しさよりも体力切れの限界感を優先する。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "main phrase medium-large with uneven lowered baseline, ellipsis very small and sinking at the end",
+    "textEffectPrompt": "small wobble accents, restrained highlight, tiny falling marks, soft shadow only if readability improves"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "限",
+    "textDesignPrompt": "cute exhausted Japanese sticker lettering, very legible, rounded droopy strokes, pale cream fill, #DC143C accent outline, thick warm cream outer border, custom sticker typography with drained energy",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "不敵さを完全に消し、口を薄く開いて魂が抜けたような目にする。悔しさよりも体力切れの限界感を優先する。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "もうだめだ。。。",
+      "intent": "reaction",
+      "textDesignPrompt": "cute exhausted Japanese sticker lettering, very legible, rounded droopy strokes, pale cream fill, #DC143C accent outline, thick warm cream outer border, custom sticker typography with drained energy",
+      "poseDirection": "片膝から崩れ落ち、もう片方の手は床につきながら前傾する。もう一方の腕はだらりと下げ、いつも前へ出る拳が完全に止まった状態を見せる。",
+      "cameraDirection": "やや引いたローアングルで床面を見せ、崩れ落ちた低さを強調する。全身が小さく沈むシルエットにする。",
+      "expressionDirection": "不敵さを完全に消し、口を薄く開いて魂が抜けたような目にする。悔しさよりも体力切れの限界感を優先する。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "main phrase medium-large with uneven lowered baseline, ellipsis very small and sinking at the end",
+      "textEffectPrompt": "small wobble accents, restrained highlight, tiny falling marks, soft shadow only if readability improves"
+    }
+  ]
+}

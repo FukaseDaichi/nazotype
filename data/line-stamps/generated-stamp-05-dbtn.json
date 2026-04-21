@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-05-dbtn",
+  "typeCode": "DBTN",
+  "packageName": "沈黙の切り札 ほんとうにこれでよかったのだろうか。。。",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "ほんとうにこれでよかったのだろうか。。。",
+    "textDesignPrompt": "soft uneasy Japanese sticker lettering, very legible, rounded handwritten strokes, pale cream fill, #1C1C1C accent outline, thick warm cream outer border, cute but worried sticker typography",
+    "poseDirection": "切り札のカードを下ろした右手を力なく体側へ落とし、肩は少しだけ前に丸める。顔は軽く伏せつつも視線だけ遠くへ流し、決断の後味を一人で噛みしめている姿勢にする。",
+    "cameraDirection": "横顔寄りの3/4ショットで、顔の半分に影が落ちる静かな構図。背景の余白を少し広めに取って孤独感を出す。",
+    "expressionDirection": "いつもの冷徹さを抑え、目元だけに迷いを残す。口角は下げず、感情を押し殺しているからこそ滲む不安にする。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "gentle descending size rhythm, first phrase larger, ending phrase slightly smaller, ellipsis tiny and low",
+    "textEffectPrompt": "tiny wavering accent lines, restrained highlight, minimal soft shadow only if readability improves"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "？",
+    "textDesignPrompt": "soft uneasy Japanese sticker lettering, very legible, rounded handwritten strokes, pale cream fill, #1C1C1C accent outline, thick warm cream outer border, cute but worried sticker typography",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "いつもの冷徹さを抑え、目元だけに迷いを残す。口角は下げず、感情を押し殺しているからこそ滲む不安にする。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "ほんとうにこれでよかったのだろうか。。。",
+      "intent": "reaction",
+      "textDesignPrompt": "soft uneasy Japanese sticker lettering, very legible, rounded handwritten strokes, pale cream fill, #1C1C1C accent outline, thick warm cream outer border, cute but worried sticker typography",
+      "poseDirection": "切り札のカードを下ろした右手を力なく体側へ落とし、肩は少しだけ前に丸める。顔は軽く伏せつつも視線だけ遠くへ流し、決断の後味を一人で噛みしめている姿勢にする。",
+      "cameraDirection": "横顔寄りの3/4ショットで、顔の半分に影が落ちる静かな構図。背景の余白を少し広めに取って孤独感を出す。",
+      "expressionDirection": "いつもの冷徹さを抑え、目元だけに迷いを残す。口角は下げず、感情を押し殺しているからこそ滲む不安にする。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "gentle descending size rhythm, first phrase larger, ending phrase slightly smaller, ellipsis tiny and low",
+      "textEffectPrompt": "tiny wavering accent lines, restrained highlight, minimal soft shadow only if readability improves"
+    }
+  ]
+}

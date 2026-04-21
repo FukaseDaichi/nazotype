@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-19-altn",
+  "typeCode": "ALTN",
+  "packageName": "エリアの主 探索系だから大丈夫",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "探索系だから大丈夫",
+    "textDesignPrompt": "cute reassuring Japanese sticker lettering, very legible, rounded confident strokes, white fill, #4A6670 accent outline, thick warm cream outer border, warm premium sticker typography",
+    "poseDirection": "片手で控えめに親指を立て、もう片方の腕にはエリア資料やタグを抱える。胸を張りすぎず自然体で立ち、黙って任せられる職人感を出す。",
+    "cameraDirection": "正面寄りの中距離ショットで、頼れる立ち姿と控えめな親指が読み取りやすい構図にする。",
+    "expressionDirection": "口元だけで静かに微笑み、目は穏やかに細める。大げさに励ますのではなく、『自分がいるから平気』という落ち着いた安心感にする。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "clear main phrase with slightly smaller supportive ending, smooth upward curve, balanced spacing",
+    "textEffectPrompt": "small soft sparkles, gentle glossy highlight, minimal shadow only if readability improves"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "探",
+    "textDesignPrompt": "cute reassuring Japanese sticker lettering, very legible, rounded confident strokes, white fill, #4A6670 accent outline, thick warm cream outer border, warm premium sticker typography",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "口元だけで静かに微笑み、目は穏やかに細める。大げさに励ますのではなく、『自分がいるから平気』という落ち着いた安心感にする。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "探索系だから大丈夫",
+      "intent": "reaction",
+      "textDesignPrompt": "cute reassuring Japanese sticker lettering, very legible, rounded confident strokes, white fill, #4A6670 accent outline, thick warm cream outer border, warm premium sticker typography",
+      "poseDirection": "片手で控えめに親指を立て、もう片方の腕にはエリア資料やタグを抱える。胸を張りすぎず自然体で立ち、黙って任せられる職人感を出す。",
+      "cameraDirection": "正面寄りの中距離ショットで、頼れる立ち姿と控えめな親指が読み取りやすい構図にする。",
+      "expressionDirection": "口元だけで静かに微笑み、目は穏やかに細める。大げさに励ますのではなく、『自分がいるから平気』という落ち着いた安心感にする。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "clear main phrase with slightly smaller supportive ending, smooth upward curve, balanced spacing",
+      "textEffectPrompt": "small soft sparkles, gentle glossy highlight, minimal shadow only if readability improves"
+    }
+  ]
+}

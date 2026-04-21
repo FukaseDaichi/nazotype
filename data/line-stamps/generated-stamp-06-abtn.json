@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-06-abtn",
+  "typeCode": "ABTN",
+  "packageName": "現場の総監督 後方で腕組んでます。",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "後方で腕組んでます。",
+    "textDesignPrompt": "cool stoic Japanese sticker lettering, highly legible, broad hand-shaped strokes, white fill, #1A1F3A accent outline, thick warm cream outer border, custom premium sticker typography with quiet authority",
+    "poseDirection": "ロングコートを翻しつつ少し後ろの位置に立ち、胸の前で両腕をしっかり組む。片足をわずかに引いて重心を後ろに置き、前に出ずとも場を支配している立ち姿にする。",
+    "cameraDirection": "少し離れた中距離ショットで全身を入れ、前景にぼかした作業スペースを置く。見守る側であることが一目で伝わる引き気味の構図にする。",
+    "expressionDirection": "感情をほぼ動かさず、顎を少し上げた冷静な目線にする。『必要ならいつでも指示を出せる』余裕を残す。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "balanced two-step hierarchy with one dominant word block and compact supporting characters, stable baseline",
+    "textEffectPrompt": "minimal metallic highlight, very small angular accent marks, no busy decoration"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "腕",
+    "textDesignPrompt": "cool stoic Japanese sticker lettering, highly legible, broad hand-shaped strokes, white fill, #1A1F3A accent outline, thick warm cream outer border, custom premium sticker typography with quiet authority",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "感情をほぼ動かさず、顎を少し上げた冷静な目線にする。『必要ならいつでも指示を出せる』余裕を残す。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "後方で腕組んでます。",
+      "intent": "reaction",
+      "textDesignPrompt": "cool stoic Japanese sticker lettering, highly legible, broad hand-shaped strokes, white fill, #1A1F3A accent outline, thick warm cream outer border, custom premium sticker typography with quiet authority",
+      "poseDirection": "ロングコートを翻しつつ少し後ろの位置に立ち、胸の前で両腕をしっかり組む。片足をわずかに引いて重心を後ろに置き、前に出ずとも場を支配している立ち姿にする。",
+      "cameraDirection": "少し離れた中距離ショットで全身を入れ、前景にぼかした作業スペースを置く。見守る側であることが一目で伝わる引き気味の構図にする。",
+      "expressionDirection": "感情をほぼ動かさず、顎を少し上げた冷静な目線にする。『必要ならいつでも指示を出せる』余裕を残す。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "balanced two-step hierarchy with one dominant word block and compact supporting characters, stable baseline",
+      "textEffectPrompt": "minimal metallic highlight, very small angular accent marks, no busy decoration"
+    }
+  ]
+}

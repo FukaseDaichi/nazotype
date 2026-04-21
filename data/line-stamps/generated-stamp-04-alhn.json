@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-04-alhn",
+  "typeCode": "ALHN",
+  "packageName": "鑑識マニア 違和感がある。。。",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "違和感がある。。。",
+    "textDesignPrompt": "cool suspicious Japanese sticker lettering, highly legible, slightly condensed hand-drawn strokes, pale cream fill, #8B5E3C accent outline, thick warm cream outer border, custom sticker typography with tension",
+    "poseDirection": "証拠パウチから取り出した資料を片手で持ち、もう一方の手のルーペを目元へ寄せて眉間にしわを作る。肩は少しすぼめて視線を一点へ刺し、違和感にロックオンした停止感を出す。",
+    "cameraDirection": "資料と顔が同時に入る正面寄りの中距離ショット。わずかに寄って、細部観察の密度が伝わる構図にする。",
+    "expressionDirection": "口を閉じて眉をきつく寄せ、片目だけわずかに細める。『確信はないが異常は感知した』静かな鋭さを出す。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "main phrase medium-large, tighter spacing near the end, ellipsis smaller and dropped slightly lower for uneasy rhythm",
+    "textEffectPrompt": "small ink-like accent marks, restrained highlight, no decoration that weakens tension"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "違",
+    "textDesignPrompt": "cool suspicious Japanese sticker lettering, highly legible, slightly condensed hand-drawn strokes, pale cream fill, #8B5E3C accent outline, thick warm cream outer border, custom sticker typography with tension",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "口を閉じて眉をきつく寄せ、片目だけわずかに細める。『確信はないが異常は感知した』静かな鋭さを出す。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "違和感がある。。。",
+      "intent": "reaction",
+      "textDesignPrompt": "cool suspicious Japanese sticker lettering, highly legible, slightly condensed hand-drawn strokes, pale cream fill, #8B5E3C accent outline, thick warm cream outer border, custom sticker typography with tension",
+      "poseDirection": "証拠パウチから取り出した資料を片手で持ち、もう一方の手のルーペを目元へ寄せて眉間にしわを作る。肩は少しすぼめて視線を一点へ刺し、違和感にロックオンした停止感を出す。",
+      "cameraDirection": "資料と顔が同時に入る正面寄りの中距離ショット。わずかに寄って、細部観察の密度が伝わる構図にする。",
+      "expressionDirection": "口を閉じて眉をきつく寄せ、片目だけわずかに細める。『確信はないが異常は感知した』静かな鋭さを出す。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "main phrase medium-large, tighter spacing near the end, ellipsis smaller and dropped slightly lower for uneasy rhythm",
+      "textEffectPrompt": "small ink-like accent marks, restrained highlight, no decoration that weakens tension"
+    }
+  ]
+}

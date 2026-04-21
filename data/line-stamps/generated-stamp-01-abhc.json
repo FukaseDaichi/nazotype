@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-01-abhc",
+  "typeCode": "ABHC",
+  "packageName": "人間Wi-Fi おじゃじんどりまずー",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "おじゃじんどりまずー",
+    "textDesignPrompt": "cute and explosive custom Japanese sticker lettering, bold rounded strokes with sharp momentum, very legible, white fill, #00B4D8 accent outline, thick warm cream outer border, playful speed accents, premium handcrafted LINE sticker typography",
+    "poseDirection": "Wi-Fiマーク入りTシャツの彼女が片腕を大きく前へ伸ばしてスマホを突き出し、もう片方の手は人を集めるように大きく振る。上半身をぐっと前に倒し、つま先立ち気味で今にもフレームへ乗り出してくる勢いを出す。",
+    "cameraDirection": "スマホ側がやや手前に来る近距離の広角寄り3/4構図。画面外の相手へ呼びかける圧が伝わるよう、少しだけ煽り気味に見る。",
+    "expressionDirection": "喉を張っただみ声がそのまま見えるように口を大きく横開きにし、目は元気に見開く。雑だけど悪気のないハイテンションさを優先する。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "clear big-small rhythm, oversized leading glyph, slightly smaller trailing glyphs, punctuation kicked upward with energetic tilt",
+    "textEffectPrompt": "subtle glossy highlight, compact speed slashes, tiny spark accents, small offset shadow only if readability improves"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "撮",
+    "textDesignPrompt": "cute and explosive custom Japanese sticker lettering, bold rounded strokes with sharp momentum, very legible, white fill, #00B4D8 accent outline, thick warm cream outer border, playful speed accents, premium handcrafted LINE sticker typography",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "喉を張っただみ声がそのまま見えるように口を大きく横開きにし、目は元気に見開く。雑だけど悪気のないハイテンションさを優先する。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "おじゃじんどりまずー",
+      "intent": "reaction",
+      "textDesignPrompt": "cute and explosive custom Japanese sticker lettering, bold rounded strokes with sharp momentum, very legible, white fill, #00B4D8 accent outline, thick warm cream outer border, playful speed accents, premium handcrafted LINE sticker typography",
+      "poseDirection": "Wi-Fiマーク入りTシャツの彼女が片腕を大きく前へ伸ばしてスマホを突き出し、もう片方の手は人を集めるように大きく振る。上半身をぐっと前に倒し、つま先立ち気味で今にもフレームへ乗り出してくる勢いを出す。",
+      "cameraDirection": "スマホ側がやや手前に来る近距離の広角寄り3/4構図。画面外の相手へ呼びかける圧が伝わるよう、少しだけ煽り気味に見る。",
+      "expressionDirection": "喉を張っただみ声がそのまま見えるように口を大きく横開きにし、目は元気に見開く。雑だけど悪気のないハイテンションさを優先する。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "clear big-small rhythm, oversized leading glyph, slightly smaller trailing glyphs, punctuation kicked upward with energetic tilt",
+      "textEffectPrompt": "subtle glossy highlight, compact speed slashes, tiny spark accents, small offset shadow only if readability improves"
+    }
+  ]
+}

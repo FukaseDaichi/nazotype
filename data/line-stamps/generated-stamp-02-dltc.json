@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-02-dltc",
+  "typeCode": "DLTC",
+  "packageName": "仕分け番長 時間やばい！",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "時間やばい！",
+    "textDesignPrompt": "cute panic-style Japanese sticker lettering, very legible, plump rounded strokes, white fill, #1F8F86 accent outline, thick warm cream outer border, lively handcrafted distress energy",
+    "poseDirection": "色分けカードを持ったまま左手首の大型スマートウォッチを顔の近くまで引き寄せ、右手は空いた指先をばっと開いて焦りを見せる。腰を引きつつ片足を半歩下げ、今すぐ仕分けを変えなければいけない緊張感を出す。",
+    "cameraDirection": "手元のスマートウォッチが読み取れる胸上中心の中距離ショット。軽い俯瞰で、時間確認の切迫感が顔と時計に同時に入る構図にする。",
+    "expressionDirection": "普段はクールな彼女が珍しく目を大きく見開き、口を小さく開けて汗を一筋流す。理性的な人が本気で焦った時の鋭い慌て方にする。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "staggered size rhythm with one oversized central glyph and smaller supporting glyphs, slightly bouncing baseline to sell urgency",
+    "textEffectPrompt": "tiny sweat-drop accents, subtle wobble emphasis, strong outline contrast, minimal offset shadow only if it improves readability"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "急",
+    "textDesignPrompt": "cute panic-style Japanese sticker lettering, very legible, plump rounded strokes, white fill, #1F8F86 accent outline, thick warm cream outer border, lively handcrafted distress energy",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "普段はクールな彼女が珍しく目を大きく見開き、口を小さく開けて汗を一筋流す。理性的な人が本気で焦った時の鋭い慌て方にする。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "時間やばい！",
+      "intent": "reaction",
+      "textDesignPrompt": "cute panic-style Japanese sticker lettering, very legible, plump rounded strokes, white fill, #1F8F86 accent outline, thick warm cream outer border, lively handcrafted distress energy",
+      "poseDirection": "色分けカードを持ったまま左手首の大型スマートウォッチを顔の近くまで引き寄せ、右手は空いた指先をばっと開いて焦りを見せる。腰を引きつつ片足を半歩下げ、今すぐ仕分けを変えなければいけない緊張感を出す。",
+      "cameraDirection": "手元のスマートウォッチが読み取れる胸上中心の中距離ショット。軽い俯瞰で、時間確認の切迫感が顔と時計に同時に入る構図にする。",
+      "expressionDirection": "普段はクールな彼女が珍しく目を大きく見開き、口を小さく開けて汗を一筋流す。理性的な人が本気で焦った時の鋭い慌て方にする。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "staggered size rhythm with one oversized central glyph and smaller supporting glyphs, slightly bouncing baseline to sell urgency",
+      "textEffectPrompt": "tiny sweat-drop accents, subtle wobble emphasis, strong outline contrast, minimal offset shadow only if it improves readability"
+    }
+  ]
+}

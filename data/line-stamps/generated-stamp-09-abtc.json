@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-09-abtc",
+  "typeCode": "ABTC",
+  "packageName": "ライブ軍師 その日で頼む！",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "その日で頼む！",
+    "textDesignPrompt": "cool assertive Japanese sticker lettering, very legible, bold hand-drawn strokes, white fill, #FF6B2B accent outline, thick warm cream outer border, punchy premium sticker typography",
+    "poseDirection": "体を大きく前傾させ、右手の指先を相手へ真っすぐ突きつける。左手はヘッドセットに軽く触れ、確認と決定を同時に処理している司令官感を出す。",
+    "cameraDirection": "ローアングル気味の3/4ショットで、指先が少し手前に来る構図。押しの強さと即断力をシルエットで見せる。",
+    "expressionDirection": "笑顔ではなく、確信を持って押し切る強い目線にする。口は短く言い切る形で開き、『もう決めよう』の圧を出す。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "one dominant first word, compressed trailing phrase, exclamation slightly oversized and thrust forward",
+    "textEffectPrompt": "compact speed burst accents, sharp highlight, minimal shadow only if readability improves"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "決",
+    "textDesignPrompt": "cool assertive Japanese sticker lettering, very legible, bold hand-drawn strokes, white fill, #FF6B2B accent outline, thick warm cream outer border, punchy premium sticker typography",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "笑顔ではなく、確信を持って押し切る強い目線にする。口は短く言い切る形で開き、『もう決めよう』の圧を出す。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "その日で頼む！",
+      "intent": "reaction",
+      "textDesignPrompt": "cool assertive Japanese sticker lettering, very legible, bold hand-drawn strokes, white fill, #FF6B2B accent outline, thick warm cream outer border, punchy premium sticker typography",
+      "poseDirection": "体を大きく前傾させ、右手の指先を相手へ真っすぐ突きつける。左手はヘッドセットに軽く触れ、確認と決定を同時に処理している司令官感を出す。",
+      "cameraDirection": "ローアングル気味の3/4ショットで、指先が少し手前に来る構図。押しの強さと即断力をシルエットで見せる。",
+      "expressionDirection": "笑顔ではなく、確信を持って押し切る強い目線にする。口は短く言い切る形で開き、『もう決めよう』の圧を出す。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "one dominant first word, compressed trailing phrase, exclamation slightly oversized and thrust forward",
+      "textEffectPrompt": "compact speed burst accents, sharp highlight, minimal shadow only if readability improves"
+    }
+  ]
+}

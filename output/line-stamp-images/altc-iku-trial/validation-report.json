@@ -1,0 +1,32 @@
+{
+  "skill": "madamistype-line-stamp-images",
+  "setId": "altc-iku-trial",
+  "generatedAt": "2026-04-21T04:00:51.310407+00:00",
+  "assets": [
+    {
+      "passed": true,
+      "imagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/altc-iku-trial/stamps/01/final.png",
+      "fileSize": 150687,
+      "expectedSize": {
+        "width": 370,
+        "height": 320
+      },
+      "padding": {
+        "left": 10,
+        "top": 23,
+        "right": 10,
+        "bottom": 23
+      },
+      "greenRatio": 0.0,
+      "ocr": {
+        "status": "skipped",
+        "reason": "pytesseract is not installed.",
+        "detectedText": null
+      },
+      "failures": [],
+      "warnings": [
+        "Text OCR skipped: pytesseract is not installed."
+      ]
+    }
+  ]
+}

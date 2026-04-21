@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-16-abtn",
+  "typeCode": "ABTN",
+  "packageName": "現場の総監督 成功したい",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "成功したい",
+    "textDesignPrompt": "cool determined Japanese sticker lettering, highly legible, bold sturdy strokes, white fill, #1A1F3A accent outline, thick warm cream outer border, premium sticker typography with quiet resolve",
+    "poseDirection": "片手の拳を胸の前で静かに握り、もう片方の手は背中側に引く。足は大きく開かず、堂々と立ったまま前方をまっすぐ見据えることで揺るがない決意を見せる。",
+    "cameraDirection": "わずかに煽る正面構図で、指揮官らしい威厳を損なわずに拳の意志を見せる。胸上より少し広めで立ち姿の安定感を残す。",
+    "expressionDirection": "眉を引き締め、口は結んだまま目だけに強さを出す。熱血というより勝つまで折れない支配的な決意にする。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "one dominant first word with a smaller but firm trailing phrase, stable forward-leaning baseline",
+    "textEffectPrompt": "small glint accents, crisp highlight, no overly cute decoration"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "志",
+    "textDesignPrompt": "cool determined Japanese sticker lettering, highly legible, bold sturdy strokes, white fill, #1A1F3A accent outline, thick warm cream outer border, premium sticker typography with quiet resolve",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "眉を引き締め、口は結んだまま目だけに強さを出す。熱血というより勝つまで折れない支配的な決意にする。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "成功したい",
+      "intent": "reaction",
+      "textDesignPrompt": "cool determined Japanese sticker lettering, highly legible, bold sturdy strokes, white fill, #1A1F3A accent outline, thick warm cream outer border, premium sticker typography with quiet resolve",
+      "poseDirection": "片手の拳を胸の前で静かに握り、もう片方の手は背中側に引く。足は大きく開かず、堂々と立ったまま前方をまっすぐ見据えることで揺るがない決意を見せる。",
+      "cameraDirection": "わずかに煽る正面構図で、指揮官らしい威厳を損なわずに拳の意志を見せる。胸上より少し広めで立ち姿の安定感を残す。",
+      "expressionDirection": "眉を引き締め、口は結んだまま目だけに強さを出す。熱血というより勝つまで折れない支配的な決意にする。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "one dominant first word with a smaller but firm trailing phrase, stable forward-leaning baseline",
+      "textEffectPrompt": "small glint accents, crisp highlight, no overly cute decoration"
+    }
+  ]
+}

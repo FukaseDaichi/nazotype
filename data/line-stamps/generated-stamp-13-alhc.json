@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-13-alhc",
+  "typeCode": "ALHC",
+  "packageName": "瞬間キャッチャー 成功した！！！",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "成功した！！！",
+    "textDesignPrompt": "cute triumphant Japanese sticker lettering, very legible, bold rounded strokes, white fill, #FFD700 accent outline, thick warm cream outer border, celebratory premium LINE sticker typography",
+    "poseDirection": "ネオンカラーの彼女が両膝を折り上げる勢いでジャンプし、片手を高く突き上げてもう片手は胸元で強く握る。体全体を斜めに流し、スピードの余韻が残る跳躍にする。",
+    "cameraDirection": "下から見上げる全身ショットで、ジャンプの高さを強調する。斜め方向へ抜ける構図にして高速感を残す。",
+    "expressionDirection": "満面の笑みで口を大きく開け、目もキラキラに見開く。『見つけた』『やった』が一気に噴き出す顔にする。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "big heroic leading phrase, smaller trailing phrase, punctuation enlarged and flared outward for a victory silhouette",
+    "textEffectPrompt": "tiny confetti or star accents, bright glossy highlight, compact burst motif, subtle shadow only if readability improves"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "成",
+    "textDesignPrompt": "cute triumphant Japanese sticker lettering, very legible, bold rounded strokes, white fill, #FFD700 accent outline, thick warm cream outer border, celebratory premium LINE sticker typography",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "満面の笑みで口を大きく開け、目もキラキラに見開く。『見つけた』『やった』が一気に噴き出す顔にする。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "成功した！！！",
+      "intent": "reaction",
+      "textDesignPrompt": "cute triumphant Japanese sticker lettering, very legible, bold rounded strokes, white fill, #FFD700 accent outline, thick warm cream outer border, celebratory premium LINE sticker typography",
+      "poseDirection": "ネオンカラーの彼女が両膝を折り上げる勢いでジャンプし、片手を高く突き上げてもう片手は胸元で強く握る。体全体を斜めに流し、スピードの余韻が残る跳躍にする。",
+      "cameraDirection": "下から見上げる全身ショットで、ジャンプの高さを強調する。斜め方向へ抜ける構図にして高速感を残す。",
+      "expressionDirection": "満面の笑みで口を大きく開け、目もキラキラに見開く。『見つけた』『やった』が一気に噴き出す顔にする。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "big heroic leading phrase, smaller trailing phrase, punctuation enlarged and flared outward for a victory silhouette",
+      "textEffectPrompt": "tiny confetti or star accents, bright glossy highlight, compact burst motif, subtle shadow only if readability improves"
+    }
+  ]
+}

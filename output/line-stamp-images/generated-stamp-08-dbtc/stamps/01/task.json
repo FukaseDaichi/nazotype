@@ -1,0 +1,55 @@
+{
+  "requestId": "019dae3e-bade-7a43-8924-af861aa441f7",
+  "modelPath": "fal-ai/nano-banana-2/edit",
+  "submittedPayload": {
+    "prompt": "Create a polished anime-style LINE sticker illustration for the Madamistype project. Use the provided reference image as a strict chibi identity anchor. Character identity: プランBの天才 (DBTC). Sticker set style: character-only. This must be a super-deformed chibi sticker character, never a standard-proportion anime adult. Use clearly chibi proportions with a large head, compact torso, short limbs, and simplified hands and feet. Keep the full figure obviously chibi even when the pose and camera angle become dramatic. Aim for a cute compact silhouette around two to three heads tall, not a realistic seven to eight heads tall figure. Preserve the same face, hairstyle, outfit, props, and core palette as the reference chibi character. Gender presentation: female. Age impression: early to mid 20s. Archetype: contingency-queen. Character description: 常に3手先まで読み、本命が崩れた瞬間に次のプランを差し出す万能の策士。手の中には常に複数のカードがあり、どれを切るかは彼女だけが知っている。. Outfit and props: エメラルドグリーンのスマートブレザー（内ポケットからプランカードが覗く）、黒のグラフィックTシャツにチェスの駒がプリント、フィットパンツ。片手にホログラフィックなタブレット。. Color palette: #2E8B57, #1A1A2E, #C9A84C. Base pose inspiration: 左手で扇状に広げた複数のプランカードをポーカーのように見せ、右手で一枚を抜き出す瞬間。不敵な笑みを浮かべたカードプレイヤーの構図。やや斜めからの構図。. Base expression inspiration: 「全部見えてるよ」と言わんばかりの不敵な笑み。目は鋭く自信に満ちている。. This asset is a LINE sticker reaction image. The reaction must read instantly without needing extra context. Keep the pose and lettering clean, bold, and sticker-friendly. Draw exactly one character. Sticker intent: reaction. Pose direction: ホログラフィックタブレットかスマホを片手で見せながら、もう一方の手で軽くカードをめくるような仕草を添える。首は小さく傾け、質問は柔らかいが頭はすでに次の段取りを組んでいる姿にする。. Camera direction: やや斜め前からの上半身ショット。端末画面と表情が両立する距離で、相談の柔らかさを出す。. Expression direction: 不敵さを弱めた軽い微笑みで、相手の返答を待つ余裕を見せる。目線は真正面より少し横に流して会話感を出す。. Design for a final canvas of 370 by 320 pixels. Keep about 10 pixels of safe outer margin for both the character and the text. Include the exact visible text \"その日あいてる？\" as part of the sticker artwork. Spell the text exactly as provided, with no missing characters and no extra characters. Use this lettering direction: cute conversational Japanese sticker lettering, highly legible, rounded handwritten strokes, white fill, #2E8B57 accent outline, thick warm cream outer border, playful premium sticker typography. Place the text at top-left while keeping it fully readable and fully inside the frame. Make the lettering highly stylized, expressive, bold, and high-contrast like a premium LINE sticker. Treat the lettering as custom illustrated hand-drawn sticker typography, not a plain default font or ordinary digital typesetting. Make the text feel designed as part of the image composition, not dropped in afterward. Keep the lettering large enough to feel intentional, while leaving clear breathing room around the character silhouette. The lettering should read instantly at small size, but still have visible character and charm in the stroke design. Treat the lettering as a hero design element, not a neutral font choice. Draw custom illustrated sticker lettering with hand-shaped glyphs and intentional silhouette design. Give the lettering lively stroke contrast, slightly irregular contour rhythm, and expressive weight shifts instead of perfectly uniform strokes. Let the glyph size, tilt, spacing, and baseline rhythm feel authored by an illustrator rather than machine-typeset. Use premium sticker finishing such as a thick outer outline, optional inner inline border, subtle highlight, or small offset shadow only when readability improves. Match the mood requested in the lettering direction, whether it should feel cute, playful, cool, sharp, teasing, or dramatic. Do not normalize every asset into the same bubbly font treatment. Avoid sterile default-font proportions, flat mechanical spacing, and generic digital typesetting. Text layout direction: friendly compact word block with a larger leading word and smaller trailing phrase, slight diagonal lift at the end. Text effect direction: tiny sparkle or inquiry accent, clean highlight, no clutter around the silhouette. Render the visible text in Japanese exactly as 「その日あいてる？」. Do not translate the text into English. Do not romanize, localize, paraphrase, or replace the Japanese characters. Keep the Japanese characters large, bold, and clearly legible. Treat each kana, kanji, and punctuation mark as a custom drawn shape with personality, not a raw font glyph. Simplify counters and stroke joins for sticker readability while preserving a distinctive hand-drawn look. Do not place the text in a separate footer bar or detached caption area. Keep both the character silhouette and the lettering clearly visible at small size. Fill the entire background with a perfectly uniform bright chroma key green (#00FF00). Do not use green on the character, clothing, props, hair, or visible text. Keep the boundary between the foreground and background crisp and easy to key. Do not add gradients, patterns, shadows, or extra objects in the background. Do not include any text other than the exact requested text. Do not include logos or watermarks. Keep the final image clean, commercially usable, and sticker-friendly. Avoid: low quality, blurry, logo, watermark, multiple people, grotesque, cropped head, full body, 低品質, ぼやけ, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身, multiple characters, cropped feet, deformed hands, extra fingers, speech bubble, background clutter, background shadows, background gradient, green clothing, green accessories, green hair highlights, realistic adult proportions, 8-head-tall body, fashion illustration proportions, small head, long legs, long torso, semi-realistic anatomy.",
+    "aspect_ratio": "4:3",
+    "resolution": "2K",
+    "output_format": "png",
+    "enable_web_search": false,
+    "image_urls": [
+      "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types/DBTC_chibi.png"
+    ]
+  },
+  "submitResponse": {
+    "status": "IN_QUEUE",
+    "request_id": "019dae3e-bade-7a43-8924-af861aa441f7",
+    "response_url": "https://queue.fal.run/fal-ai/nano-banana-2/requests/019dae3e-bade-7a43-8924-af861aa441f7",
+    "status_url": "https://queue.fal.run/fal-ai/nano-banana-2/requests/019dae3e-bade-7a43-8924-af861aa441f7/status",
+    "cancel_url": "https://queue.fal.run/fal-ai/nano-banana-2/requests/019dae3e-bade-7a43-8924-af861aa441f7/cancel",
+    "logs": null,
+    "metrics": {},
+    "queue_position": 0,
+    "model_path": "fal-ai/nano-banana-2/edit"
+  },
+  "finalTaskResponse": {
+    "request_id": "019dae3e-bade-7a43-8924-af861aa441f7",
+    "model_path": "fal-ai/nano-banana-2/edit",
+    "status_url": "https://queue.fal.run/fal-ai/nano-banana-2/requests/019dae3e-bade-7a43-8924-af861aa441f7/status",
+    "response_url": "https://queue.fal.run/fal-ai/nano-banana-2/requests/019dae3e-bade-7a43-8924-af861aa441f7",
+    "statusResponse": {
+      "status": "COMPLETED",
+      "request_id": "019dae3e-bade-7a43-8924-af861aa441f7",
+      "response_url": "https://queue.fal.run/fal-ai/nano-banana-2/requests/019dae3e-bade-7a43-8924-af861aa441f7",
+      "status_url": "https://queue.fal.run/fal-ai/nano-banana-2/requests/019dae3e-bade-7a43-8924-af861aa441f7/status",
+      "cancel_url": "https://queue.fal.run/fal-ai/nano-banana-2/requests/019dae3e-bade-7a43-8924-af861aa441f7/cancel",
+      "logs": [],
+      "metrics": {
+        "inference_time": 38.524171113967896
+      }
+    },
+    "resultResponse": {
+      "images": [
+        {
+          "url": "https://v3b.fal.media/files/b/0a9718f4/q1ioH-Z-bnT23KXafpbuH_qy9ixIIy.png",
+          "content_type": "image/png",
+          "file_name": "q1ioH-Z-bnT23KXafpbuH_qy9ixIIy.png",
+          "file_size": null,
+          "width": null,
+          "height": null
+        }
+      ],
+      "description": ""
+    }
+  }
+}

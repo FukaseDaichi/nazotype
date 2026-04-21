@@ -1,0 +1,67 @@
+{
+  "skill": "madamistype-line-stamp-images",
+  "generatedAt": "2026-04-21T04:24:24.150317+00:00",
+  "setId": "generated-stamp-20-dbtn",
+  "typeCode": "DBTN",
+  "role": "stamp",
+  "assetId": "01",
+  "status": "success",
+  "text": "ふーん",
+  "referenceImageUrl": "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types/DBTN_chibi.png",
+  "resultImageUrl": "https://v3b.fal.media/files/b/0a97192d/ch36InMyEKZ1RBrQp5X-3_c3LyRxnT.png",
+  "requestSummary": {
+    "prompt": "Create a polished anime-style LINE sticker illustration for the Madamistype project. Use the provided reference image as a strict chibi identity anchor. Character identity: 沈黙の切り札 (DBTN). Sticker set style: character-only. This must be a super-deformed chibi sticker character, never a standard-proportion anime adult. Use clearly chibi proportions with a large head, compact torso, short limbs, and simplified hands and feet. Keep the full figure obviously chibi even when the pose and camera angle become dramatic. Aim for a cute compact silhouette around two to three heads tall, not a realistic seven to eight heads tall figure. Preserve the same face, hairstyle, outfit, props, and core palette as the reference chibi character. Gender presentation: male. Age impression: mid to late 20s. Archetype: silent-trump-card. Character description: 普段は影のように佇み、一歩引いた位置からチーム全体の死角を見抜く。だが彼が口を開く時、その一言が戦局を決定的に動かす。沈黙こそが最大の武器。. Outfit and props: ダークチャコールのハイカラーロングコート（裏地に深紅のライニング）、黒のハイネック、左手薬指にのみ深紅の石の指輪。装飾を極限まで排した、影のようなミニマルスタイル。. Color palette: #1C1C1C, #8B1A2B, #3A3A3A. Base pose inspiration: 右手の人差し指を唇に当て「静かに」のジェスチャー。左手には一枚だけのカード（切り札）を指先で挟んでいる。顔の半分が影に沈むサイドライティングの構図。. Base expression inspiration: 全てを見透かす冷徹な眼差し。わずかに口角が上がった、底知れぬ含み笑い。. This asset is a LINE sticker reaction image. The reaction must read instantly without needing extra context. Keep the pose and lettering clean, bold, and sticker-friendly. Draw exactly one character. Sticker intent: reaction. Pose direction: 体はやや横向きにし、肩越しに相手を見るだけで大きく動かない。片手には切り札カードを持ったまま、反応する価値が低いと判断した静かな流し方にする。. Camera direction: 横顔強めのサイドショット。顔の半分だけ見せる構図で、まともに取り合わない距離感を出す。. Expression direction: 口をほぼ閉じたまま小さく『ふーん』と漏らす程度にし、目線は少し下げる。冷たさと含みを同時に残す。. Design for a final canvas of 370 by 320 pixels. Keep about 10 pixels of safe outer margin for both the character and the text. Include the exact visible text \"ふーん\" as part of the sticker artwork. Spell the text exactly as provided, with no missing characters and no extra characters. Use this lettering direction: cool deadpan Japanese sticker lettering, highly legible, slightly narrow hand-shaped strokes, pale cream fill, #1C1C1C accent outline, thick warm cream outer border, understated custom sticker typography. Place the text at top-left while keeping it fully readable and fully inside the frame. Make the lettering highly stylized, expressive, bold, and high-contrast like a premium LINE sticker. Treat the lettering as custom illustrated hand-drawn sticker typography, not a plain default font or ordinary digital typesetting. Make the text feel designed as part of the image composition, not dropped in afterward. Keep the lettering large enough to feel intentional, while leaving clear breathing room around the character silhouette. The lettering should read instantly at small size, but still have visible character and charm in the stroke design. Treat the lettering as a hero design element, not a neutral font choice. Draw custom illustrated sticker lettering with hand-shaped glyphs and intentional silhouette design. Give the lettering lively stroke contrast, slightly irregular contour rhythm, and expressive weight shifts instead of perfectly uniform strokes. Let the glyph size, tilt, spacing, and baseline rhythm feel authored by an illustrator rather than machine-typeset. Use premium sticker finishing such as a thick outer outline, optional inner inline border, subtle highlight, or small offset shadow only when readability improves. Match the mood requested in the lettering direction, whether it should feel cute, playful, cool, sharp, teasing, or dramatic. Do not normalize every asset into the same bubbly font treatment. Avoid sterile default-font proportions, flat mechanical spacing, and generic digital typesetting. Text layout direction: one compact medium-large word with slight asymmetry, no extra bounce, trailing nuance carried by tilt rather than punctuation. Text effect direction: minimal highlight, tiny flat accent bar, almost no decoration. Render the visible text in Japanese exactly as 「ふーん」. Do not translate the text into English. Do not romanize, localize, paraphrase, or replace the Japanese characters. Keep the Japanese characters large, bold, and clearly legible. Treat each kana, kanji, and punctuation mark as a custom drawn shape with personality, not a raw font glyph. Simplify counters and stroke joins for sticker readability while preserving a distinctive hand-drawn look. Do not place the text in a separate footer bar or detached caption area. Keep both the character silhouette and the lettering clearly visible at small size. Fill the entire background with a perfectly uniform bright chroma key green (#00FF00). Do not use green on the character, clothing, props, hair, or visible text. Keep the boundary between the foreground and background crisp and easy to key. Do not add gradients, patterns, shadows, or extra objects in the background. Do not include any text other than the exact requested text. Do not include logos or watermarks. Keep the final image clean, commercially usable, and sticker-friendly. Avoid: low quality, blurry, logo, watermark, multiple people, grotesque, cropped head, full body, 低品質, ぼやけ, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身, multiple characters, cropped feet, deformed hands, extra fingers, speech bubble, background clutter, background shadows, background gradient, green clothing, green accessories, green hair highlights, realistic adult proportions, 8-head-tall body, fashion illustration proportions, small head, long legs, long torso, semi-realistic anatomy.",
+    "image_urls": [
+      "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types/DBTN_chibi.png"
+    ],
+    "aspect_ratio": "4:3",
+    "resolution": "2K",
+    "enable_web_search": false,
+    "output_format": "png"
+  },
+  "compose": {
+    "sourcePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-20-dbtn/stamps/01/transparent.png",
+    "destinationPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-20-dbtn/stamps/01/final.png",
+    "cropBox": {
+      "left": 490,
+      "top": 70,
+      "right": 1832,
+      "bottom": 1737
+    },
+    "scaledSize": {
+      "width": 242,
+      "height": 300
+    },
+    "offset": {
+      "x": 64,
+      "y": 10
+    },
+    "dpi": 72,
+    "fileSize": 95147
+  },
+  "validation": {
+    "passed": true,
+    "imagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-20-dbtn/stamps/01/final.png",
+    "fileSize": 95147,
+    "expectedSize": {
+      "width": 370,
+      "height": 320
+    },
+    "padding": {
+      "left": 64,
+      "top": 10,
+      "right": 64,
+      "bottom": 10
+    },
+    "greenRatio": 0.0,
+    "ocr": {
+      "status": "skipped",
+      "reason": "pytesseract is not installed.",
+      "detectedText": null
+    },
+    "failures": [],
+    "warnings": [
+      "Text OCR skipped: pytesseract is not installed."
+    ]
+  }
+}

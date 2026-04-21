@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-17-dbtc",
+  "typeCode": "DBTC",
+  "packageName": "プランBの天才 失敗も辞さない",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "失敗も辞さない",
+    "textDesignPrompt": "cool composed Japanese sticker lettering, highly legible, structured hand-drawn strokes, white fill, #2E8B57 accent outline, thick warm cream outer border, premium sticker typography with calculated resolve",
+    "poseDirection": "胸の前で腕をしっかり組み、片足に重心を乗せて静かに立つ。威圧よりも『リスクは理解済み』という余裕を出すため、肩の力は抜きつつ軸だけはぶらさない。",
+    "cameraDirection": "やや斜め前からの腰上ショット。組んだ腕と不敵な立ち姿が読みやすい距離にする。",
+    "expressionDirection": "口元はほぼ真顔のまま、ごく薄い自信だけを残す。怖さよりも計算済みの覚悟を感じさせる目にする。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "balanced hierarchy with slightly larger opening phrase and compact ending, strong stable silhouette",
+    "textEffectPrompt": "minimal angular accents, restrained sheen, very subtle shadow only if readability improves"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "覚",
+    "textDesignPrompt": "cool composed Japanese sticker lettering, highly legible, structured hand-drawn strokes, white fill, #2E8B57 accent outline, thick warm cream outer border, premium sticker typography with calculated resolve",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "口元はほぼ真顔のまま、ごく薄い自信だけを残す。怖さよりも計算済みの覚悟を感じさせる目にする。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "失敗も辞さない",
+      "intent": "reaction",
+      "textDesignPrompt": "cool composed Japanese sticker lettering, highly legible, structured hand-drawn strokes, white fill, #2E8B57 accent outline, thick warm cream outer border, premium sticker typography with calculated resolve",
+      "poseDirection": "胸の前で腕をしっかり組み、片足に重心を乗せて静かに立つ。威圧よりも『リスクは理解済み』という余裕を出すため、肩の力は抜きつつ軸だけはぶらさない。",
+      "cameraDirection": "やや斜め前からの腰上ショット。組んだ腕と不敵な立ち姿が読みやすい距離にする。",
+      "expressionDirection": "口元はほぼ真顔のまま、ごく薄い自信だけを残す。怖さよりも計算済みの覚悟を感じさせる目にする。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "balanced hierarchy with slightly larger opening phrase and compact ending, strong stable silhouette",
+      "textEffectPrompt": "minimal angular accents, restrained sheen, very subtle shadow only if readability improves"
+    }
+  ]
+}

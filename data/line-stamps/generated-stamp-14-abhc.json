@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-14-abhc",
+  "typeCode": "ABHC",
+  "packageName": "人間Wi-Fi どないやねーーん！",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "どないやねーーん！",
+    "textDesignPrompt": "cute comedic Japanese sticker lettering, highly legible, bold elastic strokes, white fill, #00B4D8 accent outline, thick warm cream outer border, hand-drawn sticker typography with strong punchline energy",
+    "poseDirection": "両手を左右へ大きく広げ、肩ごと前へ出して全身でツッコミに行く。片足は踏み込み、上体は相手へぐっと近づけることで『待って待って』の圧を出す。",
+    "cameraDirection": "やや近めの広角3/4構図で、両手がフレームの端へ広がるようにする。ツッコミの勢いで画面を埋める。",
+    "expressionDirection": "眉を強く上げ、口を大きく横開きにして語尾を引っ張る。怒りではなく『さすがにそれはおかしい』という明るいツッコミ顔にする。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "big first chunk, stretched middle, smaller trailing vowel pull, exaggerated width variation for comic timing",
+    "textEffectPrompt": "tiny impact marks, slight wobble, compact burst accents, no clutter over the character"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "ツ",
+    "textDesignPrompt": "cute comedic Japanese sticker lettering, highly legible, bold elastic strokes, white fill, #00B4D8 accent outline, thick warm cream outer border, hand-drawn sticker typography with strong punchline energy",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "眉を強く上げ、口を大きく横開きにして語尾を引っ張る。怒りではなく『さすがにそれはおかしい』という明るいツッコミ顔にする。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "どないやねーーん！",
+      "intent": "reaction",
+      "textDesignPrompt": "cute comedic Japanese sticker lettering, highly legible, bold elastic strokes, white fill, #00B4D8 accent outline, thick warm cream outer border, hand-drawn sticker typography with strong punchline energy",
+      "poseDirection": "両手を左右へ大きく広げ、肩ごと前へ出して全身でツッコミに行く。片足は踏み込み、上体は相手へぐっと近づけることで『待って待って』の圧を出す。",
+      "cameraDirection": "やや近めの広角3/4構図で、両手がフレームの端へ広がるようにする。ツッコミの勢いで画面を埋める。",
+      "expressionDirection": "眉を強く上げ、口を大きく横開きにして語尾を引っ張る。怒りではなく『さすがにそれはおかしい』という明るいツッコミ顔にする。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "big first chunk, stretched middle, smaller trailing vowel pull, exaggerated width variation for comic timing",
+      "textEffectPrompt": "tiny impact marks, slight wobble, compact burst accents, no clutter over the character"
+    }
+  ]
+}

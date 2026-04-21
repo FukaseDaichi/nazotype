@@ -1,0 +1,180 @@
+{
+  "skill": "madamistype-line-stamp-prompts",
+  "results": [
+    {
+      "setId": "generated-stamp-01-abhc",
+      "typeCode": "ABHC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-01-abhc/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-02-dltc",
+      "typeCode": "DLTC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-02-dltc/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-03-dlhc",
+      "typeCode": "DLHC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-03-dlhc/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-04-alhn",
+      "typeCode": "ALHN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-04-alhn/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-05-dbtn",
+      "typeCode": "DBTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-05-dbtn/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-06-abtn",
+      "typeCode": "ABTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-06-abtn/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-07-abhc",
+      "typeCode": "ABHC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-07-abhc/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-08-dbtc",
+      "typeCode": "DBTC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-08-dbtc/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-09-abtc",
+      "typeCode": "ABTC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-09-abtc/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-10-dlhn",
+      "typeCode": "DLHN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-10-dlhn/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-11-dltn",
+      "typeCode": "DLTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-11-dltn/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-12-dltn",
+      "typeCode": "DLTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-12-dltn/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-13-alhc",
+      "typeCode": "ALHC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-13-alhc/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-14-abhc",
+      "typeCode": "ABHC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-14-abhc/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-15-altc",
+      "typeCode": "ALTC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-15-altc/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-16-abtn",
+      "typeCode": "ABTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-16-abtn/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-17-dbtc",
+      "typeCode": "DBTC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-17-dbtc/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-18-abhn",
+      "typeCode": "ABHN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-18-abhn/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-19-altn",
+      "typeCode": "ALTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-19-altn/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-20-dbtn",
+      "typeCode": "DBTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-20-dbtn/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-21-alhc",
+      "typeCode": "ALHC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-21-alhc/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-22-altc",
+      "typeCode": "ALTC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-22-altc/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-23-dbhn",
+      "typeCode": "DBHN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-23-dbhn/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-24-dbhc",
+      "typeCode": "DBHC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-24-dbhc/manifest.json",
+      "assetCount": 3
+    },
+    {
+      "setId": "generated-stamp-25-dltn",
+      "typeCode": "DLTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-25-dltn/manifest.json",
+      "assetCount": 3
+    }
+  ]
+}

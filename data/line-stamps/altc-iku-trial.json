@@ -1,0 +1,43 @@
+{
+  "setId": "altc-iku-trial",
+  "typeCode": "ALTC",
+  "packageName": "突破キラー 行く！ trial",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "行く！",
+    "textDesignPrompt": "cute and punchy custom Japanese sticker lettering, very legible, bold rounded strokes, white fill, vivid crimson outline, thick cream outer border, premium LINE sticker feel",
+    "poseDirection": "片足を強く前へ踏み出し、拳を軽く握ったまま体ごと前進する。ライダースの広がりで勢いを見せる。",
+    "cameraDirection": "低めの前方3/4構図で、前へ飛び出す圧を強く見せる。",
+    "expressionDirection": "不敵な笑みを少しだけ混ぜつつ、短く強く言い切る顔。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "compact dynamic Japanese lettering block with strong separation from the character silhouette",
+    "textEffectPrompt": "high-contrast outline, tiny highlight, minimal offset shadow only if readability improves"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "行",
+    "textDesignPrompt": "cute ultra-legible single-character Japanese sticker lettering, bold rounded strokes, white fill, vivid crimson outline, thick cream outer border",
+    "poseDirection": "上半身中心で少し前のめり、今から飛び出す直前の勢いを出す。",
+    "cameraDirection": "顔と文字が読みやすい近めの構図。",
+    "expressionDirection": "自信のある不敵な笑み。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single large hero glyph that remains readable at very small tab size",
+    "textEffectPrompt": "thick outline and simple highlight for maximum small-size readability"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "行く！",
+      "intent": "reaction",
+      "textDesignPrompt": "cute but fierce custom Japanese sticker lettering, highly legible, bold rounded strokes, white fill, vivid crimson outline, thick cream outer border, energetic handcrafted LINE sticker typography",
+      "poseDirection": "片足を強く前へ踏み出し、拳を軽く握ったまま体ごと前進する。背中を反らさず、獲物に飛び込む瞬間のような一直線の勢いにする。ライダースの広がりやチェーンベルトの揺れで、動き出しの勢いを補強する。",
+      "cameraDirection": "低めの前方3/4構図で、踏み出した足が手前に来るダイナミックな見せ方にする。",
+      "expressionDirection": "不敵な笑みを少しだけ混ぜつつ、口は短く強く言い切る形にする。迷いのなさが最優先。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "large compact text block with clean breathing room from the stepping leg and upper body",
+      "textEffectPrompt": "strong high-contrast outline, subtle glossy highlight, tiny shadow only if it improves readability"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-23-dbhn",
+  "typeCode": "DBHN",
+  "packageName": "伏線回収マシン 気が付かなかった。。。",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "気が付かなかった。。。",
+    "textDesignPrompt": "cute shocked Japanese sticker lettering, highly legible, rounded hand-drawn strokes, white fill, #1C3557 accent outline, thick warm cream outer border, custom sticker typography with startled energy",
+    "poseDirection": "片手で額を押さえ、もう片方の手には手がかりカードを数枚持ったまま止まる。上体を少しだけ後ろへ引き、頭の中で一気に線がつながった瞬間の反動を出す。",
+    "cameraDirection": "顔と手元カードが入る正面寄りのバストアップ。やや寄って、理解がひっくり返る瞬間を見せる。",
+    "expressionDirection": "目を見開きつつ眉を上げ、口を小さく開けて無言のショックにする。大声ではなく、静かな衝撃で伝える。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "big main phrase followed by slightly smaller ending, ellipsis tiny and dropped low after the shock beat",
+    "textEffectPrompt": "tiny impact spark, subtle wobble, clean highlight, minimal shadow only if readability improves"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "気",
+    "textDesignPrompt": "cute shocked Japanese sticker lettering, highly legible, rounded hand-drawn strokes, white fill, #1C3557 accent outline, thick warm cream outer border, custom sticker typography with startled energy",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "目を見開きつつ眉を上げ、口を小さく開けて無言のショックにする。大声ではなく、静かな衝撃で伝える。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "気が付かなかった。。。",
+      "intent": "reaction",
+      "textDesignPrompt": "cute shocked Japanese sticker lettering, highly legible, rounded hand-drawn strokes, white fill, #1C3557 accent outline, thick warm cream outer border, custom sticker typography with startled energy",
+      "poseDirection": "片手で額を押さえ、もう片方の手には手がかりカードを数枚持ったまま止まる。上体を少しだけ後ろへ引き、頭の中で一気に線がつながった瞬間の反動を出す。",
+      "cameraDirection": "顔と手元カードが入る正面寄りのバストアップ。やや寄って、理解がひっくり返る瞬間を見せる。",
+      "expressionDirection": "目を見開きつつ眉を上げ、口を小さく開けて無言のショックにする。大声ではなく、静かな衝撃で伝える。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "big main phrase followed by slightly smaller ending, ellipsis tiny and dropped low after the shock beat",
+      "textEffectPrompt": "tiny impact spark, subtle wobble, clean highlight, minimal shadow only if readability improves"
+    }
+  ]
+}

@@ -1,0 +1,431 @@
+{
+  "skill": "madamistype-line-stamp-images",
+  "generatedAt": "2026-04-21T04:29:29.719708+00:00",
+  "results": [
+    {
+      "setId": "generated-stamp-01-abhc",
+      "typeCode": "ABHC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-01-abhc/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-01-abhc/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-01-abhc/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-02-dltc",
+      "typeCode": "DLTC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-02-dltc/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-02-dltc/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-02-dltc/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-03-dlhc",
+      "typeCode": "DLHC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-03-dlhc/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-03-dlhc/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-03-dlhc/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-04-alhn",
+      "typeCode": "ALHN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-04-alhn/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-04-alhn/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-04-alhn/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-05-dbtn",
+      "typeCode": "DBTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-05-dbtn/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-05-dbtn/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-05-dbtn/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-06-abtn",
+      "typeCode": "ABTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-06-abtn/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-06-abtn/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-06-abtn/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-07-abhc",
+      "typeCode": "ABHC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-07-abhc/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-07-abhc/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-07-abhc/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-08-dbtc",
+      "typeCode": "DBTC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-08-dbtc/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-08-dbtc/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-08-dbtc/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-09-abtc",
+      "typeCode": "ABTC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-09-abtc/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-09-abtc/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-09-abtc/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-10-dlhn",
+      "typeCode": "DLHN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-10-dlhn/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-10-dlhn/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-10-dlhn/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-11-dltn",
+      "typeCode": "DLTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-11-dltn/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-11-dltn/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-11-dltn/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-12-dltn",
+      "typeCode": "DLTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-12-dltn/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-12-dltn/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-12-dltn/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-13-alhc",
+      "typeCode": "ALHC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-13-alhc/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-13-alhc/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-13-alhc/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-14-abhc",
+      "typeCode": "ABHC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-14-abhc/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-14-abhc/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-14-abhc/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-15-altc",
+      "typeCode": "ALTC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-15-altc/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-15-altc/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-15-altc/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-16-abtn",
+      "typeCode": "ABTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-16-abtn/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-16-abtn/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-16-abtn/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-17-dbtc",
+      "typeCode": "DBTC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-17-dbtc/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-17-dbtc/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-17-dbtc/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-18-abhn",
+      "typeCode": "ABHN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-18-abhn/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-18-abhn/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-18-abhn/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-19-altn",
+      "typeCode": "ALTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-19-altn/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-19-altn/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-19-altn/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-20-dbtn",
+      "typeCode": "DBTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-20-dbtn/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-20-dbtn/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-20-dbtn/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-21-alhc",
+      "typeCode": "ALHC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-21-alhc/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-21-alhc/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-21-alhc/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-22-altc",
+      "typeCode": "ALTC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-22-altc/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-22-altc/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-22-altc/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-23-dbhn",
+      "typeCode": "DBHN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-23-dbhn/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-23-dbhn/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-23-dbhn/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-24-dbhc",
+      "typeCode": "DBHC",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-24-dbhc/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-24-dbhc/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-24-dbhc/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    },
+    {
+      "setId": "generated-stamp-25-dltn",
+      "typeCode": "DLTN",
+      "status": "success",
+      "manifestPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-prompts/generated-stamp-25-dltn/manifest.json",
+      "results": [
+        {
+          "role": "stamp",
+          "assetId": "01",
+          "fileName": "01.png",
+          "status": "success",
+          "finalPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-25-dltn/stamps/01/final.png",
+          "packagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-25-dltn/package/stamps/01.png",
+          "validationPassed": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "skill": "madamistype-line-stamp-images",
+  "setId": "generated-stamp-06-abtn",
+  "generatedAt": "2026-04-21T04:13:06.162434+00:00",
+  "assets": [
+    {
+      "passed": true,
+      "imagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-06-abtn/stamps/01/final.png",
+      "fileSize": 153719,
+      "expectedSize": {
+        "width": 370,
+        "height": 320
+      },
+      "padding": {
+        "left": 10,
+        "top": 29,
+        "right": 10,
+        "bottom": 29
+      },
+      "greenRatio": 0.0,
+      "ocr": {
+        "status": "skipped",
+        "reason": "pytesseract is not installed.",
+        "detectedText": null
+      },
+      "failures": [],
+      "warnings": [
+        "Text OCR skipped: pytesseract is not installed."
+      ]
+    }
+  ]
+}

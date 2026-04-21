@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-12-dltn",
+  "typeCode": "DLTN",
+  "packageName": "人間検算機 失敗した。。。",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "失敗した。。。",
+    "textDesignPrompt": "soft defeated Japanese sticker lettering, very legible, rounded drooping strokes, pale cream fill, #5B7FA5 accent outline, thick warm cream outer border, custom sticker typography with low energy",
+    "poseDirection": "背筋の良さが崩れてしまったことが分かるように、肩を深く落として書類を胸元で抱え込む。膝も少し内側へ寄せ、ちび体型でもはっきり分かるしょんぼり感を出す。",
+    "cameraDirection": "少し引いた正面ショットで、全身のしぼみ具合が見えるようにする。余白は下側を少し多めに取って沈み込む感じを出す。",
+    "expressionDirection": "伏し目がちで口を小さく結び、泣く手前の静かな落ち込みにする。大げさに泣かせず、完璧主義者がへこんでいる温度に留める。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "main phrase medium-large with a subtle downward slope, ending ellipsis much smaller and lower",
+    "textEffectPrompt": "tiny falling accent marks, restrained highlight, minimal soft shadow only if readability improves"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "失",
+    "textDesignPrompt": "soft defeated Japanese sticker lettering, very legible, rounded drooping strokes, pale cream fill, #5B7FA5 accent outline, thick warm cream outer border, custom sticker typography with low energy",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "伏し目がちで口を小さく結び、泣く手前の静かな落ち込みにする。大げさに泣かせず、完璧主義者がへこんでいる温度に留める。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "失敗した。。。",
+      "intent": "reaction",
+      "textDesignPrompt": "soft defeated Japanese sticker lettering, very legible, rounded drooping strokes, pale cream fill, #5B7FA5 accent outline, thick warm cream outer border, custom sticker typography with low energy",
+      "poseDirection": "背筋の良さが崩れてしまったことが分かるように、肩を深く落として書類を胸元で抱え込む。膝も少し内側へ寄せ、ちび体型でもはっきり分かるしょんぼり感を出す。",
+      "cameraDirection": "少し引いた正面ショットで、全身のしぼみ具合が見えるようにする。余白は下側を少し多めに取って沈み込む感じを出す。",
+      "expressionDirection": "伏し目がちで口を小さく結び、泣く手前の静かな落ち込みにする。大げさに泣かせず、完璧主義者がへこんでいる温度に留める。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "main phrase medium-large with a subtle downward slope, ending ellipsis much smaller and lower",
+      "textEffectPrompt": "tiny falling accent marks, restrained highlight, minimal soft shadow only if readability improves"
+    }
+  ]
+}

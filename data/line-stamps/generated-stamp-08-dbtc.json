@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-08-dbtc",
+  "typeCode": "DBTC",
+  "packageName": "プランBの天才 その日あいてる？",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "その日あいてる？",
+    "textDesignPrompt": "cute conversational Japanese sticker lettering, highly legible, rounded handwritten strokes, white fill, #2E8B57 accent outline, thick warm cream outer border, playful premium sticker typography",
+    "poseDirection": "ホログラフィックタブレットかスマホを片手で見せながら、もう一方の手で軽くカードをめくるような仕草を添える。首は小さく傾け、質問は柔らかいが頭はすでに次の段取りを組んでいる姿にする。",
+    "cameraDirection": "やや斜め前からの上半身ショット。端末画面と表情が両立する距離で、相談の柔らかさを出す。",
+    "expressionDirection": "不敵さを弱めた軽い微笑みで、相手の返答を待つ余裕を見せる。目線は真正面より少し横に流して会話感を出す。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "friendly compact word block with a larger leading word and smaller trailing phrase, slight diagonal lift at the end",
+    "textEffectPrompt": "tiny sparkle or inquiry accent, clean highlight, no clutter around the silhouette"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "空",
+    "textDesignPrompt": "cute conversational Japanese sticker lettering, highly legible, rounded handwritten strokes, white fill, #2E8B57 accent outline, thick warm cream outer border, playful premium sticker typography",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "不敵さを弱めた軽い微笑みで、相手の返答を待つ余裕を見せる。目線は真正面より少し横に流して会話感を出す。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "その日あいてる？",
+      "intent": "reaction",
+      "textDesignPrompt": "cute conversational Japanese sticker lettering, highly legible, rounded handwritten strokes, white fill, #2E8B57 accent outline, thick warm cream outer border, playful premium sticker typography",
+      "poseDirection": "ホログラフィックタブレットかスマホを片手で見せながら、もう一方の手で軽くカードをめくるような仕草を添える。首は小さく傾け、質問は柔らかいが頭はすでに次の段取りを組んでいる姿にする。",
+      "cameraDirection": "やや斜め前からの上半身ショット。端末画面と表情が両立する距離で、相談の柔らかさを出す。",
+      "expressionDirection": "不敵さを弱めた軽い微笑みで、相手の返答を待つ余裕を見せる。目線は真正面より少し横に流して会話感を出す。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "friendly compact word block with a larger leading word and smaller trailing phrase, slight diagonal lift at the end",
+      "textEffectPrompt": "tiny sparkle or inquiry accent, clean highlight, no clutter around the silhouette"
+    }
+  ]
+}

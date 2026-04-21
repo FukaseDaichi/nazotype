@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-20-dbtn",
+  "typeCode": "DBTN",
+  "packageName": "沈黙の切り札 ふーん",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "ふーん",
+    "textDesignPrompt": "cool deadpan Japanese sticker lettering, highly legible, slightly narrow hand-shaped strokes, pale cream fill, #1C1C1C accent outline, thick warm cream outer border, understated custom sticker typography",
+    "poseDirection": "体はやや横向きにし、肩越しに相手を見るだけで大きく動かない。片手には切り札カードを持ったまま、反応する価値が低いと判断した静かな流し方にする。",
+    "cameraDirection": "横顔強めのサイドショット。顔の半分だけ見せる構図で、まともに取り合わない距離感を出す。",
+    "expressionDirection": "口をほぼ閉じたまま小さく『ふーん』と漏らす程度にし、目線は少し下げる。冷たさと含みを同時に残す。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "one compact medium-large word with slight asymmetry, no extra bounce, trailing nuance carried by tilt rather than punctuation",
+    "textEffectPrompt": "minimal highlight, tiny flat accent bar, almost no decoration"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "ふ",
+    "textDesignPrompt": "cool deadpan Japanese sticker lettering, highly legible, slightly narrow hand-shaped strokes, pale cream fill, #1C1C1C accent outline, thick warm cream outer border, understated custom sticker typography",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "口をほぼ閉じたまま小さく『ふーん』と漏らす程度にし、目線は少し下げる。冷たさと含みを同時に残す。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "ふーん",
+      "intent": "reaction",
+      "textDesignPrompt": "cool deadpan Japanese sticker lettering, highly legible, slightly narrow hand-shaped strokes, pale cream fill, #1C1C1C accent outline, thick warm cream outer border, understated custom sticker typography",
+      "poseDirection": "体はやや横向きにし、肩越しに相手を見るだけで大きく動かない。片手には切り札カードを持ったまま、反応する価値が低いと判断した静かな流し方にする。",
+      "cameraDirection": "横顔強めのサイドショット。顔の半分だけ見せる構図で、まともに取り合わない距離感を出す。",
+      "expressionDirection": "口をほぼ閉じたまま小さく『ふーん』と漏らす程度にし、目線は少し下げる。冷たさと含みを同時に残す。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "one compact medium-large word with slight asymmetry, no extra bounce, trailing nuance carried by tilt rather than punctuation",
+      "textEffectPrompt": "minimal highlight, tiny flat accent bar, almost no decoration"
+    }
+  ]
+}

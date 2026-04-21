@@ -1,0 +1,67 @@
+{
+  "skill": "madamistype-line-stamp-images",
+  "generatedAt": "2026-04-21T04:12:05.880026+00:00",
+  "setId": "generated-stamp-05-dbtn",
+  "typeCode": "DBTN",
+  "role": "stamp",
+  "assetId": "01",
+  "status": "success",
+  "text": "ほんとうにこれでよかったのだろうか。。。",
+  "referenceImageUrl": "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types/DBTN_chibi.png",
+  "resultImageUrl": "https://v3b.fal.media/files/b/0a9718e3/n9NpgtQgyitVkPY9hzZTh_cPoISZ8B.png",
+  "requestSummary": {
+    "prompt": "Create a polished anime-style LINE sticker illustration for the Madamistype project. Use the provided reference image as a strict chibi identity anchor. Character identity: 沈黙の切り札 (DBTN). Sticker set style: character-only. This must be a super-deformed chibi sticker character, never a standard-proportion anime adult. Use clearly chibi proportions with a large head, compact torso, short limbs, and simplified hands and feet. Keep the full figure obviously chibi even when the pose and camera angle become dramatic. Aim for a cute compact silhouette around two to three heads tall, not a realistic seven to eight heads tall figure. Preserve the same face, hairstyle, outfit, props, and core palette as the reference chibi character. Gender presentation: male. Age impression: mid to late 20s. Archetype: silent-trump-card. Character description: 普段は影のように佇み、一歩引いた位置からチーム全体の死角を見抜く。だが彼が口を開く時、その一言が戦局を決定的に動かす。沈黙こそが最大の武器。. Outfit and props: ダークチャコールのハイカラーロングコート（裏地に深紅のライニング）、黒のハイネック、左手薬指にのみ深紅の石の指輪。装飾を極限まで排した、影のようなミニマルスタイル。. Color palette: #1C1C1C, #8B1A2B, #3A3A3A. Base pose inspiration: 右手の人差し指を唇に当て「静かに」のジェスチャー。左手には一枚だけのカード（切り札）を指先で挟んでいる。顔の半分が影に沈むサイドライティングの構図。. Base expression inspiration: 全てを見透かす冷徹な眼差し。わずかに口角が上がった、底知れぬ含み笑い。. This asset is a LINE sticker reaction image. The reaction must read instantly without needing extra context. Keep the pose and lettering clean, bold, and sticker-friendly. Draw exactly one character. Sticker intent: reaction. Pose direction: 切り札のカードを下ろした右手を力なく体側へ落とし、肩は少しだけ前に丸める。顔は軽く伏せつつも視線だけ遠くへ流し、決断の後味を一人で噛みしめている姿勢にする。. Camera direction: 横顔寄りの3/4ショットで、顔の半分に影が落ちる静かな構図。背景の余白を少し広めに取って孤独感を出す。. Expression direction: いつもの冷徹さを抑え、目元だけに迷いを残す。口角は下げず、感情を押し殺しているからこそ滲む不安にする。. Design for a final canvas of 370 by 320 pixels. Keep about 10 pixels of safe outer margin for both the character and the text. Include the exact visible text \"ほんとうにこれでよかったのだろうか。。。\" as part of the sticker artwork. Spell the text exactly as provided, with no missing characters and no extra characters. Use this lettering direction: soft uneasy Japanese sticker lettering, very legible, rounded handwritten strokes, pale cream fill, #1C1C1C accent outline, thick warm cream outer border, cute but worried sticker typography. Place the text at top-left while keeping it fully readable and fully inside the frame. Make the lettering highly stylized, expressive, bold, and high-contrast like a premium LINE sticker. Treat the lettering as custom illustrated hand-drawn sticker typography, not a plain default font or ordinary digital typesetting. Make the text feel designed as part of the image composition, not dropped in afterward. Keep the lettering large enough to feel intentional, while leaving clear breathing room around the character silhouette. The lettering should read instantly at small size, but still have visible character and charm in the stroke design. Treat the lettering as a hero design element, not a neutral font choice. Draw custom illustrated sticker lettering with hand-shaped glyphs and intentional silhouette design. Give the lettering lively stroke contrast, slightly irregular contour rhythm, and expressive weight shifts instead of perfectly uniform strokes. Let the glyph size, tilt, spacing, and baseline rhythm feel authored by an illustrator rather than machine-typeset. Use premium sticker finishing such as a thick outer outline, optional inner inline border, subtle highlight, or small offset shadow only when readability improves. Match the mood requested in the lettering direction, whether it should feel cute, playful, cool, sharp, teasing, or dramatic. Do not normalize every asset into the same bubbly font treatment. Avoid sterile default-font proportions, flat mechanical spacing, and generic digital typesetting. Text layout direction: gentle descending size rhythm, first phrase larger, ending phrase slightly smaller, ellipsis tiny and low. Text effect direction: tiny wavering accent lines, restrained highlight, minimal soft shadow only if readability improves. Render the visible text in Japanese exactly as 「ほんとうにこれでよかったのだろうか。。。」. Do not translate the text into English. Do not romanize, localize, paraphrase, or replace the Japanese characters. Keep the Japanese characters large, bold, and clearly legible. Treat each kana, kanji, and punctuation mark as a custom drawn shape with personality, not a raw font glyph. Simplify counters and stroke joins for sticker readability while preserving a distinctive hand-drawn look. Do not place the text in a separate footer bar or detached caption area. Keep both the character silhouette and the lettering clearly visible at small size. Fill the entire background with a perfectly uniform bright chroma key green (#00FF00). Do not use green on the character, clothing, props, hair, or visible text. Keep the boundary between the foreground and background crisp and easy to key. Do not add gradients, patterns, shadows, or extra objects in the background. Do not include any text other than the exact requested text. Do not include logos or watermarks. Keep the final image clean, commercially usable, and sticker-friendly. Avoid: low quality, blurry, logo, watermark, multiple people, grotesque, cropped head, full body, 低品質, ぼやけ, ロゴ, 透かし, 複数人, グロテスク, 頭切れ, 全身, multiple characters, cropped feet, deformed hands, extra fingers, speech bubble, background clutter, background shadows, background gradient, green clothing, green accessories, green hair highlights, realistic adult proportions, 8-head-tall body, fashion illustration proportions, small head, long legs, long torso, semi-realistic anatomy.",
+    "image_urls": [
+      "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types/DBTN_chibi.png"
+    ],
+    "aspect_ratio": "4:3",
+    "resolution": "2K",
+    "enable_web_search": false,
+    "output_format": "png"
+  },
+  "compose": {
+    "sourcePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-05-dbtn/stamps/01/transparent.png",
+    "destinationPath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-05-dbtn/stamps/01/final.png",
+    "cropBox": {
+      "left": 194,
+      "top": 57,
+      "right": 2206,
+      "bottom": 1764
+    },
+    "scaledSize": {
+      "width": 350,
+      "height": 297
+    },
+    "offset": {
+      "x": 10,
+      "y": 11
+    },
+    "dpi": 72,
+    "fileSize": 153569
+  },
+  "validation": {
+    "passed": true,
+    "imagePath": "/mnt/c/Users/119003/git/nazotype/output/line-stamp-images/generated-stamp-05-dbtn/stamps/01/final.png",
+    "fileSize": 153569,
+    "expectedSize": {
+      "width": 370,
+      "height": 320
+    },
+    "padding": {
+      "left": 10,
+      "top": 11,
+      "right": 10,
+      "bottom": 12
+    },
+    "greenRatio": 0.0,
+    "ocr": {
+      "status": "skipped",
+      "reason": "pytesseract is not installed.",
+      "detectedText": null
+    },
+    "failures": [],
+    "warnings": [
+      "Text OCR skipped: pytesseract is not installed."
+    ]
+  }
+}

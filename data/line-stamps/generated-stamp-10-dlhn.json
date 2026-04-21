@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-10-dlhn",
+  "typeCode": "DLHN",
+  "packageName": "実況解読者 ありがとう！！",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "ありがとう！！",
+    "textDesignPrompt": "cute grateful Japanese sticker lettering, very legible, plump rounded strokes, white fill, #5E4A8E accent outline, thick warm cream outer border, warm premium sticker typography",
+    "poseDirection": "胸元のノートやマイクを押さえながら、上半身を深く折って大きくお辞儀する。片足は少し後ろへ引き、勢いよく感謝を届けにいった感じを出す。",
+    "cameraDirection": "正面寄りの中距離ショットで、頭を下げた角度と笑顔の両方が読めるようやや高めから見る。",
+    "expressionDirection": "目を細めた満面の笑みにして、口は大きく開いて元気に感謝を叫んでいる途中の形にする。礼儀正しさより熱量を優先する。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "larger main phrase with stacked or tucked punctuation, gentle curved baseline, friendly rounded silhouette",
+    "textEffectPrompt": "tiny heart or sparkle accents, soft glossy highlight, subtle shadow only if readability improves"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "礼",
+    "textDesignPrompt": "cute grateful Japanese sticker lettering, very legible, plump rounded strokes, white fill, #5E4A8E accent outline, thick warm cream outer border, warm premium sticker typography",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "目を細めた満面の笑みにして、口は大きく開いて元気に感謝を叫んでいる途中の形にする。礼儀正しさより熱量を優先する。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "ありがとう！！",
+      "intent": "reaction",
+      "textDesignPrompt": "cute grateful Japanese sticker lettering, very legible, plump rounded strokes, white fill, #5E4A8E accent outline, thick warm cream outer border, warm premium sticker typography",
+      "poseDirection": "胸元のノートやマイクを押さえながら、上半身を深く折って大きくお辞儀する。片足は少し後ろへ引き、勢いよく感謝を届けにいった感じを出す。",
+      "cameraDirection": "正面寄りの中距離ショットで、頭を下げた角度と笑顔の両方が読めるようやや高めから見る。",
+      "expressionDirection": "目を細めた満面の笑みにして、口は大きく開いて元気に感謝を叫んでいる途中の形にする。礼儀正しさより熱量を優先する。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "larger main phrase with stacked or tucked punctuation, gentle curved baseline, friendly rounded silhouette",
+      "textEffectPrompt": "tiny heart or sparkle accents, soft glossy highlight, subtle shadow only if readability improves"
+    }
+  ]
+}

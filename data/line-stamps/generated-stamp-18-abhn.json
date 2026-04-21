@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-18-abhn",
+  "typeCode": "ABHN",
+  "packageName": "歩くホワイトボード 高難易度らしいよ",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "高難易度らしいよ",
+    "textDesignPrompt": "cute whisper-style Japanese sticker lettering, very legible, soft rounded strokes, pale cream fill, #2D8B7A accent outline, thick warm cream outer border, custom sticker typography with hushed charm",
+    "poseDirection": "透明ボードを小脇に抱えたまま、片手を口元へ寄せて少しだけ身を寄せる。足は止めず、歩きながら耳打ちしているような軽い前傾で情報共有感を出す。",
+    "cameraDirection": "肩越しに会話へ参加しているような近めの3/4ショット。耳打ちの親密さと情報屋らしいボードの両方が見える角度にする。",
+    "expressionDirection": "目はまじめに開いたまま、口元だけを小さく動かして『らしいよ』と静かに伝える。煽りではなく、冷静な共有にする。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "compact medium-sized phrase with smaller ending, gentle diagonal drift, intimate spacing",
+    "textEffectPrompt": "tiny sparkle or hush marks, soft highlight, keep decoration sparse"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "高",
+    "textDesignPrompt": "cute whisper-style Japanese sticker lettering, very legible, soft rounded strokes, pale cream fill, #2D8B7A accent outline, thick warm cream outer border, custom sticker typography with hushed charm",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "目はまじめに開いたまま、口元だけを小さく動かして『らしいよ』と静かに伝える。煽りではなく、冷静な共有にする。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "高難易度らしいよ",
+      "intent": "reaction",
+      "textDesignPrompt": "cute whisper-style Japanese sticker lettering, very legible, soft rounded strokes, pale cream fill, #2D8B7A accent outline, thick warm cream outer border, custom sticker typography with hushed charm",
+      "poseDirection": "透明ボードを小脇に抱えたまま、片手を口元へ寄せて少しだけ身を寄せる。足は止めず、歩きながら耳打ちしているような軽い前傾で情報共有感を出す。",
+      "cameraDirection": "肩越しに会話へ参加しているような近めの3/4ショット。耳打ちの親密さと情報屋らしいボードの両方が見える角度にする。",
+      "expressionDirection": "目はまじめに開いたまま、口元だけを小さく動かして『らしいよ』と静かに伝える。煽りではなく、冷静な共有にする。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "compact medium-sized phrase with smaller ending, gentle diagonal drift, intimate spacing",
+      "textEffectPrompt": "tiny sparkle or hush marks, soft highlight, keep decoration sparse"
+    }
+  ]
+}

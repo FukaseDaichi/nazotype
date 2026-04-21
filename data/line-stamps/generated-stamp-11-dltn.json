@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-11-dltn",
+  "typeCode": "DLTN",
+  "packageName": "人間検算機 ふーん",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "ふーん",
+    "textDesignPrompt": "cool deadpan Japanese sticker lettering, highly legible, slightly narrow hand-shaped strokes, pale cream fill, #5B7FA5 accent outline, thick warm cream outer border, understated custom sticker typography",
+    "poseDirection": "姿勢はきれいなまま保ちつつ、両腕だけを体側へすとんと落として力を抜く。片手には検証書類を持ったまま、反応の薄さで温度差を作る。",
+    "cameraDirection": "真正面の腰上ショットで、左右対称気味に立たせる。整った姿勢とやる気のないリアクションのギャップを見せる。",
+    "expressionDirection": "半目で口をほんの少しだけ横に開き、感情の起伏を極端に削る。興味がないというより『評価するほどでもない』冷静さに寄せる。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "one compact medium-large word with slight asymmetry, no extra bounce, trailing nuance carried by tilt rather than punctuation",
+    "textEffectPrompt": "minimal highlight, tiny flat accent bar, almost no decoration"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "ふ",
+    "textDesignPrompt": "cool deadpan Japanese sticker lettering, highly legible, slightly narrow hand-shaped strokes, pale cream fill, #5B7FA5 accent outline, thick warm cream outer border, understated custom sticker typography",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "半目で口をほんの少しだけ横に開き、感情の起伏を極端に削る。興味がないというより『評価するほどでもない』冷静さに寄せる。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "ふーん",
+      "intent": "reaction",
+      "textDesignPrompt": "cool deadpan Japanese sticker lettering, highly legible, slightly narrow hand-shaped strokes, pale cream fill, #5B7FA5 accent outline, thick warm cream outer border, understated custom sticker typography",
+      "poseDirection": "姿勢はきれいなまま保ちつつ、両腕だけを体側へすとんと落として力を抜く。片手には検証書類を持ったまま、反応の薄さで温度差を作る。",
+      "cameraDirection": "真正面の腰上ショットで、左右対称気味に立たせる。整った姿勢とやる気のないリアクションのギャップを見せる。",
+      "expressionDirection": "半目で口をほんの少しだけ横に開き、感情の起伏を極端に削る。興味がないというより『評価するほどでもない』冷静さに寄せる。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "one compact medium-large word with slight asymmetry, no extra bounce, trailing nuance carried by tilt rather than punctuation",
+      "textEffectPrompt": "minimal highlight, tiny flat accent bar, almost no decoration"
+    }
+  ]
+}

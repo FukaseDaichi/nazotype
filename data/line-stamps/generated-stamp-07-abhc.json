@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-07-abhc",
+  "typeCode": "ABHC",
+  "packageName": "人間Wi-Fi うぉおおおおお！",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "うぉおおおおお！",
+    "textDesignPrompt": "cute energetic Japanese sticker lettering, very legible, puffy rounded strokes, white fill, #00B4D8 accent outline, thick warm cream outer border, bright premium LINE sticker typography",
+    "poseDirection": "両腕を頭上いっぱいまで突き上げ、指を大きく開いて全身で電波を放つように跳ねる。膝も大きく曲げて、今まさにその場でバウンドしている勢いを出す。",
+    "cameraDirection": "少し下から見上げるダイナミックな全身寄り構図。両手が上へ抜けるシルエットを優先し、爆発的な高さを見せる。",
+    "expressionDirection": "目をキラキラに見開き、口は大きく縦に開けて絶叫顔にする。うるさいけれど愛嬌のあるテンションに寄せる。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "oversized opening glyphs with bouncy trailing characters, punctuation enlarged and lifted for extra excitement",
+    "textEffectPrompt": "small sparkles, soft highlight, little burst accents, gentle offset shadow only if readability improves"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "熱",
+    "textDesignPrompt": "cute energetic Japanese sticker lettering, very legible, puffy rounded strokes, white fill, #00B4D8 accent outline, thick warm cream outer border, bright premium LINE sticker typography",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "目をキラキラに見開き、口は大きく縦に開けて絶叫顔にする。うるさいけれど愛嬌のあるテンションに寄せる。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "うぉおおおおお！",
+      "intent": "reaction",
+      "textDesignPrompt": "cute energetic Japanese sticker lettering, very legible, puffy rounded strokes, white fill, #00B4D8 accent outline, thick warm cream outer border, bright premium LINE sticker typography",
+      "poseDirection": "両腕を頭上いっぱいまで突き上げ、指を大きく開いて全身で電波を放つように跳ねる。膝も大きく曲げて、今まさにその場でバウンドしている勢いを出す。",
+      "cameraDirection": "少し下から見上げるダイナミックな全身寄り構図。両手が上へ抜けるシルエットを優先し、爆発的な高さを見せる。",
+      "expressionDirection": "目をキラキラに見開き、口は大きく縦に開けて絶叫顔にする。うるさいけれど愛嬌のあるテンションに寄せる。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "oversized opening glyphs with bouncy trailing characters, punctuation enlarged and lifted for extra excitement",
+      "textEffectPrompt": "small sparkles, soft highlight, little burst accents, gentle offset shadow only if readability improves"
+    }
+  ]
+}

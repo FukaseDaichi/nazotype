@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-03-dlhc",
+  "typeCode": "DLHC",
+  "packageName": "小謎キラー 小謎はまかせて！",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "小謎はまかせて！",
+    "textDesignPrompt": "cute but cocky Japanese sticker lettering, bold rounded strokes, white fill, #4CAF50 accent outline, thick warm cream outer border, premium handcrafted sticker feel with a little swagger",
+    "poseDirection": "片手に解答済みカードを持ち、もう片方の親指を胸元へ勢いよく突き立てる。上体は前へ飛び込むように傾け、次の問題へすでに動き出している俊敏さを見せる。",
+    "cameraDirection": "やや低めから見上げる前傾のバストアップ寄り構図。胸を張った自信と小柄なちび体型の勢いが両立する距離感にする。",
+    "expressionDirection": "勝ち癖のついた笑みで片眉を少し上げ、目線は真正面に固定する。『解ける前提で受けている』顔にする。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "oversized first phrase, compact trailing phrase, slightly angled baseline, punctuation tucked for a confident silhouette",
+    "textEffectPrompt": "tiny star glint accents, subtle bevel-like highlight, crisp outline, minimal shadow if readability improves"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "謎",
+    "textDesignPrompt": "cute but cocky Japanese sticker lettering, bold rounded strokes, white fill, #4CAF50 accent outline, thick warm cream outer border, premium handcrafted sticker feel with a little swagger",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "勝ち癖のついた笑みで片眉を少し上げ、目線は真正面に固定する。『解ける前提で受けている』顔にする。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "小謎はまかせて！",
+      "intent": "reaction",
+      "textDesignPrompt": "cute but cocky Japanese sticker lettering, bold rounded strokes, white fill, #4CAF50 accent outline, thick warm cream outer border, premium handcrafted sticker feel with a little swagger",
+      "poseDirection": "片手に解答済みカードを持ち、もう片方の親指を胸元へ勢いよく突き立てる。上体は前へ飛び込むように傾け、次の問題へすでに動き出している俊敏さを見せる。",
+      "cameraDirection": "やや低めから見上げる前傾のバストアップ寄り構図。胸を張った自信と小柄なちび体型の勢いが両立する距離感にする。",
+      "expressionDirection": "勝ち癖のついた笑みで片眉を少し上げ、目線は真正面に固定する。『解ける前提で受けている』顔にする。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "oversized first phrase, compact trailing phrase, slightly angled baseline, punctuation tucked for a confident silhouette",
+      "textEffectPrompt": "tiny star glint accents, subtle bevel-like highlight, crisp outline, minimal shadow if readability improves"
+    }
+  ]
+}

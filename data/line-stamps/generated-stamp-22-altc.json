@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-22-altc",
+  "typeCode": "ALTC",
+  "packageName": "突破キラー 行く！",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "行く！",
+    "textDesignPrompt": "cute and explosive custom Japanese sticker lettering, bold rounded strokes with sharp momentum, very legible, white fill, #DC143C accent outline, thick warm cream outer border, playful speed accents, premium handcrafted LINE sticker typography",
+    "poseDirection": "片足を強く前へ踏み出し、拳を軽く握ったまま体ごと前進する。背中を反らさず、獲物に飛び込む瞬間のような一直線の勢いにする。",
+    "cameraDirection": "低めの前方3/4構図で、踏み出した足が手前に来るダイナミックな見せ方にする。",
+    "expressionDirection": "不敵な笑みを少しだけ混ぜつつ、口は短く強く言い切る形にする。迷いのなさが最優先。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "clear big-small rhythm, oversized leading glyph, slightly smaller trailing glyphs, punctuation kicked upward with energetic tilt",
+    "textEffectPrompt": "subtle glossy highlight, compact speed slashes, tiny spark accents, small offset shadow only if readability improves"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "行",
+    "textDesignPrompt": "cute and explosive custom Japanese sticker lettering, bold rounded strokes with sharp momentum, very legible, white fill, #DC143C accent outline, thick warm cream outer border, playful speed accents, premium handcrafted LINE sticker typography",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "不敵な笑みを少しだけ混ぜつつ、口は短く強く言い切る形にする。迷いのなさが最優先。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "行く！",
+      "intent": "reaction",
+      "textDesignPrompt": "cute and explosive custom Japanese sticker lettering, bold rounded strokes with sharp momentum, very legible, white fill, #DC143C accent outline, thick warm cream outer border, playful speed accents, premium handcrafted LINE sticker typography",
+      "poseDirection": "片足を強く前へ踏み出し、拳を軽く握ったまま体ごと前進する。背中を反らさず、獲物に飛び込む瞬間のような一直線の勢いにする。",
+      "cameraDirection": "低めの前方3/4構図で、踏み出した足が手前に来るダイナミックな見せ方にする。",
+      "expressionDirection": "不敵な笑みを少しだけ混ぜつつ、口は短く強く言い切る形にする。迷いのなさが最優先。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "clear big-small rhythm, oversized leading glyph, slightly smaller trailing glyphs, punctuation kicked upward with energetic tilt",
+      "textEffectPrompt": "subtle glossy highlight, compact speed slashes, tiny spark accents, small offset shadow only if readability improves"
+    }
+  ]
+}

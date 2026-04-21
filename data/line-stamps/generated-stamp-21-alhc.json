@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-21-alhc",
+  "typeCode": "ALHC",
+  "packageName": "瞬間キャッチャー あたしもいきたい",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "あたしもいきたい",
+    "textDesignPrompt": "cute eager Japanese sticker lettering, very legible, rounded lively strokes, white fill, #FFD700 accent outline, thick warm cream outer border, premium sticker typography with youthful excitement",
+    "poseDirection": "片手を高くぴんと挙げ、もう片手は胸の前で軽く握る。体をぐっと前へ出し、返事を待つ前に半歩踏み出してしまっている前のめりさを出す。",
+    "cameraDirection": "少し低めからの近めショットで、挙げた手が上へ抜ける元気なシルエットを優先する。",
+    "expressionDirection": "目を大きく輝かせ、口をわくわくした形で開く。お願いというより『行く前提で名乗り出た』顔にする。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "oversized opening phrase with smaller trailing phrase, playful upward bounce toward the end",
+    "textEffectPrompt": "small sparkle accents, soft highlight, gentle shadow only if readability improves"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "行",
+    "textDesignPrompt": "cute eager Japanese sticker lettering, very legible, rounded lively strokes, white fill, #FFD700 accent outline, thick warm cream outer border, premium sticker typography with youthful excitement",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "目を大きく輝かせ、口をわくわくした形で開く。お願いというより『行く前提で名乗り出た』顔にする。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "あたしもいきたい",
+      "intent": "reaction",
+      "textDesignPrompt": "cute eager Japanese sticker lettering, very legible, rounded lively strokes, white fill, #FFD700 accent outline, thick warm cream outer border, premium sticker typography with youthful excitement",
+      "poseDirection": "片手を高くぴんと挙げ、もう片手は胸の前で軽く握る。体をぐっと前へ出し、返事を待つ前に半歩踏み出してしまっている前のめりさを出す。",
+      "cameraDirection": "少し低めからの近めショットで、挙げた手が上へ抜ける元気なシルエットを優先する。",
+      "expressionDirection": "目を大きく輝かせ、口をわくわくした形で開く。お願いというより『行く前提で名乗り出た』顔にする。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "oversized opening phrase with smaller trailing phrase, playful upward bounce toward the end",
+      "textEffectPrompt": "small sparkle accents, soft highlight, gentle shadow only if readability improves"
+    }
+  ]
+}

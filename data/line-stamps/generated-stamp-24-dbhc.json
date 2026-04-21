@@ -1,0 +1,43 @@
+{
+  "setId": "generated-stamp-24-dbhc",
+  "typeCode": "DBHC",
+  "packageName": "ひらめき爆弾 もう一歩だった。。。",
+  "locale": "ja",
+  "style": "character-only",
+  "main": {
+    "intent": "package cover",
+    "text": "もう一歩だった。。。",
+    "textDesignPrompt": "cute regretful Japanese sticker lettering, very legible, rounded expressive strokes, pale cream fill, #2E1065 accent outline, thick warm cream outer border, custom sticker typography with bittersweet tension",
+    "poseDirection": "星をつかむように片手を前上方へ精いっぱい伸ばし、もう片方の手は胸元で止める。上体はその方向へ引っ張られるように伸び、指先だけ届かなかった惜しさをはっきり見せる。",
+    "cameraDirection": "手を伸ばした先に余白を多めに取る斜め構図。届かなかった先が画面内に残るようにして、あと一歩感を強調する。",
+    "expressionDirection": "目を潤ませるほどではなく、口を悔しそうに開いて眉を下げる。『今、ひらめきが逃げた』という一瞬の喪失感にする。",
+    "textPlacement": "top-left",
+    "textLayoutPrompt": "slightly stretched first phrase, smaller trailing phrase, ellipsis tiny and trailing away",
+    "textEffectPrompt": "small fading accent marks, restrained highlight, keep the decoration delicate"
+  },
+  "tab": {
+    "intent": "small icon",
+    "text": "惜",
+    "textDesignPrompt": "cute regretful Japanese sticker lettering, very legible, rounded expressive strokes, pale cream fill, #2E1065 accent outline, thick warm cream outer border, custom sticker typography with bittersweet tension",
+    "poseDirection": "上半身中心で、表情と文字が小サイズでもはっきり読めるように簡潔にまとめる。",
+    "cameraDirection": "顔と文字の視認性を優先した近めの構図。",
+    "expressionDirection": "目を潤ませるほどではなく、口を悔しそうに開いて眉を下げる。『今、ひらめきが逃げた』という一瞬の喪失感にする。",
+    "textPlacement": "right",
+    "textLayoutPrompt": "single compact hero glyph or ultra-short text block with stronger size hierarchy than the main sticker for tiny tab readability",
+    "textEffectPrompt": "very strong outline contrast, simplified decoration, minimal highlight only"
+  },
+  "stamps": [
+    {
+      "id": "01",
+      "text": "もう一歩だった。。。",
+      "intent": "reaction",
+      "textDesignPrompt": "cute regretful Japanese sticker lettering, very legible, rounded expressive strokes, pale cream fill, #2E1065 accent outline, thick warm cream outer border, custom sticker typography with bittersweet tension",
+      "poseDirection": "星をつかむように片手を前上方へ精いっぱい伸ばし、もう片方の手は胸元で止める。上体はその方向へ引っ張られるように伸び、指先だけ届かなかった惜しさをはっきり見せる。",
+      "cameraDirection": "手を伸ばした先に余白を多めに取る斜め構図。届かなかった先が画面内に残るようにして、あと一歩感を強調する。",
+      "expressionDirection": "目を潤ませるほどではなく、口を悔しそうに開いて眉を下げる。『今、ひらめきが逃げた』という一瞬の喪失感にする。",
+      "textPlacement": "top-left",
+      "textLayoutPrompt": "slightly stretched first phrase, smaller trailing phrase, ellipsis tiny and trailing away",
+      "textEffectPrompt": "small fading accent marks, restrained highlight, keep the decoration delicate"
+    }
+  ]
+}
