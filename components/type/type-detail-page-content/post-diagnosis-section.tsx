@@ -30,11 +30,57 @@ type ResolvedState = {
   isPostDiagnosis: boolean;
 };
 
+type SearchParamsLike = {
+  get(name: string): string | null;
+};
+
 type PostDiagnosisSectionProps = {
   typeData: TypeData;
   publicUrl: string;
   shareUrl: string;
 };
+
+function createResolvedState(
+  shareKey: string,
+  publicUrl: string,
+  isPostDiagnosis: boolean,
+) {
+  const payload = decodeShareKey(shareKey);
+
+  if (!payload) {
+    return null;
+  }
+
+  return {
+    userName: payload.n,
+    shareKey,
+    axisSummaries: expandShareKeyAxisSummaries(payload),
+    resultUrl: getAbsoluteUrl(`${publicUrl}?s=${shareKey}`),
+    isPostDiagnosis,
+  } satisfies ResolvedState;
+}
+
+function resolvePostDiagnosisState(
+  searchParams: SearchParamsLike,
+  typeCode: string,
+  publicUrl: string,
+) {
+  const keyParam = searchParams.get("s");
+  if (keyParam) {
+    return createResolvedState(
+      keyParam,
+      publicUrl,
+      isPostDiagnosisResultMatch(typeCode, keyParam),
+    );
+  }
+
+  const stored = readPostDiagnosisResult();
+  if (!stored || stored.typeCode !== typeCode) {
+    return null;
+  }
+
+  return createResolvedState(stored.key, publicUrl, true);
+}
 
 export function PostDiagnosisSection({
   typeData,
@@ -45,41 +91,13 @@ export function PostDiagnosisSection({
   const [state, setState] = useState<ResolvedState | null>(null);
 
   useEffect(() => {
-    // 1) Check for share key in URL query param
-    const keyParam = searchParams.get("s");
-    if (keyParam) {
-      const payload = decodeShareKey(keyParam);
-      if (payload) {
-        const axisSummaries = expandShareKeyAxisSummaries(payload);
-        setState({
-          userName: payload.n,
-          shareKey: keyParam,
-          axisSummaries,
-          resultUrl: getAbsoluteUrl(`${publicUrl}?s=${keyParam}`),
-          isPostDiagnosis: isPostDiagnosisResultMatch(
-            typeData.typeCode,
-            keyParam,
-          ),
-        });
-        return;
-      }
-    }
+    const frame = window.requestAnimationFrame(() => {
+      setState(
+        resolvePostDiagnosisState(searchParams, typeData.typeCode, publicUrl),
+      );
+    });
 
-    // 2) Check for post-diagnosis result in localStorage
-    const stored = readPostDiagnosisResult();
-    if (stored && stored.typeCode === typeData.typeCode) {
-      const payload = decodeShareKey(stored.key);
-      if (payload) {
-        const axisSummaries = expandShareKeyAxisSummaries(payload);
-        setState({
-          userName: payload.n,
-          shareKey: stored.key,
-          axisSummaries,
-          resultUrl: getAbsoluteUrl(`${publicUrl}?s=${stored.key}`),
-          isPostDiagnosis: true,
-        });
-      }
-    }
+    return () => window.cancelAnimationFrame(frame);
   }, [searchParams, typeData.typeCode, publicUrl]);
 
   if (!state) return null;
