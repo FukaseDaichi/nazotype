@@ -23,7 +23,6 @@ export function TypeDetailHeroSection({
   typeData,
   shareKey,
   publicUrl,
-  sharedUserName,
   hasChibi = false,
   isPostDiagnosisResult = false,
 }: TypeDetailHeroSectionProps) {
