@@ -36,6 +36,11 @@ export function TypeDetailHeroSection({
     typeData.axis.axis3,
     typeData.axis.axis4,
   ];
+  const furiganaChars = Array.from(typeData.furigana ?? "");
+  const emphasisIndex = Math.min(
+    Math.max(typeData.furiganaEmphasisIndex - 1, 0),
+    Math.max(furiganaChars.length - 1, 0),
+  );
 
   return (
     <>
@@ -116,7 +121,25 @@ export function TypeDetailHeroSection({
               </p>
 
               <h1 id="result-heading" className={styles.title}>
-                <span className={styles.typeName}>{typeData.typeName}</span>
+                <span className={styles.typeName}>
+                  <span className={styles.typeNameFurigana} aria-hidden="true">
+                    {furiganaChars.map((char, index) => (
+                      <span
+                        key={`${typeData.typeCode}-furigana-${index}`}
+                        className={
+                          index === emphasisIndex
+                            ? `${styles.typeNameFuriganaChar} ${styles.typeNameFuriganaCharAccent}`
+                            : styles.typeNameFuriganaChar
+                        }
+                      >
+                        {char}
+                      </span>
+                    ))}
+                  </span>
+                  <span className={styles.typeNameText}>
+                    {typeData.typeName}
+                  </span>
+                </span>
               </h1>
 
               <div className={styles.axisChips} aria-label="軸の傾向">
