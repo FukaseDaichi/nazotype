@@ -1,6 +1,191 @@
 .card {
   position: relative;
   isolation: isolate;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(193, 155, 46, 0.2);
+  background: rgba(22, 20, 26, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 24px 48px -28px rgba(14, 13, 16, 0.85),
+    inset 0 1px 0 rgba(245, 240, 232, 0.03);
+}
+
+@media (min-width: 768px) {
+  .card {
+    aspect-ratio: 1.91 / 1;
+  }
+}
+
+.panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .panel {
+    height: 100%;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .panel {
+    padding: 2.25rem;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-width: 32rem;
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(193, 155, 46, 0.9);
+}
+
+.resultTitle {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.02;
+  color: var(--color-paper-50);
+}
+
+.content {
+  display: grid;
+  gap: 1rem;
+  align-items: end;
+}
+
+@media (min-width: 768px) {
+  .content {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+    gap: 1.5rem;
+  }
+}
+
+.typeBlock {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+
+.typeLabel {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.64);
+}
+
+.typeCode {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: clamp(3rem, 9vw, 5.75rem);
+  line-height: 0.9;
+  color: var(--color-paper-50);
+  font-variant-numeric: tabular-nums;
+}
+
+.typeName {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.3vw, 1.6rem);
+  line-height: 1.2;
+  color: var(--color-gold-300);
+}
+
+.axisPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1rem 1rem 0.95rem;
+  background: rgba(14, 13, 16, 0.4);
+  border: 1px solid rgba(193, 155, 46, 0.16);
+}
+
+.axisPanelLabel {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(193, 155, 46, 0.88);
+}
+
+.axisList {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.axisItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.axisMeta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.axisLabel {
+  color: var(--color-paper-200);
+}
+
+.axisLabelStrong {
+  color: var(--color-gold-300);
+}
+
+.axisLabelRight {
+  text-align: right;
+}
+
+.axisValue {
+  font-size: 0.95rem;
+  color: var(--color-gold-300);
+  font-variant-numeric: tabular-nums;
+}
+
+.axisTrack {
+  position: relative;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(193, 155, 46, 0.15);
+}
+
+.axisFill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--color-gold-400) 0%,
+    var(--color-gold-300) 100%
+  );
 }
 
 .background {
@@ -8,9 +193,9 @@
   inset: 0;
   background-image: var(--post-diagnosis-ogp-url, none);
   background-size: cover;
-  background-position: center;
-  opacity: 0.1;
-  transform: scale(1.02);
+  background-position: 24% center;
+  opacity: 0.24;
+  transform: scale(1.04);
   pointer-events: none;
 }
 
@@ -18,24 +203,25 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(rgba(28, 26, 31, 0.8), rgba(28, 26, 31, 0.8)),
-    radial-gradient(
-      circle at top right,
-      rgba(193, 155, 46, 0.08) 0%,
-      rgba(193, 155, 46, 0.02) 28%,
-      rgba(28, 26, 31, 0) 58%
+    linear-gradient(
+      135deg,
+      rgba(14, 13, 16, 0.08) 0%,
+      rgba(14, 13, 16, 0.48) 44%,
+      rgba(14, 13, 16, 0.88) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(14, 13, 16, 0.18) 0%,
+      rgba(14, 13, 16, 0.16) 38%,
+      rgba(14, 13, 16, 0.72) 100%
     );
   pointer-events: none;
 }
 
-.srHeading {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+@media (max-width: 767px) {
+  .background {
+    background-position: 32% center;
+    opacity: 0.18;
+    transform: scale(1.02);
+  }
 }

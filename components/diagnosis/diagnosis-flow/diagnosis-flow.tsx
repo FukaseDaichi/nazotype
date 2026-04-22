@@ -319,9 +319,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
           >
             ページ {currentPage} / {totalPages}
           </h1>
-          <p className="text-sm text-paper-200 mt-1">
-            直感で答えてください
-          </p>
+          <p className="text-sm text-paper-200 mt-1">直感で答えてください</p>
           <div className="flex items-center gap-4 mt-2 text-xs text-paper-200 font-mono">
             <span aria-live="polite">
               回答済み {answeredCount} / {totalQuestions}
@@ -370,7 +368,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
                 <div className="mt-4">
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-xs text-paper-200 shrink-0 w-16 text-right">
-                      そう思わない
+                      思わない
                     </span>
                     <div className="flex gap-2">
                       {ANSWER_OPTIONS.slice()

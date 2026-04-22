@@ -1,6 +1,4 @@
 import type { CSSProperties } from "react";
-
-import previewStyles from "@/components/home/home-page/home-page.module.css";
 import { getTypeOgpImagePath } from "@/lib/site";
 import type { AxisSummary, TypeData } from "@/lib/types";
 
@@ -44,7 +42,9 @@ export function PostDiagnosisResultCard({
   axisSummaries,
   userName,
 }: PostDiagnosisResultCardProps) {
-  const eyebrowSuffix = userName ? `${userName} さんの診断結果` : "あなたの診断結果";
+  const resultTitle = userName
+    ? `${userName}さんの診断結果`
+    : "あなたの診断結果";
   const cardStyle = {
     ["--post-diagnosis-ogp-url" as string]: `url("${getTypeOgpImagePath(
       typeData.typeCode,
@@ -53,7 +53,7 @@ export function PostDiagnosisResultCard({
 
   return (
     <section
-      className={`${styles.card} max-w-[680px] mx-auto border border-gold-400/20 bg-mystery-800/80 backdrop-blur-[10px] p-10 relative overflow-hidden`}
+      className={styles.card}
       style={cardStyle}
       aria-labelledby="diagnosis-result-heading"
     >
@@ -64,71 +64,73 @@ export function PostDiagnosisResultCard({
         aria-hidden="true"
       />
 
-      <div className="relative z-10">
-        <p className="mb-6 flex flex-wrap items-center gap-2 font-mono text-[0.65rem] text-gold-400 tracking-[0.25em]">
-          <span>DIAGNOSIS RESULT</span>
-          <span className="text-gold-400/50" aria-hidden="true">
-            —
-          </span>
-          <span className="text-paper-200 tracking-[0.12em]">
-            {eyebrowSuffix}
-          </span>
-        </p>
+      <div className={styles.panel}>
+        <header className={styles.header}>
+          <p className={styles.eyebrow}>DIAGNOSIS RESULT</p>
+          <h2
+            id="diagnosis-result-heading"
+            className={`${styles.resultTitle} text-balance`}
+          >
+            {resultTitle}
+          </h2>
+        </header>
 
-        <h2 id="diagnosis-result-heading" className={styles.srHeading}>
-          {typeData.typeCode} {typeData.typeName}
-        </h2>
+        <div className={styles.content}>
+          <div className={`hidden md:flex ${styles.typeBlock}`}>
+            <p className={styles.typeLabel}>CASE FILE</p>
+            <p className={styles.typeCode}>{typeData.typeCode}</p>
+            <p className={`${styles.typeName} text-balance`}>
+              {typeData.typeName}
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {axisSummaries.map((summary) => {
-            const {
-              dominantScore,
-              fillStyle,
-              isPositiveDominant,
-              negativeScore,
-            } = getDominantAxisDisplay(summary);
+          <div className={styles.axisPanel}>
+            <p className={styles.axisPanelLabel}>4 AXES PROFILE</p>
 
-            return (
-              <div key={summary.axis} className="flex flex-col gap-1.5">
-                <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 font-mono text-[0.65rem]">
-                  <span
-                    className={
-                      isPositiveDominant ? "text-gold-300" : "text-paper-200"
-                    }
-                  >
-                    {summary.positiveLabel}
-                  </span>
-                  <span className="text-[0.8rem] tracking-[0.12em] text-gold-300">
-                    {dominantScore}
-                  </span>
-                  <span
-                    className={`text-right ${isPositiveDominant ? "text-paper-200" : "text-gold-300"}`}
-                  >
-                    {summary.negativeLabel}
-                  </span>
-                </div>
+            <div className={styles.axisList}>
+              {axisSummaries.map((summary) => {
+                const {
+                  dominantScore,
+                  fillStyle,
+                  isPositiveDominant,
+                  negativeScore,
+                } = getDominantAxisDisplay(summary);
 
-                <div
-                  className="relative h-[3px] overflow-hidden rounded-sm bg-gold-400/15"
-                  aria-label={`${summary.positiveLabel} ${summary.positivePercent}% / ${summary.negativeLabel} ${negativeScore}%`}
-                >
-                  <span
-                    className={previewStyles.resultAxisFill}
-                    style={fillStyle}
-                    aria-hidden="true"
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </div>
+                return (
+                  <div key={summary.axis} className={styles.axisItem}>
+                    <div className={styles.axisMeta}>
+                      <span
+                        className={`${styles.axisLabel} ${
+                          isPositiveDominant ? styles.axisLabelStrong : ""
+                        }`}
+                      >
+                        {summary.positiveLabel}
+                      </span>
+                      <span className={styles.axisValue}>{dominantScore}</span>
+                      <span
+                        className={`${styles.axisLabel} ${styles.axisLabelRight} ${
+                          isPositiveDominant ? "" : styles.axisLabelStrong
+                        }`}
+                      >
+                        {summary.negativeLabel}
+                      </span>
+                    </div>
 
-        <div className="mt-8 inline-block border border-gold-400 px-6 py-2 text-xl font-bold tracking-wider text-gold-300">
-          <span>{typeData.typeCode}</span>
-          <span className="px-2" aria-hidden="true">
-            —
-          </span>
-          <span>{typeData.typeName}</span>
+                    <div
+                      className={styles.axisTrack}
+                      aria-label={`${summary.positiveLabel} ${summary.positivePercent}% / ${summary.negativeLabel} ${negativeScore}%`}
+                    >
+                      <span
+                        className={styles.axisFill}
+                        style={fillStyle}
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>
