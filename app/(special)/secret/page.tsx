@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 
-import { TypeDetailPageContent } from "@/components/type/type-detail-page-content/type-detail-page-content";
-import { getAbsoluteUrl } from "@/lib/site";
+import { SecretPageContent } from "@/components/secret/secret-page-content";
+import { getAbsoluteUrl, getTypeOgpImagePath } from "@/lib/site";
 import { getSecretPublicPath, getSecretResult } from "@/lib/secret-result";
 
 const secretResult = getSecretResult();
 const secretPublicPath = getSecretPublicPath();
+const secretOgpImage = getTypeOgpImagePath(secretResult.typeCode);
 
 export const metadata: Metadata = {
   title: `${secretResult.typeName} (${secretResult.typeCode})`,
@@ -27,27 +28,24 @@ export const metadata: Metadata = {
     title: `${secretResult.typeName} (${secretResult.typeCode})`,
     description: secretResult.tagline,
     url: secretPublicPath,
-    images: ["/main-ogp.png"],
+    images: [secretOgpImage],
   },
   twitter: {
     card: "summary_large_image",
     title: `${secretResult.typeName} (${secretResult.typeCode})`,
     description: secretResult.tagline,
-    images: ["/main-ogp.png"],
+    images: [secretOgpImage],
   },
 };
 
 export default function SecretPage() {
   return (
-    <TypeDetailPageContent
-      mode="shared"
+    <SecretPageContent
       typeData={secretResult}
+      ogpImageSrc={secretOgpImage}
       shareUrl={getAbsoluteUrl(secretPublicPath)}
       publicUrl={secretPublicPath}
       jsonLdPath={secretPublicPath}
-      hidePostDiagnosisSection
-      hasChibi={false}
-      compatibleTypes={[]}
     />
   );
 }
