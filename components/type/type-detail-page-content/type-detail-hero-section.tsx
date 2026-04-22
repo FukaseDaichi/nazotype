@@ -116,16 +116,7 @@ export function TypeDetailHeroSection({
               </p>
 
               <h1 id="result-heading" className={styles.title}>
-                {isShared && sharedUserName ? (
-                  <>
-                    <span className={styles.sharedUser}>{sharedUserName}</span>
-                    <span className={styles.sharedSuffix}>さんの診断結果</span>
-                  </>
-                ) : (
-                  <>
-                    <span className={styles.typeName}>{typeData.typeName}</span>
-                  </>
-                )}
+                <span className={styles.typeName}>{typeData.typeName}</span>
               </h1>
 
               <div className={styles.axisChips} aria-label="軸の傾向">
