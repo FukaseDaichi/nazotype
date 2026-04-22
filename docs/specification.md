@@ -14,6 +14,7 @@
 - [character-image-skill-spec.md](./character-image-skill-spec.md)
 - [type-ogp-image-spec.md](./type-ogp-image-spec.md)
 - [line-stamp-skill-spec.md](./line-stamp-skill-spec.md)
+- [twilight-secret-result-spec.md](./twilight-secret-result-spec.md)
 - [DESIGN.md](../DESIGN.md)
 
 ## 2. システム概要
@@ -71,6 +72,7 @@
 | `/` | トップページ | index |
 | `/diagnosis` | 診断フロー | `noindex` |
 | `/types/[typeCode]/` | タイプ詳細ページ兼、診断結果表示ページ | index / canonical |
+| `/secret/` | 隠し特別結果ページ | `noindex` |
 
 補足:
 
@@ -78,16 +80,18 @@
 - 16 タイプ一覧はトップページ内に配置する
 - 診断フローは `?page=` を使って表示中ページを URL と同期する
 - 診断結果は `/types/[typeCode]/?s={shareKey}` の形で同じ公開ページ上に載せる
+- 隠し結果 `/secret/` の詳細は [twilight-secret-result-spec.md](./twilight-secret-result-spec.md) を参照する
 
 ## 5. ユーザーフロー
 
 1. ユーザーが `/` にアクセスする
 2. トップページの開始フォームで名前を入力し、診断を開始する
-3. `/diagnosis` で 32 問に回答する
-4. 診断結果を計算し、共有キーを生成して `localStorage` に直近結果を保存する
-5. `/types/[typeCode]/?s={shareKey}` に遷移する
-6. タイプページ内で共有キーを復元し、4 軸サマリ付きの結果表示を出す
-7. SNS 共有は公開タイプページ URL を使い、結果 URL はコピー導線で扱う
+3. 名前が通常入力なら `/diagnosis` で 32 問に回答する
+4. 名前が `とわいらいと` または `トワイライト` なら `/secret/` に直接遷移する
+5. 通常診断時は診断結果を計算し、共有キーを生成して `localStorage` に直近結果を保存する
+6. 通常診断時は `/types/[typeCode]/?s={shareKey}` に遷移する
+7. タイプページ内で共有キーを復元し、4 軸サマリ付きの結果表示を出す
+8. SNS 共有は公開タイプページ URL を使い、結果 URL はコピー導線で扱う
 
 ## 6. 画面仕様
 
@@ -108,6 +112,7 @@
 - 最大 10 文字
 - 既存ドラフトがあれば「前回の続きから再開する」を表示する
 - 送信時に `localStorage` のドラフトを初期化または引き継ぐ
+- ただし名前が `とわいらいと` または `トワイライト` の場合は、診断フローへ進まず `/secret/` を開く
 
 ### 6.2 診断フロー
 

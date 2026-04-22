@@ -6,6 +6,10 @@ import { useEffect, useState, type FormEvent } from "react";
 
 import { normalizeUserName } from "@/lib/diagnosis";
 import { readDiagnosisDraft, writeDiagnosisDraft } from "@/lib/draft-storage";
+import {
+  getSecretPublicPath,
+  isSecretTriggerName,
+} from "@/lib/secret-result";
 
 type StartDiagnosisFormProps = {
   inputId?: string;
@@ -31,12 +35,19 @@ export function StartDiagnosisForm({
 
   const normalizedName = name.trim();
   const isDisabled = normalizedName.length === 0 || normalizedName.length > 10;
+  const shouldShowResumeLink =
+    Boolean(resumeName) && !isSecretTriggerName(resumeName ?? "");
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const userName = normalizeUserName(name);
     if (!userName) {
+      return;
+    }
+
+    if (isSecretTriggerName(userName)) {
+      router.push(getSecretPublicPath());
       return;
     }
 
@@ -80,7 +91,7 @@ export function StartDiagnosisForm({
         32問 &middot; 所要時間3〜5分 &middot; 登録不要
       </p>
 
-      {resumeName ? (
+      {shouldShowResumeLink && resumeName ? (
         <Link
           href="/diagnosis"
           prefetch={false}

@@ -19,6 +19,9 @@ app/
   (diagnosis)/
     diagnosis/
       page.tsx
+  (special)/
+    secret/
+      page.tsx
   (types)/
     types/
       [typeCode]/
@@ -54,6 +57,7 @@ components/
 
 data/
   question-master.json
+  special-results/*.json
   types/*.json
   line-stamps/*.json
   line-stamp-images/*
@@ -68,6 +72,7 @@ docs/
   character-image-skill-spec.md
   type-ogp-image-spec.md
   line-stamp-skill-spec.md
+  twilight-secret-result-spec.md
   nazo.md
 
 lib/
@@ -77,6 +82,7 @@ lib/
   draft-storage.ts
   json-ld.ts
   post-diagnosis-result.ts
+  secret-result.ts
   share-key.ts
   site.ts
   types.ts
@@ -191,6 +197,7 @@ out/
 
 - `(marketing)`: `/`
 - `(diagnosis)`: `/diagnosis`
+- `(special)`: `/secret/`
 - `(types)`: `/types/[typeCode]/`
 
 診断結果の表示状態は Route Group や動的セグメントではなく、検索パラメータ `?s=` と `localStorage` で切り替える。
@@ -209,5 +216,6 @@ out/
 
 - `/types` 一覧ルートは存在しない
 - 診断結果表示は `/types/[typeCode]/?s={shareKey}` で行う
+- 隠し特別結果は `/secret/` で表示する
 - `type-detail-page-content` 配下には `public` / `shared` の両モードを扱う props があるが、公開ルートとして使っているのは `public` モードのページ 1 本だけである
 - OGP 生成スキルの publish 先と、アプリ本体の配信用 OGP 参照先は別である

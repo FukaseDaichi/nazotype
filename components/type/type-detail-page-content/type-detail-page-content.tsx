@@ -22,6 +22,8 @@ type TypeDetailPageContentProps = {
   shareUrl: string;
   resultUrl?: string;
   publicUrl: string;
+  jsonLdPath?: string;
+  hidePostDiagnosisSection?: boolean;
   sharedUserName?: string;
   hasChibi?: boolean;
   axisSummaries?: AxisSummary[];
@@ -69,6 +71,8 @@ export function TypeDetailPageContent({
   shareUrl,
   resultUrl,
   publicUrl,
+  jsonLdPath,
+  hidePostDiagnosisSection = false,
   sharedUserName,
   hasChibi = false,
   axisSummaries,
@@ -82,7 +86,7 @@ export function TypeDetailPageContent({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: stringifyJsonLd(getTypePageJsonLd(typeData)),
+          __html: stringifyJsonLd(getTypePageJsonLd(typeData, jsonLdPath ?? publicUrl)),
         }}
       />
 
@@ -109,7 +113,7 @@ export function TypeDetailPageContent({
             typeData={typeData}
             axisSummaries={axisSummaries}
           />
-        ) : (
+        ) : hidePostDiagnosisSection ? null : (
           <Suspense>
             <PostDiagnosisSection
               typeData={typeData}

@@ -26,13 +26,13 @@ export function getWebsiteJsonLd() {
   };
 }
 
-export function getTypePageJsonLd(typeData: TypeData) {
+export function getTypePageJsonLd(typeData: TypeData, pathname?: string) {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: `${typeData.typeName} (${typeData.typeCode})`,
     description: typeData.summary,
-    url: getAbsoluteUrl(getTypePublicPath(typeData.typeCode)),
+    url: getAbsoluteUrl(pathname ?? getTypePublicPath(typeData.typeCode)),
     inLanguage: "ja-JP",
     isPartOf: {
       "@type": "WebSite",

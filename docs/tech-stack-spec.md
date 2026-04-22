@@ -46,10 +46,11 @@
 app/
   (marketing)/page.tsx
   (diagnosis)/diagnosis/page.tsx
+  (special)/secret/page.tsx
   (types)/types/[typeCode]/page.tsx
 ```
 
-Route Group `(marketing)`, `(diagnosis)`, `(types)` は URL に出ない。
+Route Group `(marketing)`, `(diagnosis)`, `(special)`, `(types)` は URL に出ない。
 
 ### 4.2 各ルートの実装方式
 
@@ -57,6 +58,7 @@ Route Group `(marketing)`, `(diagnosis)`, `(types)` は URL に出ない。
 | --- | --- | --- |
 | `/` | SSG | `getAllTypes()` と `getQuestionMaster()` を取得 |
 | `/diagnosis` | SSG + Client Component | 本文は `DiagnosisFlow` |
+| `/secret/` | SSG | 隠し特別結果ページ、`noindex` |
 | `/types/[typeCode]/` | SSG + Client 補助表示 | `generateStaticParams()` で 16 タイプを生成 |
 
 ### 4.3 検索パラメータ
@@ -78,6 +80,7 @@ Route Group `(marketing)`, `(diagnosis)`, `(types)` は URL に出ない。
 
 - `data/question-master.json`
 - `data/types/*.json`
+- `data/special-results/*.json`
 
 `lib/data.ts` が Node.js の `fs/promises` と React の `cache()` を使って読み込む。
 
