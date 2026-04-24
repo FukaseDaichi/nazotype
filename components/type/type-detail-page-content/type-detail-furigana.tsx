@@ -55,8 +55,7 @@ export function TypeDetailFurigana({
         const className = isAccent
           ? [
               styles.typeNameFuriganaChar,
-              styles.typeNameFuriganaCharAccent,
-              storeVisited ? styles.typeNameFuriganaCharStoreVisited : "",
+              storeVisited ? styles.typeNameFuriganaCharAccent : "",
             ]
               .filter(Boolean)
               .join(" ")

@@ -24,10 +24,6 @@ export function SecretHeroSection({
     typeData.axis.axis4,
   ];
   const furiganaChars = Array.from(typeData.furigana ?? "");
-  const emphasisIndex = Math.min(
-    Math.max(typeData.furiganaEmphasisIndex - 1, 0),
-    Math.max(furiganaChars.length - 1, 0),
-  );
 
   return (
     <>
@@ -106,14 +102,7 @@ export function SecretHeroSection({
                 {furiganaChars.length ? (
                   <span className={styles.titleFurigana} aria-hidden="true">
                     {furiganaChars.map((char, index) => (
-                      <span
-                        key={`${typeData.typeCode}-furi-${index}`}
-                        className={
-                          index === emphasisIndex
-                            ? styles.titleFuriganaAccent
-                            : undefined
-                        }
-                      >
+                      <span key={`${typeData.typeCode}-furi-${index}`}>
                         {char}
                       </span>
                     ))}
