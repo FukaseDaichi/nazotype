@@ -124,29 +124,18 @@
 
 ### 6.2 表示バリエーション
 
-`variant` を持たせ、トップとタイプページで文言を変える。
-
-想定:
-
-- `home`
-- `type`
+トップとタイプページで同一文言を使い、必要ならタイプページでは補助情報だけを追加表示する。
 
 表示文言の例:
 
-`home`:
-
 - 見出し: `16タイプのLINEスタンプ、できました`
 - 補足: `診断のあとも使いやすい、キャラ入りスタンプです。`
-
-`type`:
-
-- 見出し: `{typeName} も入ったスタンプ発売中`
-- 補足: `このタイプを含む16タイプのスタンプをLINEで使えます。`
+- たたみ時: `16タイプのスタンプ発売中`
 
 タイプページ補助情報:
 
 - `typeCode` を小さなチップで見せてもよい
-- キャラページごとの文脈に寄せるが、リンク先は共通の 1 商品にする
+- リンク先は全ページ共通の 1 商品にする
 
 ### 6.3 状態
 
@@ -158,13 +147,12 @@
 
 推奨挙動:
 
-- Desktop / Tablet は初回 `expanded`
-- 高さが低い Mobile は初回 `collapsed`
-- ユーザーがたたんだ状態は `localStorage` に保存して再訪時も尊重する
+- 全デバイスで初回 `collapsed`
+- ユーザーが展開またはたたんだ状態は `localStorage` に保存して再訪時も尊重する
 
 保存キー案:
 
-- `nazotype:line-stamp-promo:v1`
+- `nazotype:line-stamp-promo:v2`
 
 ## 7. レイアウト方針
 
@@ -251,7 +239,7 @@ Next.js 16 の方針に合わせ、ページ本体は Server Component のまま
 
 推奨構成:
 
-- Server 側: 表示可否判定、`variant` や `typeName` の受け渡し
+- Server 側: 表示可否判定、共通文言と必要なら `typeCode` の受け渡し
 - Client 側: `collapsed` 状態、閉じる操作、`localStorage` 永続化
 
 理由:
@@ -322,8 +310,8 @@ components/
 
 推奨コピー方向:
 
-- `{typeName} もいるよ`
-- `{typeName} をLINEでも連れていける`
+- `16タイプのスタンプ発売中`
+- `診断のあとも使いやすい、キャラ入りスタンプです。`
 
 ## 12. アクセシビリティ
 
@@ -357,6 +345,5 @@ components/
 1. `components/layout/line-stamp-floating-promo/` を追加する
 2. `home-page.tsx` と `type-detail-page-content.tsx` に差し込む
 3. `LINE_STAMP_URL` と `public/line-stamp-main.png` を接続する
-4. Mobile の `collapsed` 初期表示と保存挙動を入れる
+4. 全デバイスでの `collapsed` 初期表示と保存挙動を入れる
 5. かわいい見た目の微調整を行う
-

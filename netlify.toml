@@ -1,0 +1,12 @@
+[build]
+  publish = "out"
+  command = "NEXT_PUBLIC_SITE_URL=\"${NEXT_PUBLIC_SITE_URL:-$URL}\" npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[context.deploy-preview]
+  command = "NEXT_PUBLIC_SITE_URL=\"${NEXT_PUBLIC_SITE_URL:-$DEPLOY_PRIME_URL}\" npm run build"
+
+[context.branch-deploy]
+  command = "NEXT_PUBLIC_SITE_URL=\"${NEXT_PUBLIC_SITE_URL:-$DEPLOY_PRIME_URL}\" npm run build"

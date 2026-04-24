@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import styles from "./line-stamp-floating-promo.module.css";
 
-const PROMO_STORAGE_KEY = "nazotype:line-stamp-promo:v1";
+const PROMO_STORAGE_KEY = "nazotype:line-stamp-promo:v2";
 
 type PromoPreferences = {
   collapsed?: boolean;
@@ -54,14 +54,6 @@ function writePreferences(preferences: PromoPreferences) {
   }
 }
 
-function shouldStartCollapsed() {
-  if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
-    return false;
-  }
-
-  return window.matchMedia("(max-width: 767px), (max-height: 740px)").matches;
-}
-
 export function LineStampFloatingPromoClient({
   href,
   title,
@@ -73,11 +65,8 @@ export function LineStampFloatingPromoClient({
 
   useEffect(() => {
     const preferences = readPreferences();
-    const collapsed =
-      typeof preferences.collapsed === "boolean"
-        ? preferences.collapsed
-        : shouldStartCollapsed();
-    const initialMode: PromoMode = collapsed ? "collapsed" : "expanded";
+    const initialMode: PromoMode =
+      preferences.collapsed === false ? "expanded" : "collapsed";
 
     const frame = window.requestAnimationFrame(() => {
       setMode(initialMode);

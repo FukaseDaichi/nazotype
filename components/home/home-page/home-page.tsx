@@ -121,7 +121,7 @@ export function HomePage({ allTypes }: HomePageProps) {
         <SiteFooter />
       </div>
 
-      <LineStampFloatingPromo variant="home" />
+      <LineStampFloatingPromo />
     </main>
   );
 }

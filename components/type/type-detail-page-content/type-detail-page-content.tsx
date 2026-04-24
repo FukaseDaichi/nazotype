@@ -179,11 +179,7 @@ export function TypeDetailPageContent({
         <SiteFooter className={styles.footer} />
       </div>
 
-      <LineStampFloatingPromo
-        variant="type"
-        typeName={typeData.typeName}
-        typeCode={typeData.typeCode}
-      />
+      <LineStampFloatingPromo typeCode={typeData.typeCode} />
     </main>
   );
 }
