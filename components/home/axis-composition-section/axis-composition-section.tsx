@@ -46,8 +46,8 @@ export function AxisCompositionSection() {
 
                 <div className="flex items-end gap-4 mb-6">
                   <div className="flex flex-col items-start gap-2">
-                    <p className="font-display text-[0.75rem] tracking-[0.25em] text-paper-200 uppercase leading-none pl-1 whitespace-nowrap">
-                      <span className="text-gold-400 text-[1.35rem] font-bold tracking-normal">
+                    <p className="font-display text-[0.55rem] tracking-[0.25em] text-paper-200 uppercase leading-none pl-1 whitespace-nowrap">
+                      <span className="text-gold-400 text-[1.1rem] font-bold tracking-normal">
                         {definition.sides[0].word.charAt(0)}
                       </span>
                       {definition.sides[0].word.slice(1)}
@@ -60,8 +60,8 @@ export function AxisCompositionSection() {
                     &harr;
                   </span>
                   <div className="flex flex-col items-start gap-2">
-                    <p className="font-display text-[0.75rem] tracking-[0.25em] text-paper-200 uppercase leading-none pl-1 whitespace-nowrap">
-                      <span className="text-gold-400 text-[1.35rem] font-bold tracking-normal">
+                    <p className="font-display text-[0.55rem] tracking-[0.25em] text-paper-200 uppercase leading-none pl-1 whitespace-nowrap">
+                      <span className="text-gold-400 text-[1.1rem] font-bold tracking-normal">
                         {definition.sides[1].word.charAt(0)}
                       </span>
                       {definition.sides[1].word.slice(1)}
