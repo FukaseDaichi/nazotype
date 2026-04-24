@@ -170,14 +170,6 @@ export function TypeDetailHeroSection({
                         →
                       </span>
                     </a>
-                    <a
-                      href={RECOMMENDATION_FEEDBACK_FORM_URL}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={styles.secondaryCta}
-                    >
-                      おすすめを教える
-                    </a>
                   </>
                 ) : (
                   <Link href="/" prefetch={false} className={styles.primaryCta}>

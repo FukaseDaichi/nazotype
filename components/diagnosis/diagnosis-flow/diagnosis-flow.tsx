@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type PointerEvent } from "react";
 
 import {
   ANSWER_OPTIONS,
@@ -152,12 +152,28 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
   }, [currentPage, isHydrated, userName]);
 
   function handleAnswerChange(questionId: string, value: number) {
-    setAnswers((current) => ({
-      ...current,
-      [questionId]: value as AnswerValue,
-    }));
+    setAnswers((current) => {
+      if (current[questionId] === value) {
+        return current;
+      }
+
+      return {
+        ...current,
+        [questionId]: value as AnswerValue,
+      };
+    });
     setValidationError("");
     setRestoreNotice("");
+  }
+
+  function handleAnswerPointerDown(
+    event: PointerEvent<HTMLButtonElement>,
+    questionId: string,
+    value: number,
+  ) {
+    if (event.pointerType === "touch" || event.pointerType === "pen") {
+      handleAnswerChange(questionId, value);
+    }
   }
 
   function moveToPage(nextPage: number, mode: "push" | "replace") {
@@ -380,7 +396,14 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
                           <button
                             key={option.value}
                             type="button"
-                            className={`aspect-square w-full rounded-full border-2 font-bold text-xs transition-all duration-150 cursor-pointer sm:h-11 sm:w-11 sm:text-sm ${getScaleButtonClass(option.value, selectedValue)}`}
+                            className={`aspect-square w-full rounded-full border-2 font-bold text-xs transition-all duration-150 cursor-pointer touch-manipulation select-none sm:h-11 sm:w-11 sm:text-sm ${getScaleButtonClass(option.value, selectedValue)}`}
+                            onPointerDown={(event) =>
+                              handleAnswerPointerDown(
+                                event,
+                                question.questionId,
+                                option.value,
+                              )
+                            }
                             onClick={() =>
                               handleAnswerChange(
                                 question.questionId,
