@@ -34,11 +34,7 @@ export function SecretHeroSection({
         <Link href="/" prefetch={false} className={styles.mastLogo}>
           謎解きタイプ診断
         </Link>
-        <Link
-          href={publicUrl}
-          prefetch={false}
-          className={styles.mastBack}
-        >
+        <Link href={publicUrl} prefetch={false} className={styles.mastBack}>
           &larr; トップへ戻る
         </Link>
       </header>
@@ -80,12 +76,18 @@ export function SecretHeroSection({
               <div className={styles.visualShine} aria-hidden="true" />
               <div className={styles.visualVignette} aria-hidden="true" />
 
-              <div className={styles.stamp} aria-hidden="true">
+              <div
+                className={`${styles.stamp} hidden sm:flex`}
+                aria-hidden="true"
+              >
                 <span className={styles.stampLabel}>SEAL</span>
                 <span className={styles.stampValue}>BROKEN</span>
               </div>
 
-              <div className={styles.caseStamp} aria-hidden="true">
+              <div
+                className={`${styles.caseStamp} hidden sm:flex`}
+                aria-hidden="true"
+              >
                 <span className={styles.caseStampLabel}>CASE FILE</span>
                 <span className={styles.caseStampValue}>
                   #{typeData.typeCode}
