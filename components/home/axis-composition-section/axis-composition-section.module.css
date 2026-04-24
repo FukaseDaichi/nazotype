@@ -14,7 +14,12 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(to right, transparent, var(--color-gold-400), transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-gold-400),
+    transparent
+  );
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -25,4 +30,10 @@
 
 .axisCard:hover::before {
   opacity: 0.5;
+}
+
+@media (max-width: 640px) {
+  .axisCard {
+    padding: 1.5rem;
+  }
 }

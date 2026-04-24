@@ -60,11 +60,15 @@ export function TypeOgpLinkCard({
       </div>
 
       <div className={styles.content}>
-        <div className={styles.meta}>
-          <span className={styles.code}>{typeCode}</span>
+        <div className={styles.header}>
+          <div className={styles.identity}>
+            <div className={styles.meta}>
+              <span className={styles.code}>{typeCode}</span>
+            </div>
+            <span className={styles.name}>{typeName}</span>
+          </div>
           {badgeText ? <span className={styles.badge}>{badgeText}</span> : null}
         </div>
-        <span className={styles.name}>{typeName}</span>
         {tagline ? <span className={styles.tagline}>{tagline}</span> : null}
         <span className={styles.cta}>{ctaText} →</span>
       </div>
