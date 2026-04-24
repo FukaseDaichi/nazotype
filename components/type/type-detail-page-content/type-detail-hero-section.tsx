@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import { TypeArtwork } from "@/components/type/type-artwork/type-artwork";
 
+import { TypeDetailFurigana } from "./type-detail-furigana";
 import { TypeDetailHeroPrimaryAction } from "./type-detail-hero-primary-action";
 
 import styles from "./type-detail-hero-section.module.css";
@@ -134,20 +135,11 @@ export function TypeDetailHeroSection({
 
               <h1 id="result-heading" className={styles.title}>
                 <span className={styles.typeName}>
-                  <span className={styles.typeNameFurigana} aria-hidden="true">
-                    {furiganaChars.map((char, index) => (
-                      <span
-                        key={`${typeData.typeCode}-furigana-${index}`}
-                        className={
-                          index === emphasisIndex
-                            ? `${styles.typeNameFuriganaChar} ${styles.typeNameFuriganaCharAccent}`
-                            : styles.typeNameFuriganaChar
-                        }
-                      >
-                        {char}
-                      </span>
-                    ))}
-                  </span>
+                  <TypeDetailFurigana
+                    typeCode={typeData.typeCode}
+                    furigana={typeData.furigana ?? ""}
+                    emphasisIndex={emphasisIndex}
+                  />
                   <span className={styles.typeNameText}>
                     {typeData.typeName}
                   </span>

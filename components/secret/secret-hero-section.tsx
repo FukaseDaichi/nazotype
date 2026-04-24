@@ -16,7 +16,6 @@ type SecretHeroSectionProps = {
 export function SecretHeroSection({
   typeData,
   ogpImageSrc,
-  publicUrl,
 }: SecretHeroSectionProps) {
   const axisChips = [
     typeData.axis.axis1,
@@ -36,7 +35,7 @@ export function SecretHeroSection({
         <Link href="/" prefetch={false} className={styles.mastLogo}>
           謎解きタイプ診断
         </Link>
-        <Link href={publicUrl} prefetch={false} className={styles.mastBack}>
+        <Link href="/" prefetch={false} className={styles.mastBack}>
           &larr; トップへ戻る
         </Link>
       </header>

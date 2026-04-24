@@ -13,8 +13,9 @@ export function LineStampFloatingPromo({
     return null;
   }
 
-  const title = "16タイプの\nLINEスタンプ、できました";
-  const description = "診断のあとも使いやすい、キャラ入りスタンプです。";
+  const title = "16タイプの\nLINEスタンプあります";
+  const description =
+    "診断後も使いやすい、キャラ入りスタンプです。隠し要素もあります。";
   const collapsedText = "16タイプのスタンプ発売中";
 
   return (

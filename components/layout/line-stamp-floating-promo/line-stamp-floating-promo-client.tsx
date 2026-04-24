@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+import { markLineStampStoreVisited } from "@/lib/line-stamp-store-visit";
+
 import styles from "./line-stamp-floating-promo.module.css";
 
 const PROMO_STORAGE_KEY = "nazotype:line-stamp-promo:v2";
@@ -87,6 +89,10 @@ export function LineStampFloatingPromoClient({
 
   function handleDismiss() {
     setMode("hidden");
+  }
+
+  function handleStoreCtaClick() {
+    markLineStampStoreVisited();
   }
 
   if (mode === null || mode === "hidden") {
@@ -247,6 +253,7 @@ export function LineStampFloatingPromoClient({
           target="_blank"
           rel="noreferrer"
           className={styles.cta}
+          onClick={handleStoreCtaClick}
         >
           <svg
             viewBox="0 0 20 20"

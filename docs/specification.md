@@ -148,6 +148,8 @@
 - シェアパネル
 - JSON-LD `WebPage`
 
+LINE スタンプ導線の `LINE STOREで見る` を一度クリックしたブラウザでは、各タイプページの `furiganaEmphasisIndex` 位置のふりがな強調色を LINE STORE 訪問済み状態として切り替える。
+
 ### 6.4 診断結果表示モード
 
 `/types/[typeCode]/` に共有キー `?s=` が付いている場合、または同じ `typeCode` の直近結果が `localStorage` に残っている場合、ページ内で結果表示を追加する。
@@ -248,6 +250,7 @@
 
 - 診断途中データは `nazotype:diagnosis-draft:v1`
 - 直近診断結果は `nazotype:post-diagnosis-result`
+- LINE STORE 訪問済み状態は `nazotype:line-stamp-store-visited:v1`
 - いずれも `localStorage` のみを使う
 
 ### 9.2 環境変数

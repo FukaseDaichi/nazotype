@@ -154,6 +154,12 @@
 
 - `nazotype:line-stamp-promo:v2`
 
+CTA クリック済みフラグ:
+
+- `LINE STOREで見る` を押したときだけ `nazotype:line-stamp-store-visited:v1` を `localStorage` に保存する
+- 保存後は `/types/[typeCode]/` の `furiganaEmphasisIndex` 位置の強調色を切り替える
+- 同じタブで即時反映できるよう、保存時にクライアント内イベントも通知する
+
 ## 7. レイアウト方針
 
 ### 7.1 固定位置
