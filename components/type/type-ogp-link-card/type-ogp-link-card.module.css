@@ -84,14 +84,14 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(193, 155, 46, 0.12) 0, transparent 18%) top left /
-      100% 1px no-repeat,
-    linear-gradient(0deg, rgba(193, 155, 46, 0.12) 0, transparent 18%) top left /
-      1px 100% no-repeat,
-    linear-gradient(270deg, rgba(193, 155, 46, 0.12) 0, transparent 18%) top right /
-      100% 1px no-repeat,
-    linear-gradient(180deg, rgba(193, 155, 46, 0.12) 0, transparent 18%) bottom left /
-      1px 100% no-repeat;
+    linear-gradient(90deg, rgba(193, 155, 46, 0.12) 0, transparent 18%) top
+      left / 100% 1px no-repeat,
+    linear-gradient(0deg, rgba(193, 155, 46, 0.12) 0, transparent 18%) top
+      left / 1px 100% no-repeat,
+    linear-gradient(270deg, rgba(193, 155, 46, 0.12) 0, transparent 18%) top
+      right / 100% 1px no-repeat,
+    linear-gradient(180deg, rgba(193, 155, 46, 0.12) 0, transparent 18%) bottom
+      left / 1px 100% no-repeat;
   pointer-events: none;
 }
 
@@ -221,9 +221,7 @@
   }
 
   .name {
-    overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
   }
 
   .standard .name {

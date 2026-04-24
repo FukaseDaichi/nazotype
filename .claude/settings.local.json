@@ -10,7 +10,9 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/diagnosis)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/types/ALHN)",
       "Bash(curl -s http://localhost:3000/)",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "Bash(curl -s \"http://localhost:3000/?afterrestart=$\\(date +%s\\)\")",
+      "Bash(pkill -f \"next dev\")"
     ]
   }
 }
