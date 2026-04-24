@@ -133,6 +133,7 @@ output/type-ogp/
 
 - アプリ本体が参照するタイプ別 OGP は `public/types/{typeCode}-ogp.png`
 - このスキルの既定 publish 先は `public/ogp/types/{typeCode}.png`
+- 隠し結果 `/secret/` は `public/types/TWLT-ogp.png` を参照するが、このスキルの通常対象である 16 タイプには含まれない
 
 つまり、スキルの publish 先は現状そのままではアプリ本体に接続されていない。
 サイト配信用に使う場合は、別途 `public/types/{typeCode}-ogp.png` へ反映する必要がある。

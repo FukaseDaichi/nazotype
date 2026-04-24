@@ -21,6 +21,7 @@ export type SearchParamsLike = {
 
 function createResolvedPostDiagnosisState(
   shareKey: string,
+  typeCode: string,
   publicUrl: string,
   isPostDiagnosis: boolean,
 ) {
@@ -30,10 +31,19 @@ function createResolvedPostDiagnosisState(
     return null;
   }
 
+  const axisSummaries = expandShareKeyAxisSummaries(payload);
+  const resolvedTypeCode = axisSummaries
+    .map((summary) => summary.resolvedCode)
+    .join("");
+
+  if (resolvedTypeCode !== typeCode) {
+    return null;
+  }
+
   return {
     userName: payload.n,
     shareKey,
-    axisSummaries: expandShareKeyAxisSummaries(payload),
+    axisSummaries,
     resultUrl: getAbsoluteUrl(`${publicUrl}?s=${shareKey}`),
     isPostDiagnosis,
   } satisfies ResolvedPostDiagnosisState;
@@ -48,6 +58,7 @@ export function resolvePostDiagnosisState(
   if (keyParam) {
     return createResolvedPostDiagnosisState(
       keyParam,
+      typeCode,
       publicUrl,
       isPostDiagnosisResultMatch(typeCode, keyParam),
     );
@@ -58,5 +69,5 @@ export function resolvePostDiagnosisState(
     return null;
   }
 
-  return createResolvedPostDiagnosisState(stored.key, publicUrl, true);
+  return createResolvedPostDiagnosisState(stored.key, typeCode, publicUrl, true);
 }

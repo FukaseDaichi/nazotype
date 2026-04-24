@@ -16,7 +16,7 @@
 - 公開仕様の中心は引き続き 4 軸 16 タイプとする
 - 隠し結果は 17 個目の公開タイプではなく、特別演出として扱う
 - URL から合言葉が推測できないよう、公開ルートは `/secret/` とする
-- 見た目は新規専用デザインを作らず、既存の結果ページ UI をほぼそのまま再利用する
+- ヒーローと共有表示は `components/secret/` の専用 UI を使い、本文セクションは既存のタイプ詳細 UI を再利用する
 - コンテンツは「この人がいれば全部解決する」方向のメッセージへ寄せる
 
 ## 3. 解放条件
@@ -46,15 +46,18 @@
 - 合言葉なら `/diagnosis` を経由せず、即座に `/secret/` へ遷移する
 - 合言葉なら `/secret/` 用の一時共有フラグを `localStorage` に保存する
 - 合言葉時は診断ドラフトを新規作成しない
+- 一時共有フラグの保存キーは `nazotype:secret-share-entry`
+- 一時共有フラグの TTL は 5 分
 
 ## 4. ユーザーフロー
 
 1. ユーザーがトップページで名前に `とわいらいと` または `トワイライト` を入力して診断を開始する
 2. 合言葉判定が通った場合、診断フローをスキップし、一時共有フラグを `localStorage` に保存して `/secret/` へ直接遷移する
-3. `/secret/` では隠し結果「トワイライト」を表示する
+3. `/secret/` では隠し結果「最終兵器」(`TWLT`) を表示する
 4. 一時共有フラグが残っている初回表示だけ、共有 CTA と共有パネルを表示する
 5. 共有 URL や直接アクセスで `/secret/` を開いた場合は、一時共有フラグがないため「自分でも診断する」だけを表示する
 6. ページ内の CTA から通常診断へ戻れる
+7. 初回表示で一時共有フラグを消費し、同じブラウザで再訪しても共有導線は出さない
 
 ## 5. ルートと SEO
 
@@ -67,21 +70,21 @@ SEO 方針:
 - `app/sitemap.ts` には含めない
 - 一般 UI から恒常リンクを張らない
 - metadata は `robots.index = false` を明示する
-- OGP は既存の `/main-ogp.png` を流用してよい
+- OGP は `/types/TWLT-ogp.png` を使う
 
 ## 6. UI 方針
 
 ### 6.1 デザイン
 
-- `components/type/type-detail-page-content/*` を再利用する
-- ヒーロー、セクションフレーム、リスト、フッターなどは通常結果ページと同系統にする
-- 隠し結果専用の大きな独自レイアウトは持たない
+- `components/secret/*` で専用ヒーロー、共有 CTA、共有パネル表示制御を持つ
+- 強み、注意点、詳細、役割、相性、フッターは通常結果ページと同系統にする
+- `/secret/` には LINE スタンプ右下ポップ導線を出さない
 
 ### 6.2 表示内容
 
 表示する内容:
 
-- 通常結果ページと同系統のヒーロー
+- Secret Dossier 専用ヒーロー
 - タグライン
 - サマリー
 - 強み
@@ -124,6 +127,12 @@ lib/
   secret-result.ts
 
 components/
+  secret/
+    secret-hero-primary-action.tsx
+    secret-hero-section.tsx
+    secret-page-content.tsx
+    secret-share-availability-context.tsx
+    secret-share-panel.tsx
   type/
     type-detail-page-content/*
 ```
@@ -132,16 +141,19 @@ components/
 
 - `lib/secret-result.ts`: 合言葉判定と `/secret/` ルート定義
 - `data/special-results/secret.json`: 隠し結果の文言・見た目の正本
-- `app/(special)/secret/page.tsx`: `noindex` metadata と既存結果ページ UI への接続
-- `components/type/type-detail-page-content/*`: 既存結果ページ UI の再利用先
+- `app/(special)/secret/page.tsx`: `noindex` metadata、`TWLT` OGP、専用結果ページ UI への接続
+- `components/secret/*`: 専用ヒーロー、共有導線、共有フラグの消費
+- `components/type/type-detail-page-content/*`: 本文セクション UI の再利用先
 
 ## 8. 受け入れ条件
 
 - 名前が `とわいらいと` または `トワイライト` の場合だけ `/secret/` へ即遷移する
 - 合言葉入力直後の初回表示だけ共有導線が見える
+- 一時共有フラグは初回表示で消費される
 - 共有 URL や直接アクセスでは共有導線が表示されない
 - URL から合言葉を推測しにくい
-- 隠し結果ページの見た目は既存結果ページとほぼ同じ系統である
+- 隠し結果ページの本文は既存結果ページと同じ系統で、ヒーローは専用の Secret Dossier 表現である
 - 隠し結果の文言は「この人がいれば全部解決」方向に寄っている
+- 隠し結果 OGP は `/types/TWLT-ogp.png` である
 - `/secret/` は `sitemap.xml` に含まれない
 - `/secret/` は `noindex` である

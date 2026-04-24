@@ -1,21 +1,11 @@
 import type { CSSProperties } from "react";
 
+import { AXIS_DEFINITIONS, AXIS_LETTER_MAP } from "@/lib/axis";
 import type { AxisSummary, TypeData } from "@/lib/types";
 
 import { type TypeSectionHeading } from "@/components/type/type-detail-page-content/type-section-frame";
 
 import styles from "./type-signature-section.module.css";
-
-const AXIS_LETTER_MAP: Record<string, { letter: string; english: string }> = {
-  発言型: { letter: "T", english: "Talk" },
-  観察型: { letter: "O", english: "Observe" },
-  事実重視: { letter: "F", english: "Fact" },
-  推理重視: { letter: "R", english: "Reasoning" },
-  論理派: { letter: "L", english: "Logic" },
-  感情派: { letter: "E", english: "Emotion" },
-  計画型: { letter: "P", english: "Plan" },
-  即興型: { letter: "I", english: "Improvise" },
-};
 
 const AXIS_COLORS = [
   { fill: "var(--color-gold-400)", glow: "rgba(193, 155, 46, 0.3)" },
@@ -41,45 +31,29 @@ export function TypeSignatureSection({
   typeData,
   axisSummaries,
 }: TypeSignatureSectionProps) {
-  const rawAxes = [
-    {
-      dominant: typeData.axis.axis1,
-      other: typeData.axis.axis1 === "発言型" ? "観察型" : "発言型",
-    },
-    {
-      dominant: typeData.axis.axis2,
-      other: typeData.axis.axis2 === "事実重視" ? "推理重視" : "事実重視",
-    },
-    {
-      dominant: typeData.axis.axis3,
-      other: typeData.axis.axis3 === "論理派" ? "感情派" : "論理派",
-    },
-    {
-      dominant: typeData.axis.axis4,
-      other: typeData.axis.axis4 === "計画型" ? "即興型" : "計画型",
-    },
-  ];
-
   const summaryMap = axisSummaries?.length
-    ? (Object.fromEntries(axisSummaries.map((s, i) => [i, s])) as Record<
-        number,
-        AxisSummary
-      >)
+    ? new Map(axisSummaries.map((summary) => [summary.axis, summary]))
     : null;
 
-  const axisDetails = rawAxes.map((axis, index) => {
-    const dominantMeta = AXIS_LETTER_MAP[axis.dominant] ?? {
-      letter: axis.dominant.charAt(0),
-      english: axis.dominant,
+  const axisDetails = AXIS_DEFINITIONS.map((definition, index) => {
+    const summary = summaryMap?.get(definition.axis);
+    const [positiveSide, negativeSide] = definition.sides;
+    const dominant = summary?.resolvedLabel ?? typeData.axis[definition.axisKey];
+    const other =
+      dominant === positiveSide.label ? negativeSide.label : positiveSide.label;
+    const dominantMeta = AXIS_LETTER_MAP[dominant] ?? {
+      letter: dominant.charAt(0),
+      english: dominant,
     };
-    const otherMeta = AXIS_LETTER_MAP[axis.other] ?? {
-      letter: axis.other.charAt(0),
-      english: axis.other,
+    const otherMeta = AXIS_LETTER_MAP[other] ?? {
+      letter: other.charAt(0),
+      english: other,
     };
 
-    if (!summaryMap) {
+    if (!summary) {
       return {
-        ...axis,
+        dominant,
+        other,
         dominantMeta,
         otherMeta,
         percent: DEFAULT_SIGNATURE_PERCENT,
@@ -88,15 +62,14 @@ export function TypeSignatureSection({
       };
     }
 
-    const s = summaryMap[index];
-    const percent = !s
-      ? DEFAULT_SIGNATURE_PERCENT
-      : s.positiveLabel === axis.dominant
-        ? s.positivePercent
-        : s.negativePercent;
+    const percent =
+      summary.resolvedCode === summary.positiveCode
+        ? summary.positivePercent
+        : summary.negativePercent;
 
     return {
-      ...axis,
+      dominant,
+      other,
       dominantMeta,
       otherMeta,
       percent,

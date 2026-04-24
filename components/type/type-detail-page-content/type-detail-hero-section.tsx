@@ -37,6 +37,7 @@ export function TypeDetailHeroSection({
   typeData,
   shareKey,
   publicUrl,
+  sharedUserName,
   hasChibi = false,
   isPostDiagnosisResult = false,
 }: TypeDetailHeroSectionProps) {
@@ -143,6 +144,14 @@ export function TypeDetailHeroSection({
                   <span className={styles.typeNameText}>
                     {typeData.typeName}
                   </span>
+                  {isShared && sharedUserName ? (
+                    <span className={styles.sharedSuffix}>
+                      <span className={styles.sharedUser}>
+                        {sharedUserName}さん
+                      </span>
+                      の診断結果
+                    </span>
+                  ) : null}
                 </span>
               </h1>
 

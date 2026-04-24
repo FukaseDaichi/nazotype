@@ -1,5 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Noto_Serif_JP, Shippori_Mincho, Space_Mono } from "next/font/google";
+import {
+  Cinzel,
+  Noto_Serif_JP,
+  Shippori_Mincho,
+  Space_Mono,
+} from "next/font/google";
 
 import {
   MAIN_OGP_IMAGE_PATH,
@@ -33,6 +38,14 @@ const monoFont = Space_Mono({
   variable: "--font-mono-family",
   subsets: ["latin"],
   weight: ["400", "700"],
+  display: "swap",
+  preload: false,
+});
+
+const displayFont = Cinzel({
+  variable: "--font-display-family",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
   display: "swap",
   preload: false,
 });
@@ -94,7 +107,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${serifFont.variable} ${serifFallback.variable} ${monoFont.variable} h-full antialiased`}
+      className={`${serifFont.variable} ${serifFallback.variable} ${monoFont.variable} ${displayFont.variable} h-full antialiased`}
     >
       <body className="min-h-full">{children}</body>
     </html>

@@ -20,8 +20,16 @@ export const OGP_IMAGE_SIZE = {
 } as const;
 export const DEFAULT_LINE_STAMP_URL =
   "https://store.line.me/stickershop/product/33688754/ja";
-export const LINE_STAMP_URL =
-  process.env.NEXT_PUBLIC_LINE_STAMP_URL?.trim() || DEFAULT_LINE_STAMP_URL;
+const DISABLED_LINE_STAMP_URL_VALUES = new Set([
+  "0",
+  "false",
+  "off",
+  "disabled",
+  "none",
+]);
+export const LINE_STAMP_URL = resolveLineStampUrl(
+  process.env.NEXT_PUBLIC_LINE_STAMP_URL,
+);
 export const DRAFT_STORAGE_KEY = "nazotype:diagnosis-draft:v1";
 
 const PALETTE_COLOR_MAP: Record<string, string> = {
@@ -77,6 +85,20 @@ function normalizeOrigin(value: string | undefined) {
   }
 
   return `https://${trimmed}`;
+}
+
+function resolveLineStampUrl(value: string | undefined) {
+  if (value === undefined) {
+    return DEFAULT_LINE_STAMP_URL;
+  }
+
+  const trimmed = value.trim();
+
+  if (!trimmed || DISABLED_LINE_STAMP_URL_VALUES.has(trimmed.toLowerCase())) {
+    return null;
+  }
+
+  return trimmed;
 }
 
 export function getSiteOrigin() {

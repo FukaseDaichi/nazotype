@@ -44,7 +44,9 @@ components/
     axis-composition-section/
     home-page/
   layout/
+    line-stamp-floating-promo/
     site-footer/
+  secret/
   type/
     share-actions/
     type-artwork/
@@ -72,7 +74,9 @@ docs/
   character-image-skill-spec.md
   type-ogp-image-spec.md
   line-stamp-skill-spec.md
+  line-stamp-promo-component-design.md
   twilight-secret-result-spec.md
+  current-issues.md
   nazo.md
 
 lib/
@@ -81,6 +85,7 @@ lib/
   diagnosis.ts
   draft-storage.ts
   json-ld.ts
+  line-stamp-store-visit.ts
   post-diagnosis-result.ts
   secret-result.ts
   share-key.ts
@@ -89,6 +94,7 @@ lib/
 
 public/
   main-ogp.png
+  line-stamp-main.png
   favicons/*
   types/*
 
@@ -114,6 +120,7 @@ out/
 
 - `out/` は静的エクスポートの生成物であり、アプリ本体のソースではない
 - 診断結果表示は `/types/[typeCode]/` に `?s=` を付けて行うため、`[key]` ルートは存在しない
+- 隠し結果は通常タイプとは別に `components/secret/` でヒーローと共有表示を持ち、本文の一部だけ `components/type/type-detail-page-content/` を再利用する
 
 ## 3. 各ディレクトリの責務
 
@@ -141,6 +148,7 @@ out/
 
 - `home`
 - `diagnosis`
+- `secret`
 - `type`
 - `layout`
 - `ui`
@@ -155,6 +163,8 @@ out/
 - URL / metadata 補助
 - 共有キー
 - `localStorage` ラッパー
+- 隠し結果の合言葉判定
+- LINE STORE 訪問済み状態
 - JSON-LD 生成
 
 ### 3.4 `data/`
@@ -173,6 +183,7 @@ out/
 - サイト配信用の静的アセット
 - favicon / manifest 用アセット
 - タイプ画像 / チビ画像 / OGP
+- LINE スタンプ導線画像
 
 ### 3.6 `skills/`
 
@@ -219,3 +230,5 @@ out/
 - 隠し特別結果は `/secret/` で表示する
 - `type-detail-page-content` 配下には `public` / `shared` の両モードを扱う props があるが、公開ルートとして使っているのは `public` モードのページ 1 本だけである
 - OGP 生成スキルの publish 先と、アプリ本体の配信用 OGP 参照先は別である
+- LINE スタンプ右下ポップ導線は `components/layout/line-stamp-floating-promo/` にあり、`/` と `/types/[typeCode]/` のページ本文から明示的に差し込む
+- `docs/current-issues.md` に、現行コードを正としたうえでの不具合・整理課題を集約する

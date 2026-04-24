@@ -1,4 +1,4 @@
-import type { QuestionMaster, TypeData } from "@/lib/types";
+import type { TypeData } from "@/lib/types";
 
 import { AxisCompositionSection } from "@/components/home/axis-composition-section/axis-composition-section";
 import { AllTypesSection } from "@/components/home/home-page/all-types-section";
@@ -15,7 +15,6 @@ import styles from "./home-page.module.css";
 
 type HomePageProps = {
   allTypes: TypeData[];
-  questionMaster: QuestionMaster;
 };
 
 export function HomePage({ allTypes }: HomePageProps) {

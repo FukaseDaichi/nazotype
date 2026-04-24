@@ -34,6 +34,7 @@
   /* Fonts */
   --font-serif: "Shippori Mincho", "Noto Serif JP", serif;
   --font-mono: "Space Mono", monospace;
+  --font-display: "Cinzel", "Times New Roman", serif;
 
   /* Radius (sharp, minimal) */
   --radius-sm: 2px;

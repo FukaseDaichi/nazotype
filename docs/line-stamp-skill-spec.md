@@ -256,6 +256,12 @@ python skills/madamistype-line-stamp-images/scripts/generate_line_stamp_images.p
 
 ## 10. アプリ本体との関係
 
-- 現行の公開サイトには LINE スタンプへの導線 UI は実装されていない
-- `NEXT_PUBLIC_LINE_STAMP_URL` は `lib/site.ts` にあるが、現行画面では未使用
+- 現行の公開サイトには `LineStampFloatingPromo` として LINE スタンプへの右下ポップ導線が実装されている
+- 表示対象は `/` と `/types/[typeCode]/`
+- `/diagnosis` と `/secret/` には表示しない
+- `NEXT_PUBLIC_LINE_STAMP_URL` は `lib/site.ts` の `LINE_STAMP_URL` を通じて導線のリンク先に使う
+- `NEXT_PUBLIC_LINE_STAMP_URL` 未設定時は `https://store.line.me/stickershop/product/33688754/ja` を使う
+- `NEXT_PUBLIC_LINE_STAMP_URL` が空文字、`0`、`false`、`off`、`disabled`、`none` の場合は導線を表示しない
+- 導線の表示画像は `public/line-stamp-main.png`
+- `data/line-stamp-images/` は保管済み成果物置き場であり、導線が直接参照する配信用正本ではない
 - LINE スタンプ生成系の成果物は運用・制作物であり、App Router の表示ロジックからは直接参照されない

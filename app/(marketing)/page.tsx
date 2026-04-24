@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { HomePage } from "@/components/home/home-page/home-page";
-import { getAllTypes, getQuestionMaster } from "@/lib/data";
+import { getAllTypes } from "@/lib/data";
 import {
   MAIN_OGP_IMAGE_PATH,
   SITE_DESCRIPTION,
@@ -42,10 +42,7 @@ export const metadata: Metadata = {
 };
 
 export default async function MarketingHomePage() {
-  const [allTypes, questionMaster] = await Promise.all([
-    getAllTypes(),
-    getQuestionMaster(),
-  ]);
+  const allTypes = await getAllTypes();
 
-  return <HomePage allTypes={allTypes} questionMaster={questionMaster} />;
+  return <HomePage allTypes={allTypes} />;
 }

@@ -44,11 +44,26 @@ export function AxisCompositionSection() {
                   AXIS {definition.no}
                 </p>
 
-                <div className="flex items-center gap-4 mb-6">
+                <div className="grid grid-cols-[auto_auto_auto] items-center gap-x-4 gap-y-2 mb-6 w-fit">
+                  <p className="font-display text-[0.75rem] tracking-[0.25em] text-paper-200 uppercase leading-none pl-1">
+                    <span className="text-gold-400 text-[1.35rem] font-bold tracking-normal">
+                      {definition.sides[0].word.charAt(0)}
+                    </span>
+                    {definition.sides[0].word.slice(1)}
+                  </p>
+                  <span aria-hidden="true" />
+                  <p className="font-display text-[0.75rem] tracking-[0.25em] text-paper-200 uppercase leading-none pl-1">
+                    <span className="text-gold-400 text-[1.35rem] font-bold tracking-normal">
+                      {definition.sides[1].word.charAt(0)}
+                    </span>
+                    {definition.sides[1].word.slice(1)}
+                  </p>
                   <span className="text-[1.1rem] font-bold px-3 py-1 border border-gold-400 text-gold-300">
                     {definition.sides[0].label}
                   </span>
-                  <span className="text-paper-300 tracking-tight">&harr;</span>
+                  <span className="text-paper-300 tracking-tight justify-self-center">
+                    &harr;
+                  </span>
                   <span className="text-[1.1rem] font-bold px-3 py-1 border border-gold-400 text-gold-300">
                     {definition.sides[1].label}
                   </span>

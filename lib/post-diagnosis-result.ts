@@ -1,6 +1,4 @@
 export const POST_DIAGNOSIS_RESULT_STORAGE_KEY = "nazotype:post-diagnosis-result";
-export const RECOMMENDATION_FEEDBACK_FORM_URL =
-  "https://forms.gle/7NFV8uz2WahKkroTA";
 
 type PostDiagnosisResult = {
   typeCode: string;
