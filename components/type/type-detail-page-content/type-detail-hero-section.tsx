@@ -1,10 +1,12 @@
 import type { TypeData } from "@/lib/types";
 
+import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import { TypeArtwork } from "@/components/type/type-artwork/type-artwork";
-import { RECOMMENDATION_FEEDBACK_FORM_URL } from "@/lib/post-diagnosis-result";
+
+import { TypeDetailHeroPrimaryAction } from "./type-detail-hero-primary-action";
 
 import styles from "./type-detail-hero-section.module.css";
 
@@ -17,6 +19,17 @@ type TypeDetailHeroSectionProps = {
   hasChibi?: boolean;
   isPostDiagnosisResult?: boolean;
 };
+
+function SelfDiagnosisPrimaryCta() {
+  return (
+    <Link href="/" prefetch={false} className={styles.primaryCta}>
+      <span>自分でも診断する</span>
+      <span className={styles.ctaArrow} aria-hidden="true">
+        →
+      </span>
+    </Link>
+  );
+}
 
 export function TypeDetailHeroSection({
   mode,
@@ -162,7 +175,14 @@ export function TypeDetailHeroSection({
               <p className={styles.summary}>{typeData.summary}</p>
 
               <div className={styles.actions}>
-                {shouldShowPostDiagnosisActions ? (
+                {mode === "public" ? (
+                  <Suspense fallback={<SelfDiagnosisPrimaryCta />}>
+                    <TypeDetailHeroPrimaryAction
+                      typeCode={typeData.typeCode}
+                      publicUrl={publicUrl}
+                    />
+                  </Suspense>
+                ) : shouldShowPostDiagnosisActions ? (
                   <>
                     <a href="#type-share-panel" className={styles.primaryCta}>
                       <span>共有する</span>
@@ -172,12 +192,7 @@ export function TypeDetailHeroSection({
                     </a>
                   </>
                 ) : (
-                  <Link href="/" prefetch={false} className={styles.primaryCta}>
-                    <span>自分でも診断する</span>
-                    <span className={styles.ctaArrow} aria-hidden="true">
-                      →
-                    </span>
-                  </Link>
+                  <SelfDiagnosisPrimaryCta />
                 )}
               </div>
             </div>
