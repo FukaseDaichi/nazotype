@@ -30,6 +30,21 @@ export function SiteFooter({ className }: SiteFooterProps) {
         NAZOTOKI TYPE DIAGNOSIS &nbsp;&middot;&nbsp; 4軸16タイプ謎解きロール診断
         &nbsp;&middot;&nbsp; 能力ではなく、役割の違いを診る
       </p>
+      <div className={styles.meta}>
+        <span>&copy; WhiteFranc</span>
+        <span className={styles.metaSep} aria-hidden="true">
+          &middot;
+        </span>
+        <a
+          href="https://nazomatic.vercel.app"
+          target="_blank"
+          rel="noreferrer"
+          className={styles.metaLink}
+          aria-label="関連サイト ナゾマティックを新しいタブで開く"
+        >
+          関連サイト: ナゾマティック
+        </a>
+      </div>
     </footer>
   );
 }
