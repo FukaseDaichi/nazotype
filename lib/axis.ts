@@ -103,14 +103,14 @@ export const AXIS_DEFINITIONS = [
     axis: "A4",
     axisKey: "axis4",
     no: "04",
-    label: "Tenacity / Change",
+    label: "Notional / Change",
     description: "今の問題に粘るか、別の手段に切り替えるかを見る軸。",
     defaultCode: "N",
     sides: [
       {
         code: "N",
         label: "熟考型",
-        word: "Tenacity",
+        word: "Notional",
         shortDescription: "時間をかけて考え抜き、突破口を見つける",
       },
       {
@@ -123,7 +123,9 @@ export const AXIS_DEFINITIONS = [
   },
 ] as const satisfies readonly AxisDefinition[];
 
-export const AXIS_CONFIG = AXIS_DEFINITIONS.reduce<Record<AxisCode, AxisConfig>>(
+export const AXIS_CONFIG = AXIS_DEFINITIONS.reduce<
+  Record<AxisCode, AxisConfig>
+>(
   (accumulator, definition) => {
     const [positiveSide, negativeSide] = definition.sides;
 
