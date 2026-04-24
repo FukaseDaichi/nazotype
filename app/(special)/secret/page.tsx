@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
 
 import { SecretPageContent } from "@/components/secret/secret-page-content";
-import { getAbsoluteUrl, getTypeOgpImagePath } from "@/lib/site";
+import {
+  getAbsoluteUrl,
+  getStaticSocialImage,
+  getTypeOgpImagePath,
+} from "@/lib/site";
 import { getSecretPublicPath, getSecretResult } from "@/lib/secret-result";
 
 const secretResult = getSecretResult();
 const secretPublicPath = getSecretPublicPath();
 const secretOgpImage = getTypeOgpImagePath(secretResult.typeCode);
+const secretSocialImage = getStaticSocialImage(
+  secretOgpImage,
+  `${secretResult.typeName} (${secretResult.typeCode}) の OGP 画像`,
+);
 
 export const metadata: Metadata = {
   title: `${secretResult.typeName} (${secretResult.typeCode})`,
@@ -28,13 +36,13 @@ export const metadata: Metadata = {
     title: `${secretResult.typeName} (${secretResult.typeCode})`,
     description: secretResult.tagline,
     url: secretPublicPath,
-    images: [secretOgpImage],
+    images: [secretSocialImage],
   },
   twitter: {
     card: "summary_large_image",
     title: `${secretResult.typeName} (${secretResult.typeCode})`,
     description: secretResult.tagline,
-    images: [secretOgpImage],
+    images: [secretSocialImage],
   },
 };
 

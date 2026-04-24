@@ -13,6 +13,11 @@ export const SITE_KEYWORDS = [
 export const SITE_TAGLINE = "役割を、16タイプで見える化する。";
 export const SITE_THEME_COLOR = "#1a1530";
 export const SITE_BACKGROUND_COLOR = "#1a1530";
+export const MAIN_OGP_IMAGE_PATH = "/main-ogp.png";
+export const OGP_IMAGE_SIZE = {
+  width: 1200,
+  height: 630,
+} as const;
 export const DEFAULT_LINE_STAMP_URL =
   "https://store.line.me/stickershop/product/33688754/ja";
 export const LINE_STAMP_URL =
@@ -86,6 +91,14 @@ export function getSiteOrigin() {
 
 export function getAbsoluteUrl(pathname = "/") {
   return new URL(pathname, getMetadataBase()).toString();
+}
+
+export function getStaticSocialImage(pathname: string, alt: string) {
+  return {
+    url: getAbsoluteUrl(pathname),
+    ...OGP_IMAGE_SIZE,
+    alt,
+  };
 }
 
 export function getTypePublicPath(typeCode: string) {

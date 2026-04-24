@@ -6,10 +6,7 @@ import { useEffect, useState, type FormEvent } from "react";
 
 import { normalizeUserName } from "@/lib/diagnosis";
 import { readDiagnosisDraft, writeDiagnosisDraft } from "@/lib/draft-storage";
-import {
-  getSecretPublicPath,
-  isSecretTriggerName,
-} from "@/lib/secret-result";
+import { getSecretPublicPath, isSecretTriggerName } from "@/lib/secret-result";
 
 type StartDiagnosisFormProps = {
   inputId?: string;
@@ -56,8 +53,8 @@ export function StartDiagnosisForm({
 
     writeDiagnosisDraft({
       userName,
-      answers: isSameUser ? draft?.answers ?? {} : {},
-      currentPage: isSameUser ? draft?.currentPage ?? 1 : 1,
+      answers: isSameUser ? (draft?.answers ?? {}) : {},
+      currentPage: isSameUser ? (draft?.currentPage ?? 1) : 1,
       updatedAt: new Date().toISOString(),
     });
 
@@ -74,7 +71,7 @@ export function StartDiagnosisForm({
             value={name}
             onChange={(event) => setName(event.target.value)}
             className="flex-1 bg-transparent border-none outline-none text-paper-50 font-serif text-base px-5 py-4 placeholder:text-paper-300 min-w-0"
-            placeholder="あなたの名前（任意）"
+            placeholder="あなたの名前"
             autoComplete="nickname"
           />
           <button

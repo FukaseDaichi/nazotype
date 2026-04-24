@@ -9,6 +9,7 @@ import {
 } from "@/lib/data";
 import {
   getAbsoluteUrl,
+  getStaticSocialImage,
   getTypeOgpImagePath,
   getTypePublicPath,
 } from "@/lib/site";
@@ -34,6 +35,10 @@ export async function generateMetadata({
   }
 
   const ogImagePath = getTypeOgpImagePath(typeData.typeCode);
+  const ogImage = getStaticSocialImage(
+    ogImagePath,
+    `${typeData.typeName} (${typeData.typeCode}) の OGP 画像`,
+  );
   const publicPath = getTypePublicPath(typeData.typeCode);
 
   return {
@@ -46,13 +51,13 @@ export async function generateMetadata({
       title: `${typeData.typeName} (${typeData.typeCode})`,
       description: typeData.tagline,
       url: publicPath,
-      images: [ogImagePath],
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
       title: `${typeData.typeName} (${typeData.typeCode})`,
       description: typeData.tagline,
-      images: [ogImagePath],
+      images: [ogImage],
     },
   };
 }

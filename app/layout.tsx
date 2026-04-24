@@ -2,10 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { Noto_Serif_JP, Shippori_Mincho, Space_Mono } from "next/font/google";
 
 import {
+  MAIN_OGP_IMAGE_PATH,
   SITE_DESCRIPTION,
   SITE_KEYWORDS,
   SITE_NAME,
   SITE_THEME_COLOR,
+  getStaticSocialImage,
   getMetadataBase,
 } from "@/lib/site";
 
@@ -34,6 +36,11 @@ const monoFont = Space_Mono({
   display: "swap",
   preload: false,
 });
+
+const mainOgpImage = getStaticSocialImage(
+  MAIN_OGP_IMAGE_PATH,
+  `${SITE_NAME} のトップ OGP 画像`,
+);
 
 export const metadata: Metadata = {
   metadataBase: getMetadataBase(),
@@ -65,13 +72,13 @@ export const metadata: Metadata = {
     url: "/",
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
-    images: ["/main-ogp.png"],
+    images: [mainOgpImage],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
-    images: ["/main-ogp.png"],
+    images: [mainOgpImage],
   },
 };
 

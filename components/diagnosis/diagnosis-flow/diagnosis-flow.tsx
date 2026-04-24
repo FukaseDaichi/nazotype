@@ -289,9 +289,9 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
   return (
     <main id="main-content" className="min-h-dvh">
       {/* Progress Header - sticky */}
-      <header className="sticky top-0 z-40 bg-mystery-900/95 backdrop-blur-sm border-b border-gold-400/10">
+      <header className="sticky top-0 z-40 border-b border-gold-400/10 bg-mystery-900/95 backdrop-blur-sm">
         <div className="max-w-3xl mx-auto px-4 py-3">
-          <div className="flex justify-between items-center text-sm">
+          <div className="flex flex-wrap items-center justify-between gap-2 text-sm">
             <span className="font-mono text-paper-200">
               Page {currentPage} / {totalPages}
             </span>
@@ -309,7 +309,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
         </div>
       </header>
 
-      <div className="max-w-3xl mx-auto px-4 py-8">
+      <div className="max-w-3xl mx-auto px-4 py-6 sm:py-8">
         {/* Page header */}
         <div className="mb-8">
           <h1
@@ -320,7 +320,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
             ページ {currentPage} / {totalPages}
           </h1>
           <p className="text-sm text-paper-200 mt-1">直感で答えてください</p>
-          <div className="flex items-center gap-4 mt-2 text-xs text-paper-200 font-mono">
+          <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-paper-200 font-mono">
             <span aria-live="polite">
               回答済み {answeredCount} / {totalQuestions}
             </span>
@@ -347,7 +347,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
             return (
               <fieldset
                 key={question.questionId}
-                className="border border-gold-400/10 bg-mystery-800/60 backdrop-blur-sm p-5"
+                className="border border-gold-400/10 bg-mystery-800/60 p-4 backdrop-blur-sm sm:p-5"
               >
                 <legend
                   ref={(element) => {
@@ -366,18 +366,21 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
 
                 {/* 5-point scale */}
                 <div className="mt-4">
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="text-xs text-paper-200 shrink-0 w-16 text-right">
+                  <div className="grid grid-cols-2 gap-x-3 gap-y-2 sm:grid-cols-[4rem_auto_4rem] sm:items-center">
+                    <span className="text-xs text-paper-200 sm:text-right">
                       思わない
                     </span>
-                    <div className="flex gap-2">
+                    <span className="text-right text-xs text-paper-200 sm:col-start-3 sm:row-start-1 sm:text-left">
+                      そう思う
+                    </span>
+                    <div className="col-span-2 row-start-2 mx-auto grid w-full max-w-[240px] grid-cols-5 gap-1.5 sm:col-span-1 sm:col-start-2 sm:row-start-1 sm:flex sm:w-auto sm:max-w-none sm:gap-2">
                       {ANSWER_OPTIONS.slice()
                         .reverse()
                         .map((option) => (
                           <button
                             key={option.value}
                             type="button"
-                            className={`w-11 h-11 rounded-full border-2 font-bold text-sm transition-all duration-150 cursor-pointer ${getScaleButtonClass(option.value, selectedValue)}`}
+                            className={`aspect-square w-full rounded-full border-2 font-bold text-xs transition-all duration-150 cursor-pointer sm:h-11 sm:w-11 sm:text-sm ${getScaleButtonClass(option.value, selectedValue)}`}
                             onClick={() =>
                               handleAnswerChange(
                                 question.questionId,
@@ -390,9 +393,6 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
                           </button>
                         ))}
                     </div>
-                    <span className="text-xs text-paper-200 shrink-0 w-16">
-                      そう思う
-                    </span>
                   </div>
                 </div>
               </fieldset>
@@ -423,7 +423,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
           <button
             type="button"
             onClick={handleNext}
-            className="w-full sm:w-auto min-w-[280px] min-h-[52px] px-8 py-3 bg-gradient-to-br from-gold-400 to-gold-500 text-mystery-800 font-bold text-base transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none cursor-pointer"
+            className="min-h-[52px] w-full min-w-0 px-8 py-3 text-base font-bold text-mystery-800 transition-all cursor-pointer bg-gradient-to-br from-gold-400 to-gold-500 hover:opacity-90 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-40 sm:w-auto sm:min-w-[280px]"
           >
             {currentPage === totalPages
               ? "診断結果を見る \u2192"
