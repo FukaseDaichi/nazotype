@@ -2,6 +2,7 @@ import type { AxisSummary, TypeData } from "@/lib/types";
 
 import { Suspense } from "react";
 
+import { LineStampFloatingPromo } from "@/components/layout/line-stamp-floating-promo/line-stamp-floating-promo";
 import { SiteFooter } from "@/components/layout/site-footer/site-footer";
 import { getTypePageJsonLd, stringifyJsonLd } from "@/lib/json-ld";
 import { TypeCompatibilitySection } from "@/components/type/type-detail-page-content/type-compatibility-section";
@@ -177,6 +178,12 @@ export function TypeDetailPageContent({
 
         <SiteFooter className={styles.footer} />
       </div>
+
+      <LineStampFloatingPromo
+        variant="type"
+        typeName={typeData.typeName}
+        typeCode={typeData.typeCode}
+      />
     </main>
   );
 }

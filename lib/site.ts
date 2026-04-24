@@ -13,7 +13,10 @@ export const SITE_KEYWORDS = [
 export const SITE_TAGLINE = "役割を、16タイプで見える化する。";
 export const SITE_THEME_COLOR = "#1a1530";
 export const SITE_BACKGROUND_COLOR = "#1a1530";
-export const LINE_STAMP_URL = process.env.NEXT_PUBLIC_LINE_STAMP_URL ?? "";
+export const DEFAULT_LINE_STAMP_URL =
+  "https://store.line.me/stickershop/product/33688754/ja";
+export const LINE_STAMP_URL =
+  process.env.NEXT_PUBLIC_LINE_STAMP_URL?.trim() || DEFAULT_LINE_STAMP_URL;
 export const DRAFT_STORAGE_KEY = "nazotype:diagnosis-draft:v1";
 
 const PALETTE_COLOR_MAP: Record<string, string> = {

@@ -4,6 +4,7 @@ import { AxisCompositionSection } from "@/components/home/axis-composition-secti
 import { AllTypesSection } from "@/components/home/home-page/all-types-section";
 import { HomeHeroSection } from "@/components/home/home-page/home-hero-section";
 import { ResultPreviewSection } from "@/components/home/home-page/result-preview-section";
+import { LineStampFloatingPromo } from "@/components/layout/line-stamp-floating-promo/line-stamp-floating-promo";
 import { SiteFooter } from "@/components/layout/site-footer/site-footer";
 import { AmbientOrbs } from "@/components/ui/ambient-orbs";
 import { Particles } from "@/components/ui/particles";
@@ -119,6 +120,8 @@ export function HomePage({ allTypes }: HomePageProps) {
         {/* ═══ FOOTER ═══ */}
         <SiteFooter />
       </div>
+
+      <LineStampFloatingPromo variant="home" />
     </main>
   );
 }
