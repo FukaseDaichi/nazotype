@@ -3,6 +3,8 @@ import type { TypeData } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 
+import { SecretHeroPrimaryAction } from "@/components/secret/secret-hero-primary-action";
+
 import styles from "./secret-hero-section.module.css";
 
 type SecretHeroSectionProps = {
@@ -143,12 +145,7 @@ export function SecretHeroSection({
               <p className={styles.summary}>{typeData.summary}</p>
 
               <div className={styles.actions}>
-                <Link href="/" prefetch={false} className={styles.primaryCta}>
-                  <span>自分でも診断する</span>
-                  <span className={styles.ctaArrow} aria-hidden="true">
-                    →
-                  </span>
-                </Link>
+                <SecretHeroPrimaryAction />
                 <a href="#secret-dossier" className={styles.secondaryCta}>
                   全文を読む
                 </a>

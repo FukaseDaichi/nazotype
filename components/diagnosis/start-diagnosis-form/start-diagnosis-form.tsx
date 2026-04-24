@@ -6,7 +6,11 @@ import { useEffect, useState, type FormEvent } from "react";
 
 import { normalizeUserName } from "@/lib/diagnosis";
 import { readDiagnosisDraft, writeDiagnosisDraft } from "@/lib/draft-storage";
-import { getSecretPublicPath, isSecretTriggerName } from "@/lib/secret-result";
+import {
+  getSecretPublicPath,
+  isSecretTriggerName,
+  writeSecretShareEntry,
+} from "@/lib/secret-result";
 
 type StartDiagnosisFormProps = {
   inputId?: string;
@@ -44,6 +48,7 @@ export function StartDiagnosisForm({
     }
 
     if (isSecretTriggerName(userName)) {
+      writeSecretShareEntry();
       router.push(getSecretPublicPath());
       return;
     }
