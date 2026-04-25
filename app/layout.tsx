@@ -5,6 +5,7 @@ import {
   Shippori_Mincho,
   Space_Mono,
 } from "next/font/google";
+import Script from "next/script";
 
 import {
   MAIN_OGP_IMAGE_PATH,
@@ -54,6 +55,7 @@ const mainOgpImage = getStaticSocialImage(
   MAIN_OGP_IMAGE_PATH,
   `${SITE_NAME} のトップ OGP 画像`,
 );
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
 
 export const metadata: Metadata = {
   metadataBase: getMetadataBase(),
@@ -113,6 +115,22 @@ export default function RootLayout({
       className={`${serifFont.variable} ${serifFallback.variable} ${monoFont.variable} ${displayFont.variable} h-full antialiased`}
     >
       <body className="min-h-full">{children}</body>
+      {gaMeasurementId ? (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+            strategy="afterInteractive"
+          />
+          <Script id="ga4-init" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', ${JSON.stringify(gaMeasurementId)});
+            `}
+          </Script>
+        </>
+      ) : null}
     </html>
   );
 }

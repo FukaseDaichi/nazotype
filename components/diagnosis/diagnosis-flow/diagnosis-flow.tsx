@@ -9,6 +9,7 @@ import {
   calculateDiagnosisResult,
   getQuestionsForPage,
 } from "@/lib/diagnosis";
+import { trackDiagnosisComplete } from "@/lib/analytics";
 import { readDiagnosisDraft, writeDiagnosisDraft } from "@/lib/draft-storage";
 import { writePostDiagnosisResult } from "@/lib/post-diagnosis-result";
 import { createShareKey } from "@/lib/share-key";
@@ -222,6 +223,7 @@ export function DiagnosisFlow({ questionMaster }: DiagnosisFlowProps) {
     setIsSubmitting(true);
 
     const result = calculateDiagnosisResult(questionMaster, answers);
+    trackDiagnosisComplete(result.typeCode);
     const key = createShareKey(userName, result.axisSummaries);
     writePostDiagnosisResult(result.typeCode, key);
     router.push(
