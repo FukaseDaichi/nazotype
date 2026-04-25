@@ -8,6 +8,7 @@ import {
   hasChibiImage,
 } from "@/lib/data";
 import {
+  SITE_NAME,
   getAbsoluteUrl,
   getStaticSocialImage,
   getTypeOgpImagePath,
@@ -40,23 +41,25 @@ export async function generateMetadata({
     `${typeData.typeName} (${typeData.typeCode}) の OGP 画像`,
   );
   const publicPath = getTypePublicPath(typeData.typeCode);
+  const typePageTitle = `${typeData.typeName} (${typeData.typeCode})`;
+  const typePageDescription = `謎解きタイプ診断の16タイプ「${typeData.typeName} (${typeData.typeCode})」の詳細。${typeData.summary}`;
 
   return {
-    title: `${typeData.typeName} (${typeData.typeCode})`,
-    description: typeData.summary,
+    title: typePageTitle,
+    description: typePageDescription,
     alternates: {
       canonical: publicPath,
     },
     openGraph: {
-      title: `${typeData.typeName} (${typeData.typeCode})`,
-      description: typeData.tagline,
+      title: `${typePageTitle} | ${SITE_NAME}`,
+      description: typePageDescription,
       url: publicPath,
       images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${typeData.typeName} (${typeData.typeCode})`,
-      description: typeData.tagline,
+      title: `${typePageTitle} | ${SITE_NAME}`,
+      description: typePageDescription,
       images: [ogImage],
     },
   };

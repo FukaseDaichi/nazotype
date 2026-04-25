@@ -5,6 +5,7 @@ import { getAllTypes } from "@/lib/data";
 import {
   MAIN_OGP_IMAGE_PATH,
   SITE_DESCRIPTION,
+  SITE_HOME_TITLE,
   SITE_KEYWORDS,
   SITE_NAME,
   getStaticSocialImage,
@@ -17,7 +18,7 @@ const homeOgpImage = getStaticSocialImage(
 
 export const metadata: Metadata = {
   title: {
-    absolute: SITE_NAME,
+    absolute: SITE_HOME_TITLE,
   },
   description: SITE_DESCRIPTION,
   keywords: [...SITE_KEYWORDS],
@@ -29,13 +30,13 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: "ja_JP",
     url: "/",
-    title: SITE_NAME,
+    title: SITE_HOME_TITLE,
     description: SITE_DESCRIPTION,
     images: [homeOgpImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_NAME,
+    title: SITE_HOME_TITLE,
     description: SITE_DESCRIPTION,
     images: [homeOgpImage],
   },

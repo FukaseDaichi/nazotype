@@ -32,7 +32,7 @@ export function AxisCompositionSection() {
           >
             4つの軸が
             <br />
-            あなたの役割を定義する
+            謎解きでの役割を定義する
           </h2>
         </RevealOnScroll>
 

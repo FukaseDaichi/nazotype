@@ -29,7 +29,7 @@ export function AllTypesSection({ allTypes }: AllTypesSectionProps) {
             あなたはどれか
           </h2>
           <p className="text-[1.05rem] font-light leading-[1.9] text-paper-200 max-w-[600px]">
-            4軸の組み合わせで生まれる16のキャラクター。どのタイプも異なる強みを持ち、チームに欠かせない存在です。
+            4軸の組み合わせで生まれる16の謎解きタイプ。どのタイプも異なる強みを持ち、チームに欠かせない存在です。
           </p>
         </RevealOnScroll>
 
