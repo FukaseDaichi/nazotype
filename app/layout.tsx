@@ -71,7 +71,10 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   verification: {
-    google: "PL4mFXSOkoRJNiMOigMC2VmfdZ3X3nOMzuvZmMPmbmc",
+    google: [
+      "PL4mFXSOkoRJNiMOigMC2VmfdZ3X3nOMzuvZmMPmbmc",
+      "5OltoMsB33nTB2ohSKX5gt__XDYXHSLIj4mvsj-Fy8o",
+    ],
   },
   formatDetection: {
     email: false,
