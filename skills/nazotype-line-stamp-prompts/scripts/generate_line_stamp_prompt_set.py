@@ -11,7 +11,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 from line_stamp_prompt_builder import build_manifest, build_review_markdown, load_stamp_set, load_type_data
 
 
-SKILL_NAME = "madamistype-line-stamp-prompts"
+SKILL_NAME = "nazotype-line-stamp-prompts"
 
 
 def repo_root_from_script() -> Path:
@@ -33,7 +33,7 @@ def discover_set_files(sets_dir: Path) -> dict[str, Path]:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Generate Madamistype LINE sticker prompt manifests.")
+    parser = argparse.ArgumentParser(description="Generate Nazotype LINE sticker prompt manifests.")
     parser.add_argument("--all", action="store_true", help="Generate prompt manifests for every sticker set JSON.")
     parser.add_argument("--sets", help="Comma-separated set ids to process.")
     parser.add_argument("--output-dir", help="Override the output directory.")

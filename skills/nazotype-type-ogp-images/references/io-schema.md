@@ -56,7 +56,7 @@ output/type-ogp/
 ```text
 output/type-ogp/
   batch-report.json
-  OFEI/
+  ALHN/
     reference/
       chibi.png
     candidates/
@@ -74,8 +74,8 @@ output/type-ogp/
     final/
       ogp.png
       meta.json
-public/ogp/types/
-  OFEI.png
+public/types/
+  ALHN-ogp.png
 ```
 
 ## Artifact Meanings

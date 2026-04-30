@@ -6,12 +6,12 @@
 
 対象スキル:
 
-- `skills/madamistype-line-stamp-prompts/`
-- `skills/madamistype-line-stamp-images/`
+- `skills/nazotype-line-stamp-prompts/`
+- `skills/nazotype-line-stamp-images/`
 
 補足:
 
-- リポジトリ名は `nazotype` だが、スキル名は現時点でも `madamistype-*` のまま残っている
+- スキル名とディレクトリ名は `nazotype-*` に統一済み
 - 本書は将来案ではなく、現行の入出力契約と実装フローを記述する
 
 ## 2. 全体構成
@@ -20,9 +20,9 @@ LINE スタンプ生成は 2 段階に分かれている。
 
 ### 2.1 Prompt スキル
 
-- スキル名: `madamistype-line-stamp-prompts`
-- 入口: `skills/madamistype-line-stamp-prompts/SKILL.md`
-- 主スクリプト: `skills/madamistype-line-stamp-prompts/scripts/generate_line_stamp_prompt_set.py`
+- スキル名: `nazotype-line-stamp-prompts`
+- 入口: `skills/nazotype-line-stamp-prompts/SKILL.md`
+- 主スクリプト: `skills/nazotype-line-stamp-prompts/scripts/generate_line_stamp_prompt_set.py`
 
 役割:
 
@@ -33,9 +33,9 @@ LINE スタンプ生成は 2 段階に分かれている。
 
 ### 2.2 Image スキル
 
-- スキル名: `madamistype-line-stamp-images`
-- 入口: `skills/madamistype-line-stamp-images/SKILL.md`
-- 主スクリプト: `skills/madamistype-line-stamp-images/scripts/generate_line_stamp_images.py`
+- スキル名: `nazotype-line-stamp-images`
+- 入口: `skills/nazotype-line-stamp-images/SKILL.md`
+- 主スクリプト: `skills/nazotype-line-stamp-images/scripts/generate_line_stamp_images.py`
 
 役割:
 
@@ -232,17 +232,17 @@ output/line-stamp-images/
 ### 8.1 Prompt スキル
 
 ```bash
-python skills/madamistype-line-stamp-prompts/scripts/generate_line_stamp_prompt_set.py --all
-python skills/madamistype-line-stamp-prompts/scripts/generate_line_stamp_prompt_set.py --sets altc-iku-trial
-python skills/madamistype-line-stamp-prompts/scripts/generate_line_stamp_prompt_set.py --sets altc-iku-trial --overwrite
+python skills/nazotype-line-stamp-prompts/scripts/generate_line_stamp_prompt_set.py --all
+python skills/nazotype-line-stamp-prompts/scripts/generate_line_stamp_prompt_set.py --sets altc-iku-trial
+python skills/nazotype-line-stamp-prompts/scripts/generate_line_stamp_prompt_set.py --sets altc-iku-trial --overwrite
 ```
 
 ### 8.2 Image スキル
 
 ```bash
-python skills/madamistype-line-stamp-images/scripts/generate_line_stamp_images.py --all
-python skills/madamistype-line-stamp-images/scripts/generate_line_stamp_images.py --set-ids altc-iku-trial
-python skills/madamistype-line-stamp-images/scripts/generate_line_stamp_images.py --set-ids altc-iku-trial --dry-run
+python skills/nazotype-line-stamp-images/scripts/generate_line_stamp_images.py --all
+python skills/nazotype-line-stamp-images/scripts/generate_line_stamp_images.py --set-ids altc-iku-trial
+python skills/nazotype-line-stamp-images/scripts/generate_line_stamp_images.py --set-ids altc-iku-trial --dry-run
 ```
 
 ## 9. 実装上の挙動

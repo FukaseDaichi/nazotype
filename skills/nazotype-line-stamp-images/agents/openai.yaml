@@ -1,0 +1,7 @@
+interface:
+  display_name: "Nazotype Line Stamp Images"
+  short_description: "Generate final LINE sticker PNGs from prompt manifests."
+  default_prompt: "Use $nazotype-line-stamp-images to turn this repository's LINE sticker prompt manifests into final transparent PNG delivery assets with fal.ai."
+
+policy:
+  allow_implicit_invocation: true

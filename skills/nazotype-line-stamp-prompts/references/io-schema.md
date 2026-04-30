@@ -66,7 +66,7 @@ output/line-stamp-prompts/
 ```text
 output/line-stamp-prompts/
   batch-report.json
-  ofei-daily-replies/
+  altc-iku-trial/
     manifest.json
     review.md
     main/

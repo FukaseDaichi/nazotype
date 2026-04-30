@@ -1,15 +1,15 @@
 ---
-name: madamistype-line-stamp-images
-description: madamistype リポジトリ専用。output/line-stamp-prompts/*/manifest.json を入力として、fal.ai で文字入り LINE スタンプ画像を生成し、グリーンバック除去で透過 PNG を作り、最終キャンバスへ収めて検証する。main.png、tab.png、複数 stamp の納品 PNG を生成または更新するときに使う。
+name: nazotype-line-stamp-images
+description: nazotype リポジトリ専用。output/line-stamp-prompts/*/manifest.json を入力として、fal.ai で文字入り LINE スタンプ画像を生成し、グリーンバック除去で透過 PNG を作り、最終キャンバスへ収めて検証する。main.png、tab.png、複数 stamp の納品 PNG を生成または更新するときに使う。
 ---
 
-# Madamistype Line Stamp Images
+# Nazotype Line Stamp Images
 
 ## Overview
 
-Use this skill when working inside the `madamistype` repository and the task is to generate final LINE sticker PNGs from an existing prompt manifest.
+Use this skill when working inside the `nazotype` repository and the task is to generate final LINE sticker PNGs from an existing prompt manifest.
 
-This skill expects a prompt manifest from `madamistype-line-stamp-prompts`. It:
+This skill expects a prompt manifest from `nazotype-line-stamp-prompts`. It:
 
 - calls fal.ai with the approved prompt
 - keeps the exact requested text inside the image
@@ -41,9 +41,9 @@ Use `scripts/generate_line_stamp_images.py` as the main entry point.
 Typical examples:
 
 ```bash
-python skills/madamistype-line-stamp-images/scripts/generate_line_stamp_images.py --set-ids ofei-daily-replies
-python skills/madamistype-line-stamp-images/scripts/generate_line_stamp_images.py --all
-python skills/madamistype-line-stamp-images/scripts/generate_line_stamp_images.py --set-ids ofei-daily-replies --dry-run
+python skills/nazotype-line-stamp-images/scripts/generate_line_stamp_images.py --set-ids altc-iku-trial
+python skills/nazotype-line-stamp-images/scripts/generate_line_stamp_images.py --all
+python skills/nazotype-line-stamp-images/scripts/generate_line_stamp_images.py --set-ids altc-iku-trial --dry-run
 ```
 
 The script writes:

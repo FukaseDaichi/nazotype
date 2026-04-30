@@ -69,7 +69,7 @@ It should not feel:
 When the batch is site-ready, copy the final image to:
 
 ```text
-public/ogp/types/{typeCode}.png
+public/types/{typeCode}-ogp.png
 ```
 
 Keep the working files in `output/type-ogp/` even when publishing.

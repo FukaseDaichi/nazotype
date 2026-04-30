@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any
 
 
-SKILL_NAME = "madamistype-line-stamp-prompts"
+SKILL_NAME = "nazotype-line-stamp-prompts"
 DEFAULT_PADDING_PX = 10
 DEFAULT_RESOLUTION = "2K"
 DEFAULT_REFERENCE_BASE_URL = "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types"
@@ -223,7 +223,7 @@ def _build_base_identity_lines(type_data: dict[str, Any], style: str) -> list[st
     color_palette = _format_color_palette(visual.get("colorPalette"))
 
     lines = [
-        "Create a polished anime-style LINE sticker illustration for the Madamistype project.",
+        "Create a polished anime-style LINE sticker illustration for the Nazotype project.",
         "Use the provided reference image as a strict chibi identity anchor.",
         f"Character identity: {type_name} ({type_code}).",
         f"Sticker set style: {style}.",

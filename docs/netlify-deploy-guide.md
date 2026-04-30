@@ -167,11 +167,11 @@ Netlify 自体は Next.js の SSR / ISR / Middleware / Server Actions をサポ�
 - 現行の `netlify.toml` では `NODE_VERSION = "20"` を指定しています。
 - `.nvmrc` や `.node-version` は置いていないため、Netlify では `netlify.toml` の指定を正本とします。
 
-### 7. `npm run start` は使わない
+### 7. `npm run start` はローカル preview 用
 
-- `package.json` には `start: "next start"` が残っています。
-- ただし `output: "export"` 構成では Next.js 16.2.1 の `next start` は失敗します。
-- build 済み成果物を確認する場合は、`npm run build` 後に `out/` を静的ファイルサーバーで配信します。
+- `package.json` の `start` は `scripts/serve-static.mjs` で `out/` を静的ファイルサーバー配信します。
+- build 済み成果物を確認する場合は、`npm run build` 後に `npm run start` を使います。
+- build から配信までまとめて確認する場合は、`npm run preview` を使います。
 - Netlify 本番運用でも `.next` を起動せず、`out/` を publish directory として配信します。
 
 ## デプロイ前チェックリスト
@@ -185,7 +185,7 @@ Netlify 自体は Next.js の SSR / ISR / Middleware / Server Actions をサポ�
 - `public/types/` の画像と OGP が最新になっている。
 - Netlify の publish directory が `out` になっている。
 - Pretty URLs を不用意に無効化していない。
-- `npm run start` ではなく、`out/` の静的配信で確認している。
+- build 済み成果物を `npm run start` または同等の静的配信で確認している。
 
 ## 参考資料
 

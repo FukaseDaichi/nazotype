@@ -1,13 +1,13 @@
 ---
-name: madamistype-type-ogp-images
-description: Batch-generate X-ready type OGP images for the madamistype repository from data/types/*.json and public/types/*_chibi.png using fal.ai. Use when Codex needs to create, rerun, tune, or publish type-specific OGP assets while preserving the chibi identity and regenerating much bolder, more dynamic poses.
+name: nazotype-type-ogp-images
+description: Batch-generate X-ready type OGP images for the nazotype repository from data/types/*.json and public/types/*_chibi.png using fal.ai. Use when Codex needs to create, rerun, tune, or publish type-specific OGP assets while preserving the chibi identity and regenerating much bolder, more dynamic poses.
 ---
 
-# Madamistype Type OGP Images
+# Nazotype Type OGP Images
 
 ## Overview
 
-Use this skill when working inside the `madamistype` repository and the task is to generate or update type-specific OGP images for X.
+Use this skill when working inside the `nazotype` repository and the task is to generate or update type-specific OGP images for X.
 
 Treat these as the only canonical inputs:
 
@@ -64,24 +64,24 @@ The script supports:
 - candidate artifact storage
 - default candidate selection with manual overrides
 - minimal deterministic OGP branding
-- optional publishing to `public/ogp/types/`
+- optional publishing to `public/types/`
 
 The batch script auto-loads repo-root `.env.character-images` when it exists.
 
 Standard examples:
 
 ```bash
-python skills/madamistype-type-ogp-images/scripts/generate_type_ogp_batch.py --all --publish
-python skills/madamistype-type-ogp-images/scripts/generate_type_ogp_batch.py --types OFEI,TRLP --publish
-python skills/madamistype-type-ogp-images/scripts/generate_type_ogp_batch.py --all --overwrite --publish
-python skills/madamistype-type-ogp-images/scripts/generate_type_ogp_batch.py --all --dry-run
+python skills/nazotype-type-ogp-images/scripts/generate_type_ogp_batch.py --all --publish
+python skills/nazotype-type-ogp-images/scripts/generate_type_ogp_batch.py --types ALHN,DBTC --publish
+python skills/nazotype-type-ogp-images/scripts/generate_type_ogp_batch.py --all --overwrite --publish
+python skills/nazotype-type-ogp-images/scripts/generate_type_ogp_batch.py --all --dry-run
 ```
 
 Useful options:
 
 - `--candidates 1` to keep credit usage low for a single pass
 - `--candidates 2` or higher when the user explicitly wants exploration
-- `--select OFEI:2,TRLP:4` to override the default chosen candidate
+- `--select ALHN:2,DBTC:4` to override the default chosen candidate
 - `--retry-failed` to rerun only failed types from the previous batch report
 - `--reference-url-base https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types` to override the public reference source
 - `--allow-prompt-only-fallback` to continue when a type chibi reference asset is missing
@@ -127,7 +127,7 @@ Use as the main entry point. It:
 - stores candidate artifacts
 - selects a candidate
 - composes the final OGP
-- optionally publishes to `public/ogp/types/`
+- optionally publishes to `public/types/`
 
 ### `scripts/ogp_prompt_builder.py`
 
@@ -151,9 +151,9 @@ Use for JSON and text artifact writing plus batch-report assembly.
 
 ## Repo-Specific Rules
 
-- Keep this skill repo-local under `skills/madamistype-type-ogp-images/`
+- Keep this skill repo-local under `skills/nazotype-type-ogp-images/`
 - Keep intermediate output under `output/type-ogp/` unless the user asks for another location
-- Publish final assets to `public/ogp/types/` only when the task calls for site-ready output
+- Publish final assets to `public/types/` only when the task calls for site-ready output
 - Preserve character identity first, then push pose intensity as far as possible
 - Prefer prompt changes over editing `data/types/*.json` unless the user asks to change source data
 - Have the model render the final `typeName` and `typeCode` inside the design

@@ -1,13 +1,13 @@
 ---
-name: madamistype-line-stamp-prompts
-description: madamistype リポジトリ専用。data/line-stamps/*.json と data/types/*.json を入力として、LINE スタンプ用の構図、文字、文字デザイン、余白、背景透過前提を反映した prompt manifest を生成する。main.png、tab.png、複数 stamp の prompt 設計や review 用 manifest を作成または更新するときに使う。
+name: nazotype-line-stamp-prompts
+description: nazotype リポジトリ専用。data/line-stamps/*.json と data/types/*.json を入力として、LINE スタンプ用の構図、文字、文字デザイン、余白、背景透過前提を反映した prompt manifest を生成する。main.png、tab.png、複数 stamp の prompt 設計や review 用 manifest を作成または更新するときに使う。
 ---
 
-# Madamistype Line Stamp Prompts
+# Nazotype Line Stamp Prompts
 
 ## Overview
 
-Use this skill when working inside the `madamistype` repository and the task is to design LINE sticker prompts before image generation.
+Use this skill when working inside the `nazotype` repository and the task is to design LINE sticker prompts before image generation.
 
 This skill does not call fal.ai directly. Its job is to convert repo data into a reviewable `manifest.json` that fixes:
 
@@ -43,9 +43,9 @@ Use `scripts/generate_line_stamp_prompt_set.py` instead of hand-writing prompts 
 Typical examples:
 
 ```bash
-python skills/madamistype-line-stamp-prompts/scripts/generate_line_stamp_prompt_set.py --all
-python skills/madamistype-line-stamp-prompts/scripts/generate_line_stamp_prompt_set.py --sets ofei-daily-replies
-python skills/madamistype-line-stamp-prompts/scripts/generate_line_stamp_prompt_set.py --sets ofei-daily-replies --overwrite
+python skills/nazotype-line-stamp-prompts/scripts/generate_line_stamp_prompt_set.py --all
+python skills/nazotype-line-stamp-prompts/scripts/generate_line_stamp_prompt_set.py --sets altc-iku-trial
+python skills/nazotype-line-stamp-prompts/scripts/generate_line_stamp_prompt_set.py --sets altc-iku-trial --overwrite
 ```
 
 The script writes:

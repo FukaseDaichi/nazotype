@@ -100,9 +100,9 @@ public/
 
 skills/
   nazotype-chibi-character-images/
-  madamistype-type-ogp-images/
-  madamistype-line-stamp-prompts/
-  madamistype-line-stamp-images/
+  nazotype-type-ogp-images/
+  nazotype-line-stamp-prompts/
+  nazotype-line-stamp-images/
 
 output/
   character-images/

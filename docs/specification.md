@@ -314,7 +314,7 @@ LINE スタンプ導線の `LINE STOREで見る` を一度クリックしたブ�
 
 - 診断結果表示は専用の共有ルートではなく、公開タイプページに `?s=` を付けて実現している
 - `app/(types)/types/[typeCode]/page.tsx` だけが公開ルートで、`[key]` セグメントは存在しない
-- タイプ別 OGP 生成スキルの既定 publish 先は `public/ogp/types/` であり、アプリ本体が参照する `public/types/{typeCode}-ogp.png` とは別である
+- タイプ別 OGP 生成スキルの既定 publish 先は、アプリ本体が参照する `public/types/{typeCode}-ogp.png` に揃えている
 - `/types` 一覧ページはない
 - LINE スタンプ右下ポップ導線は `/` と `/types/[typeCode]/` だけに表示する
 - 現行課題は [current-issues.md](./current-issues.md) に集約する

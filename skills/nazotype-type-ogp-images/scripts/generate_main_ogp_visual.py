@@ -31,7 +31,7 @@ REFERENCE_URL_BASE = os.getenv(
     "FAL_REFERENCE_BASE_URL",
     "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types",
 ).rstrip("/")
-REFERENCE_TYPE_CODES = ("abhc", "abtn", "alhn", "dltc")
+REFERENCE_TYPE_CODES = ("ABHC", "ABTN", "ALHN", "DLTC")
 TARGET_SIZE = (1200, 630)
 FONT_CANDIDATES = [
     Path("/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc"),
@@ -337,7 +337,7 @@ def main() -> int:
                 "prompt": str(PROMPT_PATH),
                 "request": str(REQUEST_PATH),
                 "task": str(TASK_PATH),
-                "sourceSkill": "madamistype-type-ogp-images",
+                "sourceSkill": "nazotype-type-ogp-images",
                 "sourceTypeCodes": list(REFERENCE_TYPE_CODES),
                 "referenceUrlBase": REFERENCE_URL_BASE,
                 "resultImageUrl": result_image_url,

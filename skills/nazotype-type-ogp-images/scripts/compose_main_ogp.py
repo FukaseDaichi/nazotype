@@ -12,7 +12,7 @@ TARGET_SIZE = (1200, 630)
 OUTPUT_PATH = ROOT / "output" / "main-ogp" / "main-ogp.png"
 META_PATH = ROOT / "output" / "main-ogp" / "meta.json"
 PUBLISH_PATH = ROOT / "public" / "main-ogp.png"
-TYPE_CODES = ("TFLP", "TRLP", "OREI", "OFEP")
+TYPE_CODES = ("ALHN", "DBTC", "ABHC", "DLTN")
 BG_NOIR = "#0d0b08"
 BG_WARM = "#1c1508"
 PAPER = "#f0e8d5"
@@ -117,7 +117,7 @@ def draw_paper_panel(base: Image.Image) -> None:
 
     draw.text((34, 32), "Case File / Main Share Visual", font=sans_s, fill=rgba(SEPIA, 220))
     draw.text((420, 40), "TOP", font=sans_m, fill=rgba(STAMP, 220))
-    draw.text((34, 92), "マダミスタイプ診断", font=serif_l, fill=INK)
+    draw.text((34, 92), "謎解きタイプ診断", font=serif_l, fill=INK)
     draw.text((38, 172), "Noir Case File", font=sans_l, fill=rgba(STAMP, 220))
     draw.text(
         (34, 214),
@@ -147,7 +147,7 @@ def draw_paper_panel(base: Image.Image) -> None:
         draw.text((stat_x + 74, 428), label, font=sans_s, fill=rgba(SEPIA_LIGHT, 220))
         stat_x += 170
 
-    draw.text((34, 488), "murder mystery types / share-ready key visual", font=sans_s, fill=rgba(SEPIA, 170))
+    draw.text((34, 488), "nazotype / share-ready key visual", font=sans_s, fill=rgba(SEPIA, 170))
 
     tape = Image.new("RGBA", panel.size, (0, 0, 0, 0))
     tape_draw = ImageDraw.Draw(tape, "RGBA")
@@ -172,7 +172,7 @@ def write_meta(type_codes: Iterable[str]) -> None:
             {
                 "asset": str(PUBLISH_PATH),
                 "working": str(OUTPUT_PATH),
-                "sourceSkill": "madamistype-type-ogp-images",
+                "sourceSkill": "nazotype-type-ogp-images",
                 "sourceTypeCodes": list(type_codes),
                 "size": {"width": TARGET_SIZE[0], "height": TARGET_SIZE[1]},
             },
@@ -187,10 +187,10 @@ def main() -> int:
     canvas = Image.new("RGBA", TARGET_SIZE, (0, 0, 0, 255))
     draw_background(canvas)
 
-    draw_character_layer(canvas, "OREI", (8, 22, 332, 340), "#d4820a")
-    draw_character_layer(canvas, "OFEP", (858, 18, 1188, 332), "#8a3e52")
-    draw_character_layer(canvas, "TFLP", (-36, 246, 392, 660), "#705e7b")
-    draw_character_layer(canvas, "TRLP", (800, 212, 1228, 648), "#2e836b")
+    draw_character_layer(canvas, "ALHN", (8, 22, 332, 340), "#d4820a")
+    draw_character_layer(canvas, "DBTC", (858, 18, 1188, 332), "#8a3e52")
+    draw_character_layer(canvas, "ABHC", (-36, 246, 392, 660), "#705e7b")
+    draw_character_layer(canvas, "DLTN", (800, 212, 1228, 648), "#2e836b")
     draw_paper_panel(canvas)
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)

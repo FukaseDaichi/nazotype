@@ -2,109 +2,80 @@
 
 ## 1. 文書の目的
 
-本書は、現行コードを正として確認したうえで、実装上または運用上の問題・整理課題を集約する。
+本書は、現行コードを正として確認したうえで、実装・運用・保守上の課題を集約する。
 
 確認日: 2026-04-30
 
-実行確認:
+確認結果:
 
-- `npm run build`: 成功
-- `npm run lint`: 成功
-- `npm run start`: 失敗
+- `npm run build`: 成功（Windows Node.js v22.16.0 / npm 10.9.2）
+- `npm run lint`: 成功（Windows Node.js v22.16.0 / npm 10.9.2）
+- `npm run start`: `out/` の静的配信用 script として動作確認済み
 
-## 2. 対応優先度
+## 2. 現時点の未対応課題
 
-### P1: `npm run start` が静的 export 構成と合っていない
+現時点で、本書に残すべき未対応のシステム課題はない。
 
-現行の `package.json` は `start` script として `next start` を定義している。
+## 3. 2026-04-30 対応済み
 
-一方で `next.config.ts` は `output: "export"` を指定しているため、Next.js 16.2.1 では `npm run start` が次の理由で失敗する。
+### P1: `npm run start` と静的 export 構成の不整合
 
-```text
-"next start" does not work with "output: export" configuration. Use "npx serve@latest out" instead.
-```
+`next.config.ts` は `output: "export"` を指定しているため、`next start` は現行構成と合わない。
 
-影響:
+対応:
 
-- ローカルで production build 後の確認をしようとしたときに、一般的な `npm run start` が使えない
-- README や運用手順で `npm run start` を案内すると誤誘導になる
+- `package.json` の `start` を `node scripts/serve-static.mjs out` に変更した
+- build から静的配信までまとめて確認する `preview` script を追加した
+- Netlify 本番運用は引き続き `out/` を publish directory として配信する
 
-対応案:
+### P2: タイプ別 OGP 生成スキルの publish 先ずれ
 
-- `start` script を削除する、または静的配信用の preview script に置き換える
-- 例: `npm run build` 後に `npx serve@latest out` を使う
-- Netlify は `out/` を publish directory とする現行方針を維持する
+アプリ本体はタイプ別 OGP として `public/types/{typeCode}-ogp.png` を参照する。
 
-### P2: `/types/[typeCode]/` の `dynamicParams` が明示されていない
+対応:
 
-現行コードは `app/(types)/types/[typeCode]/page.tsx` の `generateStaticParams()` で 16 タイプを静的生成している。
+- `skills/nazotype-type-ogp-images/scripts/generate_type_ogp_batch.py` の既定 publish 先を `public/types/` に揃えた
+- `--publish` 時のコピー先を `public/types/{typeCode}-ogp.png` に揃えた
+- 関連 docs の「手動反映が必要」という説明を削除した
 
-`npm run build` は成功しており、`out/types/<typeCode>/index.html` も生成される。ただし Next.js の static export ドキュメントでは、`dynamicParams: true` の dynamic route は unsupported features に含まれる。現行コードでは `dynamicParams` を明示していないため、静的 export の制約がコード上から読み取りにくい。
+### P2: 旧プロジェクト名のスキル名・説明の残存
 
-影響:
+リポジトリ名とアプリ名は `nazotype` であるため、スキル名・ディレクトリ名・説明も現行名に揃える必要があった。
 
-- 未定義タイプコードを build 後に動的生成する設計ではないことが、コード上で明確ではない
-- Next.js の将来挙動変更時に、静的 export 前提とのズレが表面化しやすい
+対応:
 
-対応案:
+- タイプ別 OGP 生成スキルのディレクトリを `skills/nazotype-type-ogp-images/` にリネームした
+- LINE スタンプ prompt 生成スキルのディレクトリを `skills/nazotype-line-stamp-prompts/` にリネームした
+- LINE スタンプ image 生成スキルのディレクトリを `skills/nazotype-line-stamp-images/` にリネームした
+- 各 `SKILL.md`、docs、例示コマンドを `nazotype-*` に更新した
+- OGP スキル内のメイン OGP 生成補助スクリプトに残っていた旧タイトル・旧タイプコードを現行データへ更新した
 
-- `app/(types)/types/[typeCode]/page.tsx` に `export const dynamicParams = false` を追加し、生成済み 16 タイプだけを扱う意図を明示する
-- 追加後に `npm run build` で static export が維持されることを確認する
+### P3: `/types/[typeCode]/` の静的生成範囲の明示
 
-### P2: タイプ別 OGP 生成スキルの publish 先がアプリ参照先と違う
+現行アプリは `output: "export"` 前提で、16 タイプの公開ページを build 時に静的生成する。
 
-現行のアプリ本体はタイプ別 OGP として `public/types/{typeCode}-ogp.png` を参照する。
+対応:
 
-一方で `skills/madamistype-type-ogp-images/` の既定 publish 先は `public/ogp/types/{typeCode}.png` である。
+- `app/(types)/types/[typeCode]/page.tsx` に `export const dynamicParams = false` を追加した
 
-影響:
+### P3: 未使用の旧 UI コンポーネント
 
-- スキルで `--publish` しても、そのままでは公開ページの OGP が更新されない
-- OGP 更新作業で、生成済み画像と配信用画像の取り違えが起こりやすい
+`components/home/home-page/featured-types-section.tsx` は現行 `HomePage` から参照されていなかった。
 
-対応案:
+対応:
 
-- スキル側の既定 publish 先を `public/types/{typeCode}-ogp.png` に合わせる
-- もしくは publish 後の反映手順をスクリプト化する
+- 未使用コンポーネントを削除した
 
-### P3: 旧プロジェクト名 `madamistype-*` のスキル名が残っている
-
-リポジトリ名とアプリ名は `nazotype` だが、次のスキルは旧名のまま残っている。
-
-- `skills/madamistype-type-ogp-images/`
-- `skills/madamistype-line-stamp-prompts/`
-- `skills/madamistype-line-stamp-images/`
-
-影響:
-
-- 新規作業者が、謎解きタイプ診断向けの現行スキルか判断しにくい
-- docs とディレクトリ名の対応は保たれているが、命名上のノイズになっている
-
-対応案:
-
-- 実行スクリプトや docs の参照更新を含めて `nazotype-*` へリネームする
-- リネームまでは、各仕様書に「現行名」として明記する運用を続ける
-
-### P3: 未使用の旧 UI コンポーネントが残っている
-
-`components/home/home-page/featured-types-section.tsx` は現行の `HomePage` から参照されていない。
-
-現行トップページの 16 タイプ一覧は `AllTypesSection` と `TypeOgpLinkCard` で表示している。
-
-影響:
-
-- 旧デザインのクラス名や構造が残り、UI 変更時の調査対象が増える
-- 実際に表示されるセクションと、残存コンポーネントの責務が紛らわしい
-
-対応案:
-
-- 再利用予定がなければ削除する
-- 残す場合は、将来用であることをコメントまたは docs に明記する
-
-## 3. 現時点で問題なしと確認した点
+## 4. 現時点で問題なしと確認した点
 
 - 質問マスタは 32 問、4 ページ、各ページ 8 問、各軸 8 問で整合している
 - 16 タイプ JSON はすべて存在し、対応する通常画像、チビ画像、OGP 画像も `public/types/` に揃っている
 - 共有キーは回答全文を持たず、ユーザー名と 4 軸 trend state だけを保持する
 - 共有キー復元時は、復元された `typeCode` と URL の `typeCode` が一致しない場合に結果表示しない
 - `/secret/` は sitemap に含まれず、metadata で `noindex, nofollow, noarchive` を指定している
+
+## 5. 検証環境の注意
+
+WSL 側 Node.js v22.16.0 から `/mnt/c` 上の本リポジトリで確認した場合、`npm run build` は `Bus error (core dumped)` で落ち、`npm run lint` は長時間終了しなかった。
+
+同じ作業ツリーを Windows 側 Node.js v22.16.0 / npm 10.9.2 で実行すると、`npm run build` と `npm run lint` は成功する。そのため、現時点ではコード差分ではなくローカル実行環境依存の問題として扱う。

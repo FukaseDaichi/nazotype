@@ -18,7 +18,7 @@ from ogp_prompt_builder import build_candidate_prompts, find_reference_chibi, lo
 from write_manifest import copy_file, now_iso, read_json, write_json, write_text
 
 
-SKILL_NAME = "madamistype-type-ogp-images"
+SKILL_NAME = "nazotype-type-ogp-images"
 DEFAULT_REFERENCE_URL_BASE = "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types"
 
 
@@ -59,19 +59,19 @@ def parse_args() -> argparse.Namespace:
     repo_root = repo_root_from_script()
     load_env_file(repo_root / ".env.character-images")
 
-    parser = argparse.ArgumentParser(description="Batch-generate Madamistype type OGP images with fal.ai.")
+    parser = argparse.ArgumentParser(description="Batch-generate Nazotype type OGP images with fal.ai.")
     parser.add_argument("--all", action="store_true", help="Generate OGP assets for every type JSON.")
     parser.add_argument("--types", help="Comma-separated list of type codes to process.")
     parser.add_argument("--retry-failed", action="store_true", help="Retry failed type codes from the previous batch report.")
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing intermediate artifacts.")
     parser.add_argument("--output-dir", help="Override working output directory.")
-    parser.add_argument("--publish-dir", help="Override final publish directory.")
+    parser.add_argument("--publish-dir", help="Override final publish directory. Defaults to public/types.")
     parser.add_argument("--publish", action="store_true", help="Copy final OGPs to the publish directory.")
     parser.add_argument("--candidates", type=int, default=1, help="Number of prompt candidates per type. Default: 1")
     parser.add_argument("--aspect-ratio", default="16:9", help="fal.ai aspect_ratio. Default: 16:9")
     parser.add_argument("--resolution", default="2K", help="fal.ai resolution. Default: 2K")
     parser.add_argument("--poll-interval", type=int, default=8, help="Polling interval in seconds. Default: 8")
-    parser.add_argument("--select", help="Manual candidate overrides such as OFEI:2,TRLP:4")
+    parser.add_argument("--select", help="Manual candidate overrides such as ALHN:2,DBTC:4")
     parser.add_argument("--brand-label", default="謎解きタイプ診断", help="Small brand label added at the bottom-right of the final OGP.")
     parser.add_argument(
         "--reference-url-base",
@@ -403,7 +403,7 @@ def process_type(
 
     published_path: str | None = None
     if args.publish:
-        publish_target = publish_dir / f"{type_code}.png"
+        publish_target = publish_dir / f"{type_code}-ogp.png"
         copy_file(final_ogp_path, publish_target)
         published_path = str(publish_target)
 
@@ -434,7 +434,7 @@ def main() -> int:
     args = parse_args()
     repo_root = repo_root_from_script()
     output_dir = Path(args.output_dir).resolve() if args.output_dir else repo_root / "output" / "type-ogp"
-    publish_dir = Path(args.publish_dir).resolve() if args.publish_dir else repo_root / "public" / "ogp" / "types"
+    publish_dir = Path(args.publish_dir).resolve() if args.publish_dir else repo_root / "public" / "types"
     types_dir = repo_root / "data" / "types"
 
     discovered = discover_type_files(types_dir)

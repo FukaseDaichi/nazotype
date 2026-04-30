@@ -25,7 +25,7 @@ from line_stamp_compositor import compose_line_stamp
 from line_stamp_validator import validate_line_stamp_image
 
 
-SKILL_NAME = "madamistype-line-stamp-images"
+SKILL_NAME = "nazotype-line-stamp-images"
 DEFAULT_REFERENCE_URL_BASE = "https://raw.githubusercontent.com/FukaseDaichi/nazotype/refs/heads/main/public/types"
 
 
@@ -97,7 +97,7 @@ def read_json(path: Path) -> dict[str, Any]:
 def parse_args() -> argparse.Namespace:
     load_env_file(REPO_ROOT / ".env.character-images")
 
-    parser = argparse.ArgumentParser(description="Generate Madamistype LINE sticker PNGs from prompt manifests.")
+    parser = argparse.ArgumentParser(description="Generate Nazotype LINE sticker PNGs from prompt manifests.")
     parser.add_argument("--all", action="store_true", help="Process every manifest under output/line-stamp-prompts.")
     parser.add_argument("--set-ids", help="Comma-separated set ids to process.")
     parser.add_argument("--manifest", help="Explicit manifest.json path.")

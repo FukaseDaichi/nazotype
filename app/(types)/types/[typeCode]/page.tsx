@@ -20,6 +20,8 @@ type PageProps = {
   params: Promise<{ typeCode: string }>;
 };
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const typeCodes = await getAllTypeCodes();
   return typeCodes.map((typeCode) => ({ typeCode }));

@@ -159,7 +159,7 @@ def _load_font(size: int) -> Any:
 def build_prompt(variant: Variant) -> str:
     return textwrap.dedent(
         f"""
-        Create a premium anime-style key visual for the website "Madamis Type", a murder mystery play-style diagnosis service.
+        Create a premium anime-style key visual for the website "Nazotype", a puzzle-solving type diagnosis service.
         Use the four reference characters only as visual inspiration for a representative ensemble cast.
         Preserve the feeling of four distinct mystery-archetype characters with different silhouettes, outfits, and palettes inspired by the references.
         Show exactly four characters total in one coherent scene.
@@ -184,7 +184,7 @@ def build_prompt(variant: Variant) -> str:
         keep the image thumbnail-readable and not cluttered.
 
         Title requirements:
-        render the exact Japanese title "マダミスタイプ診断" exactly once,
+        render the exact Japanese title "謎解きタイプ診断" exactly once,
         make it very large, iconic, stylish, and highly legible,
         {variant.title_style},
         the title should feel like a premium Japanese mystery movie logo,
@@ -211,7 +211,7 @@ def build_prompt(variant: Variant) -> str:
         thumbnail-readable.
 
         Strict constraints:
-        no extra text beyond the exact title "マダミスタイプ診断",
+        no extra text beyond the exact title "謎解きタイプ診断",
         no logo,
         no watermark,
         no UI,

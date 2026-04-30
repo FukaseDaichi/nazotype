@@ -242,7 +242,7 @@ Route Group `(marketing)`, `(diagnosis)`, `(special)`, `(types)` は URL に出�
 
 - ちびキャラ基準画像スキルの公開用正本は `public/types/{typeCode}_chibi.png`
 - タイプ別 OGP スキルは `output/type-ogp/` に作業出力する
-- タイプ別 OGP スキルの既定 publish 先は `public/ogp/types/`
+- タイプ別 OGP スキルの既定 publish 先は `public/types/{typeCode}-ogp.png`
 - LINE スタンプ系スキルは `output/line-stamp-prompts/` と `output/line-stamp-images/` を使う
 - LINE スタンプ右下ポップ導線の表示画像は `public/line-stamp-main.png`
 
@@ -250,7 +250,7 @@ Route Group `(marketing)`, `(diagnosis)`, `(special)`, `(types)` は URL に出�
 
 - アプリ本体のタイプ別 OGP 参照先は `public/types/{typeCode}-ogp.png`
 - 隠し結果の OGP 参照先は `public/types/TWLT-ogp.png`
-- OGP スキルの既定 publish 先は、そのままではアプリ本体に接続されていない
+- OGP スキルで `--publish` したタイプ別画像は、アプリ本体の参照先へ直接反映される
 
 ## 10. 現行実装に含まれないもの
 
@@ -270,11 +270,11 @@ Route Group `(marketing)`, `(diagnosis)`, `(special)`, `(types)` は URL に出�
 - `npm run dev`: 開発サーバー
 - `npm run build`: `output: "export"` による静的 export
 - `npm run lint`: ESLint
-- `npm run start`: 定義はあるが、現行構成では使用不可
+- `npm run start`: `scripts/serve-static.mjs` で `out/` を静的ファイルサーバー配信する
+- `npm run preview`: build 後に `out/` を静的配信する
 
 注意:
 
 - `npm run build` は `out/` を生成する
-- `npm run start` は `next start` を実行するが、Next.js 16.2.1 では `output: "export"` と併用できない
-- build 済み成果物をローカル確認する場合は、`out/` を静的ファイルサーバーで配信する
+- build 済み成果物をローカル確認する場合は、`npm run start` で `out/` を静的ファイルサーバー配信する
 - 詳細な課題は [current-issues.md](./current-issues.md) を参照する

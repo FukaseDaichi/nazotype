@@ -44,7 +44,7 @@ output/line-stamp-images/
 ```text
 output/line-stamp-images/
   batch-report.json
-  ofei-daily-replies/
+  altc-iku-trial/
     validation-report.json
     main/
       prompt.txt
