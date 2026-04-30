@@ -1,13 +1,13 @@
 # Netlify デプロイメモ
 
-この文書は、`/Users/fukasedaichi/git/nazotype` の現行実装を Netlify に載せるときの前提と注意点をまとめたものです。2026-04-24 時点でローカル `npm run build` が成功し、静的 export が成立することを確認済みです。
+この文書は、リポジトリ root の現行実装を Netlify に載せるときの前提と注意点をまとめたものです。2026-04-30 時点でローカル `npm run build` が成功し、静的 export が成立することを確認済みです。
 
 ## 現行実装の前提
 
 - Next.js は `16.2.1`。
 - `next.config.ts` は `output: "export"`、`trailingSlash: true`、`images.unoptimized = true`。
 - そのため、このアプリは現状「サーバー付き Next.js」ではなく「静的 export を配る構成」です。
-- 実際の build では `/`、`/diagnosis/`、`/secret/`、`/types/[typeCode]/`、`/robots.txt`、`/sitemap.xml`、`/manifest.webmanifest` が静的生成されます。
+- 実際の build では `/`、`/_not-found`、`/diagnosis/`、`/secret/`、`/types/[typeCode]/`、`/robots.txt`、`/sitemap.xml`、`/manifest.webmanifest`、`/apple-icon.png` が静的生成されます。
 
 参照:
 
@@ -34,13 +34,29 @@
 - ただしこのリポジトリは `output: "export"` を使っており、デプロイ対象の HTML/CSS/JS 一式は `out/` に出ます。
 - そのため、Netlify 側で自動検出値が入っても `publish = "out"` に合わせて確認するのが安全です。
 
-`netlify.toml` を置くなら最小構成は次の形です。
+現行の `netlify.toml` は次の方針で管理する。
 
 ```toml
 [build]
-  command = "npm run build"
   publish = "out"
+  command = "NEXT_PUBLIC_SITE_URL=\"${NEXT_PUBLIC_SITE_URL:-$URL}\" npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[context.deploy-preview]
+  command = "NEXT_PUBLIC_SITE_URL=\"${NEXT_PUBLIC_SITE_URL:-$DEPLOY_PRIME_URL}\" npm run build"
+
+[context.branch-deploy]
+  command = "NEXT_PUBLIC_SITE_URL=\"${NEXT_PUBLIC_SITE_URL:-$DEPLOY_PRIME_URL}\" npm run build"
 ```
+
+意図:
+
+- production では `NEXT_PUBLIC_SITE_URL` 未設定時に Netlify の `$URL` を使う
+- Deploy Preview / Branch Deploy では `$DEPLOY_PRIME_URL` を使い、metadata、sitemap、OGP の絶対 URL を preview origin に寄せる
+- publish directory は常に `out`
+- Node.js は Netlify 側で 20 系へ固定する
 
 ## 環境変数
 
@@ -145,11 +161,18 @@ Netlify 自体は Next.js の SSR / ISR / Middleware / Server Actions をサポ�
 - [`../lib/draft-storage.ts`](../lib/draft-storage.ts)
 - [`../lib/post-diagnosis-result.ts`](../lib/post-diagnosis-result.ts)
 
-### 6. Node.js バージョンを固定したほうが安全
+### 6. Node.js バージョン
 
 - `next@16.2.1` の engine は `>=20.9.0` です。
-- このリポジトリには `.nvmrc` や `.node-version` がないため、Netlify 側の Node.js 解釈に任せきりにしないほうが安心です。
-- Netlify UI、`NODE_VERSION`、または version file のいずれかで 20 系以上に揃えておくと事故が減ります。
+- 現行の `netlify.toml` では `NODE_VERSION = "20"` を指定しています。
+- `.nvmrc` や `.node-version` は置いていないため、Netlify では `netlify.toml` の指定を正本とします。
+
+### 7. `npm run start` は使わない
+
+- `package.json` には `start: "next start"` が残っています。
+- ただし `output: "export"` 構成では Next.js 16.2.1 の `next start` は失敗します。
+- build 済み成果物を確認する場合は、`npm run build` 後に `out/` を静的ファイルサーバーで配信します。
+- Netlify 本番運用でも `.next` を起動せず、`out/` を publish directory として配信します。
 
 ## デプロイ前チェックリスト
 
@@ -162,6 +185,7 @@ Netlify 自体は Next.js の SSR / ISR / Middleware / Server Actions をサポ�
 - `public/types/` の画像と OGP が最新になっている。
 - Netlify の publish directory が `out` になっている。
 - Pretty URLs を不用意に無効化していない。
+- `npm run start` ではなく、`out/` の静的配信で確認している。
 
 ## 参考資料
 

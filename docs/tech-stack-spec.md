@@ -57,7 +57,7 @@ Route Group `(marketing)`, `(diagnosis)`, `(special)`, `(types)` は URL に出�
 
 | ルート | 実装方式 | 備考 |
 | --- | --- | --- |
-| `/` | SSG | `getAllTypes()` と `getQuestionMaster()` を取得 |
+| `/` | SSG | `getAllTypes()` で 16 タイプ一覧を取得 |
 | `/diagnosis` | SSG + Client Component | 本文は `DiagnosisFlow` |
 | `/secret/` | SSG + Client 補助表示 | 隠し特別結果ページ、`noindex, nofollow, noarchive` |
 | `/types/[typeCode]/` | SSG + Client 補助表示 | `generateStaticParams()` で 16 タイプを生成 |
@@ -99,6 +99,8 @@ Route Group `(marketing)`, `(diagnosis)`, `(special)`, `(types)` は URL に出�
 ### 5.2 画像有無判定
 
 `TypeArtwork` は `hasTypeImage()` を使い、配信用画像がなければプレースホルダーへフォールバックする。
+
+`hasChibiImage()` は `/types/[typeCode]/` の page 側で呼び、チビ画像が存在するタイプだけヒーローに補助表示する。
 
 ## 6. メタデータ / SEO
 
@@ -260,3 +262,19 @@ Route Group `(marketing)`, `(diagnosis)`, `(special)`, `(types)` は URL に出�
 - React Hook Form / Zod
 - Zustand / Redux などの状態管理ライブラリ
 - サーバーサイドの回答保持や cookie ベースの結果管理
+
+## 11. 検証コマンドと注意点
+
+現行の主な npm scripts:
+
+- `npm run dev`: 開発サーバー
+- `npm run build`: `output: "export"` による静的 export
+- `npm run lint`: ESLint
+- `npm run start`: 定義はあるが、現行構成では使用不可
+
+注意:
+
+- `npm run build` は `out/` を生成する
+- `npm run start` は `next start` を実行するが、Next.js 16.2.1 では `output: "export"` と併用できない
+- build 済み成果物をローカル確認する場合は、`out/` を静的ファイルサーバーで配信する
+- 詳細な課題は [current-issues.md](./current-issues.md) を参照する

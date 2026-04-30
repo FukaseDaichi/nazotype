@@ -214,7 +214,8 @@ negativePercent = 100 - positivePercent
 補足:
 
 - `s` がない場合でも、同じ `typeCode` の直近診断結果が `localStorage` にあれば復元を試みる
-- 現行コードでは share key の resolved code と URL の `typeCode` の整合性検証は行っていない
+- 共有キーから復元した 4 軸の `resolvedCode` を連結し、URL の `typeCode` と一致しない場合は結果表示を出さない
+- 共有キーが壊れている、Base64URL として復号できない、trend state が範囲外、または名前長が上限を超える場合は復元失敗として扱う
 
 ## 12. 実装ファイル
 
