@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "謎解きタイプ診断 質問マスタ",
-    "version": "2026-04-07",
+    "version": "2026-05-02",
     "questionCount": 32,
     "pageCount": 4,
     "questionsPerPage": 8,
@@ -10,7 +10,7 @@
   "questions": [
     {
       "questionId": "Q001",
-      "questionText": "待ち合わせに早く着いたら、周りをぶらぶら探検してしまう。",
+      "questionText": "ゲーム開始直後は、配布物を読むより先にテーブル上の小物や掲示物をひと通り確かめたくなる。",
       "axis": "A1",
       "direction": "forward",
       "displayOrder": 1,
@@ -21,7 +21,7 @@
     },
     {
       "questionId": "Q002",
-      "questionText": "気になることがあると、周りが見えなくなるくらい没頭する方だ。",
+      "questionText": "一度ひっかかった小謎は、周りが進んでいても自分の手元で最後まで追いたくなる。",
       "axis": "A2",
       "direction": "forward",
       "displayOrder": 2,
@@ -32,7 +32,7 @@
     },
     {
       "questionId": "Q003",
-      "questionText": "面白いものを見つけたら、すぐ誰かに「見てこれ！」と言いたくなる。",
+      "questionText": "変な記号や気になる違和感を見つけたら、確信がなくてもすぐチームに声を出す。",
       "axis": "A3",
       "direction": "forward",
       "displayOrder": 3,
@@ -43,7 +43,7 @@
     },
     {
       "questionId": "Q004",
-      "questionText": "複雑な問題ほど、自力でなんとかしたくなる。",
+      "questionText": "詰まった謎ほど、ヒントを見る前にもう一段だけ粘って考えたい。",
       "axis": "A4",
       "direction": "forward",
       "displayOrder": 4,
@@ -54,7 +54,7 @@
     },
     {
       "questionId": "Q005",
-      "questionText": "新しい家電を買ったら、触る前にまず説明書をひと通り読む方だ。",
+      "questionText": "ゲームが始まったら、まずルール用紙や注意書きを最後まで読んでから動きたい。",
       "axis": "A1",
       "direction": "reverse",
       "displayOrder": 5,
@@ -65,7 +65,7 @@
     },
     {
       "questionId": "Q006",
-      "questionText": "部屋を探索するとき、まず初めにどういう順番で探索するかのルートを決めたい。",
+      "questionText": "序盤は、目の前の謎を解く前に配布物全体を広げて、何があるか把握したい。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 6,
@@ -76,7 +76,7 @@
     },
     {
       "questionId": "Q007",
-      "questionText": "グループの話し合いがまとまらないと、つい整理役を買って出る。",
+      "questionText": "チーム内の発言が増えてきたら、一度「今わかっていること」をまとめたくなる。",
       "axis": "A3",
       "direction": "reverse",
       "displayOrder": 7,
@@ -87,7 +87,7 @@
     },
     {
       "questionId": "Q008",
-      "questionText": "行きたかったお店が混んでいたら、すぐ別のお店を探せる。",
+      "questionText": "同じ謎で手が止まったら、別の紙や別の手がかりへすぐ切り替えられる。",
       "axis": "A4",
       "direction": "reverse",
       "displayOrder": 8,
@@ -98,7 +98,7 @@
     },
     {
       "questionId": "Q009",
-      "questionText": "コンビニの新商品は、レビューを見るより先に買ってみるタイプだ。",
+      "questionText": "会場内で触れそうな装置や封筒が出てきたら、まず自分で試して反応を見たい。",
       "axis": "A1",
       "direction": "forward",
       "displayOrder": 9,
@@ -109,7 +109,7 @@
     },
     {
       "questionId": "Q010",
-      "questionText": "買い物では、比較するより「これ！」と決めたものを徹底的に調べる。",
+      "questionText": "気になる模様や数字列を見つけると、その紙の余白や裏面まで細かく調べ込む。",
       "axis": "A2",
       "direction": "forward",
       "displayOrder": 10,
@@ -120,7 +120,7 @@
     },
     {
       "questionId": "Q011",
-      "questionText": "考えがまとまっていなくても、とりあえず口に出すことが多い。",
+      "questionText": "「たぶん関係ないかも」と思う発見でも、黙って持つより先に共有する。",
       "axis": "A3",
       "direction": "forward",
       "displayOrder": 11,
@@ -131,7 +131,7 @@
     },
     {
       "questionId": "Q012",
-      "questionText": "難しい問題ほど燃える。簡単に片づくと物足りない。",
+      "questionText": "大謎で筋の通らない部分があると、時間が迫っていても納得できる解釈を探したくなる。",
       "axis": "A4",
       "direction": "forward",
       "displayOrder": 12,
@@ -142,7 +142,7 @@
     },
     {
       "questionId": "Q013",
-      "questionText": "料理はとりあえず作り始めるより、レシピを確認してから動きたい。",
+      "questionText": "新しいキットを受け取ったら、折る・切る・重ねる前に説明文をしっかり確認したい。",
       "axis": "A1",
       "direction": "reverse",
       "displayOrder": 13,
@@ -153,7 +153,7 @@
     },
     {
       "questionId": "Q014",
-      "questionText": "作業中でも、周りの人がどこまで進んでいるかが気になる。",
+      "questionText": "自分が解いている途中でも、他の人の小謎がどこまで進んでいるかを気にしている。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 14,
@@ -164,7 +164,7 @@
     },
     {
       "questionId": "Q015",
-      "questionText": "飲み会やイベントの幹事は、頼まれなくても引き受ける方だ。",
+      "questionText": "残り時間が少なくなると、誰が何を担当するかを自然に振り分けたくなる。",
       "axis": "A3",
       "direction": "reverse",
       "displayOrder": 15,
@@ -175,7 +175,7 @@
     },
     {
       "questionId": "Q016",
-      "questionText": "やり方が合わないと感じたら、途中でもすぐ別の方法に切り替える。",
+      "questionText": "仮説がしっくり来なければ、途中まで進めた解き方でもすぐ捨てられる。",
       "axis": "A4",
       "direction": "reverse",
       "displayOrder": 16,
@@ -186,7 +186,7 @@
     },
     {
       "questionId": "Q017",
-      "questionText": "気になるお店は、口コミを調べるより実際に行ってみたい方だ。",
+      "questionText": "追加の封筒や次の指示が出たら、真っ先に取りに行ったり開いたりする役になりがちだ。",
       "axis": "A1",
       "direction": "forward",
       "displayOrder": 17,
@@ -197,7 +197,7 @@
     },
     {
       "questionId": "Q018",
-      "questionText": "映画を見ているとき、小道具や背景の細かい部分に気づく方だ。",
+      "questionText": "司会映像やナレーション中でも、背景の文字や一瞬映った図形が気になってしまう。",
       "axis": "A2",
       "direction": "forward",
       "displayOrder": 18,
@@ -208,7 +208,7 @@
     },
     {
       "questionId": "Q019",
-      "questionText": "写真を撮ったら、すぐ誰かに送りたくなるタイプだ。",
+      "questionText": "ひらめいた瞬間は、答えの形がまだ粗くても「これかも！」と口に出す。",
       "axis": "A3",
       "direction": "forward",
       "displayOrder": 19,
@@ -219,7 +219,7 @@
     },
     {
       "questionId": "Q020",
-      "questionText": "途中まで読んだ本は、つまらなくなっても最後まで読み切りたい。",
+      "questionText": "一つの謎を担当したら、他の人に渡す前に自分で決着をつけたくなる。",
       "axis": "A4",
       "direction": "forward",
       "displayOrder": 20,
@@ -230,7 +230,7 @@
     },
     {
       "questionId": "Q021",
-      "questionText": "情報がそろうまでは、動き回るよりその場でじっくり考えたい。",
+      "questionText": "会場を動き回る前に、手元の資料から読めることをできるだけ読み切りたい。",
       "axis": "A1",
       "direction": "reverse",
       "displayOrder": 21,
@@ -241,7 +241,7 @@
     },
     {
       "questionId": "Q022",
-      "questionText": "何かを始める前に、ゴールから逆算して段取りを考える方だ。",
+      "questionText": "中盤以降は、未使用の情報・解けた答え・残りの封筒を並べて全体像を見直したい。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 22,
@@ -252,7 +252,7 @@
     },
     {
       "questionId": "Q023",
-      "questionText": "複数人で何かを決めるとき、選択肢を絞る役になりがちだ。",
+      "questionText": "意見がいくつも出たときは、候補を絞って「次に試すこと」を決める役になりがちだ。",
       "axis": "A3",
       "direction": "reverse",
       "displayOrder": 23,
@@ -263,7 +263,7 @@
     },
     {
       "questionId": "Q024",
-      "questionText": "同じ作業を長く続けるより、いろいろ切り替えながら進める方が集中できる。",
+      "questionText": "同じ考え方で詰まったら、別の人に渡す・別の謎を見るなど場を動かした方が進むと思う。",
       "axis": "A4",
       "direction": "reverse",
       "displayOrder": 24,
@@ -274,7 +274,7 @@
     },
     {
       "questionId": "Q025",
-      "questionText": "家で何かを探すとき、考えるより先に片っ端から引き出しを開ける。",
+      "questionText": "探索パートでは、考える前に未確認の場所やアイテムを片っ端から見に行く。",
       "axis": "A1",
       "direction": "forward",
       "displayOrder": 25,
@@ -285,7 +285,7 @@
     },
     {
       "questionId": "Q026",
-      "questionText": "推理ものは、全体のストーリーより個々のトリックの仕掛けが好きだ。",
+      "questionText": "全体の物語より、目の前の暗号やパズルの仕組みがきれいにハマる瞬間が好きだ。",
       "axis": "A2",
       "direction": "forward",
       "displayOrder": 26,
@@ -296,7 +296,7 @@
     },
     {
       "questionId": "Q027",
-      "questionText": "思いついたことは、まとめる前にまず誰かに話してみたい。",
+      "questionText": "他の人が解いている紙でも、横から思いついたことがあればすぐ口に出したい。",
       "axis": "A3",
       "direction": "forward",
       "displayOrder": 27,
@@ -307,7 +307,7 @@
     },
     {
       "questionId": "Q028",
-      "questionText": "迷ったときは、直感より納得いくまで考えてから決めたい。",
+      "questionText": "最終解答を提出する前は、直感で行けそうでも根拠を一つずつ確認したい。",
       "axis": "A4",
       "direction": "forward",
       "displayOrder": 28,
@@ -318,7 +318,7 @@
     },
     {
       "questionId": "Q029",
-      "questionText": "何かを学ぶとき、体験するより先に本やネットで調べるタイプだ。",
+      "questionText": "新しいギミックに出会ったら、触って試すより先に仕組みや条件を読み解きたい。",
       "axis": "A1",
       "direction": "reverse",
       "displayOrder": 29,
@@ -329,7 +329,7 @@
     },
     {
       "questionId": "Q030",
-      "questionText": "散らかった部屋は、目についた所からではなく全体を見渡してから片づける。",
+      "questionText": "終盤は、個別の謎よりも「何が未使用で、何が最後に必要か」を俯瞰して考える。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 30,
@@ -340,7 +340,7 @@
     },
     {
       "questionId": "Q031",
-      "questionText": "グループLINEで話がバラけると、要点をまとめたくなる。",
+      "questionText": "机の上が紙やメモで散らかってきたら、解けたもの・未解決のものを整理したくなる。",
       "axis": "A3",
       "direction": "reverse",
       "displayOrder": 31,
@@ -351,7 +351,7 @@
     },
     {
       "questionId": "Q032",
-      "questionText": "勉強や仕事で煮詰まったら、粘るより先に気分転換する方だ。",
+      "questionText": "残り時間を考えると、粘るよりヒントを見る・担当を替える判断も早めにしたい。",
       "axis": "A4",
       "direction": "reverse",
       "displayOrder": 32,
