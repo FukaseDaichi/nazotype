@@ -10,6 +10,7 @@
 - [diagnosis-logic-spec.md](./diagnosis-logic-spec.md)
 - [character-image-skill-spec.md](./character-image-skill-spec.md)
 - [type-ogp-image-spec.md](./type-ogp-image-spec.md)
+- [line-stamp-clock-interaction-spec.md](./line-stamp-clock-interaction-spec.md)
 
 ## 2. タイプコード規則
 
@@ -36,7 +37,7 @@
 | `typeName` | `string` | 表示名 |
 | `furigana` | `string` | `typeName` の読み仮名 |
 | `furiganaLength` | `number` | 読み仮名の文字数 |
-| `furiganaEmphasisIndex` | `number` | 強調位置。1 始まり |
+| `furiganaEmphasisIndex` | `number` | ふりがなの強調位置。1 始まり。LINE スタンプ時計演出では同じ値を時計盤の時刻番号として使う |
 | `tagline` | `string` | ヒーローで使う短いコピー |
 | `summary` | `string` | 一段落の概要説明 |
 | `detailDescription` | `string` | 詳細説明本文 |
@@ -151,6 +152,8 @@
 - `axis`
 
 `/types/[typeCode]/?s={shareKey}` では上記に加えて、共有キーから復元した 4 軸サマリを組み合わせて結果表示を行う。
+
+LINE スタンプ右下ポップ導線の時計ドラッグ連動演出では、`furiganaEmphasisIndex` を 1 から 12 の時計位置として扱う。ドラッグ中の長針がこの値と同じ時刻を指した場合だけ、タイプ詳細ページでは該当ふりがな文字を光らせ、トップページでは該当タイプカードをきらりと光らせる。
 
 ## 9. 共有文面との対応
 

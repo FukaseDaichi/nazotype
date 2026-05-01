@@ -9,6 +9,7 @@
 - [specification.md](./specification.md)
 - [diagnosis-logic-spec.md](./diagnosis-logic-spec.md)
 - [frontend-directory-structure-spec.md](./frontend-directory-structure-spec.md)
+- [line-stamp-clock-interaction-spec.md](./line-stamp-clock-interaction-spec.md)
 - [survey-result-statistics-architecture.md](./survey-result-statistics-architecture.md)
 
 ## 2. 使用技術
@@ -178,12 +179,13 @@ Route Group `(marketing)`, `(diagnosis)`, `(special)`, `(types)` は URL に出�
 
 ### 7.4 LINE スタンプ導線
 
-`components/layout/line-stamp-floating-promo/line-stamp-floating-promo-client.tsx` と `lib/line-stamp-store-visit.ts` が `localStorage` を扱う。
+`components/layout/line-stamp-floating-promo/line-stamp-floating-promo-client.tsx` が導線の開閉状態を `localStorage` で扱う。
 
 - 導線の開閉状態キー: `nazotype:line-stamp-promo:v2`
-- LINE STORE 訪問済みキー: `nazotype:line-stamp-store-visited:v1`
-- 訪問済み通知イベント: `nazotype:line-stamp-store-visited`
-- 訪問済み状態はタイプページのふりがな強調表示へ反映する
+- 時計ドラッグ操作状態は `localStorage` に保存しない
+- 時計ドラッグ操作状態は同一ページ内の一時 UI 状態として扱う
+- 推奨通知イベント: `nazotype:line-stamp-clock-interaction`
+- 時計ドラッグ中かつ時刻一致時だけ、タイプページのふりがな強調とトップページのタイプカード発光へ反映する
 
 ## 8. 環境変数
 

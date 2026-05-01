@@ -15,6 +15,7 @@
 - [type-ogp-image-spec.md](./type-ogp-image-spec.md)
 - [line-stamp-skill-spec.md](./line-stamp-skill-spec.md)
 - [line-stamp-promo-component-design.md](./line-stamp-promo-component-design.md)
+- [line-stamp-clock-interaction-spec.md](./line-stamp-clock-interaction-spec.md)
 - [twilight-secret-result-spec.md](./twilight-secret-result-spec.md)
 - [survey-result-statistics-architecture.md](./survey-result-statistics-architecture.md)
 - [current-issues.md](./current-issues.md)
@@ -95,7 +96,7 @@
 6. 通常診断時は `/types/[typeCode]/?s={shareKey}` に遷移する
 7. タイプページ内で共有キーを復元し、4 軸サマリ付きの結果表示を出す
 8. SNS 共有は公開タイプページ URL を使い、結果 URL はコピー導線で扱う
-9. LINE スタンプ導線から外部 LINE STORE を開いた場合、訪問済み状態を `localStorage` に保存し、タイプ名ふりがなの強調表示に反映する
+9. LINE スタンプ導線の時計をドラッグし、長針が `furiganaEmphasisIndex` と同じ時刻を指した場合、表示中ページに応じた一時演出を出す
 
 ## 6. 画面仕様
 
@@ -110,6 +111,8 @@
 - 診断の流れ
 - LINE スタンプ右下ポップ導線
 - JSON-LD `WebSite`
+
+LINE スタンプ右下ポップ導線の時計をドラッグ中に、長針が各タイプの `furiganaEmphasisIndex` と同じ時刻を指した場合、16 タイプ一覧の該当カードを一時的にきらりと光らせる。時計の自動回転や LINE STORE 遷移だけではこの演出を出さない。
 
 開始フォームの仕様:
 
@@ -153,7 +156,7 @@
 - LINE スタンプ右下ポップ導線
 - JSON-LD `WebPage`
 
-LINE スタンプ導線の `LINE STOREで見る` を一度クリックしたブラウザでは、各タイプページの `furiganaEmphasisIndex` 位置のふりがな強調色を LINE STORE 訪問済み状態として切り替える。
+LINE スタンプ右下ポップ導線の時計をドラッグ中に、長針が表示中タイプの `furiganaEmphasisIndex` と同じ時刻を指した場合、その位置のふりがなを一時的に光らせる。LINE STORE 遷移済み状態や時計の自動回転だけでは、ふりがな強調を発火させない。
 
 共有キーや直近結果がない公開タイプページでは、シェアパネルは表示しない。
 
@@ -277,8 +280,8 @@ LINE スタンプ導線の `LINE STOREで見る` を一度クリックしたブ�
 - 直近診断結果は `nazotype:post-diagnosis-result`
 - 隠し結果の一時共有フラグは `nazotype:secret-share-entry`
 - LINE スタンプ導線の開閉状態は `nazotype:line-stamp-promo:v2`
-- LINE STORE 訪問済み状態は `nazotype:line-stamp-store-visited:v1`
-- いずれも `localStorage` のみを使う
+- LINE スタンプ時計操作状態は一時 UI 状態として扱い、`localStorage` へ保存しない
+- 永続保存するブラウザ状態はいずれも `localStorage` のみを使う
 
 ### 9.2 環境変数
 
@@ -317,4 +320,5 @@ LINE スタンプ導線の `LINE STOREで見る` を一度クリックしたブ�
 - タイプ別 OGP 生成スキルの既定 publish 先は、アプリ本体が参照する `public/types/{typeCode}-ogp.png` に揃えている
 - `/types` 一覧ページはない
 - LINE スタンプ右下ポップ導線は `/` と `/types/[typeCode]/` だけに表示する
+- LINE スタンプ時計ドラッグ連動演出の詳細は [line-stamp-clock-interaction-spec.md](./line-stamp-clock-interaction-spec.md) に集約する
 - 現行課題は [current-issues.md](./current-issues.md) に集約する

@@ -2,8 +2,8 @@
 
 ## 1. 文書の位置づけ
 
-本書は、現行コードに実装済みの **LINE スタンプ右下ポップ導線** を整理する文書である。
-実装前設計ではなく、`components/layout/line-stamp-floating-promo/` を正本として記述する。
+本書は、現行コードに実装済みの **LINE スタンプ右下ポップ導線** と、時計ドラッグ連動演出の変更方針を整理する文書である。
+基本構成は `components/layout/line-stamp-floating-promo/` を正本として記述し、時計ドラッグ連動演出の詳細は [line-stamp-clock-interaction-spec.md](./line-stamp-clock-interaction-spec.md) を参照する。
 
 関連文書:
 
@@ -11,6 +11,7 @@
 - [frontend-directory-structure-spec.md](./frontend-directory-structure-spec.md)
 - [tech-stack-spec.md](./tech-stack-spec.md)
 - [line-stamp-skill-spec.md](./line-stamp-skill-spec.md)
+- [line-stamp-clock-interaction-spec.md](./line-stamp-clock-interaction-spec.md)
 
 ## 2. 目的
 
@@ -21,7 +22,7 @@
 - 右下の小さな導線として存在に気づける
 - 診断開始フォームやタイプ詳細の読解を邪魔しない
 - サイト本体の主 CTA より強く出すぎない
-- LINE STORE を訪問したことを、タイプページ側の小さな演出へ反映する
+- 時計の長針をドラッグした操作を、タイプページやトップページ側の小さな演出へ反映する
 
 ## 3. 表示対象
 
@@ -42,7 +43,7 @@
 
 `app/layout.tsx` には置かず、表示対象ページの本文から明示的に差し込む。
 
-## 4. 実装ファイル
+## 4. 実装ファイルと追加予定ファイル
 
 ```text
 components/
@@ -54,6 +55,7 @@ components/
 
 lib/
   line-stamp-store-visit.ts
+  line-stamp-clock-interaction.ts
   site.ts
 
 public/
@@ -63,9 +65,10 @@ public/
 責務:
 
 - `line-stamp-floating-promo.tsx`: Server Component。リンク URL と表示文言を決める
-- `line-stamp-floating-promo-client.tsx`: Client Component。開閉、非表示、`localStorage`、CTA クリックを扱う
+- `line-stamp-floating-promo-client.tsx`: Client Component。開閉、非表示、`localStorage`、CTA クリック、時計長針の自動回転とドラッグ操作を扱う
 - `line-stamp-floating-promo.module.css`: 固定配置、カード、たたみ表示、モーション
-- `lib/line-stamp-store-visit.ts`: LINE STORE 訪問済み状態と通知イベント
+- `lib/line-stamp-store-visit.ts`: LINE STORE 訪問済み状態と通知イベント。時計ドラッグ連動演出のトリガーには使わない
+- `lib/line-stamp-clock-interaction.ts`: 時計操作の一時状態と通知イベント。実装時に追加する想定
 - `lib/site.ts`: `LINE_STAMP_URL` の正本
 
 ## 5. URL と画像
@@ -131,22 +134,27 @@ public/
 
 そのため、閉じる操作は現在のマウント中だけ有効で、再読み込みやページ遷移後には初期表示ルールへ戻る。
 
-## 8. LINE STORE 訪問済み演出
+## 8. 時計ドラッグ連動演出
 
-CTA `LINE STOREで見る` をクリックしたとき、`markLineStampStoreVisited()` を呼ぶ。
+たたみ状態の導線には 12 個の数字を持つ時計盤と長針を表示する。
 
-保存:
+長針の基本挙動:
 
-- キー: `nazotype:line-stamp-store-visited:v1`
-- 値: `1`
+- 通常時は 12 秒で 1 周する
+- `prefers-reduced-motion: reduce` では自動回転しない
+- ドラッグ中は自動回転を止める
+- ドラッグ中の角度から、最も近い時刻番号を `selectedHour` として求める
 
-通知:
+ページ側の発火条件:
 
-- イベント名: `nazotype:line-stamp-store-visited`
-- 同一タブでは custom event
-- 別タブでは `storage` event
+- `isDragging === true`
+- `selectedHour === furiganaEmphasisIndex`
 
-タイプ詳細ページでは `TypeDetailFurigana` が `useSyncExternalStore` でこの状態を購読し、`furiganaEmphasisIndex` 位置のふりがなへアクセントクラスを付ける。
+タイプ詳細ページでは、この条件を満たす間だけ `furiganaEmphasisIndex` 位置のふりがなを光らせる。
+
+トップページでは、この条件を満たす 16 タイプ一覧カードを一時的にきらりと光らせる。一致するカードが複数ある場合は同時に光ってよい。
+
+時計操作状態は一時 UI 状態であり、`localStorage` に保存しない。LINE STORE 訪問済み状態は、この演出のトリガーとして使わない。
 
 ## 9. レイアウトと操作
 
@@ -155,6 +163,7 @@ CTA `LINE STOREで見る` をクリックしたとき、`markLineStampStoreVisit
 - 画像は `next/image` で `/line-stamp-main.png` を表示する
 - 外部リンクは通常の `<a>` を使い、`target="_blank"` と `rel="noreferrer"` を付ける
 - 展開、たたむ、閉じる操作はボタンで行う
+- たたみ状態の時計盤はドラッグでき、ドラッグ操作が導線展開クリックとして扱われないようにする
 - `prefers-reduced-motion: reduce` ではモーションを抑制する
 
 ## 10. アプリ本体との関係
@@ -172,5 +181,9 @@ CTA `LINE STOREで見る` をクリックしたとき、`markLineStampStoreVisit
 - 展開 / たたむ状態が `localStorage` に保存されること
 - 閉じる操作は永続保存されないこと
 - CTA クリックで LINE STORE が別タブで開くこと
-- CTA クリック後、タイプページのふりがな強調色が切り替わること
+- たたみ状態の長針が 12 秒で 1 周すること
+- 時計をドラッグでき、ドラッグ中は自動回転が止まること
+- 時計ドラッグ中かつ時刻一致時だけ、タイプページのふりがな強調色が切り替わること
+- 時計ドラッグ中かつ時刻一致時だけ、トップページの 16 タイプ一覧カードがきらりと光ること
+- CTA クリックだけでは、ふりがな強調やタイプ一覧カードのきらり演出が発火しないこと
 - モバイルで主コンテンツを過度に覆わないこと

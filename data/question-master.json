@@ -65,7 +65,7 @@
     },
     {
       "questionId": "Q006",
-      "questionText": "旅行の計画では、細かいスポットより先に全体のルートを決めたい。",
+      "questionText": "部屋を探索するとき、まず先に探索する全体のルートを決めたい。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 6,

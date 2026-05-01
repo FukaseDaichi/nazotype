@@ -9,6 +9,7 @@
 
 - [specification.md](./specification.md)
 - [tech-stack-spec.md](./tech-stack-spec.md)
+- [line-stamp-clock-interaction-spec.md](./line-stamp-clock-interaction-spec.md)
 
 ## 2. 現行ディレクトリ構成
 
@@ -75,6 +76,7 @@ docs/
   type-ogp-image-spec.md
   line-stamp-skill-spec.md
   line-stamp-promo-component-design.md
+  line-stamp-clock-interaction-spec.md
   twilight-secret-result-spec.md
   current-issues.md
   nazo.md
@@ -164,7 +166,7 @@ out/
 - 共有キー
 - `localStorage` ラッパー
 - 隠し結果の合言葉判定
-- LINE STORE 訪問済み状態
+- LINE スタンプ導線の状態と時計ドラッグ連動演出
 - JSON-LD 生成
 
 ### 3.4 `data/`

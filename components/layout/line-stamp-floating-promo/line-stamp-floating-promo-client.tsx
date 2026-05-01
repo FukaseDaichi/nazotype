@@ -1,13 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { markLineStampStoreVisited } from "@/lib/line-stamp-store-visit";
 
 import styles from "./line-stamp-floating-promo.module.css";
 
 const PROMO_STORAGE_KEY = "nazotype:line-stamp-promo:v2";
+const ROTATION_PERIOD_MS = 12_000;
+const HOUR_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const;
 
 type PromoPreferences = {
   collapsed?: boolean;
@@ -56,6 +58,30 @@ function writePreferences(preferences: PromoPreferences) {
   }
 }
 
+function pointerToHandAngle(
+  clientX: number,
+  clientY: number,
+  center: { x: number; y: number },
+): number {
+  const dx = clientX - center.x;
+  const dy = clientY - center.y;
+  return (Math.atan2(dy, dx) * 180) / Math.PI + 90;
+}
+
+function smoothAngle(nextAngle: number, prevAngle: number): number {
+  let result = nextAngle;
+  let diff = result - prevAngle;
+  while (diff > 180) {
+    result -= 360;
+    diff -= 360;
+  }
+  while (diff < -180) {
+    result += 360;
+    diff += 360;
+  }
+  return result;
+}
+
 export function LineStampFloatingPromoClient({
   href,
   title,
@@ -64,6 +90,10 @@ export function LineStampFloatingPromoClient({
   typeCode,
 }: LineStampFloatingPromoClientProps) {
   const [mode, setMode] = useState<PromoMode | null>(null);
+  const [angle, setAngle] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const clockRef = useRef<HTMLSpanElement | null>(null);
+  const centerRef = useRef<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     const preferences = readPreferences();
@@ -76,6 +106,31 @@ export function LineStampFloatingPromoClient({
 
     return () => window.cancelAnimationFrame(frame);
   }, []);
+
+  useEffect(() => {
+    if (mode !== "expanded" || isDragging) {
+      return;
+    }
+    if (typeof window === "undefined") {
+      return;
+    }
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mq.matches) {
+      return;
+    }
+
+    let frame = 0;
+    let lastTime = performance.now();
+    const tick = (now: number) => {
+      const delta = now - lastTime;
+      lastTime = now;
+      setAngle((prev) => prev + (delta / ROTATION_PERIOD_MS) * 360);
+      frame = window.requestAnimationFrame(tick);
+    };
+    frame = window.requestAnimationFrame(tick);
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [mode, isDragging]);
 
   function handleExpand() {
     setMode("expanded");
@@ -93,6 +148,40 @@ export function LineStampFloatingPromoClient({
 
   function handleStoreCtaClick() {
     markLineStampStoreVisited();
+  }
+
+  function handleClockPointerDown(e: React.PointerEvent<HTMLSpanElement>) {
+    if (e.button !== 0) return;
+    if (!clockRef.current) return;
+    const rect = clockRef.current.getBoundingClientRect();
+    const center = {
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2,
+    };
+    centerRef.current = center;
+    setIsDragging(true);
+    const next = pointerToHandAngle(e.clientX, e.clientY, center);
+    setAngle((prev) => smoothAngle(next, prev));
+    e.currentTarget.setPointerCapture(e.pointerId);
+  }
+
+  function handleClockPointerMove(e: React.PointerEvent<HTMLSpanElement>) {
+    const center = centerRef.current;
+    if (!center) return;
+    const clientX = e.clientX;
+    const clientY = e.clientY;
+    setAngle((prev) => {
+      const next = pointerToHandAngle(clientX, clientY, center);
+      return smoothAngle(next, prev);
+    });
+  }
+
+  function handleClockPointerUp(e: React.PointerEvent<HTMLSpanElement>) {
+    setIsDragging(false);
+    centerRef.current = null;
+    if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+      e.currentTarget.releasePointerCapture(e.pointerId);
+    }
   }
 
   if (mode === null || mode === "hidden") {
@@ -233,7 +322,14 @@ export function LineStampFloatingPromoClient({
 
           <div className={styles.visual}>
             <span className={styles.visualGlow} aria-hidden="true" />
-            <span className={styles.visualRing}>
+            <span
+              ref={clockRef}
+              className={styles.visualRing}
+              onPointerDown={handleClockPointerDown}
+              onPointerMove={handleClockPointerMove}
+              onPointerUp={handleClockPointerUp}
+              onPointerCancel={handleClockPointerUp}
+            >
               <Image
                 src="/line-stamp-main.png"
                 alt=""
@@ -241,6 +337,73 @@ export function LineStampFloatingPromoClient({
                 height={108}
                 className={styles.visualImage}
               />
+              <span className={styles.visualOverlay} aria-hidden="true" />
+              <svg
+                className={styles.clockFace}
+                viewBox="0 0 100 100"
+                aria-hidden="true"
+              >
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="47"
+                  className={styles.clockBezel}
+                />
+                {HOUR_NUMBERS.map((n) => {
+                  const rad = ((n * 30 - 90) * Math.PI) / 180;
+                  const r = 40;
+                  return (
+                    <text
+                      key={n}
+                      x={50 + r * Math.cos(rad)}
+                      y={50 + r * Math.sin(rad)}
+                      textAnchor="middle"
+                      dominantBaseline="central"
+                      className={styles.clockNumber}
+                    >
+                      {n}
+                    </text>
+                  );
+                })}
+                {Array.from({ length: 60 }, (_, i) => {
+                  if (i % 5 === 0) return null;
+                  const rad = ((i * 6 - 90) * Math.PI) / 180;
+                  const inner = 45;
+                  const outer = 47;
+                  return (
+                    <line
+                      key={i}
+                      x1={50 + inner * Math.cos(rad)}
+                      y1={50 + inner * Math.sin(rad)}
+                      x2={50 + outer * Math.cos(rad)}
+                      y2={50 + outer * Math.sin(rad)}
+                      className={styles.clockTick}
+                    />
+                  );
+                })}
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="2.4"
+                  className={styles.clockPivot}
+                />
+              </svg>
+              <span
+                className={styles.clockHand}
+                style={{
+                  transform: `translate(-50%, -80%) rotate(${angle}deg)`,
+                }}
+                aria-hidden="true"
+              >
+                <Image
+                  src="/longhand.png"
+                  alt=""
+                  width={200}
+                  height={300}
+                  draggable={false}
+                  className={styles.clockHandImage}
+                />
+              </span>
             </span>
             <span className={styles.visualBadge} aria-hidden="true">
               LINE
