@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import { TypeArtwork } from "@/components/type/type-artwork/type-artwork";
 
+import { TypeDetailClockArtworkFrame } from "./type-detail-clock-artwork-frame";
 import { TypeDetailFurigana } from "./type-detail-furigana";
 import { TypeDetailHeroPrimaryAction } from "./type-detail-hero-primary-action";
 
@@ -91,7 +92,9 @@ export function TypeDetailHeroSection({
 
           <div className={styles.stage}>
             <div className={styles.artworkWrap}>
-              <div className={styles.artworkFrame}>
+              <TypeDetailClockArtworkFrame
+                activeHour={typeData.furiganaEmphasisIndex}
+              >
                 <div className={styles.cornerTl} aria-hidden="true" />
                 <div className={styles.cornerTr} aria-hidden="true" />
                 <div className={styles.cornerBl} aria-hidden="true" />
@@ -113,7 +116,7 @@ export function TypeDetailHeroSection({
                     {typeData.typeCode}
                   </span>
                 </div>
-              </div>
+              </TypeDetailClockArtworkFrame>
 
               {hasChibi ? (
                 <div className={styles.chibi} aria-hidden="true">

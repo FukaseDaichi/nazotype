@@ -190,6 +190,40 @@
     0 20px 60px -20px rgba(14, 13, 16, 0.8),
     0 0 40px -10px rgba(193, 155, 46, 0.25),
     inset 0 1px 0 rgba(245, 240, 232, 0.04);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.artworkFrame::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  z-index: 2;
+  opacity: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 42%,
+    rgba(255, 247, 203, 0.08) 48%,
+    rgba(255, 247, 203, 0.42) 50%,
+    rgba(232, 201, 106, 0.12) 54%,
+    transparent 60%
+  );
+  transform: translate3d(-22%, 0, 0) rotate(8deg);
+  pointer-events: none;
+}
+
+.artworkFrameClockActive {
+  border-color: rgba(232, 201, 106, 0.72);
+  box-shadow:
+    0 22px 62px -18px rgba(14, 13, 16, 0.82),
+    0 0 48px -8px rgba(232, 201, 106, 0.48),
+    inset 0 1px 0 rgba(245, 240, 232, 0.08);
+}
+
+.artworkFrameClockActive::before {
+  animation: artworkClockSparkle 900ms ease-out both;
 }
 
 .artworkImage {
@@ -403,6 +437,20 @@
   color: transparent;
 }
 
+@keyframes artworkClockSparkle {
+  0% {
+    opacity: 0;
+    transform: translate3d(-22%, 0, 0) rotate(8deg);
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(22%, 0, 0) rotate(8deg);
+  }
+}
+
 .sharedUser {
   display: block;
   color: var(--color-gold-300);
@@ -614,7 +662,13 @@
   .primaryCta,
   .primaryCta::before,
   .ctaArrow,
-  .secondaryCta {
+  .secondaryCta,
+  .artworkFrame {
     transition: none;
+  }
+
+  .artworkFrameClockActive::before {
+    animation: none;
+    opacity: 0;
   }
 }

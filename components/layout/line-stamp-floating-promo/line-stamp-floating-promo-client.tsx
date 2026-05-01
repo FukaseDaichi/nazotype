@@ -90,6 +90,14 @@ function smoothAngle(nextAngle: number, prevAngle: number): number {
   return result;
 }
 
+function publishClockInteraction(nextAngle: number, dragging: boolean) {
+  setLineStampClockInteractionState({
+    isDragging: dragging,
+    angleDeg: normalizeClockAngle(nextAngle),
+    selectedHour: getClockHourFromAngle(nextAngle),
+  });
+}
+
 export function LineStampFloatingPromoClient({
   href,
   title,
@@ -141,11 +149,21 @@ export function LineStampFloatingPromoClient({
         angleRef.current + (delta / ROTATION_PERIOD_MS) * 360;
       angleRef.current = nextAngle;
       setAngle(nextAngle);
+      publishClockInteraction(nextAngle, false);
       frame = window.requestAnimationFrame(tick);
     };
     frame = window.requestAnimationFrame(tick);
 
     return () => window.cancelAnimationFrame(frame);
+  }, [mode, isDragging]);
+
+  useEffect(() => {
+    if (mode === "expanded") {
+      publishClockInteraction(angleRef.current, isDragging);
+      return;
+    }
+
+    resetLineStampClockInteractionState(angleRef.current);
   }, [mode, isDragging]);
 
   useEffect(() => {
@@ -176,14 +194,6 @@ export function LineStampFloatingPromoClient({
     setAngle(nextAngle);
   }
 
-  function publishClockInteraction(nextAngle: number, dragging: boolean) {
-    setLineStampClockInteractionState({
-      isDragging: dragging,
-      angleDeg: normalizeClockAngle(nextAngle),
-      selectedHour: dragging ? getClockHourFromAngle(nextAngle) : null,
-    });
-  }
-
   function updateClockAngle(nextAngle: number, dragging: boolean) {
     setClockAngle(nextAngle);
     publishClockInteraction(nextAngle, dragging);
@@ -202,6 +212,10 @@ export function LineStampFloatingPromoClient({
     clearKeyboardReleaseTimeout();
     setIsDragging(false);
     centerRef.current = null;
+    if (mode === "expanded") {
+      publishClockInteraction(angleRef.current, false);
+      return;
+    }
     resetLineStampClockInteractionState(angleRef.current);
   }
 

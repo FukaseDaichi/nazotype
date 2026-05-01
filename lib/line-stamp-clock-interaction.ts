@@ -48,16 +48,19 @@ export function setLineStampClockInteractionState(
     ...nextState,
     angleDeg: normalizeClockAngle(nextState.angleDeg),
   };
+  const shouldNotify =
+    currentState.isDragging !== normalizedState.isDragging ||
+    currentState.selectedHour !== normalizedState.selectedHour;
 
-  if (
-    currentState.isDragging === normalizedState.isDragging &&
-    currentState.angleDeg === normalizedState.angleDeg &&
-    currentState.selectedHour === normalizedState.selectedHour
-  ) {
+  if (!shouldNotify && currentState.angleDeg === normalizedState.angleDeg) {
     return;
   }
 
   currentState = normalizedState;
+
+  if (!shouldNotify) {
+    return;
+  }
 
   for (const listener of listeners) {
     listener();

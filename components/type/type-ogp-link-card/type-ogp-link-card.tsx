@@ -47,7 +47,6 @@ export function TypeOgpLinkCard({
   );
   const shouldSparkle =
     typeof furiganaEmphasisIndex === "number" &&
-    clockInteraction.isDragging &&
     clockInteraction.selectedHour === furiganaEmphasisIndex;
   const cardClassName = [
     styles.card,

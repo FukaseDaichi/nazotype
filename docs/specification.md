@@ -96,7 +96,7 @@
 6. 通常診断時は `/types/[typeCode]/?s={shareKey}` に遷移する
 7. タイプページ内で共有キーを復元し、4 軸サマリ付きの結果表示を出す
 8. SNS 共有は公開タイプページ URL を使い、結果 URL はコピー導線で扱う
-9. LINE スタンプ導線の時計をドラッグし、長針が `furiganaEmphasisIndex` と同じ時刻を指した場合、表示中ページに応じた一時演出を出す
+9. LINE スタンプ導線の時計長針が `furiganaEmphasisIndex` と同じ時刻を指した場合、表示中ページに応じた一時演出を出す
 
 ## 6. 画面仕様
 
@@ -112,7 +112,7 @@
 - LINE スタンプ右下ポップ導線
 - JSON-LD `WebSite`
 
-LINE スタンプ右下ポップ導線の時計をドラッグ中に、長針が各タイプの `furiganaEmphasisIndex` と同じ時刻を指した場合、16 タイプ一覧の該当カードを一時的にきらりと光らせる。時計の自動回転や LINE STORE 遷移だけではこの演出を出さない。
+LINE スタンプ右下ポップ導線の時計長針が各タイプの `furiganaEmphasisIndex` と同じ時刻を指した場合、16 タイプ一覧の該当カードを一時的にきらりと光らせる。ドラッグ中でなくても時刻一致で発火する。LINE STORE 遷移だけではこの演出を出さない。
 
 開始フォームの仕様:
 
@@ -156,7 +156,7 @@ LINE スタンプ右下ポップ導線の時計をドラッグ中に、長針が
 - LINE スタンプ右下ポップ導線
 - JSON-LD `WebPage`
 
-LINE スタンプ右下ポップ導線の時計をドラッグ中に、長針が表示中タイプの `furiganaEmphasisIndex` と同じ時刻を指した場合、その位置のふりがなを一時的に光らせる。LINE STORE 遷移済み状態や時計の自動回転だけでは、ふりがな強調を発火させない。
+LINE スタンプ右下ポップ導線の時計長針が表示中タイプの `furiganaEmphasisIndex` と同じ時刻を指した場合、メインのタイプ画像を一時的に光らせる。さらに、時計をドラッグ中に同じ条件を満たした場合だけ、その位置のふりがなも一時的に光らせる。LINE STORE 遷移済み状態だけでは、画像発光やふりがな強調を発火させない。
 
 共有キーや直近結果がない公開タイプページでは、シェアパネルは表示しない。
 
@@ -320,5 +320,5 @@ LINE スタンプ右下ポップ導線の時計をドラッグ中に、長針が
 - タイプ別 OGP 生成スキルの既定 publish 先は、アプリ本体が参照する `public/types/{typeCode}-ogp.png` に揃えている
 - `/types` 一覧ページはない
 - LINE スタンプ右下ポップ導線は `/` と `/types/[typeCode]/` だけに表示する
-- LINE スタンプ時計ドラッグ連動演出の詳細は [line-stamp-clock-interaction-spec.md](./line-stamp-clock-interaction-spec.md) に集約する
+- LINE スタンプ時計連動演出の詳細は [line-stamp-clock-interaction-spec.md](./line-stamp-clock-interaction-spec.md) に集約する
 - 現行課題は [current-issues.md](./current-issues.md) に集約する
