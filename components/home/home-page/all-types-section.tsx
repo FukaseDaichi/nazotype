@@ -28,7 +28,7 @@ export function AllTypesSection({ allTypes }: AllTypesSectionProps) {
             <br />
             あなたはどれか
           </h2>
-          <p className="text-[1.05rem] font-light leading-[1.9] text-paper-200 max-w-[600px]">
+          <p className="text-[1.05rem] font-light leading-[1.9] text-paper-200">
             4軸の組み合わせで生まれる16の謎解きタイプ。どのタイプも異なる強みを持ち、チームに欠かせない存在です。
           </p>
         </RevealOnScroll>
@@ -42,6 +42,7 @@ export function AllTypesSection({ allTypes }: AllTypesSectionProps) {
                 typeName={type.typeName}
                 badgeText="TYPE"
                 variant="compact"
+                furiganaEmphasisIndex={type.furiganaEmphasisIndex}
                 sizes="(max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 25vw"
               />
             ))}

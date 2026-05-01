@@ -3,10 +3,10 @@
 import { useSyncExternalStore } from "react";
 
 import {
-  hasVisitedLineStampStore,
-  LINE_STAMP_STORE_VISITED_EVENT,
-  LINE_STAMP_STORE_VISITED_STORAGE_KEY,
-} from "@/lib/line-stamp-store-visit";
+  getLineStampClockInteractionServerSnapshot,
+  getLineStampClockInteractionSnapshot,
+  subscribeLineStampClockInteraction,
+} from "@/lib/line-stamp-clock-interaction";
 
 import styles from "./type-detail-hero-section.module.css";
 
@@ -16,37 +16,21 @@ type TypeDetailFuriganaProps = {
   emphasisIndex: number;
 };
 
-function getServerSnapshot() {
-  return false;
-}
-
-function subscribeToLineStampStoreVisit(onStoreChange: () => void) {
-  function handleStorage(event: StorageEvent) {
-    if (event.key === LINE_STAMP_STORE_VISITED_STORAGE_KEY) {
-      onStoreChange();
-    }
-  }
-
-  window.addEventListener(LINE_STAMP_STORE_VISITED_EVENT, onStoreChange);
-  window.addEventListener("storage", handleStorage);
-
-  return () => {
-    window.removeEventListener(LINE_STAMP_STORE_VISITED_EVENT, onStoreChange);
-    window.removeEventListener("storage", handleStorage);
-  };
-}
-
 export function TypeDetailFurigana({
   typeCode,
   furigana,
   emphasisIndex,
 }: TypeDetailFuriganaProps) {
-  const storeVisited = useSyncExternalStore(
-    subscribeToLineStampStoreVisit,
-    hasVisitedLineStampStore,
-    getServerSnapshot,
+  const clockInteraction = useSyncExternalStore(
+    subscribeLineStampClockInteraction,
+    getLineStampClockInteractionSnapshot,
+    getLineStampClockInteractionServerSnapshot,
   );
   const furiganaChars = Array.from(furigana);
+  const activeEmphasisHour = emphasisIndex + 1;
+  const shouldAccent =
+    clockInteraction.isDragging &&
+    clockInteraction.selectedHour === activeEmphasisHour;
 
   return (
     <span className={styles.typeNameFurigana} aria-hidden="true">
@@ -55,7 +39,7 @@ export function TypeDetailFurigana({
         const className = isAccent
           ? [
               styles.typeNameFuriganaChar,
-              storeVisited ? styles.typeNameFuriganaCharAccent : "",
+              shouldAccent ? styles.typeNameFuriganaCharAccent : "",
             ]
               .filter(Boolean)
               .join(" ")

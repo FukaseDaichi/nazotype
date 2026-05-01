@@ -1,6 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useSyncExternalStore } from "react";
 
+import {
+  getLineStampClockInteractionServerSnapshot,
+  getLineStampClockInteractionSnapshot,
+  subscribeLineStampClockInteraction,
+} from "@/lib/line-stamp-clock-interaction";
 import { getTypeOgpImagePath, getTypePublicPath } from "@/lib/site";
 
 import styles from "./type-ogp-link-card.module.css";
@@ -16,6 +24,7 @@ type TypeOgpLinkCardProps = {
   variant?: "standard" | "compact";
   prefetch?: boolean;
   sizes?: string;
+  furiganaEmphasisIndex?: number;
 };
 
 export function TypeOgpLinkCard({
@@ -29,8 +38,23 @@ export function TypeOgpLinkCard({
   variant = "standard",
   prefetch = false,
   sizes,
+  furiganaEmphasisIndex,
 }: TypeOgpLinkCardProps) {
-  const cardClassName = [styles.card, styles[variant], className]
+  const clockInteraction = useSyncExternalStore(
+    subscribeLineStampClockInteraction,
+    getLineStampClockInteractionSnapshot,
+    getLineStampClockInteractionServerSnapshot,
+  );
+  const shouldSparkle =
+    typeof furiganaEmphasisIndex === "number" &&
+    clockInteraction.isDragging &&
+    clockInteraction.selectedHour === furiganaEmphasisIndex;
+  const cardClassName = [
+    styles.card,
+    styles[variant],
+    shouldSparkle ? styles.clockSparkle : "",
+    className,
+  ]
     .filter(Boolean)
     .join(" ");
 

@@ -1,8 +1,16 @@
 "use client";
 
+import type { KeyboardEvent, PointerEvent } from "react";
+
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
+import {
+  getClockHourFromAngle,
+  normalizeClockAngle,
+  resetLineStampClockInteractionState,
+  setLineStampClockInteractionState,
+} from "@/lib/line-stamp-clock-interaction";
 import { markLineStampStoreVisited } from "@/lib/line-stamp-store-visit";
 
 import styles from "./line-stamp-floating-promo.module.css";
@@ -94,6 +102,11 @@ export function LineStampFloatingPromoClient({
   const [isDragging, setIsDragging] = useState(false);
   const clockRef = useRef<HTMLSpanElement | null>(null);
   const centerRef = useRef<{ x: number; y: number } | null>(null);
+  const angleRef = useRef(0);
+  const keyboardReleaseTimeoutRef = useRef<ReturnType<
+    typeof setTimeout
+  > | null>(null);
+  const selectedHour = getClockHourFromAngle(angle);
 
   useEffect(() => {
     const preferences = readPreferences();
@@ -124,7 +137,10 @@ export function LineStampFloatingPromoClient({
     const tick = (now: number) => {
       const delta = now - lastTime;
       lastTime = now;
-      setAngle((prev) => prev + (delta / ROTATION_PERIOD_MS) * 360);
+      const nextAngle =
+        angleRef.current + (delta / ROTATION_PERIOD_MS) * 360;
+      angleRef.current = nextAngle;
+      setAngle(nextAngle);
       frame = window.requestAnimationFrame(tick);
     };
     frame = window.requestAnimationFrame(tick);
@@ -132,17 +148,84 @@ export function LineStampFloatingPromoClient({
     return () => window.cancelAnimationFrame(frame);
   }, [mode, isDragging]);
 
+  useEffect(() => {
+    if (mode === "expanded") {
+      return;
+    }
+
+    if (keyboardReleaseTimeoutRef.current) {
+      clearTimeout(keyboardReleaseTimeoutRef.current);
+      keyboardReleaseTimeoutRef.current = null;
+    }
+
+    centerRef.current = null;
+    resetLineStampClockInteractionState(angleRef.current);
+  }, [mode]);
+
+  useEffect(() => {
+    return () => {
+      if (keyboardReleaseTimeoutRef.current) {
+        clearTimeout(keyboardReleaseTimeoutRef.current);
+      }
+      resetLineStampClockInteractionState(angleRef.current);
+    };
+  }, []);
+
+  function setClockAngle(nextAngle: number) {
+    angleRef.current = nextAngle;
+    setAngle(nextAngle);
+  }
+
+  function publishClockInteraction(nextAngle: number, dragging: boolean) {
+    setLineStampClockInteractionState({
+      isDragging: dragging,
+      angleDeg: normalizeClockAngle(nextAngle),
+      selectedHour: dragging ? getClockHourFromAngle(nextAngle) : null,
+    });
+  }
+
+  function updateClockAngle(nextAngle: number, dragging: boolean) {
+    setClockAngle(nextAngle);
+    publishClockInteraction(nextAngle, dragging);
+  }
+
+  function clearKeyboardReleaseTimeout() {
+    if (!keyboardReleaseTimeoutRef.current) {
+      return;
+    }
+
+    clearTimeout(keyboardReleaseTimeoutRef.current);
+    keyboardReleaseTimeoutRef.current = null;
+  }
+
+  function finishClockInteraction() {
+    clearKeyboardReleaseTimeout();
+    setIsDragging(false);
+    centerRef.current = null;
+    resetLineStampClockInteractionState(angleRef.current);
+  }
+
+  function scheduleKeyboardInteractionFinish() {
+    clearKeyboardReleaseTimeout();
+    keyboardReleaseTimeoutRef.current = setTimeout(() => {
+      keyboardReleaseTimeoutRef.current = null;
+      finishClockInteraction();
+    }, 650);
+  }
+
   function handleExpand() {
     setMode("expanded");
     writePreferences({ ...readPreferences(), collapsed: false });
   }
 
   function handleCollapse() {
+    finishClockInteraction();
     setMode("collapsed");
     writePreferences({ ...readPreferences(), collapsed: true });
   }
 
   function handleDismiss() {
+    finishClockInteraction();
     setMode("hidden");
   }
 
@@ -150,7 +233,7 @@ export function LineStampFloatingPromoClient({
     markLineStampStoreVisited();
   }
 
-  function handleClockPointerDown(e: React.PointerEvent<HTMLSpanElement>) {
+  function handleClockPointerDown(e: PointerEvent<HTMLSpanElement>) {
     if (e.button !== 0) return;
     if (!clockRef.current) return;
     const rect = clockRef.current.getBoundingClientRect();
@@ -159,29 +242,46 @@ export function LineStampFloatingPromoClient({
       y: rect.top + rect.height / 2,
     };
     centerRef.current = center;
+    clearKeyboardReleaseTimeout();
     setIsDragging(true);
     const next = pointerToHandAngle(e.clientX, e.clientY, center);
-    setAngle((prev) => smoothAngle(next, prev));
+    updateClockAngle(smoothAngle(next, angleRef.current), true);
+    e.preventDefault();
     e.currentTarget.setPointerCapture(e.pointerId);
   }
 
-  function handleClockPointerMove(e: React.PointerEvent<HTMLSpanElement>) {
+  function handleClockPointerMove(e: PointerEvent<HTMLSpanElement>) {
     const center = centerRef.current;
     if (!center) return;
-    const clientX = e.clientX;
-    const clientY = e.clientY;
-    setAngle((prev) => {
-      const next = pointerToHandAngle(clientX, clientY, center);
-      return smoothAngle(next, prev);
-    });
+    const next = pointerToHandAngle(e.clientX, e.clientY, center);
+    updateClockAngle(smoothAngle(next, angleRef.current), true);
   }
 
-  function handleClockPointerUp(e: React.PointerEvent<HTMLSpanElement>) {
-    setIsDragging(false);
-    centerRef.current = null;
+  function handleClockPointerUp(e: PointerEvent<HTMLSpanElement>) {
+    finishClockInteraction();
     if (e.currentTarget.hasPointerCapture(e.pointerId)) {
       e.currentTarget.releasePointerCapture(e.pointerId);
     }
+  }
+
+  function handleClockKeyDown(e: KeyboardEvent<HTMLSpanElement>) {
+    const keyDelta: Partial<Record<string, number>> = {
+      ArrowRight: 30,
+      ArrowUp: 30,
+      ArrowLeft: -30,
+      ArrowDown: -30,
+    };
+    const delta = keyDelta[e.key];
+
+    if (delta === undefined) {
+      return;
+    }
+
+    e.preventDefault();
+    const nextAngle = angleRef.current + delta;
+    setIsDragging(true);
+    updateClockAngle(nextAngle, true);
+    scheduleKeyboardInteractionFinish();
   }
 
   if (mode === null || mode === "hidden") {
@@ -324,11 +424,25 @@ export function LineStampFloatingPromoClient({
             <span className={styles.visualGlow} aria-hidden="true" />
             <span
               ref={clockRef}
-              className={styles.visualRing}
+              className={[
+                styles.visualRing,
+                isDragging ? styles.visualRingDragging : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
               onPointerDown={handleClockPointerDown}
               onPointerMove={handleClockPointerMove}
               onPointerUp={handleClockPointerUp}
               onPointerCancel={handleClockPointerUp}
+              onLostPointerCapture={finishClockInteraction}
+              onKeyDown={handleClockKeyDown}
+              role="slider"
+              tabIndex={0}
+              aria-label="LINEスタンプ時計の長針"
+              aria-valuemin={1}
+              aria-valuemax={12}
+              aria-valuenow={selectedHour}
+              aria-valuetext={`${selectedHour}時`}
             >
               <Image
                 src="/line-stamp-main.png"
