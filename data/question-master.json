@@ -65,7 +65,7 @@
     },
     {
       "questionId": "Q006",
-      "questionText": "部屋を探索するとき、まず先に探索する全体のルートを決めたい。",
+      "questionText": "部屋を探索するとき、まず初めにどういう順番で探索するかのルートを決めたい。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 6,
