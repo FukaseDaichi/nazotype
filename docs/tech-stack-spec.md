@@ -183,10 +183,12 @@ Route Group `(marketing)`, `(diagnosis)`, `(special)`, `(types)` は URL に出�
 
 - 導線の開閉状態キー: `nazotype:line-stamp-promo:v2`
 - 時計ドラッグ操作状態は `localStorage` に保存しない
-- 時計ドラッグ操作状態は同一ページ内の一時 UI 状態として扱う
+- 時計の内部進行状態とドラッグ操作状態は同一ページ内の一時 UI 状態として扱う
 - 推奨通知イベント: `nazotype:line-stamp-clock-interaction`
 - 時刻一致時に、タイプページのメイン画像発光とトップページのタイプカード発光へ反映する
 - タイプページのふりがな強調だけは、時計ドラッグ中かつ時刻一致時に反映する
+- 導線が `collapsed` / `hidden` の場合でも、対象ページに導線コンポーネントがマウントされている間は内部時計を継続して `selectedHour` を更新できる
+- ブラウザタブやアプリ自体が閉じている間、導線非表示ページ、`prefers-reduced-motion: reduce` の環境では自動回転による継続発火を行わない
 
 ## 8. 環境変数
 

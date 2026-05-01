@@ -129,7 +129,7 @@ export function LineStampFloatingPromoClient({
   }, []);
 
   useEffect(() => {
-    if (mode !== "expanded" || isDragging) {
+    if (mode === null || isDragging) {
       return;
     }
     if (typeof window === "undefined") {
@@ -148,22 +148,28 @@ export function LineStampFloatingPromoClient({
       const nextAngle =
         angleRef.current + (delta / ROTATION_PERIOD_MS) * 360;
       angleRef.current = nextAngle;
-      setAngle(nextAngle);
+      if (mode === "expanded") {
+        setAngle(nextAngle);
+      }
       publishClockInteraction(nextAngle, false);
       frame = window.requestAnimationFrame(tick);
     };
+    publishClockInteraction(angleRef.current, false);
     frame = window.requestAnimationFrame(tick);
 
     return () => window.cancelAnimationFrame(frame);
   }, [mode, isDragging]);
 
   useEffect(() => {
-    if (mode === "expanded") {
-      publishClockInteraction(angleRef.current, isDragging);
+    if (mode === null) {
       return;
     }
 
-    resetLineStampClockInteractionState(angleRef.current);
+    if (mode === "expanded") {
+      setAngle(angleRef.current);
+    }
+
+    publishClockInteraction(angleRef.current, isDragging);
   }, [mode, isDragging]);
 
   useEffect(() => {
@@ -177,7 +183,6 @@ export function LineStampFloatingPromoClient({
     }
 
     centerRef.current = null;
-    resetLineStampClockInteractionState(angleRef.current);
   }, [mode]);
 
   useEffect(() => {
@@ -212,11 +217,7 @@ export function LineStampFloatingPromoClient({
     clearKeyboardReleaseTimeout();
     setIsDragging(false);
     centerRef.current = null;
-    if (mode === "expanded") {
-      publishClockInteraction(angleRef.current, false);
-      return;
-    }
-    resetLineStampClockInteractionState(angleRef.current);
+    publishClockInteraction(angleRef.current, false);
   }
 
   function scheduleKeyboardInteractionFinish() {
@@ -228,6 +229,7 @@ export function LineStampFloatingPromoClient({
   }
 
   function handleExpand() {
+    setAngle(angleRef.current);
     setMode("expanded");
     writePreferences({ ...readPreferences(), collapsed: false });
   }
