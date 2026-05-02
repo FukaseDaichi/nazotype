@@ -10,7 +10,7 @@
   "questions": [
     {
       "questionId": "Q001",
-      "questionText": "イベント中で誰か１人が行動や提出をする場合、積極的に担当している方だ",
+      "questionText": "イベント中に誰か一人が行動や提出をする場面では、積極的に引き受ける方だ。",
       "axis": "A1",
       "direction": "forward",
       "displayOrder": 1,
@@ -65,7 +65,7 @@
     },
     {
       "questionId": "Q006",
-      "questionText": "開始の合図があっても、最初の数分は解き始めずに、配布物を並べて全体を把握したい",
+      "questionText": "開始の合図が出ても、最初の数分は解き始めずに、配布物を並べて全体を把握したい。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 6,
@@ -142,7 +142,7 @@
     },
     {
       "questionId": "Q013",
-      "questionText": "散らばった道具や資料を整理する作業を良くしている方だ。",
+      "questionText": "散らばった道具や資料を整理する作業をすることが多い方だ。",
       "axis": "A1",
       "direction": "reverse",
       "displayOrder": 13,
@@ -186,7 +186,7 @@
     },
     {
       "questionId": "Q017",
-      "questionText": "何かを探索してものを見つけることが得意な方だ。",
+      "questionText": "手がかりを探す場面では、誰かの報告を待つより自分で確認しに行く方だ。",
       "axis": "A1",
       "direction": "forward",
       "displayOrder": 17,
@@ -252,7 +252,7 @@
     },
     {
       "questionId": "Q023",
-      "questionText": "案が複数あるときは、全部試すより一つに絞ろうなどの発言をする方だ。",
+      "questionText": "案が複数あるときは、「一つに絞ろう」と声をかける方だ。",
       "axis": "A3",
       "direction": "reverse",
       "displayOrder": 23,
@@ -263,7 +263,7 @@
     },
     {
       "questionId": "Q024",
-      "questionText": "みんなが一つの謎に集中しているとき、自分だけは今後のための他のことを考えようとする時がある。",
+      "questionText": "みんなが一つの謎に集中しているとき、自分だけは次の手順や未使用情報を考えていることがある。",
       "axis": "A4",
       "direction": "reverse",
       "displayOrder": 24,
@@ -329,7 +329,7 @@
     },
     {
       "questionId": "Q030",
-      "questionText": "終盤は新しい小謎を解くより、未使用の情報を一覧に戻す方を優先したい。",
+      "questionText": "終盤は新しい小謎を解くより、未使用の情報を整理し直す方を優先したい。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 30,
