@@ -1,6 +1,7 @@
-# 診断結果タイプ分布 GA4 最小集計構成案
+# 診断結果タイプ分布 GA4 最小集計仕様書
 
 作成日: 2026-04-26
+最終確認日: 2026-05-03
 
 ## 1. 目的
 
@@ -85,7 +86,7 @@ Firestore は、将来「回答個票を保存したい」「診断ロジック�
 
 ## 5. 必要な環境変数
 
-### 5.1 追加する環境変数
+### 5.1 使用する環境変数
 
 | 変数 | 例 | 必須 | 説明 |
 | --- | --- | --- | --- |
@@ -160,7 +161,7 @@ Google 公式手順では、Analytics property を作り、data stream を追加
 </script>
 ```
 
-Next.js 実装時はこの内容をそのまま文字列で直書きするのではなく、`app/layout.tsx` の `next/script` に載せ替え、`NEXT_PUBLIC_GA_MEASUREMENT_ID` から値を読む形にする。
+現行コードではこの内容をそのまま文字列で直書きせず、`app/layout.tsx` の `next/script` に載せ替え、`NEXT_PUBLIC_GA_MEASUREMENT_ID` から値を読む形にしている。
 
 ### 6.4 集計の見方
 
@@ -182,9 +183,9 @@ Next.js 実装時はこの内容をそのまま文字列で直書きするので
 
 割合を見たい場合は、GA4 Explore 上で visualization を donut / bar にし、全体比を見る。今回の要件では Looker Studio など追加サービスは必須にしない。
 
-## 7. コード反映箇所
+## 7. 現行コードの反映箇所
 
-GA4 最小集計は次の範囲で実装する。
+GA4 最小集計は次の範囲で実装済みである。
 
 追加 npm package は不要。Google tag は `next/script` と `window.gtag` で扱う。
 
@@ -195,18 +196,18 @@ GA4 最小集計は次の範囲で実装する。
 - `NEXT_PUBLIC_GA_MEASUREMENT_ID` が設定されている場合だけ Google tag を読み込む。
 - 全ページの page view と custom event 送信の土台を作る。
 
-実装方針:
+現行実装:
 
 - `next/script` を使う。
 - Measurement ID 未設定時は script を出さない。
 - `window.dataLayer` / `gtag` 初期化を root layout に置く。
 
-反映イメージ:
+実装要点:
 
 ```tsx
 import Script from "next/script";
 
-const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
 
 {gaMeasurementId ? (
   <>
@@ -219,7 +220,7 @@ const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', '${gaMeasurementId}');
+        gtag('config', ${JSON.stringify(gaMeasurementId)});
       `}
     </Script>
   </>
@@ -228,12 +229,12 @@ const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 ### 7.2 `lib/analytics.ts`
 
-目的:
+現行実装:
 
 - GA4 送信処理を小さな client-safe helper に閉じ込める。
 - Measurement ID 未設定時、ブラウザ外、`gtag` 未初期化時は何もしない。
 
-想定 API:
+実装 API:
 
 ```ts
 type GtagWindow = Window & {
@@ -274,7 +275,7 @@ export function trackDiagnosisComplete(typeCode: string) {
 
 ### 7.3 `components/diagnosis/diagnosis-flow/diagnosis-flow.tsx`
 
-目的:
+現行実装:
 
 - 診断完了時に `diagnosis_complete` を送る。
 
@@ -340,7 +341,7 @@ TypeScript で `window.gtag` を参照する場合は、次のいずれかを行
 
 ## 10. 将来拡張
 
-今回の最小構成では未実装にするが、必要になったら次を追加候補にする。
+現行の最小構成には含めないが、必要になったら次を追加候補にする。
 
 | 拡張 | 目的 | 追加判断 |
 | --- | --- | --- |

@@ -153,7 +153,7 @@
     },
     {
       "questionId": "Q014",
-      "questionText": "自分の謎が途中でも、チーム全体の進捗が見えていないと落ち着かない。",
+      "questionText": "自分の謎が途中でも、チーム全体の進捗を把握しようとすることが多い。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 14,
@@ -186,7 +186,7 @@
     },
     {
       "questionId": "Q017",
-      "questionText": "手がかりを探す場面では、誰かの報告を待つより自分で確認しに行く方だ。",
+      "questionText": "鍵を開けるなどの細かい作業を率先してやる方だ。",
       "axis": "A1",
       "direction": "forward",
       "displayOrder": 17,
@@ -263,7 +263,7 @@
     },
     {
       "questionId": "Q024",
-      "questionText": "みんなが一つの謎に集中しているとき、自分だけは次の手順や未使用情報を考えていることがある。",
+      "questionText": "みんなが一つの謎に集中しているとき、自分だけ別の切り口で考えようとすることが多い。",
       "axis": "A4",
       "direction": "reverse",
       "displayOrder": 24,
@@ -340,7 +340,7 @@
     },
     {
       "questionId": "Q031",
-      "questionText": "机が散らかったら、解く手を止めてでも紙やメモの分類を始めたい。",
+      "questionText": "机が散らかったらチームが動きやすいように、解く手を止めてでも紙やメモの分類を始めることがある。",
       "axis": "A3",
       "direction": "reverse",
       "displayOrder": 31,

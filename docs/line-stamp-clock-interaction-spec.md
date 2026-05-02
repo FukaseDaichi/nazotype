@@ -1,4 +1,4 @@
-# LINE スタンプ時計連動演出 変更仕様書
+# LINE スタンプ時計連動演出 仕様書
 
 ## 1. 文書の位置づけ
 
@@ -12,7 +12,7 @@
 - [tech-stack-spec.md](./tech-stack-spec.md)
 - [frontend-directory-structure-spec.md](./frontend-directory-structure-spec.md)
 
-本仕様を実装した後は、LINE STORE 訪問済み状態によるふりがな強調よりも、本書の時計連動演出を正とする。
+現行実装では、LINE STORE 訪問済み状態ではなく、本書の時計連動演出をページ側演出の正本とする。
 
 ## 2. 目的
 

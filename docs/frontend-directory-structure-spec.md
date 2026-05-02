@@ -78,10 +78,13 @@ docs/
   line-stamp-promo-component-design.md
   line-stamp-clock-interaction-spec.md
   twilight-secret-result-spec.md
+  survey-result-statistics-architecture.md
+  netlify-deploy-guide.md
   current-issues.md
   nazo.md
 
 lib/
+  analytics.ts
   axis.ts
   data.ts
   diagnosis.ts
@@ -95,6 +98,7 @@ lib/
   types.ts
 
 public/
+  favicon.ico
   main-ogp.png
   line-stamp-main.png
   favicons/*
@@ -163,6 +167,7 @@ out/
 - 軸定義
 - マスタ読み込み
 - URL / metadata 補助
+- GA4 event 送信補助
 - 共有キー
 - `localStorage` ラッパー
 - 隠し結果の合言葉判定
@@ -231,6 +236,6 @@ out/
 - 診断結果表示は `/types/[typeCode]/?s={shareKey}` で行う
 - 隠し特別結果は `/secret/` で表示する
 - `type-detail-page-content` 配下には `public` / `shared` の両モードを扱う props があるが、公開ルートとして使っているのは `public` モードのページ 1 本だけである
-- OGP 生成スキルの publish 先と、アプリ本体の配信用 OGP 参照先は別である
+- OGP 生成スキルの publish 先は、アプリ本体の配信用 OGP 参照先 `public/types/{typeCode}-ogp.png` に揃えている
 - LINE スタンプ右下ポップ導線は `components/layout/line-stamp-floating-promo/` にあり、`/` と `/types/[typeCode]/` のページ本文から明示的に差し込む
 - `docs/current-issues.md` に、現行コードを正としたうえでの不具合・整理課題を集約する

@@ -4,13 +4,12 @@
 
 本書は、現行コードを正として確認したうえで、実装・運用・保守上の課題を集約する。
 
-確認日: 2026-04-30
+確認日: 2026-05-03
 
 確認結果:
 
-- `npm run build`: 成功（Windows Node.js v22.16.0 / npm 10.9.2）
-- `npm run lint`: 成功（Windows Node.js v22.16.0 / npm 10.9.2）
-- `npm run start`: `out/` の静的配信用 script として動作確認済み
+- `npm run lint`: 成功（macOS Node.js v22.21.0 / npm 10.9.4）
+- `npm run build`: 成功（macOS Node.js v22.21.0 / npm 10.9.4、Next.js 16.2.1）
 
 ## 2. 現時点の未対応課題
 

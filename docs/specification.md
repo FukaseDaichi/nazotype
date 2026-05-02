@@ -18,6 +18,7 @@
 - [line-stamp-clock-interaction-spec.md](./line-stamp-clock-interaction-spec.md)
 - [twilight-secret-result-spec.md](./twilight-secret-result-spec.md)
 - [survey-result-statistics-architecture.md](./survey-result-statistics-architecture.md)
+- [netlify-deploy-guide.md](./netlify-deploy-guide.md)
 - [current-issues.md](./current-issues.md)
 - [DESIGN.md](../DESIGN.md)
 
@@ -74,7 +75,7 @@
 | ルート | 役割 | 検索エンジン向け扱い |
 | --- | --- | --- |
 | `/` | トップページ | index |
-| `/diagnosis` | 診断フロー | `noindex` |
+| `/diagnosis` | 診断フロー | `noindex, nofollow` |
 | `/types/[typeCode]/` | タイプ詳細ページ兼、診断結果表示ページ | index / canonical |
 | `/secret/` | 隠し特別結果ページ | `noindex, nofollow, noarchive` |
 
@@ -270,6 +271,10 @@ LINE スタンプ右下ポップ導線の内部時計が表示中タイプの `f
 - `public/types/{typeCode}_chibi.png`
 - `public/types/{typeCode}-ogp.png`
 - `public/types/TWLT-ogp.png`
+- `app/favicon.ico`
+- `app/apple-icon.png`
+- `app/apple-touch-icon.png`
+- `public/favicon.ico`
 - `public/favicons/*`
 
 ## 9. 保存・環境変数
@@ -280,6 +285,7 @@ LINE スタンプ右下ポップ導線の内部時計が表示中タイプの `f
 - 直近診断結果は `nazotype:post-diagnosis-result`
 - 隠し結果の一時共有フラグは `nazotype:secret-share-entry`
 - LINE スタンプ導線の開閉状態は `nazotype:line-stamp-promo:v2`
+- LINE STORE 訪問済み状態は `nazotype:line-stamp-store-visited:v1`
 - LINE スタンプ時計操作状態は一時 UI 状態として扱い、`localStorage` へ保存しない
 - LINE スタンプ導線が最小化または閉じる状態でも、対象ページに導線コンポーネントがマウントされている間は内部時計を継続してよい
 - ブラウザタブやアプリ自体が閉じている間、導線コンポーネントがマウントされないページ、`prefers-reduced-motion: reduce` の環境では自動回転による継続発火を行わない

@@ -31,6 +31,7 @@ Next.js 16 App Router で実装された、リアル脱出ゲーム・謎解き�
 - 結果 URL のコピーと、公開タイプページ URL での SNS 共有ができる
 - 合言葉入力で `/secret/` の隠し結果を表示できる
 - `/` と `/types/[typeCode]/` に LINE スタンプ右下ポップ導線を表示できる
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` 設定時は診断完了イベントを GA4 へ送信できる
 - OGP、JSON-LD、`sitemap.xml`、`robots.txt`、`manifest.webmanifest` を実装している
 
 ## ルート
@@ -38,7 +39,7 @@ Next.js 16 App Router で実装された、リアル脱出ゲーム・謎解き�
 | ルート | 役割 | 検索エンジン向け扱い |
 | --- | --- | --- |
 | `/` | トップページ | index |
-| `/diagnosis` | 診断フロー | `noindex` |
+| `/diagnosis` | 診断フロー | `noindex, nofollow` |
 | `/types/[typeCode]/` | タイプ詳細ページ兼、診断結果表示ページ | index / canonical |
 | `/secret/` | 隠し特別結果ページ | `noindex, nofollow, noarchive` |
 
@@ -65,6 +66,8 @@ npm run dev
   本番用のサイト URL。`metadataBase`、canonical、JSON-LD、sitemap の絶対 URL に使います
 - `NEXT_PUBLIC_LINE_STAMP_URL`
   任意。LINE スタンプ右下ポップ導線のリンク先に使います。未設定時は既定の LINE STORE URL を使い、空文字 / `0` / `false` / `off` / `disabled` / `none` では導線を非表示にします
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID`
+  任意。GA4 の Measurement ID。設定時だけ Google tag を読み込み、診断完了時に `diagnosis_complete` event と `type_code` parameter を送ります
 
 絶対 URL の基準は次の優先順で決まります。
 
@@ -73,7 +76,8 @@ npm run dev
 
 ### 画像生成スキル
 
-画像生成スクリプトはリポジトリ直下の `.env.character-images` を読みます。
+fal.ai を使う画像生成スクリプトはリポジトリ直下の `.env.character-images` を読みます。
+内蔵 `image_gen` を使うちびキャラ基準画像の主経路では API キーは不要です。
 
 - `FAL_KEY`
 - `FAL_QUEUE_URL`
@@ -87,6 +91,7 @@ npm run dev
 npm run dev
 npm run build
 npm run start
+npm run preview
 npm run lint
 ```
 
@@ -97,7 +102,7 @@ app/          ルート定義、metadata files、ページ入口
 components/   画面本文と UI コンポーネント
 data/         質問マスタと 16 タイプ定義
 docs/         仕様書
-lib/          データ取得、診断ロジック、共有キー、メタデータ補助
+lib/          データ取得、診断ロジック、共有キー、メタデータ / GA4 補助
 public/       配信用の静的アセット
 skills/       画像生成スキル
 output/       画像生成スキルの作業出力
@@ -123,8 +128,14 @@ output/       画像生成スキルの作業出力
   LINE スタンプ用 prompt / image スキルの運用
 - [docs/line-stamp-promo-component-design.md](./docs/line-stamp-promo-component-design.md)
   LINE スタンプ右下ポップ導線の仕様
+- [docs/line-stamp-clock-interaction-spec.md](./docs/line-stamp-clock-interaction-spec.md)
+  LINE スタンプ時計連動演出の仕様
 - [docs/twilight-secret-result-spec.md](./docs/twilight-secret-result-spec.md)
   合言葉で到達する隠し結果の仕様
+- [docs/survey-result-statistics-architecture.md](./docs/survey-result-statistics-architecture.md)
+  GA4 による診断完了タイプ分布の集計仕様
+- [docs/netlify-deploy-guide.md](./docs/netlify-deploy-guide.md)
+  Netlify 静的 export 配信の運用メモ
 - [docs/current-issues.md](./docs/current-issues.md)
   現行コードの問題点・課題
 

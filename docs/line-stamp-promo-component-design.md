@@ -44,7 +44,7 @@
 
 `app/layout.tsx` には置かず、表示対象ページの本文から明示的に差し込む。
 
-## 4. 実装ファイルと追加予定ファイル
+## 4. 実装ファイル
 
 ```text
 components/
@@ -69,7 +69,7 @@ public/
 - `line-stamp-floating-promo-client.tsx`: Client Component。開閉、非表示、`localStorage`、CTA クリック、時計長針の自動回転とドラッグ操作を扱う
 - `line-stamp-floating-promo.module.css`: 固定配置、カード、たたみ表示、モーション
 - `lib/line-stamp-store-visit.ts`: LINE STORE 訪問済み状態と通知イベント。時計連動演出のトリガーには使わない
-- `lib/line-stamp-clock-interaction.ts`: 時計操作の一時状態と通知イベント。実装時に追加する想定
+- `lib/line-stamp-clock-interaction.ts`: 時計操作の一時状態と通知イベント
 - `lib/site.ts`: `LINE_STAMP_URL` の正本
 
 ## 5. URL と画像
@@ -115,8 +115,16 @@ public/
 保存しないもの:
 
 - 閉じる操作による `hidden`
+- 時計の角度、ドラッグ状態、選択中時刻
 
 そのため、閉じる操作は現在のマウント中だけ有効で、再読み込みやページ遷移後には初期表示ルールへ戻る。
+
+LINE STORE 訪問済み状態:
+
+- 保存キー: `nazotype:line-stamp-store-visited:v1`
+- 通知イベント: `nazotype:line-stamp-store-visited`
+- CTA クリック時に保存する
+- 時計連動演出の発火条件には使わない
 
 ### 6.3 時計状態と表示モード
 

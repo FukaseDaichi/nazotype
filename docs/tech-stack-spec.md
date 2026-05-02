@@ -122,7 +122,7 @@ Route Group `(marketing)`, `(diagnosis)`, `(special)`, `(types)` は URL に出�
 ### 6.2 ページ別 metadata
 
 - `/`: canonical `/`
-- `/diagnosis`: `robots.index = false`
+- `/diagnosis`: `robots.index = false`, `follow = false`
 - `/secret/`: `robots.index = false`, `follow = false`, `noarchive = true`
 - `/types/[typeCode]/`: `generateMetadata()` でタイプ別 metadata を作る
 
@@ -182,9 +182,11 @@ Route Group `(marketing)`, `(diagnosis)`, `(special)`, `(types)` は URL に出�
 `components/layout/line-stamp-floating-promo/line-stamp-floating-promo-client.tsx` が導線の開閉状態を `localStorage` で扱う。
 
 - 導線の開閉状態キー: `nazotype:line-stamp-promo:v2`
+- LINE STORE 訪問済み状態キー: `nazotype:line-stamp-store-visited:v1`
 - 時計ドラッグ操作状態は `localStorage` に保存しない
 - 時計の内部進行状態とドラッグ操作状態は同一ページ内の一時 UI 状態として扱う
 - 推奨通知イベント: `nazotype:line-stamp-clock-interaction`
+- LINE STORE 訪問済み通知イベント: `nazotype:line-stamp-store-visited`
 - 時刻一致時に、タイプページのメイン画像面発光とトップページのタイプカード画像面発光へ反映する
 - タイプページのふりがな強調は時計操作中かつ時刻一致時に反映し、タイプページのメイン画像枠発光とトップページのタイプカード枠発光は pointer drag 中かつ時刻一致時に反映する
 - 導線が `collapsed` / `hidden` の場合でも、対象ページに導線コンポーネントがマウントされている間は内部時計を継続して `selectedHour` を更新できる
@@ -241,6 +243,10 @@ Route Group `(marketing)`, `(diagnosis)`, `(special)`, `(types)` は URL に出�
 - `public/types/{typeCode}_chibi.png`
 - `public/types/{typeCode}-ogp.png`
 - `public/types/TWLT-ogp.png`
+- `app/favicon.ico`
+- `app/apple-icon.png`
+- `app/apple-touch-icon.png`
+- `public/favicon.ico`
 - `public/favicons/*`
 
 ### 9.2 画像生成スキルの出力
