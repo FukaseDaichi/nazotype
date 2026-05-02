@@ -10,7 +10,7 @@
   "questions": [
     {
       "questionId": "Q001",
-      "questionText": "ゲーム開始直後は、配布物を読むより先にテーブル上の小物や掲示物をひと通り確かめたくなる。",
+      "questionText": "イベント中で誰か１人が行動や提出をする場合、積極的に担当している方だ",
       "axis": "A1",
       "direction": "forward",
       "displayOrder": 1,
@@ -21,7 +21,7 @@
     },
     {
       "questionId": "Q002",
-      "questionText": "一度ひっかかった小謎は、周りが進んでいても自分の手元で最後まで追いたくなる。",
+      "questionText": "周りが別の相談を始めても、目の前の謎の違和感を追い続けがちだ。",
       "axis": "A2",
       "direction": "forward",
       "displayOrder": 2,
@@ -32,7 +32,7 @@
     },
     {
       "questionId": "Q003",
-      "questionText": "変な記号や気になる違和感を見つけたら、確信がなくてもすぐチームに声を出す。",
+      "questionText": "見つけた違和感は、自分の中で整理する前にいったん声に出す方だ。",
       "axis": "A3",
       "direction": "forward",
       "displayOrder": 3,
@@ -43,7 +43,7 @@
     },
     {
       "questionId": "Q004",
-      "questionText": "詰まった謎ほど、ヒントを見る前にもう一段だけ粘って考えたい。",
+      "questionText": "ヒントを見れば進みそうでも、自分の担当謎はあと少しだけ粘りたい。",
       "axis": "A4",
       "direction": "forward",
       "displayOrder": 4,
@@ -54,7 +54,7 @@
     },
     {
       "questionId": "Q005",
-      "questionText": "ゲームが始まったら、まずルール用紙や注意書きを最後まで読んでから動きたい。",
+      "questionText": "周りが次の謎に着手していても、まだ理解が不十分なら自分はまずルールと禁止事項を読み切ってから参加したい。",
       "axis": "A1",
       "direction": "reverse",
       "displayOrder": 5,
@@ -65,7 +65,7 @@
     },
     {
       "questionId": "Q006",
-      "questionText": "序盤は、目の前の謎を解く前に配布物全体を広げて、何があるか把握したい。",
+      "questionText": "開始の合図があっても、最初の数分は解き始めずに、配布物を並べて全体を把握したい",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 6,
@@ -76,7 +76,7 @@
     },
     {
       "questionId": "Q007",
-      "questionText": "チーム内の発言が増えてきたら、一度「今わかっていること」をまとめたくなる。",
+      "questionText": "自由に案を出し続けるより、「確定情報」と「未確認」を分ける係に回りたい。",
       "axis": "A3",
       "direction": "reverse",
       "displayOrder": 7,
@@ -87,7 +87,7 @@
     },
     {
       "questionId": "Q008",
-      "questionText": "同じ謎で手が止まったら、別の紙や別の手がかりへすぐ切り替えられる。",
+      "questionText": "手ごたえが残っている作業でも、しばらく進展がなければ別の作業に移りたい。",
       "axis": "A4",
       "direction": "reverse",
       "displayOrder": 8,
@@ -98,7 +98,7 @@
     },
     {
       "questionId": "Q009",
-      "questionText": "会場内で触れそうな装置や封筒が出てきたら、まず自分で試して反応を見たい。",
+      "questionText": "触ってはいけないと書かれていても、気づかずに触ってしまうことがある。",
       "axis": "A1",
       "direction": "forward",
       "displayOrder": 9,
@@ -109,7 +109,7 @@
     },
     {
       "questionId": "Q010",
-      "questionText": "気になる模様や数字列を見つけると、その紙の余白や裏面まで細かく調べ込む。",
+      "questionText": "数字列や模様に気づくと、全体進行を横目にその法則を追う方が楽しい。",
       "axis": "A2",
       "direction": "forward",
       "displayOrder": 10,
@@ -120,7 +120,7 @@
     },
     {
       "questionId": "Q011",
-      "questionText": "「たぶん関係ないかも」と思う発見でも、黙って持つより先に共有する。",
+      "questionText": "関係あるか怪しい発見でも、まず共有しておきたい。",
       "axis": "A3",
       "direction": "forward",
       "displayOrder": 11,
@@ -131,7 +131,7 @@
     },
     {
       "questionId": "Q012",
-      "questionText": "大謎で筋の通らない部分があると、時間が迫っていても納得できる解釈を探したくなる。",
+      "questionText": "謎が一か所でも腑に落ちないと、勢いで提出するより根拠を埋めたい。",
       "axis": "A4",
       "direction": "forward",
       "displayOrder": 12,
@@ -142,7 +142,7 @@
     },
     {
       "questionId": "Q013",
-      "questionText": "新しいキットを受け取ったら、折る・切る・重ねる前に説明文をしっかり確認したい。",
+      "questionText": "散らばった道具や資料を整理する作業を良くしている方だ。",
       "axis": "A1",
       "direction": "reverse",
       "displayOrder": 13,
@@ -153,7 +153,7 @@
     },
     {
       "questionId": "Q014",
-      "questionText": "自分が解いている途中でも、他の人の小謎がどこまで進んでいるかを気にしている。",
+      "questionText": "自分の謎が途中でも、チーム全体の進捗が見えていないと落ち着かない。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 14,
@@ -164,7 +164,7 @@
     },
     {
       "questionId": "Q015",
-      "questionText": "残り時間が少なくなると、誰が何を担当するかを自然に振り分けたくなる。",
+      "questionText": "残り時間が減ると、自分で解くより担当の交通整理をしたくなる。",
       "axis": "A3",
       "direction": "reverse",
       "displayOrder": 15,
@@ -175,7 +175,7 @@
     },
     {
       "questionId": "Q016",
-      "questionText": "仮説がしっくり来なければ、途中まで進めた解き方でもすぐ捨てられる。",
+      "questionText": "途中まで合っていそうでも、違和感が出たら別ルートを試す方が気楽だ。",
       "axis": "A4",
       "direction": "reverse",
       "displayOrder": 16,
@@ -186,7 +186,7 @@
     },
     {
       "questionId": "Q017",
-      "questionText": "追加の封筒や次の指示が出たら、真っ先に取りに行ったり開いたりする役になりがちだ。",
+      "questionText": "何かを探索してものを見つけることが得意な方だ。",
       "axis": "A1",
       "direction": "forward",
       "displayOrder": 17,
@@ -197,7 +197,7 @@
     },
     {
       "questionId": "Q018",
-      "questionText": "司会映像やナレーション中でも、背景の文字や一瞬映った図形が気になってしまう。",
+      "questionText": "司会の説明中でも、背景の文字や小道具の違和感に意識が吸われる。",
       "axis": "A2",
       "direction": "forward",
       "displayOrder": 18,
@@ -208,7 +208,7 @@
     },
     {
       "questionId": "Q019",
-      "questionText": "ひらめいた瞬間は、答えの形がまだ粗くても「これかも！」と口に出す。",
+      "questionText": "答えに自信が6割くらいでも、口に出しながら形にしたい。",
       "axis": "A3",
       "direction": "forward",
       "displayOrder": 19,
@@ -219,7 +219,7 @@
     },
     {
       "questionId": "Q020",
-      "questionText": "一つの謎を担当したら、他の人に渡す前に自分で決着をつけたくなる。",
+      "questionText": "担当した謎は、誰かに渡せば早そうでも自分で最後まで粘りたい。",
       "axis": "A4",
       "direction": "forward",
       "displayOrder": 20,
@@ -230,7 +230,7 @@
     },
     {
       "questionId": "Q021",
-      "questionText": "会場を動き回る前に、手元の資料から読めることをできるだけ読み切りたい。",
+      "questionText": "探索に出る役より、席に残って資料を読み解く役の方が落ち着く。",
       "axis": "A1",
       "direction": "reverse",
       "displayOrder": 21,
@@ -241,7 +241,7 @@
     },
     {
       "questionId": "Q022",
-      "questionText": "中盤以降は、未使用の情報・解けた答え・残りの封筒を並べて全体像を見直したい。",
+      "questionText": "中盤で一度、手を止めてでも解けた答えと未使用情報を並べ直したい。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 22,
@@ -252,7 +252,7 @@
     },
     {
       "questionId": "Q023",
-      "questionText": "意見がいくつも出たときは、候補を絞って「次に試すこと」を決める役になりがちだ。",
+      "questionText": "案が複数あるときは、全部試すより一つに絞ろうなどの発言をする方だ。",
       "axis": "A3",
       "direction": "reverse",
       "displayOrder": 23,
@@ -263,7 +263,7 @@
     },
     {
       "questionId": "Q024",
-      "questionText": "同じ考え方で詰まったら、別の人に渡す・別の謎を見るなど場を動かした方が進むと思う。",
+      "questionText": "みんなが一つの謎に集中しているとき、自分だけは今後のための他のことを考えようとする時がある。",
       "axis": "A4",
       "direction": "reverse",
       "displayOrder": 24,
@@ -274,7 +274,7 @@
     },
     {
       "questionId": "Q025",
-      "questionText": "探索パートでは、考える前に未確認の場所やアイテムを片っ端から見に行く。",
+      "questionText": "探索パートでは、席で考えるより自分の足で未確認箇所を潰したい。",
       "axis": "A1",
       "direction": "forward",
       "displayOrder": 25,
@@ -285,7 +285,7 @@
     },
     {
       "questionId": "Q026",
-      "questionText": "全体の物語より、目の前の暗号やパズルの仕組みがきれいにハマる瞬間が好きだ。",
+      "questionText": "ストーリーの流れより、一枚の紙の暗号が解ける快感に強く引っ張られる。",
       "axis": "A2",
       "direction": "forward",
       "displayOrder": 26,
@@ -296,7 +296,7 @@
     },
     {
       "questionId": "Q027",
-      "questionText": "他の人が解いている紙でも、横から思いついたことがあればすぐ口に出したい。",
+      "questionText": "他の人が担当している紙でも、思いついた瞬間に横から仮説を投げ込みたい。",
       "axis": "A3",
       "direction": "forward",
       "displayOrder": 27,
@@ -307,7 +307,7 @@
     },
     {
       "questionId": "Q028",
-      "questionText": "最終解答を提出する前は、直感で行けそうでも根拠を一つずつ確認したい。",
+      "questionText": "困難な謎であればあるほど燃えてくる気持ちになる。",
       "axis": "A4",
       "direction": "forward",
       "displayOrder": 28,
@@ -318,7 +318,7 @@
     },
     {
       "questionId": "Q029",
-      "questionText": "新しいギミックに出会ったら、触って試すより先に仕組みや条件を読み解きたい。",
+      "questionText": "新しい道具を使ったギミックは、実際に触る役より条件を読む役を引き受けたい。",
       "axis": "A1",
       "direction": "reverse",
       "displayOrder": 29,
@@ -329,7 +329,7 @@
     },
     {
       "questionId": "Q030",
-      "questionText": "終盤は、個別の謎よりも「何が未使用で、何が最後に必要か」を俯瞰して考える。",
+      "questionText": "終盤は新しい小謎を解くより、未使用の情報を一覧に戻す方を優先したい。",
       "axis": "A2",
       "direction": "reverse",
       "displayOrder": 30,
@@ -340,7 +340,7 @@
     },
     {
       "questionId": "Q031",
-      "questionText": "机の上が紙やメモで散らかってきたら、解けたもの・未解決のものを整理したくなる。",
+      "questionText": "机が散らかったら、解く手を止めてでも紙やメモの分類を始めたい。",
       "axis": "A3",
       "direction": "reverse",
       "displayOrder": 31,
@@ -351,7 +351,7 @@
     },
     {
       "questionId": "Q032",
-      "questionText": "残り時間を考えると、粘るよりヒントを見る・担当を替える判断も早めにしたい。",
+      "questionText": "まだ解けそうな気配があっても、ヒントを見る役に切り替えるのに抵抗が少ない。",
       "axis": "A4",
       "direction": "reverse",
       "displayOrder": 32,
