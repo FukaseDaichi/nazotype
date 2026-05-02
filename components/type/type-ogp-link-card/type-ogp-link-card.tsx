@@ -45,13 +45,16 @@ export function TypeOgpLinkCard({
     getLineStampClockInteractionSnapshot,
     getLineStampClockInteractionServerSnapshot,
   );
-  const shouldSparkle =
+  const isClockMatched =
     typeof furiganaEmphasisIndex === "number" &&
     clockInteraction.selectedHour === furiganaEmphasisIndex;
+  const shouldHighlightFrame =
+    isClockMatched && clockInteraction.isPointerDragging;
   const cardClassName = [
     styles.card,
     styles[variant],
-    shouldSparkle ? styles.clockSparkle : "",
+    isClockMatched ? styles.clockSparkle : "",
+    shouldHighlightFrame ? styles.clockSparkleFrame : "",
     className,
   ]
     .filter(Boolean)

@@ -55,18 +55,18 @@
     0 0 32px -18px rgba(193, 155, 46, 0.42);
 }
 
-.clockSparkle {
+.clockSparkle::before {
+  animation: typeCardSparkle 760ms ease-out both;
+}
+
+.clockSparkleFrame {
   border-color: rgba(232, 201, 106, 0.72);
   box-shadow:
     0 30px 52px -34px rgba(14, 13, 16, 0.95),
     0 0 26px -14px rgba(232, 201, 106, 0.65);
 }
 
-.clockSparkle::before {
-  animation: typeCardSparkle 760ms ease-out both;
-}
-
-.clockSparkle::after {
+.clockSparkleFrame::after {
   border-color: rgba(232, 201, 106, 0.42);
 }
 

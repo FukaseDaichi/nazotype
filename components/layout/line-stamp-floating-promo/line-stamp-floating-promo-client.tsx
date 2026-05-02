@@ -90,9 +90,14 @@ function smoothAngle(nextAngle: number, prevAngle: number): number {
   return result;
 }
 
-function publishClockInteraction(nextAngle: number, dragging: boolean) {
+function publishClockInteraction(
+  nextAngle: number,
+  dragging: boolean,
+  pointerDragging = false,
+) {
   setLineStampClockInteractionState({
     isDragging: dragging,
+    isPointerDragging: pointerDragging,
     angleDeg: normalizeClockAngle(nextAngle),
     selectedHour: getClockHourFromAngle(nextAngle),
   });
@@ -169,7 +174,7 @@ export function LineStampFloatingPromoClient({
       setAngle(angleRef.current);
     }
 
-    publishClockInteraction(angleRef.current, isDragging);
+    publishClockInteraction(angleRef.current, isDragging, false);
   }, [mode, isDragging]);
 
   useEffect(() => {
@@ -199,9 +204,13 @@ export function LineStampFloatingPromoClient({
     setAngle(nextAngle);
   }
 
-  function updateClockAngle(nextAngle: number, dragging: boolean) {
+  function updateClockAngle(
+    nextAngle: number,
+    dragging: boolean,
+    pointerDragging = false,
+  ) {
     setClockAngle(nextAngle);
-    publishClockInteraction(nextAngle, dragging);
+    publishClockInteraction(nextAngle, dragging, pointerDragging);
   }
 
   function clearKeyboardReleaseTimeout() {
@@ -261,7 +270,7 @@ export function LineStampFloatingPromoClient({
     clearKeyboardReleaseTimeout();
     setIsDragging(true);
     const next = pointerToHandAngle(e.clientX, e.clientY, center);
-    updateClockAngle(smoothAngle(next, angleRef.current), true);
+    updateClockAngle(smoothAngle(next, angleRef.current), true, true);
     e.preventDefault();
     e.currentTarget.setPointerCapture(e.pointerId);
   }
@@ -270,7 +279,7 @@ export function LineStampFloatingPromoClient({
     const center = centerRef.current;
     if (!center) return;
     const next = pointerToHandAngle(e.clientX, e.clientY, center);
-    updateClockAngle(smoothAngle(next, angleRef.current), true);
+    updateClockAngle(smoothAngle(next, angleRef.current), true, true);
   }
 
   function handleClockPointerUp(e: PointerEvent<HTMLSpanElement>) {

@@ -3,12 +3,14 @@ export const LINE_STAMP_CLOCK_INTERACTION_EVENT =
 
 export type LineStampClockInteractionState = {
   isDragging: boolean;
+  isPointerDragging: boolean;
   angleDeg: number;
   selectedHour: number | null;
 };
 
 const INITIAL_STATE: LineStampClockInteractionState = {
   isDragging: false,
+  isPointerDragging: false,
   angleDeg: 0,
   selectedHour: null,
 };
@@ -50,6 +52,7 @@ export function setLineStampClockInteractionState(
   };
   const shouldNotify =
     currentState.isDragging !== normalizedState.isDragging ||
+    currentState.isPointerDragging !== normalizedState.isPointerDragging ||
     currentState.selectedHour !== normalizedState.selectedHour;
 
   if (!shouldNotify && currentState.angleDeg === normalizedState.angleDeg) {
@@ -78,6 +81,7 @@ export function setLineStampClockInteractionState(
 export function resetLineStampClockInteractionState(angleDeg = 0) {
   setLineStampClockInteractionState({
     isDragging: false,
+    isPointerDragging: false,
     angleDeg,
     selectedHour: null,
   });

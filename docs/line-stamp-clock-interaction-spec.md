@@ -158,6 +158,7 @@ selectedHour === furiganaEmphasisIndex
 ```ts
 type LineStampClockInteractionState = {
   isDragging: boolean;
+  isPointerDragging: boolean;
   angleDeg: number;
   selectedHour: number | null;
 };
@@ -169,14 +170,19 @@ type LineStampClockInteractionState = {
 nazotype:line-stamp-clock-interaction
 ```
 
-実装では `useSyncExternalStore` で購読できる小さな外部 store を `lib/line-stamp-clock-interaction.ts` に置くことを推奨する。SSR 時の snapshot は `isDragging: false`, `selectedHour: null` とする。
+実装では `useSyncExternalStore` で購読できる小さな外部 store を `lib/line-stamp-clock-interaction.ts` に置くことを推奨する。SSR 時の snapshot は `isDragging: false`, `isPointerDragging: false`, `selectedHour: null` とする。
 
 ## 7. `/types/[typeCode]/` の演出
 
-タイプ詳細ページでは、対象タイプの `furiganaEmphasisIndex` と時計の `selectedHour` が一致したとき、メインのタイプ画像を光らせる。
+タイプ詳細ページでは、対象タイプの `furiganaEmphasisIndex` と時計の `selectedHour` が一致したとき、メインのタイプ画像面を光らせる。
 
-メイン画像の発火条件:
+メイン画像面の発火条件:
 
+- 時計の長針が、表示中タイプの `furiganaEmphasisIndex` と同じ時刻を指している
+
+メイン画像枠の発火条件:
+
+- ユーザーが時計をドラッグ中である
 - 時計の長針が、表示中タイプの `furiganaEmphasisIndex` と同じ時刻を指している
 
 ふりがな強調の発火条件:
@@ -187,12 +193,14 @@ nazotype:line-stamp-clock-interaction
 非発火条件:
 
 - LINE STORE へ遷移しただけ
+- メイン画像枠については、長針が自動回転で該当位置を通過しただけ
 - ふりがな強調については、長針が自動回転で該当位置を通過しただけ
 - ふりがな強調については、ドラッグ終了後に長針が該当位置で止まっているだけ
 
 演出:
 
-- メイン画像の枠と画像面に gold 系のきらり発光を出す
+- メイン画像面に gold 系のきらり発光を出す
+- メイン画像枠の色変化と枠発光は、pointer drag 中の時刻一致時だけ出す
 - 既存のふりがな文字単位表示を使う
 - 強調対象は `furiganaEmphasisIndex - 1` の文字
 - 強調色は gold 系を基本とする
@@ -214,14 +222,15 @@ nazotype:line-stamp-clock-interaction
 - 該当カードは同時に光ってよい
 - カードのリンク機能は維持する
 - 演出によるレイアウトシフトを起こさない
-- `prefers-reduced-motion: reduce` では光の走査アニメーションを止め、静的な枠線・発光だけにする
+- カードリンク枠の色変化と枠発光は、pointer drag 中の時刻一致時だけ出す
+- `prefers-reduced-motion: reduce` では光の走査アニメーションを止める
 
 推奨する見た目:
 
 - カードの画像面を斜めに横切る短い光の筋
-- gold 系の一瞬の枠線発光
+- pointer drag 中の時刻一致時だけ gold 系の一瞬の枠線発光
 - 文字情報を読めなくするほど強い白飛びは避ける
-- ホバー演出とは別の、ドラッグ連動中だけの一時演出にする
+- ホバー演出とは別の、時計連動中の一時演出にする
 
 ## 9. LINE STORE 訪問済み状態との関係
 
@@ -241,7 +250,7 @@ nazotype:line-stamp-clock-interaction
 - 展開ボタンの中に別の button を入れるような入れ子の interactive 要素は避ける
 - 時計操作対象は `role="slider"` 相当の情報を持たせることを検討する
 - キーボードでは左右キーまたは上下キーで時刻を 1 つずつ動かせるようにする
-- キーボード操作時も、操作中だけ `isDragging` 相当の active 状態を短時間立て、同じ演出を確認できるようにする
+- キーボード操作時も、操作中だけ `isDragging` 相当の active 状態を短時間立て、ふりがな強調などの操作中演出を確認できるようにする。メイン画像枠とカードリンク枠の発光は pointer drag 中の一致だけに限定する
 
 ## 11. 検証観点
 
@@ -250,10 +259,14 @@ nazotype:line-stamp-clock-interaction
 - 時計をドラッグできること
 - 時計をドラッグしても、意図せず導線が展開しないこと
 - `/types/[typeCode]/` で、ドラッグ中かつ対象時刻一致時だけふりがなが光ること
-- `/types/[typeCode]/` で、ドラッグ中でなくても対象時刻一致時にメイン画像が光ること
+- `/types/[typeCode]/` で、ドラッグ中でなくても対象時刻一致時にメイン画像面が光ること
+- `/types/[typeCode]/` で、pointer drag 中でない対象時刻一致時にはメイン画像枠が光らないこと
+- `/types/[typeCode]/` で、pointer drag 中かつ対象時刻一致時だけメイン画像枠の色が変わること
 - `/types/[typeCode]/` で、LINE STORE クリックだけではふりがなが光らないこと
 - `/types/[typeCode]/` で、自動回転通過だけではふりがなが光らないこと
 - `/` で、ドラッグ中でなくても対象時刻一致時に該当タイプカードがきらりと光ること
+- `/` で、pointer drag 中でない対象時刻一致時にはカードリンク枠が光らないこと
+- `/` で、pointer drag 中かつ対象時刻一致時だけカードリンク枠の色が変わること
 - `/` で、対象時刻が一致する複数カードが同時に光ること
 - ドラッグ終了後、ふりがな強調が解除されること
 - モバイルの片手操作で主コンテンツを過度に覆わないこと

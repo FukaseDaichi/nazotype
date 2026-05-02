@@ -26,10 +26,13 @@ export function TypeDetailClockArtworkFrame({
     getLineStampClockInteractionSnapshot,
     getLineStampClockInteractionServerSnapshot,
   );
-  const isClockActive = clockInteraction.selectedHour === activeHour;
+  const isClockMatched = clockInteraction.selectedHour === activeHour;
+  const shouldHighlightFrame =
+    isClockMatched && clockInteraction.isPointerDragging;
   const className = [
     styles.artworkFrame,
-    isClockActive ? styles.artworkFrameClockActive : "",
+    isClockMatched ? styles.artworkFrameClockSparkle : "",
+    shouldHighlightFrame ? styles.artworkFrameClockActive : "",
   ]
     .filter(Boolean)
     .join(" ");
