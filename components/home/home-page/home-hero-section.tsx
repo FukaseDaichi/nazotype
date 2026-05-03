@@ -43,25 +43,27 @@ export function HomeHeroSection() {
           className={styles.cipherBg}
           style={{ top: "15%", left: 0, right: 0 }}
         >
-          ALHN DBTC ALHT DBHC ALTN DBTC ALHN DBTN ALHT DBTC ALHN
+          DLHC DBHN ALTN ALHN ALTC ABHC DBTC DBHC ABTC ABHN DLTN ALHC DLHN DBTN
+          DLTC ABTN
         </div>
         <div
           className={styles.cipherBg}
           style={{ top: "25%", left: 0, right: 0 }}
         >
-          行動型 解読型 局所型 俯瞰型 発信型 統率型 熟考型 転換型 行動型 解読型
+          行動型 解読型 局所型 俯瞰型 発信型 統率型 熟考型 転換型
         </div>
         <div
           className={styles.cipherBg}
           style={{ bottom: "20%", left: 0, right: 0 }}
         >
-          ALHN DBTC ALHT DBHC ALTN DBTC ALHN DBTN ALHT DBTC ALHN
+          DLHC DBHN ALTN ALHN ALTC ABHC DBTC DBHC ABTC ABHN DLTN ALHC DLHN DBTN
+          DLTC ABTN
         </div>
         <div
           className={styles.cipherBg}
           style={{ bottom: "30%", left: 0, right: 0 }}
         >
-          行動型 解読型 局所型 俯瞰型 発信型 統率型 熟考型 転換型 行動型 解読型
+          行動型 解読型 局所型 俯瞰型 発信型 統率型 熟考型 転換型
         </div>
       </div>
 

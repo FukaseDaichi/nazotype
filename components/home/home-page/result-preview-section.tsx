@@ -13,7 +13,7 @@ type ResultPreviewAxis = {
 const RESULT_PREVIEW_AXES: ResultPreviewAxis[] = [
   { left: "行動型", right: "解読型", fill: 72 },
   { left: "局所型", right: "俯瞰型", fill: 38 },
-  { left: "発信型", right: "統率型", fill: 65 },
+  { left: "発信型", right: "統率型", fill: 62 },
   { left: "熟考型", right: "転換型", fill: 25 },
 ];
 
@@ -87,7 +87,7 @@ export function ResultPreviewSection() {
         </div>
 
         <div className="mt-8 inline-block px-6 py-2 border border-gold-400 text-xl font-bold text-gold-300 tracking-wider">
-          ALHN — 鑑識マニア
+          ABHC — 人間Wi-Fi
         </div>
       </div>
     </RevealOnScroll>
